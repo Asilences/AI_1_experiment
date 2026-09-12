@@ -1,0 +1,12 @@
+.venv/
+.work/
+data/raw/
+data/processed/
+models/
+runs/
+output/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+提交材料/
