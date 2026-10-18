@@ -1,0 +1,53 @@
+{
+  "system": "pipeline",
+  "experiment": "A0 personal reproduction",
+  "run_id": "A0_personal_20261019",
+  "created_at": "2026-10-18T16:21:22Z",
+  "data_dir": "D:\\codex_document\\2026-10-18\\new-chat\\work\\AI_1_experiment\\data\\processed",
+  "threshold": 0.3,
+  "selection_split": "valid",
+  "threshold_grid": [
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75,
+    0.8,
+    0.85
+  ],
+  "fixed_test_thresholds": [
+    0.3,
+    0.7,
+    0.9,
+    0.99
+  ],
+  "repeats": 3,
+  "fixed_threshold_rationale": "Prespecified before reading the new test data; .90 and .99 test the false-refusal tradeoff at stringent confidence thresholds. Fixed test diagnostics never choose the baseline threshold.",
+  "training_runs": 1,
+  "repeat_type": "deterministic forward passes of the same fitted model; no retraining",
+  "feature_fit_split": "train",
+  "random_state": 42,
+  "max_iter": 300,
+  "solver": "liblinear",
+  "features": {
+    "word_ngram_range": [
+      1,
+      2
+    ],
+    "char_wb_ngram_range": [
+      3,
+      5
+    ]
+  },
+  "training_duration_seconds": 0.17252969999935885,
+  "smoke": false,
+  "model_path": "D:\\codex_document\\2026-10-18\\new-chat\\work\\AI_1_experiment\\runs\\A0_personal_20261019\\model.pkl",
+  "test_selection": false,
+  "timing_scope": "CPU end-to-end PipelineQA.predict per question; includes linking, classification and fact lookup",
+  "timing_note": "No warmup is excluded. Machine load and cache state may affect these repeated timings."
+}

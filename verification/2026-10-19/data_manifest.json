@@ -1,0 +1,26 @@
+{
+  "created_at": "2026-10-18T16:21:19Z",
+  "snapshot": "data/raw/snapshot_200.json",
+  "snapshot_sha256": "5b02443928ef5503c280c9422376cf5efb8849f13e02ee92f03aca917c47ed38",
+  "movies": 200,
+  "entities": 552,
+  "triples": 1264,
+  "qa": 2492,
+  "qa_by_split": {
+    "train": 1749,
+    "valid": 373,
+    "test": 370
+  },
+  "qa_by_relation": {
+    "P57": 597,
+    "P136": 477,
+    "P495": 591,
+    "P364": 600,
+    "UNKNOWN": 227
+  },
+  "movie_split_sizes": {
+    "train": 140,
+    "valid": 30,
+    "test": 30
+  }
+}

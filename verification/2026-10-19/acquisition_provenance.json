@@ -1,0 +1,21 @@
+{
+  "created_at": "2026-10-18T16:20:14Z",
+  "target": 200,
+  "sampling": "cached SPARQL candidate response; limited scope defined by source query; not all Wikidata; sorted numeric IDs then shuffled seed 42; first eligible movies",
+  "candidate_pool": {
+    "source_path": "D:\\codex_document\\2026-10-18\\new-chat\\work\\AI_1_experiment\\data\\raw\\candidates_decade_1980.json",
+    "source_sha256": "55d4f874d46dc2cb5abff906ef2179c68cedff9d5403533ad4e2ef524d0910dc",
+    "source_url": "https://query.wikidata.org/sparql",
+    "query_params": {
+      "query": "SELECT DISTINCT ?film WHERE {\n          ?film wdt:P31 wd:Q11424; wdt:P577 ?date; wdt:P57 ?director.\n          FILTER(?date >= \"1980-01-01T00:00:00Z\"^^xsd:dateTime && ?date < \"1990-01-01T00:00:00Z\"^^xsd:dateTime)\n        } LIMIT 800",
+      "format": "json"
+    },
+    "query": "SELECT DISTINCT ?film WHERE {\n          ?film wdt:P31 wd:Q11424; wdt:P577 ?date; wdt:P57 ?director.\n          FILTER(?date >= \"1980-01-01T00:00:00Z\"^^xsd:dateTime && ?date < \"1990-01-01T00:00:00Z\"^^xsd:dateTime)\n        } LIMIT 800",
+    "retrieved_at": "2026-10-18T16:15:08Z",
+    "binding_count": 800,
+    "unique_count": 800,
+    "ordering": "sorted by numeric Wikidata ID, then shuffled with seed 42",
+    "shuffle_seed": 42
+  },
+  "source": "Wikidata, CC0, best-rank entity statements; English labels; query caps induce selection bias"
+}

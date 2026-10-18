@@ -107,7 +107,7 @@ def build(output_path):
               ['Python 版本', environment['python_version'].split('|')[0].strip()], ['CPU', f"{environment.get('processor') or '12th Gen Intel Core i7-12700H'}，{environment['logical_cpu_count']} 个逻辑处理器"],
               ['内存', f"{environment['memory_gb']} GB"], ['GPU', environment['gpu']], ['CUDA', f"可用，PyTorch CUDA {environment['torch_cuda']}"],
               ['主要依赖', ', '.join(f'{k} {v}' for k, v in environment['packages'].items())]], [4, 11])
-    add_figure(document, ROOT / 'output' / 'evidence' / 'environment.png', '终端环境配置记录', 1, 15.5)
+    add_figure(document, ROOT / 'output' / 'screenshots' / 'environment.png', '实际终端环境配置截图', 1, 15.5)
 
     document.add_heading('四 数据集与实验设置', level=1)
     paragraph(document, f"数据来自 Wikidata 的电影子图，使用导演 P57、类型 P136、制作国家 P495 和原始语言 P364 四类关系。冻结快照的 SHA-256 为 {manifest['snapshot_sha256']}，包含 {manifest['movies']} 部电影、{manifest['entities']} 个实体、{manifest['triples']} 条三元组和 {manifest['qa']} 条问答。")
@@ -127,7 +127,7 @@ def build(output_path):
         ['选模指标', '验证集答案实体 Macro-F1']],[4, 11])
     figure_number = 2
     for filename, caption in [('training_b0.png', 'B0 模型训练过程记录'), ('evaluation.png', '测试评估与参数实验运行记录')]:
-        if add_figure(document, ROOT / 'output' / 'evidence' / filename, caption, figure_number, 15.5): figure_number += 1
+        if add_figure(document, ROOT / 'output' / 'screenshots' / filename, caption, figure_number, 15.5): figure_number += 1
 
     document.add_heading('5.2 基础实验结果', level=2)
     add_table(document, ['实验', '实体准确率', '实体 F1', 'BLEU', 'ROUGE-L', '平均延迟 ms', 'P95 延迟 ms', '训练 min'], metric_rows(['A0', 'B0']), [1.4, 2, 1.8, 1.6, 1.8, 2.2, 2.2, 1.8])
@@ -174,7 +174,7 @@ def build(output_path):
             detail = '，'.join(f"{labels.get(k, k)} {v} 题" for k, v in counts.items() if k != 'correct' and v)
             parts.append(f"{run}：{detail or '未检出错误'}")
         paragraph(document, '逐题错误归因结果为：' + '；'.join(parts) + '。该归因按实体链接、关系识别、漏答、答案不完整、无依据实体和拒答失败的顺序判定。')
-    paragraph(document, '本次结果总体符合预期：A0 在固定单跳事实查询上具有较高精确性和极低延迟，神经模型的语言生成质量较好，但严格集合匹配会受到漏答影响。结论只适用于本次固定知识库、单次随机种子和电影单跳任务，不推断模型能够回答知识库之外的未知事实。')
+    paragraph(document, 'A0 在固定单跳事实查询上具有较高精确性，神经模型的文本重叠指标较高，但严格集合匹配会受到漏答影响。神经耗时是批量生成的每题摊销时间，不能直接与 A0 单题端到端时间比较；语言流畅度仍需人工评价。结论只适用于本次固定知识库、单次随机种子和电影单跳任务，不推断模型能够回答知识库之外的未知事实。')
     paragraph(document, '人工评价表已生成，准确性、完整性、流畅度和无依据生成字段必须由实验者逐题核查后填写；本报告不以自动指标代替人工事实评价。')
 
     document.add_heading('六 实验总结', level=1)

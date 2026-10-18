@@ -3,13 +3,8 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-import torch
-from torch.utils.data import DataLoader
-from transformers import AutoTokenizer
-
 from .common import REFUSAL, ROOT, read_json
 from .linker import EntityLinker
-from .neural import Collator, GraphData, GraphPrefixModel, QADataset, predictions
 from .pipeline import PipelineQA, load_model
 
 
@@ -28,12 +23,18 @@ class Demo:
         model, threshold = load_model()
         self.pipeline = PipelineQA(self.entities, self.movie_ids, model, threshold)
         self.linker = EntityLinker(self.movie_ids, self.entities)
-        self.neural_run = read_json(ROOT / 'output' / 'selected_model.json')['selected_run']
+        self.neural_run = None
         self.neural = None
         if load_neural:
             self._load_neural()
 
     def _load_neural(self):
+        import torch
+        from transformers import AutoTokenizer
+        from .neural import GraphData, GraphPrefixModel
+
+        if self.neural_run is None:
+            self.neural_run = read_json(ROOT / 'output' / 'selected_model.json')['selected_run']
         run = ROOT / 'runs' / self.neural_run
         config = read_json(run / 'config.json')
         self.graph = GraphData(config['use_embeddings'])
@@ -68,13 +69,15 @@ class Demo:
     def answer_neural(self, question):
         if self.neural is None:
             self._load_neural()
+        from torch.utils.data import DataLoader
+        from .neural import Collator, QADataset, predictions
         movie_id, link_score, link_status = self.linker.link(question)
         if not movie_id:
             return {'system': f'{self.neural_run} 神经生成系统', 'movie': '未识别', 'link_status': link_status,
                     'evidence': [], 'answer': REFUSAL, 'latency_ms': 0}
         row = {'question_id': 'interactive', 'question': question, 'movie_id': movie_id,
                'reference_answers': [REFUSAL], 'answer_ids': [], 'relation_id': 'UNKNOWN', 'is_answerable': False}
-        loader = DataLoader(QADataset([row], self.graph, link_questions=True), batch_size=1,
+        loader = DataLoader(QADataset([row], self.graph), batch_size=1,
                             collate_fn=Collator(self.tokenizer, self.graph.use_embeddings))
         result = predictions(self.neural, loader, self.tokenizer, self.entities, self.device)[0]
         evidence = [item[0] for item in self.graph.facts(movie_id)]

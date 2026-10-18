@@ -1,0 +1,9 @@
+{
+  "observed_date": "2026-10-19",
+  "source": "read-only Windows CIM query after the experiment",
+  "cpu": "AMD Ryzen 5 5600H with Radeon Graphics",
+  "logical_processors": 12,
+  "physical_memory_bytes": 17024741376,
+  "physical_memory_gib": 15.86,
+  "gpu_training_performed": false
+}
