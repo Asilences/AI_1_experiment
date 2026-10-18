@@ -1,0 +1,15 @@
+legacy           repeat=1 correct=30/44 answerable=75.00% refusal=50.00% linker_mean=0.0513ms
+legacy           repeat=2 correct=30/44 answerable=75.00% refusal=50.00% linker_mean=0.0534ms
+legacy           repeat=3 correct=30/44 answerable=75.00% refusal=50.00% linker_mean=0.0526ms
+threshold_0.72   repeat=1 correct=43/44 answerable=100.00% refusal=91.67% linker_mean=0.2785ms
+threshold_0.72   repeat=2 correct=43/44 answerable=100.00% refusal=91.67% linker_mean=0.2903ms
+threshold_0.72   repeat=3 correct=43/44 answerable=100.00% refusal=91.67% linker_mean=0.2942ms
+threshold_0.80   repeat=1 correct=44/44 answerable=100.00% refusal=100.00% linker_mean=0.2254ms
+threshold_0.80   repeat=2 correct=44/44 answerable=100.00% refusal=100.00% linker_mean=0.2097ms
+threshold_0.80   repeat=3 correct=44/44 answerable=100.00% refusal=100.00% linker_mean=0.2088ms
+threshold_0.88   repeat=1 correct=44/44 answerable=100.00% refusal=100.00% linker_mean=0.1813ms
+threshold_0.88   repeat=2 correct=44/44 answerable=100.00% refusal=100.00% linker_mean=0.1789ms
+threshold_0.88   repeat=3 correct=44/44 answerable=100.00% refusal=100.00% linker_mean=0.1911ms
+threshold_0.96   repeat=1 correct=38/44 answerable=81.25% refusal=100.00% linker_mean=0.1811ms
+threshold_0.96   repeat=2 correct=38/44 answerable=81.25% refusal=100.00% linker_mean=0.1840ms
+threshold_0.96   repeat=3 correct=38/44 answerable=81.25% refusal=100.00% linker_mean=0.3154ms

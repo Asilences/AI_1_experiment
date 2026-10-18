@@ -11,7 +11,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import FeatureUnion
 
 from .common import ROOT, REFUSAL, answer_text, read_json, read_jsonl, setup_logging, write_json, write_jsonl
-from .linker import EntityLinker, normalize
+from .linker import EntityLinker
 
 
 class PipelineQA:
@@ -26,7 +26,7 @@ class PipelineQA:
                   'relation_id': 'UNKNOWN', 'answer_ids': [], 'answer': REFUSAL, 'evidence': []}
         if movie_id:
             title = self.entities[movie_id]['label']
-            masked = normalize(question).replace(normalize(title), ' movie_title ')
+            masked = self.linker.mask(question, movie_id)
             probabilities = self.classifier.predict_proba([masked])[0]
             index = int(np.argmax(probabilities))
             relation = self.classifier.classes_[index]
@@ -41,18 +41,19 @@ class PipelineQA:
         return result
 
 
-def mask_question(row, entities):
-    title = entities[row['movie_id']]['label']
-    return normalize(row['question']).replace(normalize(title), ' movie_title ')
+def mask_question(row, entities, linker=None):
+    linker = linker or EntityLinker([row['movie_id']], entities)
+    return linker.mask(row['question'], row['movie_id'])
 
 
 def train(data_dir=ROOT / 'data' / 'processed'):
     qa, entities, splits = read_jsonl(data_dir / 'qa.jsonl'), read_json(data_dir / 'entities.json'), read_json(data_dir / 'splits.json')
     movie_ids = sum(splits.values(), [])
+    linker = EntityLinker(movie_ids, entities)
     train_rows = [row for row in qa if row['split'] == 'train']
     features = FeatureUnion([('word', TfidfVectorizer(ngram_range=(1, 2))),
                              ('char', TfidfVectorizer(analyzer='char_wb', ngram_range=(3, 5)))])
-    matrix = features.fit_transform([mask_question(row, entities) for row in train_rows])
+    matrix = features.fit_transform([mask_question(row, entities, linker) for row in train_rows])
     estimator = LogisticRegression(max_iter=300, random_state=42, solver='liblinear').fit(
         matrix, [row['relation_id'] for row in train_rows])
 
@@ -63,9 +64,8 @@ def train(data_dir=ROOT / 'data' / 'processed'):
 
     best = (0, .5)
     valid = [row for row in qa if row['split'] == 'valid']
-    linker = EntityLinker(movie_ids, entities)
     linked = [linker.link(row['question'])[0] for row in valid]
-    masked = [mask_question(row, entities) for row in valid]
+    masked = [linker.mask(row['question'], movie_id) for row, movie_id in zip(valid, linked)]
     probabilities = estimator.predict_proba(features.transform(masked))
     predicted_indexes = np.argmax(probabilities, axis=1)
     predicted_relations = estimator.classes_[predicted_indexes]

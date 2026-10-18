@@ -1,0 +1,322 @@
+{
+  "cases": [
+    {
+      "expected_id": "Q1",
+      "group": "clean",
+      "id": "case_001",
+      "question": "Who directed Star Wars?"
+    },
+    {
+      "expected_id": "Q1",
+      "group": "paraphrase",
+      "id": "case_002",
+      "question": "Which country did Star Wars originate in?"
+    },
+    {
+      "expected_id": "Q2",
+      "group": "clean",
+      "id": "case_003",
+      "question": "Who directed Film Beta?"
+    },
+    {
+      "expected_id": "Q2",
+      "group": "paraphrase",
+      "id": "case_004",
+      "question": "Which country did Film Beta originate in?"
+    },
+    {
+      "expected_id": "Q3",
+      "group": "clean",
+      "id": "case_005",
+      "question": "Who directed Silver Comet?"
+    },
+    {
+      "expected_id": "Q3",
+      "group": "paraphrase",
+      "id": "case_006",
+      "question": "Which country did Silver Comet originate in?"
+    },
+    {
+      "expected_id": "Q4",
+      "group": "clean",
+      "id": "case_007",
+      "question": "Who directed Ocean Melody?"
+    },
+    {
+      "expected_id": "Q4",
+      "group": "paraphrase",
+      "id": "case_008",
+      "question": "Which country did Ocean Melody originate in?"
+    },
+    {
+      "expected_id": "Q5",
+      "group": "clean",
+      "id": "case_009",
+      "question": "Who directed Garden Secrets?"
+    },
+    {
+      "expected_id": "Q5",
+      "group": "paraphrase",
+      "id": "case_010",
+      "question": "Which country did Garden Secrets originate in?"
+    },
+    {
+      "expected_id": "Q6",
+      "group": "clean",
+      "id": "case_011",
+      "question": "Who directed Winter Journey?"
+    },
+    {
+      "expected_id": "Q6",
+      "group": "paraphrase",
+      "id": "case_012",
+      "question": "Which country did Winter Journey originate in?"
+    },
+    {
+      "expected_id": "Q7",
+      "group": "clean",
+      "id": "case_013",
+      "question": "Who directed Her?"
+    },
+    {
+      "expected_id": "Q7",
+      "group": "paraphrase",
+      "id": "case_014",
+      "question": "Which country did Her originate in?"
+    },
+    {
+      "expected_id": "Q8",
+      "group": "clean",
+      "id": "case_015",
+      "question": "Who directed Star Wars Episode Four?"
+    },
+    {
+      "expected_id": "Q8",
+      "group": "paraphrase",
+      "id": "case_016",
+      "question": "Which country did Star Wars Episode Four originate in?"
+    },
+    {
+      "expected_id": "Q9",
+      "group": "clean",
+      "id": "case_017",
+      "question": "Who directed Alpha Film?"
+    },
+    {
+      "expected_id": "Q9",
+      "group": "paraphrase",
+      "id": "case_018",
+      "question": "Which country did Alpha Film originate in?"
+    },
+    {
+      "expected_id": "Q10",
+      "group": "clean",
+      "id": "case_019",
+      "question": "Who directed Gamma Film?"
+    },
+    {
+      "expected_id": "Q10",
+      "group": "paraphrase",
+      "id": "case_020",
+      "question": "Which country did Gamma Film originate in?"
+    },
+    {
+      "expected_id": "Q1",
+      "group": "alias",
+      "id": "case_021",
+      "question": "Who directed A New Hope?"
+    },
+    {
+      "expected_id": "Q2",
+      "group": "alias",
+      "id": "case_022",
+      "question": "Who directed Beta Picture?"
+    },
+    {
+      "expected_id": "Q3",
+      "group": "alias",
+      "id": "case_023",
+      "question": "Who directed The Comet?"
+    },
+    {
+      "expected_id": "Q4",
+      "group": "alias",
+      "id": "case_024",
+      "question": "Who directed Song of the Sea?"
+    },
+    {
+      "expected_id": "Q1",
+      "group": "typo",
+      "id": "case_025",
+      "question": "Who directed Str Wars?"
+    },
+    {
+      "expected_id": "Q2",
+      "group": "typo",
+      "id": "case_026",
+      "question": "Who directed Film Bta?"
+    },
+    {
+      "expected_id": "Q3",
+      "group": "typo",
+      "id": "case_027",
+      "question": "Who directed Silver Comt?"
+    },
+    {
+      "expected_id": "Q4",
+      "group": "typo",
+      "id": "case_028",
+      "question": "Who directed Ocean Meloy?"
+    },
+    {
+      "expected_id": "Q5",
+      "group": "typo",
+      "id": "case_029",
+      "question": "Who directed Gardn Secrets?"
+    },
+    {
+      "expected_id": "Q6",
+      "group": "typo",
+      "id": "case_030",
+      "question": "Who directed Winter Journy?"
+    },
+    {
+      "expected_id": "Q3",
+      "group": "typo",
+      "id": "case_031",
+      "question": "Who directed Silvr Comt?"
+    },
+    {
+      "expected_id": "Q4",
+      "group": "typo",
+      "id": "case_032",
+      "question": "Who directed Ocan Meloy?"
+    },
+    {
+      "expected_id": null,
+      "group": "refusal",
+      "id": "case_033",
+      "question": "sraW ratS"
+    },
+    {
+      "expected_id": null,
+      "group": "refusal",
+      "id": "case_034",
+      "question": "ateB mliF"
+    },
+    {
+      "expected_id": null,
+      "group": "refusal",
+      "id": "case_035",
+      "question": "temoC revliS"
+    },
+    {
+      "expected_id": null,
+      "group": "refusal",
+      "id": "case_036",
+      "question": "ydoleM naecO"
+    },
+    {
+      "expected_id": null,
+      "group": "refusal",
+      "id": "case_037",
+      "question": "Who directed Completely Unknown Picture?"
+    },
+    {
+      "expected_id": null,
+      "group": "refusal",
+      "id": "case_038",
+      "question": "Who directed The Avengers?"
+    },
+    {
+      "expected_id": null,
+      "group": "refusal",
+      "id": "case_039",
+      "question": "Who directed The Unavailable Movie?"
+    },
+    {
+      "expected_id": null,
+      "group": "refusal",
+      "id": "case_040",
+      "question": "What is the weather tomorrow?"
+    },
+    {
+      "expected_id": null,
+      "group": "refusal",
+      "id": "case_041",
+      "question": "Who directed Hre?"
+    },
+    {
+      "expected_id": null,
+      "group": "refusal",
+      "id": "case_042",
+      "question": "Who directed Shared Title?"
+    },
+    {
+      "expected_id": null,
+      "group": "refusal",
+      "id": "case_043",
+      "question": "Compare Star Wars and Film Beta"
+    },
+    {
+      "expected_id": null,
+      "group": "refusal",
+      "id": "case_044",
+      "question": "Compare Her and Ocean Melody"
+    }
+  ],
+  "entities": {
+    "Q1": {
+      "aliases": [
+        "A New Hope"
+      ],
+      "label": "Star Wars"
+    },
+    "Q10": {
+      "aliases": [
+        "Shared Title"
+      ],
+      "label": "Gamma Film"
+    },
+    "Q2": {
+      "aliases": [
+        "Beta Picture"
+      ],
+      "label": "Film Beta"
+    },
+    "Q3": {
+      "aliases": [
+        "The Comet"
+      ],
+      "label": "Silver Comet"
+    },
+    "Q4": {
+      "aliases": [
+        "Song of the Sea"
+      ],
+      "label": "Ocean Melody"
+    },
+    "Q5": {
+      "aliases": [],
+      "label": "Garden Secrets"
+    },
+    "Q6": {
+      "aliases": [],
+      "label": "Winter Journey"
+    },
+    "Q7": {
+      "aliases": [],
+      "label": "Her"
+    },
+    "Q8": {
+      "aliases": [],
+      "label": "Star Wars Episode Four"
+    },
+    "Q9": {
+      "aliases": [
+        "Shared Title"
+      ],
+      "label": "Alpha Film"
+    }
+  }
+}
