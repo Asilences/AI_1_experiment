@@ -1,5 +1,7 @@
 # Wikidata 电影知识图谱问答
 
+[![CI](https://github.com/Asilences/AI_1_experiment/actions/workflows/ci.yml/badge.svg)](https://github.com/Asilences/AI_1_experiment/actions/workflows/ci.yml)
+
 本项目为《人工智能 I》课程实验，实现并比较两类基于 Wikidata 电影知识图谱的单跳问答系统：
 
 - **A0 管道式系统**：实体链接、TF-IDF 关系分类、图谱事实查询和模板化答案生成。
@@ -67,6 +69,24 @@ What genre is Boss Level?
 ```
 
 系统当前支持四类英文单跳问题：导演、类型、制作国家和原始语言。问题中的电影必须存在于冻结的本地知识库；实体无法链接或缺少事实时，系统会明确拒答。
+
+## 持续集成检查（CI）
+
+推送到 `main`、创建或更新 Pull Request 时，GitHub Actions 会自动在 Ubuntu 和 Windows 的 Python 3.11 环境中检查 Python 语法、致命代码错误、数据准备与管道系统的命令行入口、现有核心测试以及 PowerShell 脚本语法。也可以在仓库的 **Actions → CI → Run workflow** 中手动运行。
+
+CI 使用独立的轻量依赖文件 `requirements-ci.txt`，无需 GPU、实验数据或已训练模型。完整训练和神经模型效果仍需按实验流程单独验证。
+
+在本地复现 Python 检查（可使用独立的检查环境，所有文件保存在项目内）：
+
+```powershell
+python -m venv .work/ci-venv
+.\.work\ci-venv\Scripts\python.exe -m pip install -r requirements-ci.txt
+.\.work\ci-venv\Scripts\python.exe -m compileall -q kgqa tests
+.\.work\ci-venv\Scripts\python.exe -m ruff check --no-cache --select E9,F63,F7,F82 kgqa tests
+.\.work\ci-venv\Scripts\python.exe -m kgqa.prepare --help
+.\.work\ci-venv\Scripts\python.exe -m kgqa.pipeline --help
+.\.work\ci-venv\Scripts\python.exe -m pytest -q
+```
 
 ## 小规模验证实验
 

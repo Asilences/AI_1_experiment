@@ -1,0 +1,9 @@
+# -*- coding: utf-8 -*-
+# CI 仅安装核心测试和命令行入口所需依赖；运行实验仍使用 requirements.txt。
+# 与 requirements.txt 共有的依赖保持相同版本。
+numpy==1.26.4
+scikit-learn==1.6.1
+sacrebleu==2.5.1
+rouge-score==0.1.2
+pytest==8.3.4
+ruff==0.12.12
