@@ -1,0 +1,7 @@
+# CPU-only dependencies for unit tests and the offline linker benchmark.
+# Full neural training still uses requirements.txt.
+numpy==1.26.4
+scikit-learn==1.6.1
+sacrebleu==2.5.1
+rouge-score==0.1.2
+pytest==8.3.4

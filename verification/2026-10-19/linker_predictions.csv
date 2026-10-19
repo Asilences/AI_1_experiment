@@ -1,0 +1,661 @@
+﻿id,group,question,expected_id,setting,repeat,predicted_id,score,status,correct,latency_ms
+case_001,clean,Who directed Star Wars?,Q1,legacy,1,Q1,1.0,exact,True,0.0119
+case_002,paraphrase,Which country did Star Wars originate in?,Q1,legacy,1,Q1,1.0,exact,True,0.0097
+case_003,clean,Who directed Film Beta?,Q2,legacy,1,Q2,1.0,exact,True,0.0086
+case_004,paraphrase,Which country did Film Beta originate in?,Q2,legacy,1,Q2,1.0,exact,True,0.0088
+case_005,clean,Who directed Silver Comet?,Q3,legacy,1,Q3,1.0,exact,True,0.0082
+case_006,paraphrase,Which country did Silver Comet originate in?,Q3,legacy,1,Q3,1.0,exact,True,0.0111
+case_007,clean,Who directed Ocean Melody?,Q4,legacy,1,Q4,1.0,exact,True,0.0125
+case_008,paraphrase,Which country did Ocean Melody originate in?,Q4,legacy,1,Q4,1.0,exact,True,0.0143
+case_009,clean,Who directed Garden Secrets?,Q5,legacy,1,Q5,1.0,exact,True,0.0078
+case_010,paraphrase,Which country did Garden Secrets originate in?,Q5,legacy,1,Q5,1.0,exact,True,0.0087
+case_011,clean,Who directed Winter Journey?,Q6,legacy,1,Q6,1.0,exact,True,0.0074
+case_012,paraphrase,Which country did Winter Journey originate in?,Q6,legacy,1,Q6,1.0,exact,True,0.008
+case_013,clean,Who directed Her?,Q7,legacy,1,Q7,1.0,exact,True,0.0093
+case_014,paraphrase,Which country did Her originate in?,Q7,legacy,1,Q7,1.0,exact,True,0.0081
+case_015,clean,Who directed Star Wars Episode Four?,Q8,legacy,1,Q8,1.0,exact,True,0.0086
+case_016,paraphrase,Which country did Star Wars Episode Four originate in?,Q8,legacy,1,Q8,1.0,exact,True,0.0098
+case_017,clean,Who directed Alpha Film?,Q9,legacy,1,Q9,1.0,exact,True,0.0074
+case_018,paraphrase,Which country did Alpha Film originate in?,Q9,legacy,1,Q9,1.0,exact,True,0.0082
+case_019,clean,Who directed Gamma Film?,Q10,legacy,1,Q10,1.0,exact,True,0.0071
+case_020,paraphrase,Which country did Gamma Film originate in?,Q10,legacy,1,Q10,1.0,exact,True,0.0098
+case_021,alias,Who directed A New Hope?,Q1,legacy,1,Q1,1.0,exact,True,0.0078
+case_022,alias,Who directed Beta Picture?,Q2,legacy,1,Q2,1.0,exact,True,0.0073
+case_023,alias,Who directed The Comet?,Q3,legacy,1,Q3,1.0,exact,True,0.0076
+case_024,alias,Who directed Song of the Sea?,Q4,legacy,1,Q4,1.0,exact,True,0.0076
+case_025,typo,Who directed Str Wars?,Q1,legacy,1,Q8,0.7441860465116279,fuzzy,False,0.1419
+case_026,typo,Who directed Film Bta?,Q2,legacy,1,,0.6666666666666666,not_found,False,0.118
+case_027,typo,Who directed Silver Comt?,Q3,legacy,1,,0.6666666666666666,not_found,False,0.1205
+case_028,typo,Who directed Ocean Meloy?,Q4,legacy,1,,0.6666666666666666,not_found,False,0.1193
+case_029,typo,Who directed Gardn Secrets?,Q5,legacy,1,,0.7,not_found,False,0.123
+case_030,typo,Who directed Winter Journy?,Q6,legacy,1,,0.7,not_found,False,0.1226
+case_031,typo,Who directed Silvr Comt?,Q3,legacy,1,,0.6857142857142857,not_found,False,0.116
+case_032,typo,Who directed Ocan Meloy?,Q4,legacy,1,,0.6857142857142857,not_found,False,0.1182
+case_033,refusal,sraW ratS,,legacy,1,Q1,1.0,fuzzy,False,0.0799
+case_034,refusal,ateB mliF,,legacy,1,Q2,1.0,fuzzy,False,0.082
+case_035,refusal,temoC revliS,,legacy,1,Q3,1.0,fuzzy,False,0.0899
+case_036,refusal,ydoleM naecO,,legacy,1,Q4,1.0,fuzzy,False,0.0886
+case_037,refusal,Who directed Completely Unknown Picture?,,legacy,1,,0.4918032786885246,not_found,True,0.1534
+case_038,refusal,Who directed The Avengers?,,legacy,1,,0.6666666666666666,not_found,True,0.1198
+case_039,refusal,Who directed The Unavailable Movie?,,legacy,1,,0.5357142857142857,not_found,True,0.1444
+case_040,refusal,What is the weather tomorrow?,,legacy,1,,0.64,not_found,True,0.1254
+case_041,refusal,Who directed Hre?,,legacy,1,,0.6,not_found,True,0.0985
+case_042,refusal,Who directed Shared Title?,,legacy,1,,0.0,ambiguous,True,0.0084
+case_043,refusal,Compare Star Wars and Film Beta,,legacy,1,Q1,1.0,exact,False,0.0085
+case_044,refusal,Compare Her and Ocean Melody,,legacy,1,Q4,1.0,exact,False,0.0096
+case_001,clean,Who directed Star Wars?,Q1,legacy,2,Q1,1.0,exact,True,0.0079
+case_002,paraphrase,Which country did Star Wars originate in?,Q1,legacy,2,Q1,1.0,exact,True,0.0087
+case_003,clean,Who directed Film Beta?,Q2,legacy,2,Q2,1.0,exact,True,0.0095
+case_004,paraphrase,Which country did Film Beta originate in?,Q2,legacy,2,Q2,1.0,exact,True,0.008
+case_005,clean,Who directed Silver Comet?,Q3,legacy,2,Q3,1.0,exact,True,0.0073
+case_006,paraphrase,Which country did Silver Comet originate in?,Q3,legacy,2,Q3,1.0,exact,True,0.0081
+case_007,clean,Who directed Ocean Melody?,Q4,legacy,2,Q4,1.0,exact,True,0.0073
+case_008,paraphrase,Which country did Ocean Melody originate in?,Q4,legacy,2,Q4,1.0,exact,True,0.008
+case_009,clean,Who directed Garden Secrets?,Q5,legacy,2,Q5,1.0,exact,True,0.0074
+case_010,paraphrase,Which country did Garden Secrets originate in?,Q5,legacy,2,Q5,1.0,exact,True,0.0081
+case_011,clean,Who directed Winter Journey?,Q6,legacy,2,Q6,1.0,exact,True,0.0074
+case_012,paraphrase,Which country did Winter Journey originate in?,Q6,legacy,2,Q6,1.0,exact,True,0.0079
+case_013,clean,Who directed Her?,Q7,legacy,2,Q7,1.0,exact,True,0.007
+case_014,paraphrase,Which country did Her originate in?,Q7,legacy,2,Q7,1.0,exact,True,0.0079
+case_015,clean,Who directed Star Wars Episode Four?,Q8,legacy,2,Q8,1.0,exact,True,0.0083
+case_016,paraphrase,Which country did Star Wars Episode Four originate in?,Q8,legacy,2,Q8,1.0,exact,True,0.0088
+case_017,clean,Who directed Alpha Film?,Q9,legacy,2,Q9,1.0,exact,True,0.0073
+case_018,paraphrase,Which country did Alpha Film originate in?,Q9,legacy,2,Q9,1.0,exact,True,0.008
+case_019,clean,Who directed Gamma Film?,Q10,legacy,2,Q10,1.0,exact,True,0.0072
+case_020,paraphrase,Which country did Gamma Film originate in?,Q10,legacy,2,Q10,1.0,exact,True,0.0096
+case_021,alias,Who directed A New Hope?,Q1,legacy,2,Q1,1.0,exact,True,0.0075
+case_022,alias,Who directed Beta Picture?,Q2,legacy,2,Q2,1.0,exact,True,0.0073
+case_023,alias,Who directed The Comet?,Q3,legacy,2,Q3,1.0,exact,True,0.0071
+case_024,alias,Who directed Song of the Sea?,Q4,legacy,2,Q4,1.0,exact,True,0.0077
+case_025,typo,Who directed Str Wars?,Q1,legacy,2,Q8,0.7441860465116279,fuzzy,False,0.1209
+case_026,typo,Who directed Film Bta?,Q2,legacy,2,,0.6666666666666666,not_found,False,0.1153
+case_027,typo,Who directed Silver Comt?,Q3,legacy,2,,0.6666666666666666,not_found,False,0.1197
+case_028,typo,Who directed Ocean Meloy?,Q4,legacy,2,,0.6666666666666666,not_found,False,0.1216
+case_029,typo,Who directed Gardn Secrets?,Q5,legacy,2,,0.7,not_found,False,0.1237
+case_030,typo,Who directed Winter Journy?,Q6,legacy,2,,0.7,not_found,False,0.1226
+case_031,typo,Who directed Silvr Comt?,Q3,legacy,2,,0.6857142857142857,not_found,False,0.1162
+case_032,typo,Who directed Ocan Meloy?,Q4,legacy,2,,0.6857142857142857,not_found,False,0.1164
+case_033,refusal,sraW ratS,,legacy,2,Q1,1.0,fuzzy,False,0.0804
+case_034,refusal,ateB mliF,,legacy,2,Q2,1.0,fuzzy,False,0.0824
+case_035,refusal,temoC revliS,,legacy,2,Q3,1.0,fuzzy,False,0.0907
+case_036,refusal,ydoleM naecO,,legacy,2,Q4,1.0,fuzzy,False,0.0891
+case_037,refusal,Who directed Completely Unknown Picture?,,legacy,2,,0.4918032786885246,not_found,True,0.1893
+case_038,refusal,Who directed The Avengers?,,legacy,2,,0.6666666666666666,not_found,True,0.1434
+case_039,refusal,Who directed The Unavailable Movie?,,legacy,2,,0.5357142857142857,not_found,True,0.1459
+case_040,refusal,What is the weather tomorrow?,,legacy,2,,0.64,not_found,True,0.1253
+case_041,refusal,Who directed Hre?,,legacy,2,,0.6,not_found,True,0.0981
+case_042,refusal,Who directed Shared Title?,,legacy,2,,0.0,ambiguous,True,0.0083
+case_043,refusal,Compare Star Wars and Film Beta,,legacy,2,Q1,1.0,exact,False,0.0085
+case_044,refusal,Compare Her and Ocean Melody,,legacy,2,Q4,1.0,exact,False,0.009
+case_001,clean,Who directed Star Wars?,Q1,legacy,3,Q1,1.0,exact,True,0.0077
+case_002,paraphrase,Which country did Star Wars originate in?,Q1,legacy,3,Q1,1.0,exact,True,0.0086
+case_003,clean,Who directed Film Beta?,Q2,legacy,3,Q2,1.0,exact,True,0.0075
+case_004,paraphrase,Which country did Film Beta originate in?,Q2,legacy,3,Q2,1.0,exact,True,0.0082
+case_005,clean,Who directed Silver Comet?,Q3,legacy,3,Q3,1.0,exact,True,0.0078
+case_006,paraphrase,Which country did Silver Comet originate in?,Q3,legacy,3,Q3,1.0,exact,True,0.008
+case_007,clean,Who directed Ocean Melody?,Q4,legacy,3,Q4,1.0,exact,True,0.0075
+case_008,paraphrase,Which country did Ocean Melody originate in?,Q4,legacy,3,Q4,1.0,exact,True,0.0081
+case_009,clean,Who directed Garden Secrets?,Q5,legacy,3,Q5,1.0,exact,True,0.0133
+case_010,paraphrase,Which country did Garden Secrets originate in?,Q5,legacy,3,Q5,1.0,exact,True,0.0081
+case_011,clean,Who directed Winter Journey?,Q6,legacy,3,Q6,1.0,exact,True,0.0074
+case_012,paraphrase,Which country did Winter Journey originate in?,Q6,legacy,3,Q6,1.0,exact,True,0.0079
+case_013,clean,Who directed Her?,Q7,legacy,3,Q7,1.0,exact,True,0.007
+case_014,paraphrase,Which country did Her originate in?,Q7,legacy,3,Q7,1.0,exact,True,0.0078
+case_015,clean,Who directed Star Wars Episode Four?,Q8,legacy,3,Q8,1.0,exact,True,0.0103
+case_016,paraphrase,Which country did Star Wars Episode Four originate in?,Q8,legacy,3,Q8,1.0,exact,True,0.0089
+case_017,clean,Who directed Alpha Film?,Q9,legacy,3,Q9,1.0,exact,True,0.0074
+case_018,paraphrase,Which country did Alpha Film originate in?,Q9,legacy,3,Q9,1.0,exact,True,0.0134
+case_019,clean,Who directed Gamma Film?,Q10,legacy,3,Q10,1.0,exact,True,0.012
+case_020,paraphrase,Which country did Gamma Film originate in?,Q10,legacy,3,Q10,1.0,exact,True,0.0145
+case_021,alias,Who directed A New Hope?,Q1,legacy,3,Q1,1.0,exact,True,0.0083
+case_022,alias,Who directed Beta Picture?,Q2,legacy,3,Q2,1.0,exact,True,0.0078
+case_023,alias,Who directed The Comet?,Q3,legacy,3,Q3,1.0,exact,True,0.0075
+case_024,alias,Who directed Song of the Sea?,Q4,legacy,3,Q4,1.0,exact,True,0.0076
+case_025,typo,Who directed Str Wars?,Q1,legacy,3,Q8,0.7441860465116279,fuzzy,False,0.1248
+case_026,typo,Who directed Film Bta?,Q2,legacy,3,,0.6666666666666666,not_found,False,0.1153
+case_027,typo,Who directed Silver Comt?,Q3,legacy,3,,0.6666666666666666,not_found,False,0.1194
+case_028,typo,Who directed Ocean Meloy?,Q4,legacy,3,,0.6666666666666666,not_found,False,0.1211
+case_029,typo,Who directed Gardn Secrets?,Q5,legacy,3,,0.7,not_found,False,0.1232
+case_030,typo,Who directed Winter Journy?,Q6,legacy,3,,0.7,not_found,False,0.1221
+case_031,typo,Who directed Silvr Comt?,Q3,legacy,3,,0.6857142857142857,not_found,False,0.1154
+case_032,typo,Who directed Ocan Meloy?,Q4,legacy,3,,0.6857142857142857,not_found,False,0.1155
+case_033,refusal,sraW ratS,,legacy,3,Q1,1.0,fuzzy,False,0.0837
+case_034,refusal,ateB mliF,,legacy,3,Q2,1.0,fuzzy,False,0.0884
+case_035,refusal,temoC revliS,,legacy,3,Q3,1.0,fuzzy,False,0.0906
+case_036,refusal,ydoleM naecO,,legacy,3,Q4,1.0,fuzzy,False,0.0892
+case_037,refusal,Who directed Completely Unknown Picture?,,legacy,3,,0.4918032786885246,not_found,True,0.1545
+case_038,refusal,Who directed The Avengers?,,legacy,3,,0.6666666666666666,not_found,True,0.1204
+case_039,refusal,Who directed The Unavailable Movie?,,legacy,3,,0.5357142857142857,not_found,True,0.1422
+case_040,refusal,What is the weather tomorrow?,,legacy,3,,0.64,not_found,True,0.14
+case_041,refusal,Who directed Hre?,,legacy,3,,0.6,not_found,True,0.0995
+case_042,refusal,Who directed Shared Title?,,legacy,3,,0.0,ambiguous,True,0.0084
+case_043,refusal,Compare Star Wars and Film Beta,,legacy,3,Q1,1.0,exact,False,0.009
+case_044,refusal,Compare Her and Ocean Melody,,legacy,3,Q4,1.0,exact,False,0.0081
+case_001,clean,Who directed Star Wars?,Q1,threshold_0.72,1,Q1,1.0,exact,True,0.0363
+case_002,paraphrase,Which country did Star Wars originate in?,Q1,threshold_0.72,1,Q1,1.0,exact,True,0.1126
+case_003,clean,Who directed Film Beta?,Q2,threshold_0.72,1,Q2,1.0,exact,True,0.0275
+case_004,paraphrase,Which country did Film Beta originate in?,Q2,threshold_0.72,1,Q2,1.0,exact,True,0.0293
+case_005,clean,Who directed Silver Comet?,Q3,threshold_0.72,1,Q3,1.0,exact,True,0.0225
+case_006,paraphrase,Which country did Silver Comet originate in?,Q3,threshold_0.72,1,Q3,1.0,exact,True,0.0295
+case_007,clean,Who directed Ocean Melody?,Q4,threshold_0.72,1,Q4,1.0,exact,True,0.0222
+case_008,paraphrase,Which country did Ocean Melody originate in?,Q4,threshold_0.72,1,Q4,1.0,exact,True,0.029
+case_009,clean,Who directed Garden Secrets?,Q5,threshold_0.72,1,Q5,1.0,exact,True,0.0217
+case_010,paraphrase,Which country did Garden Secrets originate in?,Q5,threshold_0.72,1,Q5,1.0,exact,True,0.0261
+case_011,clean,Who directed Winter Journey?,Q6,threshold_0.72,1,Q6,1.0,exact,True,0.0217
+case_012,paraphrase,Which country did Winter Journey originate in?,Q6,threshold_0.72,1,Q6,1.0,exact,True,0.027
+case_013,clean,Who directed Her?,Q7,threshold_0.72,1,Q7,1.0,exact,True,0.021
+case_014,paraphrase,Which country did Her originate in?,Q7,threshold_0.72,1,Q7,1.0,exact,True,0.0254
+case_015,clean,Who directed Star Wars Episode Four?,Q8,threshold_0.72,1,Q8,1.0,exact,True,0.0305
+case_016,paraphrase,Which country did Star Wars Episode Four originate in?,Q8,threshold_0.72,1,Q8,1.0,exact,True,0.0333
+case_017,clean,Who directed Alpha Film?,Q9,threshold_0.72,1,Q9,1.0,exact,True,0.0224
+case_018,paraphrase,Which country did Alpha Film originate in?,Q9,threshold_0.72,1,Q9,1.0,exact,True,0.0274
+case_019,clean,Who directed Gamma Film?,Q10,threshold_0.72,1,Q10,1.0,exact,True,0.0222
+case_020,paraphrase,Which country did Gamma Film originate in?,Q10,threshold_0.72,1,Q10,1.0,exact,True,0.027
+case_021,alias,Who directed A New Hope?,Q1,threshold_0.72,1,Q1,1.0,exact,True,0.0231
+case_022,alias,Who directed Beta Picture?,Q2,threshold_0.72,1,Q2,1.0,exact,True,0.0218
+case_023,alias,Who directed The Comet?,Q3,threshold_0.72,1,Q3,1.0,exact,True,0.0215
+case_024,alias,Who directed Song of the Sea?,Q4,threshold_0.72,1,Q4,1.0,exact,True,0.025
+case_025,typo,Who directed Str Wars?,Q1,threshold_0.72,1,Q1,0.9411764705882353,fuzzy,True,0.8266
+case_026,typo,Who directed Film Bta?,Q2,threshold_0.72,1,Q2,0.9411764705882353,fuzzy,True,0.6986
+case_027,typo,Who directed Silver Comt?,Q3,threshold_0.72,1,Q3,0.9565217391304348,fuzzy,True,0.7453
+case_028,typo,Who directed Ocean Meloy?,Q4,threshold_0.72,1,Q4,0.9565217391304348,fuzzy,True,0.7231
+case_029,typo,Who directed Gardn Secrets?,Q5,threshold_0.72,1,Q5,0.9629629629629629,fuzzy,True,0.7931
+case_030,typo,Who directed Winter Journy?,Q6,threshold_0.72,1,Q6,0.9629629629629629,fuzzy,True,0.738
+case_031,typo,Who directed Silvr Comt?,Q3,threshold_0.72,1,Q3,0.9090909090909091,fuzzy,True,0.7467
+case_032,typo,Who directed Ocan Meloy?,Q4,threshold_0.72,1,Q4,0.9090909090909091,fuzzy,True,0.8783
+case_033,refusal,sraW ratS,,threshold_0.72,1,,0.0,not_found,True,0.362
+case_034,refusal,ateB mliF,,threshold_0.72,1,,0.0,not_found,True,0.1974
+case_035,refusal,temoC revliS,,threshold_0.72,1,,0.0,not_found,True,0.2684
+case_036,refusal,ydoleM naecO,,threshold_0.72,1,,0.0,not_found,True,0.2416
+case_037,refusal,Who directed Completely Unknown Picture?,,threshold_0.72,1,Q2,0.7368421052631579,fuzzy,False,1.0666
+case_038,refusal,Who directed The Avengers?,,threshold_0.72,1,,0.0,not_found,True,0.9368
+case_039,refusal,Who directed The Unavailable Movie?,,threshold_0.72,1,,0.0,not_found,True,0.9398
+case_040,refusal,What is the weather tomorrow?,,threshold_0.72,1,,0.0,not_found,True,0.8934
+case_041,refusal,Who directed Hre?,,threshold_0.72,1,,0.0,not_found,True,0.4173
+case_042,refusal,Who directed Shared Title?,,threshold_0.72,1,,0.0,ambiguous,True,0.0178
+case_043,refusal,Compare Star Wars and Film Beta,,threshold_0.72,1,,0.0,ambiguous,True,0.0179
+case_044,refusal,Compare Her and Ocean Melody,,threshold_0.72,1,,0.0,ambiguous,True,0.0152
+case_001,clean,Who directed Star Wars?,Q1,threshold_0.72,2,Q1,1.0,exact,True,0.0202
+case_002,paraphrase,Which country did Star Wars originate in?,Q1,threshold_0.72,2,Q1,1.0,exact,True,0.1793
+case_003,clean,Who directed Film Beta?,Q2,threshold_0.72,2,Q2,1.0,exact,True,0.0358
+case_004,paraphrase,Which country did Film Beta originate in?,Q2,threshold_0.72,2,Q2,1.0,exact,True,0.0245
+case_005,clean,Who directed Silver Comet?,Q3,threshold_0.72,2,Q3,1.0,exact,True,0.0166
+case_006,paraphrase,Which country did Silver Comet originate in?,Q3,threshold_0.72,2,Q3,1.0,exact,True,0.0273
+case_007,clean,Who directed Ocean Melody?,Q4,threshold_0.72,2,Q4,1.0,exact,True,0.0163
+case_008,paraphrase,Which country did Ocean Melody originate in?,Q4,threshold_0.72,2,Q4,1.0,exact,True,0.0213
+case_009,clean,Who directed Garden Secrets?,Q5,threshold_0.72,2,Q5,1.0,exact,True,0.0164
+case_010,paraphrase,Which country did Garden Secrets originate in?,Q5,threshold_0.72,2,Q5,1.0,exact,True,0.0351
+case_011,clean,Who directed Winter Journey?,Q6,threshold_0.72,2,Q6,1.0,exact,True,0.0547
+case_012,paraphrase,Which country did Winter Journey originate in?,Q6,threshold_0.72,2,Q6,1.0,exact,True,0.0791
+case_013,clean,Who directed Her?,Q7,threshold_0.72,2,Q7,1.0,exact,True,0.0888
+case_014,paraphrase,Which country did Her originate in?,Q7,threshold_0.72,2,Q7,1.0,exact,True,0.042
+case_015,clean,Who directed Star Wars Episode Four?,Q8,threshold_0.72,2,Q8,1.0,exact,True,0.0845
+case_016,paraphrase,Which country did Star Wars Episode Four originate in?,Q8,threshold_0.72,2,Q8,1.0,exact,True,0.0608
+case_017,clean,Who directed Alpha Film?,Q9,threshold_0.72,2,Q9,1.0,exact,True,0.0372
+case_018,paraphrase,Which country did Alpha Film originate in?,Q9,threshold_0.72,2,Q9,1.0,exact,True,0.0255
+case_019,clean,Who directed Gamma Film?,Q10,threshold_0.72,2,Q10,1.0,exact,True,0.0168
+case_020,paraphrase,Which country did Gamma Film originate in?,Q10,threshold_0.72,2,Q10,1.0,exact,True,0.0393
+case_021,alias,Who directed A New Hope?,Q1,threshold_0.72,2,Q1,1.0,exact,True,0.0184
+case_022,alias,Who directed Beta Picture?,Q2,threshold_0.72,2,Q2,1.0,exact,True,0.016
+case_023,alias,Who directed The Comet?,Q3,threshold_0.72,2,Q3,1.0,exact,True,0.0162
+case_024,alias,Who directed Song of the Sea?,Q4,threshold_0.72,2,Q4,1.0,exact,True,0.0198
+case_025,typo,Who directed Str Wars?,Q1,threshold_0.72,2,Q1,0.9411764705882353,fuzzy,True,0.903
+case_026,typo,Who directed Film Bta?,Q2,threshold_0.72,2,Q2,0.9411764705882353,fuzzy,True,0.8713
+case_027,typo,Who directed Silver Comt?,Q3,threshold_0.72,2,Q3,0.9565217391304348,fuzzy,True,0.7692
+case_028,typo,Who directed Ocean Meloy?,Q4,threshold_0.72,2,Q4,0.9565217391304348,fuzzy,True,0.9662
+case_029,typo,Who directed Gardn Secrets?,Q5,threshold_0.72,2,Q5,0.9629629629629629,fuzzy,True,0.8187
+case_030,typo,Who directed Winter Journy?,Q6,threshold_0.72,2,Q6,0.9629629629629629,fuzzy,True,0.7218
+case_031,typo,Who directed Silvr Comt?,Q3,threshold_0.72,2,Q3,0.9090909090909091,fuzzy,True,0.7661
+case_032,typo,Who directed Ocan Meloy?,Q4,threshold_0.72,2,Q4,0.9090909090909091,fuzzy,True,0.6889
+case_033,refusal,sraW ratS,,threshold_0.72,2,,0.0,not_found,True,0.1026
+case_034,refusal,ateB mliF,,threshold_0.72,2,,0.0,not_found,True,0.0929
+case_035,refusal,temoC revliS,,threshold_0.72,2,,0.0,not_found,True,0.3452
+case_036,refusal,ydoleM naecO,,threshold_0.72,2,,0.0,not_found,True,0.2196
+case_037,refusal,Who directed Completely Unknown Picture?,,threshold_0.72,2,Q2,0.7368421052631579,fuzzy,False,1.0635
+case_038,refusal,Who directed The Avengers?,,threshold_0.72,2,,0.0,not_found,True,1.0877
+case_039,refusal,Who directed The Unavailable Movie?,,threshold_0.72,2,,0.0,not_found,True,0.9727
+case_040,refusal,What is the weather tomorrow?,,threshold_0.72,2,,0.0,not_found,True,0.8354
+case_041,refusal,Who directed Hre?,,threshold_0.72,2,,0.0,not_found,True,0.4243
+case_042,refusal,Who directed Shared Title?,,threshold_0.72,2,,0.0,ambiguous,True,0.0185
+case_043,refusal,Compare Star Wars and Film Beta,,threshold_0.72,2,,0.0,ambiguous,True,0.0179
+case_044,refusal,Compare Her and Ocean Melody,,threshold_0.72,2,,0.0,ambiguous,True,0.0155
+case_001,clean,Who directed Star Wars?,Q1,threshold_0.72,3,Q1,1.0,exact,True,0.0198
+case_002,paraphrase,Which country did Star Wars originate in?,Q1,threshold_0.72,3,Q1,1.0,exact,True,0.0805
+case_003,clean,Who directed Film Beta?,Q2,threshold_0.72,3,Q2,1.0,exact,True,0.0198
+case_004,paraphrase,Which country did Film Beta originate in?,Q2,threshold_0.72,3,Q2,1.0,exact,True,0.023
+case_005,clean,Who directed Silver Comet?,Q3,threshold_0.72,3,Q3,1.0,exact,True,0.0169
+case_006,paraphrase,Which country did Silver Comet originate in?,Q3,threshold_0.72,3,Q3,1.0,exact,True,0.022
+case_007,clean,Who directed Ocean Melody?,Q4,threshold_0.72,3,Q4,1.0,exact,True,0.016
+case_008,paraphrase,Which country did Ocean Melody originate in?,Q4,threshold_0.72,3,Q4,1.0,exact,True,0.0208
+case_009,clean,Who directed Garden Secrets?,Q5,threshold_0.72,3,Q5,1.0,exact,True,0.0153
+case_010,paraphrase,Which country did Garden Secrets originate in?,Q5,threshold_0.72,3,Q5,1.0,exact,True,0.0206
+case_011,clean,Who directed Winter Journey?,Q6,threshold_0.72,3,Q6,1.0,exact,True,0.0153
+case_012,paraphrase,Which country did Winter Journey originate in?,Q6,threshold_0.72,3,Q6,1.0,exact,True,0.0206
+case_013,clean,Who directed Her?,Q7,threshold_0.72,3,Q7,1.0,exact,True,0.0136
+case_014,paraphrase,Which country did Her originate in?,Q7,threshold_0.72,3,Q7,1.0,exact,True,0.0194
+case_015,clean,Who directed Star Wars Episode Four?,Q8,threshold_0.72,3,Q8,1.0,exact,True,0.0256
+case_016,paraphrase,Which country did Star Wars Episode Four originate in?,Q8,threshold_0.72,3,Q8,1.0,exact,True,0.0264
+case_017,clean,Who directed Alpha Film?,Q9,threshold_0.72,3,Q9,1.0,exact,True,0.0162
+case_018,paraphrase,Which country did Alpha Film originate in?,Q9,threshold_0.72,3,Q9,1.0,exact,True,0.021
+case_019,clean,Who directed Gamma Film?,Q10,threshold_0.72,3,Q10,1.0,exact,True,0.015
+case_020,paraphrase,Which country did Gamma Film originate in?,Q10,threshold_0.72,3,Q10,1.0,exact,True,0.0204
+case_021,alias,Who directed A New Hope?,Q1,threshold_0.72,3,Q1,1.0,exact,True,0.017
+case_022,alias,Who directed Beta Picture?,Q2,threshold_0.72,3,Q2,1.0,exact,True,0.0149
+case_023,alias,Who directed The Comet?,Q3,threshold_0.72,3,Q3,1.0,exact,True,0.015
+case_024,alias,Who directed Song of the Sea?,Q4,threshold_0.72,3,Q4,1.0,exact,True,0.0185
+case_025,typo,Who directed Str Wars?,Q1,threshold_0.72,3,Q1,0.9411764705882353,fuzzy,True,0.804
+case_026,typo,Who directed Film Bta?,Q2,threshold_0.72,3,Q2,0.9411764705882353,fuzzy,True,0.698
+case_027,typo,Who directed Silver Comt?,Q3,threshold_0.72,3,Q3,0.9565217391304348,fuzzy,True,0.7802
+case_028,typo,Who directed Ocean Meloy?,Q4,threshold_0.72,3,Q4,0.9565217391304348,fuzzy,True,0.7021
+case_029,typo,Who directed Gardn Secrets?,Q5,threshold_0.72,3,Q5,0.9629629629629629,fuzzy,True,0.8898
+case_030,typo,Who directed Winter Journy?,Q6,threshold_0.72,3,Q6,0.9629629629629629,fuzzy,True,0.8868
+case_031,typo,Who directed Silvr Comt?,Q3,threshold_0.72,3,Q3,0.9090909090909091,fuzzy,True,1.0751
+case_032,typo,Who directed Ocan Meloy?,Q4,threshold_0.72,3,Q4,0.9090909090909091,fuzzy,True,0.7026
+case_033,refusal,sraW ratS,,threshold_0.72,3,,0.0,not_found,True,0.1425
+case_034,refusal,ateB mliF,,threshold_0.72,3,,0.0,not_found,True,0.0978
+case_035,refusal,temoC revliS,,threshold_0.72,3,,0.0,not_found,True,0.2632
+case_036,refusal,ydoleM naecO,,threshold_0.72,3,,0.0,not_found,True,0.2164
+case_037,refusal,Who directed Completely Unknown Picture?,,threshold_0.72,3,Q2,0.7368421052631579,fuzzy,False,1.0952
+case_038,refusal,Who directed The Avengers?,,threshold_0.72,3,,0.0,not_found,True,1.0418
+case_039,refusal,Who directed The Unavailable Movie?,,threshold_0.72,3,,0.0,not_found,True,0.9878
+case_040,refusal,What is the weather tomorrow?,,threshold_0.72,3,,0.0,not_found,True,1.3571
+case_041,refusal,Who directed Hre?,,threshold_0.72,3,,0.0,not_found,True,0.4543
+case_042,refusal,Who directed Shared Title?,,threshold_0.72,3,,0.0,ambiguous,True,0.0195
+case_043,refusal,Compare Star Wars and Film Beta,,threshold_0.72,3,,0.0,ambiguous,True,0.0194
+case_044,refusal,Compare Her and Ocean Melody,,threshold_0.72,3,,0.0,ambiguous,True,0.0163
+case_001,clean,Who directed Star Wars?,Q1,threshold_0.80,1,Q1,1.0,exact,True,0.0373
+case_002,paraphrase,Which country did Star Wars originate in?,Q1,threshold_0.80,1,Q1,1.0,exact,True,0.1578
+case_003,clean,Who directed Film Beta?,Q2,threshold_0.80,1,Q2,1.0,exact,True,0.0369
+case_004,paraphrase,Which country did Film Beta originate in?,Q2,threshold_0.80,1,Q2,1.0,exact,True,0.0467
+case_005,clean,Who directed Silver Comet?,Q3,threshold_0.80,1,Q3,1.0,exact,True,0.0398
+case_006,paraphrase,Which country did Silver Comet originate in?,Q3,threshold_0.80,1,Q3,1.0,exact,True,0.0468
+case_007,clean,Who directed Ocean Melody?,Q4,threshold_0.80,1,Q4,1.0,exact,True,0.0314
+case_008,paraphrase,Which country did Ocean Melody originate in?,Q4,threshold_0.80,1,Q4,1.0,exact,True,0.0434
+case_009,clean,Who directed Garden Secrets?,Q5,threshold_0.80,1,Q5,1.0,exact,True,0.0275
+case_010,paraphrase,Which country did Garden Secrets originate in?,Q5,threshold_0.80,1,Q5,1.0,exact,True,0.0361
+case_011,clean,Who directed Winter Journey?,Q6,threshold_0.80,1,Q6,1.0,exact,True,0.0288
+case_012,paraphrase,Which country did Winter Journey originate in?,Q6,threshold_0.80,1,Q6,1.0,exact,True,0.0393
+case_013,clean,Who directed Her?,Q7,threshold_0.80,1,Q7,1.0,exact,True,0.023
+case_014,paraphrase,Which country did Her originate in?,Q7,threshold_0.80,1,Q7,1.0,exact,True,0.034
+case_015,clean,Who directed Star Wars Episode Four?,Q8,threshold_0.80,1,Q8,1.0,exact,True,0.0415
+case_016,paraphrase,Which country did Star Wars Episode Four originate in?,Q8,threshold_0.80,1,Q8,1.0,exact,True,0.0463
+case_017,clean,Who directed Alpha Film?,Q9,threshold_0.80,1,Q9,1.0,exact,True,0.0277
+case_018,paraphrase,Which country did Alpha Film originate in?,Q9,threshold_0.80,1,Q9,1.0,exact,True,0.0374
+case_019,clean,Who directed Gamma Film?,Q10,threshold_0.80,1,Q10,1.0,exact,True,0.0303
+case_020,paraphrase,Which country did Gamma Film originate in?,Q10,threshold_0.80,1,Q10,1.0,exact,True,0.039
+case_021,alias,Who directed A New Hope?,Q1,threshold_0.80,1,Q1,1.0,exact,True,0.0376
+case_022,alias,Who directed Beta Picture?,Q2,threshold_0.80,1,Q2,1.0,exact,True,0.0301
+case_023,alias,Who directed The Comet?,Q3,threshold_0.80,1,Q3,1.0,exact,True,0.0271
+case_024,alias,Who directed Song of the Sea?,Q4,threshold_0.80,1,Q4,1.0,exact,True,0.0342
+case_025,typo,Who directed Str Wars?,Q1,threshold_0.80,1,Q1,0.9411764705882353,fuzzy,True,0.7886
+case_026,typo,Who directed Film Bta?,Q2,threshold_0.80,1,Q2,0.9411764705882353,fuzzy,True,0.863
+case_027,typo,Who directed Silver Comt?,Q3,threshold_0.80,1,Q3,0.9565217391304348,fuzzy,True,0.6829
+case_028,typo,Who directed Ocean Meloy?,Q4,threshold_0.80,1,Q4,0.9565217391304348,fuzzy,True,0.6413
+case_029,typo,Who directed Gardn Secrets?,Q5,threshold_0.80,1,Q5,0.9629629629629629,fuzzy,True,0.6301
+case_030,typo,Who directed Winter Journy?,Q6,threshold_0.80,1,Q6,0.9629629629629629,fuzzy,True,0.5835
+case_031,typo,Who directed Silvr Comt?,Q3,threshold_0.80,1,Q3,0.9090909090909091,fuzzy,True,0.5511
+case_032,typo,Who directed Ocan Meloy?,Q4,threshold_0.80,1,Q4,0.9090909090909091,fuzzy,True,0.5429
+case_033,refusal,sraW ratS,,threshold_0.80,1,,0.0,not_found,True,0.1008
+case_034,refusal,ateB mliF,,threshold_0.80,1,,0.0,not_found,True,0.0916
+case_035,refusal,temoC revliS,,threshold_0.80,1,,0.0,not_found,True,0.1609
+case_036,refusal,ydoleM naecO,,threshold_0.80,1,,0.0,not_found,True,0.1706
+case_037,refusal,Who directed Completely Unknown Picture?,,threshold_0.80,1,,0.0,not_found,True,0.8738
+case_038,refusal,Who directed The Avengers?,,threshold_0.80,1,,0.0,not_found,True,0.6808
+case_039,refusal,Who directed The Unavailable Movie?,,threshold_0.80,1,,0.0,not_found,True,0.7671
+case_040,refusal,What is the weather tomorrow?,,threshold_0.80,1,,0.0,not_found,True,0.6632
+case_041,refusal,Who directed Hre?,,threshold_0.80,1,,0.0,not_found,True,0.2958
+case_042,refusal,Who directed Shared Title?,,threshold_0.80,1,,0.0,ambiguous,True,0.0174
+case_043,refusal,Compare Star Wars and Film Beta,,threshold_0.80,1,,0.0,ambiguous,True,0.0186
+case_044,refusal,Compare Her and Ocean Melody,,threshold_0.80,1,,0.0,ambiguous,True,0.0154
+case_001,clean,Who directed Star Wars?,Q1,threshold_0.80,2,Q1,1.0,exact,True,0.0201
+case_002,paraphrase,Which country did Star Wars originate in?,Q1,threshold_0.80,2,Q1,1.0,exact,True,0.0837
+case_003,clean,Who directed Film Beta?,Q2,threshold_0.80,2,Q2,1.0,exact,True,0.0201
+case_004,paraphrase,Which country did Film Beta originate in?,Q2,threshold_0.80,2,Q2,1.0,exact,True,0.0229
+case_005,clean,Who directed Silver Comet?,Q3,threshold_0.80,2,Q3,1.0,exact,True,0.0165
+case_006,paraphrase,Which country did Silver Comet originate in?,Q3,threshold_0.80,2,Q3,1.0,exact,True,0.022
+case_007,clean,Who directed Ocean Melody?,Q4,threshold_0.80,2,Q4,1.0,exact,True,0.0159
+case_008,paraphrase,Which country did Ocean Melody originate in?,Q4,threshold_0.80,2,Q4,1.0,exact,True,0.0216
+case_009,clean,Who directed Garden Secrets?,Q5,threshold_0.80,2,Q5,1.0,exact,True,0.0156
+case_010,paraphrase,Which country did Garden Secrets originate in?,Q5,threshold_0.80,2,Q5,1.0,exact,True,0.0213
+case_011,clean,Who directed Winter Journey?,Q6,threshold_0.80,2,Q6,1.0,exact,True,0.0159
+case_012,paraphrase,Which country did Winter Journey originate in?,Q6,threshold_0.80,2,Q6,1.0,exact,True,0.0209
+case_013,clean,Who directed Her?,Q7,threshold_0.80,2,Q7,1.0,exact,True,0.014
+case_014,paraphrase,Which country did Her originate in?,Q7,threshold_0.80,2,Q7,1.0,exact,True,0.0195
+case_015,clean,Who directed Star Wars Episode Four?,Q8,threshold_0.80,2,Q8,1.0,exact,True,0.026
+case_016,paraphrase,Which country did Star Wars Episode Four originate in?,Q8,threshold_0.80,2,Q8,1.0,exact,True,0.0294
+case_017,clean,Who directed Alpha Film?,Q9,threshold_0.80,2,Q9,1.0,exact,True,0.0182
+case_018,paraphrase,Which country did Alpha Film originate in?,Q9,threshold_0.80,2,Q9,1.0,exact,True,0.0227
+case_019,clean,Who directed Gamma Film?,Q10,threshold_0.80,2,Q10,1.0,exact,True,0.0157
+case_020,paraphrase,Which country did Gamma Film originate in?,Q10,threshold_0.80,2,Q10,1.0,exact,True,0.0212
+case_021,alias,Who directed A New Hope?,Q1,threshold_0.80,2,Q1,1.0,exact,True,0.0176
+case_022,alias,Who directed Beta Picture?,Q2,threshold_0.80,2,Q2,1.0,exact,True,0.016
+case_023,alias,Who directed The Comet?,Q3,threshold_0.80,2,Q3,1.0,exact,True,0.0154
+case_024,alias,Who directed Song of the Sea?,Q4,threshold_0.80,2,Q4,1.0,exact,True,0.0189
+case_025,typo,Who directed Str Wars?,Q1,threshold_0.80,2,Q1,0.9411764705882353,fuzzy,True,0.5472
+case_026,typo,Who directed Film Bta?,Q2,threshold_0.80,2,Q2,0.9411764705882353,fuzzy,True,0.5021
+case_027,typo,Who directed Silver Comt?,Q3,threshold_0.80,2,Q3,0.9565217391304348,fuzzy,True,0.5697
+case_028,typo,Who directed Ocean Meloy?,Q4,threshold_0.80,2,Q4,0.9565217391304348,fuzzy,True,0.7132
+case_029,typo,Who directed Gardn Secrets?,Q5,threshold_0.80,2,Q5,0.9629629629629629,fuzzy,True,0.6016
+case_030,typo,Who directed Winter Journy?,Q6,threshold_0.80,2,Q6,0.9629629629629629,fuzzy,True,0.5822
+case_031,typo,Who directed Silvr Comt?,Q3,threshold_0.80,2,Q3,0.9090909090909091,fuzzy,True,0.5555
+case_032,typo,Who directed Ocan Meloy?,Q4,threshold_0.80,2,Q4,0.9090909090909091,fuzzy,True,0.544
+case_033,refusal,sraW ratS,,threshold_0.80,2,,0.0,not_found,True,0.1
+case_034,refusal,ateB mliF,,threshold_0.80,2,,0.0,not_found,True,0.0912
+case_035,refusal,temoC revliS,,threshold_0.80,2,,0.0,not_found,True,0.1638
+case_036,refusal,ydoleM naecO,,threshold_0.80,2,,0.0,not_found,True,0.1703
+case_037,refusal,Who directed Completely Unknown Picture?,,threshold_0.80,2,,0.0,not_found,True,0.7581
+case_038,refusal,Who directed The Avengers?,,threshold_0.80,2,,0.0,not_found,True,0.5959
+case_039,refusal,Who directed The Unavailable Movie?,,threshold_0.80,2,,0.0,not_found,True,0.7582
+case_040,refusal,What is the weather tomorrow?,,threshold_0.80,2,,0.0,not_found,True,0.6641
+case_041,refusal,Who directed Hre?,,threshold_0.80,2,,0.0,not_found,True,0.2964
+case_042,refusal,Who directed Shared Title?,,threshold_0.80,2,,0.0,ambiguous,True,0.016
+case_043,refusal,Compare Star Wars and Film Beta,,threshold_0.80,2,,0.0,ambiguous,True,0.0181
+case_044,refusal,Compare Her and Ocean Melody,,threshold_0.80,2,,0.0,ambiguous,True,0.0152
+case_001,clean,Who directed Star Wars?,Q1,threshold_0.80,3,Q1,1.0,exact,True,0.0196
+case_002,paraphrase,Which country did Star Wars originate in?,Q1,threshold_0.80,3,Q1,1.0,exact,True,0.0812
+case_003,clean,Who directed Film Beta?,Q2,threshold_0.80,3,Q2,1.0,exact,True,0.0202
+case_004,paraphrase,Which country did Film Beta originate in?,Q2,threshold_0.80,3,Q2,1.0,exact,True,0.0233
+case_005,clean,Who directed Silver Comet?,Q3,threshold_0.80,3,Q3,1.0,exact,True,0.0166
+case_006,paraphrase,Which country did Silver Comet originate in?,Q3,threshold_0.80,3,Q3,1.0,exact,True,0.022
+case_007,clean,Who directed Ocean Melody?,Q4,threshold_0.80,3,Q4,1.0,exact,True,0.0153
+case_008,paraphrase,Which country did Ocean Melody originate in?,Q4,threshold_0.80,3,Q4,1.0,exact,True,0.0211
+case_009,clean,Who directed Garden Secrets?,Q5,threshold_0.80,3,Q5,1.0,exact,True,0.0164
+case_010,paraphrase,Which country did Garden Secrets originate in?,Q5,threshold_0.80,3,Q5,1.0,exact,True,0.0212
+case_011,clean,Who directed Winter Journey?,Q6,threshold_0.80,3,Q6,1.0,exact,True,0.0156
+case_012,paraphrase,Which country did Winter Journey originate in?,Q6,threshold_0.80,3,Q6,1.0,exact,True,0.0208
+case_013,clean,Who directed Her?,Q7,threshold_0.80,3,Q7,1.0,exact,True,0.0137
+case_014,paraphrase,Which country did Her originate in?,Q7,threshold_0.80,3,Q7,1.0,exact,True,0.0199
+case_015,clean,Who directed Star Wars Episode Four?,Q8,threshold_0.80,3,Q8,1.0,exact,True,0.0249
+case_016,paraphrase,Which country did Star Wars Episode Four originate in?,Q8,threshold_0.80,3,Q8,1.0,exact,True,0.0271
+case_017,clean,Who directed Alpha Film?,Q9,threshold_0.80,3,Q9,1.0,exact,True,0.016
+case_018,paraphrase,Which country did Alpha Film originate in?,Q9,threshold_0.80,3,Q9,1.0,exact,True,0.0216
+case_019,clean,Who directed Gamma Film?,Q10,threshold_0.80,3,Q10,1.0,exact,True,0.0155
+case_020,paraphrase,Which country did Gamma Film originate in?,Q10,threshold_0.80,3,Q10,1.0,exact,True,0.0212
+case_021,alias,Who directed A New Hope?,Q1,threshold_0.80,3,Q1,1.0,exact,True,0.0194
+case_022,alias,Who directed Beta Picture?,Q2,threshold_0.80,3,Q2,1.0,exact,True,0.0161
+case_023,alias,Who directed The Comet?,Q3,threshold_0.80,3,Q3,1.0,exact,True,0.0156
+case_024,alias,Who directed Song of the Sea?,Q4,threshold_0.80,3,Q4,1.0,exact,True,0.0192
+case_025,typo,Who directed Str Wars?,Q1,threshold_0.80,3,Q1,0.9411764705882353,fuzzy,True,0.5327
+case_026,typo,Who directed Film Bta?,Q2,threshold_0.80,3,Q2,0.9411764705882353,fuzzy,True,0.4963
+case_027,typo,Who directed Silver Comt?,Q3,threshold_0.80,3,Q3,0.9565217391304348,fuzzy,True,0.5706
+case_028,typo,Who directed Ocean Meloy?,Q4,threshold_0.80,3,Q4,0.9565217391304348,fuzzy,True,0.5602
+case_029,typo,Who directed Gardn Secrets?,Q5,threshold_0.80,3,Q5,0.9629629629629629,fuzzy,True,0.5807
+case_030,typo,Who directed Winter Journy?,Q6,threshold_0.80,3,Q6,0.9629629629629629,fuzzy,True,0.5781
+case_031,typo,Who directed Silvr Comt?,Q3,threshold_0.80,3,Q3,0.9090909090909091,fuzzy,True,0.5869
+case_032,typo,Who directed Ocan Meloy?,Q4,threshold_0.80,3,Q4,0.9090909090909091,fuzzy,True,0.6489
+case_033,refusal,sraW ratS,,threshold_0.80,3,,0.0,not_found,True,0.1114
+case_034,refusal,ateB mliF,,threshold_0.80,3,,0.0,not_found,True,0.0928
+case_035,refusal,temoC revliS,,threshold_0.80,3,,0.0,not_found,True,0.161
+case_036,refusal,ydoleM naecO,,threshold_0.80,3,,0.0,not_found,True,0.1701
+case_037,refusal,Who directed Completely Unknown Picture?,,threshold_0.80,3,,0.0,not_found,True,0.7646
+case_038,refusal,Who directed The Avengers?,,threshold_0.80,3,,0.0,not_found,True,0.6058
+case_039,refusal,Who directed The Unavailable Movie?,,threshold_0.80,3,,0.0,not_found,True,0.7622
+case_040,refusal,What is the weather tomorrow?,,threshold_0.80,3,,0.0,not_found,True,0.8606
+case_041,refusal,Who directed Hre?,,threshold_0.80,3,,0.0,not_found,True,0.5376
+case_042,refusal,Who directed Shared Title?,,threshold_0.80,3,,0.0,ambiguous,True,0.0344
+case_043,refusal,Compare Star Wars and Film Beta,,threshold_0.80,3,,0.0,ambiguous,True,0.0346
+case_044,refusal,Compare Her and Ocean Melody,,threshold_0.80,3,,0.0,ambiguous,True,0.0317
+case_001,clean,Who directed Star Wars?,Q1,threshold_0.88,1,Q1,1.0,exact,True,0.0401
+case_002,paraphrase,Which country did Star Wars originate in?,Q1,threshold_0.88,1,Q1,1.0,exact,True,0.0979
+case_003,clean,Who directed Film Beta?,Q2,threshold_0.88,1,Q2,1.0,exact,True,0.0291
+case_004,paraphrase,Which country did Film Beta originate in?,Q2,threshold_0.88,1,Q2,1.0,exact,True,0.0319
+case_005,clean,Who directed Silver Comet?,Q3,threshold_0.88,1,Q3,1.0,exact,True,0.0228
+case_006,paraphrase,Which country did Silver Comet originate in?,Q3,threshold_0.88,1,Q3,1.0,exact,True,0.0324
+case_007,clean,Who directed Ocean Melody?,Q4,threshold_0.88,1,Q4,1.0,exact,True,0.0225
+case_008,paraphrase,Which country did Ocean Melody originate in?,Q4,threshold_0.88,1,Q4,1.0,exact,True,0.0286
+case_009,clean,Who directed Garden Secrets?,Q5,threshold_0.88,1,Q5,1.0,exact,True,0.0241
+case_010,paraphrase,Which country did Garden Secrets originate in?,Q5,threshold_0.88,1,Q5,1.0,exact,True,0.031
+case_011,clean,Who directed Winter Journey?,Q6,threshold_0.88,1,Q6,1.0,exact,True,0.0222
+case_012,paraphrase,Which country did Winter Journey originate in?,Q6,threshold_0.88,1,Q6,1.0,exact,True,0.0292
+case_013,clean,Who directed Her?,Q7,threshold_0.88,1,Q7,1.0,exact,True,0.0212
+case_014,paraphrase,Which country did Her originate in?,Q7,threshold_0.88,1,Q7,1.0,exact,True,0.0295
+case_015,clean,Who directed Star Wars Episode Four?,Q8,threshold_0.88,1,Q8,1.0,exact,True,0.0341
+case_016,paraphrase,Which country did Star Wars Episode Four originate in?,Q8,threshold_0.88,1,Q8,1.0,exact,True,0.0338
+case_017,clean,Who directed Alpha Film?,Q9,threshold_0.88,1,Q9,1.0,exact,True,0.022
+case_018,paraphrase,Which country did Alpha Film originate in?,Q9,threshold_0.88,1,Q9,1.0,exact,True,0.0275
+case_019,clean,Who directed Gamma Film?,Q10,threshold_0.88,1,Q10,1.0,exact,True,0.022
+case_020,paraphrase,Which country did Gamma Film originate in?,Q10,threshold_0.88,1,Q10,1.0,exact,True,0.0276
+case_021,alias,Who directed A New Hope?,Q1,threshold_0.88,1,Q1,1.0,exact,True,0.0249
+case_022,alias,Who directed Beta Picture?,Q2,threshold_0.88,1,Q2,1.0,exact,True,0.0217
+case_023,alias,Who directed The Comet?,Q3,threshold_0.88,1,Q3,1.0,exact,True,0.0212
+case_024,alias,Who directed Song of the Sea?,Q4,threshold_0.88,1,Q4,1.0,exact,True,0.0256
+case_025,typo,Who directed Str Wars?,Q1,threshold_0.88,1,Q1,0.9411764705882353,fuzzy,True,0.493
+case_026,typo,Who directed Film Bta?,Q2,threshold_0.88,1,Q2,0.9411764705882353,fuzzy,True,0.4647
+case_027,typo,Who directed Silver Comt?,Q3,threshold_0.88,1,Q3,0.9565217391304348,fuzzy,True,0.4722
+case_028,typo,Who directed Ocean Meloy?,Q4,threshold_0.88,1,Q4,0.9565217391304348,fuzzy,True,0.4961
+case_029,typo,Who directed Gardn Secrets?,Q5,threshold_0.88,1,Q5,0.9629629629629629,fuzzy,True,0.4952
+case_030,typo,Who directed Winter Journy?,Q6,threshold_0.88,1,Q6,0.9629629629629629,fuzzy,True,0.4693
+case_031,typo,Who directed Silvr Comt?,Q3,threshold_0.88,1,Q3,0.9090909090909091,fuzzy,True,0.4616
+case_032,typo,Who directed Ocan Meloy?,Q4,threshold_0.88,1,Q4,0.9090909090909091,fuzzy,True,0.47
+case_033,refusal,sraW ratS,,threshold_0.88,1,,0.0,not_found,True,0.0993
+case_034,refusal,ateB mliF,,threshold_0.88,1,,0.0,not_found,True,0.0905
+case_035,refusal,temoC revliS,,threshold_0.88,1,,0.0,not_found,True,0.1515
+case_036,refusal,ydoleM naecO,,threshold_0.88,1,,0.0,not_found,True,0.1619
+case_037,refusal,Who directed Completely Unknown Picture?,,threshold_0.88,1,,0.0,not_found,True,0.6769
+case_038,refusal,Who directed The Avengers?,,threshold_0.88,1,,0.0,not_found,True,0.4672
+case_039,refusal,Who directed The Unavailable Movie?,,threshold_0.88,1,,0.0,not_found,True,0.6601
+case_040,refusal,What is the weather tomorrow?,,threshold_0.88,1,,0.0,not_found,True,0.564
+case_041,refusal,Who directed Hre?,,threshold_0.88,1,,0.0,not_found,True,0.2744
+case_042,refusal,Who directed Shared Title?,,threshold_0.88,1,,0.0,ambiguous,True,0.0197
+case_043,refusal,Compare Star Wars and Film Beta,,threshold_0.88,1,,0.0,ambiguous,True,0.0217
+case_044,refusal,Compare Her and Ocean Melody,,threshold_0.88,1,,0.0,ambiguous,True,0.019
+case_001,clean,Who directed Star Wars?,Q1,threshold_0.88,2,Q1,1.0,exact,True,0.0262
+case_002,paraphrase,Which country did Star Wars originate in?,Q1,threshold_0.88,2,Q1,1.0,exact,True,0.087
+case_003,clean,Who directed Film Beta?,Q2,threshold_0.88,2,Q2,1.0,exact,True,0.0253
+case_004,paraphrase,Which country did Film Beta originate in?,Q2,threshold_0.88,2,Q2,1.0,exact,True,0.0285
+case_005,clean,Who directed Silver Comet?,Q3,threshold_0.88,2,Q3,1.0,exact,True,0.0236
+case_006,paraphrase,Which country did Silver Comet originate in?,Q3,threshold_0.88,2,Q3,1.0,exact,True,0.03
+case_007,clean,Who directed Ocean Melody?,Q4,threshold_0.88,2,Q4,1.0,exact,True,0.022
+case_008,paraphrase,Which country did Ocean Melody originate in?,Q4,threshold_0.88,2,Q4,1.0,exact,True,0.0301
+case_009,clean,Who directed Garden Secrets?,Q5,threshold_0.88,2,Q5,1.0,exact,True,0.0219
+case_010,paraphrase,Which country did Garden Secrets originate in?,Q5,threshold_0.88,2,Q5,1.0,exact,True,0.0276
+case_011,clean,Who directed Winter Journey?,Q6,threshold_0.88,2,Q6,1.0,exact,True,0.0222
+case_012,paraphrase,Which country did Winter Journey originate in?,Q6,threshold_0.88,2,Q6,1.0,exact,True,0.0275
+case_013,clean,Who directed Her?,Q7,threshold_0.88,2,Q7,1.0,exact,True,0.0201
+case_014,paraphrase,Which country did Her originate in?,Q7,threshold_0.88,2,Q7,1.0,exact,True,0.0259
+case_015,clean,Who directed Star Wars Episode Four?,Q8,threshold_0.88,2,Q8,1.0,exact,True,0.0315
+case_016,paraphrase,Which country did Star Wars Episode Four originate in?,Q8,threshold_0.88,2,Q8,1.0,exact,True,0.0338
+case_017,clean,Who directed Alpha Film?,Q9,threshold_0.88,2,Q9,1.0,exact,True,0.0365
+case_018,paraphrase,Which country did Alpha Film originate in?,Q9,threshold_0.88,2,Q9,1.0,exact,True,0.0403
+case_019,clean,Who directed Gamma Film?,Q10,threshold_0.88,2,Q10,1.0,exact,True,0.0227
+case_020,paraphrase,Which country did Gamma Film originate in?,Q10,threshold_0.88,2,Q10,1.0,exact,True,0.028
+case_021,alias,Who directed A New Hope?,Q1,threshold_0.88,2,Q1,1.0,exact,True,0.0251
+case_022,alias,Who directed Beta Picture?,Q2,threshold_0.88,2,Q2,1.0,exact,True,0.0221
+case_023,alias,Who directed The Comet?,Q3,threshold_0.88,2,Q3,1.0,exact,True,0.0214
+case_024,alias,Who directed Song of the Sea?,Q4,threshold_0.88,2,Q4,1.0,exact,True,0.0252
+case_025,typo,Who directed Str Wars?,Q1,threshold_0.88,2,Q1,0.9411764705882353,fuzzy,True,0.4626
+case_026,typo,Who directed Film Bta?,Q2,threshold_0.88,2,Q2,0.9411764705882353,fuzzy,True,0.4535
+case_027,typo,Who directed Silver Comt?,Q3,threshold_0.88,2,Q3,0.9565217391304348,fuzzy,True,0.5454
+case_028,typo,Who directed Ocean Meloy?,Q4,threshold_0.88,2,Q4,0.9565217391304348,fuzzy,True,0.4987
+case_029,typo,Who directed Gardn Secrets?,Q5,threshold_0.88,2,Q5,0.9629629629629629,fuzzy,True,0.7852
+case_030,typo,Who directed Winter Journy?,Q6,threshold_0.88,2,Q6,0.9629629629629629,fuzzy,True,0.4896
+case_031,typo,Who directed Silvr Comt?,Q3,threshold_0.88,2,Q3,0.9090909090909091,fuzzy,True,0.4668
+case_032,typo,Who directed Ocan Meloy?,Q4,threshold_0.88,2,Q4,0.9090909090909091,fuzzy,True,0.4765
+case_033,refusal,sraW ratS,,threshold_0.88,2,,0.0,not_found,True,0.0967
+case_034,refusal,ateB mliF,,threshold_0.88,2,,0.0,not_found,True,0.086
+case_035,refusal,temoC revliS,,threshold_0.88,2,,0.0,not_found,True,0.1493
+case_036,refusal,ydoleM naecO,,threshold_0.88,2,,0.0,not_found,True,0.3083
+case_037,refusal,Who directed Completely Unknown Picture?,,threshold_0.88,2,,0.0,not_found,True,0.7307
+case_038,refusal,Who directed The Avengers?,,threshold_0.88,2,,0.0,not_found,True,0.4778
+case_039,refusal,Who directed The Unavailable Movie?,,threshold_0.88,2,,0.0,not_found,True,0.6941
+case_040,refusal,What is the weather tomorrow?,,threshold_0.88,2,,0.0,not_found,True,0.5666
+case_041,refusal,Who directed Hre?,,threshold_0.88,2,,0.0,not_found,True,0.272
+case_042,refusal,Who directed Shared Title?,,threshold_0.88,2,,0.0,ambiguous,True,0.0171
+case_043,refusal,Compare Star Wars and Film Beta,,threshold_0.88,2,,0.0,ambiguous,True,0.0184
+case_044,refusal,Compare Her and Ocean Melody,,threshold_0.88,2,,0.0,ambiguous,True,0.0156
+case_001,clean,Who directed Star Wars?,Q1,threshold_0.88,3,Q1,1.0,exact,True,0.0209
+case_002,paraphrase,Which country did Star Wars originate in?,Q1,threshold_0.88,3,Q1,1.0,exact,True,0.085
+case_003,clean,Who directed Film Beta?,Q2,threshold_0.88,3,Q2,1.0,exact,True,0.0205
+case_004,paraphrase,Which country did Film Beta originate in?,Q2,threshold_0.88,3,Q2,1.0,exact,True,0.0232
+case_005,clean,Who directed Silver Comet?,Q3,threshold_0.88,3,Q3,1.0,exact,True,0.0165
+case_006,paraphrase,Which country did Silver Comet originate in?,Q3,threshold_0.88,3,Q3,1.0,exact,True,0.0224
+case_007,clean,Who directed Ocean Melody?,Q4,threshold_0.88,3,Q4,1.0,exact,True,0.016
+case_008,paraphrase,Which country did Ocean Melody originate in?,Q4,threshold_0.88,3,Q4,1.0,exact,True,0.0216
+case_009,clean,Who directed Garden Secrets?,Q5,threshold_0.88,3,Q5,1.0,exact,True,0.0154
+case_010,paraphrase,Which country did Garden Secrets originate in?,Q5,threshold_0.88,3,Q5,1.0,exact,True,0.021
+case_011,clean,Who directed Winter Journey?,Q6,threshold_0.88,3,Q6,1.0,exact,True,0.0157
+case_012,paraphrase,Which country did Winter Journey originate in?,Q6,threshold_0.88,3,Q6,1.0,exact,True,0.0209
+case_013,clean,Who directed Her?,Q7,threshold_0.88,3,Q7,1.0,exact,True,0.0137
+case_014,paraphrase,Which country did Her originate in?,Q7,threshold_0.88,3,Q7,1.0,exact,True,0.019
+case_015,clean,Who directed Star Wars Episode Four?,Q8,threshold_0.88,3,Q8,1.0,exact,True,0.0256
+case_016,paraphrase,Which country did Star Wars Episode Four originate in?,Q8,threshold_0.88,3,Q8,1.0,exact,True,0.0278
+case_017,clean,Who directed Alpha Film?,Q9,threshold_0.88,3,Q9,1.0,exact,True,0.0157
+case_018,paraphrase,Which country did Alpha Film originate in?,Q9,threshold_0.88,3,Q9,1.0,exact,True,0.0209
+case_019,clean,Who directed Gamma Film?,Q10,threshold_0.88,3,Q10,1.0,exact,True,0.0151
+case_020,paraphrase,Which country did Gamma Film originate in?,Q10,threshold_0.88,3,Q10,1.0,exact,True,0.0209
+case_021,alias,Who directed A New Hope?,Q1,threshold_0.88,3,Q1,1.0,exact,True,0.0174
+case_022,alias,Who directed Beta Picture?,Q2,threshold_0.88,3,Q2,1.0,exact,True,0.0152
+case_023,alias,Who directed The Comet?,Q3,threshold_0.88,3,Q3,1.0,exact,True,0.0151
+case_024,alias,Who directed Song of the Sea?,Q4,threshold_0.88,3,Q4,1.0,exact,True,0.0185
+case_025,typo,Who directed Str Wars?,Q1,threshold_0.88,3,Q1,0.9411764705882353,fuzzy,True,0.4541
+case_026,typo,Who directed Film Bta?,Q2,threshold_0.88,3,Q2,0.9411764705882353,fuzzy,True,0.4418
+case_027,typo,Who directed Silver Comt?,Q3,threshold_0.88,3,Q3,0.9565217391304348,fuzzy,True,0.4615
+case_028,typo,Who directed Ocean Meloy?,Q4,threshold_0.88,3,Q4,0.9565217391304348,fuzzy,True,0.4893
+case_029,typo,Who directed Gardn Secrets?,Q5,threshold_0.88,3,Q5,0.9629629629629629,fuzzy,True,0.4888
+case_030,typo,Who directed Winter Journy?,Q6,threshold_0.88,3,Q6,0.9629629629629629,fuzzy,True,0.4684
+case_031,typo,Who directed Silvr Comt?,Q3,threshold_0.88,3,Q3,0.9090909090909091,fuzzy,True,0.4599
+case_032,typo,Who directed Ocan Meloy?,Q4,threshold_0.88,3,Q4,0.9090909090909091,fuzzy,True,0.4696
+case_033,refusal,sraW ratS,,threshold_0.88,3,,0.0,not_found,True,0.0942
+case_034,refusal,ateB mliF,,threshold_0.88,3,,0.0,not_found,True,0.0848
+case_035,refusal,temoC revliS,,threshold_0.88,3,,0.0,not_found,True,0.1463
+case_036,refusal,ydoleM naecO,,threshold_0.88,3,,0.0,not_found,True,0.1575
+case_037,refusal,Who directed Completely Unknown Picture?,,threshold_0.88,3,,0.0,not_found,True,0.6767
+case_038,refusal,Who directed The Avengers?,,threshold_0.88,3,,0.0,not_found,True,0.4727
+case_039,refusal,Who directed The Unavailable Movie?,,threshold_0.88,3,,0.0,not_found,True,0.6674
+case_040,refusal,What is the weather tomorrow?,,threshold_0.88,3,,0.0,not_found,True,0.5695
+case_041,refusal,Who directed Hre?,,threshold_0.88,3,,0.0,not_found,True,0.2746
+case_042,refusal,Who directed Shared Title?,,threshold_0.88,3,,0.0,ambiguous,True,0.0143
+case_043,refusal,Compare Star Wars and Film Beta,,threshold_0.88,3,,0.0,ambiguous,True,0.0177
+case_044,refusal,Compare Her and Ocean Melody,,threshold_0.88,3,,0.0,ambiguous,True,0.0151
+case_001,clean,Who directed Star Wars?,Q1,threshold_0.96,1,Q1,1.0,exact,True,0.0194
+case_002,paraphrase,Which country did Star Wars originate in?,Q1,threshold_0.96,1,Q1,1.0,exact,True,0.0804
+case_003,clean,Who directed Film Beta?,Q2,threshold_0.96,1,Q2,1.0,exact,True,0.0191
+case_004,paraphrase,Which country did Film Beta originate in?,Q2,threshold_0.96,1,Q2,1.0,exact,True,0.023
+case_005,clean,Who directed Silver Comet?,Q3,threshold_0.96,1,Q3,1.0,exact,True,0.0166
+case_006,paraphrase,Which country did Silver Comet originate in?,Q3,threshold_0.96,1,Q3,1.0,exact,True,0.0221
+case_007,clean,Who directed Ocean Melody?,Q4,threshold_0.96,1,Q4,1.0,exact,True,0.0162
+case_008,paraphrase,Which country did Ocean Melody originate in?,Q4,threshold_0.96,1,Q4,1.0,exact,True,0.021
+case_009,clean,Who directed Garden Secrets?,Q5,threshold_0.96,1,Q5,1.0,exact,True,0.0153
+case_010,paraphrase,Which country did Garden Secrets originate in?,Q5,threshold_0.96,1,Q5,1.0,exact,True,0.021
+case_011,clean,Who directed Winter Journey?,Q6,threshold_0.96,1,Q6,1.0,exact,True,0.0154
+case_012,paraphrase,Which country did Winter Journey originate in?,Q6,threshold_0.96,1,Q6,1.0,exact,True,0.0209
+case_013,clean,Who directed Her?,Q7,threshold_0.96,1,Q7,1.0,exact,True,0.0136
+case_014,paraphrase,Which country did Her originate in?,Q7,threshold_0.96,1,Q7,1.0,exact,True,0.019
+case_015,clean,Who directed Star Wars Episode Four?,Q8,threshold_0.96,1,Q8,1.0,exact,True,0.0235
+case_016,paraphrase,Which country did Star Wars Episode Four originate in?,Q8,threshold_0.96,1,Q8,1.0,exact,True,0.0269
+case_017,clean,Who directed Alpha Film?,Q9,threshold_0.96,1,Q9,1.0,exact,True,0.0158
+case_018,paraphrase,Which country did Alpha Film originate in?,Q9,threshold_0.96,1,Q9,1.0,exact,True,0.0209
+case_019,clean,Who directed Gamma Film?,Q10,threshold_0.96,1,Q10,1.0,exact,True,0.015
+case_020,paraphrase,Which country did Gamma Film originate in?,Q10,threshold_0.96,1,Q10,1.0,exact,True,0.0213
+case_021,alias,Who directed A New Hope?,Q1,threshold_0.96,1,Q1,1.0,exact,True,0.0174
+case_022,alias,Who directed Beta Picture?,Q2,threshold_0.96,1,Q2,1.0,exact,True,0.0152
+case_023,alias,Who directed The Comet?,Q3,threshold_0.96,1,Q3,1.0,exact,True,0.0174
+case_024,alias,Who directed Song of the Sea?,Q4,threshold_0.96,1,Q4,1.0,exact,True,0.0193
+case_025,typo,Who directed Str Wars?,Q1,threshold_0.96,1,,0.9411764705882353,not_found,False,0.3824
+case_026,typo,Who directed Film Bta?,Q2,threshold_0.96,1,,0.9411764705882353,not_found,False,1.1566
+case_027,typo,Who directed Silver Comt?,Q3,threshold_0.96,1,,0.9565217391304348,not_found,False,0.4103
+case_028,typo,Who directed Ocean Meloy?,Q4,threshold_0.96,1,,0.9565217391304348,not_found,False,0.4357
+case_029,typo,Who directed Gardn Secrets?,Q5,threshold_0.96,1,Q5,0.9629629629629629,fuzzy,True,0.4931
+case_030,typo,Who directed Winter Journy?,Q6,threshold_0.96,1,Q6,0.9629629629629629,fuzzy,True,0.5758
+case_031,typo,Who directed Silvr Comt?,Q3,threshold_0.96,1,,0.9090909090909091,not_found,False,0.5349
+case_032,typo,Who directed Ocan Meloy?,Q4,threshold_0.96,1,,0.9090909090909091,not_found,False,0.4329
+case_033,refusal,sraW ratS,,threshold_0.96,1,,0.0,not_found,True,0.0901
+case_034,refusal,ateB mliF,,threshold_0.96,1,,0.0,not_found,True,0.0753
+case_035,refusal,temoC revliS,,threshold_0.96,1,,0.0,not_found,True,0.1456
+case_036,refusal,ydoleM naecO,,threshold_0.96,1,,0.0,not_found,True,0.1506
+case_037,refusal,Who directed Completely Unknown Picture?,,threshold_0.96,1,,0.0,not_found,True,0.6012
+case_038,refusal,Who directed The Avengers?,,threshold_0.96,1,,0.0,not_found,True,0.4142
+case_039,refusal,Who directed The Unavailable Movie?,,threshold_0.96,1,,0.0,not_found,True,0.5932
+case_040,refusal,What is the weather tomorrow?,,threshold_0.96,1,,0.0,not_found,True,0.4798
+case_041,refusal,Who directed Hre?,,threshold_0.96,1,,0.0,not_found,True,0.2403
+case_042,refusal,Who directed Shared Title?,,threshold_0.96,1,,0.0,ambiguous,True,0.0189
+case_043,refusal,Compare Star Wars and Film Beta,,threshold_0.96,1,,0.0,ambiguous,True,0.0186
+case_044,refusal,Compare Her and Ocean Melody,,threshold_0.96,1,,0.0,ambiguous,True,0.0156
+case_001,clean,Who directed Star Wars?,Q1,threshold_0.96,2,Q1,1.0,exact,True,0.0201
+case_002,paraphrase,Which country did Star Wars originate in?,Q1,threshold_0.96,2,Q1,1.0,exact,True,0.0822
+case_003,clean,Who directed Film Beta?,Q2,threshold_0.96,2,Q2,1.0,exact,True,0.0199
+case_004,paraphrase,Which country did Film Beta originate in?,Q2,threshold_0.96,2,Q2,1.0,exact,True,0.0233
+case_005,clean,Who directed Silver Comet?,Q3,threshold_0.96,2,Q3,1.0,exact,True,0.0169
+case_006,paraphrase,Which country did Silver Comet originate in?,Q3,threshold_0.96,2,Q3,1.0,exact,True,0.0225
+case_007,clean,Who directed Ocean Melody?,Q4,threshold_0.96,2,Q4,1.0,exact,True,0.016
+case_008,paraphrase,Which country did Ocean Melody originate in?,Q4,threshold_0.96,2,Q4,1.0,exact,True,0.0208
+case_009,clean,Who directed Garden Secrets?,Q5,threshold_0.96,2,Q5,1.0,exact,True,0.0152
+case_010,paraphrase,Which country did Garden Secrets originate in?,Q5,threshold_0.96,2,Q5,1.0,exact,True,0.0205
+case_011,clean,Who directed Winter Journey?,Q6,threshold_0.96,2,Q6,1.0,exact,True,0.0155
+case_012,paraphrase,Which country did Winter Journey originate in?,Q6,threshold_0.96,2,Q6,1.0,exact,True,0.0206
+case_013,clean,Who directed Her?,Q7,threshold_0.96,2,Q7,1.0,exact,True,0.0142
+case_014,paraphrase,Which country did Her originate in?,Q7,threshold_0.96,2,Q7,1.0,exact,True,0.0192
+case_015,clean,Who directed Star Wars Episode Four?,Q8,threshold_0.96,2,Q8,1.0,exact,True,0.0247
+case_016,paraphrase,Which country did Star Wars Episode Four originate in?,Q8,threshold_0.96,2,Q8,1.0,exact,True,0.0275
+case_017,clean,Who directed Alpha Film?,Q9,threshold_0.96,2,Q9,1.0,exact,True,0.0155
+case_018,paraphrase,Which country did Alpha Film originate in?,Q9,threshold_0.96,2,Q9,1.0,exact,True,0.0211
+case_019,clean,Who directed Gamma Film?,Q10,threshold_0.96,2,Q10,1.0,exact,True,0.015
+case_020,paraphrase,Which country did Gamma Film originate in?,Q10,threshold_0.96,2,Q10,1.0,exact,True,0.0202
+case_021,alias,Who directed A New Hope?,Q1,threshold_0.96,2,Q1,1.0,exact,True,0.017
+case_022,alias,Who directed Beta Picture?,Q2,threshold_0.96,2,Q2,1.0,exact,True,0.0161
+case_023,alias,Who directed The Comet?,Q3,threshold_0.96,2,Q3,1.0,exact,True,0.0156
+case_024,alias,Who directed Song of the Sea?,Q4,threshold_0.96,2,Q4,1.0,exact,True,0.0192
+case_025,typo,Who directed Str Wars?,Q1,threshold_0.96,2,,0.9411764705882353,not_found,False,0.3946
+case_026,typo,Who directed Film Bta?,Q2,threshold_0.96,2,,0.9411764705882353,not_found,False,0.3712
+case_027,typo,Who directed Silver Comt?,Q3,threshold_0.96,2,,0.9565217391304348,not_found,False,0.4174
+case_028,typo,Who directed Ocean Meloy?,Q4,threshold_0.96,2,,0.9565217391304348,not_found,False,0.4436
+case_029,typo,Who directed Gardn Secrets?,Q5,threshold_0.96,2,Q5,0.9629629629629629,fuzzy,True,0.4471
+case_030,typo,Who directed Winter Journy?,Q6,threshold_0.96,2,Q6,0.9629629629629629,fuzzy,True,0.4282
+case_031,typo,Who directed Silvr Comt?,Q3,threshold_0.96,2,,0.9090909090909091,not_found,False,0.4289
+case_032,typo,Who directed Ocan Meloy?,Q4,threshold_0.96,2,,0.9090909090909091,not_found,False,0.415
+case_033,refusal,sraW ratS,,threshold_0.96,2,,0.0,not_found,True,0.0828
+case_034,refusal,ateB mliF,,threshold_0.96,2,,0.0,not_found,True,0.0729
+case_035,refusal,temoC revliS,,threshold_0.96,2,,0.0,not_found,True,0.1494
+case_036,refusal,ydoleM naecO,,threshold_0.96,2,,0.0,not_found,True,0.1493
+case_037,refusal,Who directed Completely Unknown Picture?,,threshold_0.96,2,,0.0,not_found,True,0.5866
+case_038,refusal,Who directed The Avengers?,,threshold_0.96,2,,0.0,not_found,True,0.4178
+case_039,refusal,Who directed The Unavailable Movie?,,threshold_0.96,2,,0.0,not_found,True,0.569
+case_040,refusal,What is the weather tomorrow?,,threshold_0.96,2,,0.0,not_found,True,0.4856
+case_041,refusal,Who directed Hre?,,threshold_0.96,2,,0.0,not_found,True,0.2336
+case_042,refusal,Who directed Shared Title?,,threshold_0.96,2,,0.0,ambiguous,True,0.0144
+case_043,refusal,Compare Star Wars and Film Beta,,threshold_0.96,2,,0.0,ambiguous,True,0.0179
+case_044,refusal,Compare Her and Ocean Melody,,threshold_0.96,2,,0.0,ambiguous,True,0.0149
+case_001,clean,Who directed Star Wars?,Q1,threshold_0.96,3,Q1,1.0,exact,True,0.0191
+case_002,paraphrase,Which country did Star Wars originate in?,Q1,threshold_0.96,3,Q1,1.0,exact,True,0.0796
+case_003,clean,Who directed Film Beta?,Q2,threshold_0.96,3,Q2,1.0,exact,True,0.0193
+case_004,paraphrase,Which country did Film Beta originate in?,Q2,threshold_0.96,3,Q2,1.0,exact,True,0.0284
+case_005,clean,Who directed Silver Comet?,Q3,threshold_0.96,3,Q3,1.0,exact,True,0.0208
+case_006,paraphrase,Which country did Silver Comet originate in?,Q3,threshold_0.96,3,Q3,1.0,exact,True,0.0222
+case_007,clean,Who directed Ocean Melody?,Q4,threshold_0.96,3,Q4,1.0,exact,True,0.0158
+case_008,paraphrase,Which country did Ocean Melody originate in?,Q4,threshold_0.96,3,Q4,1.0,exact,True,0.0212
+case_009,clean,Who directed Garden Secrets?,Q5,threshold_0.96,3,Q5,1.0,exact,True,0.0156
+case_010,paraphrase,Which country did Garden Secrets originate in?,Q5,threshold_0.96,3,Q5,1.0,exact,True,0.0222
+case_011,clean,Who directed Winter Journey?,Q6,threshold_0.96,3,Q6,1.0,exact,True,0.0154
+case_012,paraphrase,Which country did Winter Journey originate in?,Q6,threshold_0.96,3,Q6,1.0,exact,True,0.0216
+case_013,clean,Who directed Her?,Q7,threshold_0.96,3,Q7,1.0,exact,True,0.0135
+case_014,paraphrase,Which country did Her originate in?,Q7,threshold_0.96,3,Q7,1.0,exact,True,0.0192
+case_015,clean,Who directed Star Wars Episode Four?,Q8,threshold_0.96,3,Q8,1.0,exact,True,0.0232
+case_016,paraphrase,Which country did Star Wars Episode Four originate in?,Q8,threshold_0.96,3,Q8,1.0,exact,True,0.0271
+case_017,clean,Who directed Alpha Film?,Q9,threshold_0.96,3,Q9,1.0,exact,True,0.0152
+case_018,paraphrase,Which country did Alpha Film originate in?,Q9,threshold_0.96,3,Q9,1.0,exact,True,0.0207
+case_019,clean,Who directed Gamma Film?,Q10,threshold_0.96,3,Q10,1.0,exact,True,0.0151
+case_020,paraphrase,Which country did Gamma Film originate in?,Q10,threshold_0.96,3,Q10,1.0,exact,True,0.0203
+case_021,alias,Who directed A New Hope?,Q1,threshold_0.96,3,Q1,1.0,exact,True,0.017
+case_022,alias,Who directed Beta Picture?,Q2,threshold_0.96,3,Q2,1.0,exact,True,0.0152
+case_023,alias,Who directed The Comet?,Q3,threshold_0.96,3,Q3,1.0,exact,True,0.0162
+case_024,alias,Who directed Song of the Sea?,Q4,threshold_0.96,3,Q4,1.0,exact,True,0.0187
+case_025,typo,Who directed Str Wars?,Q1,threshold_0.96,3,,0.9411764705882353,not_found,False,0.3772
+case_026,typo,Who directed Film Bta?,Q2,threshold_0.96,3,,0.9411764705882353,not_found,False,0.3826
+case_027,typo,Who directed Silver Comt?,Q3,threshold_0.96,3,,0.9565217391304348,not_found,False,0.4084
+case_028,typo,Who directed Ocean Meloy?,Q4,threshold_0.96,3,,0.9565217391304348,not_found,False,0.4476
+case_029,typo,Who directed Gardn Secrets?,Q5,threshold_0.96,3,Q5,0.9629629629629629,fuzzy,True,0.4349
+case_030,typo,Who directed Winter Journy?,Q6,threshold_0.96,3,Q6,0.9629629629629629,fuzzy,True,0.4174
+case_031,typo,Who directed Silvr Comt?,Q3,threshold_0.96,3,,0.9090909090909091,not_found,False,0.4416
+case_032,typo,Who directed Ocan Meloy?,Q4,threshold_0.96,3,,0.9090909090909091,not_found,False,0.4145
+case_033,refusal,sraW ratS,,threshold_0.96,3,,0.0,not_found,True,0.0825
+case_034,refusal,ateB mliF,,threshold_0.96,3,,0.0,not_found,True,0.073
+case_035,refusal,temoC revliS,,threshold_0.96,3,,0.0,not_found,True,0.2464
+case_036,refusal,ydoleM naecO,,threshold_0.96,3,,0.0,not_found,True,0.2344
+case_037,refusal,Who directed Completely Unknown Picture?,,threshold_0.96,3,,0.0,not_found,True,0.7736
+case_038,refusal,Who directed The Avengers?,,threshold_0.96,3,,0.0,not_found,True,0.438
+case_039,refusal,Who directed The Unavailable Movie?,,threshold_0.96,3,,0.0,not_found,True,0.5827
+case_040,refusal,What is the weather tomorrow?,,threshold_0.96,3,,0.0,not_found,True,0.4718
+case_041,refusal,Who directed Hre?,,threshold_0.96,3,,0.0,not_found,True,0.2322
+case_042,refusal,Who directed Shared Title?,,threshold_0.96,3,,0.0,ambiguous,True,0.0173
+case_043,refusal,Compare Star Wars and Film Beta,,threshold_0.96,3,,0.0,ambiguous,True,0.0181
+case_044,refusal,Compare Her and Ocean Melody,,threshold_0.96,3,,0.0,ambiguous,True,0.0157

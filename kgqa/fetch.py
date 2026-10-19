@@ -5,12 +5,14 @@ import argparse
 import hashlib
 import json
 import logging
+from pathlib import Path
 import random
+import re
 import time
 import urllib.parse
 import urllib.request
 
-from .common import ROOT, RELATIONS, read_json, setup_logging, utc_now, write_json
+from .common import ROOT, RELATIONS, read_json, setup_logging, sha256, utc_now, write_json
 
 RAW = ROOT / 'data' / 'raw'
 
@@ -96,14 +98,74 @@ def compact(entity):
             'facts': {rel: truthy(entity, rel) for rel in RELATIONS}}
 
 
-def run(target):
+def _candidate_ids(values):
+    if not isinstance(values, list) or not values:
+        raise ValueError('Candidate cache must contain a non-empty list of film IDs')
+    if any(not isinstance(value, str) or not re.fullmatch(r'Q[1-9]\d*', value) for value in values):
+        raise ValueError('Candidate cache contains a malformed Wikidata film ID')
+    return list(dict.fromkeys(values))
+
+
+def _cached_candidates(path):
+    """Read a saved request_json envelope without contacting either Wikidata API."""
+    path = Path(path)
+    try:
+        cached = read_json(path)
+        bindings = cached['response']['results']['bindings']
+        params = cached['params']
+        query, retrieved_at = params['query'], cached['retrieved_at']
+        if not isinstance(bindings, list) or not isinstance(params, dict):
+            raise ValueError('Invalid response or params')
+        if not isinstance(query, str) or not query.strip() or not isinstance(retrieved_at, str) or not retrieved_at.strip():
+            raise ValueError('Missing source query or retrieval timestamp')
+        values = []
+        for binding in bindings:
+            value = binding['film']['value']
+            if not isinstance(value, str) or not re.fullmatch(r'https?://www\.wikidata\.org/entity/Q[1-9]\d*', value):
+                raise ValueError('Invalid film entity URI')
+            values.append(value.rsplit('/', 1)[-1])
+    except (KeyError, TypeError, ValueError) as error:
+        raise ValueError(f'Malformed cached SPARQL candidate response: {path}') from error
+    ids = sorted(_candidate_ids(values), key=lambda qid: int(qid[1:]))
+    random.Random(42).shuffle(ids)
+    provenance = {
+        'source_path': str(path.resolve()), 'source_sha256': sha256(path),
+        'source_url': cached.get('url'), 'query_params': params, 'query': query,
+        'retrieved_at': retrieved_at, 'binding_count': len(bindings), 'unique_count': len(ids),
+        'ordering': 'sorted by numeric Wikidata ID, then shuffled with seed 42', 'shuffle_seed': 42,
+    }
+    return ids, provenance
+
+
+def run(target, candidate_cache=None):
+    if not isinstance(target, int) or isinstance(target, bool) or target < 1:
+        raise ValueError('target must be a positive integer')
+    if candidate_cache is not None:
+        ids, candidate_pool = _cached_candidates(candidate_cache)
+        sampling = ('cached SPARQL candidate response; limited scope defined by source query; '
+                    'not all Wikidata; sorted numeric IDs then shuffled seed 42; first eligible movies')
+    else:
+        id_cache = RAW / 'candidate_ids.json'
+        existing = id_cache.exists()
+        ids = _candidate_ids(read_json(id_cache) if existing else candidates())
+        candidate_pool = {
+            'source_path': str(id_cache.resolve()), 'source_sha256': sha256(id_cache),
+            'unique_count': len(ids), 'ordering': 'cached ID list order retained',
+            'source_query_provenance': 'not verified from the candidate ID list alone',
+        }
+        sampling = ('cached candidate ID list; original source-query scope not verified; not all Wikidata; '
+                    'cached order retained; first eligible movies') if existing else (
+                    'bounded SPARQL candidate pool for 1980-2024 release dates, up to 800 results per decade '
+                    '(2020-2024 partial decade); numeric IDs shuffled seed 42; first eligible movies; not all Wikidata')
     setup_logging(f'fetch_{target}')
-    ids = read_json(RAW / 'candidate_ids.json') if (RAW / 'candidate_ids.json').exists() else candidates()
     selected, entity_map = [], {}
-    for offset in range(0, len(ids), 80):
-        records = get_entities(ids[offset:offset + 80])
+    offset = 0
+    while offset < len(ids) and len(selected) < target:
+        batch = ids[offset:offset + min(80, target - len(selected))]
+        offset += len(batch)
+        records = get_entities(batch)
         possible = []
-        for qid in ids[offset:offset + 80]:
+        for qid in batch:
             entity = records.get(qid, {})
             if not entity.get('labels', {}).get('en'):
                 continue
@@ -131,13 +193,17 @@ def run(target):
     needed = {row['id'] for row in selected} | {t for row in selected for vs in row['facts'].values() for t in vs}
     final = {'created_at': utc_now(), 'target': target, 'movies': selected,
              'entities': {qid: entity_map[qid] for qid in sorted(needed) if qid in entity_map},
-             'sampling': '1980-2024 release years, up to 800 query results per decade (2020-2024 partial decade); shuffled seed 42; first eligible movies',
+             'sampling': sampling, 'candidate_pool': candidate_pool,
              'source': 'Wikidata, CC0, best-rank entity statements; English labels; query caps induce selection bias'}
     write_json(ROOT / 'data' / 'raw' / f'snapshot_{target}.json', final)
     logging.info('COMPLETE snapshot_%s.json movies=%s entities=%s', target, len(selected), len(final['entities']))
+    return final
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--target', type=int, default=50)
-    run(parser.parse_args().target)
+    parser.add_argument('--candidate-cache', type=Path,
+                        help='Use one saved raw SPARQL response; its query defines the dataset scope')
+    args = parser.parse_args()
+    run(args.target, candidate_cache=args.candidate_cache)

@@ -13,7 +13,7 @@ from torch.utils.data import DataLoader, Dataset
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, get_linear_schedule_with_warmup
 
 from .common import RELATIONS, ROOT, read_json, read_jsonl, seed_all, setup_logging, write_json, write_jsonl
-from .metrics import entity_ids_from_text, score_rows
+from .metrics import EntityNameIndex, entity_ids_from_text, score_rows
 from .linker import EntityLinker
 
 
@@ -105,6 +105,7 @@ def move(batch, device):
 
 def predictions(model, loader, tokenizer, entities, device):
     model.eval(); output = []
+    name_index = EntityNameIndex(entities)
     for batch in loader:
         rows = batch.pop('rows'); batch = move(batch, device); batch.pop('labels', None)
         if device.type == 'cuda': torch.cuda.synchronize()
@@ -114,13 +115,14 @@ def predictions(model, loader, tokenizer, entities, device):
         texts = tokenizer.batch_decode(generated, skip_special_tokens=True)
         for row, text in zip(rows, texts):
             output.append({'question_id': row['question_id'], 'question': row['question'], 'answer': text,
-                           'answer_ids': entity_ids_from_text(text, entities, row['movie_id']), 'latency_ms': elapsed})
+                           'answer_ids': entity_ids_from_text(text, entities, row['movie_id'], index=name_index), 'latency_ms': elapsed})
     return output
 
 
 @torch.no_grad()
 def validation_outputs(model, loader, tokenizer, entities, device):
     model.eval(); output, losses = [], []
+    name_index = EntityNameIndex(entities)
     use_bf16 = device.type == 'cuda' and torch.cuda.is_bf16_supported()
     for batch in loader:
         rows = batch.pop('rows'); batch = move(batch, device)
@@ -135,7 +137,7 @@ def validation_outputs(model, loader, tokenizer, entities, device):
         texts = tokenizer.batch_decode(generated, skip_special_tokens=True)
         for row, text in zip(rows, texts):
             output.append({'question_id': row['question_id'], 'question': row['question'], 'answer': text,
-                           'answer_ids': entity_ids_from_text(text, entities, row['movie_id']), 'latency_ms': elapsed})
+                           'answer_ids': entity_ids_from_text(text, entities, row['movie_id'], index=name_index), 'latency_ms': elapsed})
     return output, float(np.mean(losses))
 
 
