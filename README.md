@@ -10,6 +10,22 @@
 
 虚拟环境、缓存、模型和临时文件均保存在项目目录中，便于迁移与复现。
 
+## 个人工作提交与验收
+
+个人报告：[周新永 M202674502 的实验报告](reports/个人实验报告.docx)。本次在已合并的代码基础上补齐离线验收入口、个人模型演示路径，并修复未知数字续集误命中原片的问题。
+
+在项目根目录使用 Python 3.11 或 3.12，首次安装 CPU 依赖后执行：
+
+```powershell
+python -m pip install -r requirements-test.txt
+python -m pytest -q
+python -m kgqa.acceptance --output-dir output/acceptance/review
+```
+
+最后一条成功时输出 `PASS` 并退出 0；在 `output/acceptance/review/summary.json` 查看逐项检查，在 `examples.json` 查看四种关系、多答案、别名和拒答。再次执行请换一个新目录，或省略 `--output-dir` 自动生成新目录。
+
+验收过程使用 **10 部虚构电影**，无需下载 Wikidata、神经模型或使用 GPU。它检查代码能否完成训练、验证选阈值、预测、评测和模型重载；正式 Wikidata 实验结果仍见下文与个人报告。完整操作、交互式问答和真实截图步骤见 [提交验收说明](docs/提交验收说明.md)。
+
 ## 实验文档与报告
 
 | 文档 | 内容 |
@@ -59,7 +75,7 @@ python -m kgqa.robustness --limit 100 --seed 42
 python -m kgqa.personal_experiment --run-id A0_personal_20261019
 ```
 
-上述候选缓存由原采集器的首次成功查询产生；缺失时需按 `kgqa.fetch` 的查询说明重新取得，不能凭空生成。在线重新采集会改变数据版本。完整数据和模型保留在本地且不进入代码压缩包；本次评测摘要、逐题预测、参数表和来源记录保存在 `verification/2026-10-19/`。个人报告与分工计划位于 `reports/`。真实截图、主观人工评分和个人信息仍需本人补齐，神经实验由队友继续完成。
+上述候选缓存由原采集器的首次成功查询产生；缺失时需按 `kgqa.fetch` 的查询说明重新取得，不能凭空生成。在线重新采集会改变数据版本。完整数据和模型保留在本地且不进入代码压缩包；本次评测摘要、逐题预测、参数表和来源记录保存在 `verification/2026-10-19/`。个人报告与分工计划位于 `reports/`。报告已填写周新永与学号，班级按本人要求留空；真实截图与主观人工评分仍需补齐，神经实验由队友继续完成。
 
 ## 环境配置
 
@@ -108,6 +124,8 @@ What genre is Boss Level?
 ## 持续集成检查（CI）
 
 推送到 `main`、创建或更新 Pull Request 时，GitHub Actions 会自动在 Ubuntu 和 Windows 的 Python 3.11 环境中检查 Python 语法、致命代码错误、数据准备与管道系统的命令行入口、现有核心测试以及 PowerShell 脚本语法。也可以在仓库的 **Actions → CI → Run workflow** 中手动运行。
+
+本次另加入离线训练与问答验收步骤；打开对应运行的日志，检查测试通过以及 `PASS synthetic offline acceptance`。
 
 CI 使用独立的轻量依赖文件 `requirements-ci.txt`，无需 GPU、实验数据或已训练模型。完整训练和神经模型效果仍需按实验流程单独验证。
 

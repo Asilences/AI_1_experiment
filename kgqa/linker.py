@@ -80,6 +80,12 @@ class EntityLinker:
                     cues.append((before[-1], tokens[anchor_start - 1].group()))
                 if after and anchor_end < len(tokens):
                     cues.append((after[0], tokens[anchor_end].group()))
+                # Adjacent sequel numbers identify different titles, even if
+                # the remaining extension words are almost identical.
+                if any(expected.isdecimal() and actual.isdecimal() and expected != actual
+                       for expected, actual in cues):
+                    extension_seen = True
+                    continue
                 if any(len(expected) >= 4 and SequenceMatcher(
                         None, expected, actual, autojunk=False).ratio() >= self.fuzzy_threshold
                        for expected, actual in cues):

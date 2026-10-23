@@ -1,0 +1,175 @@
+{
+  "source": "synthetic",
+  "scope": "Synthetic offline acceptance fixture; not a measured Wikidata result or a generalization benchmark.",
+  "examples": {
+    "four_relations": {
+      "P57": {
+        "question": "Who directed Juniper Trail?",
+        "movie_id": "SYN_FILM_09",
+        "link_score": 1.0,
+        "link_status": "exact",
+        "relation_id": "P57",
+        "answer_ids": [
+          "SYN_PERSON_A"
+        ],
+        "answer": "Juniper Trail was directed by Avery Vale.",
+        "evidence": [
+          [
+            "SYN_FILM_09",
+            "P57",
+            "SYN_PERSON_A"
+          ]
+        ],
+        "relation_confidence": 0.7422269770400091,
+        "latency_ms": 1.4456999997491948,
+        "question_id": "SYN_FILM_09_P57_0"
+      },
+      "P136": {
+        "question": "What genre is Juniper Trail?",
+        "movie_id": "SYN_FILM_09",
+        "link_score": 1.0,
+        "link_status": "exact",
+        "relation_id": "P136",
+        "answer_ids": [
+          "SYN_GENRE_A",
+          "SYN_GENRE_B"
+        ],
+        "answer": "Juniper Trail belongs to the following genres: Adventure and Mystery.",
+        "evidence": [
+          [
+            "SYN_FILM_09",
+            "P136",
+            "SYN_GENRE_A"
+          ],
+          [
+            "SYN_FILM_09",
+            "P136",
+            "SYN_GENRE_B"
+          ]
+        ],
+        "relation_confidence": 0.7393233665506702,
+        "latency_ms": 1.0786999991978519,
+        "question_id": "SYN_FILM_09_P136_0"
+      },
+      "P495": {
+        "question": "Which country did Juniper Trail originate in?",
+        "movie_id": "SYN_FILM_09",
+        "link_score": 1.0,
+        "link_status": "exact",
+        "relation_id": "P495",
+        "answer_ids": [
+          "SYN_COUNTRY_A"
+        ],
+        "answer": "Juniper Trail originated in Northland.",
+        "evidence": [
+          [
+            "SYN_FILM_09",
+            "P495",
+            "SYN_COUNTRY_A"
+          ]
+        ],
+        "relation_confidence": 0.7325854135395234,
+        "latency_ms": 1.0755000039353035,
+        "question_id": "SYN_FILM_09_P495_0"
+      },
+      "P364": {
+        "question": "What is the original language of Juniper Trail?",
+        "movie_id": "SYN_FILM_09",
+        "link_score": 1.0,
+        "link_status": "exact",
+        "relation_id": "P364",
+        "answer_ids": [
+          "SYN_LANGUAGE_A",
+          "SYN_LANGUAGE_B"
+        ],
+        "answer": "The original languages of Juniper Trail are English and French.",
+        "evidence": [
+          [
+            "SYN_FILM_09",
+            "P364",
+            "SYN_LANGUAGE_A"
+          ],
+          [
+            "SYN_FILM_09",
+            "P364",
+            "SYN_LANGUAGE_B"
+          ]
+        ],
+        "relation_confidence": 0.7508467413187337,
+        "latency_ms": 1.0665000008884817,
+        "question_id": "SYN_FILM_09_P364_0"
+      }
+    },
+    "multi_answer": {
+      "question": "What genre is Juniper Trail?",
+      "movie_id": "SYN_FILM_09",
+      "link_score": 1.0,
+      "link_status": "exact",
+      "relation_id": "P136",
+      "answer_ids": [
+        "SYN_GENRE_A",
+        "SYN_GENRE_B"
+      ],
+      "answer": "Juniper Trail belongs to the following genres: Adventure and Mystery.",
+      "evidence": [
+        [
+          "SYN_FILM_09",
+          "P136",
+          "SYN_GENRE_A"
+        ],
+        [
+          "SYN_FILM_09",
+          "P136",
+          "SYN_GENRE_B"
+        ]
+      ],
+      "relation_confidence": 0.7393233665506702,
+      "latency_ms": 1.0786999991978519,
+      "question_id": "SYN_FILM_09_P136_0"
+    },
+    "known_movie_refusal": {
+      "question": "Who wrote the screenplay for Juniper Trail?",
+      "movie_id": "SYN_FILM_09",
+      "link_score": 1.0,
+      "link_status": "exact",
+      "relation_id": "UNKNOWN",
+      "answer_ids": [],
+      "answer": "The available knowledge graph does not contain enough information to answer this question.",
+      "evidence": [],
+      "relation_confidence": 0.7083153613224957,
+      "latency_ms": 1.1205000046174973,
+      "question_id": "SYN_FILM_09_UNKNOWN_0"
+    },
+    "alias": {
+      "question": "Who directed Trail of Juniper?",
+      "movie_id": "SYN_FILM_09",
+      "link_score": 1.0,
+      "link_status": "exact",
+      "relation_id": "P57",
+      "answer_ids": [
+        "SYN_PERSON_A"
+      ],
+      "answer": "Juniper Trail was directed by Avery Vale.",
+      "evidence": [
+        [
+          "SYN_FILM_09",
+          "P57",
+          "SYN_PERSON_A"
+        ]
+      ],
+      "relation_confidence": 0.7422269770400091,
+      "latency_ms": 1.0279999987687916
+    },
+    "unknown_movie_refusal": {
+      "question": "Who directed Zyxwuv Qpkjrt?",
+      "movie_id": null,
+      "link_score": 0.0,
+      "link_status": "not_found",
+      "relation_id": "UNKNOWN",
+      "answer_ids": [],
+      "answer": "The available knowledge graph does not contain enough information to answer this question.",
+      "evidence": [],
+      "latency_ms": 0.7995000050868839
+    }
+  }
+}
