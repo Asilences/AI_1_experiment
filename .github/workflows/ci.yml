@@ -52,9 +52,14 @@ jobs:
         run: |
           python -m kgqa.prepare --help
           python -m kgqa.pipeline --help
+          python -m kgqa.demo --help
+          python -m kgqa.acceptance --help
 
       - name: 运行核心测试
         run: python -m pytest -q
+
+      - name: 离线训练与问答验收
+        run: python -m kgqa.acceptance --output-dir output/acceptance/ci
 
       - name: 检查 PowerShell 脚本语法
         shell: pwsh

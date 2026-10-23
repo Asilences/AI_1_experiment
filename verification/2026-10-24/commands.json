@@ -1,0 +1,22 @@
+{
+  "pytest": {
+    "returncode": 0,
+    "command": "python -m pytest -q"
+  },
+  "syntax": {
+    "returncode": 0,
+    "command": "python -m compileall -q kgqa tests"
+  },
+  "ruff": {
+    "returncode": 0,
+    "command": "python -m ruff check --no-cache --select E9,F63,F7,F82 kgqa tests"
+  },
+  "acceptance": {
+    "returncode": 0,
+    "command": "python -m kgqa.acceptance --output-dir output/acceptance/review"
+  },
+  "demo": {
+    "returncode": 0,
+    "command": "python -m kgqa.demo --system a0 --data-dir output/acceptance/review/data/processed --model-path output/acceptance/review/runs/A0_acceptance/model.pkl --question Who directed Juniper Trail?"
+  }
+}

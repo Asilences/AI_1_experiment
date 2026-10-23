@@ -1,0 +1,10 @@
+
+问题：Who directed Juniper Trail?
+
+[A0 管道式系统]
+链接电影：Juniper Trail (SYN_FILM_09)（exact）
+预测关系：P57, confidence=0.742
+证据：
+  - Juniper Trail (SYN_FILM_09) --P57--> Avery Vale (SYN_PERSON_A)
+答案：Juniper Trail was directed by Avery Vale.
+生成延迟：2.21 ms

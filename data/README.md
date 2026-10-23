@@ -2,6 +2,11 @@
 
 The experiment data is intentionally not included in the code archive.
 
+For a quick offline code check without the formal dataset, install
+`requirements-test.txt` and run `python -m kgqa.acceptance`. It generates a tiny
+synthetic fixture in an isolated output directory. See
+[submission instructions](../docs/提交验收说明.md) for expected results and demo paths.
+
 To rebuild it, activate the project-local environment and run:
 
 ```powershell
