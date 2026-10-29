@@ -1,0 +1,50 @@
+{
+  "count": 8917,
+  "entity_exact": 100.0,
+  "entity_macro_f1": 100.0,
+  "bleu": 100.00000000000004,
+  "rouge_l": 100.0,
+  "by_relation": {
+    "P136": {
+      "exact": 100.0,
+      "f1": 100.0,
+      "count": 1416
+    },
+    "P495": {
+      "exact": 100.0,
+      "f1": 100.0,
+      "count": 2214
+    },
+    "P364": {
+      "exact": 100.0,
+      "f1": 100.0,
+      "count": 2238
+    },
+    "P57": {
+      "exact": 100.0,
+      "f1": 100.0,
+      "count": 2238
+    },
+    "UNKNOWN": {
+      "exact": 100.0,
+      "f1": 100.0,
+      "count": 811
+    }
+  },
+  "answerable_count": 8106,
+  "refusal_count": 811,
+  "answerable_entity_exact": 100.0,
+  "answerable_entity_macro_f1": 100.0,
+  "refusal_accuracy": 100.0,
+  "latency_mean_ms": 0.9401039475088755,
+  "latency_p95_ms": 1.2145999971835408,
+  "prediction_coverage": 100.0,
+  "scope": "Shared-template questions on a known frozen knowledge base; not free-form generalization.",
+  "model_sha256": "a14f3ee60168e3f0a2eefcda403c58400e861c1708dceebe63c396e1e8faa8dd",
+  "input_hashes": {
+    "qa.jsonl": "2882b2077834d37f4b1ae8f9b8ea90561c8c5dacecf4247907311d0cbb8bb310",
+    "entities.json": "7c935d8fa1eecd9870df16e49d93460bdd75f90255661e4e4e397af9f667f3e8",
+    "splits.json": "dd24634f590e3e5dd38dc2e5ca7fd25b432ec3b562f74dc99a65b22d586113b7"
+  },
+  "evaluated_at": "2026-10-29T08:10:06Z"
+}

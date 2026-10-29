@@ -1,0 +1,31 @@
+{
+  "created_at": "2026-10-29T08:09:46Z",
+  "snapshot": "data\\raw\\expansion_5000_20261029\\snapshot_5000.json",
+  "snapshot_sha256": "486faa982e84fd5781f62872fd02db11100fad82a013b37f454bbe4da520d867",
+  "movies": 5000,
+  "entities": 7864,
+  "triples": 35485,
+  "qa": 58994,
+  "qa_by_split": {
+    "valid": 8857,
+    "train": 41220,
+    "test": 8917
+  },
+  "qa_by_relation": {
+    "P57": 14916,
+    "P136": 9135,
+    "P495": 14727,
+    "P364": 14853,
+    "UNKNOWN": 5363
+  },
+  "movie_split_sizes": {
+    "train": 3500,
+    "valid": 750,
+    "test": 750
+  },
+  "base_splits_sha256": "46514c22319f7fcadafa91b51f0d6cd69634b6fcb8e03b1603948b39727c6be0",
+  "split_policy": "Preserve all previous movie assignments; seed-42 shuffle additions to reach 70/15/15.",
+  "name": "扩展电影库 · 5000 部",
+  "dataset_role": "expanded UI knowledge base; not an independent held-out research dataset",
+  "prepare_source_sha256": "b58706ee0cb15cc4e0afada08de52ed0374e8c102889cccb6c7a2344ff4164e7"
+}

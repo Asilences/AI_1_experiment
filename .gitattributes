@@ -1,0 +1,4 @@
+# Frozen assets keep their original bytes on Windows and Linux for SHA-256 checks.
+data/raw/expansion_5000_20261029/snapshot_5000.json -text linguist-generated=true
+data/processed/movies_5000_20261029/** -text linguist-generated=true
+models/pipeline_5000_20261029/** -text linguist-generated=true
