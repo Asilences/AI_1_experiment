@@ -2,7 +2,7 @@
 
 《人工智能 I》课程项目：输入英文电影问题，识别片名、查询本地知识图谱，输出答案与事实证据。支持 **导演 P57、类型 P136、制作国家 P495、原始语言 P364** 四类单跳问题，同时评测别名、错拼、改写与拒答。
 
-[快速启动](#快速启动-cpu-离线验收) · [浏览器界面](#浏览器问答界面) · [数据与进度](#数据版本与目前进度) · [两人分工](#双人分工与报告入口) · [人工评价](#人工评价填表与统计) · [完整实验](#完整数据与神经实验) · [文件索引](#仓库目录与文件索引)
+[快速启动](#快速启动-cpu-离线验收) · [浏览器界面](#浏览器问答界面) · [数据与进度](#数据版本与目前进度) · [两人分工](#双人分工与报告入口) · [人工评价](#人工评价填表与统计) · [完整实验](#完整数据与神经实验) · [扩展片库](#扩展电影数据集) · [文件索引](#仓库目录与文件索引)
 
 | 系统 | 实现与比较目的 |
 |---|---|
@@ -56,15 +56,16 @@ python -m venv .venv
 
 启动后自动打开 [http://127.0.0.1:7860](http://127.0.0.1:7860)。保留启动终端，按 `Ctrl+C` 停止服务。该服务只绑定本机地址；这里使用的是合成电影，不能将页面结果写成 Wikidata 实验成绩。
 
-已有真实实验数据与模型时，可以启动默认双系统界面、更换端口，或指定个人 A0 模型：
+已有真实实验数据与模型时，可以启动界面、更换端口、返回原实验，或指定个人 A0 模型：
 
 ```powershell
 .\scripts\run_ui.cmd
 .\scripts\run_ui.cmd -Port 7861 -NoBrowser
+.\scripts\run_ui.cmd -Legacy -Port 7861
 .\scripts\run_ui.cmd -DataDir data/processed -ModelPath runs/A0_personal_20261019/model.pkl
 ```
 
-默认读取 `data/processed`、`models/pipeline/model.pkl` 及 `output/selected_model.json` 指定的本地神经检查点。缺少神经模型仍可使用 A0；缺少数据或 A0 模型时页面给出提示。指定独立数据或模型路径时只开放 A0，避免与默认神经模型混用。
+默认优先读取本机 `.work/ui-dataset.json` 中已激活的数据与配套 A0，核对哈希后启用；当前本地已激活 5000 部电影扩展库，仅开放 A0。未激活扩展库或使用 `-Legacy` 时，读取 `data/processed`、`models/pipeline/model.pkl` 及 `output/selected_model.json` 指定的原实验神经检查点；`-Legacy` 返回这些默认路径，具体规模以所恢复的数据为准。缺少神经模型仍可使用 A0；缺少数据或 A0 模型时页面给出提示。指定独立数据或模型路径时只开放 A0。详见下文[扩展片库](#扩展电影数据集)。
 
 也可在相应 Python 环境中跨平台执行 `python -m kgqa.web --open`，使用 `--data-dir`、`--model-path`、`--port` 指定配置。页面不下载数据或模型，神经模型首次使用时才加载；首次处理耗时包含加载，UI 耗时只供交互观察。神经卡片展示的是输入候选事实，不代表每条都支持生成答案。
 
@@ -75,8 +76,9 @@ python -m venv .venv
 | 数据与记录 | 用途和状态 | 入口 |
 |---|---|---|
 | 历史 1000 部 Wikidata 电影 | 2285 实体、6194 三元组、12267 问答；保留 A0、B0–B3、C0 的第一阶段结果。 | [历史结果摘要](提交材料/实验结果摘要.md) |
+| 2026-10-29 扩展 5000 部电影 | 保留历史 1000 部并新增 4000 部；7864 实体、35485 三元组、58994 问答。配套 A0 已训练并激活本地 UI；扩展库神经模型待训练。 | [扩展记录](docs/电影数据集扩展记录.md) · [验证摘要](verification/2026-10-29/expansion_summary.json) |
 | 新 200 部电影，10 月 19 日与 29 日 | 552 实体、1264 三元组、2492 问答；电影 140/30/30，问答 1749/373/370。保留原 A0 个人实验，现已补齐同快照 A0、TransE、B0–B3、C0、选模及鲁棒性。 | [原 A0 证据](verification/2026-10-19/personal/) · [10 月 29 日完整证据](verification/2026-10-29/README.md) |
-| 2026-10-24 合成 10 部电影 | 独立的 CPU 验收夹具，不与前两组实验合并计分。 | [验收记录](verification/2026-10-24/README.md) |
+| 2026-10-24 合成 10 部电影 | 独立的 CPU 验收夹具，与各版真实电影实验分开计分。 | [验收记录](verification/2026-10-24/README.md) |
 
 新 200 部电影的候选来自缓存的 **1980—1989 发行日期区间**查询，不保证每部电影最早上映年份属于该区间。快照 SHA-256 为 `5b02443928ef5503c280c9422376cf5efb8849f13e02ee92f03aca917c47ed38`。完整数据、模型和原始运行目录不随代码仓库分发；在线重新采集会产生新版本。
 
@@ -203,7 +205,23 @@ python -m venv .venv
 
 对应输出为 `output/error_analysis.json`、`output/evidence/run_summary.json` 与 `.txt`、`output/人工智能I_实验报告.docx`。报告生成器读取共享 A0/B/C 产物，不会更新 `reports/` 的个人报告，也不会完成人工评分或真实截图。
 
-### 已有真实数据时单独复核 A0
+## 扩展电影数据集
+
+本地扩展已完成：**5000 部电影、7864 个实体、35485 条三元组、58994 道问答**，并已训练配套 A0、激活浏览器界面。详细来源与验证记录见[电影数据集扩展记录](docs/电影数据集扩展记录.md)。完整数据与模型仍保留在本地，不随代码上传。
+
+扩展流程保留原始 1000 部电影快照，在独立目录中追加 Wikidata 电影，默认目标为 5000 部。候选按跨语言百科 sitelink 数排序，偏向常见电影，并非电影总体的随机样本。四类关系仍为导演、类型、制作国家、原始语言；新记录保留 Wikidata 修订号、原始请求与提取时间。同名电影提供片名/年份或 QID 的消歧提问入口，部分新增电影支持中文名称与别名搜索。
+
+以下命令需要本地原始 `snapshot_1000.json` 和配套 `splits.json`；它们与完整模型不包含在 GitHub 代码包中。首次运行会取得候选，后续复用缓存并从检查点继续采集。`--proxy` 按本机代理配置填写，不使用代理时省略。
+
+```powershell
+.\.venv\Scripts\python.exe -m kgqa.expand --target 5000 --candidate-cache data/raw/expansion_5000_20261029/candidates_sitelinks15.json --work-dir data/raw/expansion_5000_20261029 --proxy http://127.0.0.1:7890 --output-dir data/processed/movies_5000_20261029 --model-dir models/pipeline_5000_20261029 --base-splits data/processed/splits.json --activate
+```
+
+若已有候选响应缓存，可额外传入 `--candidate-cache <文件>`；采集默认使用 Wikidata 官方实体 API。代码也提供 `--backend sparql`，但应遵守服务限流。成功后生成独立快照、实体与别名、三元组、问答、划分、配套 A0 模型、验证阈值记录和测试预测；保留原电影的划分，新增电影用种子 42 补足 70%/15%/15%。源文件、模型和已完成的数据版本均校验哈希，不覆盖原实验资产。
+
+`--activate` 仅在数据校验、A0 训练和评测成功后更新项目内 `.work/ui-dataset.json`。重新启动 UI 即可读取扩展库；使用 `-Legacy`（Python 为 `--legacy`）返回 `data/processed` 和原实验模型。本机该路径目前保留 1000 部电影与 B2；若恢复 200 部电影实验，应同时恢复其配套模型与选模记录。扩展库的神经模型需另行训练，不能直接套用旧实体向量。新增模板问答的自动分数不等于自由提问能力，也不与原实验指标混为一套结果。
+
+## 已有真实数据时单独复核 A0
 
 确认 `data/processed/` 与待复核模型属于同一数据版本后执行；新运行名可避免覆盖历史目录：
 
@@ -243,7 +261,7 @@ python -m venv .venv
 | [tests/](tests/) | 自动测试，逐文件见下表。 |
 | [benchmarks/](benchmarks/) | 冻结旧链接器与手工回归对照脚本。 |
 | [data/](data/) | [README.md](data/README.md) 说明数据重建和历史快照；实际 raw/processed 文件在本地生成。 |
-| [docs/](docs/) | [双人分工与复现指南](docs/双人分工与复现指南.md)、[提交验收说明](docs/提交验收说明.md)。 |
+| [docs/](docs/) | [双人分工与复现指南](docs/双人分工与复现指南.md)、[提交验收说明](docs/提交验收说明.md)、[电影数据集扩展记录](docs/电影数据集扩展记录.md)。 |
 | [reports/](reports/) | [README.md](reports/README.md) 为报告说明；[周新永个人报告](reports/个人实验报告.docx) 保留原路径；另有[夏俊杰个人报告](reports/夏俊杰_实验报告.docx)、[双人分工计划](reports/双人分工与复现实验计划.docx)、[提交审查](reports/提交审查.md) 和[本轮双人空白评分表](reports/人工评价/填写说明.md)。 |
 | [verification/](verification/) | 按日期保存的实际测试、采集、运行摘要与回归证据，命名见后表。 |
 | [提交材料/](提交材料/) | 历史[报告 Word](提交材料/人工智能I_实验报告.docx)、[报告 PDF](提交材料/人工智能I_实验报告.pdf)、[结果摘要](提交材料/实验结果摘要.md)、[待填写人工评价表](提交材料/人工评价表_待填写.csv)。 |
@@ -271,6 +289,7 @@ python -m venv .venv
 | [__init__.py](kgqa/__init__.py) | Python 包入口。 |
 | [common.py](kgqa/common.py) | 项目根目录、四关系常量、JSON/JSONL、日志、哈希与答案模板。 |
 | [fetch.py](kgqa/fetch.py) | Wikidata 候选查询、实体请求缓存、事实筛选和快照；支持 `--target`、`--candidate-cache`。 |
+| [expand.py](kgqa/expand.py) | 保留原电影并扩展独立知识库；支持官方 API/SPARQL、缓存、断点续跑、同名消歧、配套 A0 训练评价和 UI 激活。 |
 | [prepare.py](kgqa/prepare.py) | 按电影划分 train/valid/test，生成 QA、三元组与数据清单；入口 `--snapshot`。 |
 | [linker.py](kgqa/linker.py) | 标题/别名精确匹配、片段模糊匹配、歧义拒答和片名遮蔽。 |
 | [pipeline.py](kgqa/pipeline.py) | A0 分类器训练、加载、图谱查询与答案证据；CLI 为 `train / predict / robust`。 |
@@ -306,7 +325,7 @@ python -m venv .venv
 | [run_experiment.ps1](scripts/run_experiment.ps1) | `-Mode smoke/full -Target 数量 -BatchSize 批大小 -GradientAccumulation 累积次数`；串行执行，步骤失败即停。 |
 | [run_demo.ps1](scripts/run_demo.ps1) | 演示包装器，接受 `-System`、`-Question`、`-DataDir`、`-ModelPath`。 |
 | [run_demo.cmd](scripts/run_demo.cmd) | 调用 PowerShell 演示脚本并透传参数和退出码。 |
-| [run_ui.ps1](scripts/run_ui.ps1) | 浏览器界面启动器，使用 `.venv`，支持 `-Port`、`-DataDir`、`-ModelPath`、`-NoBrowser`。 |
+| [run_ui.ps1](scripts/run_ui.ps1) | 浏览器界面启动器，使用 `.venv`，支持 `-Port`、`-DataDir`、`-ModelPath`、`-NoBrowser`、`-Legacy`；优先加载已激活的配套 A0 数据版本。 |
 | [run_ui.cmd](scripts/run_ui.cmd) | 调用 UI PowerShell 启动器，传递参数与退出码；默认自动打开本机页面。 |
 
 | 测试文件 | 验证内容 |
@@ -316,6 +335,7 @@ python -m venv .venv
 | [test_demo.py](tests/test_demo.py) | A0 演示无需神经组件、自定义数据与模型，以及路径参数约束。 |
 | [test_evidence.py](tests/test_evidence.py) | 保存记录摘要和缺失项，确认不生成模拟终端图片。 |
 | [test_fetch.py](tests/test_fetch.py) | 候选缓存读取、格式与来源、目标数量及采集批次。 |
+| [test_expand.py](tests/test_expand.py) | 扩展清洗、断点续跑、旧文件保护、划分继承、同名/短片名消歧、独立 A0 训练评价与 UI 数据模型哈希配对。 |
 | [test_human_eval.py](tests/test_human_eval.py) | 盲评抽样、预测对齐、空表导出，以及真实 0 分、完整评分、错误 ID/分数拒绝、系统均值与评审一致率。 |
 | [test_linker.py](tests/test_linker.py) | 标题、别名、错拼、嵌套片名、未知数字续集、遮蔽与管道拒答。 |
 | [test_metrics.py](tests/test_metrics.py) | ID 唯一性、完整覆盖、实体抽取、分组指标与 smoke/鲁棒性评估。 |
@@ -346,5 +366,6 @@ python -m venv .venv
 | [two_system_demo.log](verification/2026-10-29/two_system_demo.log)、[demo_and_rating_checks.json](verification/2026-10-29/demo_and_rating_checks.json) | 已安装的真实 A0/B0 双系统演示，以及空白评分表被正确拒绝的退出码记录。 |
 | [integration_pytest.log](verification/2026-10-29/integration_pytest.log)、[upstream_ui_integration.json](verification/2026-10-29/upstream_ui_integration.json)、[ui_two_system_demo.json](verification/2026-10-29/ui_two_system_demo.json) | 合并共享界面后的完整 220 项测试、集成来源及真实 200 部电影上 A0/B0 的服务层双系统问答验证。 |
 | [reports/人工评价/](reports/人工评价/) | `周新永_评分表.csv`、`夏俊杰_评分表.csv`、`对照密钥.csv` 与 `填写说明.md`。当前评分为空；真实填完后才生成 `human_evaluation_statistics.json`。 |
+| [expansion_summary.json](verification/2026-10-29/expansion_summary.json) | 独立的 5000 部电影 UI 片库扩展摘要：来源、规模、哈希、标准链接检查和配套 A0 模板测试；与上面的 200 部电影完整实验分开计分。 |
 
 真实截图、人工评价、数据版本复核与最终可提交项集中见 [提交审查](reports/提交审查.md)。

@@ -1,0 +1,137 @@
+{
+  "date": "2026-10-29",
+  "scope": "Expansion of existing UI knowledge base; not the disjoint D2 research dataset.",
+  "base_movies": 1000,
+  "new_movies": 4000,
+  "manifest": {
+    "created_at": "2026-10-29T08:09:46Z",
+    "snapshot": "data\\raw\\expansion_5000_20261029\\snapshot_5000.json",
+    "snapshot_sha256": "486faa982e84fd5781f62872fd02db11100fad82a013b37f454bbe4da520d867",
+    "movies": 5000,
+    "entities": 7864,
+    "triples": 35485,
+    "qa": 58994,
+    "qa_by_split": {
+      "valid": 8857,
+      "train": 41220,
+      "test": 8917
+    },
+    "qa_by_relation": {
+      "P57": 14916,
+      "P136": 9135,
+      "P495": 14727,
+      "P364": 14853,
+      "UNKNOWN": 5363
+    },
+    "movie_split_sizes": {
+      "train": 3500,
+      "valid": 750,
+      "test": 750
+    },
+    "base_splits_sha256": "46514c22319f7fcadafa91b51f0d6cd69634b6fcb8e03b1603948b39727c6be0",
+    "split_policy": "Preserve all previous movie assignments; seed-42 shuffle additions to reach 70/15/15.",
+    "name": "扩展电影库 · 5000 部",
+    "dataset_role": "expanded UI knowledge base; not an independent held-out research dataset",
+    "prepare_source_sha256": "b58706ee0cb15cc4e0afada08de52ed0374e8c102889cccb6c7a2344ff4164e7"
+  },
+  "new_movie_revisions_available": 4000,
+  "chinese_labels_available": 3994,
+  "release_years_available": 4000,
+  "duplicate_title_groups": 113,
+  "qa_unique_ids": 58994,
+  "old_triples_preserved": true,
+  "baseline_snapshot_unchanged": true,
+  "old_split_membership_preserved": {
+    "train": true,
+    "valid": true,
+    "test": true
+  },
+  "movie_splits_disjoint": true,
+  "standard_link_questions_checked": 20000,
+  "standard_link_errors": [],
+  "candidate_source": {
+    "path": "data/raw/expansion_5000_20261029/candidates_sitelinks15.json",
+    "sha256": "05955ffaeadb632ebfdb0dcd3fec2b4163ffbced54b4353901a2d14912b98cf6",
+    "query": "SELECT DISTINCT ?film ?links WHERE { ?film wdt:P31 wd:Q11424; wdt:P57 ?director; wikibase:sitelinks ?links. FILTER(?links >= 15) } ORDER BY DESC(?links) ASC(?film) LIMIT 8500",
+    "retrieved_at": "2026-10-29T07:31:42Z",
+    "count": 8500
+  },
+  "rejected": {
+    "missing_or_redirected_english_item": 7,
+    "fewer_than_three_complete_qa_relations": 133
+  },
+  "metrics": {
+    "count": 8917,
+    "entity_exact": 100.0,
+    "entity_macro_f1": 100.0,
+    "bleu": 100.00000000000004,
+    "rouge_l": 100.0,
+    "by_relation": {
+      "P136": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 1416
+      },
+      "P495": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2214
+      },
+      "P364": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2238
+      },
+      "P57": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2238
+      },
+      "UNKNOWN": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 811
+      }
+    },
+    "answerable_count": 8106,
+    "refusal_count": 811,
+    "answerable_entity_exact": 100.0,
+    "answerable_entity_macro_f1": 100.0,
+    "refusal_accuracy": 100.0,
+    "latency_mean_ms": 0.9401039475088755,
+    "latency_p95_ms": 1.2145999971835408,
+    "prediction_coverage": 100.0,
+    "scope": "Shared-template questions on a known frozen knowledge base; not free-form generalization.",
+    "model_sha256": "a14f3ee60168e3f0a2eefcda403c58400e861c1708dceebe63c396e1e8faa8dd",
+    "input_hashes": {
+      "qa.jsonl": "2882b2077834d37f4b1ae8f9b8ea90561c8c5dacecf4247907311d0cbb8bb310",
+      "entities.json": "7c935d8fa1eecd9870df16e49d93460bdd75f90255661e4e4e397af9f667f3e8",
+      "splits.json": "dd24634f590e3e5dd38dc2e5ca7fd25b432ec3b562f74dc99a65b22d586113b7"
+    },
+    "evaluated_at": "2026-10-29T08:10:06Z"
+  },
+  "model_config": {
+    "created_at": "2026-10-29T08:09:53Z",
+    "system": "A0",
+    "seed": 42,
+    "data_dir": "data\\processed\\movies_5000_20261029",
+    "selected_threshold": 0.3,
+    "train_questions": 41220,
+    "valid_questions": 8857,
+    "input_hashes": {
+      "qa.jsonl": "2882b2077834d37f4b1ae8f9b8ea90561c8c5dacecf4247907311d0cbb8bb310",
+      "entities.json": "7c935d8fa1eecd9870df16e49d93460bdd75f90255661e4e4e397af9f667f3e8",
+      "splits.json": "dd24634f590e3e5dd38dc2e5ca7fd25b432ec3b562f74dc99a65b22d586113b7"
+    },
+    "source_sha256": "7d35a13b0db97d05fb48ebeb598134795fa6a16588e47e2a6225f0231d863427",
+    "model_sha256": "a14f3ee60168e3f0a2eefcda403c58400e861c1708dceebe63c396e1e8faa8dd"
+  },
+  "neural_status": "Original TransE/B2 retained on the original dataset; no expanded neural training claimed.",
+  "source_files": {
+    "kgqa/expand.py": "2c3d8e6a937e0fa91b74a08fd4c5df39348e52d08db82d5b0b17e0c39ba786ca",
+    "kgqa/prepare.py": "b58706ee0cb15cc4e0afada08de52ed0374e8c102889cccb6c7a2344ff4164e7",
+    "kgqa/pipeline.py": "7d35a13b0db97d05fb48ebeb598134795fa6a16588e47e2a6225f0231d863427",
+    "kgqa/linker.py": "4e251eefe5dd8481907e82ad7f0d050dfacb6a11a358aa94a4b233c34f20933f"
+  },
+  "request_cache_files": 167
+}

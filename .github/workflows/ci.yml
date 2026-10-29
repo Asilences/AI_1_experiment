@@ -55,6 +55,7 @@ jobs:
           python -m kgqa.demo --help
           python -m kgqa.acceptance --help
           python -m kgqa.web --help
+          python -m kgqa.expand --help
 
       - name: 运行核心测试
         run: python -m pytest -q

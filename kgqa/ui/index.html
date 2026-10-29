@@ -24,7 +24,7 @@
     <aside class="sidebar" aria-label="知识库与历史提问">
       <div class="sidebar-heading"><span class="eyebrow">YOUR FILM LIBRARY</span><h2>从一部电影开始<span id="library-count">—</span></h2><p>搜索已收录的电影，点击片名快速提问。</p></div>
       <label class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><input id="movie-search" type="search" placeholder="搜索片名、别名或 QID" aria-label="搜索知识库电影" autocomplete="off"></label>
-      <div class="library-meta"><span id="search-summary">正在读取知识库</span><span>本地快照</span></div>
+      <div class="library-meta"><span id="search-summary">正在读取知识库</span><span id="dataset-name">本地快照</span></div>
       <div id="movie-list" class="movie-list" aria-live="polite"></div>
       <button class="load-more" id="load-more" type="button" hidden>加载更多电影 <span aria-hidden="true">↓</span></button>
       <div class="recent-section"><div class="section-label"><h3>最近提问</h3><button id="clear-history" class="text-button" type="button">清空</button></div><div id="history-list"></div></div>
@@ -66,7 +66,7 @@
           <h3>让事实连接起你的问题</h3><p>输入英文问题，或从左侧选择一部电影。<br>这里将展示回答、实体链接与图谱事实。</p>
           <div class="relation-tags"><span>导演</span><span>电影类型</span><span>制作国家</span><span>原始语言</span></div>
         </div>
-        <p id="timing-note" class="timing-note" hidden>处理耗时包含该系统的问答调用，首次使用可能包含模型加载；页面总耗时包含两个系统顺序处理，不作为正式性能评测。</p>
+        <p id="timing-note" class="timing-note" hidden>处理耗时包含问答调用，首次使用可能包含模型加载；双系统对比时按顺序处理。页面耗时仅供交互观察，不作为正式性能评测。</p>
       </section>
       <footer class="page-footer"><span>映知 · 基于知识图谱的电影问答</span><span>本地运行 / 证据可查</span></footer>
     </main>
