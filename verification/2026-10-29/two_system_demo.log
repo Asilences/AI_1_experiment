@@ -1,0 +1,21 @@
+python -m kgqa.demo --system both --question "Who directed The Big Red One?"
+
+问题：Who directed The Big Red One?
+
+[A0 管道式系统]
+链接电影：The Big Red One (Q303136)（exact）
+预测关系：P57, confidence=0.973
+证据：
+  - The Big Red One (Q303136) --P57--> Samuel Fuller (Q262479)
+答案：The Big Red One was directed by Samuel Fuller.
+生成延迟：6.61 ms
+
+[B0 神经生成系统]
+链接电影：The Big Red One (Q303136)（exact, score=1.000）
+证据：
+  - The Big Red One | director | Samuel Fuller
+  - The Big Red One | genre | drama film
+  - The Big Red One | country of origin | United States
+  - The Big Red One | original language | English
+答案：The Big Red One was directed by Samuel Fuller.
+生成延迟：525.75 ms

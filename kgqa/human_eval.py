@@ -3,7 +3,10 @@ from __future__ import annotations
 import argparse
 from collections import Counter, defaultdict
 import csv
+from itertools import combinations
+from pathlib import Path
 import random
+import re
 
 from .common import ROOT, read_jsonl, write_json
 
@@ -11,6 +14,8 @@ from .common import ROOT, read_jsonl, write_json
 VISIBLE_FIELDS = ['question_id', 'question', 'reference', 'answer_position', 'answer',
                   'accuracy_0_2', 'completeness_0_2', 'fluency_1_5', 'unsupported_claim_0_1', 'notes']
 KEY_FIELDS = ['question_id', 'answer_position', 'system']
+SCORE_RANGES = {'accuracy_0_2': (0, 2), 'completeness_0_2': (0, 2),
+                'fluency_1_5': (1, 5), 'unsupported_claim_0_1': (0, 1)}
 
 
 def _index_rows(rows, label):
@@ -125,10 +130,125 @@ def build(neural_run, limit=100, seed=42):
     return manifest
 
 
-if __name__ == '__main__':
+def _read_score_csv(path, required):
+    with Path(path).open(encoding='utf-8-sig', newline='') as stream:
+        reader = csv.DictReader(stream)
+        missing = set(required) - set(reader.fieldnames or [])
+        if missing:
+            raise ValueError(f'{Path(path).name}: missing CSV columns: {sorted(missing)}')
+        if len(reader.fieldnames) != len(set(reader.fieldnames)):
+            raise ValueError(f'{Path(path).name}: duplicate CSV columns')
+        rows = list(reader)
+    if any(None in row for row in rows):
+        raise ValueError(f'{Path(path).name}: row contains more values than CSV columns')
+    return rows
+
+
+def _answer_id(row, label):
+    question_id, raw_position = row.get('question_id'), row.get('answer_position')
+    if not isinstance(question_id, str) or not question_id.strip():
+        raise ValueError(f'{label}: question_id must be a non-empty string')
+    if not isinstance(raw_position, str) or not re.fullmatch(r'[0-9]+', raw_position.strip()):
+        raise ValueError(f'{label}: answer_position must be a positive integer')
+    position = int(raw_position)
+    if position < 1:
+        raise ValueError(f'{label}: answer_position must be a positive integer')
+    return question_id, position
+
+
+def summarize_scores(score_files, key_file, summary_output):
+    """Aggregate complete independent human score sheets without changing them."""
+    files = [Path(path) for path in score_files]
+    if len(files) < 2 or len({path.resolve() for path in files}) != len(files):
+        raise ValueError('At least two distinct independent score files are required')
+    if Path(summary_output).resolve() in {path.resolve() for path in [*files, Path(key_file)]}:
+        raise ValueError('Summary destination must differ from the score and key files')
+    keys = {}
+    for row in _read_score_csv(key_file, KEY_FIELDS):
+        answer_id = _answer_id(row, 'Answer key')
+        if answer_id in keys:
+            raise ValueError(f'Answer key: duplicate answer ID {answer_id!r}')
+        system = row['system']
+        if not isinstance(system, str) or not system.strip():
+            raise ValueError('Answer key: system must be a non-empty string')
+        keys[answer_id] = system
+    if not keys:
+        raise ValueError('Answer key must not be empty')
+
+    reviews = []
+    for path in files:
+        indexed = {}
+        for row in _read_score_csv(path, ['question_id', 'answer_position', *SCORE_RANGES]):
+            answer_id = _answer_id(row, path.name)
+            if answer_id in indexed:
+                raise ValueError(f'{path.name}: duplicate answer ID {answer_id!r}')
+            if answer_id not in keys:
+                raise ValueError(f'{path.name}: unknown answer ID {answer_id!r}')
+            scores = {}
+            for field, (low, high) in SCORE_RANGES.items():
+                raw = row.get(field)
+                if not isinstance(raw, str) or not re.fullmatch(r'[+-]?[0-9]+', raw.strip()):
+                    raise ValueError(f'{path.name}: {answer_id!r} {field} must be an integer in [{low}, {high}]')
+                value = int(raw)
+                if not low <= value <= high:
+                    raise ValueError(f'{path.name}: {answer_id!r} {field} must be an integer in [{low}, {high}]')
+                scores[field] = value
+            indexed[answer_id] = scores
+        missing = set(keys) - set(indexed)
+        if missing:
+            raise ValueError(f'{path.name}: missing {len(missing)} answer IDs from the key')
+        reviews.append(indexed)
+
+    systems = {}
+    for system in sorted(set(keys.values())):
+        answer_ids = [answer_id for answer_id, owner in keys.items() if owner == system]
+        ratings = [review[answer_id] for review in reviews for answer_id in answer_ids]
+        means = {field: sum(rating[field] for rating in ratings) / len(ratings) for field in SCORE_RANGES}
+        systems[system] = {'question_count': len({answer_id[0] for answer_id in answer_ids}),
+                           'answer_count': len(answer_ids), 'rating_count': len(ratings), 'means': means,
+                           'unsupported_claim_percent': 100 * means['unsupported_claim_0_1']}
+    agreement = []
+    for left, right in combinations(range(len(reviews)), 2):
+        items = {}
+        for field in SCORE_RANGES:
+            equal = sum(reviews[left][answer_id][field] == reviews[right][answer_id][field] for answer_id in keys)
+            items[field] = {'compared_count': len(keys), 'agreement_count': equal,
+                            'disagreement_count': len(keys) - equal, 'agreement_percent': 100 * equal / len(keys)}
+        agreement.append({'reviewers': [f'reviewer_{left + 1}', f'reviewer_{right + 1}'], 'items': items})
+    result = {'reviewer_count': len(reviews), 'question_count': len({answer_id[0] for answer_id in keys}),
+              'answer_count': len(keys), 'rating_count': len(keys) * len(reviews),
+              'reviewers': [{'reviewer_id': f'reviewer_{index + 1}', 'score_file': path.name}
+                            for index, path in enumerate(files)],
+              'key_file': Path(key_file).name, 'score_ranges': {field: list(bounds) for field, bounds in SCORE_RANGES.items()},
+              'systems': systems, 'pairwise_agreement': agreement,
+              'aggregation': 'All validated original ratings, without replacing disagreements or changing source CSVs.'}
+    write_json(Path(summary_output), result)
+    return result
+
+
+def main(argv=None):
     parser = argparse.ArgumentParser()
-    parser.add_argument('--neural-run', required=True)
+    mode = parser.add_mutually_exclusive_group(required=True)
+    mode.add_argument('--neural-run', help='Export blank A0/neural blind-review sheets.')
+    mode.add_argument('--score-file', type=Path, action='append', help='Completed independent CSV; repeat for each reviewer.')
+    parser.add_argument('--key-file', type=Path, help='Answer key matching every reviewed answer.')
+    parser.add_argument('--summary-output', type=Path, help='Destination for the validated scoring summary JSON.')
     parser.add_argument('--limit', type=int, default=100)
     parser.add_argument('--seed', type=int, default=42)
-    args = parser.parse_args()
-    build(args.neural_run, args.limit, args.seed)
+    args = parser.parse_args(argv)
+    if args.score_file:
+        if args.key_file is None or args.summary_output is None:
+            parser.error('--score-file requires --key-file and --summary-output')
+        try:
+            summarize_scores(args.score_file, args.key_file, args.summary_output)
+        except (OSError, ValueError) as error:
+            parser.error(str(error))
+    else:
+        if args.key_file is not None or args.summary_output is not None:
+            parser.error('--key-file and --summary-output require --score-file')
+        build(args.neural_run, args.limit, args.seed)
+    return 0
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

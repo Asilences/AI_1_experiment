@@ -1,0 +1,51 @@
+{
+  "question": "Who directed The Big Red One?",
+  "results": [
+    {
+      "system": "a0",
+      "name": "A0 管道问答",
+      "ok": true,
+      "answer": "The Big Red One was directed by Samuel Fuller.",
+      "refused": false,
+      "movie": {
+        "id": "Q303136",
+        "label": "The Big Red One"
+      },
+      "link_status": "exact",
+      "link_score": 1.0,
+      "relation": "P57",
+      "confidence": 0.9734409938747153,
+      "evidence": [
+        "The Big Red One (Q303136) --P57--> Samuel Fuller (Q262479)"
+      ],
+      "cold_start": true,
+      "generation_ms": 2.00819999918167,
+      "elapsed_ms": 2106.26
+    },
+    {
+      "system": "best",
+      "name": "B0 神经生成",
+      "ok": true,
+      "answer": "The Big Red One was directed by Samuel Fuller.",
+      "refused": false,
+      "movie": {
+        "id": "Q303136",
+        "label": "The Big Red One"
+      },
+      "link_status": "exact",
+      "link_score": 1.0,
+      "relation": null,
+      "confidence": null,
+      "evidence": [
+        "The Big Red One | director | Samuel Fuller",
+        "The Big Red One | genre | drama film",
+        "The Big Red One | country of origin | United States",
+        "The Big Red One | original language | English"
+      ],
+      "cold_start": true,
+      "generation_ms": 863.8212999994721,
+      "elapsed_ms": 13590.04
+    }
+  ],
+  "elapsed_ms": 15701.99
+}

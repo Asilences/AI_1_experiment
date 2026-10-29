@@ -1,0 +1,18 @@
+{
+  "threshold": 0.3,
+  "total_count": 381,
+  "variant_counts": {
+    "alias": 47,
+    "clean": 100,
+    "paraphrase": 100,
+    "typo": 100,
+    "unanswerable": 34
+  },
+  "matched_comparison_counts": {
+    "alias": 47,
+    "paraphrase": 100,
+    "typo": 100
+  },
+  "forward_duration_seconds": 5.692980400000124,
+  "note": "Each variant has its own denominator; variant pools can differ in size."
+}

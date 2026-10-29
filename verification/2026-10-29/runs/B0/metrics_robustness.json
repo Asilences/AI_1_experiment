@@ -1,0 +1,161 @@
+{
+  "alias": {
+    "count": 47,
+    "entity_exact": 100.0,
+    "entity_macro_f1": 100.0,
+    "bleu": 93.52979936538591,
+    "rouge_l": 96.74169370752342,
+    "by_relation": {
+      "P364": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 17
+      },
+      "P495": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 9
+      },
+      "P136": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 12
+      },
+      "P57": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 9
+      }
+    },
+    "answerable_count": 47,
+    "refusal_count": 0,
+    "answerable_entity_exact": 100.0,
+    "answerable_entity_macro_f1": 100.0,
+    "latency_mean_ms": 28.26421688829659,
+    "latency_p95_ms": 38.61653124999975
+  },
+  "clean": {
+    "count": 100,
+    "entity_exact": 99.0,
+    "entity_macro_f1": 99.0,
+    "bleu": 99.28585292348698,
+    "rouge_l": 99.88,
+    "by_relation": {
+      "P364": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 25
+      },
+      "P495": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 25
+      },
+      "P136": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 25
+      },
+      "P57": {
+        "exact": 96.0,
+        "f1": 96.0,
+        "count": 25
+      }
+    },
+    "answerable_count": 100,
+    "refusal_count": 0,
+    "answerable_entity_exact": 99.0,
+    "answerable_entity_macro_f1": 99.0,
+    "latency_mean_ms": 27.946923687499066,
+    "latency_p95_ms": 36.251168749970475
+  },
+  "paraphrase": {
+    "count": 100,
+    "entity_exact": 88.0,
+    "entity_macro_f1": 88.8,
+    "bleu": 81.9758173331591,
+    "rouge_l": 89.2255332445183,
+    "by_relation": {
+      "P364": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 25
+      },
+      "P495": {
+        "exact": 60.0,
+        "f1": 60.0,
+        "count": 25
+      },
+      "P136": {
+        "exact": 96.0,
+        "f1": 99.2,
+        "count": 25
+      },
+      "P57": {
+        "exact": 96.0,
+        "f1": 96.0,
+        "count": 25
+      }
+    },
+    "answerable_count": 100,
+    "refusal_count": 0,
+    "answerable_entity_exact": 88.0,
+    "answerable_entity_macro_f1": 88.8,
+    "latency_mean_ms": 27.91380568749844,
+    "latency_p95_ms": 36.251168749970475
+  },
+  "typo": {
+    "count": 100,
+    "entity_exact": 88.0,
+    "entity_macro_f1": 88.0,
+    "bleu": 86.99339381772987,
+    "rouge_l": 90.5358386058386,
+    "by_relation": {
+      "P364": {
+        "exact": 88.0,
+        "f1": 88.0,
+        "count": 25
+      },
+      "P495": {
+        "exact": 88.0,
+        "f1": 88.0,
+        "count": 25
+      },
+      "P136": {
+        "exact": 84.0,
+        "f1": 84.0,
+        "count": 25
+      },
+      "P57": {
+        "exact": 92.0,
+        "f1": 92.0,
+        "count": 25
+      }
+    },
+    "answerable_count": 100,
+    "refusal_count": 0,
+    "answerable_entity_exact": 88.0,
+    "answerable_entity_macro_f1": 88.0,
+    "latency_mean_ms": 27.97117824999816,
+    "latency_p95_ms": 36.251168749970475
+  },
+  "unanswerable": {
+    "count": 34,
+    "entity_exact": 100.0,
+    "entity_macro_f1": 100.0,
+    "bleu": 100.00000000000004,
+    "rouge_l": 100.0,
+    "by_relation": {
+      "UNKNOWN": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 34
+      }
+    },
+    "answerable_count": 0,
+    "refusal_count": 34,
+    "refusal_accuracy": 100.0,
+    "latency_mean_ms": 26.011530698513873,
+    "latency_p95_ms": 29.201368750022993
+  }
+}

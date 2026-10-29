@@ -1,0 +1,36 @@
+{
+  "source_files": {
+    "acceptance.py": "bd0908ba925f0d931d0acea82e45db5bfb6f2d13bb56faac2f56c5f7899516f0",
+    "common.py": "8edce50100c3072bd134d77c77d0f4c45de5362219fe503b690b336fbc487705",
+    "demo.py": "899336d473d98b2bb1a5c89a23b6c4c497fd562dd26775f90db818a6896b7481",
+    "environment_info.py": "1d2ddf004f0c67fefe2f9056d5a6d7ab70f35db668454ab6832757398cbeb772",
+    "error_analysis.py": "ead207765e838b41282b7fa642200737cc7f457a5ba357d950bc504e607b579b",
+    "evidence.py": "19b54b427bf231450044d2fb66a2f6a5aeb50db329e4b49305dc90d85e1e87a1",
+    "fetch.py": "334410b0e4f59d95915b7f6e5bbdc0812521291bf0f72e43809035caaceee080",
+    "finalize.py": "b7d650455d073ac943dd02cb97d4e23329004b5a80334a8e357c04d287ed0474",
+    "human_eval.py": "131bd140753d3110ec11cdc26fb63d3554173a8e3bd09a1e6977d3983f0b22af",
+    "linker.py": "4e251eefe5dd8481907e82ad7f0d050dfacb6a11a358aa94a4b233c34f20933f",
+    "metrics.py": "e49751f90e07a92b86af5cc12f19bd6796ff7555fd0f0d2985c47597704ec890",
+    "neural.py": "83a5781328e5679ece4a299a3a1b40b12e884848dacc9820dd8d7ddc2227932c",
+    "personal_experiment.py": "ff242bee9013eb88f670d3d9cbe85e08b78023b36ab18226ae01ca4136ee760b",
+    "pipeline.py": "7478db1cc05d3067bb19c125bcc2a784979e20874d67c1eb79b76bb679d5cc17",
+    "plots.py": "f51e1e5f09d125d180f3299beafd7e132856b2d21bdf54b13012cd6812a7c23a",
+    "prepare.py": "f2c5d576c2d2d5a14eb525c88e4f1471f2ceda937452e1e4e113dc89ad42f113",
+    "report.py": "aed9cab5a3cc80a6c4d99f71958a70fd608c20ba87d290857ed342edf192bdf9",
+    "robustness.py": "bfb1756077219d0d2284a9ab25d2735468954218775b29769c3d5af74ed7347b",
+    "transe.py": "5593805a24aea8bddd68f3fb9d4c9d9caed029e51ade61c26578bcf49307576e",
+    "__init__.py": "83333eb7fb9796725f08ca7612bc659233d713cbbe2d423a70125fddbd865081"
+  },
+  "processed_data_files": {
+    "entities.json": "84fc4bbf3f9f106677dde191584ee2f7c2c408a22a689c91054596a6f4971c89",
+    "manifest.json": "c531034c0ab0e6efa9dd15a758db6599cda3ef4c8d7aee7fdb7307d6d4652639",
+    "qa.jsonl": "e5b68040859b3d6e777905aa3adf1fc27791202028fa5d2af210b42231b41b67",
+    "robustness.jsonl": "fec42397218cd5818ee8ea3bfd83364c6c5aef3b4c5d9e1b4455f93bb3abdf86",
+    "robustness_manifest.json": "ec9d78a2382540e9cfa1e29136e81a9ed84d6f3342bc3c0b30f2f5717c4e7688",
+    "splits.json": "2a2a59486b30dca05a8a74dde1b0913cff4898fa50bf8a86fc0f3a93380c53cc",
+    "triples.tsv": "eaf194d75e0b4f2ec359202f1dbf39c21723192201a268f36898774319a90823"
+  },
+  "snapshot_sha256": "5b02443928ef5503c280c9422376cf5efb8849f13e02ee92f03aca917c47ed38",
+  "protocol": "frozen 200 movie snapshot; train1749 valid373 test370; no test-based model selection",
+  "date": "2026-10-29"
+}
