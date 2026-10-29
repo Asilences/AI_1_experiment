@@ -1,0 +1,956 @@
+{
+  "split": "robustness",
+  "protocol": {
+    "method": "Unique tokenizer-unknown name restoration from linked retained fact tails",
+    "fact_limit": 24,
+    "minimum_alphanumeric_characters": 3,
+    "input_sha256": {
+      "entities.json": "84fc4bbf3f9f106677dde191584ee2f7c2c408a22a689c91054596a6f4971c89",
+      "splits.json": "2a2a59486b30dca05a8a74dde1b0913cff4898fa50bf8a86fc0f3a93380c53cc",
+      "qa.jsonl": "e5b68040859b3d6e777905aa3adf1fc27791202028fa5d2af210b42231b41b67"
+    },
+    "mapping_sha256": "63d5a3c09627b4438629896bbd67f63727b21fc9214496a590211fbc0171223b",
+    "tokenizer": {
+      "class": "T5TokenizerFast",
+      "source_kind": "local_directory",
+      "source_name": "checkpoint",
+      "files_sha256": {
+        "tokenizer.json": "dc856f1be037756d043c1557df9a075bb8658c03c26405ef78a9fc759521cc3e",
+        "tokenizer_config.json": "f0f4630efa94e1d9e93c877ecdf2e45a8b9685037f752eddf0611508425b967b",
+        "special_tokens_map.json": "65d84a9271d68f1230ab99518c00f0f7eaef95c7b363001595ba6fa662d434b1",
+        "spiece.model": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86"
+      },
+      "vocabulary_size": 32100,
+      "vocabulary_sha256": "3e4dac4c480136f1337a43a23a00b56e92b10e1e65483bb718ceb971eef2aa14",
+      "backend_sha256": "cf4c68f352e784c0c87cd36533197cd982c4ba3421817823ebe28725b3963647"
+    },
+    "source_sha256": {
+      "name_recovery.py": "ece3fbb1a5b4933d789b0943ccfc422c09febbfff0fe6e451d8953dca5645975",
+      "recovery_experiment.py": "d54258754bc8d23aa85a11ff56c3056c24113c77927ea43583cdd5388f48095c",
+      "neural_preflight.py": "109339cc4a8701d91ca11530c39dc04cb6798f9894e2c70468e144527a913726",
+      "linker.py": "0a7e2bf48fbb7e523b4ba4f22a9ec293fe2be458e87a621a7601c61702fdb180",
+      "metrics.py": "e49751f90e07a92b86af5cc12f19bd6796ff7555fd0f0d2985c47597704ec890"
+    }
+  },
+  "scope": "Postprocessing frozen predictions; no retraining or regeneration. Strict scores unchanged in definition.",
+  "latency_note": "latency_ms is frozen generation timing; recovery_ms includes linking, restoration and extraction.",
+  "predictions_sha256": "5de3bae8c3168afd953e0d6101ad0c82689761c982a5f64d8b0bfccc4c61f3f9",
+  "baseline": {
+    "count": 381,
+    "entity_exact": 93.43832020997375,
+    "entity_macro_f1": 93.64829396325459,
+    "bleu": 91.79293290195413,
+    "rouge_l": 94.25458474879079,
+    "by_relation": {
+      "P364": {
+        "exact": 96.73913043478261,
+        "f1": 96.73913043478261,
+        "count": 92
+      },
+      "P495": {
+        "exact": 84.52380952380952,
+        "f1": 84.52380952380952,
+        "count": 84
+      },
+      "P136": {
+        "exact": 94.25287356321839,
+        "f1": 95.17241379310344,
+        "count": 87
+      },
+      "P57": {
+        "exact": 95.23809523809523,
+        "f1": 95.23809523809523,
+        "count": 84
+      },
+      "UNKNOWN": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 34
+      }
+    },
+    "answerable_count": 347,
+    "refusal_count": 34,
+    "answerable_entity_exact": 92.79538904899135,
+    "answerable_entity_macro_f1": 93.02593659942363,
+    "refusal_accuracy": 100.0,
+    "latency_mean_ms": 27.811026246716477,
+    "latency_p95_ms": 36.251168749970475
+  },
+  "with_name_recovery": {
+    "count": 381,
+    "entity_exact": 94.22572178477691,
+    "entity_macro_f1": 94.43569553805774,
+    "bleu": 92.43430145026512,
+    "rouge_l": 94.34907293776716,
+    "by_relation": {
+      "P364": {
+        "exact": 96.73913043478261,
+        "f1": 96.73913043478261,
+        "count": 92
+      },
+      "P495": {
+        "exact": 84.52380952380952,
+        "f1": 84.52380952380952,
+        "count": 84
+      },
+      "P136": {
+        "exact": 94.25287356321839,
+        "f1": 95.17241379310344,
+        "count": 87
+      },
+      "P57": {
+        "exact": 98.80952380952381,
+        "f1": 98.80952380952381,
+        "count": 84
+      },
+      "UNKNOWN": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 34
+      }
+    },
+    "answerable_count": 347,
+    "refusal_count": 34,
+    "answerable_entity_exact": 93.65994236311239,
+    "answerable_entity_macro_f1": 93.89048991354467,
+    "refusal_accuracy": 100.0,
+    "latency_mean_ms": 27.811026246716477,
+    "latency_p95_ms": 36.251168749970475
+  },
+  "fixed_question_ids": [
+    "robust_clean_Q322734_P57_1",
+    "robust_paraphrase_Q322734_P57_1",
+    "robust_typo_Q322734_P57_1"
+  ],
+  "regressed_question_ids": [],
+  "changed_question_ids": [
+    "robust_clean_Q322734_P57_1",
+    "robust_paraphrase_Q322734_P57_1",
+    "robust_typo_Q322734_P57_1",
+    "robust_clean_Q510181_P57_1",
+    "robust_paraphrase_Q510181_P57_1",
+    "robust_typo_Q510181_P57_1",
+    "robust_alias_Q510181_P57_1",
+    "robust_clean_Q510181_P57_0",
+    "robust_paraphrase_Q510181_P57_0",
+    "robust_typo_Q510181_P57_0",
+    "robust_alias_Q510181_P57_0"
+  ],
+  "remaining_errors": [
+    {
+      "question_id": "robust_paraphrase_Q497303_P495_2",
+      "question": "Where was Woman of Fire '82 produced originally?",
+      "answer": "The available knowledge graph does not contain enough information to answer this question.",
+      "gold_answer_ids": [
+        "Q884"
+      ],
+      "predicted_answer_ids": []
+    },
+    {
+      "question_id": "robust_paraphrase_Q506400_P495_0",
+      "question": "Where was Red Dawn produced originally?",
+      "answer": "The available knowledge graph does not contain enough information to answer this question.",
+      "gold_answer_ids": [
+        "Q30"
+      ],
+      "predicted_answer_ids": []
+    },
+    {
+      "question_id": "robust_paraphrase_Q514031_P495_1",
+      "question": "Where was Scalps produced originally?",
+      "answer": "The available knowledge graph does not contain enough information to answer this question.",
+      "gold_answer_ids": [
+        "Q30"
+      ],
+      "predicted_answer_ids": []
+    },
+    {
+      "question_id": "robust_paraphrase_Q330982_P495_0",
+      "question": "Where was The Beyond produced originally?",
+      "answer": "The original languages of The Beyond are Italian.",
+      "gold_answer_ids": [
+        "Q38"
+      ],
+      "predicted_answer_ids": [
+        "Q652"
+      ]
+    },
+    {
+      "question_id": "robust_typo_Q219952_P364_1",
+      "question": "Which languages was Zonign originally made in?",
+      "answer": "The languages of Zonign are English.",
+      "gold_answer_ids": [
+        "Q188"
+      ],
+      "predicted_answer_ids": [
+        "Q1860"
+      ]
+    },
+    {
+      "question_id": "robust_typo_Q495271_P136_2",
+      "question": "Name the genre or genres of The Gitf.",
+      "answer": "The Gitf",
+      "gold_answer_ids": [
+        "Q157443"
+      ],
+      "predicted_answer_ids": []
+    },
+    {
+      "question_id": "robust_paraphrase_Q514031_P136_0",
+      "question": "How would you classify Scalps by genre?",
+      "answer": "Scalps belongs to the following genres: slasher film and ghost film.",
+      "gold_answer_ids": [
+        "Q853630",
+        "Q31888058",
+        "Q66425231"
+      ],
+      "predicted_answer_ids": [
+        "Q31888058",
+        "Q853630"
+      ]
+    },
+    {
+      "question_id": "robust_typo_Q514031_P136_0",
+      "question": "What genre is Sclaps?",
+      "answer": "Sclaps is a musical genre.",
+      "gold_answer_ids": [
+        "Q853630",
+        "Q31888058",
+        "Q66425231"
+      ],
+      "predicted_answer_ids": []
+    },
+    {
+      "question_id": "robust_paraphrase_Q303136_P495_0",
+      "question": "Where was The Big Red One produced originally?",
+      "answer": "The original languages of The Big Red One are English.",
+      "gold_answer_ids": [
+        "Q30"
+      ],
+      "predicted_answer_ids": [
+        "Q1860"
+      ]
+    },
+    {
+      "question_id": "robust_typo_Q495271_P136_0",
+      "question": "What genre is The Gitf?",
+      "answer": "The Gitf is a musical genre.",
+      "gold_answer_ids": [
+        "Q157443"
+      ],
+      "predicted_answer_ids": []
+    },
+    {
+      "question_id": "robust_paraphrase_Q506400_P495_1",
+      "question": "Where was Red Dawn produced originally?",
+      "answer": "The available knowledge graph does not contain enough information to answer this question.",
+      "gold_answer_ids": [
+        "Q30"
+      ],
+      "predicted_answer_ids": []
+    },
+    {
+      "question_id": "robust_typo_Q506400_P495_1",
+      "question": "What is the country of origin of Red aDwn?",
+      "answer": "Red aDwn originated in North America.",
+      "gold_answer_ids": [
+        "Q30"
+      ],
+      "predicted_answer_ids": []
+    },
+    {
+      "question_id": "robust_paraphrase_Q497303_P495_1",
+      "question": "Where was Woman of Fire '82 produced originally?",
+      "answer": "The available knowledge graph does not contain enough information to answer this question.",
+      "gold_answer_ids": [
+        "Q884"
+      ],
+      "predicted_answer_ids": []
+    },
+    {
+      "question_id": "robust_typo_Q508498_P364_1",
+      "question": "Which languages was Méol originally made in?",
+      "answer": "The languages of Méol are Spanish.",
+      "gold_answer_ids": [
+        "Q150"
+      ],
+      "predicted_answer_ids": [
+        "Q1321"
+      ]
+    },
+    {
+      "question_id": "robust_typo_Q219952_P136_0",
+      "question": "What genre is Zonign?",
+      "answer": "musical genre",
+      "gold_answer_ids": [
+        "Q2484376"
+      ],
+      "predicted_answer_ids": []
+    },
+    {
+      "question_id": "robust_typo_Q495271_P495_0",
+      "question": "Which country did The Gfit originate in?",
+      "answer": "The Gfit originated in Germany.",
+      "gold_answer_ids": [
+        "Q38",
+        "Q142"
+      ],
+      "predicted_answer_ids": [
+        "Q183"
+      ]
+    },
+    {
+      "question_id": "robust_paraphrase_Q514031_P495_2",
+      "question": "Where was Scalps produced originally?",
+      "answer": "The available knowledge graph does not contain enough information to answer this question.",
+      "gold_answer_ids": [
+        "Q30"
+      ],
+      "predicted_answer_ids": []
+    },
+    {
+      "question_id": "robust_typo_Q508498_P364_2",
+      "question": "Name the original language or languages of Mléo.",
+      "answer": "the original languages of Mléo are Spanish.",
+      "gold_answer_ids": [
+        "Q150"
+      ],
+      "predicted_answer_ids": [
+        "Q1321"
+      ]
+    },
+    {
+      "question_id": "robust_paraphrase_Q506400_P495_2",
+      "question": "Where was Red Dawn produced originally?",
+      "answer": "The available knowledge graph does not contain enough information to answer this question.",
+      "gold_answer_ids": [
+        "Q30"
+      ],
+      "predicted_answer_ids": []
+    },
+    {
+      "question_id": "robust_typo_Q506400_P495_2",
+      "question": "Name the countries of origin of Red Danw.",
+      "answer": "Red Danw originated in the northern part of the country.",
+      "gold_answer_ids": [
+        "Q30"
+      ],
+      "predicted_answer_ids": []
+    },
+    {
+      "question_id": "robust_typo_Q219952_P57_2",
+      "question": "Name the director or directors of oZning.",
+      "answer": "oZning",
+      "gold_answer_ids": [
+        "Q106712693"
+      ],
+      "predicted_answer_ids": []
+    },
+    {
+      "question_id": "robust_paraphrase_Q383652_P495_2",
+      "question": "Where was Eddie and the Cruisers II: Eddie Lives! produced originally?",
+      "answer": "The available knowledge graph does not contain enough information to answer this question.",
+      "gold_answer_ids": [
+        "Q16",
+        "Q30"
+      ],
+      "predicted_answer_ids": []
+    }
+  ],
+  "selected_on_validation": false,
+  "recovery_mean_ms": 8.105571128618159,
+  "validation_report_sha256": "8570c05999ad48021e50cac7b2af264f7b5cf454ad2560c2b603e43af3f2b9a4",
+  "robustness_sha256": "fec42397218cd5818ee8ea3bfd83364c6c5aef3b4c5d9e1b4455f93bb3abdf86",
+  "by_variant": {
+    "alias": {
+      "baseline": {
+        "count": 47,
+        "entity_exact": 100.0,
+        "entity_macro_f1": 100.0,
+        "bleu": 93.52979936538591,
+        "rouge_l": 96.74169370752342,
+        "by_relation": {
+          "P364": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 17
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 9
+          },
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 12
+          },
+          "P57": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 9
+          }
+        },
+        "answerable_count": 47,
+        "refusal_count": 0,
+        "answerable_entity_exact": 100.0,
+        "answerable_entity_macro_f1": 100.0,
+        "latency_mean_ms": 28.26421688829659,
+        "latency_p95_ms": 38.61653124999975
+      },
+      "with_name_recovery": {
+        "count": 47,
+        "entity_exact": 100.0,
+        "entity_macro_f1": 100.0,
+        "bleu": 94.36896635541636,
+        "rouge_l": 96.74169370752342,
+        "by_relation": {
+          "P364": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 17
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 9
+          },
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 12
+          },
+          "P57": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 9
+          }
+        },
+        "answerable_count": 47,
+        "refusal_count": 0,
+        "answerable_entity_exact": 100.0,
+        "answerable_entity_macro_f1": 100.0,
+        "latency_mean_ms": 28.26421688829659,
+        "latency_p95_ms": 38.61653124999975
+      },
+      "fixed_question_ids": [],
+      "regressed_question_ids": [],
+      "changed_question_ids": [
+        "robust_alias_Q510181_P57_1",
+        "robust_alias_Q510181_P57_0"
+      ],
+      "remaining_errors": []
+    },
+    "clean": {
+      "baseline": {
+        "count": 100,
+        "entity_exact": 99.0,
+        "entity_macro_f1": 99.0,
+        "bleu": 99.28585292348698,
+        "rouge_l": 99.88,
+        "by_relation": {
+          "P364": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 25
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 25
+          },
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 25
+          },
+          "P57": {
+            "exact": 96.0,
+            "f1": 96.0,
+            "count": 25
+          }
+        },
+        "answerable_count": 100,
+        "refusal_count": 0,
+        "answerable_entity_exact": 99.0,
+        "answerable_entity_macro_f1": 99.0,
+        "latency_mean_ms": 27.946923687499066,
+        "latency_p95_ms": 36.251168749970475
+      },
+      "with_name_recovery": {
+        "count": 100,
+        "entity_exact": 100.0,
+        "entity_macro_f1": 100.0,
+        "bleu": 100.00000000000004,
+        "rouge_l": 100.0,
+        "by_relation": {
+          "P364": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 25
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 25
+          },
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 25
+          },
+          "P57": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 25
+          }
+        },
+        "answerable_count": 100,
+        "refusal_count": 0,
+        "answerable_entity_exact": 100.0,
+        "answerable_entity_macro_f1": 100.0,
+        "latency_mean_ms": 27.946923687499066,
+        "latency_p95_ms": 36.251168749970475
+      },
+      "fixed_question_ids": [
+        "robust_clean_Q322734_P57_1"
+      ],
+      "regressed_question_ids": [],
+      "changed_question_ids": [
+        "robust_clean_Q322734_P57_1",
+        "robust_clean_Q510181_P57_1",
+        "robust_clean_Q510181_P57_0"
+      ],
+      "remaining_errors": []
+    },
+    "paraphrase": {
+      "baseline": {
+        "count": 100,
+        "entity_exact": 88.0,
+        "entity_macro_f1": 88.8,
+        "bleu": 81.9758173331591,
+        "rouge_l": 89.2255332445183,
+        "by_relation": {
+          "P364": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 25
+          },
+          "P495": {
+            "exact": 60.0,
+            "f1": 60.0,
+            "count": 25
+          },
+          "P136": {
+            "exact": 96.0,
+            "f1": 99.2,
+            "count": 25
+          },
+          "P57": {
+            "exact": 96.0,
+            "f1": 96.0,
+            "count": 25
+          }
+        },
+        "answerable_count": 100,
+        "refusal_count": 0,
+        "answerable_entity_exact": 88.0,
+        "answerable_entity_macro_f1": 88.8,
+        "latency_mean_ms": 27.91380568749844,
+        "latency_p95_ms": 36.251168749970475
+      },
+      "with_name_recovery": {
+        "count": 100,
+        "entity_exact": 89.0,
+        "entity_macro_f1": 89.8,
+        "bleu": 82.65214025618971,
+        "rouge_l": 89.34553324451831,
+        "by_relation": {
+          "P364": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 25
+          },
+          "P495": {
+            "exact": 60.0,
+            "f1": 60.0,
+            "count": 25
+          },
+          "P136": {
+            "exact": 96.0,
+            "f1": 99.2,
+            "count": 25
+          },
+          "P57": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 25
+          }
+        },
+        "answerable_count": 100,
+        "refusal_count": 0,
+        "answerable_entity_exact": 89.0,
+        "answerable_entity_macro_f1": 89.8,
+        "latency_mean_ms": 27.91380568749844,
+        "latency_p95_ms": 36.251168749970475
+      },
+      "fixed_question_ids": [
+        "robust_paraphrase_Q322734_P57_1"
+      ],
+      "regressed_question_ids": [],
+      "changed_question_ids": [
+        "robust_paraphrase_Q322734_P57_1",
+        "robust_paraphrase_Q510181_P57_1",
+        "robust_paraphrase_Q510181_P57_0"
+      ],
+      "remaining_errors": [
+        {
+          "question_id": "robust_paraphrase_Q497303_P495_2",
+          "question": "Where was Woman of Fire '82 produced originally?",
+          "answer": "The available knowledge graph does not contain enough information to answer this question.",
+          "gold_answer_ids": [
+            "Q884"
+          ],
+          "predicted_answer_ids": []
+        },
+        {
+          "question_id": "robust_paraphrase_Q506400_P495_0",
+          "question": "Where was Red Dawn produced originally?",
+          "answer": "The available knowledge graph does not contain enough information to answer this question.",
+          "gold_answer_ids": [
+            "Q30"
+          ],
+          "predicted_answer_ids": []
+        },
+        {
+          "question_id": "robust_paraphrase_Q514031_P495_1",
+          "question": "Where was Scalps produced originally?",
+          "answer": "The available knowledge graph does not contain enough information to answer this question.",
+          "gold_answer_ids": [
+            "Q30"
+          ],
+          "predicted_answer_ids": []
+        },
+        {
+          "question_id": "robust_paraphrase_Q330982_P495_0",
+          "question": "Where was The Beyond produced originally?",
+          "answer": "The original languages of The Beyond are Italian.",
+          "gold_answer_ids": [
+            "Q38"
+          ],
+          "predicted_answer_ids": [
+            "Q652"
+          ]
+        },
+        {
+          "question_id": "robust_paraphrase_Q514031_P136_0",
+          "question": "How would you classify Scalps by genre?",
+          "answer": "Scalps belongs to the following genres: slasher film and ghost film.",
+          "gold_answer_ids": [
+            "Q853630",
+            "Q31888058",
+            "Q66425231"
+          ],
+          "predicted_answer_ids": [
+            "Q31888058",
+            "Q853630"
+          ]
+        },
+        {
+          "question_id": "robust_paraphrase_Q303136_P495_0",
+          "question": "Where was The Big Red One produced originally?",
+          "answer": "The original languages of The Big Red One are English.",
+          "gold_answer_ids": [
+            "Q30"
+          ],
+          "predicted_answer_ids": [
+            "Q1860"
+          ]
+        },
+        {
+          "question_id": "robust_paraphrase_Q506400_P495_1",
+          "question": "Where was Red Dawn produced originally?",
+          "answer": "The available knowledge graph does not contain enough information to answer this question.",
+          "gold_answer_ids": [
+            "Q30"
+          ],
+          "predicted_answer_ids": []
+        },
+        {
+          "question_id": "robust_paraphrase_Q497303_P495_1",
+          "question": "Where was Woman of Fire '82 produced originally?",
+          "answer": "The available knowledge graph does not contain enough information to answer this question.",
+          "gold_answer_ids": [
+            "Q884"
+          ],
+          "predicted_answer_ids": []
+        },
+        {
+          "question_id": "robust_paraphrase_Q514031_P495_2",
+          "question": "Where was Scalps produced originally?",
+          "answer": "The available knowledge graph does not contain enough information to answer this question.",
+          "gold_answer_ids": [
+            "Q30"
+          ],
+          "predicted_answer_ids": []
+        },
+        {
+          "question_id": "robust_paraphrase_Q506400_P495_2",
+          "question": "Where was Red Dawn produced originally?",
+          "answer": "The available knowledge graph does not contain enough information to answer this question.",
+          "gold_answer_ids": [
+            "Q30"
+          ],
+          "predicted_answer_ids": []
+        },
+        {
+          "question_id": "robust_paraphrase_Q383652_P495_2",
+          "question": "Where was Eddie and the Cruisers II: Eddie Lives! produced originally?",
+          "answer": "The available knowledge graph does not contain enough information to answer this question.",
+          "gold_answer_ids": [
+            "Q16",
+            "Q30"
+          ],
+          "predicted_answer_ids": []
+        }
+      ]
+    },
+    "typo": {
+      "baseline": {
+        "count": 100,
+        "entity_exact": 88.0,
+        "entity_macro_f1": 88.0,
+        "bleu": 86.99339381772987,
+        "rouge_l": 90.5358386058386,
+        "by_relation": {
+          "P364": {
+            "exact": 88.0,
+            "f1": 88.0,
+            "count": 25
+          },
+          "P495": {
+            "exact": 88.0,
+            "f1": 88.0,
+            "count": 25
+          },
+          "P136": {
+            "exact": 84.0,
+            "f1": 84.0,
+            "count": 25
+          },
+          "P57": {
+            "exact": 92.0,
+            "f1": 92.0,
+            "count": 25
+          }
+        },
+        "answerable_count": 100,
+        "refusal_count": 0,
+        "answerable_entity_exact": 88.0,
+        "answerable_entity_macro_f1": 88.0,
+        "latency_mean_ms": 27.97117824999816,
+        "latency_p95_ms": 36.251168749970475
+      },
+      "with_name_recovery": {
+        "count": 100,
+        "entity_exact": 89.0,
+        "entity_macro_f1": 89.0,
+        "bleu": 87.72636285145718,
+        "rouge_l": 90.6558386058386,
+        "by_relation": {
+          "P364": {
+            "exact": 88.0,
+            "f1": 88.0,
+            "count": 25
+          },
+          "P495": {
+            "exact": 88.0,
+            "f1": 88.0,
+            "count": 25
+          },
+          "P136": {
+            "exact": 84.0,
+            "f1": 84.0,
+            "count": 25
+          },
+          "P57": {
+            "exact": 96.0,
+            "f1": 96.0,
+            "count": 25
+          }
+        },
+        "answerable_count": 100,
+        "refusal_count": 0,
+        "answerable_entity_exact": 89.0,
+        "answerable_entity_macro_f1": 89.0,
+        "latency_mean_ms": 27.97117824999816,
+        "latency_p95_ms": 36.251168749970475
+      },
+      "fixed_question_ids": [
+        "robust_typo_Q322734_P57_1"
+      ],
+      "regressed_question_ids": [],
+      "changed_question_ids": [
+        "robust_typo_Q322734_P57_1",
+        "robust_typo_Q510181_P57_1",
+        "robust_typo_Q510181_P57_0"
+      ],
+      "remaining_errors": [
+        {
+          "question_id": "robust_typo_Q219952_P364_1",
+          "question": "Which languages was Zonign originally made in?",
+          "answer": "The languages of Zonign are English.",
+          "gold_answer_ids": [
+            "Q188"
+          ],
+          "predicted_answer_ids": [
+            "Q1860"
+          ]
+        },
+        {
+          "question_id": "robust_typo_Q495271_P136_2",
+          "question": "Name the genre or genres of The Gitf.",
+          "answer": "The Gitf",
+          "gold_answer_ids": [
+            "Q157443"
+          ],
+          "predicted_answer_ids": []
+        },
+        {
+          "question_id": "robust_typo_Q514031_P136_0",
+          "question": "What genre is Sclaps?",
+          "answer": "Sclaps is a musical genre.",
+          "gold_answer_ids": [
+            "Q853630",
+            "Q31888058",
+            "Q66425231"
+          ],
+          "predicted_answer_ids": []
+        },
+        {
+          "question_id": "robust_typo_Q495271_P136_0",
+          "question": "What genre is The Gitf?",
+          "answer": "The Gitf is a musical genre.",
+          "gold_answer_ids": [
+            "Q157443"
+          ],
+          "predicted_answer_ids": []
+        },
+        {
+          "question_id": "robust_typo_Q506400_P495_1",
+          "question": "What is the country of origin of Red aDwn?",
+          "answer": "Red aDwn originated in North America.",
+          "gold_answer_ids": [
+            "Q30"
+          ],
+          "predicted_answer_ids": []
+        },
+        {
+          "question_id": "robust_typo_Q508498_P364_1",
+          "question": "Which languages was Méol originally made in?",
+          "answer": "The languages of Méol are Spanish.",
+          "gold_answer_ids": [
+            "Q150"
+          ],
+          "predicted_answer_ids": [
+            "Q1321"
+          ]
+        },
+        {
+          "question_id": "robust_typo_Q219952_P136_0",
+          "question": "What genre is Zonign?",
+          "answer": "musical genre",
+          "gold_answer_ids": [
+            "Q2484376"
+          ],
+          "predicted_answer_ids": []
+        },
+        {
+          "question_id": "robust_typo_Q495271_P495_0",
+          "question": "Which country did The Gfit originate in?",
+          "answer": "The Gfit originated in Germany.",
+          "gold_answer_ids": [
+            "Q38",
+            "Q142"
+          ],
+          "predicted_answer_ids": [
+            "Q183"
+          ]
+        },
+        {
+          "question_id": "robust_typo_Q508498_P364_2",
+          "question": "Name the original language or languages of Mléo.",
+          "answer": "the original languages of Mléo are Spanish.",
+          "gold_answer_ids": [
+            "Q150"
+          ],
+          "predicted_answer_ids": [
+            "Q1321"
+          ]
+        },
+        {
+          "question_id": "robust_typo_Q506400_P495_2",
+          "question": "Name the countries of origin of Red Danw.",
+          "answer": "Red Danw originated in the northern part of the country.",
+          "gold_answer_ids": [
+            "Q30"
+          ],
+          "predicted_answer_ids": []
+        },
+        {
+          "question_id": "robust_typo_Q219952_P57_2",
+          "question": "Name the director or directors of oZning.",
+          "answer": "oZning",
+          "gold_answer_ids": [
+            "Q106712693"
+          ],
+          "predicted_answer_ids": []
+        }
+      ]
+    },
+    "unanswerable": {
+      "baseline": {
+        "count": 34,
+        "entity_exact": 100.0,
+        "entity_macro_f1": 100.0,
+        "bleu": 100.00000000000004,
+        "rouge_l": 100.0,
+        "by_relation": {
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 34
+          }
+        },
+        "answerable_count": 0,
+        "refusal_count": 34,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 26.011530698513873,
+        "latency_p95_ms": 29.201368750022993
+      },
+      "with_name_recovery": {
+        "count": 34,
+        "entity_exact": 100.0,
+        "entity_macro_f1": 100.0,
+        "bleu": 100.00000000000004,
+        "rouge_l": 100.0,
+        "by_relation": {
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 34
+          }
+        },
+        "answerable_count": 0,
+        "refusal_count": 34,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 26.011530698513873,
+        "latency_p95_ms": 29.201368750022993
+      },
+      "fixed_question_ids": [],
+      "regressed_question_ids": [],
+      "changed_question_ids": [],
+      "remaining_errors": []
+    }
+  }
+}

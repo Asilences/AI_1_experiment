@@ -1,0 +1,105 @@
+{
+  "scope": "Actual local B0 checkpoint generation through the UI service with name recovery enabled.",
+  "results": [
+    {
+      "question": "Who directed The Conquest of Albania?",
+      "results": [
+        {
+          "system": "best",
+          "name": "B0 神经生成 + 名称恢复",
+          "ok": true,
+          "answer": "The Conquest of Albania was directed by Alfonso Ungría.",
+          "refused": false,
+          "movie": {
+            "id": "Q622008",
+            "label": "The Conquest of Albania"
+          },
+          "link_status": "exact",
+          "link_score": 1.0,
+          "relation": null,
+          "confidence": null,
+          "evidence": [
+            "The Conquest of Albania | director | Alfonso Ungría",
+            "The Conquest of Albania | genre | war film",
+            "The Conquest of Albania | genre | historical film",
+            "The Conquest of Albania | country of origin | Spain",
+            "The Conquest of Albania | original language | Spanish"
+          ],
+          "cold_start": true,
+          "generation_ms": 675.7348999999522,
+          "raw_answer": "The Conquest of Albania was directed by Alfonso Ungra.",
+          "replacements": [
+            {
+              "entity_id": "Q785136",
+              "before": "Alfonso Ungra",
+              "after": "Alfonso Ungría",
+              "start": 40,
+              "end": 53
+            }
+          ],
+          "recovery_ms": 1.0903000002144836,
+          "elapsed_ms": 9070.37
+        }
+      ],
+      "elapsed_ms": 9074.19
+    },
+    {
+      "question": "Who directed The Big Red One?",
+      "results": [
+        {
+          "system": "best",
+          "name": "B0 神经生成 + 名称恢复",
+          "ok": true,
+          "answer": "The Big Red One was directed by Samuel Fuller.",
+          "refused": false,
+          "movie": {
+            "id": "Q303136",
+            "label": "The Big Red One"
+          },
+          "link_status": "exact",
+          "link_score": 1.0,
+          "relation": null,
+          "confidence": null,
+          "evidence": [
+            "The Big Red One | director | Samuel Fuller",
+            "The Big Red One | genre | drama film",
+            "The Big Red One | country of origin | United States",
+            "The Big Red One | original language | English"
+          ],
+          "cold_start": false,
+          "generation_ms": 286.7651000001388,
+          "raw_answer": "The Big Red One was directed by Samuel Fuller.",
+          "replacements": [],
+          "recovery_ms": 0.7558000002063636,
+          "elapsed_ms": 304.09
+        }
+      ],
+      "elapsed_ms": 306.38
+    },
+    {
+      "question": "Who directed An Entirely Imaginary Film 9999?",
+      "results": [
+        {
+          "system": "best",
+          "name": "B0 神经生成 + 名称恢复",
+          "ok": true,
+          "answer": "The available knowledge graph does not contain enough information to answer this question.",
+          "refused": true,
+          "movie": null,
+          "link_status": "not_found",
+          "link_score": 0.0,
+          "relation": null,
+          "confidence": null,
+          "evidence": [],
+          "cold_start": false,
+          "generation_ms": 0,
+          "raw_answer": "The available knowledge graph does not contain enough information to answer this question.",
+          "replacements": [],
+          "recovery_ms": 0,
+          "elapsed_ms": 44.31
+        }
+      ],
+      "elapsed_ms": 46.55
+    }
+  ]
+}

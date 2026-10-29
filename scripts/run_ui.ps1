@@ -3,7 +3,8 @@ param(
     [string]$DataDir,
     [string]$ModelPath,
     [switch]$NoBrowser,
-    [switch]$Legacy
+    [switch]$Legacy,
+    [switch]$RecoverNames
 )
 $ErrorActionPreference = 'Stop'
 $Root = Split-Path -Parent $PSScriptRoot
@@ -17,6 +18,7 @@ $Arguments = @('-m', 'kgqa.web', '--port', $Port)
 if ($DataDir) { $Arguments += @('--data-dir', $DataDir) }
 if ($ModelPath) { $Arguments += @('--model-path', $ModelPath) }
 if ($Legacy) { $Arguments += '--legacy' }
+if ($RecoverNames) { $Arguments += '--recover-names' }
 if (-not $NoBrowser) { $Arguments += '--open' }
 & $Python @Arguments
 exit $LASTEXITCODE
