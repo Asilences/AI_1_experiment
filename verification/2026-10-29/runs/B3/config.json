@@ -1,0 +1,25 @@
+{
+  "run_id": "B3",
+  "model": "google/flan-t5-small",
+  "learning_rate": 0.001,
+  "epochs": 5,
+  "batch_size": 4,
+  "gradient_accumulation": 4,
+  "effective_batch": 16,
+  "use_embeddings": true,
+  "seed": 42,
+  "device": "cuda",
+  "smoke": false,
+  "validation_entity_linking": true,
+  "selection_metric": "validation entity_macro_f1",
+  "qa_by_split": {
+    "train": 1749,
+    "valid": 373,
+    "test": 370
+  },
+  "effective_batch_note": "Maximum examples per optimizer update; the final accumulation window may be smaller.",
+  "training_batches_per_epoch": 438,
+  "optimizer_updates_per_epoch": 110,
+  "planned_optimizer_updates": 550,
+  "training_precision": "bf16 autocast"
+}

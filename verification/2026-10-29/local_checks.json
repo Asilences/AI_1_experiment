@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-29",
+  "pytest": {
+    "command": "python -m pytest -q",
+    "exit_code": 0,
+    "captured_summary": "207 passed in 18.23s",
+    "environment": "isolated CPU environment with requirements-test.txt"
+  },
+  "powershell_failure_stop": {
+    "python_exit_code_used": 7,
+    "observed_result": "Python experiment step failed with exit code 7; subsequent step was not executed",
+    "check_passed": true
+  },
+  "tested_changed_sources": {
+    "kgqa/human_eval.py": "131bd140753d3110ec11cdc26fb63d3554173a8e3bd09a1e6977d3983f0b22af",
+    "kgqa/neural.py": "83a5781328e5679ece4a299a3a1b40b12e884848dacc9820dd8d7ddc2227932c",
+    "scripts/run_experiment.ps1": "ef25b71aad953232ec9212787de3ece52df218924bf45f93e36f1f3c9e7b92e4"
+  },
+  "note": "Summary of actually captured local command output. The separate full CUDA suite is recorded in its own run files."
+}

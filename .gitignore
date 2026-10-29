@@ -1,10 +1,10 @@
 .venv/
 .work/
-data/raw/
-data/processed/
-models/
-runs/
-output/
+/data/raw/
+/data/processed/
+/models/
+/runs/
+/output/
 __pycache__/
 .pytest_cache/
 *.pyc
