@@ -1,0 +1,362 @@
+{
+  "schema_version": 1,
+  "kind": "neural_data_preflight",
+  "scope": "Dataset/tokenizer inspection only; no model training, generation, or evaluation scores.",
+  "protocol": {
+    "input_max_length": 384,
+    "target_max_length": 96,
+    "fact_limit": 24,
+    "token_counts_include_special_tokens": true,
+    "target_reference_index": 0,
+    "roundtrip_comparison": "Exact equality after decode(skip_special_tokens=True), without truncation.",
+    "context_selection": "Gold movie for train; EntityLinker over all split movies for other splits.",
+    "fact_filter": "TransE mapping filter",
+    "label_scope_by_split": "Gold movie/answers plus linked movie and available fact tails before the slice.",
+    "missing_answers_note": "Check tail entity IDs. Separate 24-fact loss from prior absence (including linking/mapping). Token truncation can remove further text."
+  },
+  "provenance": {
+    "input_sha256": {
+      "entities.json": "84fc4bbf3f9f106677dde191584ee2f7c2c408a22a689c91054596a6f4971c89",
+      "qa.jsonl": "e5b68040859b3d6e777905aa3adf1fc27791202028fa5d2af210b42231b41b67",
+      "splits.json": "2a2a59486b30dca05a8a74dde1b0913cff4898fa50bf8a86fc0f3a93380c53cc",
+      "embedding_mapping.json": "63d5a3c09627b4438629896bbd67f63727b21fc9214496a590211fbc0171223b"
+    },
+    "tokenizer": {
+      "class": "T5TokenizerFast",
+      "source_kind": "local_directory",
+      "source_name": "checkpoint",
+      "files_sha256": {
+        "tokenizer.json": "dc856f1be037756d043c1557df9a075bb8658c03c26405ef78a9fc759521cc3e",
+        "tokenizer_config.json": "f0f4630efa94e1d9e93c877ecdf2e45a8b9685037f752eddf0611508425b967b",
+        "special_tokens_map.json": "65d84a9271d68f1230ab99518c00f0f7eaef95c7b363001595ba6fa662d434b1",
+        "spiece.model": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86"
+      },
+      "vocabulary_size": 32100,
+      "vocabulary_sha256": "3e4dac4c480136f1337a43a23a00b56e92b10e1e65483bb718ceb971eef2aa14",
+      "backend_sha256": "10e1c362713a22cc592cf66395ab98fa7461a36d33e3d1bf7226e30490cd20e7"
+    },
+    "source_sha256": {
+      "neural.py": "83a5781328e5679ece4a299a3a1b40b12e884848dacc9820dd8d7ddc2227932c",
+      "neural_preflight.py": "109339cc4a8701d91ca11530c39dc04cb6798f9894e2c70468e144527a913726",
+      "common.py": "8edce50100c3072bd134d77c77d0f4c45de5362219fe503b690b336fbc487705",
+      "linker.py": "4e251eefe5dd8481907e82ad7f0d050dfacb6a11a358aa94a4b233c34f20933f"
+    }
+  },
+  "rows": 2492,
+  "entity_labels": {
+    "unique_entities": 552,
+    "roundtrip_changed_entities": 13,
+    "unknown_token_entities": 13,
+    "examples": [
+      {
+        "entity_id": "Q1268232",
+        "label": "Dušan Vukotić",
+        "tokens": 9,
+        "decoded": "Duan Vukoti",
+        "changed": true,
+        "unknown_tokens": 2
+      },
+      {
+        "entity_id": "Q1284560",
+        "label": "Goran Paskaljević",
+        "tokens": 8,
+        "decoded": "Goran Paskaljevi",
+        "changed": true,
+        "unknown_tokens": 1
+      },
+      {
+        "entity_id": "Q268308",
+        "label": "Ödipussi",
+        "tokens": 5,
+        "decoded": "dipussi",
+        "changed": true,
+        "unknown_tokens": 1
+      },
+      {
+        "entity_id": "Q353758",
+        "label": "Jesús Franco",
+        "tokens": 6,
+        "decoded": "Jess Franco",
+        "changed": true,
+        "unknown_tokens": 1
+      },
+      {
+        "entity_id": "Q430274",
+        "label": "Fešák Hubert",
+        "tokens": 7,
+        "decoded": "Feák Hubert",
+        "changed": true,
+        "unknown_tokens": 1
+      }
+    ]
+  },
+  "by_split": {
+    "test": {
+      "rows": 370,
+      "gold_movies": 30,
+      "linked_movie_mismatch_rows": 0,
+      "input_truncated_rows": 0,
+      "target_truncated_rows": 0,
+      "target_roundtrip_changed_rows": 6,
+      "target_unknown_token_rows": 6,
+      "fact_truncated_rows": 0,
+      "answer_missing_from_retained_facts_rows": 0,
+      "answer_missing_entity_occurrences": 0,
+      "answer_dropped_by_fact_limit_rows": 0,
+      "answer_dropped_by_fact_limit_entity_occurrences": 0,
+      "max_untruncated_input_tokens": 155,
+      "max_untruncated_target_tokens": 29,
+      "max_available_facts": 12,
+      "fact_truncated_unique_movies": 0,
+      "entity_labels": {
+        "unique_entities": 126,
+        "roundtrip_changed_entities": 2,
+        "unknown_token_entities": 2,
+        "examples": [
+          {
+            "entity_id": "Q55403",
+            "label": "Nagisa Ōshima",
+            "tokens": 9,
+            "decoded": "Nagisa shima",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "entity_id": "Q55427",
+            "label": "João César Monteiro",
+            "tokens": 9,
+            "decoded": "Joo César Monteiro",
+            "changed": true,
+            "unknown_tokens": 1
+          }
+        ]
+      },
+      "examples": {
+        "input_truncation": [],
+        "target_truncation": [],
+        "target_roundtrip": [
+          {
+            "question_id": "Q322734_P57_0",
+            "target": "Recollections of the Yellow House was directed by João César Monteiro.",
+            "tokens": 20,
+            "decoded": "Recollections of the Yellow House was directed by Joo César Monteiro.",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "question_id": "Q322734_P57_1",
+            "target": "Recollections of the Yellow House was directed by João César Monteiro.",
+            "tokens": 20,
+            "decoded": "Recollections of the Yellow House was directed by Joo César Monteiro.",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "question_id": "Q322734_P57_2",
+            "target": "Recollections of the Yellow House was directed by João César Monteiro.",
+            "tokens": 20,
+            "decoded": "Recollections of the Yellow House was directed by Joo César Monteiro.",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "question_id": "Q510181_P57_0",
+            "target": "In the Realm of the Senses was directed by Nagisa Ōshima.",
+            "tokens": 22,
+            "decoded": "In the Realm of the Senses was directed by Nagisa shima.",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "question_id": "Q510181_P57_1",
+            "target": "In the Realm of the Senses was directed by Nagisa Ōshima.",
+            "tokens": 22,
+            "decoded": "In the Realm of the Senses was directed by Nagisa shima.",
+            "changed": true,
+            "unknown_tokens": 1
+          }
+        ],
+        "fact_truncation": [],
+        "answers_absent_from_retained_facts": []
+      }
+    },
+    "train": {
+      "rows": 1749,
+      "gold_movies": 140,
+      "linked_movie_mismatch_rows": 0,
+      "input_truncated_rows": 0,
+      "target_truncated_rows": 0,
+      "target_roundtrip_changed_rows": 51,
+      "target_unknown_token_rows": 51,
+      "fact_truncated_rows": 0,
+      "answer_missing_from_retained_facts_rows": 0,
+      "answer_missing_entity_occurrences": 0,
+      "answer_dropped_by_fact_limit_rows": 0,
+      "answer_dropped_by_fact_limit_entity_occurrences": 0,
+      "max_untruncated_input_tokens": 299,
+      "max_untruncated_target_tokens": 32,
+      "max_available_facts": 22,
+      "fact_truncated_unique_movies": 0,
+      "entity_labels": {
+        "unique_entities": 419,
+        "roundtrip_changed_entities": 10,
+        "unknown_token_entities": 10,
+        "examples": [
+          {
+            "entity_id": "Q1268232",
+            "label": "Dušan Vukotić",
+            "tokens": 9,
+            "decoded": "Duan Vukoti",
+            "changed": true,
+            "unknown_tokens": 2
+          },
+          {
+            "entity_id": "Q1284560",
+            "label": "Goran Paskaljević",
+            "tokens": 8,
+            "decoded": "Goran Paskaljevi",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "entity_id": "Q268308",
+            "label": "Ödipussi",
+            "tokens": 5,
+            "decoded": "dipussi",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "entity_id": "Q353758",
+            "label": "Jesús Franco",
+            "tokens": 6,
+            "decoded": "Jess Franco",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "entity_id": "Q430274",
+            "label": "Fešák Hubert",
+            "tokens": 7,
+            "decoded": "Feák Hubert",
+            "changed": true,
+            "unknown_tokens": 1
+          }
+        ]
+      },
+      "examples": {
+        "input_truncation": [],
+        "target_truncation": [],
+        "target_roundtrip": [
+          {
+            "question_id": "Q430274_P57_0",
+            "target": "Fešák Hubert was directed by Ivo Novák.",
+            "tokens": 16,
+            "decoded": "Feák Hubert was directed by Ivo Novák.",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "question_id": "Q430274_P57_1",
+            "target": "Fešák Hubert was directed by Ivo Novák.",
+            "tokens": 16,
+            "decoded": "Feák Hubert was directed by Ivo Novák.",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "question_id": "Q430274_P57_2",
+            "target": "Fešák Hubert was directed by Ivo Novák.",
+            "tokens": 16,
+            "decoded": "Feák Hubert was directed by Ivo Novák.",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "question_id": "Q430274_P136_0",
+            "target": "Fešák Hubert belongs to the following genres: comedy film.",
+            "tokens": 17,
+            "decoded": "Feák Hubert belongs to the following genres: comedy film.",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "question_id": "Q430274_P136_1",
+            "target": "Fešák Hubert belongs to the following genres: comedy film.",
+            "tokens": 17,
+            "decoded": "Feák Hubert belongs to the following genres: comedy film.",
+            "changed": true,
+            "unknown_tokens": 1
+          }
+        ],
+        "fact_truncation": [],
+        "answers_absent_from_retained_facts": []
+      }
+    },
+    "valid": {
+      "rows": 373,
+      "gold_movies": 30,
+      "linked_movie_mismatch_rows": 0,
+      "input_truncated_rows": 0,
+      "target_truncated_rows": 0,
+      "target_roundtrip_changed_rows": 3,
+      "target_unknown_token_rows": 3,
+      "fact_truncated_rows": 0,
+      "answer_missing_from_retained_facts_rows": 0,
+      "answer_missing_entity_occurrences": 0,
+      "answer_dropped_by_fact_limit_rows": 0,
+      "answer_dropped_by_fact_limit_entity_occurrences": 0,
+      "max_untruncated_input_tokens": 170,
+      "max_untruncated_target_tokens": 26,
+      "max_available_facts": 11,
+      "fact_truncated_unique_movies": 0,
+      "entity_labels": {
+        "unique_entities": 116,
+        "roundtrip_changed_entities": 1,
+        "unknown_token_entities": 1,
+        "examples": [
+          {
+            "entity_id": "Q785136",
+            "label": "Alfonso Ungría",
+            "tokens": 11,
+            "decoded": "Alfonso Ungra",
+            "changed": true,
+            "unknown_tokens": 1
+          }
+        ]
+      },
+      "examples": {
+        "input_truncation": [],
+        "target_truncation": [],
+        "target_roundtrip": [
+          {
+            "question_id": "Q622008_P57_0",
+            "target": "The Conquest of Albania was directed by Alfonso Ungría.",
+            "tokens": 20,
+            "decoded": "The Conquest of Albania was directed by Alfonso Ungra.",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "question_id": "Q622008_P57_1",
+            "target": "The Conquest of Albania was directed by Alfonso Ungría.",
+            "tokens": 20,
+            "decoded": "The Conquest of Albania was directed by Alfonso Ungra.",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "question_id": "Q622008_P57_2",
+            "target": "The Conquest of Albania was directed by Alfonso Ungría.",
+            "tokens": 20,
+            "decoded": "The Conquest of Albania was directed by Alfonso Ungra.",
+            "changed": true,
+            "unknown_tokens": 1
+          }
+        ],
+        "fact_truncation": [],
+        "answers_absent_from_retained_facts": []
+      }
+    }
+  }
+}

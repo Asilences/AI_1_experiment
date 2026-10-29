@@ -103,6 +103,28 @@ def test_resume_rejects_changed_candidate_source(tmp_path):
         expand.collect(base, candidates, work, target=3, client=FakeApi())
 
 
+@pytest.mark.parametrize('missing', ['snapshot', 'splits'])
+def test_expansion_checks_local_base_files_before_querying_candidates(tmp_path, monkeypatch, capsys, missing):
+    monkeypatch.setattr(expand, 'ROOT', tmp_path)
+
+    def unexpected_network(*args, **kwargs):
+        pytest.fail('Missing local base files must be reported before any candidate request')
+
+    monkeypatch.setattr(expand, 'SparqlClient', unexpected_network)
+    work = tmp_path / 'work'
+    arguments = ['--work-dir', str(work)]
+    if missing == 'splits':
+        write_json(tmp_path / 'data/raw/snapshot_1000.json', {})
+        arguments.extend(['--base-splits', str(tmp_path / 'absent_splits.json')])
+
+    with pytest.raises(SystemExit) as stopped:
+        expand.main(arguments)
+
+    assert stopped.value.code == 1
+    assert ('--base-snapshot' if missing == 'snapshot' else '--base-splits') in capsys.readouterr().err
+    assert not work.exists()
+
+
 def test_shared_titles_have_unambiguous_clickable_question_titles():
     movies = [{'id': 'Q1', 'label': 'The Avengers', 'aliases': [], 'release_year': 2012},
               {'id': 'Q2', 'label': 'The Avengers', 'aliases': [], 'release_year': 1998},
@@ -166,6 +188,55 @@ def test_versioned_prepare_and_model_training_do_not_overwrite_defaults(tmp_path
         pipeline.train(data, model_dir)
 
 
+def test_custom_training_requires_an_explicit_output_and_preserves_shared_model(tmp_path, monkeypatch):
+    monkeypatch.setattr(pipeline, 'ROOT', tmp_path)
+    movies, entities, _ = expand.fetch_api_batch(FakeApi(), [f'Q{i}' for i in range(1, 21)], {})
+    snapshot = tmp_path / 'snapshot.json'
+    write_json(snapshot, {'movies': movies, 'entities': entities})
+    data = tmp_path / 'expanded_data'
+    prepare.build(snapshot, data)
+    shared_model = tmp_path / 'models/pipeline/model.pkl'
+    shared_model.parent.mkdir(parents=True)
+    shared_model.write_bytes(b'original experiment model')
+
+    with pytest.raises(ValueError, match='--output-dir'):
+        pipeline.train(data)
+
+    assert shared_model.read_bytes() == b'original experiment model'
+    assert sorted(path.name for path in shared_model.parent.iterdir()) == ['model.pkl']
+    with pytest.raises(FileExistsError):
+        pipeline.train(data, shared_model.parent)
+    assert shared_model.read_bytes() == b'original experiment model'
+
+
+@pytest.mark.parametrize('change', ['assignments', 'policy', 'missing_provenance'])
+def test_existing_expansion_rejects_a_different_requested_split_policy(tmp_path, monkeypatch, change):
+    monkeypatch.setattr(expand, 'ROOT', tmp_path)
+    movies, entities, _ = expand.fetch_api_batch(FakeApi(), [f'Q{i}' for i in range(1, 21)], {})
+    snapshot = tmp_path / 'snapshot.json'
+    write_json(snapshot, {'movies': movies, 'entities': entities})
+    previous = {'train': ['Q1', 'Q2', 'Q3', 'Q4'], 'valid': ['Q5'], 'test': ['Q6']}
+    base_splits = tmp_path / 'base_splits.json'
+    write_json(base_splits, previous)
+    data, model = tmp_path / 'expanded_data', tmp_path / 'expanded_model'
+    prepare.build(snapshot, data, None if change == 'missing_provenance' else base_splits)
+    if change == 'assignments':
+        previous['train'][0], previous['valid'][0] = previous['valid'][0], previous['train'][0]
+        write_json(base_splits, previous)
+    elif change == 'policy':
+        manifest = read_json(data / 'manifest.json')
+        manifest['split_policy'] = 'Reshuffle all movie assignments'
+        write_json(data / 'manifest.json', manifest)
+    before = {path.name: path.read_bytes() for path in data.iterdir()}
+
+    with pytest.raises(ValueError, match='base splits or split policy'):
+        expand.prepare_and_train(snapshot, data, model, base_splits, activate=True)
+
+    assert {path.name: path.read_bytes() for path in data.iterdir()} == before
+    assert not model.exists()
+    assert not (tmp_path / '.work/ui-dataset.json').exists()
+
+
 def test_active_profile_validates_model_pairing_and_legacy_bypasses_it(tmp_path, monkeypatch):
     monkeypatch.setattr(web, 'ROOT', tmp_path)
     data, model = tmp_path / 'data', tmp_path / 'model.pkl'
@@ -193,7 +264,9 @@ def test_full_version_build_evaluates_before_activating_matching_ui_profile(tmp_
     snapshot = tmp_path / 'snapshot.json'
     write_json(snapshot, {'movies': movies, 'entities': entities})
     data, model = tmp_path / 'data/new', tmp_path / 'models/new'
-    metrics = expand.prepare_and_train(snapshot, data, model, activate=True)
+    base_splits = tmp_path / 'base_splits.json'
+    write_json(base_splits, {'train': ['Q1', 'Q2', 'Q3', 'Q4'], 'valid': ['Q5'], 'test': ['Q6']})
+    metrics = expand.prepare_and_train(snapshot, data, model, base_splits, activate=True)
     assert metrics['count'] > 0 and metrics['prediction_coverage'] == 100
     assert metrics['entity_macro_f1'] == 100
     assert web.startup_paths() == (data.resolve(), (model / 'model.pkl').resolve())
@@ -201,5 +274,5 @@ def test_full_version_build_evaluates_before_activating_matching_ui_profile(tmp_
     assert state['a0']['available'] and not state['neural']['available']
     assert state['dataset_name'] == '扩展电影库 · 20 部'
     before = (model / 'model.pkl').read_bytes()
-    expand.prepare_and_train(snapshot, data, model)
+    expand.prepare_and_train(snapshot, data, model, base_splits)
     assert (model / 'model.pkl').read_bytes() == before

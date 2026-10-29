@@ -1,0 +1,58 @@
+{
+  "scope": "Post-hoc diagnosis of frozen B0 validation predictions only; no retraining, model selection or score modification.",
+  "validation_count": 373,
+  "entity_set_errors": 3,
+  "prediction_sha256": "bc29c90b5cb65724fc138a8bbaf9fe49e26bdcce5d0756d6b9a4e3929606efca",
+  "qa_sha256": "e5b68040859b3d6e777905aa3adf1fc27791202028fa5d2af210b42231b41b67",
+  "tokenizer_sha256": "dc856f1be037756d043c1557df9a075bb8658c03c26405ef78a9fc759521cc3e",
+  "errors": [
+    {
+      "question_id": "Q622008_P57_0",
+      "question": "Who directed The Conquest of Albania?",
+      "prediction": "The Conquest of Albania was directed by Alfonso Ungra.",
+      "gold_answer_ids": [
+        "Q785136"
+      ],
+      "predicted_answer_ids": [],
+      "missing_labels": [
+        {
+          "id": "Q785136",
+          "label": "Alfonso Ungría",
+          "tokenizer_roundtrip": "Alfonso Ungra"
+        }
+      ]
+    },
+    {
+      "question_id": "Q622008_P57_1",
+      "question": "Who was the director of The Conquest of Albania?",
+      "prediction": "The Conquest of Albania was directed by Alfonso Ungra.",
+      "gold_answer_ids": [
+        "Q785136"
+      ],
+      "predicted_answer_ids": [],
+      "missing_labels": [
+        {
+          "id": "Q785136",
+          "label": "Alfonso Ungría",
+          "tokenizer_roundtrip": "Alfonso Ungra"
+        }
+      ]
+    },
+    {
+      "question_id": "Q622008_P57_2",
+      "question": "Name the director or directors of The Conquest of Albania.",
+      "prediction": "The Conquest of Albania was directed by Alfonso Ungra.",
+      "gold_answer_ids": [
+        "Q785136"
+      ],
+      "predicted_answer_ids": [],
+      "missing_labels": [
+        {
+          "id": "Q785136",
+          "label": "Alfonso Ungría",
+          "tokenizer_roundtrip": "Alfonso Ungra"
+        }
+      ]
+    }
+  ]
+}
