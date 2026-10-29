@@ -87,6 +87,36 @@ python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
 
+## 浏览器问答界面
+
+在项目根目录运行，无需 Node.js 或额外 Web 框架：
+
+```powershell
+.\scripts\run_ui.cmd
+```
+
+启动后自动打开 **http://127.0.0.1:7860**。保留启动终端，按 `Ctrl+C` 停止服务。此界面仅绑定本机地址。
+
+界面支持搜索本地电影及别名、点击片名填入问题、A0/神经系统切换与双系统对比，并展示完整回答、实体链接、关系分类和图谱事实；可以复制答案、导出本次结果 JSON、重新填写最近提问。问答使用本地数据和模型，页面不下载模型；神经模型首次使用才加载。神经卡片列出的是输入候选事实，不代表每条事实都支持生成答案。
+
+默认使用 `data/processed`、`models/pipeline/model.pkl` 及 `output/selected_model.json` 指定的本地神经检查点。缺少神经模型时仍可使用 A0；缺少数据或 A0 模型时，页面会给出提示。当前本地历史模型与最新代码的正式指标需按审计建议统一复核；UI 中的处理耗时仅供交互观察，不作为正式性能比较。
+
+更换端口、手动打开浏览器，或使用独立 A0 实验的数据和模型：
+
+```powershell
+.\scripts\run_ui.cmd -Port 7861 -NoBrowser
+.\scripts\run_ui.cmd -DataDir data/processed -ModelPath runs/A0_personal_20261019/model.pkl
+```
+
+指定独立数据或模型时只开放 A0，避免与默认神经模型混用。代码下载后没有实验数据时，可先生成离线验收夹具，再通过 UI 体验 A0；该夹具是虚构电影，不能当成 Wikidata 实验结果：
+
+```powershell
+.\.venv\Scripts\python.exe -m kgqa.acceptance --output-dir output/acceptance/ui_demo
+.\scripts\run_ui.cmd -DataDir output/acceptance/ui_demo/data/processed -ModelPath output/acceptance/ui_demo/runs/A0_acceptance/model.pkl
+```
+
+也可跨平台直接运行 `python -m kgqa.web --open`，使用 `--data-dir`、`--model-path`、`--port` 指定配置。端口被占用时更换端口；第一次神经问答包含模型加载，耗时通常高于后续问答。
+
 ## 交互式问答演示
 
 已训练的模型和处理后的数据位于本地项目目录中。进入项目目录后，运行：
