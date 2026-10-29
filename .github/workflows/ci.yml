@@ -56,6 +56,7 @@ jobs:
           python -m kgqa.acceptance --help
           python -m kgqa.web --help
           python -m kgqa.expand --help
+          python -m kgqa.neural_preflight --help
 
       - name: 运行核心测试
         run: python -m pytest -q

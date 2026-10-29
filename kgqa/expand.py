@@ -372,8 +372,13 @@ def prepare_and_train(snapshot_path, output_dir, model_dir, base_splits=None, ac
     snapshot_path, output_dir, model_dir = map(Path, (snapshot_path, output_dir, model_dir))
     manifest_path = output_dir / 'manifest.json'
     if manifest_path.exists():
-        if read_json(manifest_path)['snapshot_sha256'] != sha256(snapshot_path):
+        manifest = read_json(manifest_path)
+        if manifest['snapshot_sha256'] != sha256(snapshot_path):
             raise ValueError('Existing processed dataset belongs to a different snapshot')
+        if base_splits is not None and (
+                manifest.get('base_splits_sha256') != sha256(base_splits)
+                or manifest.get('split_policy') != prepare.PRESERVED_SPLIT_POLICY):
+            raise ValueError('Existing processed dataset uses different base splits or split policy; use a new output directory')
     else:
         prepare.build(snapshot_path, output_dir, base_splits)
         manifest = read_json(manifest_path)
@@ -440,6 +445,12 @@ def main(argv=None):
     args = parser.parse_args(argv)
     if args.model_dir and not args.output_dir or args.activate and not args.model_dir:
         parser.error('--model-dir requires --output-dir; --activate also requires --model-dir')
+    if not args.base_snapshot.is_file():
+        parser.exit(1, f'Expansion stopped: Base snapshot is missing: {args.base_snapshot}. '
+                       'Restore the intended frozen snapshot or supply --base-snapshot.\n')
+    if args.base_splits is not None and not args.base_splits.is_file():
+        parser.exit(1, f'Expansion stopped: Base splits are missing: {args.base_splits}. '
+                       'Restore the original splits or supply --base-splits.\n')
     candidate_cache = args.candidate_cache or args.work_dir / 'candidates.json'
     if not candidate_cache.exists():
         rows = SparqlClient(args.work_dir / 'requests', args.proxy).query(FILM_QUERY)

@@ -49,6 +49,8 @@ def mask_question(row, entities, linker=None):
 
 def train(data_dir=ROOT / 'data' / 'processed', output_dir=None):
     data_dir = Path(data_dir)
+    if output_dir is None and data_dir.resolve() != (ROOT / 'data' / 'processed').resolve():
+        raise ValueError('Custom training data requires --output-dir to preserve the original model/data pairing')
     output = Path(output_dir) if output_dir else ROOT / 'models' / 'pipeline'
     if output_dir is not None and output.exists() and any(output.iterdir()):
         raise FileExistsError(f'Refusing to overwrite pipeline model: {output}')
@@ -136,6 +138,9 @@ if __name__ == '__main__':
     args = parser.parse_args(); setup_logging(f'pipeline_{args.action}')
     if args.action != 'train' and (args.data_dir is not None or args.output_dir is not None):
         parser.error('--data-dir and --output-dir require the train action')
+    if (args.action == 'train' and args.data_dir is not None and args.output_dir is None
+            and args.data_dir.resolve() != (ROOT / 'data' / 'processed').resolve()):
+        parser.error('Custom training data requires --output-dir to preserve the original model/data pairing')
     if args.action == 'train': train(args.data_dir or ROOT / 'data' / 'processed', args.output_dir)
     elif args.action == 'predict': predict_split(args.split)
     else: predict_rows(read_jsonl(ROOT / 'data' / 'processed' / 'robustness.jsonl'), ROOT / 'runs' / 'A0' / 'predictions_robustness.jsonl')

@@ -16,6 +16,7 @@ QUESTIONS = {
     'P364': ['What is the original language of {title}?', 'Which languages was {title} originally made in?', 'Name the original language or languages of {title}.'],
 }
 UNKNOWN_QUESTIONS = ['Who wrote the screenplay for {title}?', 'What was the budget of {title}?', 'Which company distributed {title}?']
+PRESERVED_SPLIT_POLICY = 'Preserve all previous movie assignments; seed-42 shuffle additions to reach 70/15/15.'
 
 
 def split_movies(movies, seed=42):
@@ -87,7 +88,7 @@ def build(snapshot_path, output_dir=None, base_splits=None):
              'qa_by_split': dict(Counter(row['split'] for row in qa)), 'qa_by_relation': dict(Counter(row['relation_id'] for row in qa)),
              'movie_split_sizes': {key: len(value) for key, value in splits.items()}}
     if base_splits:
-        stats.update(base_splits_sha256=sha256(base_splits), split_policy='Preserve all previous movie assignments; seed-42 shuffle additions to reach 70/15/15.')
+        stats.update(base_splits_sha256=sha256(base_splits), split_policy=PRESERVED_SPLIT_POLICY)
     write_json(processed / 'manifest.json', stats); logging.info('COMPLETE %s', stats); return stats
 
 
