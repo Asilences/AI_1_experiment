@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="在本地电影知识图谱中提问，对比管道问答与神经生成，查看回答与事实证据。">
+  <title>映知 · 电影知识图谱问答</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%232f594c'/%3E%3Cpath d='M13 15h22v18H13zM20 15v18M28 15v18M13 21h22M13 27h22' fill='none' stroke='%23f7f5ef' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#question">跳到提问</a>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="映知首页">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 7h22v18H5zM12 7v18M20 7v18M5 13h22M5 19h22"/></svg></span>
+      <span>映知<span class="brand-separator">/</span><span class="brand-subtitle">电影知识图谱问答</span></span>
+    </a>
+    <div class="top-meta"><span class="local-status" id="connection"><span class="status-dot"></span>正在连接本地服务</span><span class="project-tag">人工智能 I · 实验工作台</span></div>
+  </header>
+
+  <div class="workspace">
+    <aside class="sidebar" aria-label="知识库与历史提问">
+      <div class="sidebar-heading"><span class="eyebrow">YOUR FILM LIBRARY</span><h2>从一部电影开始<span id="library-count">—</span></h2><p>搜索已收录的电影，点击片名快速提问。</p></div>
+      <label class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><input id="movie-search" type="search" placeholder="搜索片名、别名或 QID" aria-label="搜索知识库电影" autocomplete="off"></label>
+      <div class="library-meta"><span id="search-summary">正在读取知识库</span><span>本地快照</span></div>
+      <div id="movie-list" class="movie-list" aria-live="polite"></div>
+      <button class="load-more" id="load-more" type="button" hidden>加载更多电影 <span aria-hidden="true">↓</span></button>
+      <div class="recent-section"><div class="section-label"><h3>最近提问</h3><button id="clear-history" class="text-button" type="button">清空</button></div><div id="history-list"></div></div>
+      <div class="sidebar-note"><span class="small-node" aria-hidden="true">◇</span><p>答案来自当前知识库。电影未收录或证据不足时，系统可能拒答。</p></div>
+    </aside>
+
+    <main id="main-content">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="eyebrow"><span class="eyebrow-line"></span> WIKIDATA · FILM KNOWLEDGE</div>
+        <h1 id="page-title">问电影，<em>查事实。</em></h1>
+        <p class="hero-description">从一个问题到一组事实。让两种问答方法，给你各自的答案。</p>
+        <div class="stats-strip" aria-label="当前知识库规模"><span><strong id="stat-movies">—</strong> 部电影</span><i></i><span><strong id="stat-facts">—</strong> 条事实</span><i></i><span><strong id="stat-relations">4</strong> 类关系</span><span class="source-tag">Wikidata</span></div>
+      </section>
+
+      <div id="setup-notice" class="notice" role="status" hidden></div>
+
+      <section class="composer" aria-label="输入问题">
+        <form id="question-form">
+          <div class="composer-top"><label for="question">你想了解什么？</label><span class="language-tag">英文提问 · 中文界面</span></div>
+          <textarea id="question" name="question" rows="2" maxlength="1000" placeholder="Who directed Shutter Island?" required aria-describedby="question-hint"></textarea>
+          <div class="composer-bottom">
+            <fieldset class="system-switch"><legend class="visually-hidden">选择问答系统</legend><label><input type="radio" name="system" value="both" checked><span>双系统对比</span></label><label><input type="radio" name="system" value="a0"><span>A0 管道问答</span></label><label><input type="radio" name="system" value="best"><span id="neural-option">神经生成</span></label></fieldset>
+            <button class="ask-button" id="ask-button" type="submit"><span id="ask-label">开始提问</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+          </div>
+        </form>
+      </section>
+      <div class="question-helper"><span id="question-hint">Enter 提问，Shift + Enter 换行</span><span id="question-count">0 / 1000</span></div>
+
+      <div class="example-row"><span class="example-label">试着问</span><div id="example-list" class="example-list"></div></div>
+      <div id="request-error" class="notice error-notice" role="alert" hidden></div>
+
+      <section class="answer-section" aria-labelledby="answer-title">
+        <div class="answer-section-heading"><h2 id="answer-title">答案与依据<span class="section-number">02</span></h2><div class="answer-actions"><span id="request-timing"></span><button id="export-result" class="text-button export-button" type="button" disabled><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2v10m-4-4 4 4 4-4M3 13v4h14v-4"/></svg>导出结果</button></div></div>
+        <p id="answered-question" class="answered-question" hidden></p>
+        <div id="loading" class="loading-state" role="status" hidden><span class="spinner"></span><div><strong>正在查询与生成答案</strong><p>首次使用神经系统需要加载模型，请稍候。</p></div></div>
+        <div id="results" class="results-grid"></div>
+        <div id="empty-state" class="empty-state">
+          <svg class="graph-illustration" viewBox="0 0 220 110" aria-hidden="true"><path d="m49 55 60-28 62 28-62 28zM49 55h122M109 27v56"/><circle cx="49" cy="55" r="8"/><circle cx="109" cy="27" r="8"/><circle cx="109" cy="83" r="8"/><circle cx="171" cy="55" r="8"/><circle class="graph-center" cx="109" cy="55" r="12"/></svg>
+          <h3>让事实连接起你的问题</h3><p>输入英文问题，或从左侧选择一部电影。<br>这里将展示回答、实体链接与图谱事实。</p>
+          <div class="relation-tags"><span>导演</span><span>电影类型</span><span>制作国家</span><span>原始语言</span></div>
+        </div>
+        <p id="timing-note" class="timing-note" hidden>处理耗时包含该系统的问答调用，首次使用可能包含模型加载；页面总耗时包含两个系统顺序处理，不作为正式性能评测。</p>
+      </section>
+      <footer class="page-footer"><span>映知 · 基于知识图谱的电影问答</span><span>本地运行 / 证据可查</span></footer>
+    </main>
+  </div>
+
+  <template id="answer-template">
+    <article class="answer-card">
+      <div class="card-top"><div><span class="card-eyebrow"></span><h3 class="system-name"></h3></div><span class="result-badge"></span></div>
+      <div class="card-body"><p class="answer-text" lang="en"></p><p class="card-error" hidden></p><div class="answer-tools"><span class="system-timing"></span><button class="copy-button text-button" type="button" aria-label="复制答案">复制答案 <span aria-hidden="true">↗</span></button></div>
+        <div class="link-info"><div><span class="info-label">链接电影</span><strong class="movie-name"></strong></div><div class="link-badges"><span class="link-method"></span><span class="relation-name"></span></div></div>
+        <details class="evidence-details" open><summary><span class="evidence-label"></span><span class="evidence-count"></span></summary><ul class="evidence-list"></ul></details>
+      </div>
+    </article>
+  </template>
+  <div id="toast" class="toast" role="status" hidden></div>
+</body>
+</html>
