@@ -2,6 +2,8 @@
 
 《人工智能 I》课程项目：输入英文电影问题，识别片名、查询本地知识图谱，输出答案与事实证据。支持 **导演 P57、类型 P136、制作国家 P495、原始语言 P364** 四类单跳问题，同时评测别名、错拼、改写与拒答。
 
+仓库现包含 **5000 部电影的完整冻结快照、58994 道问答及配套 A0**，共 38.55 MiB。无需重新采集或训练，按[数据使用说明](datasets/movies-5000-20261029/README.md)校验并激活后即可打开问答界面。
+
 [快速启动](#快速启动-cpu-离线验收) · [浏览器界面](#浏览器问答界面) · [数据与进度](#数据版本与目前进度) · [两人分工](#双人分工与报告入口) · [人工评价](#人工评价填表与统计) · [完整实验](#完整数据与神经实验) · [扩展片库](#扩展电影数据集) · [文件索引](#仓库目录与文件索引)
 
 | 系统 | 实现与比较目的 |
@@ -48,6 +50,15 @@ python -m venv .venv
 
 项目共享界面支持搜索电影、别名和 QID，点击片名填入问题，切换 A0/神经系统或双系统对比，查看答案、实体链接、关系和图谱事实；也可复制答案、导出本次结果 JSON、重新填写最近提问。无需 Node.js 或额外 Web 框架。
 
+安装上述 `requirements-test.txt` 后，可直接使用仓库附带的真实 5000 部电影与配套 A0：
+
+```powershell
+.\.venv\Scripts\python.exe -m kgqa.dataset activate --smoke
+.\scripts\run_ui.cmd
+```
+
+`activate` 会核对全部分发文件的大小、SHA-256、数据模型配对和示例回答，成功后切换默认 UI；此版本仅开放 A0。只校验时使用 `python -m kgqa.dataset verify --smoke`。[分发 manifest](datasets/movies-5000-20261029/manifest.json)记录完整文件清单与来源。
+
 完成上面的 CPU 离线验收后，可直接用其数据和模型打开 A0 页面：
 
 ```powershell
@@ -65,7 +76,7 @@ python -m venv .venv
 .\scripts\run_ui.cmd -DataDir data/processed -ModelPath runs/A0_personal_20261019/model.pkl
 ```
 
-默认优先读取本机 `.work/ui-dataset.json` 中已激活的数据与配套 A0，核对哈希后启用。PR #6 的运行环境曾激活 5000 部电影扩展库，仅开放 A0；下载代码不会同时恢复其完整数据、模型或激活配置。未激活扩展库或使用 `-Legacy` 时，读取 `data/processed`、`models/pipeline/model.pkl` 及 `output/selected_model.json` 指定的原实验神经检查点；`-Legacy` 返回这些默认路径，具体规模以所恢复的数据为准。缺少神经模型仍可使用 A0；缺少数据或 A0 模型时页面给出提示。指定独立数据或模型路径时只开放 A0。详见下文[扩展片库](#扩展电影数据集)。
+默认优先读取本机 `.work/ui-dataset.json` 中已激活的数据与配套 A0，核对哈希后启用。本次分发已包含 5000 部电影与配套 A0，克隆后执行 `kgqa.dataset activate --smoke` 可生成本机激活配置；该版本仅开放 A0。未激活扩展库或使用 `-Legacy` 时，读取 `data/processed`、`models/pipeline/model.pkl` 及 `output/selected_model.json` 指定的原实验神经检查点；`-Legacy` 返回这些默认路径，具体规模以所恢复的数据为准。缺少神经模型仍可使用 A0；缺少数据或 A0 模型时页面给出提示。指定独立数据或模型路径时只开放 A0。详见下文[扩展片库](#扩展电影数据集)。
 
 也可在相应 Python 环境中跨平台执行 `python -m kgqa.web --open`，使用 `--data-dir`、`--model-path`、`--port` 指定配置。页面不下载数据或模型，神经模型首次使用时才加载；首次处理耗时包含加载，UI 耗时只供交互观察。神经卡片展示的是输入候选事实，不代表每条都支持生成答案。
 
@@ -159,7 +170,7 @@ Copy-Item output/human_evaluation_key.csv reports/人工评价/对照密钥.csv
 python -m kgqa.neural_preflight --data-dir data/processed --tokenizer runs/B0/checkpoint --mapping models/transe/mapping.json --output output/preflight.json
 ```
 
-预检检查名称编码、输入/目标长度及事实截断，记录版本哈希，不修改训练数据或实验分数。纯文本 C0 检查省略 `--mapping`；结构前缀检查应使用当前数据对应的映射。5000 部完整快照尚未恢复，本轮没有新增其神经训练结果。
+预检检查名称编码、输入/目标长度及事实截断，记录版本哈希，不修改训练数据或实验分数。纯文本 C0 检查省略 `--mapping`；结构前缀检查应使用当前数据对应的映射。PR #7 的预检记录对应 200 部电影；本次分发已补充 5000 部完整快照与 A0，但没有新增 5000 部电影的神经训练结果。
 
 ### 准备完整环境
 
@@ -219,11 +230,11 @@ python -m venv .venv
 
 ## 扩展电影数据集
 
-PR #6 记录的扩展规模为 **5000 部电影、7864 个实体、35485 条三元组、58994 道问答**，配套 A0 已在该次运行中训练并评测。详细来源与验证记录见[电影数据集扩展记录](docs/电影数据集扩展记录.md)。GitHub 保存扩展代码和验证摘要；完整快照与模型没有随 PR 上传，当前也没有 Release 数据附件。复现该次结果需要取得哈希一致的原始文件；重新采集应另存为新版本。
+扩展已完成：**5000 部电影、7864 个实体、35485 条三元组、58994 道问答**，并已训练配套 A0。完整快照、处理数据、模型配置、权重及测试预测已随仓库提供，共 11 个文件、40,422,065 字节（38.55 MiB）。[分发说明与 manifest](datasets/movies-5000-20261029/README.md)支持克隆后直接使用；详细来源与验证记录见[电影数据集扩展记录](docs/电影数据集扩展记录.md)。
 
 扩展流程保留原始 1000 部电影快照，在独立目录中追加 Wikidata 电影，默认目标为 5000 部。候选按跨语言百科 sitelink 数排序，偏向常见电影，并非电影总体的随机样本。四类关系仍为导演、类型、制作国家、原始语言；新记录保留 Wikidata 修订号、原始请求与提取时间。同名电影提供片名/年份或 QID 的消歧提问入口，部分新增电影支持中文名称与别名搜索。
 
-以下命令需要本地原始 `snapshot_1000.json` 和配套 `splits.json`；它们与完整模型不包含在 GitHub 代码包中。首次运行会取得候选，后续复用缓存并从检查点继续采集。`--proxy` 按本机代理配置填写，不使用代理时省略。
+以下命令供重新开展采集实验，需要自行恢复原始 1000 部电影的 `snapshot_1000.json` 和配套 `splits.json`；它们不属于本次 5000 部分发。直接使用现成 5000 部片库只需运行上面的 `kgqa.dataset activate --smoke`。重新采集会取得候选，后续复用缓存并从检查点继续。`--proxy` 按本机代理配置填写，不使用代理时省略。
 
 ```powershell
 .\.venv\Scripts\python.exe -m kgqa.expand --target 5000 --candidate-cache data/raw/expansion_5000_20261029/candidates_sitelinks15.json --work-dir data/raw/expansion_5000_20261029 --proxy http://127.0.0.1:7890 --output-dir data/processed/movies_5000_20261029 --model-dir models/pipeline_5000_20261029 --base-splits data/processed/splits.json --activate
@@ -266,13 +277,15 @@ PR #6 记录的扩展规模为 **5000 部电影、7864 个实体、35485 条三�
 | [requirements-test.txt](requirements-test.txt) | CPU 测试、链接回归、离线验收与 A0 演示的最小固定依赖。 |
 | [requirements-ci.txt](requirements-ci.txt) | CI 核心依赖，另含 Ruff；不安装神经训练库。 |
 | [requirements.txt](requirements.txt) | 完整训练、绘图及报告依赖，含 CUDA PyTorch、Transformers 和 PyKEEN。 |
-| [.gitignore](.gitignore) | 排除环境、缓存、完整数据、模型、运行和自动输出，保留选定的历史提交材料。 |
+| [.gitignore](.gitignore) | 排除环境、缓存和其他本地产物，精确放行本次 5000 部快照、处理数据及配套 A0 文件。 |
+| [.gitattributes](.gitattributes) | 冻结资产关闭 Git 换行转换，确保 Windows/Linux 的文件 SHA-256 一致。 |
 | [.github/](.github/) | [ci.yml](.github/workflows/ci.yml)：Ubuntu/Windows、Python 3.11 的语法、致命错误、CLI（含 `kgqa.web --help`）、测试、离线验收及 PowerShell 语法检查。 |
 | [kgqa/](kgqa/) | 数据、问答、训练、评价与报告的 Python 包，以及 [ui/](kgqa/ui/) 页面资源，逐文件见下表。 |
 | [scripts/](scripts/) | Windows 环境设置与实验、演示启动脚本。 |
 | [tests/](tests/) | 自动测试，逐文件见下表。 |
 | [benchmarks/](benchmarks/) | 冻结旧链接器与手工回归对照脚本。 |
-| [data/](data/) | [README.md](data/README.md) 说明数据重建和历史快照；实际 raw/processed 文件在本地生成。 |
+| [data/](data/) | [README.md](data/README.md) 说明数据重建和历史快照；包含 5000 部完整快照与处理数据，其他版本按说明恢复。 |
+| [datasets/](datasets/) | [5000 部使用说明](datasets/movies-5000-20261029/README.md)与逐文件 SHA-256 分发清单。 |
 | [docs/](docs/) | [双人分工与复现指南](docs/双人分工与复现指南.md)、[提交验收说明](docs/提交验收说明.md)、[电影数据集扩展记录](docs/电影数据集扩展记录.md)。 |
 | [reports/](reports/) | [README.md](reports/README.md) 为报告说明；[周新永个人报告](reports/个人实验报告.docx) 保留原路径；另有[夏俊杰个人报告](reports/夏俊杰_实验报告.docx)、[双人分工计划](reports/双人分工与复现实验计划.docx)、[提交审查](reports/提交审查.md) 和[本轮双人空白评分表](reports/人工评价/填写说明.md)。 |
 | [verification/](verification/) | 按日期保存的实际测试、采集、运行摘要与回归证据，命名见后表。 |
@@ -302,6 +315,7 @@ PR #6 记录的扩展规模为 **5000 部电影、7864 个实体、35485 条三�
 | [common.py](kgqa/common.py) | 项目根目录、四关系常量、JSON/JSONL、日志、哈希与答案模板。 |
 | [fetch.py](kgqa/fetch.py) | Wikidata 候选查询、实体请求缓存、事实筛选和快照；支持 `--target`、`--candidate-cache`。 |
 | [expand.py](kgqa/expand.py) | 保留原电影并扩展独立知识库；支持官方 API/SPARQL、缓存、断点续跑、同名消歧、配套 A0 训练评价和 UI 激活。 |
+| [dataset.py](kgqa/dataset.py) | 验证分发清单、文件字节哈希、数据模型配对及实际规模；支持示例问答检查和成功后激活 UI。 |
 | [prepare.py](kgqa/prepare.py) | 按电影划分 train/valid/test，生成 QA、三元组与数据清单；入口 `--snapshot`。 |
 | [linker.py](kgqa/linker.py) | 标题/别名精确匹配、片段模糊匹配、歧义拒答和片名遮蔽。 |
 | [pipeline.py](kgqa/pipeline.py) | A0 分类器训练、加载、图谱查询与答案证据；CLI 为 `train / predict / robust`。 |
@@ -349,6 +363,7 @@ PR #6 记录的扩展规模为 **5000 部电影、7864 个实体、35485 条三�
 | [test_evidence.py](tests/test_evidence.py) | 保存记录摘要和缺失项，确认不生成模拟终端图片。 |
 | [test_fetch.py](tests/test_fetch.py) | 候选缓存读取、格式与来源、目标数量及采集批次。 |
 | [test_expand.py](tests/test_expand.py) | 扩展清洗、断点续跑、旧文件保护、划分继承、同名/短片名消歧、独立 A0 训练评价与 UI 数据模型哈希配对。 |
+| [test_dataset.py](tests/test_dataset.py) | 完整清单、文件损坏、越界路径、组件错配、漏列资产、规模不符、失败时保护原 UI 配置及成功激活。 |
 | [test_human_eval.py](tests/test_human_eval.py) | 盲评抽样、预测对齐、空表导出，以及真实 0 分、完整评分、错误 ID/分数拒绝、系统均值与评审一致率。 |
 | [test_linker.py](tests/test_linker.py) | 标题、别名、错拼、嵌套片名、未知数字续集、遮蔽与管道拒答。 |
 | [test_metrics.py](tests/test_metrics.py) | ID 唯一性、完整覆盖、实体抽取、分组指标与 smoke/鲁棒性评估。 |

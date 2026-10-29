@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "dataset_id": "movies-5000-20261029",
+  "name": "Wikidata 5000部电影完整冻结数据与配套A0",
+  "published_manifest_at": "2026-10-29T15:26:03Z",
+  "distribution": {
+    "method": "git",
+    "repository": "https://github.com/Asilences/AI_1_experiment",
+    "paths_relative_to": "repository_root",
+    "minimum_code_commit": "4b80b39",
+    "file_bytes_preserved_by": ".gitattributes (-text)"
+  },
+  "counts": {
+    "movies": 5000,
+    "entities": 7864,
+    "triples": 35485,
+    "qa": 58994
+  },
+  "movie_split_sizes": {
+    "train": 3500,
+    "valid": 750,
+    "test": 750
+  },
+  "qa_by_split": {
+    "valid": 8857,
+    "train": 41220,
+    "test": 8917
+  },
+  "relations": {
+    "P57": "director",
+    "P136": "genre",
+    "P495": "country of origin",
+    "P364": "original language"
+  },
+  "seed": 42,
+  "entrypoints": {
+    "data_dir": "data/processed/movies_5000_20261029",
+    "model_path": "models/pipeline_5000_20261029/model.pkl",
+    "snapshot_path": "data/raw/expansion_5000_20261029/snapshot_5000.json"
+  },
+  "runtime": {
+    "python": "3.11",
+    "training_python": "3.11.7",
+    "numpy": "1.26.4",
+    "scikit-learn": "1.6.1",
+    "training_scipy": "1.17.1",
+    "requirements_file": "requirements-test.txt",
+    "gpu_required": false,
+    "system": "A0",
+    "expanded_neural_models_included": false
+  },
+  "source": {
+    "provider": "Wikidata",
+    "facts_license": "CC0-1.0",
+    "license_url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+    "base_movies": 1000,
+    "added_movies": 4000,
+    "base_snapshot_sha256": "eb85268c3359238b7eeed2438e3693c5e42ab2de09ce4a32d4137a5196613739",
+    "expanded_snapshot_sha256": "486faa982e84fd5781f62872fd02db11100fad82a013b37f454bbe4da520d867",
+    "provenance_summary": "verification/2026-10-29/expansion_summary.json",
+    "acquisition_notes": "docs/电影数据集扩展记录.md",
+    "raw_http_caches_included": false,
+    "version_note": "Preserved historical base facts plus newly requested 4000 movies; not a uniform-date Wikidata export."
+  },
+  "evaluation_scope": "Shared-template single-hop questions over a frozen, visible knowledge base; not open-domain generalization or disjoint D2.",
+  "smoke_queries": [
+    {
+      "question": "Who directed The Avengers?",
+      "movie_id": "Q182218",
+      "relation_id": "P57",
+      "answer_ids": [
+        "Q298025"
+      ]
+    },
+    {
+      "question": "Who directed Inception?",
+      "movie_id": "Q25188",
+      "relation_id": "P57",
+      "answer_ids": [
+        "Q25191"
+      ]
+    }
+  ],
+  "totals": {
+    "files": 11,
+    "bytes": 40422065
+  },
+  "files": [
+    {
+      "path": "data/raw/expansion_5000_20261029/snapshot_5000.json",
+      "bytes": 8940504,
+      "sha256": "486faa982e84fd5781f62872fd02db11100fad82a013b37f454bbe4da520d867"
+    },
+    {
+      "path": "data/processed/movies_5000_20261029/entities.json",
+      "bytes": 4454440,
+      "sha256": "7c935d8fa1eecd9870df16e49d93460bdd75f90255661e4e4e397af9f667f3e8"
+    },
+    {
+      "path": "data/processed/movies_5000_20261029/manifest.json",
+      "bytes": 1019,
+      "sha256": "5f74de78743157698334c0682bcd2b0e990e54a71a3c920fa970b73e9e544d06"
+    },
+    {
+      "path": "data/processed/movies_5000_20261029/qa.jsonl",
+      "bytes": 22453801,
+      "sha256": "2882b2077834d37f4b1ae8f9b8ea90561c8c5dacecf4247907311d0cbb8bb310"
+    },
+    {
+      "path": "data/processed/movies_5000_20261029/splits.json",
+      "bytes": 82873,
+      "sha256": "dd24634f590e3e5dd38dc2e5ca7fd25b432ec3b562f74dc99a65b22d586113b7"
+    },
+    {
+      "path": "data/processed/movies_5000_20261029/triples.tsv",
+      "bytes": 732671,
+      "sha256": "42c9a5c665313b077a97650309bb8102ab573464ba40943a1b41ffb77c2f8e0a"
+    },
+    {
+      "path": "models/pipeline_5000_20261029/config.json",
+      "bytes": 685,
+      "sha256": "8d8e16320f9fbae2f20eda977e01c38fbcdd45fccc46c5a7928fb47f21929ce8"
+    },
+    {
+      "path": "models/pipeline_5000_20261029/metrics_test.json",
+      "bytes": 1390,
+      "sha256": "59f23f773ddf2bc03635debbd5a196b377b18e9118a88173fee38bc824b03284"
+    },
+    {
+      "path": "models/pipeline_5000_20261029/model.pkl",
+      "bytes": 29261,
+      "sha256": "a14f3ee60168e3f0a2eefcda403c58400e861c1708dceebe63c396e1e8faa8dd"
+    },
+    {
+      "path": "models/pipeline_5000_20261029/predictions_test.jsonl",
+      "bytes": 3723817,
+      "sha256": "ff0998842a045d71641ddc4a7ffdbba94b7bafdfe3281df6baf4eb089de25ac8"
+    },
+    {
+      "path": "models/pipeline_5000_20261029/validation_thresholds.json",
+      "bytes": 1604,
+      "sha256": "f139f7cb7ca71cba27ec08f41d8cd9b85c659b3380fea92fe2b5b9374283ce70"
+    }
+  ]
+}

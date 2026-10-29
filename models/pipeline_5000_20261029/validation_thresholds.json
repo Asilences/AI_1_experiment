@@ -1,0 +1,78 @@
+{
+  "selection_split": "valid",
+  "records": [
+    {
+      "threshold": 0.3,
+      "correct": 8857,
+      "count": 8857,
+      "entity_exact": 100.0
+    },
+    {
+      "threshold": 0.35,
+      "correct": 8857,
+      "count": 8857,
+      "entity_exact": 100.0
+    },
+    {
+      "threshold": 0.39999999999999997,
+      "correct": 8857,
+      "count": 8857,
+      "entity_exact": 100.0
+    },
+    {
+      "threshold": 0.44999999999999996,
+      "correct": 8857,
+      "count": 8857,
+      "entity_exact": 100.0
+    },
+    {
+      "threshold": 0.49999999999999994,
+      "correct": 8857,
+      "count": 8857,
+      "entity_exact": 100.0
+    },
+    {
+      "threshold": 0.5499999999999999,
+      "correct": 8857,
+      "count": 8857,
+      "entity_exact": 100.0
+    },
+    {
+      "threshold": 0.5999999999999999,
+      "correct": 8857,
+      "count": 8857,
+      "entity_exact": 100.0
+    },
+    {
+      "threshold": 0.6499999999999999,
+      "correct": 8857,
+      "count": 8857,
+      "entity_exact": 100.0
+    },
+    {
+      "threshold": 0.7,
+      "correct": 8857,
+      "count": 8857,
+      "entity_exact": 100.0
+    },
+    {
+      "threshold": 0.7499999999999999,
+      "correct": 8857,
+      "count": 8857,
+      "entity_exact": 100.0
+    },
+    {
+      "threshold": 0.7999999999999998,
+      "correct": 8857,
+      "count": 8857,
+      "entity_exact": 100.0
+    },
+    {
+      "threshold": 0.8499999999999999,
+      "correct": 8857,
+      "count": 8857,
+      "entity_exact": 100.0
+    }
+  ],
+  "selected_threshold": 0.3
+}

@@ -56,10 +56,14 @@ jobs:
           python -m kgqa.acceptance --help
           python -m kgqa.web --help
           python -m kgqa.expand --help
+          python -m kgqa.dataset --help
           python -m kgqa.neural_preflight --help
 
       - name: 运行核心测试
         run: python -m pytest -q
+
+      - name: 校验完整5000部电影数据与配套模型
+        run: python -m kgqa.dataset verify --smoke
 
       - name: 离线训练与问答验收
         run: python -m kgqa.acceptance --output-dir output/acceptance/ci

@@ -1,6 +1,8 @@
 # 数据目录与版本
 
-完整实验数据和模型不包含在 GitHub 或代码压缩包中。没有正式数据时，可安装 `requirements-test.txt` 并运行 `python -m kgqa.acceptance`，生成独立的小型虚构夹具；该夹具仅用于代码验收，操作见[提交验收说明](../docs/提交验收说明.md)。
+仓库现在提供 **5000 部电影的完整冻结快照、处理数据和配套 A0 模型**，共 38.55 MiB。[分发说明与 manifest](../datasets/movies-5000-20261029/README.md)列出全部文件、SHA-256 和启动步骤；安装 `requirements-test.txt` 后运行 `python -m kgqa.dataset activate --smoke` 即可校验并激活。历史 1000 部及独立 200 部实验的完整数据、神经权重仍需单独恢复。
+
+只检查软件流程时，可运行 `python -m kgqa.acceptance` 生成独立的小型虚构夹具；该夹具仅用于代码验收，操作见[提交验收说明](../docs/提交验收说明.md)。
 
 原实验数据位于 `data/raw/snapshot_1000.json` 和 `data/processed` 根目录，包含 1000 部电影、6194 条三元组、12267 道问答。历史冻结快照 SHA-256：
 
