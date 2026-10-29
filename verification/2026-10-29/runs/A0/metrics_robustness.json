@@ -1,0 +1,171 @@
+{
+  "alias": {
+    "count": 47,
+    "entity_exact": 100.0,
+    "entity_macro_f1": 100.0,
+    "bleu": 100.00000000000004,
+    "rouge_l": 100.0,
+    "by_relation": {
+      "P364": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 17
+      },
+      "P495": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 9
+      },
+      "P136": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 12
+      },
+      "P57": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 9
+      }
+    },
+    "answerable_count": 47,
+    "refusal_count": 0,
+    "answerable_entity_exact": 100.0,
+    "answerable_entity_macro_f1": 100.0,
+    "latency_mean_ms": 1.2425829786576634,
+    "latency_p95_ms": 1.5957000000526023,
+    "gold_total": 47,
+    "prediction_coverage": 100.0
+  },
+  "clean": {
+    "count": 100,
+    "entity_exact": 100.0,
+    "entity_macro_f1": 100.0,
+    "bleu": 100.00000000000004,
+    "rouge_l": 100.0,
+    "by_relation": {
+      "P364": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 25
+      },
+      "P495": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 25
+      },
+      "P136": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 25
+      },
+      "P57": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 25
+      }
+    },
+    "answerable_count": 100,
+    "refusal_count": 0,
+    "answerable_entity_exact": 100.0,
+    "answerable_entity_macro_f1": 100.0,
+    "latency_mean_ms": 1.2352020000025732,
+    "latency_p95_ms": 1.5997000000425032,
+    "gold_total": 100,
+    "prediction_coverage": 100.0
+  },
+  "paraphrase": {
+    "count": 100,
+    "entity_exact": 75.0,
+    "entity_macro_f1": 75.0,
+    "bleu": 87.43847048316923,
+    "rouge_l": 92.44410465695296,
+    "by_relation": {
+      "P364": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 25
+      },
+      "P495": {
+        "exact": 0.0,
+        "f1": 0,
+        "count": 25
+      },
+      "P136": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 25
+      },
+      "P57": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 25
+      }
+    },
+    "answerable_count": 100,
+    "refusal_count": 0,
+    "answerable_entity_exact": 75.0,
+    "answerable_entity_macro_f1": 75.0,
+    "latency_mean_ms": 1.1951269999781289,
+    "latency_p95_ms": 1.5453999999408552,
+    "gold_total": 100,
+    "prediction_coverage": 100.0
+  },
+  "typo": {
+    "count": 100,
+    "entity_exact": 85.0,
+    "entity_macro_f1": 85.0,
+    "bleu": 81.33254307519661,
+    "rouge_l": 86.56628082062865,
+    "by_relation": {
+      "P364": {
+        "exact": 84.0,
+        "f1": 84.0,
+        "count": 25
+      },
+      "P495": {
+        "exact": 76.0,
+        "f1": 76.0,
+        "count": 25
+      },
+      "P136": {
+        "exact": 84.0,
+        "f1": 84.0,
+        "count": 25
+      },
+      "P57": {
+        "exact": 96.0,
+        "f1": 96.0,
+        "count": 25
+      }
+    },
+    "answerable_count": 100,
+    "refusal_count": 0,
+    "answerable_entity_exact": 85.0,
+    "answerable_entity_macro_f1": 85.0,
+    "latency_mean_ms": 53.51711399999658,
+    "latency_p95_ms": 95.18170000001192,
+    "gold_total": 100,
+    "prediction_coverage": 100.0
+  },
+  "unanswerable": {
+    "count": 34,
+    "entity_exact": 100.0,
+    "entity_macro_f1": 100.0,
+    "bleu": 100.00000000000004,
+    "rouge_l": 100.0,
+    "by_relation": {
+      "UNKNOWN": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 34
+      }
+    },
+    "answerable_count": 0,
+    "refusal_count": 34,
+    "refusal_accuracy": 100.0,
+    "latency_mean_ms": 1.1348647058585972,
+    "latency_p95_ms": 1.32949999988341,
+    "gold_total": 34,
+    "prediction_coverage": 100.0
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-29",
+  "upstream_main": "bd929e4d295c0d45de930ec5367716eb08af98be",
+  "command": "python -m pytest -q",
+  "exit_code": 0,
+  "passed_count": 220,
+  "pytest_version": "8.3.4",
+  "note": "Full suite after preserving the separately merged browser UI. Earlier 207-test records remain unchanged.",
+  "report_sha256": {
+    "个人实验报告.docx": "1b4e19f571c55870d5bdf49c9905b7577bcb593cb2b921eace38ccf1da9d5896",
+    "双人分工与复现实验计划.docx": "f60a86355957d06713971cba099ac5c2e69403680499fd4e4d474bdd94440505",
+    "夏俊杰_实验报告.docx": "65b02c6cdaeeeb94b542440d76e630706611fd0ebd3cd0ea8d241c6cd7df3a41"
+  },
+  "actual_ui_service_demo": {
+    "systems": [
+      "a0",
+      "best"
+    ],
+    "both_answers_correct": true,
+    "evidence": "ui_two_system_demo.json",
+    "transport": "direct QAService call"
+  }
+}

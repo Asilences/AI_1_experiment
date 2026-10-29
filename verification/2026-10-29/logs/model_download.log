@@ -1,0 +1,11 @@
+
+Fetching 7 files:   0%|          | 0/7 [00:00<?, ?it/s]
+Fetching 7 files:  14%|█▍        | 1/7 [00:06<00:38,  6.42s/it]
+Fetching 7 files:  29%|██▊       | 2/7 [00:06<00:16,  3.28s/it]
+Fetching 7 files:  43%|████▎     | 3/7 [00:07<00:09,  2.45s/it]
+Fetching 7 files:  57%|█████▋    | 4/7 [00:07<00:05,  1.89s/it]
+Fetching 7 files:  86%|████████▌ | 6/7 [00:07<00:01,  1.29s/it]
+Fetching 7 files:  86%|████████▌ | 6/7 [00:20<00:03,  3.34s/it]
+Fetching 7 files: 100%|██████████| 7/7 [00:30<00:00,  4.39s/it]
+Fetching 7 files: 100%|██████████| 7/7 [00:30<00:00,  4.39s/it]
+model_cache\hub\models--google--flan-t5-small\snapshots\0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab

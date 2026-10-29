@@ -130,3 +130,136 @@ def test_only_answerable_test_questions_are_sampled(tmp_path, monkeypatch):
     assert manifest['eligible_questions'] == len(gold) - 2
     assert gold[0]['question_id'] not in manifest['question_ids']
     assert gold[1]['question_id'] not in manifest['question_ids']
+
+
+def _write_csv(path, rows, fields):
+    with path.open('w', encoding='utf-8-sig', newline='') as stream:
+        writer = csv.DictWriter(stream, fieldnames=fields)
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+@pytest.fixture
+def completed_reviews(tmp_path):
+    key = [
+        {'question_id': 'q1', 'answer_position': 1, 'system': 'X'},
+        {'question_id': 'q1', 'answer_position': 2, 'system': 'Y'},
+        {'question_id': 'q2', 'answer_position': 1, 'system': 'Y'},
+        {'question_id': 'q2', 'answer_position': 2, 'system': 'X'},
+    ]
+    values = [
+        [(0, 0, 1, 1), (2, 2, 5, 0), (1, 2, 4, 0), (2, 1, 3, 1)],
+        [(1, 0, 2, 0), (2, 1, 5, 0), (1, 2, 3, 0), (2, 1, 3, 1)],
+    ]
+    key_file = tmp_path / 'key.csv'
+    _write_csv(key_file, key, human_eval.KEY_FIELDS)
+    files = []
+    for index, scores in enumerate(values):
+        rows = []
+        for item, score in zip(key, scores):
+            rows.append({'question_id': item['question_id'], 'answer_position': item['answer_position'],
+                         'question': 'Original question, unchanged.', 'reference': 'Original reference.',
+                         'answer': 'Original answer, unchanged.', 'notes': 'Reviewer notes.',
+                         **dict(zip(human_eval.SCORE_RANGES, score))})
+        path = tmp_path / f'reviewer_{index + 1}.csv'
+        _write_csv(path, rows if index == 0 else list(reversed(rows)), human_eval.VISIBLE_FIELDS)
+        files.append(path)
+    return files, key_file, tmp_path / 'summary.json'
+
+
+def test_two_completed_reviews_have_system_means_agreement_and_real_zero_scores(completed_reviews):
+    files, key, output = completed_reviews
+    original = {path: path.read_bytes() for path in [*files, key]}
+    summary = human_eval.summarize_scores(files, key, output)
+    assert summary['reviewer_count'] == 2
+    assert summary['question_count'] == 2
+    assert summary['answer_count'] == 4
+    assert summary['rating_count'] == 8
+    assert summary['systems']['X'] == {
+        'question_count': 2, 'answer_count': 2, 'rating_count': 4,
+        'means': {'accuracy_0_2': 1.25, 'completeness_0_2': .5, 'fluency_1_5': 2.25, 'unsupported_claim_0_1': .75},
+        'unsupported_claim_percent': 75.0,
+    }
+    assert summary['systems']['Y']['means'] == {
+        'accuracy_0_2': 1.5, 'completeness_0_2': 1.75, 'fluency_1_5': 4.25, 'unsupported_claim_0_1': 0.0}
+    agreement = summary['pairwise_agreement'][0]
+    assert agreement['reviewers'] == ['reviewer_1', 'reviewer_2']
+    for field, percent in [('accuracy_0_2', 75), ('completeness_0_2', 75), ('fluency_1_5', 50), ('unsupported_claim_0_1', 75)]:
+        assert agreement['items'][field]['agreement_percent'] == percent
+        assert agreement['items'][field]['disagreement_count'] == (2 if percent == 50 else 1)
+    assert json.loads(output.read_text(encoding='utf-8')) == summary
+    assert all(path.read_bytes() == before for path, before in original.items())
+
+
+@pytest.mark.parametrize('field,value', [
+    ('accuracy_0_2', ''), ('completeness_0_2', ' '), ('fluency_1_5', ''), ('unsupported_claim_0_1', ''),
+    ('accuracy_0_2', '1.5'), ('accuracy_0_2', 'NaN'), ('accuracy_0_2', '-1'), ('accuracy_0_2', '3'),
+    ('completeness_0_2', '-1'), ('completeness_0_2', '3'),
+    ('fluency_1_5', '0'), ('fluency_1_5', '6'), ('unsupported_claim_0_1', '-1'), ('unsupported_claim_0_1', '2'),
+])
+def test_blank_noninteger_and_out_of_range_scores_do_not_write_summary(completed_reviews, field, value):
+    files, key, output = completed_reviews
+    rows = _read_csv(files[0]); rows[0][field] = value
+    _write_csv(files[0], rows, human_eval.VISIBLE_FIELDS)
+    with pytest.raises(ValueError, match=field + ' must be an integer'):
+        human_eval.summarize_scores(files, key, output)
+    assert not output.exists()
+
+
+@pytest.mark.parametrize('change,message', [
+    ('duplicate', 'duplicate answer ID'), ('unknown', 'unknown answer ID'),
+    ('wrong_position', 'unknown answer ID'), ('missing', 'missing 1 answer IDs'),
+])
+def test_score_ids_must_match_every_key_row(completed_reviews, change, message):
+    files, key, output = completed_reviews
+    rows = _read_csv(files[0])
+    if change == 'duplicate': rows.append(dict(rows[0]))
+    elif change == 'unknown': rows[0]['question_id'] = 'q_unknown'
+    elif change == 'wrong_position': rows[0]['answer_position'] = '99'
+    else: rows.pop()
+    _write_csv(files[0], rows, human_eval.VISIBLE_FIELDS)
+    with pytest.raises(ValueError, match=message):
+        human_eval.summarize_scores(files, key, output)
+    assert not output.exists()
+
+
+@pytest.mark.parametrize('repeat', [False, True])
+def test_two_distinct_review_files_are_required(completed_reviews, repeat):
+    files, key, output = completed_reviews
+    selected = [files[0], files[0]] if repeat else [files[0]]
+    with pytest.raises(ValueError, match='two distinct independent score files'):
+        human_eval.summarize_scores(selected, key, output)
+    assert not output.exists()
+
+
+def test_duplicate_key_rows_are_rejected(completed_reviews):
+    files, key, output = completed_reviews
+    rows = _read_csv(key); rows.append(dict(rows[0]))
+    _write_csv(key, rows, human_eval.KEY_FIELDS)
+    with pytest.raises(ValueError, match='Answer key: duplicate answer ID'):
+        human_eval.summarize_scores(files, key, output)
+    assert not output.exists()
+
+
+@pytest.mark.parametrize('source', ['key', 'scores'])
+def test_summary_cannot_replace_input_csv(completed_reviews, source):
+    files, key, _ = completed_reviews
+    output = key if source == 'key' else files[0]
+    before = output.read_bytes()
+    with pytest.raises(ValueError, match='Summary destination must differ'):
+        human_eval.summarize_scores(files, key, output)
+    assert output.read_bytes() == before
+
+
+def test_scoring_cli_exports_completed_summary(completed_reviews):
+    files, key, output = completed_reviews
+    assert human_eval.main(['--score-file', str(files[0]), '--score-file', str(files[1]),
+                            '--key-file', str(key), '--summary-output', str(output)]) == 0
+    assert json.loads(output.read_text(encoding='utf-8'))['reviewer_count'] == 2
+
+
+def test_original_blank_export_cli_remains_compatible(monkeypatch):
+    called = []
+    monkeypatch.setattr(human_eval, 'build', lambda *args: called.append(args))
+    assert human_eval.main(['--neural-run', 'B2', '--limit', '50', '--seed', '7']) == 0
+    assert called == [('B2', 50, 7)]

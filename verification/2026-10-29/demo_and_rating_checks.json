@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-29",
+  "two_system_demo": {
+    "exit_code": 0,
+    "question": "Who directed The Big Red One?",
+    "selected_neural_run": "B0",
+    "log": "two_system_demo.log"
+  },
+  "unscored_human_tables": {
+    "expected_exit_code": 2,
+    "observed_exit_code": 2,
+    "correctly_rejected": true,
+    "summary_was_created": false
+  }
+}

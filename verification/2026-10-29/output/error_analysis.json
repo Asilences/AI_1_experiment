@@ -1,0 +1,52 @@
+{
+  "A0": {
+    "run_id": "A0",
+    "total": 370,
+    "counts": {
+      "correct": 370
+    },
+    "percentages": {
+      "correct": 100.0
+    },
+    "examples": {}
+  },
+  "B0": {
+    "run_id": "B0",
+    "total": 370,
+    "counts": {
+      "correct": 365,
+      "missed_answer": 4,
+      "incomplete_answer": 1
+    },
+    "percentages": {
+      "correct": 98.64864864864865,
+      "missed_answer": 1.0810810810810811,
+      "incomplete_answer": 0.2702702702702703
+    },
+    "examples": {
+      "missed_answer": {
+        "question_id": "Q322734_P57_0",
+        "question": "Who directed Recollections of the Yellow House?",
+        "gold_answer_ids": [
+          "Q55427"
+        ],
+        "predicted_answer_ids": [],
+        "answer": "Recollections of the Yellow House was directed by Joo César Monteiro."
+      },
+      "incomplete_answer": {
+        "question_id": "Q514031_P136_1",
+        "question": "Which genres does Scalps belong to?",
+        "gold_answer_ids": [
+          "Q31888058",
+          "Q66425231",
+          "Q853630"
+        ],
+        "predicted_answer_ids": [
+          "Q31888058",
+          "Q853630"
+        ],
+        "answer": "Scalps belongs to the following genres: slasher film and ghost film."
+      }
+    }
+  }
+}

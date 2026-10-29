@@ -1,0 +1,87 @@
+{
+  "input_files": {
+    "qa.jsonl": {
+      "path": ".\\data\\processed\\qa.jsonl",
+      "bytes": 943214,
+      "sha256": "e5b68040859b3d6e777905aa3adf1fc27791202028fa5d2af210b42231b41b67"
+    },
+    "entities.json": {
+      "path": ".\\data\\processed\\entities.json",
+      "bytes": 192362,
+      "sha256": "84fc4bbf3f9f106677dde191584ee2f7c2c408a22a689c91054596a6f4971c89"
+    },
+    "splits.json": {
+      "path": ".\\data\\processed\\splits.json",
+      "bytes": 3239,
+      "sha256": "2a2a59486b30dca05a8a74dde1b0913cff4898fa50bf8a86fc0f3a93380c53cc"
+    },
+    "manifest.json": {
+      "path": ".\\data\\processed\\manifest.json",
+      "bytes": 539,
+      "sha256": "c531034c0ab0e6efa9dd15a758db6599cda3ef4c8d7aee7fdb7307d6d4652639"
+    },
+    "triples.tsv": {
+      "path": ".\\data\\processed\\triples.tsv",
+      "bytes": 25081,
+      "sha256": "eaf194d75e0b4f2ec359202f1dbf39c21723192201a268f36898774319a90823"
+    },
+    "robustness.jsonl": {
+      "path": ".\\data\\processed\\robustness.jsonl",
+      "bytes": 204006,
+      "sha256": "fec42397218cd5818ee8ea3bfd83364c6c5aef3b4c5d9e1b4455f93bb3abdf86"
+    },
+    "robustness_manifest.json": {
+      "path": ".\\data\\processed\\robustness_manifest.json",
+      "bytes": 265517,
+      "sha256": "ec9d78a2382540e9cfa1e29136e81a9ed84d6f3342bc3c0b30f2f5717c4e7688"
+    }
+  },
+  "entity_count": 552,
+  "question_count": 2492,
+  "movies_by_split": {
+    "train": 140,
+    "valid": 30,
+    "test": 30
+  },
+  "questions_by_split": {
+    "train": 1749,
+    "valid": 373,
+    "test": 370
+  },
+  "relation_counts_by_split": {
+    "train": {
+      "P136": 333,
+      "P364": 420,
+      "P495": 417,
+      "P57": 420,
+      "UNKNOWN": 159
+    },
+    "valid": {
+      "P136": 75,
+      "P364": 90,
+      "P495": 84,
+      "P57": 90,
+      "UNKNOWN": 34
+    },
+    "test": {
+      "P136": 69,
+      "P364": 90,
+      "P495": 90,
+      "P57": 87,
+      "UNKNOWN": 34
+    }
+  },
+  "movie_splits_disjoint": true,
+  "question_ids_unique": true,
+  "robustness": {
+    "available": true,
+    "count": 381,
+    "variant_counts": {
+      "alias": 47,
+      "clean": 100,
+      "paraphrase": 100,
+      "typo": 100,
+      "unanswerable": 34
+    }
+  }
+}

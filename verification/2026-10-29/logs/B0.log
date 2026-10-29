@@ -1,0 +1,16 @@
+You are offline and the cache for model files in Transformers v4.22.0 has been updated while your local cache seems to be the one of a previous version. It is very likely that all your calls to any `from_pretrained()` method will fail. Remove the offline mode and enable internet connection to have your cache be updated automatically, then you can go back to offline mode.
+
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+2026-10-29 14:28:28,666 INFO START B0 cwd=.
+Passing a tuple of `past_key_values` is deprecated and will be removed in Transformers v4.48.0. You should pass an instance of `EncoderDecoderCache` instead, e.g. `past_key_values=EncoderDecoderCache.from_legacy_cache(past_key_values)`.
+2026-10-29 14:30:15,983 INFO Using default tokenizer.
+2026-10-29 14:30:16,193 INFO run=B0 epoch=1 train_loss=0.55888 valid_loss=0.02218 valid_f1=93.063 updates=110 seconds=106.1
+2026-10-29 14:32:01,530 INFO Using default tokenizer.
+2026-10-29 14:32:01,743 INFO run=B0 epoch=2 train_loss=0.02748 valid_loss=0.00449 valid_f1=99.196 updates=110 seconds=105.0
+2026-10-29 14:33:51,008 INFO Using default tokenizer.
+2026-10-29 14:33:51,220 INFO run=B0 epoch=3 train_loss=0.01247 valid_loss=0.00896 valid_f1=98.820 updates=110 seconds=108.8
+2026-10-29 14:35:35,165 INFO Using default tokenizer.
+2026-10-29 14:35:35,373 INFO run=B0 epoch=4 train_loss=0.00880 valid_loss=0.00430 valid_f1=99.196 updates=110 seconds=104.1
+2026-10-29 14:37:24,218 INFO Using default tokenizer.
+2026-10-29 14:37:24,440 INFO run=B0 epoch=5 train_loss=0.00698 valid_loss=0.00096 valid_f1=99.196 updates=110 seconds=109.1
