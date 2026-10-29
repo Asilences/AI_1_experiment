@@ -2,7 +2,8 @@ param(
     [ValidateRange(1, 65535)] [int]$Port = 7860,
     [string]$DataDir,
     [string]$ModelPath,
-    [switch]$NoBrowser
+    [switch]$NoBrowser,
+    [switch]$Legacy
 )
 $ErrorActionPreference = 'Stop'
 $Root = Split-Path -Parent $PSScriptRoot
@@ -15,6 +16,7 @@ if (-not (Test-Path -LiteralPath $Python)) {
 $Arguments = @('-m', 'kgqa.web', '--port', $Port)
 if ($DataDir) { $Arguments += @('--data-dir', $DataDir) }
 if ($ModelPath) { $Arguments += @('--model-path', $ModelPath) }
+if ($Legacy) { $Arguments += '--legacy' }
 if (-not $NoBrowser) { $Arguments += '--open' }
 & $Python @Arguments
 exit $LASTEXITCODE

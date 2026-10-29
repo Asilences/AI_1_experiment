@@ -95,18 +95,18 @@ async function loadMovies(append = false) {
       const button = node('button', 'movie-item');
       button.type = 'button';
       button.dataset.movie = movie.id;
-      button.title = `${movie.label} · ${movie.id}`;
+      button.title = `${movie.display_label || movie.label} · ${movie.id}`;
       button.classList.toggle('selected', selectedMovie === movie.id);
       button.append(node('span', 'movie-number', String(nextOffset + index + 1).padStart(2, '0')));
       const text = node('span', 'movie-text');
-      text.append(node('span', 'movie-title', movie.label), node('span', 'movie-subtitle', `${movie.id} · ${movie.fact_count} 条事实`));
+      text.append(node('span', 'movie-title', movie.display_label || movie.label), node('span', 'movie-subtitle', `${movie.id} · ${movie.fact_count} 条事实`));
       button.append(text, node('span', 'movie-arrow', '↗'));
       button.addEventListener('click', () => {
         selectedMovie = movie.id;
         document.querySelectorAll('.movie-item').forEach(item => item.classList.toggle('selected', item.dataset.movie === movie.id));
         const templates = {P57: 'Who directed {title}?', P136: 'What genre is {title}?', P495: 'Which country did {title} originate in?', P364: 'What is the original language of {title}?'};
         const relation = movie.relations[0] || 'P57';
-        setQuestion(templates[relation].replace('{title}', movie.label));
+        setQuestion(templates[relation].replace('{title}', movie.question_title || movie.label));
       });
       list.append(button);
     });
@@ -238,6 +238,7 @@ async function init() {
     $('#stat-facts').textContent = appStatus.fact_count.toLocaleString();
     $('#stat-relations').textContent = String(appStatus.relation_count);
     $('#library-count').textContent = appStatus.movie_count.toLocaleString();
+    $('#dataset-name').textContent = appStatus.dataset_name || '本地快照';
     $('#neural-option').textContent = appStatus.neural.name;
     $('input[value="best"]').disabled = !appStatus.neural.available;
     $('input[value="both"]').disabled = !appStatus.neural.available;

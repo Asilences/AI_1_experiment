@@ -99,13 +99,14 @@ python -m venv .venv
 
 界面支持搜索本地电影及别名、点击片名填入问题、A0/神经系统切换与双系统对比，并展示完整回答、实体链接、关系分类和图谱事实；可以复制答案、导出本次结果 JSON、重新填写最近提问。问答使用本地数据和模型，页面不下载模型；神经模型首次使用才加载。神经卡片列出的是输入候选事实，不代表每条事实都支持生成答案。
 
-默认使用 `data/processed`、`models/pipeline/model.pkl` 及 `output/selected_model.json` 指定的本地神经检查点。缺少神经模型时仍可使用 A0；缺少数据或 A0 模型时，页面会给出提示。当前本地历史模型与最新代码的正式指标需按审计建议统一复核；UI 中的处理耗时仅供交互观察，不作为正式性能比较。
+未激活扩展库时，默认使用 `data/processed`、`models/pipeline/model.pkl` 及 `output/selected_model.json` 指定的本地神经检查点。完成下文扩展流程并激活后，默认界面使用扩展库及其配套 A0 模型；原实验的 TransE/B2 不会与扩展库混用。缺少神经模型时仍可使用 A0；缺少数据或 A0 模型时，页面会给出提示。当前本地历史模型与最新代码的正式指标需按审计建议统一复核；UI 中的处理耗时仅供交互观察，不作为正式性能比较。
 
 更换端口、手动打开浏览器，或使用独立 A0 实验的数据和模型：
 
 ```powershell
 .\scripts\run_ui.cmd -Port 7861 -NoBrowser
 .\scripts\run_ui.cmd -DataDir data/processed -ModelPath runs/A0_personal_20261019/model.pkl
+.\scripts\run_ui.cmd -Legacy -Port 7861
 ```
 
 指定独立数据或模型时只开放 A0，避免与默认神经模型混用。代码下载后没有实验数据时，可先生成离线验收夹具，再通过 UI 体验 A0；该夹具是虚构电影，不能当成 Wikidata 实验结果：
@@ -116,6 +117,22 @@ python -m venv .venv
 ```
 
 也可跨平台直接运行 `python -m kgqa.web --open`，使用 `--data-dir`、`--model-path`、`--port` 指定配置。端口被占用时更换端口；第一次神经问答包含模型加载，耗时通常高于后续问答。
+
+## 扩展电影数据集
+
+本地扩展已完成：**5000 部电影、7864 个实体、35485 条三元组、58994 道问答**，并已训练配套 A0、激活浏览器界面。详细来源与验证记录见[电影数据集扩展记录](docs/电影数据集扩展记录.md)。完整数据与模型仍保留在本地，不随代码上传。
+
+扩展流程保留原始 1000 部电影快照，在独立目录中追加 Wikidata 电影，默认目标为 5000 部。候选按跨语言百科 sitelink 数排序，偏向常见电影，并非电影总体的随机样本。四类关系仍为导演、类型、制作国家、原始语言；新记录保留 Wikidata 修订号、原始请求与提取时间。同名电影提供片名/年份或 QID 的消歧提问入口，部分新增电影支持中文名称与别名搜索。
+
+以下命令需要本地原始 `snapshot_1000.json` 和配套 `splits.json`；它们与完整模型不包含在 GitHub 代码包中。首次运行会取得候选，后续复用缓存并从检查点继续采集。`--proxy` 按本机代理配置填写，不使用代理时省略。
+
+```powershell
+.\.venv\Scripts\python.exe -m kgqa.expand --target 5000 --candidate-cache data/raw/expansion_5000_20261029/candidates_sitelinks15.json --work-dir data/raw/expansion_5000_20261029 --proxy http://127.0.0.1:7890 --output-dir data/processed/movies_5000_20261029 --model-dir models/pipeline_5000_20261029 --base-splits data/processed/splits.json --activate
+```
+
+若已有候选响应缓存，可额外传入 `--candidate-cache <文件>`；采集默认使用 Wikidata 官方实体 API。代码也提供 `--backend sparql`，但应遵守服务限流。成功后生成独立快照、实体与别名、三元组、问答、划分、配套 A0 模型、验证阈值记录和测试预测；保留原电影的划分，新增电影用种子 42 补足 70%/15%/15%。源文件、模型和已完成的数据版本均校验哈希，不覆盖原实验资产。
+
+`--activate` 仅在数据校验、A0 训练和评测成功后更新项目内 `.work/ui-dataset.json`。重新启动 UI 即可读取扩展库；使用 `-Legacy`（Python 为 `--legacy`）返回原 1000 部电影与 B2。扩展库的神经模型需另行训练，不能直接套用旧实体向量。新增模板问答的自动分数不等于自由提问能力，也不与原实验指标混为一套结果。
 
 ## 交互式问答演示
 

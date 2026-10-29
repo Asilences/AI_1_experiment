@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import logging
+from pathlib import Path
 import pickle
 import time
 
@@ -10,7 +11,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import FeatureUnion
 
-from .common import ROOT, REFUSAL, answer_text, read_json, read_jsonl, setup_logging, write_json, write_jsonl
+from .common import ROOT, REFUSAL, answer_text, read_json, read_jsonl, setup_logging, sha256, utc_now, write_json, write_jsonl
 from .linker import EntityLinker
 
 
@@ -46,7 +47,11 @@ def mask_question(row, entities, linker=None):
     return linker.mask(row['question'], row['movie_id'])
 
 
-def train(data_dir=ROOT / 'data' / 'processed'):
+def train(data_dir=ROOT / 'data' / 'processed', output_dir=None):
+    data_dir = Path(data_dir)
+    output = Path(output_dir) if output_dir else ROOT / 'models' / 'pipeline'
+    if output_dir is not None and output.exists() and any(output.iterdir()):
+        raise FileExistsError(f'Refusing to overwrite pipeline model: {output}')
     qa, entities, splits = read_jsonl(data_dir / 'qa.jsonl'), read_json(data_dir / 'entities.json'), read_json(data_dir / 'splits.json')
     movie_ids = sum(splits.values(), [])
     linker = EntityLinker(movie_ids, entities)
@@ -70,6 +75,7 @@ def train(data_dir=ROOT / 'data' / 'processed'):
     predicted_indexes = np.argmax(probabilities, axis=1)
     predicted_relations = estimator.classes_[predicted_indexes]
     confidences = probabilities[np.arange(len(valid)), predicted_indexes]
+    validation_records = []
     for threshold in np.arange(.30, .86, .05):
         correct = 0
         for row, movie_id, relation, confidence in zip(valid, linked, predicted_relations, confidences):
@@ -78,12 +84,21 @@ def train(data_dir=ROOT / 'data' / 'processed'):
                 answer_ids = entities[movie_id].get('facts', {}).get(relation, [])
             correct += set(answer_ids) == set(row['answer_ids'])
         score = correct / max(1, len(valid))
+        validation_records.append({'threshold': float(threshold), 'correct': correct, 'count': len(valid), 'entity_exact': 100 * score})
         if score > best[0]:
             best = (score, float(threshold))
-    output = ROOT / 'models' / 'pipeline'; output.mkdir(parents=True, exist_ok=True)
+    output.mkdir(parents=True, exist_ok=True)
     with (output / 'model.pkl').open('wb') as stream:
         pickle.dump({'features': features, 'estimator': estimator, 'threshold': best[1]}, stream)
     logging.info('Validation exact set accuracy=%.4f threshold=%.2f', best[0], best[1])
+    write_json(output / 'validation_thresholds.json', {'selection_split': 'valid', 'records': validation_records,
+                                                     'selected_threshold': best[1]})
+    write_json(output / 'config.json', {'created_at': utc_now(), 'system': 'A0', 'seed': 42,
+                                       'data_dir': str(data_dir), 'selected_threshold': best[1],
+                                       'train_questions': len(train_rows), 'valid_questions': len(valid),
+                                       'input_hashes': {name: sha256(data_dir / name) for name in ('qa.jsonl', 'entities.json', 'splits.json')},
+                                       'source_sha256': sha256(Path(__file__)), 'model_sha256': sha256(output / 'model.pkl')})
+    return output / 'model.pkl'
 
 
 def load_model(path=ROOT / 'models' / 'pipeline' / 'model.pkl'):
@@ -116,8 +131,12 @@ def predict_split(split='test'):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(); parser.add_argument('action', choices=['train', 'predict', 'robust']); parser.add_argument('--split', default='test')
+    parser.add_argument('--data-dir', type=Path)
+    parser.add_argument('--output-dir', type=Path)
     args = parser.parse_args(); setup_logging(f'pipeline_{args.action}')
-    if args.action == 'train': train()
+    if args.action != 'train' and (args.data_dir is not None or args.output_dir is not None):
+        parser.error('--data-dir and --output-dir require the train action')
+    if args.action == 'train': train(args.data_dir or ROOT / 'data' / 'processed', args.output_dir)
     elif args.action == 'predict': predict_split(args.split)
     else: predict_rows(read_jsonl(ROOT / 'data' / 'processed' / 'robustness.jsonl'), ROOT / 'runs' / 'A0' / 'predictions_robustness.jsonl')
 

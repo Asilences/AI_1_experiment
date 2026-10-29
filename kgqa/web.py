@@ -14,11 +14,35 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, urlsplit
 import webbrowser
 
-from .common import REFUSAL, RELATIONS, ROOT, read_json
+from .common import REFUSAL, RELATIONS, ROOT, read_json, sha256
 
 ASSETS = Path(__file__).with_name('ui')
 SYSTEMS = {'a0', 'best', 'both'}
 MAX_BODY = 16384
+
+
+def startup_paths(data_dir=None, model_path=None, legacy=False):
+    """An explicitly activated dataset is paired with its model by hashes."""
+    if legacy and (data_dir is not None or model_path is not None):
+        raise ValueError('--legacy cannot be combined with custom data/model paths')
+    profile_path = ROOT / '.work' / 'ui-dataset.json'
+    if legacy or data_dir is not None or model_path is not None or not profile_path.exists():
+        return data_dir, model_path
+    profile = read_json(profile_path)
+    resolved = []
+    for key in ('data_dir', 'model_path'):
+        relative = Path(profile[key])
+        destination = (ROOT / relative).resolve()
+        if relative.is_absolute() or not destination.is_relative_to(ROOT.resolve()):
+            raise ValueError('Active dataset paths must stay inside the project')
+        resolved.append(destination)
+    data, model = resolved
+    for name, expected in profile['input_hashes'].items():
+        if name not in {'entities.json', 'splits.json', 'qa.jsonl'} or sha256(data / name) != expected:
+            raise ValueError('Active dataset has changed; rebuild or reactivate its matching model')
+    if set(profile['input_hashes']) != {'entities.json', 'splits.json', 'qa.jsonl'} or sha256(model) != profile['model_sha256']:
+        raise ValueError('Active model or dataset hashes do not match')
+    return data, model
 
 
 class APIError(Exception):
@@ -35,14 +59,20 @@ class QAService:
         self.demo = None
         self.lock = threading.Lock()
         self.movies, self.data_error = [], ''
+        self.dataset_name = '原始实验电影库'
         try:
             entities = read_json(self.data_dir / 'entities.json')
             splits = read_json(self.data_dir / 'splits.json')
+            manifest_path = self.data_dir / 'manifest.json'
+            if manifest_path.exists():
+                self.dataset_name = read_json(manifest_path).get('name', self.dataset_name)
             for qid in sorted(set(sum(splits.values(), []))):
                 entity = entities[qid]
                 facts = {r: {tail for tail in entity.get('facts', {}).get(r, [])
                              if entities.get(tail, {}).get('label')} for r in RELATIONS}
                 self.movies.append({'id': qid, 'label': entity['label'],
+                                    'display_label': entity.get('display_label', entity['label']),
+                                    'question_title': entity.get('question_title', entity['label']),
                                     'aliases': entity.get('aliases', []),
                                     'relations': [r for r in RELATIONS if facts[r]],
                                     'fact_count': sum(len(v) for v in facts.values())})
@@ -94,8 +124,9 @@ class QAService:
             movie = next((m for m in candidates if m['id'] not in used_movies), next(iter(candidates), None))
             if movie:
                 used_movies.add(movie['id'])
-                examples.append({'relation': relation, 'question': template.format(title=movie['label'])})
+                examples.append({'relation': relation, 'question': template.format(title=movie['question_title'])})
         return {'movie_count': len(self.movies), 'fact_count': sum(m['fact_count'] for m in self.movies),
+                'dataset_name': self.dataset_name,
                 'relation_count': len(RELATIONS), 'custom_data': self.custom_paths, 'examples': examples,
                 'a0': {'available': available, 'name': 'A0 管道问答',
                        'detail': self.data_error or ('本地模型就绪。' if available else '未找到 A0 模型，请先完成训练或指定模型路径。')},
@@ -138,7 +169,8 @@ class QAService:
                         cold = first_load or target == 'best' and demo.neural is None
                         raw = demo.answer_a0(question) if target == 'a0' else demo.answer_neural(question)
                         movie_id, score, link_status = demo.linker.link(question)
-                        movie = {'id': movie_id, 'label': demo.entities[movie_id]['label']} if movie_id else None
+                        movie = ({'id': movie_id, 'label': demo.entities[movie_id].get('display_label', demo.entities[movie_id]['label'])}
+                                 if movie_id else None)
                         result.update(ok=True, answer=raw['answer'], refused=raw['answer'] == REFUSAL,
                                       movie=movie, link_status=link_status, link_score=score,
                                       relation=raw.get('relation'), confidence=raw.get('confidence'),
@@ -243,6 +275,7 @@ def main(argv=None):
     parser.add_argument('--data-dir', type=Path, help='Custom processed data; enables A0 only.')
     parser.add_argument('--model-path', type=Path, help='Custom A0 model.pkl; enables A0 only.')
     parser.add_argument('--open', action='store_true', help='Open the local UI in your browser.')
+    parser.add_argument('--legacy', action='store_true', help='Use the original 1000-film data and neural models.')
     args = parser.parse_args(argv)
     if not 1 <= args.port <= 65535:
         parser.error('--port must be between 1 and 65535')
@@ -250,7 +283,11 @@ def main(argv=None):
     os.environ.setdefault('TRANSFORMERS_OFFLINE', '1')
     logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(message)s')
     try:
-        server = make_server(QAService(args.data_dir, args.model_path), args.port)
+        data_dir, model_path = startup_paths(args.data_dir, args.model_path, args.legacy)
+    except (OSError, ValueError, KeyError, TypeError) as error:
+        parser.exit(1, f'数据版本配置无效：{error}。可用 --legacy 启动原始实验库，或重新激活配套数据与模型。\n')
+    try:
+        server = make_server(QAService(data_dir, model_path), args.port)
     except OSError as error:
         parser.exit(1, f'无法启动本地页面：{error}。可使用 --port 7861 更换端口。\n')
     url = f'http://127.0.0.1:{args.port}'
