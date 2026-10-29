@@ -1,6 +1,8 @@
 param(
     [string]$Question,
-    [ValidateSet('a0','best','both')] [string]$System = 'both'
+    [ValidateSet('a0','best','both')] [string]$System = 'both',
+    [string]$DataDir,
+    [string]$ModelPath
 )
 $ErrorActionPreference = 'Stop'
 $Root = Split-Path -Parent $PSScriptRoot
@@ -9,4 +11,7 @@ Set-Location $Root
 $Python = Join-Path $Root '.venv\Scripts\python.exe'
 $Arguments = @('-m', 'kgqa.demo', '--system', $System)
 if ($Question) { $Arguments += @('--question', $Question) }
+if ($DataDir) { $Arguments += @('--data-dir', $DataDir) }
+if ($ModelPath) { $Arguments += @('--model-path', $ModelPath) }
 & $Python @Arguments
+exit $LASTEXITCODE

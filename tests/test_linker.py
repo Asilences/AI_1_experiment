@@ -128,6 +128,27 @@ def test_unknown_extension_cannot_fall_back_to_exact_short_title(nested_linker, 
     assert nested_linker.link(question)[0] is None
 
 
+@pytest.mark.parametrize('sequel_title,question', [
+    ('It 2', 'Who directed It 3?'),
+    ('It 2 The Next Chapter', 'Who directed It 3 The Next Chapter?'),
+])
+def test_unknown_numeric_sequel_cannot_fall_back_or_fuzzy_match(sequel_title, question):
+    entities = {'Q1': {'label': 'It'}, 'Q2': {'label': sequel_title}}
+    assert EntityLinker(entities, entities).link(question)[2] == 'ambiguous'
+
+
+@pytest.mark.parametrize('question,expected_id', [
+    ('Who directed It?', 'Q1'),
+    ('Who directed It 2?', 'Q2'),
+    ('Who directed It in 2023?', 'Q1'),
+    ('In 2023, who directed It?', 'Q1'),
+    ('Who directed It 2 in 2023?', 'Q2'),
+])
+def test_numeric_sequel_rule_preserves_exact_titles_and_nonadjacent_numbers(question, expected_id):
+    entities = {'Q1': {'label': 'It'}, 'Q2': {'label': 'It 2'}}
+    assert EntityLinker(entities, entities).link(question) == (expected_id, 1.0, 'exact')
+
+
 def test_long_extension_candidates_need_their_own_margin():
     entities = {'Q1': {'label': 'Star Wars'},
                 'Q8': {'label': 'Star Wars Episode Four'},
@@ -180,4 +201,16 @@ def test_pipeline_refuses_ambiguous_title_without_classifier_call():
     result = system.predict('Compare Star Wars and Film Beta')
     assert result['answer'] == REFUSAL
     assert result['answer_ids'] == []
+    assert classifier.inputs == []
+
+
+def test_pipeline_refuses_unknown_numeric_sequel_without_querying_original_facts():
+    classifier = RecordingClassifier()
+    entities = {'Q1': {'label': 'It', 'facts': {'P57': ['Q3']}},
+                'Q2': {'label': 'It 2', 'facts': {'P57': ['Q3']}},
+                'Q3': {'label': 'Example Director'}}
+    system = PipelineQA(entities, ['Q1', 'Q2'], classifier, .5)
+    result = system.predict('Who directed It 3?')
+    assert result['answer'] == REFUSAL
+    assert result['answer_ids'] == result['evidence'] == []
     assert classifier.inputs == []

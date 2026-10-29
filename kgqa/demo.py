@@ -15,12 +15,14 @@ def entity_label(entities, qid):
 
 
 class Demo:
-    def __init__(self, load_neural=True):
-        data = ROOT / 'data' / 'processed'
+    def __init__(self, load_neural=True, data_dir=None, model_path=None):
+        if load_neural and (data_dir is not None or model_path is not None):
+            raise ValueError('Custom data/model paths require --system a0')
+        data = Path(data_dir) if data_dir is not None else ROOT / 'data' / 'processed'
         self.entities = read_json(data / 'entities.json')
         self.splits = read_json(data / 'splits.json')
         self.movie_ids = sum(self.splits.values(), [])
-        model, threshold = load_model()
+        model, threshold = load_model(Path(model_path)) if model_path is not None else load_model()
         self.pipeline = PipelineQA(self.entities, self.movie_ids, model, threshold)
         self.linker = EntityLinker(self.movie_ids, self.entities)
         self.neural_run = None
@@ -104,8 +106,8 @@ def print_result(result):
     print(f"生成延迟：{result['latency_ms']:.2f} ms")
 
 
-def run(question=None, system='both'):
-    demo = Demo(load_neural=system in ('both', 'best'))
+def run(question=None, system='both', data_dir=None, model_path=None):
+    demo = Demo(load_neural=system in ('both', 'best'), data_dir=data_dir, model_path=model_path)
     def answer(text):
         print(f"\n问题：{text}")
         if system in ('a0', 'both'): print_result(demo.answer_a0(text))
@@ -124,5 +126,15 @@ def run(question=None, system='both'):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Interactive comparison of A0 and the validation-selected neural system.')
     parser.add_argument('--question'); parser.add_argument('--system', choices=['a0', 'best', 'both'], default='both')
-    args = parser.parse_args(); run(args.question, args.system)
+    parser.add_argument('--data-dir', type=Path, help='Processed data directory for A0 only.')
+    parser.add_argument('--model-path', type=Path, help='A0 model.pkl from a personal or acceptance run.')
+    args = parser.parse_args()
+    if args.system != 'a0' and (args.data_dir is not None or args.model_path is not None):
+        parser.error('--data-dir and --model-path require --system a0')
+    try:
+        run(args.question, args.system, args.data_dir, args.model_path)
+    except FileNotFoundError as error:
+        parser.exit(2, f'Missing data or model: {error.filename or error}. '
+                       'Run python -m kgqa.acceptance for an offline A0 example; '
+                       'see docs/提交验收说明.md for personal-run paths.\n')
 

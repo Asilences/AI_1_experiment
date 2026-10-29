@@ -1,0 +1,15 @@
+{
+  "python": "3.12.8 | packaged by Anaconda, Inc. | (main, Dec 11 2024, 16:48:34) [MSC v.1929 64 bit (AMD64)]",
+  "executable": "python.exe",
+  "platform": "Windows-11-10.0.22631-SP0",
+  "machine": "",
+  "processor": "",
+  "packages": {
+    "numpy": "1.26.4",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.6.1",
+    "sacrebleu": "2.5.1",
+    "rouge-score": "0.1.2"
+  },
+  "executable_note": "Executable basename only; environment is recorded without an installation path."
+}
