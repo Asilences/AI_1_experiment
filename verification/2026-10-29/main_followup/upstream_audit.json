@@ -1,0 +1,76 @@
+{
+  "checked_date": "2026-10-29",
+  "main_commit": "4b80b39f66a312d763e15d251405c3a22bb755c8",
+  "pull_request": "https://github.com/Asilences/AI_1_experiment/pull/6",
+  "changed_files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "status": "modified",
+      "sha": "62a3b7e891c3319ad9a2f273633c2c015701f7df"
+    },
+    {
+      "path": "README.md",
+      "status": "modified",
+      "sha": "7b82fba790dbbd2113b7b5e0c936dbf20c9543bb"
+    },
+    {
+      "path": "data/README.md",
+      "status": "modified",
+      "sha": "bfaa2910bd4a573a2b9521db9742ea2944c99d74"
+    },
+    {
+      "path": "docs/电影数据集扩展记录.md",
+      "status": "added",
+      "sha": "76e9b1bf8878b77184483b43ecbd37fcb0307149"
+    },
+    {
+      "path": "kgqa/expand.py",
+      "status": "added",
+      "sha": "138224dfdd224e95d5baaccae35b7de248920d64"
+    },
+    {
+      "path": "kgqa/pipeline.py",
+      "status": "modified",
+      "sha": "a1599dbe60ca2eb45dbc82eb9a992cb331cfbc2e"
+    },
+    {
+      "path": "kgqa/prepare.py",
+      "status": "modified",
+      "sha": "e19caff8b84769ac6e54b7510036ea124a1a60fe"
+    },
+    {
+      "path": "kgqa/ui/app.js",
+      "status": "modified",
+      "sha": "bc79294351cffe31c384494b2f7dae37350eadff"
+    },
+    {
+      "path": "kgqa/ui/index.html",
+      "status": "modified",
+      "sha": "95b7e7d639ce7854ae67366bde751f4cd554910f"
+    },
+    {
+      "path": "kgqa/web.py",
+      "status": "modified",
+      "sha": "ea01b9338dba9ad91f9441ddfcc411cad272f6d3"
+    },
+    {
+      "path": "scripts/run_ui.ps1",
+      "status": "modified",
+      "sha": "f6d0967d26757bdeb70759cd10c9ef1444e9b793"
+    },
+    {
+      "path": "tests/test_expand.py",
+      "status": "added",
+      "sha": "5a260191ee3900d99518bccff73ef59ac027510c"
+    },
+    {
+      "path": "verification/2026-10-29/expansion_summary.json",
+      "status": "added",
+      "sha": "2827531f5160e724891c82f4d170f8089261950a"
+    }
+  ],
+  "release_count": 0,
+  "pr_comment_count": 0,
+  "complete_snapshot_in_pr": false,
+  "note": "PR 6 contains expansion source and verification summary, not the complete frozen snapshot or model. Its reported metrics remain historical evidence; this checkout has the independent 200-movie snapshot."
+}

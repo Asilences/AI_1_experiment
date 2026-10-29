@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-29",
+  "base_commit": "4b80b39f66a312d763e15d251405c3a22bb755c8",
+  "python": "3.12.8",
+  "checks": [
+    {
+      "command": "python -m pytest -q",
+      "exit_code": 0,
+      "passed": 241,
+      "seconds": 14.29
+    },
+    {
+      "command": "python -m kgqa.acceptance --output-dir output/acceptance/main-followup-20261029",
+      "exit_code": 0,
+      "status": "PASS synthetic offline acceptance"
+    },
+    {
+      "command": "python -m compileall -q kgqa tests",
+      "exit_code": 0
+    },
+    {
+      "command": "python -m kgqa.neural_preflight --help",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    }
+  ],
+  "note": "Real 200-movie preflight and validation diagnostics are separate JSON records; no expanded 5000-movie data or neural training claimed."
+}

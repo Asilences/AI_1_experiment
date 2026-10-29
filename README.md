@@ -76,7 +76,7 @@ python -m venv .venv
 .\scripts\run_ui.cmd -DataDir data/processed -ModelPath runs/A0_personal_20261019/model.pkl
 ```
 
-默认优先读取本机 `.work/ui-dataset.json` 中已激活的数据与配套 A0，核对哈希后启用；当前本地已激活 5000 部电影扩展库，仅开放 A0。未激活扩展库或使用 `-Legacy` 时，读取 `data/processed`、`models/pipeline/model.pkl` 及 `output/selected_model.json` 指定的原实验神经检查点；`-Legacy` 返回这些默认路径，具体规模以所恢复的数据为准。缺少神经模型仍可使用 A0；缺少数据或 A0 模型时页面给出提示。指定独立数据或模型路径时只开放 A0。详见下文[扩展片库](#扩展电影数据集)。
+默认优先读取本机 `.work/ui-dataset.json` 中已激活的数据与配套 A0，核对哈希后启用。本次分发已包含 5000 部电影与配套 A0，克隆后执行 `kgqa.dataset activate --smoke` 可生成本机激活配置；该版本仅开放 A0。未激活扩展库或使用 `-Legacy` 时，读取 `data/processed`、`models/pipeline/model.pkl` 及 `output/selected_model.json` 指定的原实验神经检查点；`-Legacy` 返回这些默认路径，具体规模以所恢复的数据为准。缺少神经模型仍可使用 A0；缺少数据或 A0 模型时页面给出提示。指定独立数据或模型路径时只开放 A0。详见下文[扩展片库](#扩展电影数据集)。
 
 也可在相应 Python 环境中跨平台执行 `python -m kgqa.web --open`，使用 `--data-dir`、`--model-path`、`--port` 指定配置。页面不下载数据或模型，神经模型首次使用时才加载；首次处理耗时包含加载，UI 耗时只供交互观察。神经卡片展示的是输入候选事实，不代表每条都支持生成答案。
 
@@ -160,6 +160,18 @@ Copy-Item output/human_evaluation_key.csv reports/人工评价/对照密钥.csv
 
 ## 完整数据与神经实验
 
+### 主分支更新后的预检
+
+已同步 PR #6 并修复独立 A0 训练覆盖默认模型、续跑忽略指定划分以及缺少快照仍请求网络的问题。完整测试为 **241 项通过**。本轮对 200 部电影的全部 2492 道题运行真实分词器预检：未发生长度或事实条数截断，552 个实体名称中有 13 个存在编码损失。具体数值、验证错误与后续分工见[本轮检查记录](verification/2026-10-29/main_followup/README.md)。
+
+训练新版本前，在完整环境和配套本地文件就绪后执行：
+
+```powershell
+python -m kgqa.neural_preflight --data-dir data/processed --tokenizer runs/B0/checkpoint --mapping models/transe/mapping.json --output output/preflight.json
+```
+
+预检检查名称编码、输入/目标长度及事实截断，记录版本哈希，不修改训练数据或实验分数。纯文本 C0 检查省略 `--mapping`；结构前缀检查应使用当前数据对应的映射。PR #7 的预检记录对应 200 部电影；本次分发已补充 5000 部完整快照与 A0，但没有新增 5000 部电影的神经训练结果。
+
 ### 准备完整环境
 
 完整依赖使用 PyTorch 2.6.0 的 CUDA 12.4 构建，并下载 FLAN-T5-small。GPU 训练需要相容的 NVIDIA 显卡和驱动；无可用 CUDA 时神经代码会使用 CPU，训练速度会明显降低。
@@ -230,7 +242,7 @@ python -m venv .venv
 
 若已有候选响应缓存，可额外传入 `--candidate-cache <文件>`；采集默认使用 Wikidata 官方实体 API。代码也提供 `--backend sparql`，但应遵守服务限流。成功后生成独立快照、实体与别名、三元组、问答、划分、配套 A0 模型、验证阈值记录和测试预测；保留原电影的划分，新增电影用种子 42 补足 70%/15%/15%。源文件、模型和已完成的数据版本均校验哈希，不覆盖原实验资产。
 
-`--activate` 仅在数据校验、A0 训练和评测成功后更新项目内 `.work/ui-dataset.json`。重新启动 UI 即可读取扩展库；使用 `-Legacy`（Python 为 `--legacy`）返回 `data/processed` 和原实验模型。本机该路径目前保留 1000 部电影与 B2；若恢复 200 部电影实验，应同时恢复其配套模型与选模记录。扩展库的神经模型需另行训练，不能直接套用旧实体向量。新增模板问答的自动分数不等于自由提问能力，也不与原实验指标混为一套结果。
+`--activate` 仅在数据校验、A0 训练和评测成功后更新项目内 `.work/ui-dataset.json`。重新启动 UI 即可读取扩展库；使用 `-Legacy`（Python 为 `--legacy`）返回 `data/processed` 和原实验模型，该路径的规模和选中模型取决于本机恢复的版本。恢复 200 部电影实验时，应同时恢复其配套模型与选模记录。扩展库的神经模型需另行训练，不能直接套用旧实体向量。新增模板问答的自动分数不等于自由提问能力，也不与原实验指标混为一套结果。
 
 ## 已有真实数据时单独复核 A0
 
@@ -313,6 +325,7 @@ python -m venv .venv
 | [web.py](kgqa/web.py) | 用标准库提供本机 HTTP 页面与状态、电影搜索、问答 API；延迟加载模型，支持 A0 或双系统及自定义 A0 路径。 |
 | [transe.py](kgqa/transe.py) | 用三元组训练 TransE，保存嵌入、实体/关系映射与损失曲线。 |
 | [neural.py](kgqa/neural.py) | 图谱事实与结构前缀、FLAN-T5 训练、验证选检查点、测试及指定文件推理；训练支持 `--batch-size` 和 `--gradient-accumulation`。 |
+| [neural_preflight.py](kgqa/neural_preflight.py) | 训练前检查分词器名称保真、384/96 token 与 24 条事实限制、答案实体覆盖；支持独立数据目录及可选配套映射。 |
 | [metrics.py](kgqa/metrics.py) | 题号和覆盖校验、实体集合准确率/Macro-F1、BLEU、ROUGE-L、拒答及延迟；按 run 评估。 |
 | [robustness.py](kgqa/robustness.py) | 从测试集抽样生成原题、改写、错拼、别名和拒答题，保存来源与配对分母。 |
 | [human_eval.py](kgqa/human_eval.py) | 对齐 A0 与神经 run，导出盲评表、密钥与抽样清单；读取多份独立评分 CSV，校验覆盖/分数并统计均值、一致率和分歧。 |
@@ -354,6 +367,7 @@ python -m venv .venv
 | [test_human_eval.py](tests/test_human_eval.py) | 盲评抽样、预测对齐、空表导出，以及真实 0 分、完整评分、错误 ID/分数拒绝、系统均值与评审一致率。 |
 | [test_linker.py](tests/test_linker.py) | 标题、别名、错拼、嵌套片名、未知数字续集、遮蔽与管道拒答。 |
 | [test_metrics.py](tests/test_metrics.py) | ID 唯一性、完整覆盖、实体抽取、分组指标与 smoke/鲁棒性评估。 |
+| [test_neural_preflight.py](tests/test_neural_preflight.py) | Unicode 编码损失、精确长度边界、事实截断与映射/链接缺失区分，以及输入哈希。 |
 | [test_personal_experiment.py](tests/test_personal_experiment.py) | 个人运行输入、划分、验证选阈值、重复推理、配对与拒绝覆盖。 |
 | [test_robustness.py](tests/test_robustness.py) | 扰动生成、标题边界、抽样均衡、来源配对与分母记录。 |
 | [test_web.py](tests/test_web.py) | 合成数据上的真实 A0 HTTP 问答、状态/搜索、输入错误、请求边界、忙碌/失败处理及静态资源范围。 |
@@ -384,3 +398,5 @@ python -m venv .venv
 | [expansion_summary.json](verification/2026-10-29/expansion_summary.json) | 独立的 5000 部电影 UI 片库扩展摘要：来源、规模、哈希、标准链接检查和配套 A0 模板测试；与上面的 200 部电影完整实验分开计分。 |
 
 真实截图、人工评价、数据版本复核与最终可提交项集中见 [提交审查](reports/提交审查.md)。
+
+[main_followup/](verification/2026-10-29/main_followup/) 保存 PR #6 文件清单核对、241 项测试结果、200 部电影预检及验证集编码错误分析；其 README 解释适用范围与复核命令。
