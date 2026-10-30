@@ -1,0 +1,11 @@
+{
+  "data_dir": "data/processed/movies_5000_freeform_en_v2",
+  "embedding_dir": "assets/5000_runtime_20261030/models/transe",
+  "initial_checkpoint": "assets/5000_runtime_20261030/runs/B0/checkpoint",
+  "mode": "baseline_valid_only",
+  "test_used": false,
+  "batch_size": 32,
+  "input_max_length": 512,
+  "seed": 42,
+  "metric_note": "Raw generation; main AnswerEntityIndex decoder with retrieved fact context; no name recovery/adapter."
+}

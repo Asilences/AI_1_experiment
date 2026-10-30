@@ -74,7 +74,7 @@ def main(argv=None):
     from transformers import AutoTokenizer
     from .common import ROOT, read_jsonl, seed_all, sha256, utc_now, write_json, write_jsonl
     from .metrics import score_rows
-    from .neural import Collator, GraphData, GraphPrefixModel, QADataset, move, train, validation_outputs
+    from .neural import Collator, GraphData, GraphPrefixModel, QADataset, move, train, validation_outputs, native_bf16_supported
 
     run = ROOT / 'runs' / args.run_id
     if run.exists() and any(run.iterdir()):
@@ -107,6 +107,7 @@ def main(argv=None):
                'initial_checkpoint': str(args.initial_checkpoint), 'bindings': bindings,
                'pid': os.getpid(), 'created_at': utc_now(), 'torch': torch.__version__, 'cuda': torch.version.cuda,
                'torch_threads': torch.get_num_threads(),
+               'training_precision': 'bf16 autocast' if native_bf16_supported(device) else 'float32',
                'gpu_name': torch.cuda.get_device_name(0), 'gpu_memory_total': torch.cuda.get_device_properties(0).total_memory,
                'allocator_cap_bytes': int(torch.cuda.get_device_properties(0).total_memory * args.memory_fraction),
                'cap_scope': 'PyTorch allocator only; sampled process peak includes CUDA overhead.'})
@@ -173,6 +174,8 @@ def main(argv=None):
                            'batch': args.batch_size, 'max_input_tokens': batch['input_ids'].shape[1],
                            'graph_prefix_count': batch['graph_vectors'].shape[1], 'generated': decoded})
                 logging.info('MODEL_WITNESS batch=%s precision=float32 finite=True nonempty=%s', args.batch_size, len(decoded))
+                logging.info('TRAINING_PRECISION_WITNESS selected=%s capability=%s',
+                             'bf16 autocast' if native_bf16_supported(device) else 'float32', torch.cuda.get_device_capability(device))
         status = 'complete'
         return 0
     finally:

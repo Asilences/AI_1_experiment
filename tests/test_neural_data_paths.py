@@ -21,6 +21,22 @@ def test_seeding_respects_shared_server_cpu_budget(monkeypatch):
         neural.torch.set_num_threads(previous)
 
 
+def test_v100_bf16_software_emulation_does_not_select_bf16_training(monkeypatch):
+    monkeypatch.setattr(neural.torch.cuda, 'get_device_capability', lambda device: (7, 0))
+    monkeypatch.setattr(neural.torch.cuda, 'is_bf16_supported', lambda **kwargs: True)
+    assert not neural.native_bf16_supported(neural.torch.device('cuda'))
+    assert not neural.native_bf16_supported(neural.torch.device('cpu'))
+
+
+def test_bf16_requires_native_support_even_on_a_newer_device(monkeypatch):
+    monkeypatch.setattr(neural.torch.cuda, 'get_device_capability', lambda device: (8, 0))
+    def supported(*, including_emulation):
+        assert including_emulation is False
+        return False
+    monkeypatch.setattr(neural.torch.cuda, 'is_bf16_supported', supported)
+    assert not neural.native_bf16_supported(neural.torch.device('cuda'))
+
+
 def test_graph_and_linking_use_explicit_dataset_and_embeddings(tmp_path):
     data, embeddings = tmp_path / 'dataset', tmp_path / 'embeddings'
     write_json(data / 'entities.json', {'Q1': {'label': 'Example Film', 'facts': {'P57': ['Q2']}}, 'Q2': {'label': 'Example Director'}})

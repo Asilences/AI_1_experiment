@@ -129,6 +129,13 @@ def move(batch, device):
     return {key: value.to(device) if torch.is_tensor(value) else value for key, value in batch.items()}
 
 
+def native_bf16_supported(device):
+    # PyTorch 2.6 defaults to accepting software emulation. V100 (sm70) has
+    # no native BF16, so that default silently defeats the float32 fallback.
+    return (device.type == 'cuda' and torch.cuda.get_device_capability(device)[0] >= 8
+            and torch.cuda.is_bf16_supported(including_emulation=False))
+
+
 def predictions(model, loader, tokenizer, entities, device):
     model.eval(); output = []
     name_index = AnswerEntityIndex(entities)
@@ -152,7 +159,7 @@ def predictions(model, loader, tokenizer, entities, device):
 def validation_outputs(model, loader, tokenizer, entities, device):
     model.eval(); output, losses = [], []
     name_index = AnswerEntityIndex(entities)
-    use_bf16 = device.type == 'cuda' and torch.cuda.is_bf16_supported()
+    use_bf16 = native_bf16_supported(device)
     for step, batch in enumerate(loader, 1):
         rows = batch.pop('rows'); batch = move(batch, device)
         context = torch.autocast('cuda', dtype=torch.bfloat16) if use_bf16 else nullcontext()
@@ -247,7 +254,7 @@ def train(run_id, learning_rate, use_embeddings=True, epochs=5, smoke=False,
         config.update(training_batches_per_epoch=batches_per_epoch, optimizer_updates_per_epoch=updates_per_epoch,
                       planned_optimizer_updates=updates)
         write_json(run / 'config.json', config)
-        use_bf16 = device.type == 'cuda' and torch.cuda.is_bf16_supported()
+        use_bf16 = native_bf16_supported(device)
         config['training_precision'] = 'bf16 autocast' if use_bf16 else 'float32'
         write_json(run / 'config.json', config)
         scaler = torch.amp.GradScaler('cuda', enabled=False); history, best = [], (-1, None)

@@ -1,0 +1,152 @@
+{
+  "scope": "Validation diagnosis only; all answerable validation links verified correct",
+  "by_family": {
+    "genre_classification": {
+      "count": 452,
+      "correct": 368,
+      "incorrect": 84,
+      "refused_answerable": 73
+    },
+    "genre_catalog": {
+      "count": 452,
+      "correct": 452,
+      "incorrect": 0,
+      "refused_answerable": 0
+    },
+    "language_catalog": {
+      "count": 744,
+      "correct": 743,
+      "incorrect": 1,
+      "refused_answerable": 0
+    },
+    "original_language_lookup": {
+      "count": 744,
+      "correct": 743,
+      "incorrect": 1,
+      "refused_answerable": 0
+    },
+    "country_catalog": {
+      "count": 743,
+      "correct": 738,
+      "incorrect": 5,
+      "refused_answerable": 0
+    },
+    "nation_lookup": {
+      "count": 743,
+      "correct": 741,
+      "incorrect": 2,
+      "refused_answerable": 0
+    },
+    "directing_credit": {
+      "count": 745,
+      "correct": 199,
+      "incorrect": 546,
+      "refused_answerable": 543
+    },
+    "director_lookup": {
+      "count": 745,
+      "correct": 738,
+      "incorrect": 7,
+      "refused_answerable": 0
+    },
+    "box_office_lookup": {
+      "count": 750,
+      "correct": 684,
+      "incorrect": 66,
+      "refused_answerable": 0
+    },
+    "composer_lookup": {
+      "count": 750,
+      "correct": 748,
+      "incorrect": 2,
+      "refused_answerable": 0
+    }
+  },
+  "director_error_examples_first_eight": [
+    {
+      "question": "Who receives the directing credit for Frequency?",
+      "family": "directing_credit",
+      "answer": "The available knowledge graph does not contain enough information to answer this question.",
+      "reference": "Frequency was directed by Gregory Hoblit.",
+      "gold_ids": [
+        "Q267524"
+      ],
+      "predicted_ids": []
+    },
+    {
+      "question": "Who receives the directing credit for Resident Evil: Welcome to Raccoon City?",
+      "family": "directing_credit",
+      "answer": "The available knowledge graph does not contain enough information to answer this question.",
+      "reference": "Resident Evil: Welcome to Raccoon City was directed by Johannes Roberts.",
+      "gold_ids": [
+        "Q6216955"
+      ],
+      "predicted_ids": []
+    },
+    {
+      "question": "Who receives the directing credit for The Guilty (2021)?",
+      "family": "directing_credit",
+      "answer": "The available knowledge graph does not contain enough information to answer this question.",
+      "reference": "The Guilty was directed by Antoine Fuqua.",
+      "gold_ids": [
+        "Q465139"
+      ],
+      "predicted_ids": []
+    },
+    {
+      "question": "Who receives the directing credit for The Hunger Games: Mockingjay – Part 2?",
+      "family": "directing_credit",
+      "answer": "The available knowledge graph does not contain enough information to answer this question.",
+      "reference": "The Hunger Games: Mockingjay – Part 2 was directed by Francis Lawrence.",
+      "gold_ids": [
+        "Q561387"
+      ],
+      "predicted_ids": []
+    },
+    {
+      "question": "Who receives the directing credit for Transcendence?",
+      "family": "directing_credit",
+      "answer": "The available knowledge graph does not contain enough information to answer this question.",
+      "reference": "Transcendence was directed by Wally Pfister.",
+      "gold_ids": [
+        "Q460144"
+      ],
+      "predicted_ids": []
+    },
+    {
+      "question": "Who receives the directing credit for Vanity Fair?",
+      "family": "directing_credit",
+      "answer": "The available knowledge graph does not contain enough information to answer this question.",
+      "reference": "Vanity Fair was directed by Mira Nair.",
+      "gold_ids": [
+        "Q466320"
+      ],
+      "predicted_ids": []
+    },
+    {
+      "question": "Who receives the directing credit for Aliens?",
+      "family": "directing_credit",
+      "answer": "The available knowledge graph does not contain enough information to answer this question.",
+      "reference": "Aliens was directed by James Cameron.",
+      "gold_ids": [
+        "Q42574"
+      ],
+      "predicted_ids": []
+    },
+    {
+      "question": "Who receives the directing credit for Home Alone?",
+      "family": "directing_credit",
+      "answer": "The available knowledge graph does not contain enough information to answer this question.",
+      "reference": "Home Alone was directed by Chris Columbus.",
+      "gold_ids": [
+        "Q75079"
+      ],
+      "predicted_ids": []
+    }
+  ],
+  "inputs_sha256": {
+    "predictions": "a557a441dffd8db452496c21d2473419b86c99ce84955e34fae5cc8d99d4372b",
+    "metrics": "da8370f24ebbcbd8cf2a0d01570df29176de367d315772a7bacbdaf07350ffb2"
+  },
+  "created_at": "2026-10-30T20:30:30Z"
+}

@@ -3,7 +3,7 @@
   "data_dir": "data/processed/movies_5000_freeform_en_v2",
   "dataset_qa_sha256": "2f193a52087e32b6c48992bbf35ab94038511ed5a40c68487bca6bc8b7c7492e",
   "baseline_run": "B0_5000_freeform_en_v2_baseline_20261031_b32",
-  "training_run": "B0_5000_freeform_en_v2_20261031_b32",
+  "training_run": "B0_5000_freeform_en_v2_20261031_fp32",
   "train_if": {"validation_entity_macro_f1_below": 99.5, "or_validation_refusal_accuracy_below": 99.0},
   "decision_uses_test": false,
   "initial_checkpoint": "assets/5000_runtime_20261030/runs/B0/checkpoint",
