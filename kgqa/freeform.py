@@ -53,7 +53,7 @@ class FreeformParser:
                 if len(name) >= 2 and re.search(r'[\u3400-\u9fff]', name):
                     self.cjk_names.setdefault(name, set()).add(qid)
 
-    def _resolve(self, question):
+    def _resolve(self, question, link_question=None):
         text = fold(question)
         qids = set(re.findall(r'(?<![a-z0-9])q\d+(?![a-z0-9])', text, flags=re.I))
         qids = {qid.upper() for qid in qids}
@@ -68,7 +68,7 @@ class FreeformParser:
         if any(re.match(r'\s*\d', text[right:]) for _, right, _ in mentions):
             return None, 0., 'not_found', []
         ids = set().union(*(item[2] for item in mentions)) if mentions else set()
-        movie_id, score, status = self.linker.link(question)
+        movie_id, score, status = self.linker.link(question if link_question is None else link_question)
         if movie_id:
             ids.add(movie_id)
         if qids:
@@ -91,7 +91,13 @@ class FreeformParser:
     def parse(self, question):
         if not isinstance(question, str) or not question.strip() or len(question) > 1000:
             raise ValueError('请输入 1—1000 个字符的电影问题。')
-        movie, score, method, candidates = self._resolve(question)
+        # 中文关系词可紧接完整英文片名；保留原句中的其他电影提及以检查歧义。
+        subject = re.fullmatch(
+            r'([\x20-\x7e]+)的(?:导演|導演|类型|類型|制作国家|製作國家|制片国家|製片國家|'
+            r'国家|國家|原始语言|原始語言|语言|語言)[\u3400-\u9fff]*[?？。.!！]*', question.strip())
+        link_question = (subject.group(1).strip()
+                         if subject and normalize(subject.group(1)) in self.linker.unicode_names else question)
+        movie, score, method, candidates = self._resolve(question, link_question)
         result = {'question': question.strip(), 'method': 'bounded_rules_v1', 'status': 'needs_clarification',
                   'movie_id': movie, 'relation_id': None, 'link_status': method, 'link_score': score,
                   'canonical_question': None, 'message': '', 'suggestions': [],
@@ -110,7 +116,7 @@ class FreeformParser:
             if re.search(r'[\u3400-\u9fff]', name):
                 chinese = chinese.replace(fold(name), ' ')
         chinese = ' '.join(re.findall(r'[\u3400-\u9fff]+', chinese))
-        text = self.linker.mask(question, movie) + ' ' + chinese
+        text = self.linker.mask(link_question, movie) + ' ' + chinese
         if re.search(UNSUPPORTED, text):
             result.update(status='unanswerable', message='当前支持导演、类型、制作国家和原始语言；这个问题还需要其他事实。')
             return result

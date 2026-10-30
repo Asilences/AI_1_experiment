@@ -4,6 +4,8 @@
 
 仓库现包含 **5000 部电影的完整冻结快照、58994 道问答及配套 A0**，共 38.55 MiB。无需重新采集或训练，按[数据使用说明](datasets/movies-5000-20261029/README.md)校验并激活后即可打开问答界面。
 
+最新改进修复了中文片名/别名被删除的问题，并为本地神经模型增加可选名称恢复。200 部电影上的 B0 测试实体 F1 从 98.86% 提高到 99.68%，原始模型结果继续保留。5000 部电影的验证、测试复评和分工见[实验改进补充记录](reports/实验改进补充记录.md)。
+
 [快速启动](#快速启动-cpu-离线验收) · [浏览器界面](#浏览器问答界面) · [数据与进度](#数据版本与目前进度) · [两人分工](#双人分工与报告入口) · [人工评价](#人工评价填表与统计) · [完整实验](#完整数据与神经实验) · [扩展片库](#扩展电影数据集) · [文件索引](#仓库目录与文件索引)
 
 | 系统 | 实现与比较目的 |
@@ -77,12 +79,15 @@ python -m venv .venv
 .\scripts\run_ui.cmd
 .\scripts\run_ui.cmd -Port 7861 -NoBrowser
 .\scripts\run_ui.cmd -Legacy -Port 7861
+.\scripts\run_ui.cmd -Legacy -RecoverNames -Port 7861
 .\scripts\run_ui.cmd -DataDir data/processed -ModelPath runs/A0_personal_20261019/model.pkl
 ```
 
 默认优先读取本机 `.work/ui-dataset.json` 中已激活的数据与配套 A0，核对哈希后启用。本次分发已包含 5000 部电影与配套 A0，克隆后执行 `kgqa.dataset activate --smoke` 可生成本机激活配置；该版本仅开放 A0。未激活扩展库或使用 `-Legacy` 时，读取 `data/processed`、`models/pipeline/model.pkl` 及 `output/selected_model.json` 指定的原实验神经检查点；`-Legacy` 返回这些默认路径，具体规模以所恢复的数据为准。缺少神经模型仍可使用 A0；缺少数据或 A0 模型时页面给出提示。指定独立数据或模型路径时只开放 A0。详见下文[扩展片库](#扩展电影数据集)。
 
 也可在相应 Python 环境中跨平台执行 `python -m kgqa.web --open`，使用 `--data-dir`、`--model-path`、`--port` 指定配置。页面不下载数据或模型，神经模型首次使用时才加载；首次处理耗时包含加载，UI 耗时只供交互观察。神经卡片展示的是输入候选事实，不代表每条都支持生成答案。
+
+`-RecoverNames`（Python 为 `--recover-names`）需要已恢复的原实验神经数据与检查点，不能与独立 5000 部 A0 混用。启用后系统名称带“+ 名称恢复”，API 和导出结果保留 `raw_answer`、替换证据及独立恢复耗时。它只恢复候选事实中唯一的分词损失名称，不补漏答，也不替代原始 B0 的消融成绩。
 
 合并共享界面后的完整集成测试实测为 **220 项通过，14.93 秒，退出码 0**。当前 200 部电影数据的 `QAService` 已实际调用 A0 与 B0，均回答出《The Big Red One》的导演 Samuel Fuller；见 [集成测试日志](verification/2026-10-29/integration_pytest.log) 和 [真实双系统服务检查](verification/2026-10-29/ui_two_system_demo.json)。
 
@@ -91,7 +96,7 @@ python -m venv .venv
 | 数据与记录 | 用途和状态 | 入口 |
 |---|---|---|
 | 历史 1000 部 Wikidata 电影 | 2285 实体、6194 三元组、12267 问答；保留 A0、B0–B3、C0 的第一阶段结果。 | [历史结果摘要](提交材料/实验结果摘要.md) |
-| 2026-10-29 扩展 5000 部电影 | 保留历史 1000 部并新增 4000 部；7864 实体、35485 三元组、58994 问答。配套 A0 已训练并激活本地 UI；扩展库神经模型待训练。 | [扩展记录](docs/电影数据集扩展记录.md) · [验证摘要](verification/2026-10-29/expansion_summary.json) |
+| 2026-10-29 扩展 5000 部电影 | 保留历史 1000 部并新增 4000 部；7864 实体、35485 三元组、58994 问答。配套 A0 已训练并提供激活入口；新增 Unicode 链接及配对鲁棒性复评。扩展库神经模型待训练。 | [扩展记录](docs/电影数据集扩展记录.md) · [最新复评](verification/2026-10-29/expanded_followup/) |
 | 新 200 部电影，10 月 19 日与 29 日 | 552 实体、1264 三元组、2492 问答；电影 140/30/30，问答 1749/373/370。保留原 A0 个人实验，现已补齐同快照 A0、TransE、B0–B3、C0、选模及鲁棒性。 | [原 A0 证据](verification/2026-10-19/personal/) · [10 月 29 日完整证据](verification/2026-10-29/README.md) |
 | 2026-10-24 合成 10 部电影 | 独立的 CPU 验收夹具，与各版真实电影实验分开计分。 | [验收记录](verification/2026-10-24/README.md) |
 
@@ -332,8 +337,11 @@ python -m venv .venv
 | [transe.py](kgqa/transe.py) | 用三元组训练 TransE，保存嵌入、实体/关系映射与损失曲线。 |
 | [neural.py](kgqa/neural.py) | 图谱事实与结构前缀、FLAN-T5 训练、验证选检查点、测试及指定文件推理；训练支持 `--batch-size` 和 `--gradient-accumulation`。 |
 | [neural_preflight.py](kgqa/neural_preflight.py) | 训练前检查分词器名称保真、384/96 token 与 24 条事实限制、答案实体覆盖；支持独立数据目录及可选配套映射。 |
+| [name_recovery.py](kgqa/name_recovery.py) | 从检索事实候选中恢复唯一的分词损失名称，返回原始文本、替换位置和实体证据。 |
+| [recovery_experiment.py](kgqa/recovery_experiment.py) | 对冻结神经预测进行验证选择与严格前后评分，校验方法、输入及分词器版本一致。 |
+| [expanded_evaluation.py](kgqa/expanded_evaluation.py) | 核对独立 A0 数据与模型，复评验证/测试、配对鲁棒性及分阶段错误，不重新训练。 |
 | [metrics.py](kgqa/metrics.py) | 题号和覆盖校验、实体集合准确率/Macro-F1、BLEU、ROUGE-L、拒答及延迟；按 run 评估。 |
-| [robustness.py](kgqa/robustness.py) | 从测试集抽样生成原题、改写、错拼、别名和拒答题，保存来源与配对分母。 |
+| [robustness.py](kgqa/robustness.py) | 从验证或测试集抽样生成原题、改写、错拼、别名和拒答题，保存来源与配对分母；支持隔离目录，保留消歧片名。 |
 | [human_eval.py](kgqa/human_eval.py) | 对齐 A0 与神经 run，导出盲评表、密钥与抽样清单；读取多份独立评分 CSV，校验覆盖/分数并统计均值、一致率和分歧。 |
 | [finalize.py](kgqa/finalize.py) | 从 B0–B3 的验证指标选最佳系统，执行其鲁棒性推理、评价及盲评导出。 |
 | [error_analysis.py](kgqa/error_analysis.py) | 对共享 A0 和选中神经系统统计链接、关系、拒答、漏答和额外实体等错误。 |
@@ -374,6 +382,9 @@ python -m venv .venv
 | [test_linker.py](tests/test_linker.py) | 标题、别名、错拼、嵌套片名、未知数字续集、遮蔽与管道拒答。 |
 | [test_metrics.py](tests/test_metrics.py) | ID 唯一性、完整覆盖、实体抽取、分组指标与 smoke/鲁棒性评估。 |
 | [test_neural_preflight.py](tests/test_neural_preflight.py) | Unicode 编码损失、精确长度边界、事实截断与映射/链接缺失区分，以及输入哈希。 |
+| [test_name_recovery.py](tests/test_name_recovery.py)、[test_recovery_experiment.py](tests/test_recovery_experiment.py) | 名称歧义、完整词边界、未知字符、无标准答案推理，以及验证协议与严格评分。 |
+| [test_unicode_linker.py](tests/test_unicode_linker.py) | 中文完整别名、NFKC、英文分类器遮蔽、多电影、未知名称及未知续集拒答。 |
+| [test_expanded_evaluation.py](tests/test_expanded_evaluation.py) | 冻结模型配对、验证/测试电影隔离、配对分母与同名消歧入口。 |
 | [test_personal_experiment.py](tests/test_personal_experiment.py) | 个人运行输入、划分、验证选阈值、重复推理、配对与拒绝覆盖。 |
 | [test_robustness.py](tests/test_robustness.py) | 扰动生成、标题边界、抽样均衡、来源配对与分母记录。 |
 | [test_web.py](tests/test_web.py) | 合成数据上的真实 A0 HTTP 问答、状态/搜索、输入错误、请求边界、忙碌/失败处理及静态资源范围。 |

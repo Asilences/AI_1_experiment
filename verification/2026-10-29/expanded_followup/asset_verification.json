@@ -1,0 +1,30 @@
+{
+  "dataset_id": "movies-5000-20261029",
+  "files": 11,
+  "bytes": 40422065,
+  "counts": {
+    "movies": 5000,
+    "entities": 7864,
+    "triples": 35485,
+    "qa": 58994
+  },
+  "input_hashes": {
+    "entities.json": "7c935d8fa1eecd9870df16e49d93460bdd75f90255661e4e4e397af9f667f3e8",
+    "splits.json": "dd24634f590e3e5dd38dc2e5ca7fd25b432ec3b562f74dc99a65b22d586113b7",
+    "qa.jsonl": "2882b2077834d37f4b1ae8f9b8ea90561c8c5dacecf4247907311d0cbb8bb310"
+  },
+  "model_sha256": "a14f3ee60168e3f0a2eefcda403c58400e861c1708dceebe63c396e1e8faa8dd",
+  "data_dir": "data/processed/movies_5000_20261029",
+  "model_path": "models/pipeline_5000_20261029/model.pkl",
+  "smoke_results": [
+    {
+      "question": "Who directed The Avengers?",
+      "answer": "The Avengers was directed by Joss Whedon."
+    },
+    {
+      "question": "Who directed Inception?",
+      "answer": "Inception was directed by Christopher Nolan."
+    }
+  ],
+  "status": "PASS"
+}

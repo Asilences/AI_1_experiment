@@ -1,0 +1,81 @@
+{
+  "scope": "Actual versioned 5000-film A0 service using restored Unicode exact linking",
+  "results": [
+    {
+      "question": "Who directed 十日谈?",
+      "results": [
+        {
+          "system": "a0",
+          "name": "A0 管道问答",
+          "ok": true,
+          "answer": "The Decameron was directed by Pier Paolo Pasolini.",
+          "refused": false,
+          "movie": {
+            "id": "Q720159",
+            "label": "The Decameron"
+          },
+          "link_status": "exact",
+          "link_score": 1.0,
+          "relation": "P57",
+          "confidence": 0.9982801521372827,
+          "evidence": [
+            "The Decameron (Q720159) --P57--> Pier Paolo Pasolini (Q25120)"
+          ],
+          "cold_start": true,
+          "generation_ms": 9.899000000132219,
+          "elapsed_ms": 3060.65
+        }
+      ],
+      "elapsed_ms": 3066.81
+    },
+    {
+      "question": "Name the countries of origin of 世界末日.",
+      "results": [
+        {
+          "system": "a0",
+          "name": "A0 管道问答",
+          "ok": true,
+          "answer": "Armageddon originated in United States.",
+          "refused": false,
+          "movie": {
+            "id": "Q208344",
+            "label": "Armageddon"
+          },
+          "link_status": "exact",
+          "link_score": 1.0,
+          "relation": "P495",
+          "confidence": 0.998385305499142,
+          "evidence": [
+            "Armageddon (Q208344) --P495--> United States (Q30)"
+          ],
+          "cold_start": false,
+          "generation_ms": 10.24649999999383,
+          "elapsed_ms": 14.4
+        }
+      ],
+      "elapsed_ms": 20.52
+    },
+    {
+      "question": "Who directed 未知电影甲乙丙?",
+      "results": [
+        {
+          "system": "a0",
+          "name": "A0 管道问答",
+          "ok": true,
+          "answer": "The available knowledge graph does not contain enough information to answer this question.",
+          "refused": true,
+          "movie": null,
+          "link_status": "not_found",
+          "link_score": 0.0,
+          "relation": "UNKNOWN",
+          "confidence": null,
+          "evidence": [],
+          "cold_start": false,
+          "generation_ms": 3.882099999827915,
+          "elapsed_ms": 7.73
+        }
+      ],
+      "elapsed_ms": 13.66
+    }
+  ]
+}

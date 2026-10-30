@@ -1,0 +1,11 @@
+{
+  "scope": "Validation movies only, fixed seed42 and unchanged model/threshold; test diagnostics were previously inspected.",
+  "baseline_validation_exact": 100.0,
+  "updated_validation_exact": 100.0,
+  "baseline_alias_exact": 5.617977528089887,
+  "updated_alias_exact": 94.3820224719101,
+  "selected_on_validation": true,
+  "linker_sha256": "0a7e2bf48fbb7e523b4ba4f22a9ec293fe2be458e87a621a7601c61702fdb180",
+  "before_report_sha256": "b372a0c578956b920d3a8065e68b985df098124821e2ec2e77022e0ad128c844",
+  "after_report_sha256": "c29f49e242205a11cb685a8a89190a91a2629c0ed9de0dd86edc39417a12e295"
+}
