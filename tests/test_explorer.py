@@ -1,8 +1,12 @@
 import pytest
+import http.client
+import json
+import threading
 
 from kgqa.common import sha256, write_json, write_jsonl
 from kgqa.explorer import Explorer
 from kgqa.v2_data import PROPERTIES
+from kgqa.web import QAService, make_server
 
 
 @pytest.fixture
@@ -61,6 +65,8 @@ def test_intersection_and_two_hop_paths(explorer):
     assert {i['movie_id'] for i in other['items']} == {'Q2', 'Q3'}
     assert all(i['via'] == 'Q4' for i in other['items'])
     assert len(other['evidence']) == 3
+    compared = explorer.answer('Compare the directors of Inception and Interstellar')
+    assert compared['status'] == 'answered' and len(compared['evidence']) == 2
 
 
 def test_amounts_do_not_assume_global_scope_or_currency(explorer):
@@ -80,6 +86,7 @@ def test_amounts_do_not_assume_global_scope_or_currency(explorer):
     '盗梦空间在中国什么时候上映？', 'Which country banned Inception?',
     'Was Inception directed by Christopher Nolan?', '盗梦空间的导演妻子是谁？',
     'What is the plot of Inception?', 'Inception cast before 2010',
+    'When was Inception released in France?', 'Which country was Inception filmed in?',
 ])
 def test_unsupported_constraints_never_turn_into_other_facts(explorer, question):
     answer = explorer.answer(question)
@@ -93,3 +100,32 @@ def test_invalid_confirmations_and_offsets_fail(explorer):
     for value in (-1, True, '1'):
         with pytest.raises(ValueError):
             explorer.answer('Q1 cast', offset=value)
+
+
+def test_real_http_explore_confirmation_and_validation(explorer, tmp_path):
+    service = QAService(data_dir=tmp_path/'absent', model_path=tmp_path/'absent.pkl')
+    service.explorer = explorer
+    server = make_server(service, port=0)
+    thread = threading.Thread(target=server.serve_forever, daemon=True)
+    thread.start()
+    def post(payload):
+        connection = http.client.HTTPConnection('127.0.0.1', server.server_port, timeout=10)
+        try:
+            connection.request('POST', '/api/explore', json.dumps(payload), {'Content-Type': 'application/json'})
+            response = connection.getresponse()
+            return response.status, json.loads(response.read())
+        finally:
+            connection.close()
+    try:
+        status, data = post({'question': 'Who wrote Inceptoin?'})
+        assert status == 200 and data['status'] == 'needs_confirmation'
+        status, data = post({'question': 'Who directed Inceptoin?', 'movie_ids': ['Q1']})
+        assert status == 200 and data['evidence'][0]['value'] == 'Q4'
+        status, data = post({'question': 'Q1 cast', 'movie_ids': ['Q999']})
+        assert status == 400 and data['error']
+        status, _ = post({'question': 'Q1 cast', 'offset': True})
+        assert status == 400
+    finally:
+        server.shutdown()
+        server.server_close()
+        thread.join(timeout=3)

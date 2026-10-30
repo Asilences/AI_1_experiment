@@ -14,7 +14,7 @@ from .common import read_json, read_jsonl, sha256
 from .v2_data import DEST, PROPERTIES
 
 INTENTS = {
-    'P57': r'导演|導演|执导|執導|\b(?:director|directed|helmed)\b',
+    'P57': r'导演|導演|执导|執導|\b(?:directors?|directed|helmed)\b',
     'P136': r'类型|類型|\bgenres?\b',
     'P495': r'制作国|製作國|制片国|製片國|哪国|哪个国家|\b(?:country|countries)\b',
     'P364': r'原始语言|原始語言|原声|什么语|哪种语言|\blanguages?\b',
@@ -52,7 +52,8 @@ class Explorer:
 
     def name(self, qid, chinese=False):
         entity = self.entities.get(qid, {})
-        return (entity.get('label_zh') if chinese else None) or entity.get('label', qid)
+        value = (entity.get('label_zh') if chinese else None) or entity.get('label', qid)
+        return value if value != qid else qid + ('（名称待补齐）' if chinese else ' (name pending)')
 
     def snak_text(self, snak, chinese=False):
         if snak.get('snaktype') != 'value':
@@ -125,6 +126,7 @@ class Explorer:
         props = [p for p, pattern in INTENTS.items() if re.search(pattern, text)]
         if 'P725' in props and 'P161' in props:
             props.remove('P161')
+        location_country = bool({'P915', 'P495'} <= set(props) or {'P840', 'P495'} <= set(props))
         if 'P915' in props or 'P840' in props:
             if 'P495' in props:
                 props.remove('P495')
@@ -138,7 +140,9 @@ class Explorer:
         elif re.search(r'哪个.*(?:高|多)|哪部.*(?:高|多)|比较|對比|对比|\b(?:higher|compare|larger|more)\b', text):
             operation = 'compare'
         block = None
-        if re.search(r'封禁|禁映|评分|評分|奖|獎|制片人|製片人|时长|時長|妻子|丈夫|利润|利潤|\b(?:banned|ban|ratings?|awards?|oscar|producers?|runtime|wife|husband|profit|best|worst)\b', text):
+        if location_country:
+            block = '当前记录拍摄/故事地点；地点所属国家的多跳过滤尚未开放。' if chinese else 'Recorded locations are available, but country-of-location traversal is not implemented.'
+        elif re.search(r'封禁|禁映|评分|評分|奖|獎|制片人|製片人|时长|時長|妻子|丈夫|利润|利潤|续集|續集|\b(?:banned|ban|ratings?|awards?|oscar|producers?|runtime|wife|husband|profit|best|worst|sequel|inflation|adjusted|net)\b', text):
             block = '问题包含当前目录/工具不支持的属性或限定条件。' if chinese else 'The question includes an unsupported property or constraint.'
         elif re.search(r'剧情|劇情|简介|簡介|\b(?:plot|synopsis|summari[sz]e)\b', text):
             block = '当前尚未导入可引用的剧情文本。' if chinese else 'Citable plot text has not been imported yet.'
@@ -148,12 +152,13 @@ class Explorer:
             block = '目前只有来源标记为制作成本的记录，不能直接当作公布预算。请改问制作成本。' if chinese else 'Production cost is not automatically an announced budget. Please ask for production cost.'
         elif re.search(r'主演|领衔|領銜|\b(?:lead actors?|stars?)\b', text):
             block = '当前保存的是出演名单，未核实主演身份；请改问演员。' if chinese else 'Cast membership does not establish lead roles. Please ask for the cast.'
-        elif re.search(r'全球|中国|中國|美国|美國|香港|内地|内地|\b(?:worldwide|global|united states|china|hong kong|in the uk|in japan)\b', text):
+        elif re.search(r'全球|中国|中國|美国|美國|香港|内地|\b(?:worldwide|global|united states|china|hong kong|in the uk|in japan)\b', text) or (
+                any(p in props for p in ('P577', 'P2142')) and re.search(r'\b(?:in|for)\s+(?:the\s+)?[a-z]|在.+(?:上映|发行|發行|票房)', text)):
             # Do not silently answer a regional constraint with an unfiltered value.
             block = '当前可列出各记录的地区限定；指定地区/全球的自动过滤尚未开放，请去掉地区后核对证据。' if chinese else 'Regional constraints are displayed in evidence but automatic region filtering is not implemented; ask without the region and inspect the qualifiers.'
         elif re.match(r'\s*(?:is|are|was|were|did|does|do|has|have)\b', normalized(question)) or re.search(r'是否|是不是|有没有|有沒有', text):
             block = '目前返回已记录事实列表，不根据缺失边作肯定/否定判断。' if chinese else 'This tool lists recorded facts; missing edges cannot establish yes/no claims.'
-        elif re.search(r'\b(?:18|19|20)\d{2}\b|之前|之后|之後|早于|晚于|高于|超过|超過|\b(?:before|after|since|over|under|not|excluding|except)\b', text):
+        elif re.search(r'\b(?:18|19|20)\d{2}\b|之前|之后|之後|早于|晚于|高于|超过|超過|最早|首映|更早|\b(?:before|after|since|over|under|not|excluding|except|earlier|earliest|premiere|first|latest)\b', text):
             block = '日期、阈值或否定过滤尚未开放；请先查询事实并核对限定条件。' if chinese else 'Date, threshold or negative filtering is not implemented; first inspect the recorded facts and qualifiers.'
         return {'method': 'deterministic_tools_v2', 'question': question, 'language': 'zh' if chinese else 'en',
                 'movie_ids': ids, 'properties': props, 'operation': operation, 'candidates': candidates,
@@ -185,11 +190,17 @@ class Explorer:
         if op == 'reverse' and (len(ids) != 1 or props != ['P57']):
             return finish('needs_clarification', '当前支持一部电影→导演→片库其他作品。' if zh else 'Supported path: one movie → director → other catalogue movies.')
         if op == 'compare':
-            return self.compare(result, ids, props, zh, finish)
+            if any(PROPERTIES[p][2] == 'quantity' for p in props):
+                return self.compare(result, ids, props, zh, finish)
+            # Attribute comparison is a sourced listing, without inventing a ranking.
+            result['comparison'] = {'mode': 'attribute_listing', 'movie_ids': ids}
+            op = 'facts'
         if op == 'recommend':
             return finish('unsupported', '内容推荐需要明确筛选条件与相关性验证，当前暂未开放。' if zh else 'Content recommendation awaits explicit filters and relevance validation.')
         records = []
         if op == 'facts':
+            if len(ids) == 1 and len(props) == 1 and re.search(r'\band\b|和|与|與', normalized(question)):
+                return finish('needs_clarification', '可能还有未识别的电影或条件，请使用两个明确QID或拆开提问。' if zh else 'A second movie or constraint may be unresolved. Use explicit QIDs or separate the questions.')
             for qid in ids:
                 for prop in props:
                     rows = self.by_pair[qid, prop]

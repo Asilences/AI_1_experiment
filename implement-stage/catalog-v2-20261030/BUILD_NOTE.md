@@ -6,7 +6,7 @@
 | F1 | 真实statement导入、200部审计、版本化完整目录 | `python -m pytest -q tests/test_v2_data.py` | MUST | PASS |
 | F2 | 中英标题/片段/错拼候选与明确确认 | `python -m pytest -q tests/test_candidates.py` | MUST | PASS |
 | F3 | 类型事实、多属性、集合比较、两跳与证据 | `python -m pytest -q tests/test_explorer.py` | MUST | PASS |
-| F4 | 网页入口、确认/证据/分页、回归与使用文档 | `python -m pytest -q tests/test_web.py tests/test_explorer.py tests/test_candidates.py tests/test_v2_data.py` | MUST | TODO |
+| F4 | 网页入口、确认/证据/分页、回归与使用文档 | `python -m pytest -q tests/test_web.py tests/test_explorer.py tests/test_candidates.py tests/test_v2_data.py` | MUST | PASS |
 
 ## Run record
 
@@ -19,6 +19,12 @@ F1：4个导入、来源/rank、限定金额与缺失值测试通过，ruff致�
 F2：候选检索/中英别名/同名消歧/未知数字续集/短词误匹配测试通过。累计7 passed，F0选择命令再次exit=0。近似匹配只产生候选，不进入事实回答。
 
 F3：21个累计测试通过。查询器核对冻结manifest；输出类型化事实、原限定条件及来源；多属性缺项单列；共同演员与导演两跳有证据路径；金额范围不明不比较。剧情、预算、主演、版本、地域/日期过滤和其他未实现条件明确拒绝，不降级成四关系答案。
+
+F4：首轮相关测试37 passed；全套回归321 passed/1 optional neural skip（29.45s），原V1发布11文件校验和A0真实烟雾PASS。真实API回放发现繁简中文标题及directors复数两个解析缺口，已加OpenCC与复数规则、相应回归测试。最终数量和UI验证另行补记。
+
+数据：pilot 200部/7037声明完成；全量5000部/170516声明/322.65 MiB冻结。全量名称46017个待补齐。Entity API和WDQS多次返回429，遵守退避；停止本任务的长时间远程补名进程，转显式offline-labels保留完整事实与已有名称；没有停止其他训练进程。缓存保留，可用新目录后续补名。
+
+真实API回放：`output/catalog_v2/http_replay.json`；修复前的两项解析问题如上，不把它们隐藏或写成全通过。页面本轮端口7863，旧7862不改。
 
 ## Deferred
 

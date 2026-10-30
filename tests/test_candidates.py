@@ -31,3 +31,16 @@ def test_homonyms_unknown_sequels_and_ordinary_short_words_do_not_auto_accept():
     assert not movies.mentions('What is up with this movie?')[0]
     assert movies.mentions('Who directed “Up”?')[0] == ['Q4']
     assert movies.mentions('Q999 director')[2] == 'not_found'
+
+
+def test_movie_named_what_does_not_capture_question_word():
+    movies = CandidateIndex([{'id': 'Q1', 'label': 'Inception', 'aliases': []},
+                             {'id': 'Q2', 'label': 'What?', 'aliases': []}])
+    assert movies.mentions('What is the cast of Inception?')[0] == ['Q1']
+    assert movies.mentions('Who directed “What?”?')[0] == ['Q2']
+
+
+def test_traditional_source_title_matches_simplified_question_without_inventing_alias():
+    movies = CandidateIndex([{'id': 'Q1', 'label': 'Interstellar', 'label_zh': '星際穿越', 'aliases': []}])
+    assert movies.mentions('星际穿越的演员是谁？')[0] == ['Q1']
+    assert movies.movies['Q1']['label_zh'] == '星際穿越'

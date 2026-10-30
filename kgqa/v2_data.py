@@ -8,7 +8,7 @@ import random
 import re
 
 from .common import ROOT, read_json, sha256, utc_now, write_json, write_jsonl
-from .expand import EntityApiClient, release_year
+from .expand import EntityApiClient, SparqlClient, release_year, values
 
 BASE = ROOT / 'data/raw/expansion_5000_20261029/snapshot_5000.json'
 DEST = ROOT / 'data/processed/movies_v2_20261030'
@@ -115,7 +115,26 @@ def coverage(movies, rows, sources):
             'note': 'Non-deprecated statements including preferred/normal and unknown snaks; multi-values are not automatically conflicts. Missing scope is not global scope.'}
 
 
-def build(base_path, output_dir, count=200, proxy=None, offline=False):
+def fetch_names(ids, cache_dir, proxy=None):
+    """Use bounded official WDQS label queries after observed item-API 429s."""
+    client = SparqlClient(cache_dir, proxy=proxy)
+    names, provenance = {}, []
+    for start in range(0, len(ids), 250):
+        batch = ids[start:start+250]
+        query = ('SELECT ?item ?en ?zh WHERE { VALUES ?item { ' + values(batch) +
+                 ' } OPTIONAL { ?item rdfs:label ?en FILTER(LANG(?en)="en") } '
+                 'OPTIONAL { ?item rdfs:label ?zh FILTER(LANG(?zh)="zh") } }')
+        for row in client.query(query):
+            qid = row['item']['value'].rsplit('/', 1)[-1]
+            names[qid] = {'id': qid, 'label': row.get('en', {}).get('value', qid),
+                          'label_zh': row.get('zh', {}).get('value'), 'aliases': [],
+                          'label_source': 'cached_wikidata_sparql'}
+        provenance.append(query)
+        print(f'WDQS labels: {min(start+250,len(ids))}/{len(ids)}', flush=True)
+    return names, provenance
+
+
+def build(base_path, output_dir, count=200, proxy=None, offline=False, offline_labels=False):
     base_path, output_dir = Path(base_path), Path(output_dir)
     if (output_dir / 'manifest.json').exists():
         raise ValueError('Output is already frozen; choose a new output directory')
@@ -154,17 +173,30 @@ def build(base_path, output_dir, count=200, proxy=None, offline=False):
         labels[qid] = {'id': qid, 'label': names.get('en', {}).get('value', old.get('label', qid)),
                        'label_zh': names.get('zh', {}).get('value', old.get('label_zh')),
                        'aliases': sorted(aliases), 'revision': entity.get('lastrevid')}
+    name_queries = []
+    for path in sorted((ROOT / 'data/raw/catalog_v2_20261030/name_queries').glob('*.json')):
+        cached = read_json(path)
+        query = cached.get('params', {}).get('query', '')
+        if not query.startswith('SELECT ?item ?en ?zh WHERE'):
+            continue
+        name_queries.append(query)
+        for row in cached.get('response', {}).get('results', {}).get('bindings', []):
+            qid = row['item']['value'].rsplit('/', 1)[-1]
+            if qid not in needed:
+                continue
+            old = labels.get(qid, {})
+            labels[qid] = {**old, 'id': qid, 'label': row.get('en', {}).get('value', old.get('label', qid)),
+                           'label_zh': row.get('zh', {}).get('value', old.get('label_zh')),
+                           'aliases': old.get('aliases', []), 'label_source': 'cached_wikidata_sparql'}
     label_missing = sorted(q for q in needed if q not in labels or labels[q].get('label') == q)
     print(f'Entity names to fetch: {len(label_missing)}', flush=True)
     # Newly observed names are fetched once; dates/amounts never become fake entities.
-    if label_missing and not offline:
-        raw_labels = client.entities(label_missing, claims=False)
-        for qid, entity in raw_labels.items():
-            names = entity.get('labels', {})
-            labels[qid] = {'id': qid, 'label': names.get('en', {}).get('value', qid),
-                           'label_zh': names.get('zh', {}).get('value'),
-                           'aliases': sorted({v['value'] for lang in ('en', 'zh') for v in entity.get('aliases', {}).get(lang, [])}),
-                           'revision': entity.get('lastrevid')}
+    if label_missing and not offline and not offline_labels:
+        fetched_names, fresh_queries = fetch_names(label_missing, ROOT / 'data/raw/catalog_v2_20261030/name_queries', proxy)
+        labels.update(fetched_names)
+        name_queries.extend(fresh_queries)
+    for qid in needed:
+        labels.setdefault(qid, {'id': qid, 'label': qid, 'label_zh': None, 'aliases': [], 'name_status': 'unresolved'})
     movies = []
     for movie in base['movies']:
         if movie['id'] not in wanted:
@@ -173,6 +205,7 @@ def build(base_path, output_dir, count=200, proxy=None, offline=False):
         movies.append({**labels[qid], 'base_facts': movie['facts'],
                        'release_year': release_year(found[qid]), 'source_revision': found[qid].get('lastrevid')})
     audit = coverage(movies, rows, sources)
+    audit['unresolved_entity_labels'] = sorted(q for q in needed if q not in labels or labels[q].get('label') == q)
     write_json(output_dir / 'movies.json', movies)
     write_json(output_dir / 'entities.json', {q: labels[q] for q in sorted(needed) if q in labels})
     write_jsonl(output_dir / 'statements.jsonl', rows)
@@ -184,6 +217,8 @@ def build(base_path, output_dir, count=200, proxy=None, offline=False):
                'base_sha256': sha256(base_path), 'properties': list(PROPERTIES), 'files': files,
                'license': 'Wikidata structured data CC0; reference links do not confer redistribution rights to linked content',
                'source': 'Cached Wikidata Entity API statements; per-item revisions and actual retrieval timestamps in provenance.json',
+               'label_queries': name_queries, 'label_query_source': 'https://query.wikidata.org/sparql; cached separately with actual retrieved_at',
+               'unresolved_entity_label_count': len(audit['unresolved_entity_labels']),
                'sampling': 'full original 5000 movie IDs' if count == len(base['movies']) else 'stratified pilot, seed42; see selection algorithm'})
     print(f'Frozen {len(movies)} movies, {len(rows)} statements: {output_dir}', flush=True)
     return audit
@@ -227,9 +262,10 @@ def main(argv=None):
     collect.add_argument('--output-dir', type=Path, default=DEST)
     collect.add_argument('--proxy')
     collect.add_argument('--offline', action='store_true')
+    collect.add_argument('--offline-labels', action='store_true', help='Keep cached names/QIDs without remote label lookups; missing names are counted.')
     args = parser.parse_args(argv)
     if args.command == 'build':
-        build(args.base, args.output_dir, args.count, args.proxy, args.offline)
+        build(args.base, args.output_dir, args.count, args.proxy, args.offline, args.offline_labels)
         return 0
     base = read_json(args.base)
     ids = select_pilot(base['movies'], args.count)

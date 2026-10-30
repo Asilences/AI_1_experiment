@@ -5,10 +5,17 @@ from collections import defaultdict, Counter
 from difflib import SequenceMatcher
 import re
 import unicodedata
+from opencc import OpenCC
+
+_SIMPLIFIED = OpenCC('t2s')
+
+AMBIGUOUS_WORDS = {'what', 'who', 'when', 'where', 'which', 'how', 'movie', 'movies', 'film', 'films',
+                   'cast', 'director', 'actors', 'genre', 'language', 'country', 'original',
+                   '电影', '電影', '导演', '導演', '演员', '演員', '类型', '類型', '故事', '国家', '语言', '作品'}
 
 
 def normalized(text):
-    text = unicodedata.normalize('NFKC', text).casefold()
+    text = _SIMPLIFIED.convert(unicodedata.normalize('NFKC', text)).casefold()
     return re.sub(r'[^\w\u3400-\u9fff]+', ' ', text, flags=re.UNICODE).strip()
 
 
@@ -68,7 +75,7 @@ class CandidateIndex:
             return explicit, [], 'qid'
         spans = []
         for name, ids in self.names.items():
-            if len(name) < 4 and re.fullmatch(r'[a-z0-9 ]+', name) and text != name:
+            if (name in AMBIGUOUS_WORDS or len(name) < 4 and re.fullmatch(r'[a-z0-9 ]+', name)) and text != name:
                 # Short ordinary words in a question are not reliable titles.
                 quoted = any(normalized(m) == name for m in re.findall(r'[《"“](.*?)[》"”]', question))
                 if not quoted:

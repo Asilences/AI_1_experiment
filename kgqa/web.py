@@ -52,7 +52,7 @@ class APIError(Exception):
 
 
 class QAService:
-    def __init__(self, data_dir=None, model_path=None):
+    def __init__(self, data_dir=None, model_path=None, catalog_dir=None):
         self.custom_paths = data_dir is not None or model_path is not None
         self.data_dir = Path(data_dir) if data_dir else ROOT / 'data' / 'processed'
         self.model_path = Path(model_path) if model_path else ROOT / 'models' / 'pipeline' / 'model.pkl'
@@ -62,6 +62,8 @@ class QAService:
         self.lock = threading.Lock()
         self.movies, self.data_error = [], ''
         self.dataset_name = '原始实验电影库'
+        self.explorer = None
+        self.catalog_error = ''
         try:
             entities = read_json(self.data_dir / 'entities.json')
             self.entities = entities
@@ -84,6 +86,22 @@ class QAService:
                 self.data_error = '知识库中没有电影，请检查所选数据。'
         except (OSError, ValueError, KeyError, TypeError, AttributeError):
             self.data_error = '未能读取本地知识库，请先准备数据，或指定有效的数据目录。'
+        from .v2_data import DEST
+        directory = Path(catalog_dir) if catalog_dir is not None else DEST
+        if (directory / 'manifest.json').is_file():
+            try:
+                summary = read_json(directory / 'manifest.json')
+                if summary.get('movie_count', 0) > len(self.movies):
+                    raise ValueError('扩展目录与当前实验目录规模不匹配。')
+                from .explorer import Explorer
+                explorer = Explorer(directory)
+                if not set(explorer.movies).issubset({m['id'] for m in self.movies}):
+                    raise ValueError('扩展目录电影与当前实验目录不匹配。')
+                self.explorer = explorer
+            except (OSError, ValueError, KeyError, TypeError) as error:
+                self.catalog_error = str(error)
+        elif catalog_dir is not None:
+            self.catalog_error = '未找到已冻结的扩展目录。'
 
     def _neural_state(self):
         if self.custom_paths:
@@ -134,6 +152,11 @@ class QAService:
                 'a0': {'available': available, 'name': 'A0 管道问答',
                        'detail': self.data_error or ('本地模型就绪。' if available else '未找到 A0 模型，请先完成训练或指定模型路径。')},
                 'neural': neural,
+                'explorer': {'available': self.explorer is not None, 'method': 'deterministic_tools_v2',
+                             'movie_count': len(self.explorer.movies) if self.explorer else 0,
+                             'statement_count': len(self.explorer.rows) if self.explorer else 0,
+                             'unresolved_entity_label_count': self.explorer.manifest.get('unresolved_entity_label_count', 0) if self.explorer else 0,
+                             'detail': self.catalog_error or '独立扩展事实与只读工具，含来源、限定条件和候选确认。'},
                 'freeform': {'available': True, 'method': 'bounded_rules_v1',
                              'detail': '四类单跳自然问法；有限中文转英文标准问题，答案保持英文。'}}
 
@@ -142,6 +165,19 @@ class QAService:
         matches = [m for m in self.movies if not query or any(
             query in str(name).casefold() for name in [m['label'], m['id'], *m['aliases']])]
         return {'movies': matches[offset:offset + limit], 'total': len(matches), 'offset': offset}
+
+    def explore(self, question, movie_ids=None, offset=0, limit=30):
+        if self.explorer is None:
+            raise APIError(self.catalog_error or '扩展目录尚未准备，请先完成V2数据构建。', 503)
+        if not self.lock.acquire(blocking=False):
+            raise APIError('上一条问题仍在处理中，请稍后再试。', 409)
+        try:
+            try:
+                return self.explorer.answer(question, movie_ids, offset, limit)
+            except ValueError as error:
+                raise APIError(str(error)) from error
+        finally:
+            self.lock.release()
 
     def _load_demo(self):
         if self.demo is None:
@@ -269,7 +305,8 @@ def make_server(service, port=7860):
         def do_POST(self):
             if not self.valid_request():
                 return
-            if urlsplit(self.path).path != '/api/answer':
+            path = urlsplit(self.path).path
+            if path not in {'/api/answer', '/api/explore'}:
                 self.send_json({'error': '接口不存在。'}, 404)
                 return
             try:
@@ -281,7 +318,10 @@ def make_server(service, port=7860):
                 data = json.loads(self.rfile.read(length))
                 if not isinstance(data, dict):
                     raise APIError('请求格式无效。')
-                self.send_json(service.answer(data.get('question'), data.get('system', 'both'), data.get('mode', 'standard')))
+                if path == '/api/explore':
+                    self.send_json(service.explore(data.get('question'), data.get('movie_ids'), data.get('offset', 0), data.get('limit', 30)))
+                else:
+                    self.send_json(service.answer(data.get('question'), data.get('system', 'both'), data.get('mode', 'standard')))
             except (ValueError, UnicodeError):
                 self.send_json({'error': '请求格式无效。'}, 400)
             except APIError as error:
@@ -297,6 +337,7 @@ def main(argv=None):
     parser.add_argument('--port', type=int, default=7860)
     parser.add_argument('--data-dir', type=Path, help='Custom processed data; enables A0 only.')
     parser.add_argument('--model-path', type=Path, help='Custom A0 model.pkl; enables A0 only.')
+    parser.add_argument('--catalog-dir', type=Path, help='Separate frozen V2 catalogue for extended tool queries.')
     parser.add_argument('--open', action='store_true', help='Open the local UI in your browser.')
     parser.add_argument('--legacy', action='store_true', help='Use the original 1000-film data and neural models.')
     args = parser.parse_args(argv)
@@ -310,7 +351,7 @@ def main(argv=None):
     except (OSError, ValueError, KeyError, TypeError) as error:
         parser.exit(1, f'数据版本配置无效：{error}。可用 --legacy 启动原始实验库，或重新激活配套数据与模型。\n')
     try:
-        server = make_server(QAService(data_dir, model_path), args.port)
+        server = make_server(QAService(data_dir, model_path, args.catalog_dir), args.port)
     except OSError as error:
         parser.exit(1, f'无法启动本地页面：{error}。可使用 --port 7861 更换端口。\n')
     url = f'http://127.0.0.1:{args.port}'
