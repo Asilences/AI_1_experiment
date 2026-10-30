@@ -1,0 +1,129 @@
+{
+  "scope": "validation only; linking diagnostic, no test selection",
+  "counts": {
+    "total": 6868,
+    "exact": 6118,
+    "correct_link": 6118,
+    "ambiguous": 750,
+    "incorrect_link": 750
+  },
+  "examples": [
+    {
+      "question_id": "freeform_Q1003845_UNKNOWN_composer_lookup",
+      "question": "Who composed the music for Frequency?",
+      "linked": null,
+      "expected": "Q1003845",
+      "method": "ambiguous"
+    },
+    {
+      "question_id": "freeform_Q101069738_UNKNOWN_composer_lookup",
+      "question": "Who composed the music for Resident Evil: Welcome to Raccoon City?",
+      "linked": null,
+      "expected": "Q101069738",
+      "method": "ambiguous"
+    },
+    {
+      "question_id": "freeform_Q101666960_UNKNOWN_composer_lookup",
+      "question": "Who composed the music for The Guilty (2021)?",
+      "linked": null,
+      "expected": "Q101666960",
+      "method": "ambiguous"
+    },
+    {
+      "question_id": "freeform_Q102046208_UNKNOWN_composer_lookup",
+      "question": "Who composed the music for Home Sweet Home Alone?",
+      "linked": null,
+      "expected": "Q102046208",
+      "method": "ambiguous"
+    },
+    {
+      "question_id": "freeform_Q102754_UNKNOWN_composer_lookup",
+      "question": "Who composed the music for Dr. No?",
+      "linked": null,
+      "expected": "Q102754",
+      "method": "ambiguous"
+    },
+    {
+      "question_id": "freeform_Q10307713_UNKNOWN_composer_lookup",
+      "question": "Who composed the music for The Hunger Games: Mockingjay \u2013 Part 2?",
+      "linked": null,
+      "expected": "Q10307713",
+      "method": "ambiguous"
+    },
+    {
+      "question_id": "freeform_Q10384115_UNKNOWN_composer_lookup",
+      "question": "Who composed the music for Transcendence?",
+      "linked": null,
+      "expected": "Q10384115",
+      "method": "ambiguous"
+    },
+    {
+      "question_id": "freeform_Q1046841_UNKNOWN_composer_lookup",
+      "question": "Who composed the music for Vanity Fair?",
+      "linked": null,
+      "expected": "Q1046841",
+      "method": "ambiguous"
+    },
+    {
+      "question_id": "freeform_Q104814_UNKNOWN_composer_lookup",
+      "question": "Who composed the music for Aliens?",
+      "linked": null,
+      "expected": "Q104814",
+      "method": "ambiguous"
+    },
+    {
+      "question_id": "freeform_Q104906978_UNKNOWN_composer_lookup",
+      "question": "Who composed the music for Putin's Palace?",
+      "linked": null,
+      "expected": "Q104906978",
+      "method": "ambiguous"
+    },
+    {
+      "question_id": "freeform_Q105031_UNKNOWN_composer_lookup",
+      "question": "Who composed the music for Home Alone?",
+      "linked": null,
+      "expected": "Q105031",
+      "method": "ambiguous"
+    },
+    {
+      "question_id": "freeform_Q1052260_UNKNOWN_composer_lookup",
+      "question": "Who composed the music for New Year's Eve?",
+      "linked": null,
+      "expected": "Q1052260",
+      "method": "ambiguous"
+    }
+  ],
+  "by_relation": {
+    "P136": {
+      "total": 904,
+      "correct_link": 904,
+      "rejected_link": 0,
+      "wrong_nonempty_link": 0
+    },
+    "P364": {
+      "total": 1488,
+      "correct_link": 1488,
+      "rejected_link": 0,
+      "wrong_nonempty_link": 0
+    },
+    "P495": {
+      "total": 1486,
+      "correct_link": 1486,
+      "rejected_link": 0,
+      "wrong_nonempty_link": 0
+    },
+    "P57": {
+      "total": 1490,
+      "correct_link": 1490,
+      "rejected_link": 0,
+      "wrong_nonempty_link": 0
+    },
+    "UNKNOWN": {
+      "total": 1500,
+      "correct_link": 750,
+      "rejected_link": 750,
+      "wrong_nonempty_link": 0
+    }
+  },
+  "interpretation": "All answerable validation links are correct. 750 composer UNKNOWN questions are ambiguous because ordinary words can match other movie titles; refusal may be easier with empty evidence. Do not treat overall linking accuracy as answerable factual accuracy."
+}
