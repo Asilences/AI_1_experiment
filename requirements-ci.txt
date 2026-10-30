@@ -7,3 +7,4 @@ sacrebleu==2.5.1
 rouge-score==0.1.2
 pytest==8.3.4
 ruff==0.12.12
+opencc-python-reimplemented==0.1.7

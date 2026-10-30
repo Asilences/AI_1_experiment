@@ -71,6 +71,7 @@ def test_tail_ids_share_fact_filter_order_and_limit(embeddings):
 def test_dataset_context_uses_actual_linker_without_answer_or_relation():
     GraphData, QADataset = neural_classes()
     graph = GraphData.__new__(GraphData)
+    graph.data_dir = Path('.') / 'data/processed'
     graph.entities = ENTITIES; graph.use_embeddings = False
     # No gold answers/relation are available to context construction.
     rows = [{'question_id': 'q', 'question': 'Which?', 'movie_id': 'source'}]
