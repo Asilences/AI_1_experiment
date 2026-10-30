@@ -1,0 +1,13 @@
+{
+  "backend": "codex",
+  "host": "codex",
+  "source": "host-default",
+  "requested_model": "gpt-6-astra",
+  "requested_effort": "xhigh",
+  "transport": "native",
+  "fresh_context": true,
+  "executor_family": "gpt-6",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "status": "pending"
+}

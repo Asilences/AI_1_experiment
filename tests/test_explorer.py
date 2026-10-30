@@ -87,6 +87,8 @@ def test_amounts_do_not_assume_global_scope_or_currency(explorer):
     'Was Inception directed by Christopher Nolan?', '盗梦空间的导演妻子是谁？',
     'What is the plot of Inception?', 'Inception cast before 2010',
     'When was Inception released in France?', 'Which country was Inception filmed in?',
+    '盗梦空间日本上映日期', 'Inception Japan release date', '盗梦空间法国票房',
+    '盗梦空间北美票房是多少？',
 ])
 def test_unsupported_constraints_never_turn_into_other_facts(explorer, question):
     answer = explorer.answer(question)
@@ -100,6 +102,35 @@ def test_invalid_confirmations_and_offsets_fail(explorer):
     for value in (-1, True, '1'):
         with pytest.raises(ValueError):
             explorer.answer('Q1 cast', offset=value)
+
+
+def test_missing_second_movie_and_role_constraint_do_not_return_broader_answers(explorer):
+    incomplete = explorer.answer('Tell me the director and cast of Inception and Interstllar')
+    assert incomplete['status'] == 'unsupported' and not incomplete['evidence']
+    role = explorer.answer('Which actor played Cobb in Inception?')
+    assert role['status'] == 'unsupported' and not role['evidence']
+    plan = explorer.plan('Inception and Interstllar cast', ['Q2'])
+    assert set(plan['movie_ids']) == {'Q1', 'Q2'}
+
+
+def test_ambiguous_movie_confirmation_preserves_other_resolved_movie(explorer):
+    movies = list(explorer.movies.values()) + [
+        {'id': 'Q10', 'label': 'Dune', 'aliases': [], 'release_year': 1984},
+        {'id': 'Q11', 'label': 'Dune', 'aliases': [], 'release_year': 2021},
+        {'id': 'Q12', 'label': 'The Thing', 'aliases': [], 'release_year': 1982},
+        {'id': 'Q13', 'label': 'The Thing', 'aliases': [], 'release_year': 2011}]
+    from kgqa.candidates import CandidateIndex
+    explorer.movies = {m['id']: m for m in movies}
+    explorer.index = CandidateIndex(movies)
+    question = 'Compare the directors of Dune and Inception'
+    pending = explorer.answer(question)
+    assert pending['status'] == 'needs_confirmation' and not pending['evidence']
+    assert pending['plan']['movie_ids'] == ['Q1']
+    confirmed = explorer.answer(question, ['Q11'])
+    assert set(confirmed['plan']['movie_ids']) == {'Q1', 'Q11'}
+    assert confirmed['status'] == 'partial'
+    multiple = explorer.answer('Compare the directors of Dune and The Thing')
+    assert multiple['status'] == 'needs_clarification' and not multiple['evidence']
 
 
 def test_real_http_explore_confirmation_and_validation(explorer, tmp_path):

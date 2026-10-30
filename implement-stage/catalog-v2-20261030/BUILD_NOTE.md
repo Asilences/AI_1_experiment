@@ -26,6 +26,8 @@ F4：首轮相关测试37 passed；全套回归321 passed/1 optional neural skip
 
 真实API回放：`output/catalog_v2/http_replay.json`；修复前的两项解析问题如上，不把它们隐藏或写成全通过。页面本轮端口7863，旧7862不改。
 
+审阅修复：第一轮反例涉及未知副标题、角色约束、遗漏第二电影、地区过滤、候选确认保留已有电影；已修复并增加回归。混合语言选择策略补记A-020。审阅原文保存在`SILENT_ASSUMPTION_SWEEP_ROUND1.json`，同GPT-6系列审查仅暂定。修复后全套`329 passed, 1 skipped`（30.80s）；skip为CI环境未安装的可选神经依赖。ruff E9/F63/F7/F82通过。网页和第二轮复核待记。
+
 ## Deferred
 
 完整设计中的文本剧情、向量/拼音模型、Qwen规划器与训练、推荐真人相关性实验：依赖数据主线与基线，不冒充本轮已完成。

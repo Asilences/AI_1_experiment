@@ -29,6 +29,15 @@ INTENTS = {
 }
 
 
+def unconsumed(text):
+    """Conservative residue check for constraints the finite grammar cannot execute."""
+    for pattern in INTENTS.values():
+        text = re.sub(pattern, ' ', text)
+    text = re.sub(r'\b(?:tell|me|please|can|could|you|who|what|which|when|where|how|much|is|are|was|were|the|a|an|of|in|by|for|to|do|does|did|give|list|all|their|and|or|with|has|have|show|information|about|movies|films|movie|film|other|compare|common|shared|both|origin|originate|date|dates|on|at|its|it|gross|earn|earnings|production|total)\b', ' ', text)
+    text = re.sub(r'请问|請問|告诉我|告訴我|分别|分別|有哪些|哪些|什么|什麼|是谁|是誰|共同|共有|以及|多少|日期|制作|製作|电影|電影|和|与|與|及|的|有|是|谁|誰|、', ' ', text)
+    return bool(re.search(r'[a-z\u3400-\u9fff]', text))
+
+
 class Explorer:
     def __init__(self, directory=DEST):
         self.directory = Path(directory)
@@ -113,10 +122,10 @@ class Explorer:
         chinese = bool(re.search(r'[\u3400-\u9fff]', question))
         ids, candidates, status = self.index.mentions(question)
         if confirmed:
-            ids, candidates, status = list(dict.fromkeys(confirmed)), [], 'confirmed'
+            ids, candidates, status = list(dict.fromkeys([*ids, *confirmed])), [], 'confirmed'
         # Mask title words before interpreting relation and qualifier cues.
         text = normalized(question)
-        for qid in ids:
+        for qid in dict.fromkeys([*ids, *(c['id'] for c in candidates)]):
             movie = self.movies[qid]
             for name in sorted([movie['label'], movie.get('label_zh') or '', *movie.get('aliases', [])], key=len, reverse=True):
                 name = normalized(name)
@@ -142,6 +151,8 @@ class Explorer:
         block = None
         if location_country:
             block = '当前记录拍摄/故事地点；地点所属国家的多跳过滤尚未开放。' if chinese else 'Recorded locations are available, but country-of-location traversal is not implemented.'
+        elif re.search(r'角色|饰演|飾演|扮演|\b(?:played|portrayed|role|character)\b', text):
+            block = '特定角色需要角色匹配查询，当前仅能查询出演名单，不能用全体演员代替。' if chinese else 'Character-role filtering is not implemented; a full cast list cannot answer this role question.'
         elif re.search(r'封禁|禁映|评分|評分|奖|獎|制片人|製片人|时长|時長|妻子|丈夫|利润|利潤|续集|續集|\b(?:banned|ban|ratings?|awards?|oscar|producers?|runtime|wife|husband|profit|best|worst|sequel|inflation|adjusted|net)\b', text):
             block = '问题包含当前目录/工具不支持的属性或限定条件。' if chinese else 'The question includes an unsupported property or constraint.'
         elif re.search(r'剧情|劇情|简介|簡介|\b(?:plot|synopsis|summari[sz]e)\b', text):
@@ -160,6 +171,11 @@ class Explorer:
             block = '目前返回已记录事实列表，不根据缺失边作肯定/否定判断。' if chinese else 'This tool lists recorded facts; missing edges cannot establish yes/no claims.'
         elif re.search(r'\b(?:18|19|20)\d{2}\b|之前|之后|之後|早于|晚于|高于|超过|超過|最早|首映|更早|\b(?:before|after|since|over|under|not|excluding|except|earlier|earliest|premiere|first|latest)\b', text):
             block = '日期、阈值或否定过滤尚未开放；请先查询事实并核对限定条件。' if chinese else 'Date, threshold or negative filtering is not implemented; first inspect the recorded facts and qualifiers.'
+        if not block and ids and any(p in props for p in ('P577', 'P2130', 'P2142')) and unconsumed(text):
+            block = '日期/金额问题含有尚未支持的筛选条件，请去掉条件后核对原始记录及限定。' if chinese else 'The date/amount question contains an unsupported constraint. Remove it and inspect the recorded values and qualifiers.'
+        if not block and re.search(r'\band\b|和|与|與|以及', text):
+            if unconsumed(text):
+                block = '还有未识别的电影或条件，请补全片名/使用明确QID，或拆开提问。' if chinese else 'Another movie or constraint is unresolved. Supply complete titles/QIDs or separate the questions.'
         return {'method': 'deterministic_tools_v2', 'question': question, 'language': 'zh' if chinese else 'en',
                 'movie_ids': ids, 'properties': props, 'operation': operation, 'candidates': candidates,
                 'link_status': status, 'blocked': block}
@@ -176,6 +192,10 @@ class Explorer:
         def finish(status, text):
             result.update(status=status, answer=text, elapsed_ms=round((time.perf_counter()-started)*1000, 2))
             return result
+        if plan['link_status'] == 'needs_clarification':
+            return finish('needs_clarification', '多个电影名称仍有歧义，请用明确QID分别指定。' if zh else 'Multiple title slots are ambiguous. Specify each movie with an explicit QID.')
+        if plan['link_status'] == 'needs_confirmation':
+            return finish('needs_confirmation', '请确认要查询的电影；已识别的电影会保留。' if zh else 'Please confirm the movie; already resolved movies will be retained.')
         if plan['blocked']:
             return finish('unsupported', plan['blocked'])
         ids, props = plan['movie_ids'], plan['properties']

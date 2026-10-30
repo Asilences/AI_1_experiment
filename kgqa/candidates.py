@@ -96,13 +96,21 @@ class CandidateIndex:
                 chosen.append(span)
         ids = []
         ambiguous = set()
+        ambiguous_spans = 0
         for left, right, matching in sorted(chosen):
-            if len(matching) > 1 or re.match(r'\s*\d', text[right:]):
+            name = text[left:right]
+            raw_pattern = re.escape(name).replace(r'\ ', r'\W+')
+            subtitle = re.search(raw_pattern + r'\s*[:：]\s*\S', unicodedata.normalize('NFKC', question).casefold())
+            extension = re.match(r'\s*(?:\d|(?:part|chapter|episode|volume|vol)\b|[ivx]+\b)', text[right:])
+            if len(matching) > 1 or extension or subtitle:
                 ambiguous.update(matching)
+                ambiguous_spans += 1
             else:
                 ids.extend(sorted(matching))
         if ambiguous:
-            return [], [self.card(q) for q in sorted(ambiguous)[:5]], 'needs_confirmation'
+            if ambiguous_spans > 1:
+                return list(dict.fromkeys(ids)), [], 'needs_clarification'
+            return list(dict.fromkeys(ids)), [self.card(q) for q in sorted(ambiguous)[:5]], 'needs_confirmation'
         if ids:
             return list(dict.fromkeys(ids)), [], 'exact'
         fragments = re.findall(r'[《"“](.*?)[》"”]', question)

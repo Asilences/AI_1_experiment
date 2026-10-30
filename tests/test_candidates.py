@@ -32,6 +32,8 @@ def test_homonyms_unknown_sequels_and_ordinary_short_words_do_not_auto_accept():
     assert not movies.mentions('What is up with this movie?')[0]
     assert movies.mentions('Who directed “Up”?')[0] == ['Q4']
     assert movies.mentions('Q999 director')[2] == 'not_found'
+    assert not movies.mentions('Who directed Inception: Part Three?')[0]
+    assert not movies.mentions('Who directed Inception: A New Dream?')[0]
 
 
 def test_movie_named_what_does_not_capture_question_word():
