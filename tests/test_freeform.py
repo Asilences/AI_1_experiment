@@ -50,6 +50,12 @@ def test_supported_natural_questions(parser, question, movie, relation):
     ('Who directed Q999999999?', 'unanswerable'),
     ('黑客帝国999是谁执导的？', 'unanswerable'),
     ('What country is Inception from?', 'unanswerable'),
+    ('Who directed 黑客帝国 (The Matrix) and Inception?', 'needs_clarification'),
+    ('Which countries banned The Matrix?', 'unanswerable'),
+    ('What language is The Matrix dubbed in?', 'unanswerable'),
+    ('What country is The Matrix set in?', 'unanswerable'),
+    ('黑客帝国在哪些国家被禁映？', 'unanswerable'),
+    ('盗梦空间的配音语言是什么？', 'unanswerable'),
 ])
 def test_ambiguous_unsupported_or_missing_facts_do_not_reach_model(parser, question, status):
     parsed = parser.parse(question)

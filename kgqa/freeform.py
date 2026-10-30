@@ -27,9 +27,11 @@ PATTERNS = {
 UNSUPPORTED = (
     r'\b(?:budget|box office|runtime|screenplay|writer|writers|write|wrote|written|cast|actor|actors|producer|producers|'
     r'composer|composed|rating|ratings|award|awards|plot|story|recommend|recommendation|born|filmed|filming|shot|location|'
-    r'released|when|why|earn|earned|cost|sequel|starring|played)\b|\b(?:how many|other films|other movies|better than)\b'
+    r'released|when|why|earn|earned|cost|sequel|starring|played|ban|banned|banning|dub|dubbed|dubbing|subtitle|subtitles)\b'
+    r'|\b(?:how many|other films|other movies|better than|set in|based in)\b'
     r'|\brelease\b.*\b(?:date|year)\b|演员|演員|主演|编剧|編劇|预算|預算|票房|评分|評分|时长|時長|上映|'
-    r'制片人|製片人|配乐|配樂|剧情|劇情|推荐|推薦|好看|拍摄地|拍攝地|取景|在哪拍|在哪裡拍'
+    r'制片人|製片人|配乐|配樂|剧情|劇情|推荐|推薦|好看|拍摄地|拍攝地|取景|在哪拍|在哪裡拍|'
+    r'配音|译制|譯製|翻译|翻譯|字幕|禁映|封禁'
 )
 
 
@@ -76,6 +78,9 @@ class FreeformParser:
                     or movie_id and movie_id != chosen):
                 return None, 0., 'ambiguous', sorted(ids | qids)
             return chosen, 1., 'qid', []
+        if status == 'ambiguous':
+            english_ids = set().union(*(item[2] for item in self.linker._exact_mentions(normalize(question))))
+            return None, score, 'ambiguous', sorted(ids | english_ids)
         if len(ids) > 1:
             return None, 0., 'ambiguous', sorted(ids)
         if ids:

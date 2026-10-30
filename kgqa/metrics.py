@@ -129,25 +129,30 @@ def score_rows(gold_rows, predictions, entities, *, allow_extra_predictions=Fals
 
 
 def evaluate(run_id, split='test'):
+    config_path = ROOT / 'runs' / run_id / 'config.json'
+    config = read_json(config_path) if config_path.exists() else {}
+    data = ROOT / config.get('data_dir', 'data/processed')
     predictions = read_jsonl(ROOT / 'runs' / run_id / f'predictions_{split}.jsonl')
-    all_gold = [row for row in read_jsonl(ROOT / 'data' / 'processed' / 'qa.jsonl') if row['split'] == split]
+    all_gold = [row for row in read_jsonl(data / 'qa.jsonl') if row['split'] == split]
     # Validate against the complete split before selecting an explicit smoke
     # subset, so filtering cannot conceal duplicate or unknown predictions.
     predicted_ids = _validate_alignment(all_gold, predictions, allow_missing=True).keys()
     gold = [row for row in all_gold if row['question_id'] in predicted_ids]
     if len(gold) != len(all_gold):
-        config = read_json(ROOT / 'runs' / run_id / 'config.json')
         if not config.get('smoke'):
             raise ValueError(f'Prediction coverage is incomplete: {len(gold)}/{len(all_gold)}')
-    result = score_rows(gold, predictions, read_json(ROOT / 'data' / 'processed' / 'entities.json'))
+    result = score_rows(gold, predictions, read_json(data / 'entities.json'))
     result['gold_total'] = len(all_gold); result['prediction_coverage'] = 100 * len(gold) / max(1, len(all_gold))
     write_json(ROOT / 'runs' / run_id / f'metrics_{split}.json', result); return result
 
 
 def evaluate_robustness(run_id):
-    gold = read_jsonl(ROOT / 'data' / 'processed' / 'robustness.jsonl')
+    config_path = ROOT / 'runs' / run_id / 'config.json'
+    config = read_json(config_path) if config_path.exists() else {}
+    data = ROOT / config.get('data_dir', 'data/processed')
+    gold = read_jsonl(data / 'robustness.jsonl')
     predictions = read_jsonl(ROOT / 'runs' / run_id / 'predictions_robustness.jsonl')
-    entities = read_json(ROOT / 'data' / 'processed' / 'entities.json')
+    entities = read_json(data / 'entities.json')
     # Extra rows are only legitimate within a variant after the entire file has
     # passed strict coverage and uniqueness validation.
     _validate_alignment(gold, predictions)
