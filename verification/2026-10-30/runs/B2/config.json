@@ -1,0 +1,47 @@
+{
+  "run_id": "B2",
+  "model": "0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab",
+  "model_source_kind": "local_directory",
+  "input_max_length": 512,
+  "target_max_length": 96,
+  "eval_batch_size": 64,
+  "learning_rate": 0.0003,
+  "epochs": 5,
+  "batch_size": 8,
+  "gradient_accumulation": 2,
+  "effective_batch": 16,
+  "use_embeddings": true,
+  "seed": 42,
+  "shuffle_seed": 42,
+  "device": "cuda",
+  "smoke": false,
+  "torch_threads": 4,
+  "generation_precision": "float32",
+  "validation_entity_linking": true,
+  "selection_metric": "validation entity_macro_f1",
+  "qa_by_split": {
+    "train": 41220,
+    "valid": 8857,
+    "test": 8917
+  },
+  "effective_batch_note": "Maximum examples per optimizer update; the final accumulation window may be smaller.",
+  "input_sha256": {
+    "qa.jsonl": "2882b2077834d37f4b1ae8f9b8ea90561c8c5dacecf4247907311d0cbb8bb310",
+    "entities.json": "7c935d8fa1eecd9870df16e49d93460bdd75f90255661e4e4e397af9f667f3e8",
+    "splits.json": "dd24634f590e3e5dd38dc2e5ca7fd25b432ec3b562f74dc99a65b22d586113b7",
+    "triples.tsv": "42c9a5c665313b077a97650309bb8102ab573464ba40943a1b41ffb77c2f8e0a"
+  },
+  "transe_sha256": {
+    "mapping.json": "4897387a4b688470fad8f35f2cba6436f3393815c7464f89a89526c3bd1fe64a",
+    "embeddings.npz": "fe9cf70cba4eb0b509fca8ccfdf21ec7226aaf8ce9488f0a2bd3fb657745c71c"
+  },
+  "pretrained_sha256": {
+    "config.json": "439aa0fecf5a5546a1def68b1fc45e538e2c94528ce805378daf091e2bf6e4de",
+    "model.safetensors": "495fa51e204676f1a857a9fc13c4c89f3f5ba9f480b898cebca02add25e6d749",
+    "tokenizer.json": "fe2ebbbbde2985be723e0ce18217853e4020c5e9d35bd07be2c27ab9d3ead57a"
+  },
+  "training_batches_per_epoch": 5153,
+  "optimizer_updates_per_epoch": 2577,
+  "planned_optimizer_updates": 12885,
+  "training_precision": "bf16 autocast"
+}

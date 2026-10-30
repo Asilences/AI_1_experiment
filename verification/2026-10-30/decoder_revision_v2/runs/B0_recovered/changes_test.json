@@ -1,0 +1,129 @@
+{
+  "v1": {
+    "count": 8917,
+    "entity_exact": 99.96635639789166,
+    "entity_macro_f1": 99.96635639789166,
+    "bleu": 99.90827363428122,
+    "rouge_l": 99.9787568374339,
+    "by_relation": {
+      "P136": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 1416
+      },
+      "P495": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2214
+      },
+      "P364": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2238
+      },
+      "P57": {
+        "exact": 99.86595174262735,
+        "f1": 99.86595174262735,
+        "count": 2238
+      },
+      "UNKNOWN": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 811
+      }
+    },
+    "answerable_count": 8106,
+    "refusal_count": 811,
+    "answerable_entity_exact": 99.96299037749814,
+    "answerable_entity_macro_f1": 99.96299037749814,
+    "refusal_accuracy": 100.0,
+    "latency_mean_ms": 11.792072322518463,
+    "latency_p95_ms": 14.841156249985943
+  },
+  "v2": {
+    "count": 8917,
+    "entity_exact": 100.0,
+    "entity_macro_f1": 100.0,
+    "bleu": 99.90827363428122,
+    "rouge_l": 99.9787568374339,
+    "by_relation": {
+      "P136": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 1416
+      },
+      "P495": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2214
+      },
+      "P364": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2238
+      },
+      "P57": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2238
+      },
+      "UNKNOWN": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 811
+      }
+    },
+    "answerable_count": 8106,
+    "refusal_count": 811,
+    "answerable_entity_exact": 100.0,
+    "answerable_entity_macro_f1": 100.0,
+    "refusal_accuracy": 100.0,
+    "latency_mean_ms": 11.792072322518463,
+    "latency_p95_ms": 14.841156249985943
+  },
+  "changed_ids": [
+    {
+      "question_id": "Q23755403_P57_0",
+      "v1_ids": [
+        "Q106916461"
+      ],
+      "v2_ids": [
+        "Q22323567",
+        "Q8003113"
+      ]
+    },
+    {
+      "question_id": "Q23755403_P57_1",
+      "v1_ids": [
+        "Q106916461"
+      ],
+      "v2_ids": [
+        "Q22323567",
+        "Q8003113"
+      ]
+    },
+    {
+      "question_id": "Q23755403_P57_2",
+      "v1_ids": [
+        "Q106916461"
+      ],
+      "v2_ids": [
+        "Q22323567",
+        "Q8003113"
+      ]
+    }
+  ],
+  "fixed_question_ids": [
+    "Q23755403_P57_0",
+    "Q23755403_P57_1",
+    "Q23755403_P57_2"
+  ],
+  "regressed_question_ids": [],
+  "changed_count": 3,
+  "fixed_count": 3,
+  "regressed_count": 0,
+  "source_sha256": "ceca055bc74436aa41662eb0fc7db1296d4a98adc9932b56310f6ebe5b5109dc",
+  "a0_canonical_parse_discrepancies": [],
+  "text_and_generation_latency_unchanged": true,
+  "bleu_rouge_unchanged_by_decoder": true
+}

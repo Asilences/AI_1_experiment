@@ -52,8 +52,11 @@ class APIError(Exception):
 
 
 class QAService:
-    def __init__(self, data_dir=None, model_path=None):
+    def __init__(self, data_dir=None, model_path=None, recover_names=False):
         self.custom_paths = data_dir is not None or model_path is not None
+        if recover_names and self.custom_paths:
+            raise ValueError('Name recovery requires the default neural dataset, not custom A0 paths')
+        self.recover_names = recover_names
         self.data_dir = Path(data_dir) if data_dir else ROOT / 'data' / 'processed'
         self.model_path = Path(model_path) if model_path else ROOT / 'models' / 'pipeline' / 'model.pkl'
         self.demo = None
@@ -102,7 +105,7 @@ class QAService:
                     or not any((checkpoint / name).is_file() for name in ('model.safetensors', 'pytorch_model.bin'))):
                 raise FileNotFoundError('Missing checkpoint')
             dependencies = all(importlib.util.find_spec(name) is not None for name in ('torch', 'transformers'))
-            return {'available': dependencies, 'name': f'{run_id} 神经生成', 'run_id': run_id,
+            return {'available': dependencies, 'name': f'{run_id} 神经生成' + (' + 名称恢复' if self.recover_names else ''), 'run_id': run_id,
                     'detail': '首次使用时加载本地模型。' if dependencies else '当前 Python 环境未安装神经模型依赖。'}
         except (OSError, ValueError, KeyError, TypeError):
             return {'available': False, 'name': '神经生成', 'detail': '未找到完整的本地神经模型，请先完成训练或恢复检查点。'}
@@ -142,7 +145,7 @@ class QAService:
         if self.demo is None:
             from .demo import Demo
             self.demo = (Demo(load_neural=False, data_dir=self.data_dir, model_path=self.model_path)
-                         if self.custom_paths else Demo(load_neural=False))
+                         if self.custom_paths else Demo(load_neural=False, recover_names=self.recover_names))
         return self.demo
 
     def answer(self, question, system):
@@ -176,6 +179,9 @@ class QAService:
                                       relation=raw.get('relation'), confidence=raw.get('confidence'),
                                       evidence=raw.get('evidence', []), cold_start=cold,
                                       generation_ms=raw.get('latency_ms'))
+                        if 'raw_answer' in raw:
+                            result.update(raw_answer=raw['raw_answer'], replacements=raw['replacements'],
+                                          recovery_ms=raw['recovery_ms'])
                     except Exception:
                         logging.exception('UI inference failed for %s', target)
                         result['error'] = '本地模型运行失败，请检查启动终端的错误信息及数据、模型是否配套。'
@@ -275,7 +281,8 @@ def main(argv=None):
     parser.add_argument('--data-dir', type=Path, help='Custom processed data; enables A0 only.')
     parser.add_argument('--model-path', type=Path, help='Custom A0 model.pkl; enables A0 only.')
     parser.add_argument('--open', action='store_true', help='Open the local UI in your browser.')
-    parser.add_argument('--legacy', action='store_true', help='Use the original 1000-film data and neural models.')
+    parser.add_argument('--legacy', action='store_true', help='Use default experiment data and neural models instead of the activated A0 profile.')
+    parser.add_argument('--recover-names', action='store_true', help='Enable auditable name recovery for neural answers.')
     args = parser.parse_args(argv)
     if not 1 <= args.port <= 65535:
         parser.error('--port must be between 1 and 65535')
@@ -286,8 +293,10 @@ def main(argv=None):
         data_dir, model_path = startup_paths(args.data_dir, args.model_path, args.legacy)
     except (OSError, ValueError, KeyError, TypeError) as error:
         parser.exit(1, f'数据版本配置无效：{error}。可用 --legacy 启动原始实验库，或重新激活配套数据与模型。\n')
+    if args.recover_names and (data_dir is not None or model_path is not None):
+        parser.error('--recover-names requires the default neural dataset; use --legacy when an A0-only profile is active')
     try:
-        server = make_server(QAService(data_dir, model_path), args.port)
+        server = make_server(QAService(data_dir, model_path, recover_names=args.recover_names), args.port)
     except OSError as error:
         parser.exit(1, f'无法启动本地页面：{error}。可使用 --port 7861 更换端口。\n')
     url = f'http://127.0.0.1:{args.port}'

@@ -1,0 +1,20 @@
+usage: recovery_experiment.py [-h] --data-dir DATA_DIR --predictions
+                              PREDICTIONS --tokenizer TOKENIZER --output-dir
+                              OUTPUT_DIR --split {valid,test,robustness}
+                              [--mapping MAPPING]
+                              [--validation-report VALIDATION_REPORT]
+                              [--robustness-file ROBUSTNESS_FILE]
+
+Paired strict evaluation of name recovery over frozen neural predictions.
+
+options:
+  -h, --help            show this help message and exit
+  --data-dir DATA_DIR
+  --predictions PREDICTIONS
+  --tokenizer TOKENIZER
+                        Local directory or cached model ID; no download
+  --output-dir OUTPUT_DIR
+  --split {valid,test,robustness}
+  --mapping MAPPING
+  --validation-report VALIDATION_REPORT
+  --robustness-file ROBUSTNESS_FILE

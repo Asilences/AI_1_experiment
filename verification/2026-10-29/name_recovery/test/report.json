@@ -1,0 +1,162 @@
+{
+  "split": "test",
+  "protocol": {
+    "method": "Unique tokenizer-unknown name restoration from linked retained fact tails",
+    "fact_limit": 24,
+    "minimum_alphanumeric_characters": 3,
+    "input_sha256": {
+      "entities.json": "84fc4bbf3f9f106677dde191584ee2f7c2c408a22a689c91054596a6f4971c89",
+      "splits.json": "2a2a59486b30dca05a8a74dde1b0913cff4898fa50bf8a86fc0f3a93380c53cc",
+      "qa.jsonl": "e5b68040859b3d6e777905aa3adf1fc27791202028fa5d2af210b42231b41b67"
+    },
+    "mapping_sha256": "63d5a3c09627b4438629896bbd67f63727b21fc9214496a590211fbc0171223b",
+    "tokenizer": {
+      "class": "T5TokenizerFast",
+      "source_kind": "local_directory",
+      "source_name": "checkpoint",
+      "files_sha256": {
+        "tokenizer.json": "dc856f1be037756d043c1557df9a075bb8658c03c26405ef78a9fc759521cc3e",
+        "tokenizer_config.json": "f0f4630efa94e1d9e93c877ecdf2e45a8b9685037f752eddf0611508425b967b",
+        "special_tokens_map.json": "65d84a9271d68f1230ab99518c00f0f7eaef95c7b363001595ba6fa662d434b1",
+        "spiece.model": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86"
+      },
+      "vocabulary_size": 32100,
+      "vocabulary_sha256": "3e4dac4c480136f1337a43a23a00b56e92b10e1e65483bb718ceb971eef2aa14",
+      "backend_sha256": "cf4c68f352e784c0c87cd36533197cd982c4ba3421817823ebe28725b3963647"
+    },
+    "source_sha256": {
+      "name_recovery.py": "ece3fbb1a5b4933d789b0943ccfc422c09febbfff0fe6e451d8953dca5645975",
+      "recovery_experiment.py": "d54258754bc8d23aa85a11ff56c3056c24113c77927ea43583cdd5388f48095c",
+      "neural_preflight.py": "109339cc4a8701d91ca11530c39dc04cb6798f9894e2c70468e144527a913726",
+      "linker.py": "0a7e2bf48fbb7e523b4ba4f22a9ec293fe2be458e87a621a7601c61702fdb180",
+      "metrics.py": "e49751f90e07a92b86af5cc12f19bd6796ff7555fd0f0d2985c47597704ec890"
+    }
+  },
+  "scope": "Postprocessing frozen predictions; no retraining or regeneration. Strict scores unchanged in definition.",
+  "latency_note": "latency_ms is frozen generation timing; recovery_ms includes linking, restoration and extraction.",
+  "predictions_sha256": "e4816c23496a8ac6c56aec243944c1ecffe238233ee84e134da06bdafb8bdfb4",
+  "baseline": {
+    "count": 370,
+    "entity_exact": 98.64864864864865,
+    "entity_macro_f1": 98.86486486486487,
+    "bleu": 99.17415125793526,
+    "rouge_l": 99.68911315407479,
+    "by_relation": {
+      "P57": {
+        "exact": 95.40229885057471,
+        "f1": 95.40229885057471,
+        "count": 87
+      },
+      "P136": {
+        "exact": 98.55072463768117,
+        "f1": 99.71014492753623,
+        "count": 69
+      },
+      "P495": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 90
+      },
+      "P364": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 90
+      },
+      "UNKNOWN": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 34
+      }
+    },
+    "answerable_count": 336,
+    "refusal_count": 34,
+    "answerable_entity_exact": 98.51190476190477,
+    "answerable_entity_macro_f1": 98.75,
+    "refusal_accuracy": 100.0,
+    "latency_mean_ms": 89.41486918918943,
+    "latency_p95_ms": 132.2107999999389
+  },
+  "with_name_recovery": {
+    "count": 370,
+    "entity_exact": 99.45945945945947,
+    "entity_macro_f1": 99.67567567567568,
+    "bleu": 99.57511885475226,
+    "rouge_l": 99.78641045137209,
+    "by_relation": {
+      "P57": {
+        "exact": 98.85057471264368,
+        "f1": 98.85057471264368,
+        "count": 87
+      },
+      "P136": {
+        "exact": 98.55072463768117,
+        "f1": 99.71014492753623,
+        "count": 69
+      },
+      "P495": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 90
+      },
+      "P364": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 90
+      },
+      "UNKNOWN": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 34
+      }
+    },
+    "answerable_count": 336,
+    "refusal_count": 34,
+    "answerable_entity_exact": 99.40476190476191,
+    "answerable_entity_macro_f1": 99.64285714285714,
+    "refusal_accuracy": 100.0,
+    "latency_mean_ms": 89.41486918918943,
+    "latency_p95_ms": 132.2107999999389
+  },
+  "fixed_question_ids": [
+    "Q322734_P57_0",
+    "Q322734_P57_1",
+    "Q322734_P57_2"
+  ],
+  "regressed_question_ids": [],
+  "changed_question_ids": [
+    "Q322734_P57_0",
+    "Q322734_P57_1",
+    "Q322734_P57_2",
+    "Q510181_P57_0",
+    "Q510181_P57_1",
+    "Q510181_P57_2"
+  ],
+  "remaining_errors": [
+    {
+      "question_id": "Q514031_P136_1",
+      "question": "Which genres does Scalps belong to?",
+      "answer": "Scalps belongs to the following genres: slasher film and ghost film.",
+      "gold_answer_ids": [
+        "Q853630",
+        "Q31888058",
+        "Q66425231"
+      ],
+      "predicted_answer_ids": [
+        "Q31888058",
+        "Q853630"
+      ]
+    },
+    {
+      "question_id": "Q560800_P57_0",
+      "question": "Who directed Ace of Aces?",
+      "answer": "Ace of Aces was directed by Gerd Oury.",
+      "gold_answer_ids": [
+        "Q470798"
+      ],
+      "predicted_answer_ids": []
+    }
+  ],
+  "selected_on_validation": false,
+  "recovery_mean_ms": 0.5288564864885474,
+  "validation_report_sha256": "8570c05999ad48021e50cac7b2af264f7b5cf454ad2560c2b603e43af3f2b9a4"
+}

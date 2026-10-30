@@ -1,0 +1,23 @@
+{
+  "scope": "Synthetic maximum dimensions with live Adam states; throughput and memory only.",
+  "results": [
+    {
+      "batch": 64,
+      "length": 299,
+      "forward_seconds": 0.42553380000026664,
+      "generation_seconds": 2.67397560000245,
+      "output_length": 97,
+      "peak_allocated_mb": 2010.3642578125,
+      "peak_reserved_mb": 2742.0
+    },
+    {
+      "batch": 128,
+      "length": 299,
+      "forward_seconds": 1.2153938000046765,
+      "generation_seconds": 4.261188899996341,
+      "output_length": 97,
+      "peak_allocated_mb": 2996.615234375,
+      "peak_reserved_mb": 4210.0
+    }
+  ]
+}

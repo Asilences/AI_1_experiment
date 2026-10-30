@@ -1,0 +1,12 @@
+usage: dataset.py [-h] [--manifest MANIFEST] [--smoke] {verify,activate}
+
+Verify and activate the complete, versioned movie dataset shipped with Git.
+
+positional arguments:
+  {verify,activate}
+
+options:
+  -h, --help           show this help message and exit
+  --manifest MANIFEST
+  --smoke              Load the paired A0 model and check recorded example
+                       answers.

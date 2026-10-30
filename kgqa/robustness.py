@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 from collections import Counter, defaultdict
+from pathlib import Path
 import random
 import re
 
@@ -70,13 +71,21 @@ def _distribution(rows):
     }
 
 
-def build(limit=100, seed=42):
+def build(limit=100, seed=42, data_dir=None, output_dir=None, split='test'):
+    if split not in {'valid', 'test'}:
+        raise ValueError('Robustness source split must be valid or test')
     if not isinstance(limit, int) or isinstance(limit, bool) or limit < 1:
         raise ValueError('limit must be a positive integer')
     if not isinstance(seed, int) or isinstance(seed, bool):
         raise ValueError('seed must be an integer')
-    entities = read_json(ROOT / 'data' / 'processed' / 'entities.json')
-    all_rows = read_jsonl(ROOT / 'data' / 'processed' / 'qa.jsonl')
+    data = Path(data_dir) if data_dir is not None else ROOT / 'data' / 'processed'
+    output_path = Path(output_dir) if output_dir is not None else data
+    if data_dir is not None and output_dir is None:
+        raise ValueError('Custom data requires an isolated output_dir')
+    if output_dir is not None and output_path.exists() and any(output_path.iterdir()):
+        raise FileExistsError(f'Refusing to overwrite robustness output: {output_path}')
+    entities = read_json(data / 'entities.json')
+    all_rows = read_jsonl(data / 'qa.jsonl')
     if not all_rows:
         raise ValueError('QA data is empty')
     seen, movie_splits = set(), defaultdict(set)
@@ -99,9 +108,9 @@ def build(limit=100, seed=42):
     if leaking:
         raise ValueError(f'QA data: movies occur in multiple splits: {leaking!r}')
     all_rows.sort(key=lambda row: row['question_id'])
-    rows = [row for row in all_rows if row['split'] == 'test' and row['is_answerable']]
+    rows = [row for row in all_rows if row['split'] == split and row['is_answerable']]
     if not rows:
-        raise ValueError('No answerable test questions are available for robustness evaluation')
+        raise ValueError(f'No answerable {split} questions are available for robustness evaluation')
     selected = _sample_rows(rows, min(limit, len(rows)), seed)
     output = []
     alias_unavailable = defaultdict(list)
@@ -110,7 +119,7 @@ def build(limit=100, seed=42):
     for row in selected:
         qid = row['question_id']
         entity = entities.get(row['movie_id'], {})
-        title = entity.get('label')
+        title = entity.get('question_title', entity.get('label'))
         if not isinstance(title, str) or not title.strip():
             raise ValueError(f"QA data: movie {row['movie_id']!r} requires an entity label")
         typo_title = typo(title, f'robustness-typo:{seed}:{qid}')
@@ -136,7 +145,7 @@ def build(limit=100, seed=42):
             output.append({**row, 'question_id': f'robust_{kind}_{qid}', 'source_question_id': qid,
                            'paired_clean_question_id': f'robust_clean_{qid}', 'variant': kind,
                            'question': question, 'perturbation_applied': kind != 'clean' and question != row['question']})
-    negative_pool = [row for row in all_rows if row['split'] == 'test' and not row['is_answerable']]
+    negative_pool = [row for row in all_rows if row['split'] == split and not row['is_answerable']]
     unanswerable = _sample_rows(negative_pool, min(50, len(negative_pool)), seed + 1)
     for row in unanswerable:
         output.append({**row, 'question_id': f"robust_unanswerable_{row['question_id']}",
@@ -146,7 +155,7 @@ def build(limit=100, seed=42):
                   for kind in ('clean', 'paraphrase', 'typo', 'alias', 'unanswerable')}
     clean_by_source = {row['source_question_id']: row for row in by_variant['clean']}
     manifest = {
-        'seed': seed, 'requested_limit': limit, 'source_split': 'test',
+        'seed': seed, 'requested_limit': limit, 'source_split': split,
         'sampling_algorithm': 'seeded_movie_round_robin_with_greedy_relation_balance_v1',
         'sampling_note': 'One question per remaining movie per round; prefer less-sampled relations. '
                          'This is a coverage-oriented diagnostic sample, not a statistically representative sample.',
@@ -175,11 +184,15 @@ def build(limit=100, seed=42):
         'typo_unchanged_source_question_ids': unchanged_typos,
         'typo_unavailable': dict(sorted(typo_unavailable.items())),
     }
-    write_jsonl(ROOT / 'data' / 'processed' / 'robustness.jsonl', output)
-    write_json(ROOT / 'data' / 'processed' / 'robustness_manifest.json', manifest)
+    write_jsonl(output_path / 'robustness.jsonl', output)
+    write_json(output_path / 'robustness_manifest.json', manifest)
     return output
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(); parser.add_argument('--limit', type=int, default=100)
-    parser.add_argument('--seed', type=int, default=42); args = parser.parse_args(); print(len(build(args.limit, args.seed)))
+    parser.add_argument('--seed', type=int, default=42)
+    parser.add_argument('--data-dir', type=Path)
+    parser.add_argument('--output-dir', type=Path)
+    parser.add_argument('--split', choices=('valid', 'test'), default='test')
+    args = parser.parse_args(); print(len(build(args.limit, args.seed, args.data_dir, args.output_dir, args.split)))

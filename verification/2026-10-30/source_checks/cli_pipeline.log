@@ -1,0 +1,12 @@
+usage: pipeline.py [-h] [--split SPLIT] [--data-dir DATA_DIR]
+                   [--output-dir OUTPUT_DIR]
+                   {train,predict,robust}
+
+positional arguments:
+  {train,predict,robust}
+
+options:
+  -h, --help            show this help message and exit
+  --split SPLIT
+  --data-dir DATA_DIR
+  --output-dir OUTPUT_DIR

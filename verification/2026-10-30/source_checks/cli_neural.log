@@ -1,0 +1,25 @@
+usage: neural.py [-h] --run-id RUN_ID --learning-rate LEARNING_RATE
+                 [--no-embeddings] [--epochs EPOCHS] [--smoke]
+                 [--batch-size BATCH_SIZE]
+                 [--gradient-accumulation GRADIENT_ACCUMULATION]
+                 [--input-max-length INPUT_MAX_LENGTH]
+                 [--eval-batch-size EVAL_BATCH_SIZE] [--model-name MODEL_NAME]
+                 [--infer-file INFER_FILE] [--output-name OUTPUT_NAME]
+
+options:
+  -h, --help            show this help message and exit
+  --run-id RUN_ID
+  --learning-rate LEARNING_RATE
+  --no-embeddings
+  --epochs EPOCHS
+  --smoke
+  --batch-size BATCH_SIZE
+                        Training, validation and test batch size during
+                        training.
+  --gradient-accumulation GRADIENT_ACCUMULATION
+                        Training microbatches per optimizer update.
+  --input-max-length INPUT_MAX_LENGTH
+  --eval-batch-size EVAL_BATCH_SIZE
+  --model-name MODEL_NAME
+  --infer-file INFER_FILE
+  --output-name OUTPUT_NAME

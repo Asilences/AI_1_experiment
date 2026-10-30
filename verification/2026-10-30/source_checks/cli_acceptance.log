@@ -1,0 +1,9 @@
+usage: acceptance.py [-h] [--output-dir OUTPUT_DIR]
+
+Offline acceptance with a synthetic mini KB, never a Wikidata benchmark.
+
+options:
+  -h, --help            show this help message and exit
+  --output-dir OUTPUT_DIR
+                        A new directory; an existing directory is never
+                        overwritten.

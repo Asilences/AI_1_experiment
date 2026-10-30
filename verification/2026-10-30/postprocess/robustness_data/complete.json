@@ -1,0 +1,23 @@
+{
+  "identity": {
+    "postprocess_expanded_suite.py": "d09c2b74b762675a860bf28a42452b946fe5cb7ad81d61230fed355124f96f0d",
+    "input_manifest.json": "df9e474c2b57dec142cc86b9c6207763566a8b651618571746703cde82332ced",
+    "suite_summary.json": "7a547d0b47e199d87707a45bd0d9071cc0241e5a086d9ef249016e7acb2ed731"
+  },
+  "command": [
+    "environment\\Scripts\\python.exe",
+    "-m",
+    "kgqa.robustness",
+    "--split",
+    "test",
+    "--limit",
+    "100",
+    "--seed",
+    "42"
+  ],
+  "sha256": {
+    "project\\data\\processed\\robustness.jsonl": "c6c1a9c9e6d3608b4eb46b08f9885e2d40eb3dd6b8bbdd6f15624d99ba4b6459",
+    "project\\data\\processed\\robustness_manifest.json": "9e1d175cccc30ecad10a143e205cefbffa25d5add114bead340be374e98774b7",
+    "logs\\postprocess_robustness_data.log": "0134d2e3eab12d94c5ec7e7f892ffc6e45d795ca9f94d4634396741e6212510a"
+  }
+}

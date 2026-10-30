@@ -1,0 +1,21 @@
+{
+  "identity": {
+    "postprocess_expanded_suite.py": "d09c2b74b762675a860bf28a42452b946fe5cb7ad81d61230fed355124f96f0d",
+    "input_manifest.json": "df9e474c2b57dec142cc86b9c6207763566a8b651618571746703cde82332ced",
+    "suite_summary.json": "7a547d0b47e199d87707a45bd0d9071cc0241e5a086d9ef249016e7acb2ed731"
+  },
+  "command": [
+    "environment\\Scripts\\python.exe",
+    "-m",
+    "kgqa.finalize"
+  ],
+  "sha256": {
+    "project\\output\\selected_model.json": "293643c5315b81c43fee655bfae282201c289fa43ddd3834a7a6a20edb50d814",
+    "project\\runs\\B0\\predictions_robustness.jsonl": "c75f72d2ae5b755d8bf8c14dae9b4da2b23ebe2ab76c0fc88b7f7cb7782620b5",
+    "project\\runs\\B0\\metrics_robustness.json": "52ec520803448bfca5823d41d71c9487c881be0ea9dfcb45b3d3110f97ccba4e",
+    "project\\output\\human_evaluation.csv": "c789c4cc2441d561f2cbf593c27b2da9cffdaf34e52dc16398de1b7dc78539c7",
+    "project\\output\\human_evaluation_key.csv": "d9bddd418b02ce056e8b049d0ab51b8d40bced1aba407511313eff3fa52cb635",
+    "project\\output\\human_evaluation_manifest.json": "67d56b4178ea2ad4699db03c9c365c283097002db5b8d1043d39705c09d14d61",
+    "logs\\postprocess_finalize.log": "1125fab9ab5fdba479dd9225af417e45f1758c51b7df04210af515a32ae0d3da"
+  }
+}

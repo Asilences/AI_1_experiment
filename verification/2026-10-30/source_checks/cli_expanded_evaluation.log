@@ -1,0 +1,14 @@
+usage: expanded_evaluation.py [-h] --data-dir DATA_DIR --model-path MODEL_PATH
+                              --output-dir OUTPUT_DIR [--limit LIMIT]
+                              [--seed SEED] [--split {valid,test}]
+
+Evaluate a frozen versioned A0 model without retraining or replacing its data.
+
+options:
+  -h, --help            show this help message and exit
+  --data-dir DATA_DIR
+  --model-path MODEL_PATH
+  --output-dir OUTPUT_DIR
+  --limit LIMIT
+  --seed SEED
+  --split {valid,test}

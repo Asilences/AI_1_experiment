@@ -1,0 +1,238 @@
+{
+  "scope": "Additional deterministic postprocessing only; primary raw metrics and model selection are unchanged.",
+  "split": "test",
+  "protocol": {
+    "method": "Existing unique unknown-token name recovery, transferred without retraining",
+    "run_id": "B0",
+    "fact_limit": 24,
+    "minimum_alphanumeric_characters": 3,
+    "entity_decoder": "Unchanged AnswerEntityIndex with actual linked retained-tail homonym context",
+    "baseline": "Saved raw answer_ids are preserved; re-extraction discrepancies are reported",
+    "input_manifest_sha256": "df9e474c2b57dec142cc86b9c6207763566a8b651618571746703cde82332ced",
+    "run_config_sha256": "5bfd0517cdddafe4420dea93404d17430998e59a2358360d996963c5a8aa5dcc",
+    "input_sha256": {
+      "entities.json": "7c935d8fa1eecd9870df16e49d93460bdd75f90255661e4e4e397af9f667f3e8",
+      "qa.jsonl": "2882b2077834d37f4b1ae8f9b8ea90561c8c5dacecf4247907311d0cbb8bb310",
+      "splits.json": "dd24634f590e3e5dd38dc2e5ca7fd25b432ec3b562f74dc99a65b22d586113b7"
+    },
+    "mapping_sha256": "4897387a4b688470fad8f35f2cba6436f3393815c7464f89a89526c3bd1fe64a",
+    "tokenizer": {
+      "class": "T5TokenizerFast",
+      "source_kind": "local_directory",
+      "source_name": "checkpoint",
+      "files_sha256": {
+        "tokenizer.json": "dc856f1be037756d043c1557df9a075bb8658c03c26405ef78a9fc759521cc3e",
+        "tokenizer_config.json": "f0f4630efa94e1d9e93c877ecdf2e45a8b9685037f752eddf0611508425b967b",
+        "special_tokens_map.json": "65d84a9271d68f1230ab99518c00f0f7eaef95c7b363001595ba6fa662d434b1",
+        "spiece.model": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86"
+      },
+      "vocabulary_size": 32100,
+      "vocabulary_sha256": "3e4dac4c480136f1337a43a23a00b56e92b10e1e65483bb718ceb971eef2aa14",
+      "backend_sha256": "cf4c68f352e784c0c87cd36533197cd982c4ba3421817823ebe28725b3963647"
+    },
+    "tokenizer_files_sha256": {
+      "tokenizer.json": "dc856f1be037756d043c1557df9a075bb8658c03c26405ef78a9fc759521cc3e",
+      "tokenizer_config.json": "f0f4630efa94e1d9e93c877ecdf2e45a8b9685037f752eddf0611508425b967b",
+      "special_tokens_map.json": "65d84a9271d68f1230ab99518c00f0f7eaef95c7b363001595ba6fa662d434b1",
+      "spiece.model": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86"
+    },
+    "source_sha256": {
+      "name_recovery.py": "ece3fbb1a5b4933d789b0943ccfc422c09febbfff0fe6e451d8953dca5645975",
+      "metrics.py": "aef96a0703a17af914883d46471df64adab40092d9d15bdac51c65da861c19cb",
+      "linker.py": "0a7e2bf48fbb7e523b4ba4f22a9ec293fe2be458e87a621a7601c61702fdb180",
+      "neural_preflight.py": "56f92a7d432531967b01704aaf80b7beb3d35e75c4bc00866a5fe0b28bc4ec19",
+      "common.py": "8edce50100c3072bd134d77c77d0f4c45de5362219fe503b690b336fbc487705"
+    },
+    "adapter_sha256": "d8c492c5f009e948a784f2f2f0540abfb4b8813165c49d7d0c8ee8dd2d9e26e9"
+  },
+  "predictions_sha256": "89fa1a22a890d995dd553f3392dd6bd4785a3f51c2cc70cd23267cc6d523bd57",
+  "gold_sha256": "2882b2077834d37f4b1ae8f9b8ea90561c8c5dacecf4247907311d0cbb8bb310",
+  "baseline": {
+    "count": 8917,
+    "entity_exact": 99.49534596837502,
+    "entity_macro_f1": 99.49534596837502,
+    "bleu": 99.77551051994016,
+    "rouge_l": 99.89321992114122,
+    "by_relation": {
+      "P136": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 1416
+      },
+      "P495": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2214
+      },
+      "P364": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2238
+      },
+      "P57": {
+        "exact": 97.98927613941018,
+        "f1": 97.98927613941018,
+        "count": 2238
+      },
+      "UNKNOWN": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 811
+      }
+    },
+    "answerable_count": 8106,
+    "refusal_count": 811,
+    "answerable_entity_exact": 99.44485566247224,
+    "answerable_entity_macro_f1": 99.44485566247224,
+    "refusal_accuracy": 100.0,
+    "latency_mean_ms": 11.792072322518463,
+    "latency_p95_ms": 14.841156249985943
+  },
+  "with_name_recovery": {
+    "count": 8917,
+    "entity_exact": 99.96635639789166,
+    "entity_macro_f1": 99.96635639789166,
+    "bleu": 99.90827363428122,
+    "rouge_l": 99.9787568374339,
+    "by_relation": {
+      "P136": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 1416
+      },
+      "P495": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2214
+      },
+      "P364": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2238
+      },
+      "P57": {
+        "exact": 99.86595174262735,
+        "f1": 99.86595174262735,
+        "count": 2238
+      },
+      "UNKNOWN": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 811
+      }
+    },
+    "answerable_count": 8106,
+    "refusal_count": 811,
+    "answerable_entity_exact": 99.96299037749814,
+    "answerable_entity_macro_f1": 99.96299037749814,
+    "refusal_accuracy": 100.0,
+    "latency_mean_ms": 11.792072322518463,
+    "latency_p95_ms": 14.841156249985943
+  },
+  "fixed_question_ids": [
+    "Q528328_P57_0",
+    "Q528328_P57_1",
+    "Q528328_P57_2",
+    "Q74437_P57_0",
+    "Q74437_P57_1",
+    "Q74437_P57_2",
+    "Q62519472_P57_0",
+    "Q62519472_P57_1",
+    "Q62519472_P57_2",
+    "Q309863_P57_0",
+    "Q309863_P57_1",
+    "Q309863_P57_2",
+    "Q500254_P57_0",
+    "Q500254_P57_1",
+    "Q500254_P57_2",
+    "Q308920_P57_0",
+    "Q308920_P57_1",
+    "Q308920_P57_2",
+    "Q196685_P57_0",
+    "Q196685_P57_1",
+    "Q196685_P57_2",
+    "Q54437950_P57_0",
+    "Q54437950_P57_1",
+    "Q54437950_P57_2",
+    "Q932814_P57_0",
+    "Q932814_P57_1",
+    "Q932814_P57_2",
+    "Q933437_P57_0",
+    "Q933437_P57_1",
+    "Q933437_P57_2",
+    "Q1130211_P57_0",
+    "Q1130211_P57_1",
+    "Q1130211_P57_2",
+    "Q72325_P57_0",
+    "Q72325_P57_1",
+    "Q72325_P57_2",
+    "Q1321880_P57_0",
+    "Q1321880_P57_1",
+    "Q1321880_P57_2",
+    "Q946849_P57_0",
+    "Q946849_P57_1",
+    "Q946849_P57_2"
+  ],
+  "regressed_question_ids": [],
+  "changed_question_ids": [
+    "Q214013_P57_0",
+    "Q214013_P57_1",
+    "Q214013_P57_2",
+    "Q528328_P57_0",
+    "Q528328_P57_1",
+    "Q528328_P57_2",
+    "Q74437_P57_0",
+    "Q74437_P57_1",
+    "Q74437_P57_2",
+    "Q145688_P57_0",
+    "Q145688_P57_1",
+    "Q145688_P57_2",
+    "Q62519472_P57_0",
+    "Q62519472_P57_1",
+    "Q62519472_P57_2",
+    "Q309863_P57_0",
+    "Q309863_P57_1",
+    "Q309863_P57_2",
+    "Q500254_P57_0",
+    "Q500254_P57_1",
+    "Q500254_P57_2",
+    "Q308920_P57_0",
+    "Q308920_P57_1",
+    "Q308920_P57_2",
+    "Q15087230_P57_0",
+    "Q15087230_P57_1",
+    "Q15087230_P57_2",
+    "Q196685_P57_0",
+    "Q196685_P57_1",
+    "Q196685_P57_2",
+    "Q54437950_P57_0",
+    "Q54437950_P57_1",
+    "Q54437950_P57_2",
+    "Q932814_P57_0",
+    "Q932814_P57_1",
+    "Q932814_P57_2",
+    "Q933437_P57_0",
+    "Q933437_P57_1",
+    "Q933437_P57_2",
+    "Q1130211_P57_0",
+    "Q1130211_P57_1",
+    "Q1130211_P57_2",
+    "Q1125282_P57_0",
+    "Q1125282_P57_1",
+    "Q1125282_P57_2",
+    "Q72325_P57_0",
+    "Q72325_P57_1",
+    "Q72325_P57_2",
+    "Q1321880_P57_0",
+    "Q1321880_P57_1",
+    "Q1321880_P57_2",
+    "Q946849_P57_0",
+    "Q946849_P57_1",
+    "Q946849_P57_2"
+  ],
+  "raw_reextraction_discrepancies": [],
+  "processing_seconds": 2.890979600007995,
+  "timing_note": "Frozen latency_ms is unchanged. processing_ms includes linking, recovery and both entity extractions; recovery_ms isolates replacement processing. No model generation was run.",
+  "selected_on_validation": false,
+  "validation_report_sha256": "4c22044a200e0cab53450dd5a5bf4a55859bde0472457fa8a143732da5d159a6"
+}

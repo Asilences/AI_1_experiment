@@ -4,7 +4,7 @@
 
 ## 直接使用
 
-需要 Python 3.11；以下在 Windows PowerShell 的项目根目录运行。PR 合并前请使用 `codex/publish-movie-dataset` 分支，合并后使用包含本数据版本的 `main`。
+需要 Python 3.11；以下在 Windows PowerShell 的项目根目录运行，使用包含本数据版本的 `main`。
 
 ```powershell
 python -m venv .venv

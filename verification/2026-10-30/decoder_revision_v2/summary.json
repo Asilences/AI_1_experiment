@@ -1,0 +1,2828 @@
+{
+  "created_at": "2026-10-30T13:30:45Z",
+  "decoder_revision": "v2",
+  "discovered_after_test": true,
+  "scope": "Post-training parser correction uniformly applied to saved outputs; no training, parameter change, or NameRecovery rerun.",
+  "runs": {
+    "B0": {
+      "valid": {
+        "v1": {
+          "count": 8857,
+          "entity_exact": 99.72902788754658,
+          "entity_macro_f1": 99.77870610816304,
+          "bleu": 99.80900500239837,
+          "rouge_l": 99.87811390693399,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.70193740685544,
+          "answerable_entity_macro_f1": 99.75658221559861,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.97476371231327,
+          "latency_p95_ms": 15.840124999954242
+        },
+        "v2": {
+          "count": 8857,
+          "entity_exact": 99.72902788754658,
+          "entity_macro_f1": 99.77870610816304,
+          "bleu": 99.80900500239837,
+          "rouge_l": 99.87811390693399,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.70193740685544,
+          "answerable_entity_macro_f1": 99.75658221559861,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.97476371231327,
+          "latency_p95_ms": 15.840124999954242
+        },
+        "changed_ids": [],
+        "fixed_question_ids": [],
+        "regressed_question_ids": [],
+        "changed_count": 0,
+        "fixed_count": 0,
+        "regressed_count": 0,
+        "source_sha256": "9cb980b74365d20c38e71f9570fcbbe4ca5d1ea64675008cad0154d35f11b614",
+        "a0_canonical_parse_discrepancies": [],
+        "text_and_generation_latency_unchanged": true,
+        "bleu_rouge_unchanged_by_decoder": true
+      },
+      "test": {
+        "v1": {
+          "count": 8917,
+          "entity_exact": 99.49534596837502,
+          "entity_macro_f1": 99.49534596837502,
+          "bleu": 99.77551051994016,
+          "rouge_l": 99.89321992114122,
+          "by_relation": {
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1416
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2214
+            },
+            "P364": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2238
+            },
+            "P57": {
+              "exact": 97.98927613941018,
+              "f1": 97.98927613941018,
+              "count": 2238
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 811
+            }
+          },
+          "answerable_count": 8106,
+          "refusal_count": 811,
+          "answerable_entity_exact": 99.44485566247224,
+          "answerable_entity_macro_f1": 99.44485566247224,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.792072322518463,
+          "latency_p95_ms": 14.841156249985943
+        },
+        "v2": {
+          "count": 8917,
+          "entity_exact": 99.52898957048335,
+          "entity_macro_f1": 99.52898957048335,
+          "bleu": 99.77551051994016,
+          "rouge_l": 99.89321992114122,
+          "by_relation": {
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1416
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2214
+            },
+            "P364": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2238
+            },
+            "P57": {
+              "exact": 98.12332439678283,
+              "f1": 98.12332439678283,
+              "count": 2238
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 811
+            }
+          },
+          "answerable_count": 8106,
+          "refusal_count": 811,
+          "answerable_entity_exact": 99.48186528497409,
+          "answerable_entity_macro_f1": 99.48186528497409,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.792072322518463,
+          "latency_p95_ms": 14.841156249985943
+        },
+        "changed_ids": [
+          {
+            "question_id": "Q23755403_P57_0",
+            "v1_ids": [
+              "Q106916461"
+            ],
+            "v2_ids": [
+              "Q22323567",
+              "Q8003113"
+            ]
+          },
+          {
+            "question_id": "Q23755403_P57_1",
+            "v1_ids": [
+              "Q106916461"
+            ],
+            "v2_ids": [
+              "Q22323567",
+              "Q8003113"
+            ]
+          },
+          {
+            "question_id": "Q23755403_P57_2",
+            "v1_ids": [
+              "Q106916461"
+            ],
+            "v2_ids": [
+              "Q22323567",
+              "Q8003113"
+            ]
+          }
+        ],
+        "fixed_question_ids": [
+          "Q23755403_P57_0",
+          "Q23755403_P57_1",
+          "Q23755403_P57_2"
+        ],
+        "regressed_question_ids": [],
+        "changed_count": 3,
+        "fixed_count": 3,
+        "regressed_count": 0,
+        "source_sha256": "89fa1a22a890d995dd553f3392dd6bd4785a3f51c2cc70cd23267cc6d523bd57",
+        "a0_canonical_parse_discrepancies": [],
+        "text_and_generation_latency_unchanged": true,
+        "bleu_rouge_unchanged_by_decoder": true
+      },
+      "robustness": {
+        "v1": {
+          "count": 439,
+          "entity_exact": 83.5990888382688,
+          "entity_macro_f1": 83.97873955960516,
+          "bleu": 87.83190704578173,
+          "rouge_l": 91.5144957461769,
+          "by_relation": {
+            "P136": {
+              "exact": 81.44329896907216,
+              "f1": 82.4742268041237,
+              "count": 97
+            },
+            "P495": {
+              "exact": 56.25,
+              "f1": 56.94444444444444,
+              "count": 96
+            },
+            "P57": {
+              "exact": 88.77551020408163,
+              "f1": 88.77551020408163,
+              "count": 98
+            },
+            "P364": {
+              "exact": 98.9795918367347,
+              "f1": 98.9795918367347,
+              "count": 98
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 50
+            }
+          },
+          "answerable_count": 389,
+          "refusal_count": 50,
+          "answerable_entity_exact": 81.49100257069408,
+          "answerable_entity_macro_f1": 81.91945158526136,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 13.699595899833472,
+          "latency_p95_ms": 20.42245625011674
+        },
+        "v2": {
+          "count": 439,
+          "entity_exact": 83.5990888382688,
+          "entity_macro_f1": 83.97873955960516,
+          "bleu": 87.83190704578173,
+          "rouge_l": 91.5144957461769,
+          "by_relation": {
+            "P136": {
+              "exact": 81.44329896907216,
+              "f1": 82.4742268041237,
+              "count": 97
+            },
+            "P495": {
+              "exact": 56.25,
+              "f1": 56.94444444444444,
+              "count": 96
+            },
+            "P57": {
+              "exact": 88.77551020408163,
+              "f1": 88.77551020408163,
+              "count": 98
+            },
+            "P364": {
+              "exact": 98.9795918367347,
+              "f1": 98.9795918367347,
+              "count": 98
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 50
+            }
+          },
+          "answerable_count": 389,
+          "refusal_count": 50,
+          "answerable_entity_exact": 81.49100257069408,
+          "answerable_entity_macro_f1": 81.91945158526136,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 13.699595899833472,
+          "latency_p95_ms": 20.42245625011674
+        },
+        "changed_ids": [],
+        "fixed_question_ids": [],
+        "regressed_question_ids": [],
+        "changed_count": 0,
+        "fixed_count": 0,
+        "regressed_count": 0,
+        "source_sha256": "c75f72d2ae5b755d8bf8c14dae9b4da2b23ebe2ab76c0fc88b7f7cb7782620b5",
+        "a0_canonical_parse_discrepancies": [],
+        "text_and_generation_latency_unchanged": true,
+        "bleu_rouge_unchanged_by_decoder": true,
+        "by_variant_v1": {
+          "alias": {
+            "count": 89,
+            "entity_exact": 98.87640449438202,
+            "entity_macro_f1": 98.87640449438202,
+            "bleu": 98.99208364376148,
+            "rouge_l": 99.21348314606742,
+            "by_relation": {
+              "P136": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 22
+              },
+              "P495": {
+                "exact": 95.23809523809523,
+                "f1": 95.23809523809523,
+                "count": 21
+              },
+              "P57": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 23
+              },
+              "P364": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 23
+              }
+            },
+            "answerable_count": 89,
+            "refusal_count": 0,
+            "answerable_entity_exact": 98.87640449438202,
+            "answerable_entity_macro_f1": 98.87640449438202,
+            "latency_mean_ms": 13.138995032947983,
+            "latency_p95_ms": 20.42245625011674
+          },
+          "clean": {
+            "count": 100,
+            "entity_exact": 100.0,
+            "entity_macro_f1": 100.0,
+            "bleu": 99.74786083954459,
+            "rouge_l": 100.0,
+            "by_relation": {
+              "P136": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              },
+              "P495": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              },
+              "P57": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              },
+              "P364": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              }
+            },
+            "answerable_count": 100,
+            "refusal_count": 0,
+            "answerable_entity_exact": 100.0,
+            "answerable_entity_macro_f1": 100.0,
+            "latency_mean_ms": 13.165340578765608,
+            "latency_p95_ms": 20.42245625011674
+          },
+          "paraphrase": {
+            "count": 100,
+            "entity_exact": 68.0,
+            "entity_macro_f1": 68.0,
+            "bleu": 73.3941307798695,
+            "rouge_l": 81.63876711844551,
+            "by_relation": {
+              "P136": {
+                "exact": 68.0,
+                "f1": 68.0,
+                "count": 25
+              },
+              "P495": {
+                "exact": 4.0,
+                "f1": 4.0,
+                "count": 25
+              },
+              "P57": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              },
+              "P364": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              }
+            },
+            "answerable_count": 100,
+            "refusal_count": 0,
+            "answerable_entity_exact": 68.0,
+            "answerable_entity_macro_f1": 68.0,
+            "latency_mean_ms": 13.095290844391002,
+            "latency_p95_ms": 20.42245625011674
+          },
+          "typo": {
+            "count": 100,
+            "entity_exact": 61.0,
+            "entity_macro_f1": 62.66666666666667,
+            "bleu": 72.16018545359637,
+            "rouge_l": 81.80986920727108,
+            "by_relation": {
+              "P136": {
+                "exact": 60.0,
+                "f1": 64.0,
+                "count": 25
+              },
+              "P495": {
+                "exact": 32.0,
+                "f1": 34.66666666666667,
+                "count": 25
+              },
+              "P57": {
+                "exact": 56.00000000000001,
+                "f1": 56.00000000000001,
+                "count": 25
+              },
+              "P364": {
+                "exact": 96.0,
+                "f1": 96.0,
+                "count": 25
+              }
+            },
+            "answerable_count": 100,
+            "refusal_count": 0,
+            "answerable_entity_exact": 61.0,
+            "answerable_entity_macro_f1": 62.66666666666667,
+            "latency_mean_ms": 13.11569990688804,
+            "latency_p95_ms": 20.42245625011674
+          },
+          "unanswerable": {
+            "count": 50,
+            "entity_exact": 100.0,
+            "entity_macro_f1": 100.0,
+            "bleu": 100.00000000000004,
+            "rouge_l": 100.0,
+            "by_relation": {
+              "UNKNOWN": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 50
+              }
+            },
+            "answerable_count": 0,
+            "refusal_count": 50,
+            "refusal_accuracy": 100.0,
+            "latency_mean_ms": 18.142378181801178,
+            "latency_p95_ms": 18.142378181801178
+          }
+        },
+        "by_variant_v2": {
+          "alias": {
+            "count": 89,
+            "entity_exact": 98.87640449438202,
+            "entity_macro_f1": 98.87640449438202,
+            "bleu": 98.99208364376148,
+            "rouge_l": 99.21348314606742,
+            "by_relation": {
+              "P136": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 22
+              },
+              "P495": {
+                "exact": 95.23809523809523,
+                "f1": 95.23809523809523,
+                "count": 21
+              },
+              "P57": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 23
+              },
+              "P364": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 23
+              }
+            },
+            "answerable_count": 89,
+            "refusal_count": 0,
+            "answerable_entity_exact": 98.87640449438202,
+            "answerable_entity_macro_f1": 98.87640449438202,
+            "latency_mean_ms": 13.138995032947983,
+            "latency_p95_ms": 20.42245625011674
+          },
+          "clean": {
+            "count": 100,
+            "entity_exact": 100.0,
+            "entity_macro_f1": 100.0,
+            "bleu": 99.74786083954459,
+            "rouge_l": 100.0,
+            "by_relation": {
+              "P136": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              },
+              "P495": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              },
+              "P57": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              },
+              "P364": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              }
+            },
+            "answerable_count": 100,
+            "refusal_count": 0,
+            "answerable_entity_exact": 100.0,
+            "answerable_entity_macro_f1": 100.0,
+            "latency_mean_ms": 13.165340578765608,
+            "latency_p95_ms": 20.42245625011674
+          },
+          "paraphrase": {
+            "count": 100,
+            "entity_exact": 68.0,
+            "entity_macro_f1": 68.0,
+            "bleu": 73.3941307798695,
+            "rouge_l": 81.63876711844551,
+            "by_relation": {
+              "P136": {
+                "exact": 68.0,
+                "f1": 68.0,
+                "count": 25
+              },
+              "P495": {
+                "exact": 4.0,
+                "f1": 4.0,
+                "count": 25
+              },
+              "P57": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              },
+              "P364": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              }
+            },
+            "answerable_count": 100,
+            "refusal_count": 0,
+            "answerable_entity_exact": 68.0,
+            "answerable_entity_macro_f1": 68.0,
+            "latency_mean_ms": 13.095290844391002,
+            "latency_p95_ms": 20.42245625011674
+          },
+          "typo": {
+            "count": 100,
+            "entity_exact": 61.0,
+            "entity_macro_f1": 62.66666666666667,
+            "bleu": 72.16018545359637,
+            "rouge_l": 81.80986920727108,
+            "by_relation": {
+              "P136": {
+                "exact": 60.0,
+                "f1": 64.0,
+                "count": 25
+              },
+              "P495": {
+                "exact": 32.0,
+                "f1": 34.66666666666667,
+                "count": 25
+              },
+              "P57": {
+                "exact": 56.00000000000001,
+                "f1": 56.00000000000001,
+                "count": 25
+              },
+              "P364": {
+                "exact": 96.0,
+                "f1": 96.0,
+                "count": 25
+              }
+            },
+            "answerable_count": 100,
+            "refusal_count": 0,
+            "answerable_entity_exact": 61.0,
+            "answerable_entity_macro_f1": 62.66666666666667,
+            "latency_mean_ms": 13.11569990688804,
+            "latency_p95_ms": 20.42245625011674
+          },
+          "unanswerable": {
+            "count": 50,
+            "entity_exact": 100.0,
+            "entity_macro_f1": 100.0,
+            "bleu": 100.00000000000004,
+            "rouge_l": 100.0,
+            "by_relation": {
+              "UNKNOWN": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 50
+              }
+            },
+            "answerable_count": 0,
+            "refusal_count": 50,
+            "refusal_accuracy": 100.0,
+            "latency_mean_ms": 18.142378181801178,
+            "latency_p95_ms": 18.142378181801178
+          }
+        }
+      }
+    },
+    "B1": {
+      "valid": {
+        "v1": {
+          "count": 8857,
+          "entity_exact": 99.72902788754658,
+          "entity_macro_f1": 99.77870610816304,
+          "bleu": 99.82931357719812,
+          "rouge_l": 99.88739843547685,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.70193740685544,
+          "answerable_entity_macro_f1": 99.75658221559861,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.886814734111551,
+          "latency_p95_ms": 15.56074531242757
+        },
+        "v2": {
+          "count": 8857,
+          "entity_exact": 99.72902788754658,
+          "entity_macro_f1": 99.77870610816304,
+          "bleu": 99.82931357719812,
+          "rouge_l": 99.88739843547685,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.70193740685544,
+          "answerable_entity_macro_f1": 99.75658221559861,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.886814734111551,
+          "latency_p95_ms": 15.56074531242757
+        },
+        "changed_ids": [],
+        "fixed_question_ids": [],
+        "regressed_question_ids": [],
+        "changed_count": 0,
+        "fixed_count": 0,
+        "regressed_count": 0,
+        "source_sha256": "1ce449f4d8ed3a9665b138d94b39ce97059e2d878a2d962c26d0cd53f72f0eba",
+        "a0_canonical_parse_discrepancies": [],
+        "text_and_generation_latency_unchanged": true,
+        "bleu_rouge_unchanged_by_decoder": true
+      },
+      "test": {
+        "v1": {
+          "count": 8917,
+          "entity_exact": 99.49534596837502,
+          "entity_macro_f1": 99.49534596837502,
+          "bleu": 99.77551051994016,
+          "rouge_l": 99.89321992114122,
+          "by_relation": {
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1416
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2214
+            },
+            "P364": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2238
+            },
+            "P57": {
+              "exact": 97.98927613941018,
+              "f1": 97.98927613941018,
+              "count": 2238
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 811
+            }
+          },
+          "answerable_count": 8106,
+          "refusal_count": 811,
+          "answerable_entity_exact": 99.44485566247224,
+          "answerable_entity_macro_f1": 99.44485566247224,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.676575137376258,
+          "latency_p95_ms": 15.10078281251026
+        },
+        "v2": {
+          "count": 8917,
+          "entity_exact": 99.52898957048335,
+          "entity_macro_f1": 99.52898957048335,
+          "bleu": 99.77551051994016,
+          "rouge_l": 99.89321992114122,
+          "by_relation": {
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1416
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2214
+            },
+            "P364": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2238
+            },
+            "P57": {
+              "exact": 98.12332439678283,
+              "f1": 98.12332439678283,
+              "count": 2238
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 811
+            }
+          },
+          "answerable_count": 8106,
+          "refusal_count": 811,
+          "answerable_entity_exact": 99.48186528497409,
+          "answerable_entity_macro_f1": 99.48186528497409,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.676575137376258,
+          "latency_p95_ms": 15.10078281251026
+        },
+        "changed_ids": [
+          {
+            "question_id": "Q23755403_P57_0",
+            "v1_ids": [
+              "Q106916461"
+            ],
+            "v2_ids": [
+              "Q22323567",
+              "Q8003113"
+            ]
+          },
+          {
+            "question_id": "Q23755403_P57_1",
+            "v1_ids": [
+              "Q106916461"
+            ],
+            "v2_ids": [
+              "Q22323567",
+              "Q8003113"
+            ]
+          },
+          {
+            "question_id": "Q23755403_P57_2",
+            "v1_ids": [
+              "Q106916461"
+            ],
+            "v2_ids": [
+              "Q22323567",
+              "Q8003113"
+            ]
+          }
+        ],
+        "fixed_question_ids": [
+          "Q23755403_P57_0",
+          "Q23755403_P57_1",
+          "Q23755403_P57_2"
+        ],
+        "regressed_question_ids": [],
+        "changed_count": 3,
+        "fixed_count": 3,
+        "regressed_count": 0,
+        "source_sha256": "1841cce4715dc673387e65a12f22ec632140b048994963920f1fc5540c1118be",
+        "a0_canonical_parse_discrepancies": [],
+        "text_and_generation_latency_unchanged": true,
+        "bleu_rouge_unchanged_by_decoder": true
+      }
+    },
+    "B2": {
+      "valid": {
+        "v1": {
+          "count": 8857,
+          "entity_exact": 99.72902788754658,
+          "entity_macro_f1": 99.77870610816304,
+          "bleu": 99.72622569004915,
+          "rouge_l": 99.86488234107804,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.70193740685544,
+          "answerable_entity_macro_f1": 99.75658221559861,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.885870317263741,
+          "latency_p95_ms": 15.686387499954435
+        },
+        "v2": {
+          "count": 8857,
+          "entity_exact": 99.72902788754658,
+          "entity_macro_f1": 99.77870610816304,
+          "bleu": 99.72622569004915,
+          "rouge_l": 99.86488234107804,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.70193740685544,
+          "answerable_entity_macro_f1": 99.75658221559861,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.885870317263741,
+          "latency_p95_ms": 15.686387499954435
+        },
+        "changed_ids": [],
+        "fixed_question_ids": [],
+        "regressed_question_ids": [],
+        "changed_count": 0,
+        "fixed_count": 0,
+        "regressed_count": 0,
+        "source_sha256": "9616a4eb7320ac74e5e1d0c1a26f25a84ecf873d3f4be029e4553ddd19266878",
+        "a0_canonical_parse_discrepancies": [],
+        "text_and_generation_latency_unchanged": true,
+        "bleu_rouge_unchanged_by_decoder": true
+      },
+      "test": {
+        "v1": {
+          "count": 8917,
+          "entity_exact": 99.42805876415835,
+          "entity_macro_f1": 99.42805876415835,
+          "bleu": 99.76230579673796,
+          "rouge_l": 99.88841369226861,
+          "by_relation": {
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1416
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2214
+            },
+            "P364": {
+              "exact": 99.86595174262735,
+              "f1": 99.86595174262735,
+              "count": 2238
+            },
+            "P57": {
+              "exact": 97.85522788203752,
+              "f1": 97.85522788203752,
+              "count": 2238
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 811
+            }
+          },
+          "answerable_count": 8106,
+          "refusal_count": 811,
+          "answerable_entity_exact": 99.37083641746854,
+          "answerable_entity_macro_f1": 99.37083641746854,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 12.058134047320975,
+          "latency_p95_ms": 16.029545312449045
+        },
+        "v2": {
+          "count": 8917,
+          "entity_exact": 99.46170236626668,
+          "entity_macro_f1": 99.46170236626668,
+          "bleu": 99.76230579673796,
+          "rouge_l": 99.88841369226861,
+          "by_relation": {
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1416
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2214
+            },
+            "P364": {
+              "exact": 99.86595174262735,
+              "f1": 99.86595174262735,
+              "count": 2238
+            },
+            "P57": {
+              "exact": 97.98927613941018,
+              "f1": 97.98927613941018,
+              "count": 2238
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 811
+            }
+          },
+          "answerable_count": 8106,
+          "refusal_count": 811,
+          "answerable_entity_exact": 99.4078460399704,
+          "answerable_entity_macro_f1": 99.4078460399704,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 12.058134047320975,
+          "latency_p95_ms": 16.029545312449045
+        },
+        "changed_ids": [
+          {
+            "question_id": "Q23755403_P57_0",
+            "v1_ids": [
+              "Q106916461"
+            ],
+            "v2_ids": [
+              "Q22323567",
+              "Q8003113"
+            ]
+          },
+          {
+            "question_id": "Q23755403_P57_1",
+            "v1_ids": [
+              "Q106916461"
+            ],
+            "v2_ids": [
+              "Q22323567",
+              "Q8003113"
+            ]
+          },
+          {
+            "question_id": "Q23755403_P57_2",
+            "v1_ids": [
+              "Q106916461"
+            ],
+            "v2_ids": [
+              "Q22323567",
+              "Q8003113"
+            ]
+          }
+        ],
+        "fixed_question_ids": [
+          "Q23755403_P57_0",
+          "Q23755403_P57_1",
+          "Q23755403_P57_2"
+        ],
+        "regressed_question_ids": [],
+        "changed_count": 3,
+        "fixed_count": 3,
+        "regressed_count": 0,
+        "source_sha256": "2281cd491e25c22832b6181f3829ad8cef14e145886a5c3779643c29acfb1cce",
+        "a0_canonical_parse_discrepancies": [],
+        "text_and_generation_latency_unchanged": true,
+        "bleu_rouge_unchanged_by_decoder": true
+      }
+    },
+    "B3": {
+      "valid": {
+        "v1": {
+          "count": 8857,
+          "entity_exact": 99.66128485943322,
+          "entity_macro_f1": 99.76515750254036,
+          "bleu": 99.72402030113251,
+          "rouge_l": 99.85613214602651,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 99.5575221238938,
+              "f1": 99.91150442477877,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.6274217585693,
+          "answerable_entity_macro_f1": 99.74167908594139,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.11164554589181,
+          "latency_p95_ms": 14.458381250051389
+        },
+        "v2": {
+          "count": 8857,
+          "entity_exact": 99.66128485943322,
+          "entity_macro_f1": 99.76515750254036,
+          "bleu": 99.72402030113251,
+          "rouge_l": 99.85613214602651,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 99.5575221238938,
+              "f1": 99.91150442477877,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.6274217585693,
+          "answerable_entity_macro_f1": 99.74167908594139,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.11164554589181,
+          "latency_p95_ms": 14.458381250051389
+        },
+        "changed_ids": [],
+        "fixed_question_ids": [],
+        "regressed_question_ids": [],
+        "changed_count": 0,
+        "fixed_count": 0,
+        "regressed_count": 0,
+        "source_sha256": "d432806d882499a813870275e806734d0b82c523d3bc2eed5678075795a041dd",
+        "a0_canonical_parse_discrepancies": [],
+        "text_and_generation_latency_unchanged": true,
+        "bleu_rouge_unchanged_by_decoder": true
+      },
+      "test": {
+        "v1": {
+          "count": 8917,
+          "entity_exact": 99.42805876415835,
+          "entity_macro_f1": 99.48188852753168,
+          "bleu": 99.56747014678446,
+          "rouge_l": 99.80441508652494,
+          "by_relation": {
+            "P136": {
+              "exact": 99.57627118644068,
+              "f1": 99.91525423728814,
+              "count": 1416
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2214
+            },
+            "P364": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2238
+            },
+            "P57": {
+              "exact": 97.98927613941018,
+              "f1": 97.98927613941018,
+              "count": 2238
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 811
+            }
+          },
+          "answerable_count": 8106,
+          "refusal_count": 811,
+          "answerable_entity_exact": 99.37083641746854,
+          "answerable_entity_macro_f1": 99.4300518134715,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.085138219122568,
+          "latency_p95_ms": 14.450712500092777
+        },
+        "v2": {
+          "count": 8917,
+          "entity_exact": 99.46170236626668,
+          "entity_macro_f1": 99.51553212964002,
+          "bleu": 99.56747014678446,
+          "rouge_l": 99.80441508652494,
+          "by_relation": {
+            "P136": {
+              "exact": 99.57627118644068,
+              "f1": 99.91525423728814,
+              "count": 1416
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2214
+            },
+            "P364": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2238
+            },
+            "P57": {
+              "exact": 98.12332439678283,
+              "f1": 98.12332439678283,
+              "count": 2238
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 811
+            }
+          },
+          "answerable_count": 8106,
+          "refusal_count": 811,
+          "answerable_entity_exact": 99.4078460399704,
+          "answerable_entity_macro_f1": 99.46706143597336,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.085138219122568,
+          "latency_p95_ms": 14.450712500092777
+        },
+        "changed_ids": [
+          {
+            "question_id": "Q23755403_P57_0",
+            "v1_ids": [
+              "Q106916461"
+            ],
+            "v2_ids": [
+              "Q22323567",
+              "Q8003113"
+            ]
+          },
+          {
+            "question_id": "Q23755403_P57_1",
+            "v1_ids": [
+              "Q106916461"
+            ],
+            "v2_ids": [
+              "Q22323567",
+              "Q8003113"
+            ]
+          },
+          {
+            "question_id": "Q23755403_P57_2",
+            "v1_ids": [
+              "Q106916461"
+            ],
+            "v2_ids": [
+              "Q22323567",
+              "Q8003113"
+            ]
+          }
+        ],
+        "fixed_question_ids": [
+          "Q23755403_P57_0",
+          "Q23755403_P57_1",
+          "Q23755403_P57_2"
+        ],
+        "regressed_question_ids": [],
+        "changed_count": 3,
+        "fixed_count": 3,
+        "regressed_count": 0,
+        "source_sha256": "22fdabf0c27be2a2b12aac1bc5e35347b606a6add891eb7995169f9fc3ab1324",
+        "a0_canonical_parse_discrepancies": [],
+        "text_and_generation_latency_unchanged": true,
+        "bleu_rouge_unchanged_by_decoder": true
+      }
+    },
+    "C0": {
+      "valid": {
+        "v1": {
+          "count": 8857,
+          "entity_exact": 99.72902788754658,
+          "entity_macro_f1": 99.77870610816304,
+          "bleu": 99.76546781153809,
+          "rouge_l": 99.865736105684,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.70193740685544,
+          "answerable_entity_macro_f1": 99.75658221559861,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.380442181323456,
+          "latency_p95_ms": 14.610635937515326
+        },
+        "v2": {
+          "count": 8857,
+          "entity_exact": 99.72902788754658,
+          "entity_macro_f1": 99.77870610816304,
+          "bleu": 99.76546781153809,
+          "rouge_l": 99.865736105684,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.70193740685544,
+          "answerable_entity_macro_f1": 99.75658221559861,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.380442181323456,
+          "latency_p95_ms": 14.610635937515326
+        },
+        "changed_ids": [],
+        "fixed_question_ids": [],
+        "regressed_question_ids": [],
+        "changed_count": 0,
+        "fixed_count": 0,
+        "regressed_count": 0,
+        "source_sha256": "ba66ee684f87407b1656aec3cdf95adf21f1945243815af72c8878712da93005",
+        "a0_canonical_parse_discrepancies": [],
+        "text_and_generation_latency_unchanged": true,
+        "bleu_rouge_unchanged_by_decoder": true
+      },
+      "test": {
+        "v1": {
+          "count": 8917,
+          "entity_exact": 99.49534596837502,
+          "entity_macro_f1": 99.49534596837502,
+          "bleu": 99.772267831008,
+          "rouge_l": 99.89321992114122,
+          "by_relation": {
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1416
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2214
+            },
+            "P364": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2238
+            },
+            "P57": {
+              "exact": 97.98927613941018,
+              "f1": 97.98927613941018,
+              "count": 2238
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 811
+            }
+          },
+          "answerable_count": 8106,
+          "refusal_count": 811,
+          "answerable_entity_exact": 99.44485566247224,
+          "answerable_entity_macro_f1": 99.44485566247224,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 10.643701984961092,
+          "latency_p95_ms": 13.591434375030076
+        },
+        "v2": {
+          "count": 8917,
+          "entity_exact": 99.52898957048335,
+          "entity_macro_f1": 99.52898957048335,
+          "bleu": 99.772267831008,
+          "rouge_l": 99.89321992114122,
+          "by_relation": {
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1416
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2214
+            },
+            "P364": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2238
+            },
+            "P57": {
+              "exact": 98.12332439678283,
+              "f1": 98.12332439678283,
+              "count": 2238
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 811
+            }
+          },
+          "answerable_count": 8106,
+          "refusal_count": 811,
+          "answerable_entity_exact": 99.48186528497409,
+          "answerable_entity_macro_f1": 99.48186528497409,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 10.643701984961092,
+          "latency_p95_ms": 13.591434375030076
+        },
+        "changed_ids": [
+          {
+            "question_id": "Q23755403_P57_0",
+            "v1_ids": [
+              "Q106916461"
+            ],
+            "v2_ids": [
+              "Q22323567",
+              "Q8003113"
+            ]
+          },
+          {
+            "question_id": "Q23755403_P57_1",
+            "v1_ids": [
+              "Q106916461"
+            ],
+            "v2_ids": [
+              "Q22323567",
+              "Q8003113"
+            ]
+          },
+          {
+            "question_id": "Q23755403_P57_2",
+            "v1_ids": [
+              "Q106916461"
+            ],
+            "v2_ids": [
+              "Q22323567",
+              "Q8003113"
+            ]
+          }
+        ],
+        "fixed_question_ids": [
+          "Q23755403_P57_0",
+          "Q23755403_P57_1",
+          "Q23755403_P57_2"
+        ],
+        "regressed_question_ids": [],
+        "changed_count": 3,
+        "fixed_count": 3,
+        "regressed_count": 0,
+        "source_sha256": "3ac298308d085edb0de1be0c482dd761eab93c21154690f78477f99bd72aa19f",
+        "a0_canonical_parse_discrepancies": [],
+        "text_and_generation_latency_unchanged": true,
+        "bleu_rouge_unchanged_by_decoder": true
+      }
+    },
+    "A0": {
+      "test": {
+        "v1": {
+          "count": 8917,
+          "entity_exact": 100.0,
+          "entity_macro_f1": 100.0,
+          "bleu": 100.00000000000004,
+          "rouge_l": 100.0,
+          "by_relation": {
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1416
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2214
+            },
+            "P364": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2238
+            },
+            "P57": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2238
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 811
+            }
+          },
+          "answerable_count": 8106,
+          "refusal_count": 811,
+          "answerable_entity_exact": 100.0,
+          "answerable_entity_macro_f1": 100.0,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 1.2822116518962272,
+          "latency_p95_ms": 1.5339000092353672
+        },
+        "v2": {
+          "count": 8917,
+          "entity_exact": 100.0,
+          "entity_macro_f1": 100.0,
+          "bleu": 100.00000000000004,
+          "rouge_l": 100.0,
+          "by_relation": {
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1416
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2214
+            },
+            "P364": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2238
+            },
+            "P57": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2238
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 811
+            }
+          },
+          "answerable_count": 8106,
+          "refusal_count": 811,
+          "answerable_entity_exact": 100.0,
+          "answerable_entity_macro_f1": 100.0,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 1.2822116518962272,
+          "latency_p95_ms": 1.5339000092353672
+        },
+        "changed_ids": [],
+        "fixed_question_ids": [],
+        "regressed_question_ids": [],
+        "changed_count": 0,
+        "fixed_count": 0,
+        "regressed_count": 0,
+        "source_sha256": "b0ecaece1ec99fd9fcb67267f37dbe4ade220067a8884db59979a8ae206e54be",
+        "a0_canonical_parse_discrepancies": [],
+        "text_and_generation_latency_unchanged": true,
+        "bleu_rouge_unchanged_by_decoder": true
+      },
+      "robustness": {
+        "v1": {
+          "count": 439,
+          "entity_exact": 83.37129840546697,
+          "entity_macro_f1": 83.52315869400152,
+          "bleu": 84.63986693574357,
+          "rouge_l": 88.36645223103832,
+          "by_relation": {
+            "P136": {
+              "exact": 89.69072164948454,
+              "f1": 89.69072164948454,
+              "count": 97
+            },
+            "P495": {
+              "exact": 54.166666666666664,
+              "f1": 54.861111111111114,
+              "count": 96
+            },
+            "P57": {
+              "exact": 88.77551020408163,
+              "f1": 88.77551020408163,
+              "count": 98
+            },
+            "P364": {
+              "exact": 91.83673469387756,
+              "f1": 91.83673469387756,
+              "count": 98
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 50
+            }
+          },
+          "answerable_count": 389,
+          "refusal_count": 50,
+          "answerable_entity_exact": 81.23393316195373,
+          "answerable_entity_macro_f1": 81.40531276778063,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 280.3979915715775,
+          "latency_p95_ms": 2152.1905999979936
+        },
+        "v2": {
+          "count": 439,
+          "entity_exact": 83.37129840546697,
+          "entity_macro_f1": 83.52315869400152,
+          "bleu": 84.63986693574357,
+          "rouge_l": 88.36645223103832,
+          "by_relation": {
+            "P136": {
+              "exact": 89.69072164948454,
+              "f1": 89.69072164948454,
+              "count": 97
+            },
+            "P495": {
+              "exact": 54.166666666666664,
+              "f1": 54.861111111111114,
+              "count": 96
+            },
+            "P57": {
+              "exact": 88.77551020408163,
+              "f1": 88.77551020408163,
+              "count": 98
+            },
+            "P364": {
+              "exact": 91.83673469387756,
+              "f1": 91.83673469387756,
+              "count": 98
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 50
+            }
+          },
+          "answerable_count": 389,
+          "refusal_count": 50,
+          "answerable_entity_exact": 81.23393316195373,
+          "answerable_entity_macro_f1": 81.40531276778063,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 280.3979915715775,
+          "latency_p95_ms": 2152.1905999979936
+        },
+        "changed_ids": [],
+        "fixed_question_ids": [],
+        "regressed_question_ids": [],
+        "changed_count": 0,
+        "fixed_count": 0,
+        "regressed_count": 0,
+        "source_sha256": "4b807cecb3b08e845f7c4ba1c9651a76d3779878b736e1912a0593cac73e9bc4",
+        "a0_canonical_parse_discrepancies": [],
+        "text_and_generation_latency_unchanged": true,
+        "bleu_rouge_unchanged_by_decoder": true,
+        "by_variant_v1": {
+          "alias": {
+            "count": 89,
+            "entity_exact": 98.87640449438202,
+            "entity_macro_f1": 98.87640449438202,
+            "bleu": 98.54464762999804,
+            "rouge_l": 98.97854954034729,
+            "by_relation": {
+              "P136": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 22
+              },
+              "P495": {
+                "exact": 95.23809523809523,
+                "f1": 95.23809523809523,
+                "count": 21
+              },
+              "P57": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 23
+              },
+              "P364": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 23
+              }
+            },
+            "answerable_count": 89,
+            "refusal_count": 0,
+            "answerable_entity_exact": 98.87640449438202,
+            "answerable_entity_macro_f1": 98.87640449438202,
+            "latency_mean_ms": 9.031900000827795,
+            "latency_p95_ms": 12.142599996877834
+          },
+          "clean": {
+            "count": 100,
+            "entity_exact": 100.0,
+            "entity_macro_f1": 100.0,
+            "bleu": 100.00000000000004,
+            "rouge_l": 100.0,
+            "by_relation": {
+              "P136": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              },
+              "P495": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              },
+              "P57": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              },
+              "P364": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              }
+            },
+            "answerable_count": 100,
+            "refusal_count": 0,
+            "answerable_entity_exact": 100.0,
+            "answerable_entity_macro_f1": 100.0,
+            "latency_mean_ms": 1.4728799994918518,
+            "latency_p95_ms": 2.1268000127747655
+          },
+          "paraphrase": {
+            "count": 100,
+            "entity_exact": 75.0,
+            "entity_macro_f1": 75.0,
+            "bleu": 87.50401874798635,
+            "rouge_l": 91.53070234776118,
+            "by_relation": {
+              "P136": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              },
+              "P495": {
+                "exact": 0.0,
+                "f1": 0,
+                "count": 25
+              },
+              "P57": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              },
+              "P364": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              }
+            },
+            "answerable_count": 100,
+            "refusal_count": 0,
+            "answerable_entity_exact": 75.0,
+            "answerable_entity_macro_f1": 75.0,
+            "latency_mean_ms": 1.408277000009548,
+            "latency_p95_ms": 1.9089999987045303
+          },
+          "typo": {
+            "count": 100,
+            "entity_exact": 53.0,
+            "entity_macro_f1": 53.666666666666664,
+            "bleu": 49.89317913086391,
+            "rouge_l": 58.307113855588014,
+            "by_relation": {
+              "P136": {
+                "exact": 60.0,
+                "f1": 60.0,
+                "count": 25
+              },
+              "P495": {
+                "exact": 28.000000000000004,
+                "f1": 30.666666666666664,
+                "count": 25
+              },
+              "P57": {
+                "exact": 56.00000000000001,
+                "f1": 56.00000000000001,
+                "count": 25
+              },
+              "P364": {
+                "exact": 68.0,
+                "f1": 68.0,
+                "count": 25
+              }
+            },
+            "answerable_count": 100,
+            "refusal_count": 0,
+            "answerable_entity_exact": 53.0,
+            "answerable_entity_macro_f1": 53.666666666666664,
+            "latency_mean_ms": 1219.4052289992396,
+            "latency_p95_ms": 3391.8680000060704
+          },
+          "unanswerable": {
+            "count": 50,
+            "entity_exact": 100.0,
+            "entity_macro_f1": 100.0,
+            "bleu": 100.00000000000004,
+            "rouge_l": 100.0,
+            "by_relation": {
+              "UNKNOWN": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 50
+              }
+            },
+            "answerable_count": 0,
+            "refusal_count": 50,
+            "refusal_accuracy": 100.0,
+            "latency_mean_ms": 1.2448119994951412,
+            "latency_p95_ms": 1.6915999876800925
+          }
+        },
+        "by_variant_v2": {
+          "alias": {
+            "count": 89,
+            "entity_exact": 98.87640449438202,
+            "entity_macro_f1": 98.87640449438202,
+            "bleu": 98.54464762999804,
+            "rouge_l": 98.97854954034729,
+            "by_relation": {
+              "P136": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 22
+              },
+              "P495": {
+                "exact": 95.23809523809523,
+                "f1": 95.23809523809523,
+                "count": 21
+              },
+              "P57": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 23
+              },
+              "P364": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 23
+              }
+            },
+            "answerable_count": 89,
+            "refusal_count": 0,
+            "answerable_entity_exact": 98.87640449438202,
+            "answerable_entity_macro_f1": 98.87640449438202,
+            "latency_mean_ms": 9.031900000827795,
+            "latency_p95_ms": 12.142599996877834
+          },
+          "clean": {
+            "count": 100,
+            "entity_exact": 100.0,
+            "entity_macro_f1": 100.0,
+            "bleu": 100.00000000000004,
+            "rouge_l": 100.0,
+            "by_relation": {
+              "P136": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              },
+              "P495": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              },
+              "P57": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              },
+              "P364": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              }
+            },
+            "answerable_count": 100,
+            "refusal_count": 0,
+            "answerable_entity_exact": 100.0,
+            "answerable_entity_macro_f1": 100.0,
+            "latency_mean_ms": 1.4728799994918518,
+            "latency_p95_ms": 2.1268000127747655
+          },
+          "paraphrase": {
+            "count": 100,
+            "entity_exact": 75.0,
+            "entity_macro_f1": 75.0,
+            "bleu": 87.50401874798635,
+            "rouge_l": 91.53070234776118,
+            "by_relation": {
+              "P136": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              },
+              "P495": {
+                "exact": 0.0,
+                "f1": 0,
+                "count": 25
+              },
+              "P57": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              },
+              "P364": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              }
+            },
+            "answerable_count": 100,
+            "refusal_count": 0,
+            "answerable_entity_exact": 75.0,
+            "answerable_entity_macro_f1": 75.0,
+            "latency_mean_ms": 1.408277000009548,
+            "latency_p95_ms": 1.9089999987045303
+          },
+          "typo": {
+            "count": 100,
+            "entity_exact": 53.0,
+            "entity_macro_f1": 53.666666666666664,
+            "bleu": 49.89317913086391,
+            "rouge_l": 58.307113855588014,
+            "by_relation": {
+              "P136": {
+                "exact": 60.0,
+                "f1": 60.0,
+                "count": 25
+              },
+              "P495": {
+                "exact": 28.000000000000004,
+                "f1": 30.666666666666664,
+                "count": 25
+              },
+              "P57": {
+                "exact": 56.00000000000001,
+                "f1": 56.00000000000001,
+                "count": 25
+              },
+              "P364": {
+                "exact": 68.0,
+                "f1": 68.0,
+                "count": 25
+              }
+            },
+            "answerable_count": 100,
+            "refusal_count": 0,
+            "answerable_entity_exact": 53.0,
+            "answerable_entity_macro_f1": 53.666666666666664,
+            "latency_mean_ms": 1219.4052289992396,
+            "latency_p95_ms": 3391.8680000060704
+          },
+          "unanswerable": {
+            "count": 50,
+            "entity_exact": 100.0,
+            "entity_macro_f1": 100.0,
+            "bleu": 100.00000000000004,
+            "rouge_l": 100.0,
+            "by_relation": {
+              "UNKNOWN": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 50
+              }
+            },
+            "answerable_count": 0,
+            "refusal_count": 50,
+            "refusal_accuracy": 100.0,
+            "latency_mean_ms": 1.2448119994951412,
+            "latency_p95_ms": 1.6915999876800925
+          }
+        }
+      }
+    },
+    "B0_recovered": {
+      "valid": {
+        "v1": {
+          "count": 8857,
+          "entity_exact": 100.0,
+          "entity_macro_f1": 100.0,
+          "bleu": 99.92082861658078,
+          "rouge_l": 99.92392898117896,
+          "by_relation": {
+            "P57": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 100.0,
+          "answerable_entity_macro_f1": 100.0,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.97476371231327,
+          "latency_p95_ms": 15.840124999954242
+        },
+        "v2": {
+          "count": 8857,
+          "entity_exact": 100.0,
+          "entity_macro_f1": 100.0,
+          "bleu": 99.92082861658078,
+          "rouge_l": 99.92392898117896,
+          "by_relation": {
+            "P57": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 100.0,
+          "answerable_entity_macro_f1": 100.0,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.97476371231327,
+          "latency_p95_ms": 15.840124999954242
+        },
+        "changed_ids": [],
+        "fixed_question_ids": [],
+        "regressed_question_ids": [],
+        "changed_count": 0,
+        "fixed_count": 0,
+        "regressed_count": 0,
+        "source_sha256": "c44305827823572b4532c0235d6cec76d98a1c148f98bc5fb63316f0f97aaf6d",
+        "a0_canonical_parse_discrepancies": [],
+        "text_and_generation_latency_unchanged": true,
+        "bleu_rouge_unchanged_by_decoder": true
+      },
+      "test": {
+        "v1": {
+          "count": 8917,
+          "entity_exact": 99.96635639789166,
+          "entity_macro_f1": 99.96635639789166,
+          "bleu": 99.90827363428122,
+          "rouge_l": 99.9787568374339,
+          "by_relation": {
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1416
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2214
+            },
+            "P364": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2238
+            },
+            "P57": {
+              "exact": 99.86595174262735,
+              "f1": 99.86595174262735,
+              "count": 2238
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 811
+            }
+          },
+          "answerable_count": 8106,
+          "refusal_count": 811,
+          "answerable_entity_exact": 99.96299037749814,
+          "answerable_entity_macro_f1": 99.96299037749814,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.792072322518463,
+          "latency_p95_ms": 14.841156249985943
+        },
+        "v2": {
+          "count": 8917,
+          "entity_exact": 100.0,
+          "entity_macro_f1": 100.0,
+          "bleu": 99.90827363428122,
+          "rouge_l": 99.9787568374339,
+          "by_relation": {
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1416
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2214
+            },
+            "P364": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2238
+            },
+            "P57": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2238
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 811
+            }
+          },
+          "answerable_count": 8106,
+          "refusal_count": 811,
+          "answerable_entity_exact": 100.0,
+          "answerable_entity_macro_f1": 100.0,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.792072322518463,
+          "latency_p95_ms": 14.841156249985943
+        },
+        "changed_ids": [
+          {
+            "question_id": "Q23755403_P57_0",
+            "v1_ids": [
+              "Q106916461"
+            ],
+            "v2_ids": [
+              "Q22323567",
+              "Q8003113"
+            ]
+          },
+          {
+            "question_id": "Q23755403_P57_1",
+            "v1_ids": [
+              "Q106916461"
+            ],
+            "v2_ids": [
+              "Q22323567",
+              "Q8003113"
+            ]
+          },
+          {
+            "question_id": "Q23755403_P57_2",
+            "v1_ids": [
+              "Q106916461"
+            ],
+            "v2_ids": [
+              "Q22323567",
+              "Q8003113"
+            ]
+          }
+        ],
+        "fixed_question_ids": [
+          "Q23755403_P57_0",
+          "Q23755403_P57_1",
+          "Q23755403_P57_2"
+        ],
+        "regressed_question_ids": [],
+        "changed_count": 3,
+        "fixed_count": 3,
+        "regressed_count": 0,
+        "source_sha256": "ceca055bc74436aa41662eb0fc7db1296d4a98adc9932b56310f6ebe5b5109dc",
+        "a0_canonical_parse_discrepancies": [],
+        "text_and_generation_latency_unchanged": true,
+        "bleu_rouge_unchanged_by_decoder": true
+      },
+      "robustness": {
+        "v1": {
+          "count": 439,
+          "entity_exact": 83.5990888382688,
+          "entity_macro_f1": 83.97873955960516,
+          "bleu": 88.05635721576219,
+          "rouge_l": 91.5144957461769,
+          "by_relation": {
+            "P136": {
+              "exact": 81.44329896907216,
+              "f1": 82.4742268041237,
+              "count": 97
+            },
+            "P495": {
+              "exact": 56.25,
+              "f1": 56.94444444444444,
+              "count": 96
+            },
+            "P57": {
+              "exact": 88.77551020408163,
+              "f1": 88.77551020408163,
+              "count": 98
+            },
+            "P364": {
+              "exact": 98.9795918367347,
+              "f1": 98.9795918367347,
+              "count": 98
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 50
+            }
+          },
+          "answerable_count": 389,
+          "refusal_count": 50,
+          "answerable_entity_exact": 81.49100257069408,
+          "answerable_entity_macro_f1": 81.91945158526136,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 13.699595899833472,
+          "latency_p95_ms": 20.42245625011674
+        },
+        "v2": {
+          "count": 439,
+          "entity_exact": 83.5990888382688,
+          "entity_macro_f1": 83.97873955960516,
+          "bleu": 88.05635721576219,
+          "rouge_l": 91.5144957461769,
+          "by_relation": {
+            "P136": {
+              "exact": 81.44329896907216,
+              "f1": 82.4742268041237,
+              "count": 97
+            },
+            "P495": {
+              "exact": 56.25,
+              "f1": 56.94444444444444,
+              "count": 96
+            },
+            "P57": {
+              "exact": 88.77551020408163,
+              "f1": 88.77551020408163,
+              "count": 98
+            },
+            "P364": {
+              "exact": 98.9795918367347,
+              "f1": 98.9795918367347,
+              "count": 98
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 50
+            }
+          },
+          "answerable_count": 389,
+          "refusal_count": 50,
+          "answerable_entity_exact": 81.49100257069408,
+          "answerable_entity_macro_f1": 81.91945158526136,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 13.699595899833472,
+          "latency_p95_ms": 20.42245625011674
+        },
+        "changed_ids": [],
+        "fixed_question_ids": [],
+        "regressed_question_ids": [],
+        "changed_count": 0,
+        "fixed_count": 0,
+        "regressed_count": 0,
+        "source_sha256": "bd185c72f347e752d4a0c42669bea6e1e85ea36cdf53e9c2a18a99e23e9d78a2",
+        "a0_canonical_parse_discrepancies": [],
+        "text_and_generation_latency_unchanged": true,
+        "bleu_rouge_unchanged_by_decoder": true,
+        "by_variant_v1": {
+          "alias": {
+            "count": 89,
+            "entity_exact": 98.87640449438202,
+            "entity_macro_f1": 98.87640449438202,
+            "bleu": 99.28127485237668,
+            "rouge_l": 99.21348314606742,
+            "by_relation": {
+              "P136": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 22
+              },
+              "P495": {
+                "exact": 95.23809523809523,
+                "f1": 95.23809523809523,
+                "count": 21
+              },
+              "P57": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 23
+              },
+              "P364": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 23
+              }
+            },
+            "answerable_count": 89,
+            "refusal_count": 0,
+            "answerable_entity_exact": 98.87640449438202,
+            "answerable_entity_macro_f1": 98.87640449438202,
+            "latency_mean_ms": 13.138995032947983,
+            "latency_p95_ms": 20.42245625011674
+          },
+          "clean": {
+            "count": 100,
+            "entity_exact": 100.0,
+            "entity_macro_f1": 100.0,
+            "bleu": 100.00000000000004,
+            "rouge_l": 100.0,
+            "by_relation": {
+              "P136": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              },
+              "P495": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              },
+              "P57": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              },
+              "P364": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              }
+            },
+            "answerable_count": 100,
+            "refusal_count": 0,
+            "answerable_entity_exact": 100.0,
+            "answerable_entity_macro_f1": 100.0,
+            "latency_mean_ms": 13.165340578765608,
+            "latency_p95_ms": 20.42245625011674
+          },
+          "paraphrase": {
+            "count": 100,
+            "entity_exact": 68.0,
+            "entity_macro_f1": 68.0,
+            "bleu": 73.65184462594739,
+            "rouge_l": 81.63876711844551,
+            "by_relation": {
+              "P136": {
+                "exact": 68.0,
+                "f1": 68.0,
+                "count": 25
+              },
+              "P495": {
+                "exact": 4.0,
+                "f1": 4.0,
+                "count": 25
+              },
+              "P57": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              },
+              "P364": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              }
+            },
+            "answerable_count": 100,
+            "refusal_count": 0,
+            "answerable_entity_exact": 68.0,
+            "answerable_entity_macro_f1": 68.0,
+            "latency_mean_ms": 13.095290844391002,
+            "latency_p95_ms": 20.42245625011674
+          },
+          "typo": {
+            "count": 100,
+            "entity_exact": 61.0,
+            "entity_macro_f1": 62.66666666666667,
+            "bleu": 72.42423888986993,
+            "rouge_l": 81.80986920727108,
+            "by_relation": {
+              "P136": {
+                "exact": 60.0,
+                "f1": 64.0,
+                "count": 25
+              },
+              "P495": {
+                "exact": 32.0,
+                "f1": 34.66666666666667,
+                "count": 25
+              },
+              "P57": {
+                "exact": 56.00000000000001,
+                "f1": 56.00000000000001,
+                "count": 25
+              },
+              "P364": {
+                "exact": 96.0,
+                "f1": 96.0,
+                "count": 25
+              }
+            },
+            "answerable_count": 100,
+            "refusal_count": 0,
+            "answerable_entity_exact": 61.0,
+            "answerable_entity_macro_f1": 62.66666666666667,
+            "latency_mean_ms": 13.11569990688804,
+            "latency_p95_ms": 20.42245625011674
+          },
+          "unanswerable": {
+            "count": 50,
+            "entity_exact": 100.0,
+            "entity_macro_f1": 100.0,
+            "bleu": 100.00000000000004,
+            "rouge_l": 100.0,
+            "by_relation": {
+              "UNKNOWN": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 50
+              }
+            },
+            "answerable_count": 0,
+            "refusal_count": 50,
+            "refusal_accuracy": 100.0,
+            "latency_mean_ms": 18.142378181801178,
+            "latency_p95_ms": 18.142378181801178
+          }
+        },
+        "by_variant_v2": {
+          "alias": {
+            "count": 89,
+            "entity_exact": 98.87640449438202,
+            "entity_macro_f1": 98.87640449438202,
+            "bleu": 99.28127485237668,
+            "rouge_l": 99.21348314606742,
+            "by_relation": {
+              "P136": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 22
+              },
+              "P495": {
+                "exact": 95.23809523809523,
+                "f1": 95.23809523809523,
+                "count": 21
+              },
+              "P57": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 23
+              },
+              "P364": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 23
+              }
+            },
+            "answerable_count": 89,
+            "refusal_count": 0,
+            "answerable_entity_exact": 98.87640449438202,
+            "answerable_entity_macro_f1": 98.87640449438202,
+            "latency_mean_ms": 13.138995032947983,
+            "latency_p95_ms": 20.42245625011674
+          },
+          "clean": {
+            "count": 100,
+            "entity_exact": 100.0,
+            "entity_macro_f1": 100.0,
+            "bleu": 100.00000000000004,
+            "rouge_l": 100.0,
+            "by_relation": {
+              "P136": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              },
+              "P495": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              },
+              "P57": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              },
+              "P364": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              }
+            },
+            "answerable_count": 100,
+            "refusal_count": 0,
+            "answerable_entity_exact": 100.0,
+            "answerable_entity_macro_f1": 100.0,
+            "latency_mean_ms": 13.165340578765608,
+            "latency_p95_ms": 20.42245625011674
+          },
+          "paraphrase": {
+            "count": 100,
+            "entity_exact": 68.0,
+            "entity_macro_f1": 68.0,
+            "bleu": 73.65184462594739,
+            "rouge_l": 81.63876711844551,
+            "by_relation": {
+              "P136": {
+                "exact": 68.0,
+                "f1": 68.0,
+                "count": 25
+              },
+              "P495": {
+                "exact": 4.0,
+                "f1": 4.0,
+                "count": 25
+              },
+              "P57": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              },
+              "P364": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 25
+              }
+            },
+            "answerable_count": 100,
+            "refusal_count": 0,
+            "answerable_entity_exact": 68.0,
+            "answerable_entity_macro_f1": 68.0,
+            "latency_mean_ms": 13.095290844391002,
+            "latency_p95_ms": 20.42245625011674
+          },
+          "typo": {
+            "count": 100,
+            "entity_exact": 61.0,
+            "entity_macro_f1": 62.66666666666667,
+            "bleu": 72.42423888986993,
+            "rouge_l": 81.80986920727108,
+            "by_relation": {
+              "P136": {
+                "exact": 60.0,
+                "f1": 64.0,
+                "count": 25
+              },
+              "P495": {
+                "exact": 32.0,
+                "f1": 34.66666666666667,
+                "count": 25
+              },
+              "P57": {
+                "exact": 56.00000000000001,
+                "f1": 56.00000000000001,
+                "count": 25
+              },
+              "P364": {
+                "exact": 96.0,
+                "f1": 96.0,
+                "count": 25
+              }
+            },
+            "answerable_count": 100,
+            "refusal_count": 0,
+            "answerable_entity_exact": 61.0,
+            "answerable_entity_macro_f1": 62.66666666666667,
+            "latency_mean_ms": 13.11569990688804,
+            "latency_p95_ms": 20.42245625011674
+          },
+          "unanswerable": {
+            "count": 50,
+            "entity_exact": 100.0,
+            "entity_macro_f1": 100.0,
+            "bleu": 100.00000000000004,
+            "rouge_l": 100.0,
+            "by_relation": {
+              "UNKNOWN": {
+                "exact": 100.0,
+                "f1": 100.0,
+                "count": 50
+              }
+            },
+            "answerable_count": 0,
+            "refusal_count": 50,
+            "refusal_accuracy": 100.0,
+            "latency_mean_ms": 18.142378181801178,
+            "latency_p95_ms": 18.142378181801178
+          }
+        }
+      }
+    }
+  },
+  "selected_v1": "B0",
+  "selected_v2_raw_validation": "B0",
+  "selection_unchanged": true,
+  "review_required": false,
+  "selection_policy": "Maximum raw B-run validation entity F1, then ascending run ID; retain original selection pending review if it changes.",
+  "old_decoder_sha256": "aef96a0703a17af914883d46471df64adab40092d9d15bdac51c65da861c19cb",
+  "new_decoder_sha256": "0fd1d148817bb03bae92bab56e395b92b8f2d4a6343d01880d6e4ca5eea8b199",
+  "source_sha256": {
+    "metrics.py": "0fd1d148817bb03bae92bab56e395b92b8f2d4a6343d01880d6e4ca5eea8b199",
+    "linker.py": "0a7e2bf48fbb7e523b4ba4f22a9ec293fe2be458e87a621a7601c61702fdb180",
+    "neural_preflight.py": "56f92a7d432531967b01704aaf80b7beb3d35e75c4bc00866a5fe0b28bc4ec19",
+    "name_recovery.py": "ece3fbb1a5b4933d789b0943ccfc422c09febbfff0fe6e451d8953dca5645975"
+  },
+  "adapter_sha256": "cad932cf2bddd94478fad2269acc71ef90e4e3de8a8d7a261288b40a43bd9a2e",
+  "score_rows_ast_unchanged": true,
+  "frozen_checkpoints_unaltered": true,
+  "all_original_v1_files_byte_unchanged": true,
+  "immutable_file_count": 356,
+  "canonical_reference_audit": {
+    "train": {
+      "rows": 41220,
+      "reference_comparisons": 78693,
+      "v1_mismatches": 0,
+      "v2_mismatches": 0,
+      "examples": {
+        "v1": [],
+        "v2": []
+      }
+    },
+    "valid": {
+      "rows": 8857,
+      "reference_comparisons": 16909,
+      "v1_mismatches": 0,
+      "v2_mismatches": 0,
+      "examples": {
+        "v1": [],
+        "v2": []
+      }
+    },
+    "test": {
+      "rows": 8917,
+      "reference_comparisons": 17023,
+      "v1_mismatches": 6,
+      "v2_mismatches": 0,
+      "examples": {
+        "v1": [
+          {
+            "question_id": "Q23755403_P57_0",
+            "reference": "Office Christmas Party was directed by Will Speck and Josh Gordon.",
+            "parsed_ids": [
+              "Q106916461"
+            ],
+            "expected_ids": [
+              "Q8003113",
+              "Q22323567"
+            ]
+          },
+          {
+            "question_id": "Q23755403_P57_0",
+            "reference": "The director or directors of Office Christmas Party are Will Speck and Josh Gordon.",
+            "parsed_ids": [
+              "Q106916461"
+            ],
+            "expected_ids": [
+              "Q8003113",
+              "Q22323567"
+            ]
+          },
+          {
+            "question_id": "Q23755403_P57_1",
+            "reference": "Office Christmas Party was directed by Will Speck and Josh Gordon.",
+            "parsed_ids": [
+              "Q106916461"
+            ],
+            "expected_ids": [
+              "Q8003113",
+              "Q22323567"
+            ]
+          },
+          {
+            "question_id": "Q23755403_P57_1",
+            "reference": "The director or directors of Office Christmas Party are Will Speck and Josh Gordon.",
+            "parsed_ids": [
+              "Q106916461"
+            ],
+            "expected_ids": [
+              "Q8003113",
+              "Q22323567"
+            ]
+          },
+          {
+            "question_id": "Q23755403_P57_2",
+            "reference": "Office Christmas Party was directed by Will Speck and Josh Gordon.",
+            "parsed_ids": [
+              "Q106916461"
+            ],
+            "expected_ids": [
+              "Q8003113",
+              "Q22323567"
+            ]
+          },
+          {
+            "question_id": "Q23755403_P57_2",
+            "reference": "The director or directors of Office Christmas Party are Will Speck and Josh Gordon.",
+            "parsed_ids": [
+              "Q106916461"
+            ],
+            "expected_ids": [
+              "Q8003113",
+              "Q22323567"
+            ]
+          }
+        ],
+        "v2": []
+      }
+    }
+  },
+  "cpu_threads": 2,
+  "gpu_used": false,
+  "cached_questions": 17946,
+  "elapsed_seconds": 214.282429400002,
+  "unchanged_figures": [
+    "learning_rate_loss.png",
+    "TransE loss and embedding figures"
+  ],
+  "timing_note": "Saved latency_ms is model-generation latency; decoding CPU time is not substituted."
+}

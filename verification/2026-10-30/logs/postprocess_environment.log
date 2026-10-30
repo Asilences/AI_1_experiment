@@ -1,0 +1,23 @@
+{
+  "collected_at": "2026-10-30T13:00:27Z",
+  "project_directory": ".",
+  "python_executable": "environment\\Scripts\\python.exe",
+  "python_version": "3.12.8 | packaged by Anaconda, Inc. | (main, Dec 11 2024, 16:48:34) [MSC v.1929 64 bit (AMD64)]",
+  "operating_system": "Windows-11-10.0.22631-SP0",
+  "processor": "AMD Ryzen 5 5600H with Radeon Graphics",
+  "logical_cpu_count": 12,
+  "memory_gb": 15.86,
+  "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU, 4096 MiB, 560.81",
+  "cuda_available": true,
+  "torch_cuda": "12.4",
+  "packages": {
+    "torch": "2.6.0+cu124",
+    "transformers": "4.48.3",
+    "pykeen": "1.11.1",
+    "scikit-learn": "1.6.1",
+    "sacrebleu": "2.5.1",
+    "rouge-score": "0.1.2",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3"
+  }
+}
