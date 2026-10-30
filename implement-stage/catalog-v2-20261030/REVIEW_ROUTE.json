@@ -9,5 +9,14 @@
   "executor_family": "gpt-6",
   "review_independence": "same-family",
   "acceptance_status": "provisional",
-  "status": "pending"
+  "status": "completed",
+  "rounds": 2,
+  "session_id": "/root/catalog_assumption_review",
+  "working_directory": "H:/AI1experiment",
+  "observed_exact_model": null,
+  "observed_family": "gpt-6",
+  "observed_identity_note": "Tool response did not expose a verifiable runtime model ID; requested_model is not an observation.",
+  "final_verdict": "clean",
+  "final_semantic_undeclared": 0,
+  "first_round_interface_undeclared": 1
 }

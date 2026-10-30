@@ -1,43 +1,37 @@
 {
-  "undeclared": [
-    {
-      "site": "H:/AI1experiment/kgqa/explorer.py:122",
-      "decision": "只要原问题包含任意汉字，就将回答语言设为中文；电影标题中的汉字也参与判定。",
-      "why_it_matters": "当前工作树实测 plan('Who directed 盗梦空间?') 返回 language='zh'。英文问句使用中文片名时，输出语言会随片名改变。A-007 仅声明中英模板，未声明这种语言选择规则。",
-      "class": "interface"
-    }
-  ],
+  "undeclared": [],
   "stale_rows": [],
   "semantic_undeclared": 0,
-  "verdict": "gaps",
+  "verdict": "clean",
+  "round": 2,
+  "reviewed_commit": "afa0976433638b4c471c3f8432cb416bc348d6fa",
   "resolved_during_review": [
     {
-      "issue": "多属性问题静默略过未识别的第二部电影",
-      "evidence": "初次真实回放 'What are the directors and cast of Inception and Interstelar?' 只回答 Inception，status=answered。当前补丁已阻止该回放；A-015 已声明。",
-      "status": "本轮反例已修复"
+      "issue": "多属性问题遗漏未识别的第二部电影",
+      "status": "回放返回unsupported，证据为空；与A-015一致。"
     },
     {
-      "issue": "未知副标题续集自动退化成前作",
-      "evidence": "初次真实回放 'Who directed Dune: Part Three?' 返回1984年 Dune 的 David Lynch。当前相同问题返回 needs_confirmation；A-016 已声明。",
-      "status": "本轮反例已修复"
+      "issue": "未知副标题或罗马数字续集退化为前作",
+      "status": "Dune: Part Three和Inception II均返回needs_confirmation，未直接回答；与A-016一致。"
     },
     {
-      "issue": "角色限定被忽略并返回整个演员列表",
-      "evidence": "初次真实回放 'Which actor played Cobb in Inception?' 返回全部21名演员，status=answered。当前同一问题明确阻止角色筛选；A-017 已声明。",
-      "status": "本轮反例已修复"
+      "issue": "角色限定被演员列表替代",
+      "status": "Cobb角色问题返回unsupported，证据为空；与A-017一致。"
     },
     {
-      "issue": "未枚举的地区限定被忽略",
-      "evidence": "初次真实回放 '盗梦空间日本上映日期' 返回6条记录，包括London和Germany，status=answered。当前同一问题明确阻止未支持的筛选；A-018 已声明。",
-      "status": "本轮反例已修复"
+      "issue": "日本上映地区限定被忽略",
+      "status": "原中文反例返回unsupported，证据为空；与A-018一致。"
     },
     {
-      "issue": "同名电影确认丢失另一部已识别电影",
-      "evidence": "原候选代码遇到任意歧义便清空已识别ID，UI只提交点击的一个ID。最新工作树保留已识别ID并合并确认ID；A-019 已声明。",
-      "status": "原代码路径已修复；完整UI流程待第二轮复核"
+      "issue": "候选确认丢失已识别电影",
+      "status": "Inception与Scream问题保留Inception；按UI使用的单候选确认载荷提交后，两部电影均保留，分页继续保留。两个同名槽位返回needs_clarification；与A-019一致。"
+    },
+    {
+      "issue": "混合语言问句按任意汉字选择中文",
+      "status": "行为仍可复现，现已由A-020明确声明，未发现记录与代码不一致。"
     }
   ],
-  "reviewer_model": "Codex，GPT-6系列；当前接口未提供可核实的精确运行时模型ID。",
-  "independence": "同系列审查，结论仅为暂定，不构成独立免责结论。",
-  "basis": "已直接读取SPEC、ASSUMPTIONS、BUILD_NOTE、基准至ad18a8e的原始实现差异及随后工作树补丁；运行本地只读诊断，未修改仓库、启动服务器或联系外部服务。"
+  "reviewer_model": "Codex，GPT-6系列；当前接口未暴露可核实的精确运行时模型ID。",
+  "independence": "同系列审查，clean仅表示本轮限定范围未发现剩余未声明假设或stale rows；结论仍为provisional，不构成独立免责结论。",
+  "basis": "直接读取指定四份审阅材料和原始代码差异，并通过localhost:7863/api/explore完成10次只读回放，包括候选确认与后续分页。未修改文件，未启动服务器，未扩大功能审计范围。"
 }
