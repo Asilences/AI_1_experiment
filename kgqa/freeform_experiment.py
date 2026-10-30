@@ -21,11 +21,12 @@ def arguments(argv=None):
     parser.add_argument('--memory-fraction', type=float, default=.25)
     parser.add_argument('--threads', type=int, default=2)
     parser.add_argument('--batch-size', type=int, default=8)
+    parser.add_argument('--input-max-length', type=int, default=512)
     parser.add_argument('--gradient-accumulation', type=int, default=2)
     parser.add_argument('--learning-rate', type=float, default=3e-5)
     parser.add_argument('--epochs', type=int, default=3)
     args = parser.parse_args(argv)
-    if not 0 < args.memory_fraction <= 1 or min(args.threads, args.batch_size, args.gradient_accumulation, args.epochs) < 1:
+    if not 0 < args.memory_fraction <= 1 or min(args.threads, args.batch_size, args.gradient_accumulation, args.epochs, args.input_max_length) < 1:
         parser.error('Resource fractions and integer sizes must be positive; memory fraction must be <= 1.')
     if args.gpu < 0 or args.learning_rate <= 0:
         parser.error('GPU index must be nonnegative and learning rate must be positive.')
@@ -113,7 +114,7 @@ def main(argv=None):
         if args.mode == 'train':
             train(args.run_id, args.learning_rate, True, args.epochs, False,
                   batch_size=args.batch_size, gradient_accumulation=args.gradient_accumulation,
-                  input_max_length=384, eval_batch_size=args.batch_size,
+                  input_max_length=args.input_max_length, eval_batch_size=args.batch_size,
                   data_dir=args.data_dir, embedding_dir=args.embedding_dir, initial_checkpoint=args.initial_checkpoint)
         else:
             graph = GraphData(True, args.data_dir, args.embedding_dir)
@@ -128,13 +129,13 @@ def main(argv=None):
                 if not rows:
                     raise ValueError('No validation questions')
                 loader = DataLoader(QADataset(rows, graph, link_questions=True), batch_size=args.batch_size,
-                                    collate_fn=Collator(tokenizer, True))
+                                    collate_fn=Collator(tokenizer, True, args.input_max_length))
                 predictions, loss = validation_outputs(model, loader, tokenizer, graph.entities, device)
                 write_jsonl(run / 'predictions_valid.jsonl', predictions)
                 write_json(run / 'metrics_valid.json', {**score_rows(rows, predictions, graph.entities), 'validation_loss': loss})
                 write_json(run / 'config.json', {'data_dir': str(args.data_dir), 'embedding_dir': str(args.embedding_dir),
                            'initial_checkpoint': str(args.initial_checkpoint), 'mode': 'baseline_valid_only',
-                           'test_used': False, 'batch_size': args.batch_size, 'seed': 42,
+                           'test_used': False, 'batch_size': args.batch_size, 'input_max_length': args.input_max_length, 'seed': 42,
                            'metric_note': 'Raw generation; main AnswerEntityIndex decoder with retrieved fact context; no name recovery/adapter.'})
             else:
                 # Real CUDA dispatch, gradients and optimizer states, then actual T5 generation.
@@ -148,7 +149,7 @@ def main(argv=None):
                 fact_counts = {qid: sum(len(tails) for tails in entity.get('facts', {}).values())
                                for qid, entity in graph.entities.items()}
                 train_rows.sort(key=lambda row: (fact_counts[row['movie_id']], len(row['reference_answers'][0])), reverse=True)
-                batch = Collator(tokenizer, True)([QADataset(train_rows[:args.batch_size], graph)[i] for i in range(min(args.batch_size, len(train_rows)))])
+                batch = Collator(tokenizer, True, args.input_max_length)([QADataset(train_rows[:args.batch_size], graph)[i] for i in range(min(args.batch_size, len(train_rows)))])
                 batch.pop('rows')
                 batch = move(batch, device)
                 optimizer = torch.optim.AdamW(model.parameters(), lr=args.learning_rate)
