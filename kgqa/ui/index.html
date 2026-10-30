@@ -22,8 +22,8 @@
 
   <div class="workspace">
     <aside class="sidebar" aria-label="知识库与历史提问">
-      <div class="sidebar-heading"><span class="eyebrow">YOUR FILM LIBRARY</span><h2>从一部电影开始<span id="library-count">—</span></h2><p>搜索已收录的电影，点击片名快速提问。</p></div>
-      <label class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><input id="movie-search" type="search" placeholder="搜索片名、别名或 QID" aria-label="搜索知识库电影" autocomplete="off"></label>
+      <div class="sidebar-heading"><span class="eyebrow">YOUR FILM LIBRARY</span><h2>从一部电影开始<span id="library-count">—</span></h2><p>搜索中英文片名，选择电影与想了解的关系。</p></div>
+      <label class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><input id="movie-search" type="search" placeholder="搜索中英文片名、别名或 QID" aria-label="搜索知识库电影" autocomplete="off"></label>
       <div class="library-meta"><span id="search-summary">正在读取知识库</span><span id="dataset-name">本地快照</span></div>
       <div id="movie-list" class="movie-list" aria-live="polite"></div>
       <button class="load-more" id="load-more" type="button" hidden>加载更多电影 <span aria-hidden="true">↓</span></button>
@@ -43,8 +43,9 @@
 
       <section class="composer" aria-label="输入问题">
         <form id="question-form">
-          <div class="composer-top"><label for="question">你想了解什么？</label><span class="language-tag">英文提问 · 中文界面</span></div>
-          <textarea id="question" name="question" rows="2" maxlength="1000" placeholder="Who directed Shutter Island?" required aria-describedby="question-hint"></textarea>
+          <div class="composer-top"><label for="question">你想了解什么？</label><label class="language-control" for="question-language"><span>提问语言</span><select id="question-language"><option value="zh" selected>中文</option><option value="en">English</option></select></label></div>
+          <div id="movie-templates" class="movie-templates" hidden><span id="selected-movie-name" class="selected-movie-name"></span><div id="relation-options" class="relation-options" role="group" aria-label="选择电影问题类型"></div></div>
+          <textarea id="question" name="question" rows="2" maxlength="1000" placeholder="《禁闭岛》的导演是谁？" required aria-describedby="question-hint question-scope"></textarea>
           <div class="composer-bottom">
             <fieldset class="system-switch"><legend class="visually-hidden">选择问答系统</legend><label><input type="radio" name="system" value="both" checked><span>双系统对比</span></label><label><input type="radio" name="system" value="a0"><span>A0 管道问答</span></label><label><input type="radio" name="system" value="best"><span id="neural-option">神经生成</span></label></fieldset>
             <button class="ask-button" id="ask-button" type="submit"><span id="ask-label">开始提问</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
@@ -52,6 +53,7 @@
         </form>
       </section>
       <div class="question-helper"><span id="question-hint">Enter 提问，Shift + Enter 换行</span><span id="question-count">0 / 1000</span></div>
+      <p id="question-scope" class="question-scope">支持中文或英文提问：导演、电影类型、制作国家、原始语言。</p>
 
       <div class="example-row"><span class="example-label">试着问</span><div id="example-list" class="example-list"></div></div>
       <div id="request-error" class="notice error-notice" role="alert" hidden></div>
@@ -63,7 +65,7 @@
         <div id="results" class="results-grid"></div>
         <div id="empty-state" class="empty-state">
           <svg class="graph-illustration" viewBox="0 0 220 110" aria-hidden="true"><path d="m49 55 60-28 62 28-62 28zM49 55h122M109 27v56"/><circle cx="49" cy="55" r="8"/><circle cx="109" cy="27" r="8"/><circle cx="109" cy="83" r="8"/><circle cx="171" cy="55" r="8"/><circle class="graph-center" cx="109" cy="55" r="12"/></svg>
-          <h3>让事实连接起你的问题</h3><p>输入英文问题，或从左侧选择一部电影。<br>这里将展示回答、实体链接与图谱事实。</p>
+          <h3>让事实连接起你的问题</h3><p id="empty-description">输入中文问题，或选择电影与问题类型。<br>这里将展示回答、实体链接与图谱事实。</p>
           <div class="relation-tags"><span>导演</span><span>电影类型</span><span>制作国家</span><span>原始语言</span></div>
         </div>
         <p id="timing-note" class="timing-note" hidden>处理耗时包含问答调用，首次使用可能包含模型加载；双系统对比时按顺序处理。页面耗时仅供交互观察，不作为正式性能评测。</p>
@@ -75,9 +77,10 @@
   <template id="answer-template">
     <article class="answer-card">
       <div class="card-top"><div><span class="card-eyebrow"></span><h3 class="system-name"></h3></div><span class="result-badge"></span></div>
-      <div class="card-body"><p class="answer-text" lang="en"></p><p class="card-error" hidden></p><div class="answer-tools"><span class="system-timing"></span><button class="copy-button text-button" type="button" aria-label="复制答案">复制答案 <span aria-hidden="true">↗</span></button></div>
+      <div class="card-body"><p class="answer-text"></p><p class="card-error" hidden></p><div class="answer-tools"><span class="system-timing"></span><button class="copy-button text-button" type="button" aria-label="复制答案">复制答案 <span aria-hidden="true">↗</span></button></div>
         <div class="link-info"><div><span class="info-label">链接电影</span><strong class="movie-name"></strong></div><div class="link-badges"><span class="link-method"></span><span class="relation-name"></span></div></div>
         <details class="evidence-details" open><summary><span class="evidence-label"></span><span class="evidence-count"></span></summary><ul class="evidence-list"></ul></details>
+        <details class="processing-details" hidden><summary>查看语言处理与模型原文</summary><div class="processing-content"></div></details>
       </div>
     </article>
   </template>

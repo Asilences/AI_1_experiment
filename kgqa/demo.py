@@ -27,6 +27,7 @@ class Demo:
         self.movie_ids = sum(self.splits.values(), [])
         model, threshold = load_model(Path(model_path)) if model_path is not None else load_model()
         self.pipeline = PipelineQA(self.entities, self.movie_ids, model, threshold)
+        self.chinese = self.pipeline.chinese
         self.linker = EntityLinker(self.movie_ids, self.entities)
         self.neural_run = None
         self.neural = None
@@ -61,7 +62,7 @@ class Demo:
             f"{entity_label(self.entities, head)} --{relation}--> {entity_label(self.entities, tail)}"
             for head, relation, tail in result.get('evidence', [])
         ]
-        return {
+        response = {
             'system': 'A0 管道式系统',
             'movie': entity_label(self.entities, result.get('movie_id')),
             'link_status': result.get('link_status', ''),
@@ -71,27 +72,60 @@ class Demo:
             'answer': result['answer'],
             'latency_ms': result.get('latency_ms', 0),
         }
+        response.update(movie_id=result.get('movie_id'), answer_ids=result.get('answer_ids', []))
+        for key in ('language', 'model_question', 'original_answer', 'language_status', 'language_note', 'refused'):
+            if key in result:
+                response[key] = result[key]
+        return response
 
     def answer_neural(self, question):
+        prepared = None
+        if any('\u3400' <= char <= '\u9fff' for char in question):
+            prepared = self.chinese.prepare(question)
+            if prepared.language != 'zh':
+                prepared = None
+        if prepared is not None and prepared.status != 'success':
+            return {'system': '神经生成系统', 'movie': '未识别', 'movie_id': None,
+                    'link_status': prepared.status, 'evidence': [], 'answer_ids': [],
+                    'answer': prepared.reason, 'original_answer': REFUSAL, 'refused': True,
+                    'language': 'zh', 'model_question': prepared.model_question,
+                    'language_status': prepared.status, 'language_note': prepared.reason, 'latency_ms': 0}
         if self.neural is None:
             self._load_neural()
         system_name = f'{self.neural_run} 神经生成系统' + (' + 名称恢复' if self.recover_names else '')
-        movie_id, link_score, link_status = self.linker.link(question)
+        if prepared is not None:
+            movie_id, link_score, link_status = prepared.movie_id, 1.0, 'exact'
+        else:
+            movie_id, link_score, link_status = self.linker.link(question)
         if not movie_id:
             return {'system': system_name, 'movie': '未识别', 'link_status': link_status,
                     'evidence': [], **self._recover_generated(REFUSAL, None), 'latency_ms': 0}
         from torch.utils.data import DataLoader
         from .neural import Collator, QADataset, predictions
-        row = {'question_id': 'interactive', 'question': question, 'movie_id': movie_id,
+        row = {'question_id': 'interactive', 'question': prepared.model_question if prepared else question, 'movie_id': movie_id,
                'reference_answers': [REFUSAL], 'answer_ids': [], 'relation_id': 'UNKNOWN', 'is_answerable': False}
         loader = DataLoader(QADataset([row], self.graph), batch_size=1,
                             collate_fn=Collator(self.tokenizer, self.graph.use_embeddings,
                                                 getattr(self, 'neural_config', {}).get('input_max_length', 384)))
         result = predictions(self.neural, loader, self.tokenizer, self.entities, self.device)[0]
         evidence = [item[0] for item in self.graph.facts(movie_id)]
-        return {'system': system_name, 'movie': entity_label(self.entities, movie_id),
+        response = {'system': system_name, 'movie': entity_label(self.entities, movie_id), 'movie_id': movie_id,
                 'link_status': f'{link_status}, score={link_score:.3f}', 'evidence': evidence,
                 **self._recover_generated(result['answer'], movie_id), 'latency_ms': result['latency_ms']}
+        if prepared is not None:
+            from .metrics import AnswerEntityIndex
+            original = response['answer']
+            if not hasattr(self, 'answer_index'):
+                self.answer_index = AnswerEntityIndex(self.entities)
+            candidates = self.graph.fact_tail_ids(movie_id) if hasattr(self.graph, 'fact_tail_ids') else ()
+            predicted_ids = self.answer_index.match(original, movie_id, preferred_ids=candidates)
+            response.update(language='zh', model_question=prepared.model_question,
+                            original_answer=original, language_status=prepared.status,
+                            language_note='中文问题经离线片名与属性识别后，交由原英文神经模型生成；中文展示保留实际生成内容。',
+                            input_relation=prepared.relation_id, answer_ids=predicted_ids,
+                            refused=original == REFUSAL)
+            response['answer'] = self.chinese.localize_generated(original, movie_id)
+        return response
 
     def _recover_generated(self, raw_answer, movie_id):
         if not self.recover_names:
@@ -142,8 +176,8 @@ def run(question=None, system='both', data_dir=None, model_path=None, recover_na
         if system in ('best', 'both'): print_result(demo.answer_neural(text))
     if question:
         answer(question); return
-    print('电影知识图谱问答演示。请输入英文问题；输入 exit 结束。')
-    print('示例：Who directed Shutter Island? / What genre is Boss Level?')
+    print('电影知识图谱问答演示。可输入中文或英文问题；输入 exit 结束。')
+    print('示例：《盗梦空间》的导演是谁？ / Who directed Shutter Island?')
     while True:
         try: text = input('\nQuestion> ').strip()
         except (EOFError, KeyboardInterrupt): break

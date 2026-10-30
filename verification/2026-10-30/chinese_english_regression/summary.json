@@ -1,0 +1,36 @@
+{
+  "created_at": "2026-10-30T16:02:28Z",
+  "status": "PASS",
+  "count": 8917,
+  "changed_count": 0,
+  "differences": [],
+  "compared_fields": [
+    "movie_id",
+    "relation_id",
+    "answer_ids as exact set",
+    "answer text"
+  ],
+  "baseline_sha256": "b0ecaece1ec99fd9fcb67267f37dbe4ade220067a8884db59979a8ae206e54be",
+  "asset_sha256_before": {
+    "baseline": "b0ecaece1ec99fd9fcb67267f37dbe4ade220067a8884db59979a8ae206e54be",
+    "data": "7c935d8fa1eecd9870df16e49d93460bdd75f90255661e4e4e397af9f667f3e8",
+    "model": "a14f3ee60168e3f0a2eefcda403c58400e861c1708dceebe63c396e1e8faa8dd"
+  },
+  "asset_sha256_after": {
+    "baseline": "b0ecaece1ec99fd9fcb67267f37dbe4ade220067a8884db59979a8ae206e54be",
+    "data": "7c935d8fa1eecd9870df16e49d93460bdd75f90255661e4e4e397af9f667f3e8",
+    "model": "a14f3ee60168e3f0a2eefcda403c58400e861c1708dceebe63c396e1e8faa8dd"
+  },
+  "source_sha256": {
+    "kgqa\\pipeline.py": "6712db1e6acc5d5d44f0ba15e8de2505acb9d3ecf3ed995eb50eaa996091b89d",
+    "kgqa\\chinese.py": "730cb48ecf8bd2174f18bae5318b68411ffd6240530c5b9fa154e405b814c62a",
+    "kgqa\\linker.py": "0a7e2bf48fbb7e523b4ba4f22a9ec293fe2be458e87a621a7601c61702fdb180"
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "python",
+    "sklearn": "1.6.1"
+  },
+  "elapsed_seconds": 10.082820399999036,
+  "scope": "Actual original English test questions run through current PipelineQA.predict; compare output to preserved A0 experiment prediction IDs, relations and answer text; no gold supplied to prediction."
+}

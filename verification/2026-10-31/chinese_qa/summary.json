@@ -1,0 +1,348 @@
+{
+  "created_at": "2026-10-30T16:08:45Z",
+  "benchmark": "chinese_controlled_acceptance_v2",
+  "fixture_protocol": "v2 post-diagnostic revision: append the stored release year outside every positive title when available, uniformly across all selected movies and variants. v1 contained eight correctly refused ambiguous unqualified titles; no adapter change or correctness-based movie selection is made to force an answer.",
+  "scope": "Deterministic template-controlled Chinese interface acceptance on movie-held-out valid/test IDs in a visible frozen knowledge graph; not independently collected natural Chinese QA, multilingual retraining, or open-domain generalization.",
+  "independent_natural_language_collection": false,
+  "training_runs": 0,
+  "fixture_sha256": "045b5186f341b8cd767c7360d0ec9748b7c06cd550e2c7e337d7a494aa6ff988",
+  "gold_sha256": "79280436121a1468ecbf0774b695c3135852fa960f772623174fbf5b0e197960",
+  "source_sha256": {
+    "kgqa/chinese.py": "81ddedfd53a2a76ff870760209e0b46e37cbeebd43c52c5b8aa0f733c8a4199d",
+    "kgqa/pipeline.py": "6712db1e6acc5d5d44f0ba15e8de2505acb9d3ecf3ed995eb50eaa996091b89d",
+    "kgqa/linker.py": "0a7e2bf48fbb7e523b4ba4f22a9ec293fe2be458e87a621a7601c61702fdb180",
+    "kgqa/common.py": "8edce50100c3072bd134d77c77d0f4c45de5362219fe503b690b336fbc487705",
+    "benchmarks/run_chinese_acceptance.py": "3f4f9444b12bdf33864840844f32b214e76038d627c7b1f735da23ec2280cf4b",
+    "kgqa/locales/zh_entities.json": "04af74abbd757d09994c7d84ec39aec9e62786ea82a09bad5b75247c00372313"
+  },
+  "asset_sha256_before": {
+    "data/entities.json": "7c935d8fa1eecd9870df16e49d93460bdd75f90255661e4e4e397af9f667f3e8",
+    "data/splits.json": "dd24634f590e3e5dd38dc2e5ca7fd25b432ec3b562f74dc99a65b22d586113b7",
+    "data/qa.jsonl": "2882b2077834d37f4b1ae8f9b8ea90561c8c5dacecf4247907311d0cbb8bb310",
+    "data/manifest.json": "5f74de78743157698334c0682bcd2b0e990e54a71a3c920fa970b73e9e544d06",
+    "model/model.pkl": "a14f3ee60168e3f0a2eefcda403c58400e861c1708dceebe63c396e1e8faa8dd",
+    "model/config.json": "8d8e16320f9fbae2f20eda977e01c38fbcdd45fccc46c5a7928fb47f21929ce8"
+  },
+  "a0": {
+    "count": 260,
+    "positive_count": 240,
+    "negative_count": 20,
+    "positive_entity_exact": 1.0,
+    "input_entity_link_accuracy": 1.0,
+    "input_intent_accuracy": 1.0,
+    "predicted_relation_accuracy": 1.0,
+    "negative_refusal_accuracy": 1.0,
+    "chinese_output_coverage": 1.0,
+    "by_split": {
+      "test": {
+        "count": 130,
+        "positive_count": 120,
+        "negative_count": 10,
+        "positive_entity_exact": 1.0,
+        "input_entity_link_accuracy": 1.0,
+        "input_intent_accuracy": 1.0,
+        "predicted_relation_accuracy": 1.0,
+        "negative_refusal_accuracy": 1.0,
+        "chinese_output_coverage": 1.0
+      },
+      "valid": {
+        "count": 130,
+        "positive_count": 120,
+        "negative_count": 10,
+        "positive_entity_exact": 1.0,
+        "input_entity_link_accuracy": 1.0,
+        "input_intent_accuracy": 1.0,
+        "predicted_relation_accuracy": 1.0,
+        "negative_refusal_accuracy": 1.0,
+        "chinese_output_coverage": 1.0
+      }
+    },
+    "by_variant": {
+      "canonical": {
+        "count": 80,
+        "positive_count": 80,
+        "negative_count": 0,
+        "positive_entity_exact": 1.0,
+        "input_entity_link_accuracy": 1.0,
+        "input_intent_accuracy": 1.0,
+        "predicted_relation_accuracy": 1.0,
+        "negative_refusal_accuracy": null,
+        "chinese_output_coverage": 1.0
+      },
+      "mixed_name": {
+        "count": 80,
+        "positive_count": 80,
+        "negative_count": 0,
+        "positive_entity_exact": 1.0,
+        "input_entity_link_accuracy": 1.0,
+        "input_intent_accuracy": 1.0,
+        "predicted_relation_accuracy": 1.0,
+        "negative_refusal_accuracy": null,
+        "chinese_output_coverage": 1.0
+      },
+      "negative": {
+        "count": 20,
+        "positive_count": 0,
+        "negative_count": 20,
+        "positive_entity_exact": null,
+        "input_entity_link_accuracy": null,
+        "input_intent_accuracy": null,
+        "predicted_relation_accuracy": null,
+        "negative_refusal_accuracy": 1.0,
+        "chinese_output_coverage": 1.0
+      },
+      "paraphrase": {
+        "count": 80,
+        "positive_count": 80,
+        "negative_count": 0,
+        "positive_entity_exact": 1.0,
+        "input_entity_link_accuracy": 1.0,
+        "input_intent_accuracy": 1.0,
+        "predicted_relation_accuracy": 1.0,
+        "negative_refusal_accuracy": null,
+        "chinese_output_coverage": 1.0
+      }
+    },
+    "by_relation": {
+      "P57": {
+        "count": 60,
+        "positive_count": 60,
+        "negative_count": 0,
+        "positive_entity_exact": 1.0,
+        "input_entity_link_accuracy": 1.0,
+        "input_intent_accuracy": 1.0,
+        "predicted_relation_accuracy": 1.0,
+        "negative_refusal_accuracy": null,
+        "chinese_output_coverage": 1.0
+      },
+      "P136": {
+        "count": 60,
+        "positive_count": 60,
+        "negative_count": 0,
+        "positive_entity_exact": 1.0,
+        "input_entity_link_accuracy": 1.0,
+        "input_intent_accuracy": 1.0,
+        "predicted_relation_accuracy": 1.0,
+        "negative_refusal_accuracy": null,
+        "chinese_output_coverage": 1.0
+      },
+      "P495": {
+        "count": 60,
+        "positive_count": 60,
+        "negative_count": 0,
+        "positive_entity_exact": 1.0,
+        "input_entity_link_accuracy": 1.0,
+        "input_intent_accuracy": 1.0,
+        "predicted_relation_accuracy": 1.0,
+        "negative_refusal_accuracy": null,
+        "chinese_output_coverage": 1.0
+      },
+      "P364": {
+        "count": 60,
+        "positive_count": 60,
+        "negative_count": 0,
+        "positive_entity_exact": 1.0,
+        "input_entity_link_accuracy": 1.0,
+        "input_intent_accuracy": 1.0,
+        "predicted_relation_accuracy": 1.0,
+        "negative_refusal_accuracy": null,
+        "chinese_output_coverage": 1.0
+      }
+    },
+    "status": "PASS"
+  },
+  "chinese_metadata_coverage": {
+    "movie_count": 5000,
+    "movies_with_chinese_label": 3984,
+    "selected_movies": 20,
+    "answer_entity_occurrences": 450,
+    "answer_entity_occurrences_with_chinese_label": 0,
+    "answer_entity_occurrences_with_chinese_display_label": 375,
+    "fallback": "Original entity label, then QID; no fabricated Chinese translation."
+  },
+  "status": "PASS",
+  "model_dataset_pairing_config_checked": true,
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "python",
+    "packages": {
+      "numpy": "1.26.4",
+      "scipy": "1.17.1",
+      "scikit-learn": "1.6.1"
+    }
+  },
+  "limits": [
+    "Shared hand-written templates; only 20 selected movies at default size.",
+    "Visible graph facts are the answer source; movie holdout is not graph holdout.",
+    "Incomplete movies and movies without Chinese labels are excluded by design.",
+    "mixed_name preserves stored question_title, which may itself be Chinese.",
+    "A Chinese sentence can contain original names when Chinese metadata is missing.",
+    "Does not replace, rescore, or alter the frozen English neural experiment."
+  ],
+  "prior_diagnostic": {
+    "summary_sha256": "97d6bba99d17f102fe01dd00f5d3de516d5fdfe66a87e0b80ee5bfdcd0ec3cea",
+    "fixture_sha256": "c7ba7ac290436b96e172ee2e358eaa22bf9bf3ef048bbae8bf1d8781075443ae",
+    "source_sha256": {
+      "kgqa/chinese.py": "730cb48ecf8bd2174f18bae5318b68411ffd6240530c5b9fa154e405b814c62a",
+      "kgqa/pipeline.py": "6712db1e6acc5d5d44f0ba15e8de2505acb9d3ecf3ed995eb50eaa996091b89d",
+      "kgqa/linker.py": "0a7e2bf48fbb7e523b4ba4f22a9ec293fe2be458e87a621a7601c61702fdb180",
+      "kgqa/common.py": "8edce50100c3072bd134d77c77d0f4c45de5362219fe503b690b336fbc487705",
+      "benchmarks/run_chinese_acceptance.py": "863287edb6e4420fd14f2daa81d3b01cce827991a6d2a7ee02d321b648d706da"
+    },
+    "a0": {
+      "count": 260,
+      "positive_count": 240,
+      "negative_count": 20,
+      "positive_entity_exact": 0.9666666666666667,
+      "input_entity_link_accuracy": 0.9666666666666667,
+      "input_intent_accuracy": 1.0,
+      "predicted_relation_accuracy": 0.9666666666666667,
+      "negative_refusal_accuracy": 1.0,
+      "chinese_output_coverage": 1.0,
+      "by_split": {
+        "test": {
+          "count": 130,
+          "positive_count": 120,
+          "negative_count": 10,
+          "positive_entity_exact": 0.9333333333333333,
+          "input_entity_link_accuracy": 0.9333333333333333,
+          "input_intent_accuracy": 1.0,
+          "predicted_relation_accuracy": 0.9333333333333333,
+          "negative_refusal_accuracy": 1.0,
+          "chinese_output_coverage": 1.0
+        },
+        "valid": {
+          "count": 130,
+          "positive_count": 120,
+          "negative_count": 10,
+          "positive_entity_exact": 1.0,
+          "input_entity_link_accuracy": 1.0,
+          "input_intent_accuracy": 1.0,
+          "predicted_relation_accuracy": 1.0,
+          "negative_refusal_accuracy": 1.0,
+          "chinese_output_coverage": 1.0
+        }
+      },
+      "by_variant": {
+        "canonical": {
+          "count": 80,
+          "positive_count": 80,
+          "negative_count": 0,
+          "positive_entity_exact": 0.95,
+          "input_entity_link_accuracy": 0.95,
+          "input_intent_accuracy": 1.0,
+          "predicted_relation_accuracy": 0.95,
+          "negative_refusal_accuracy": null,
+          "chinese_output_coverage": 1.0
+        },
+        "mixed_name": {
+          "count": 80,
+          "positive_count": 80,
+          "negative_count": 0,
+          "positive_entity_exact": 1.0,
+          "input_entity_link_accuracy": 1.0,
+          "input_intent_accuracy": 1.0,
+          "predicted_relation_accuracy": 1.0,
+          "negative_refusal_accuracy": null,
+          "chinese_output_coverage": 1.0
+        },
+        "negative": {
+          "count": 20,
+          "positive_count": 0,
+          "negative_count": 20,
+          "positive_entity_exact": null,
+          "input_entity_link_accuracy": null,
+          "input_intent_accuracy": null,
+          "predicted_relation_accuracy": null,
+          "negative_refusal_accuracy": 1.0,
+          "chinese_output_coverage": 1.0
+        },
+        "paraphrase": {
+          "count": 80,
+          "positive_count": 80,
+          "negative_count": 0,
+          "positive_entity_exact": 0.95,
+          "input_entity_link_accuracy": 0.95,
+          "input_intent_accuracy": 1.0,
+          "predicted_relation_accuracy": 0.95,
+          "negative_refusal_accuracy": null,
+          "chinese_output_coverage": 1.0
+        }
+      },
+      "status": "FAIL"
+    },
+    "explanation": "Eight unqualified Captain America title cases were correctly refused as ambiguous; fixture specification issue, not a product error.",
+    "environment_note": "v1 ran with qa-env (Anaconda base, include-system-site-packages=true), scikit-learn 1.5.1 versus pickle training 1.6.1; incompatible-version warnings occurred. v2 records and uses the clean runtime.",
+    "interpretation": "Post-diagnostic protocol revision, not independent confirmation on newly collected natural questions."
+  },
+  "neural_http_fixture_sha256": "d42541daf066d8b2bc23e5dcd36c00313ded11b0c9dcc33be031f635831c6452",
+  "neural_http": {
+    "status": "COMPLETED",
+    "count": 16,
+    "entity_exact_or_correct_refusal": 0.0,
+    "positive_count": 8,
+    "negative_count": 8,
+    "positive_entity_exact": 0.0,
+    "negative_refusal_accuracy": 0.0,
+    "chinese_output_coverage": 0.0,
+    "scope": "Small real neural HTTP smoke sample; no statistical generalization claim.",
+    "server_status": {
+      "movie_count": 5000,
+      "fact_count": 35485,
+      "dataset_name": "扩展电影库 · 5000 部",
+      "relation_count": 4,
+      "custom_data": false,
+      "examples": [
+        {
+          "relation": "P57",
+          "question": "Who directed Shutter Island?"
+        },
+        {
+          "relation": "P136",
+          "question": "What genre is Boss Level?"
+        },
+        {
+          "relation": "P495",
+          "question": "Which country did Dogma originate in?"
+        },
+        {
+          "relation": "P364",
+          "question": "What is the original language of 10 Things I Hate About You?"
+        }
+      ],
+      "a0": {
+        "available": true,
+        "name": "A0 管道问答",
+        "detail": "本地模型就绪。"
+      },
+      "neural": {
+        "available": true,
+        "name": "B0 神经生成 + 名称恢复",
+        "run_id": "B0",
+        "detail": "首次使用时加载本地模型。"
+      }
+    },
+    "operator_supplied_model_sha256": {
+      "config.json": "b5ba6220a244394c6cdcded46a3e9fbfaee46ff82c2943298e37594d4be01aaf",
+      "generation_config.json": "ecae1f3c45a233e11c64c5c7c7ec8964bc37be51660dbd45a8059d4bc07e067a",
+      "graph_prefix.pt": "28c5302fa607e3795e2fd9bbda1817db73a997ab2535ff2f739f456520e62bcc",
+      "model.safetensors": "b41686667744a47547ded262eb8bce77e8a7c649e69472c1a092bb25d86358e1",
+      "special_tokens_map.json": "65d84a9271d68f1230ab99518c00f0f7eaef95c7b363001595ba6fa662d434b1",
+      "spiece.model": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86",
+      "tokenizer.json": "dc856f1be037756d043c1557df9a075bb8658c03c26405ef78a9fc759521cc3e",
+      "tokenizer_config.json": "f0f4630efa94e1d9e93c877ecdf2e45a8b9685037f752eddf0611508425b967b"
+    },
+    "model_identity_note": "Operator-supplied files; HTTP does not attest server checkpoint identity."
+  },
+  "asset_sha256_after": {
+    "data/entities.json": "7c935d8fa1eecd9870df16e49d93460bdd75f90255661e4e4e397af9f667f3e8",
+    "data/splits.json": "dd24634f590e3e5dd38dc2e5ca7fd25b432ec3b562f74dc99a65b22d586113b7",
+    "data/qa.jsonl": "2882b2077834d37f4b1ae8f9b8ea90561c8c5dacecf4247907311d0cbb8bb310",
+    "data/manifest.json": "5f74de78743157698334c0682bcd2b0e990e54a71a3c920fa970b73e9e544d06",
+    "model/model.pkl": "a14f3ee60168e3f0a2eefcda403c58400e861c1708dceebe63c396e1e8faa8dd",
+    "model/config.json": "8d8e16320f9fbae2f20eda977e01c38fbcdd45fccc46c5a7928fb47f21929ce8"
+  },
+  "input_assets_unchanged": true,
+  "fixture_unchanged": true,
+  "source_unchanged": true
+}
