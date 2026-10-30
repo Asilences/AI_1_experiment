@@ -1,0 +1,30 @@
+{
+  "main": "b2431f69690431d164c20f9fa6968c265ce0cce9",
+  "main_latest_subject": "Merge pull request #8 from Asilences/codex/publish-movie-dataset",
+  "teammate_ref": "origin/feature/expanded-neural-full",
+  "teammate_commit": "c71ff0e8b1e0a79b61bd2b148fa12ecaafe6b59a",
+  "teammate_commits_not_in_main": [
+    "c71ff0e 更新个人实验报告并归档A0补充阈值实际运行记录",
+    "04db527 增加离线中英文电影问答、展示元数据及受控验收证据",
+    "d494b84 完成5000部电影完整神经实验、评测与验收材料"
+  ],
+  "copies": {
+    "teammate_threshold_summary.json": {
+      "git_path": "reports/补充阈值运行记录/summary.json",
+      "source_ref": "origin/feature/expanded-neural-full"
+    },
+    "teammate_summary_metrics.json": {
+      "git_path": "verification/2026-10-30/summary_metrics.json",
+      "source_ref": "origin/feature/expanded-neural-full"
+    },
+    "teammate_B0_config.json": {
+      "git_path": "verification/2026-10-30/runs/B0/config.json",
+      "source_ref": "origin/feature/expanded-neural-full"
+    },
+    "teammate_neural_selection.json": {
+      "git_path": "verification/2026-10-30/selected_model.json",
+      "source_ref": "origin/feature/expanded-neural-full"
+    }
+  },
+  "note": "Read-only copies for this audit. The teammate branch has not been merged or activated locally."
+}

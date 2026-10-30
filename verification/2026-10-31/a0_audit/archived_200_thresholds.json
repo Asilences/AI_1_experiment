@@ -1,0 +1,41 @@
+{
+  "scope": "Archived 200-movie sensitivity summary; not a live rerun. Same classifier, repeated inference.",
+  "source": "verification/2026-10-29/runs/A0/sensitivity_summary.json",
+  "settings": [
+    {
+      "setting": "baseline",
+      "threshold": 0.3,
+      "count": 370,
+      "entity_exact": 100.0,
+      "answerable_exact": 100.0
+    },
+    {
+      "setting": "threshold_030",
+      "threshold": 0.3,
+      "count": 370,
+      "entity_exact": 100.0,
+      "answerable_exact": 100.0
+    },
+    {
+      "setting": "threshold_070",
+      "threshold": 0.7,
+      "count": 370,
+      "entity_exact": 100.0,
+      "answerable_exact": 100.0
+    },
+    {
+      "setting": "threshold_090",
+      "threshold": 0.9,
+      "count": 370,
+      "entity_exact": 100.0,
+      "answerable_exact": 100.0
+    },
+    {
+      "setting": "threshold_099",
+      "threshold": 0.99,
+      "count": 370,
+      "entity_exact": 9.18918918918919,
+      "answerable_exact": 0.0
+    }
+  ]
+}

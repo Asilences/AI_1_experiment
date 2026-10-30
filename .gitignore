@@ -1,5 +1,6 @@
 .venv/
 .work/
+.aris/
 /data/raw/*
 !/data/raw/expansion_5000_20261029/
 /data/raw/expansion_5000_20261029/*

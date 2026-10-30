@@ -1,0 +1,247 @@
+{
+  "generated_at": "2026-10-30T18:46:08.016524+00:00",
+  "code_commit": "b8fadde9a4f8c34306a082b6b60e4f937ac47a9e",
+  "scope": "Published frozen 5000-movie V1 template QA; not V2 or a new held-out generalization experiment.",
+  "input_sha256": {
+    "data/processed/movies_5000_20261029/qa.jsonl": "2882b2077834d37f4b1ae8f9b8ea90561c8c5dacecf4247907311d0cbb8bb310",
+    "data/processed/movies_5000_20261029/entities.json": "7c935d8fa1eecd9870df16e49d93460bdd75f90255661e4e4e397af9f667f3e8",
+    "data/processed/movies_5000_20261029/splits.json": "dd24634f590e3e5dd38dc2e5ca7fd25b432ec3b562f74dc99a65b22d586113b7",
+    "models/pipeline_5000_20261029/model.pkl": "a14f3ee60168e3f0a2eefcda403c58400e861c1708dceebe63c396e1e8faa8dd",
+    "models/pipeline_5000_20261029/config.json": "8d8e16320f9fbae2f20eda977e01c38fbcdd45fccc46c5a7928fb47f21929ce8",
+    "models/pipeline_5000_20261029/predictions_test.jsonl": "ff0998842a045d71641ddc4a7ffdbba94b7bafdfe3281df6baf4eb089de25ac8",
+    "models/pipeline_5000_20261029/metrics_test.json": "59f23f773ddf2bc03635debbd5a196b377b18e9118a88173fee38bc824b03284"
+  },
+  "metrics_from_saved_predictions": {
+    "count": 8917,
+    "entity_exact": 100.0,
+    "entity_macro_f1": 100.0,
+    "bleu": 100.00000000000004,
+    "rouge_l": 100.0,
+    "by_relation": {
+      "P136": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 1416
+      },
+      "P495": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2214
+      },
+      "P364": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2238
+      },
+      "P57": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2238
+      },
+      "UNKNOWN": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 811
+      }
+    },
+    "answerable_count": 8106,
+    "refusal_count": 811,
+    "answerable_entity_exact": 100.0,
+    "answerable_entity_macro_f1": 100.0,
+    "refusal_accuracy": 100.0,
+    "latency_mean_ms": 0.9401039475088755,
+    "latency_p95_ms": 1.2145999971835408
+  },
+  "reported_metric_differences": {
+    "entity_exact": 0.0,
+    "entity_macro_f1": 0.0,
+    "bleu": 0.0,
+    "rouge_l": 0.0
+  },
+  "unique_question_ids": true,
+  "movie_split_sizes": {
+    "train": 3500,
+    "valid": 750,
+    "test": 750
+  },
+  "movie_split_intersections": {
+    "train/valid": 0,
+    "train/test": 0,
+    "valid/test": 0
+  },
+  "raw_question_train_test_overlap": 0,
+  "templates_by_split": {
+    "train": [
+      "Name the countries of origin of MOVIE_TITLE.",
+      "Name the director or directors of MOVIE_TITLE.",
+      "Name the genre or genres of MOVIE_TITLE.",
+      "Name the original language or languages of MOVIE_TITLE.",
+      "What genre is MOVIE_TITLE?",
+      "What is the country of origin of MOVIE_TITLE?",
+      "What is the original language of MOVIE_TITLE?",
+      "What was the budget of MOVIE_TITLE?",
+      "Which company distributed MOVIE_TITLE?",
+      "Which country did MOVIE_TITLE originate in?",
+      "Which genres does MOVIE_TITLE belong to?",
+      "Which languages was MOVIE_TITLE originally made in?",
+      "Who directed MOVIE_TITLE?",
+      "Who was the director of MOVIE_TITLE?",
+      "Who wrote the screenplay for MOVIE_TITLE?"
+    ],
+    "valid": [
+      "Name the countries of origin of MOVIE_TITLE.",
+      "Name the director or directors of MOVIE_TITLE.",
+      "Name the genre or genres of MOVIE_TITLE.",
+      "Name the original language or languages of MOVIE_TITLE.",
+      "What genre is MOVIE_TITLE?",
+      "What is the country of origin of MOVIE_TITLE?",
+      "What is the original language of MOVIE_TITLE?",
+      "What was the budget of MOVIE_TITLE?",
+      "Which company distributed MOVIE_TITLE?",
+      "Which country did MOVIE_TITLE originate in?",
+      "Which genres does MOVIE_TITLE belong to?",
+      "Which languages was MOVIE_TITLE originally made in?",
+      "Who directed MOVIE_TITLE?",
+      "Who was the director of MOVIE_TITLE?",
+      "Who wrote the screenplay for MOVIE_TITLE?"
+    ],
+    "test": [
+      "Name the countries of origin of MOVIE_TITLE.",
+      "Name the director or directors of MOVIE_TITLE.",
+      "Name the genre or genres of MOVIE_TITLE.",
+      "Name the original language or languages of MOVIE_TITLE.",
+      "What genre is MOVIE_TITLE?",
+      "What is the country of origin of MOVIE_TITLE?",
+      "What is the original language of MOVIE_TITLE?",
+      "What was the budget of MOVIE_TITLE?",
+      "Which company distributed MOVIE_TITLE?",
+      "Which country did MOVIE_TITLE originate in?",
+      "Which genres does MOVIE_TITLE belong to?",
+      "Which languages was MOVIE_TITLE originally made in?",
+      "Who directed MOVIE_TITLE?",
+      "Who was the director of MOVIE_TITLE?",
+      "Who wrote the screenplay for MOVIE_TITLE?"
+    ]
+  },
+  "test_templates_seen_in_train": 15,
+  "unmatched_template_rows": [],
+  "test_questions": 8917,
+  "answerable_questions": 8106,
+  "gold_answer_sets_present_in_visible_kb": 8106,
+  "gold_first_references_equal_pipeline_formatter": 8106,
+  "prediction_text_matches_a_reference": 8917,
+  "answerable_confidence_min": 0.9973375740710936,
+  "answerable_confidence_max": 0.9987837391395324,
+  "answerable_distinct_confidences": 12,
+  "link_status_counts": {
+    "exact": 8917
+  },
+  "threshold_sensitivity_from_saved_predictions": [
+    {
+      "threshold": 0.3,
+      "entity_exact": 100.0,
+      "answerable_entity_exact": 100.0,
+      "false_refusals": 0,
+      "count": 8917,
+      "type": "post_diagnostic_replay_of_saved_confidences_not_retraining"
+    },
+    {
+      "threshold": 0.7,
+      "entity_exact": 100.0,
+      "answerable_entity_exact": 100.0,
+      "false_refusals": 0,
+      "count": 8917,
+      "type": "post_diagnostic_replay_of_saved_confidences_not_retraining"
+    },
+    {
+      "threshold": 0.9,
+      "entity_exact": 100.0,
+      "answerable_entity_exact": 100.0,
+      "false_refusals": 0,
+      "count": 8917,
+      "type": "post_diagnostic_replay_of_saved_confidences_not_retraining"
+    },
+    {
+      "threshold": 0.99,
+      "entity_exact": 100.0,
+      "answerable_entity_exact": 100.0,
+      "false_refusals": 0,
+      "count": 8917,
+      "type": "post_diagnostic_replay_of_saved_confidences_not_retraining"
+    },
+    {
+      "threshold": 0.995,
+      "entity_exact": 100.0,
+      "answerable_entity_exact": 100.0,
+      "false_refusals": 0,
+      "count": 8917,
+      "type": "post_diagnostic_replay_of_saved_confidences_not_retraining"
+    },
+    {
+      "threshold": 0.998,
+      "entity_exact": 84.1202198048671,
+      "answerable_entity_exact": 82.53145817912657,
+      "false_refusals": 1416,
+      "count": 8917,
+      "type": "post_diagnostic_replay_of_saved_confidences_not_retraining"
+    },
+    {
+      "threshold": 0.999,
+      "entity_exact": 9.094987103285858,
+      "answerable_entity_exact": 0.0,
+      "false_refusals": 8106,
+      "count": 8917,
+      "type": "post_diagnostic_replay_of_saved_confidences_not_retraining"
+    }
+  ],
+  "live_model_replay": {
+    "executed": true,
+    "model_threshold": 0.3,
+    "count": 8917,
+    "metrics": {
+      "count": 8917,
+      "entity_exact": 100.0,
+      "entity_macro_f1": 100.0,
+      "bleu": 100.00000000000004,
+      "rouge_l": 100.0,
+      "by_relation": {
+        "P136": {
+          "exact": 100.0,
+          "f1": 100.0,
+          "count": 1416
+        },
+        "P495": {
+          "exact": 100.0,
+          "f1": 100.0,
+          "count": 2214
+        },
+        "P364": {
+          "exact": 100.0,
+          "f1": 100.0,
+          "count": 2238
+        },
+        "P57": {
+          "exact": 100.0,
+          "f1": 100.0,
+          "count": 2238
+        },
+        "UNKNOWN": {
+          "exact": 100.0,
+          "f1": 100.0,
+          "count": 811
+        }
+      },
+      "answerable_count": 8106,
+      "refusal_count": 811,
+      "answerable_entity_exact": 100.0,
+      "answerable_entity_macro_f1": 100.0,
+      "refusal_accuracy": 100.0,
+      "latency_mean_ms": 1.0604246944453888,
+      "latency_p95_ms": 1.5648999979021028
+    },
+    "answer_id_differences_from_saved": 0,
+    "text_differences_from_saved": 0
+  },
+  "inputs_unchanged": true,
+  "note": "Scores are percentages. A0 uses returned IDs; BLEU/ROUGE independently compare text to dataset references. High-threshold diagnostics use already-inspected test confidences and cannot select the default threshold."
+}
