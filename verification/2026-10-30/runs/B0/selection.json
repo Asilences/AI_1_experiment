@@ -1,0 +1,6 @@
+{
+  "best_valid_f1": 99.77870610816304,
+  "best_epoch": 3,
+  "validation_entity_linking": true,
+  "training_seconds": 5670.208741499999
+}

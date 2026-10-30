@@ -1,0 +1,215 @@
+{
+  "started_utc": "2026-10-30T21:02:59.080883+08:00",
+  "scope": "Repository source checks; synthetic acceptance is not the 5000-film experiment score.",
+  "environment": {
+    "python_version": "3.12.8",
+    "offline": true,
+    "omp_threads": 2,
+    "mkl_threads": 2,
+    "gpu_devices_visible": false
+  },
+  "configuration": {
+    "ci": ".github/workflows/ci.yml",
+    "pyproject_present": false,
+    "ruff_selection": "E9,F63,F7,F82"
+  },
+  "checks": [
+    {
+      "name": "compileall",
+      "command": "python -m compileall -q kgqa tests benchmarks",
+      "exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 0.281,
+      "log": "compileall.log"
+    },
+    {
+      "name": "ruff",
+      "command": "PYTHONPATH=<isolated-check-dependency> python -m ruff check --no-cache --select E9,F63,F7,F82 kgqa tests benchmarks",
+      "exit_code": 0,
+      "status": "PASS",
+      "version": "0.12.12",
+      "log": "ruff.log",
+      "dependency_install": {
+        "command": "python -m pip install --disable-pip-version-check --no-deps --target <isolated-check-dependency> ruff==0.12.12",
+        "exit_code": 0,
+        "log": "ruff_install.log"
+      }
+    },
+    {
+      "name": "cli_prepare",
+      "command": "python -m kgqa.prepare --help",
+      "exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 0.188,
+      "log": "cli_prepare.log"
+    },
+    {
+      "name": "cli_pipeline",
+      "command": "python -m kgqa.pipeline --help",
+      "exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 2.828,
+      "log": "cli_pipeline.log"
+    },
+    {
+      "name": "cli_demo",
+      "command": "python -m kgqa.demo --help",
+      "exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 2.593,
+      "log": "cli_demo.log"
+    },
+    {
+      "name": "cli_acceptance",
+      "command": "python -m kgqa.acceptance --help",
+      "exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 3.204,
+      "log": "cli_acceptance.log"
+    },
+    {
+      "name": "cli_web",
+      "command": "python -m kgqa.web --help",
+      "exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 0.265,
+      "log": "cli_web.log"
+    },
+    {
+      "name": "cli_expand",
+      "command": "python -m kgqa.expand --help",
+      "exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 0.266,
+      "log": "cli_expand.log"
+    },
+    {
+      "name": "cli_dataset",
+      "command": "python -m kgqa.dataset --help",
+      "exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 0.187,
+      "log": "cli_dataset.log"
+    },
+    {
+      "name": "cli_neural_preflight",
+      "command": "python -m kgqa.neural_preflight --help",
+      "exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 0.157,
+      "log": "cli_neural_preflight.log"
+    },
+    {
+      "name": "cli_recovery_experiment",
+      "command": "python -m kgqa.recovery_experiment --help",
+      "exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 3.141,
+      "log": "cli_recovery_experiment.log"
+    },
+    {
+      "name": "cli_expanded_evaluation",
+      "command": "python -m kgqa.expanded_evaluation --help",
+      "exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 3.156,
+      "log": "cli_expanded_evaluation.log"
+    },
+    {
+      "name": "cli_expanded_suite",
+      "command": "python -m kgqa.expanded_suite --help",
+      "exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 0.156,
+      "log": "cli_expanded_suite.log"
+    },
+    {
+      "name": "cli_neural",
+      "command": "python -m kgqa.neural --help",
+      "exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 13.391,
+      "log": "cli_neural.log"
+    },
+    {
+      "name": "pytest",
+      "command": "python -m pytest -q",
+      "exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 19.171,
+      "log": "pytest.log",
+      "counts": {
+        "passed": 330
+      }
+    },
+    {
+      "name": "dataset_verify_smoke",
+      "command": "python -m kgqa.dataset verify --smoke",
+      "exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 3.766,
+      "log": "dataset_verify_smoke.log",
+      "dataset_id": "movies-5000-20261029",
+      "asset_files": 11,
+      "asset_bytes": 40422065,
+      "counts": {
+        "movies": 5000,
+        "entities": 7864,
+        "triples": 35485,
+        "qa": 58994
+      },
+      "smoke_queries": 2
+    },
+    {
+      "name": "synthetic_acceptance",
+      "command": "python -m kgqa.acceptance --output-dir <new-private-directory-outside-git>",
+      "exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 4.594,
+      "log": "synthetic_acceptance.log",
+      "fixture_movies": 10,
+      "test_rows": 30,
+      "checks_passed": 13,
+      "checks_total": 13,
+      "scientific_result": false
+    },
+    {
+      "name": "powershell_parse",
+      "command": "pwsh -NoProfile <CI Parser.ParseFile for scripts/**/*.ps1>",
+      "exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 0.5,
+      "log": "powershell_parse.log",
+      "scripts_parsed": 4
+    },
+    {
+      "name": "git_diff_check_source",
+      "command": "git diff --check -- kgqa tests benchmarks scripts .github/workflows/ci.yml",
+      "exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 0.078,
+      "log": "git_diff_check_source.log"
+    }
+  ],
+  "source_integrity": {
+    "files_hashed": 58,
+    "unchanged_during_checks": true,
+    "changed_paths": [],
+    "unchanged_through_finalization": true,
+    "final_changed_paths": []
+  },
+  "completed_utc": "2026-10-30T21:06:05.980295+08:00",
+  "status": "PASS",
+  "frozen_evidence": {
+    "file": "frozen_methods_and_completion.json",
+    "total_completed_neural_epochs": 25,
+    "all_five_runs_complete": true,
+    "current_score_rows_ast_equals_frozen": true,
+    "recovery_adapter_equals_validation_report_lock": true
+  },
+  "artifact_sanitization": {
+    "checked_files": 24,
+    "private_absolute_paths_or_runtime_trace_matches": 0,
+    "status": "PASS"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "count": 8857,
+  "entity_exact": 100.0,
+  "entity_macro_f1": 100.0,
+  "bleu": 99.92082861658078,
+  "rouge_l": 99.92392898117896,
+  "by_relation": {
+    "P57": {
+      "exact": 100.0,
+      "f1": 100.0,
+      "count": 2235
+    },
+    "P136": {
+      "exact": 100.0,
+      "f1": 100.0,
+      "count": 1356
+    },
+    "P495": {
+      "exact": 100.0,
+      "f1": 100.0,
+      "count": 2229
+    },
+    "P364": {
+      "exact": 100.0,
+      "f1": 100.0,
+      "count": 2232
+    },
+    "UNKNOWN": {
+      "exact": 100.0,
+      "f1": 100.0,
+      "count": 805
+    }
+  },
+  "answerable_count": 8052,
+  "refusal_count": 805,
+  "answerable_entity_exact": 100.0,
+  "answerable_entity_macro_f1": 100.0,
+  "refusal_accuracy": 100.0,
+  "latency_mean_ms": 11.97476371231327,
+  "latency_p95_ms": 15.840124999954242
+}

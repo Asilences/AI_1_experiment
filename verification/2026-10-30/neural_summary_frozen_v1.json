@@ -1,0 +1,2487 @@
+{
+  "status": "complete",
+  "date": "2026年10月30日",
+  "data": {
+    "created_at": "2026-10-29T08:09:46Z",
+    "snapshot": "data/raw/snapshot_5000.json",
+    "snapshot_sha256": "486faa982e84fd5781f62872fd02db11100fad82a013b37f454bbe4da520d867",
+    "movies": 5000,
+    "entities": 7864,
+    "triples": 35485,
+    "qa": 58994,
+    "qa_by_split": {
+      "valid": 8857,
+      "train": 41220,
+      "test": 8917
+    },
+    "qa_by_relation": {
+      "P57": 14916,
+      "P136": 9135,
+      "P495": 14727,
+      "P364": 14853,
+      "UNKNOWN": 5363
+    },
+    "movie_split_sizes": {
+      "train": 3500,
+      "valid": 750,
+      "test": 750
+    },
+    "base_splits_sha256": "46514c22319f7fcadafa91b51f0d6cd69634b6fcb8e03b1603948b39727c6be0",
+    "split_policy": "Preserve all previous movie assignments; seed-42 shuffle additions to reach 70/15/15.",
+    "name": "扩展电影库 · 5000 部",
+    "dataset_role": "expanded UI knowledge base; not an independent held-out research dataset",
+    "prepare_source_sha256": "b58706ee0cb15cc4e0afada08de52ed0374e8c102889cccb6c7a2344ff4164e7"
+  },
+  "protocol": {
+    "seed": 42,
+    "epochs": 5,
+    "transe_epochs": 100,
+    "batch_size": 8,
+    "eval_batch_size": 64,
+    "gradient_accumulation": 2,
+    "input_max_length": 512,
+    "target_max_length": 96,
+    "torch_threads": 4,
+    "generation_precision": "float32",
+    "runner_source_sha256": "2ac4b33fa38910e1d3fd5cc455155b6b894354689783c1770e444fa2412e029f",
+    "model": "0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab",
+    "pretrained_sha256": {
+      "config.json": "439aa0fecf5a5546a1def68b1fc45e538e2c94528ce805378daf091e2bf6e4de",
+      "generation_config.json": "f5a1c7e2be8092018d8835128987edf0111637dd98e90599cc80310fef75d95a",
+      "model.safetensors": "495fa51e204676f1a857a9fc13c4c89f3f5ba9f480b898cebca02add25e6d749",
+      "special_tokens_map.json": "5c87151ef0f72a99d1f766a4c418bd2a1f90aaa30a8e22fe5eca9641daebb64f",
+      "spiece.model": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86",
+      "tokenizer.json": "fe2ebbbbde2985be723e0ce18217853e4020c5e9d35bd07be2c27ab9d3ead57a",
+      "tokenizer_config.json": "fcde0f79bffda3688119c94330866a8fbf8de20ae65a8c492c9bd47c704655a0"
+    }
+  },
+  "environment": {
+    "collected_at": "2026-10-30T13:00:27Z",
+    "project_directory": ".",
+    "python_executable": "environment/Scripts/python.exe",
+    "python_version": "3.12.8 | packaged by Anaconda, Inc. | (main, Dec 11 2024, 16:48:34) [MSC v.1929 64 bit (AMD64)]",
+    "operating_system": "Windows-11-10.0.22631-SP0",
+    "processor": "AMD Ryzen 5 5600H with Radeon Graphics",
+    "logical_cpu_count": 12,
+    "memory_gb": 15.86,
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU, 4096 MiB, 560.81",
+    "cuda_available": true,
+    "torch_cuda": "12.4",
+    "packages": {
+      "torch": "2.6.0+cu124",
+      "transformers": "4.48.3",
+      "pykeen": "1.11.1",
+      "scikit-learn": "1.6.1",
+      "sacrebleu": "2.5.1",
+      "rouge-score": "0.1.2",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3"
+    }
+  },
+  "runs": [
+    {
+      "label": "B0",
+      "run_id": "B0",
+      "status": "complete",
+      "epochs": 5,
+      "learning_rate": 0.0001,
+      "use_embeddings": true,
+      "metrics_test": {
+        "count": 8917,
+        "entity_exact": 99.49534596837502,
+        "entity_macro_f1": 99.49534596837502,
+        "bleu": 99.77551051994016,
+        "rouge_l": 99.89321992114122,
+        "by_relation": {
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 1416
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2214
+          },
+          "P364": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2238
+          },
+          "P57": {
+            "exact": 97.98927613941018,
+            "f1": 97.98927613941018,
+            "count": 2238
+          },
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 811
+          }
+        },
+        "answerable_count": 8106,
+        "refusal_count": 811,
+        "answerable_entity_exact": 99.44485566247224,
+        "answerable_entity_macro_f1": 99.44485566247224,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 11.792072322518463,
+        "latency_p95_ms": 14.841156249985943,
+        "gold_total": 8917,
+        "prediction_coverage": 100.0
+      },
+      "metrics_valid": {
+        "count": 8857,
+        "entity_exact": 99.72902788754658,
+        "entity_macro_f1": 99.77870610816304,
+        "bleu": 99.80900500239837,
+        "rouge_l": 99.87811390693399,
+        "by_relation": {
+          "P57": {
+            "exact": 99.06040268456375,
+            "f1": 99.14988814317674,
+            "count": 2235
+          },
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 1356
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2229
+          },
+          "P364": {
+            "exact": 99.86559139784946,
+            "f1": 99.97311827956989,
+            "count": 2232
+          },
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 805
+          }
+        },
+        "answerable_count": 8052,
+        "refusal_count": 805,
+        "answerable_entity_exact": 99.70193740685544,
+        "answerable_entity_macro_f1": 99.75658221559861,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 11.97476371231327,
+        "latency_p95_ms": 15.840124999954242,
+        "gold_total": 8857,
+        "prediction_coverage": 100.0
+      },
+      "best_epoch": 3,
+      "validation_f1": 99.77870610816304,
+      "training_seconds": 5670.208741499999,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.1095650664553354,
+          "validation_loss": 0.002019350294687934,
+          "epoch_seconds": 1165.0739468999964,
+          "optimizer_updates": 2577,
+          "optimizer_updates_total": 2577,
+          "count": 8857,
+          "entity_exact": 99.6951563734899,
+          "entity_macro_f1": 99.7719318053517,
+          "bleu": 99.75521145280821,
+          "rouge_l": 99.86455971768603,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 99.77876106194691,
+              "f1": 99.95575221238938,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.66467958271237,
+          "answerable_entity_macro_f1": 99.74913065076998,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 12.046570193072279,
+          "latency_p95_ms": 15.875870312470397,
+          "gold_total": 8857,
+          "prediction_coverage": 100.0
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.0016388615870080133,
+          "validation_loss": 0.0002641005989819413,
+          "epoch_seconds": 1131.8707005999968,
+          "optimizer_updates": 2577,
+          "optimizer_updates_total": 5154,
+          "count": 8857,
+          "entity_exact": 99.70644687817546,
+          "entity_macro_f1": 99.75612509879191,
+          "bleu": 99.81864920002907,
+          "rouge_l": 99.87894277612361,
+          "by_relation": {
+            "P57": {
+              "exact": 98.97091722595079,
+              "f1": 99.06040268456375,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.67709885742673,
+          "answerable_entity_macro_f1": 99.73174366616989,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 12.259598825786723,
+          "latency_p95_ms": 16.15515468756712,
+          "gold_total": 8857,
+          "prediction_coverage": 100.0
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.0009125994553287794,
+          "validation_loss": 0.0010064459499315788,
+          "epoch_seconds": 1132.4379544999974,
+          "optimizer_updates": 2577,
+          "optimizer_updates_total": 7731,
+          "count": 8857,
+          "entity_exact": 99.72902788754658,
+          "entity_macro_f1": 99.77870610816304,
+          "bleu": 99.80900500239837,
+          "rouge_l": 99.87811390693399,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.70193740685544,
+          "answerable_entity_macro_f1": 99.75658221559861,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.97476371231327,
+          "latency_p95_ms": 15.840124999954242,
+          "gold_total": 8857,
+          "prediction_coverage": 100.0
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.0003452418736855802,
+          "validation_loss": 0.0014366260432750327,
+          "epoch_seconds": 1121.0796193999995,
+          "optimizer_updates": 2577,
+          "optimizer_updates_total": 10308,
+          "count": 8857,
+          "entity_exact": 99.72902788754658,
+          "entity_macro_f1": 99.77870610816304,
+          "bleu": 99.81676323421121,
+          "rouge_l": 99.88065549240433,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.70193740685544,
+          "answerable_entity_macro_f1": 99.75658221559861,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.970891464379335,
+          "latency_p95_ms": 16.09358124994742,
+          "gold_total": 8857,
+          "prediction_coverage": 100.0
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.0002593865866119271,
+          "validation_loss": 0.002771746233452454,
+          "epoch_seconds": 1118.0248015999969,
+          "optimizer_updates": 2577,
+          "optimizer_updates_total": 12885,
+          "count": 8857,
+          "entity_exact": 99.72902788754658,
+          "entity_macro_f1": 99.77870610816304,
+          "bleu": 99.81676323421121,
+          "rouge_l": 99.88065549240433,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.70193740685544,
+          "answerable_entity_macro_f1": 99.75658221559861,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 12.029626216549639,
+          "latency_p95_ms": 15.774692187505934,
+          "gold_total": 8857,
+          "prediction_coverage": 100.0
+        }
+      ],
+      "config": {
+        "run_id": "B0",
+        "model": "0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab",
+        "model_source_kind": "local_directory",
+        "input_max_length": 512,
+        "target_max_length": 96,
+        "eval_batch_size": 64,
+        "learning_rate": 0.0001,
+        "epochs": 5,
+        "batch_size": 8,
+        "gradient_accumulation": 2,
+        "effective_batch": 16,
+        "use_embeddings": true,
+        "seed": 42,
+        "shuffle_seed": 42,
+        "device": "cuda",
+        "smoke": false,
+        "torch_threads": 4,
+        "generation_precision": "float32",
+        "validation_entity_linking": true,
+        "selection_metric": "validation entity_macro_f1",
+        "qa_by_split": {
+          "train": 41220,
+          "valid": 8857,
+          "test": 8917
+        },
+        "effective_batch_note": "Maximum examples per optimizer update; the final accumulation window may be smaller.",
+        "input_sha256": {
+          "qa.jsonl": "2882b2077834d37f4b1ae8f9b8ea90561c8c5dacecf4247907311d0cbb8bb310",
+          "entities.json": "7c935d8fa1eecd9870df16e49d93460bdd75f90255661e4e4e397af9f667f3e8",
+          "splits.json": "dd24634f590e3e5dd38dc2e5ca7fd25b432ec3b562f74dc99a65b22d586113b7",
+          "triples.tsv": "42c9a5c665313b077a97650309bb8102ab573464ba40943a1b41ffb77c2f8e0a"
+        },
+        "transe_sha256": {
+          "mapping.json": "4897387a4b688470fad8f35f2cba6436f3393815c7464f89a89526c3bd1fe64a",
+          "embeddings.npz": "fe9cf70cba4eb0b509fca8ccfdf21ec7226aaf8ce9488f0a2bd3fb657745c71c"
+        },
+        "pretrained_sha256": {
+          "config.json": "439aa0fecf5a5546a1def68b1fc45e538e2c94528ce805378daf091e2bf6e4de",
+          "model.safetensors": "495fa51e204676f1a857a9fc13c4c89f3f5ba9f480b898cebca02add25e6d749",
+          "tokenizer.json": "fe2ebbbbde2985be723e0ce18217853e4020c5e9d35bd07be2c27ab9d3ead57a"
+        },
+        "training_batches_per_epoch": 5153,
+        "optimizer_updates_per_epoch": 2577,
+        "planned_optimizer_updates": 12885,
+        "training_precision": "bf16 autocast"
+      }
+    },
+    {
+      "label": "B1",
+      "run_id": "B1",
+      "status": "complete",
+      "epochs": 5,
+      "learning_rate": 3e-05,
+      "use_embeddings": true,
+      "metrics_test": {
+        "count": 8917,
+        "entity_exact": 99.49534596837502,
+        "entity_macro_f1": 99.49534596837502,
+        "bleu": 99.77551051994016,
+        "rouge_l": 99.89321992114122,
+        "by_relation": {
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 1416
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2214
+          },
+          "P364": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2238
+          },
+          "P57": {
+            "exact": 97.98927613941018,
+            "f1": 97.98927613941018,
+            "count": 2238
+          },
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 811
+          }
+        },
+        "answerable_count": 8106,
+        "refusal_count": 811,
+        "answerable_entity_exact": 99.44485566247224,
+        "answerable_entity_macro_f1": 99.44485566247224,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 11.676575137376258,
+        "latency_p95_ms": 15.10078281251026,
+        "gold_total": 8917,
+        "prediction_coverage": 100.0
+      },
+      "metrics_valid": {
+        "count": 8857,
+        "entity_exact": 99.72902788754658,
+        "entity_macro_f1": 99.77870610816304,
+        "bleu": 99.82931357719812,
+        "rouge_l": 99.88739843547685,
+        "by_relation": {
+          "P57": {
+            "exact": 99.06040268456375,
+            "f1": 99.14988814317674,
+            "count": 2235
+          },
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 1356
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2229
+          },
+          "P364": {
+            "exact": 99.86559139784946,
+            "f1": 99.97311827956989,
+            "count": 2232
+          },
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 805
+          }
+        },
+        "answerable_count": 8052,
+        "refusal_count": 805,
+        "answerable_entity_exact": 99.70193740685544,
+        "answerable_entity_macro_f1": 99.75658221559861,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 11.886814734111551,
+        "latency_p95_ms": 15.56074531242757,
+        "gold_total": 8857,
+        "prediction_coverage": 100.0
+      },
+      "best_epoch": 1,
+      "validation_f1": 99.77870610816304,
+      "training_seconds": 5624.958602600003,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.19412480533225662,
+          "validation_loss": 6.546244814913905e-05,
+          "epoch_seconds": 1122.450105799995,
+          "optimizer_updates": 2577,
+          "optimizer_updates_total": 2577,
+          "count": 8857,
+          "entity_exact": 99.72902788754658,
+          "entity_macro_f1": 99.77870610816304,
+          "bleu": 99.82931357719812,
+          "rouge_l": 99.88739843547685,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.70193740685544,
+          "answerable_entity_macro_f1": 99.75658221559861,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.886814734111551,
+          "latency_p95_ms": 15.56074531242757,
+          "gold_total": 8857,
+          "prediction_coverage": 100.0
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.0021299674336442624,
+          "validation_loss": 2.4611416714303474e-05,
+          "epoch_seconds": 1126.3459360999987,
+          "optimizer_updates": 2577,
+          "optimizer_updates_total": 5154,
+          "count": 8857,
+          "entity_exact": 99.72902788754658,
+          "entity_macro_f1": 99.77870610816304,
+          "bleu": 99.8325902075242,
+          "rouge_l": 99.88739843547685,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.70193740685544,
+          "answerable_entity_macro_f1": 99.75658221559861,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.667148029809606,
+          "latency_p95_ms": 15.55990937504248,
+          "gold_total": 8857,
+          "prediction_coverage": 100.0
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.001147625058923607,
+          "validation_loss": 1.9730733758577857e-05,
+          "epoch_seconds": 1127.6753957000037,
+          "optimizer_updates": 2577,
+          "optimizer_updates_total": 7731,
+          "count": 8857,
+          "entity_exact": 99.72902788754658,
+          "entity_macro_f1": 99.77870610816304,
+          "bleu": 99.8325902075242,
+          "rouge_l": 99.88739843547685,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.70193740685544,
+          "answerable_entity_macro_f1": 99.75658221559861,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.832669222089558,
+          "latency_p95_ms": 15.371125000001484,
+          "gold_total": 8857,
+          "prediction_coverage": 100.0
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.0008113593625673278,
+          "validation_loss": 2.328273452255446e-05,
+          "epoch_seconds": 1128.8554528999957,
+          "optimizer_updates": 2577,
+          "optimizer_updates_total": 10308,
+          "count": 8857,
+          "entity_exact": 99.72902788754658,
+          "entity_macro_f1": 99.77870610816304,
+          "bleu": 99.82626393497966,
+          "rouge_l": 99.88431920692625,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.70193740685544,
+          "answerable_entity_macro_f1": 99.75658221559861,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.870059071918618,
+          "latency_p95_ms": 15.117743750010959,
+          "gold_total": 8857,
+          "prediction_coverage": 100.0
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.0005616195320026379,
+          "validation_loss": 2.9398551815150152e-05,
+          "epoch_seconds": 1118.9658059000067,
+          "optimizer_updates": 2577,
+          "optimizer_updates_total": 12885,
+          "count": 8857,
+          "entity_exact": 99.72902788754658,
+          "entity_macro_f1": 99.77870610816304,
+          "bleu": 99.82626393497966,
+          "rouge_l": 99.88431920692625,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.70193740685544,
+          "answerable_entity_macro_f1": 99.75658221559861,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.814362662304442,
+          "latency_p95_ms": 15.59605312502299,
+          "gold_total": 8857,
+          "prediction_coverage": 100.0
+        }
+      ],
+      "config": {
+        "run_id": "B1",
+        "model": "0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab",
+        "model_source_kind": "local_directory",
+        "input_max_length": 512,
+        "target_max_length": 96,
+        "eval_batch_size": 64,
+        "learning_rate": 3e-05,
+        "epochs": 5,
+        "batch_size": 8,
+        "gradient_accumulation": 2,
+        "effective_batch": 16,
+        "use_embeddings": true,
+        "seed": 42,
+        "shuffle_seed": 42,
+        "device": "cuda",
+        "smoke": false,
+        "torch_threads": 4,
+        "generation_precision": "float32",
+        "validation_entity_linking": true,
+        "selection_metric": "validation entity_macro_f1",
+        "qa_by_split": {
+          "train": 41220,
+          "valid": 8857,
+          "test": 8917
+        },
+        "effective_batch_note": "Maximum examples per optimizer update; the final accumulation window may be smaller.",
+        "input_sha256": {
+          "qa.jsonl": "2882b2077834d37f4b1ae8f9b8ea90561c8c5dacecf4247907311d0cbb8bb310",
+          "entities.json": "7c935d8fa1eecd9870df16e49d93460bdd75f90255661e4e4e397af9f667f3e8",
+          "splits.json": "dd24634f590e3e5dd38dc2e5ca7fd25b432ec3b562f74dc99a65b22d586113b7",
+          "triples.tsv": "42c9a5c665313b077a97650309bb8102ab573464ba40943a1b41ffb77c2f8e0a"
+        },
+        "transe_sha256": {
+          "mapping.json": "4897387a4b688470fad8f35f2cba6436f3393815c7464f89a89526c3bd1fe64a",
+          "embeddings.npz": "fe9cf70cba4eb0b509fca8ccfdf21ec7226aaf8ce9488f0a2bd3fb657745c71c"
+        },
+        "pretrained_sha256": {
+          "config.json": "439aa0fecf5a5546a1def68b1fc45e538e2c94528ce805378daf091e2bf6e4de",
+          "model.safetensors": "495fa51e204676f1a857a9fc13c4c89f3f5ba9f480b898cebca02add25e6d749",
+          "tokenizer.json": "fe2ebbbbde2985be723e0ce18217853e4020c5e9d35bd07be2c27ab9d3ead57a"
+        },
+        "training_batches_per_epoch": 5153,
+        "optimizer_updates_per_epoch": 2577,
+        "planned_optimizer_updates": 12885,
+        "training_precision": "bf16 autocast"
+      }
+    },
+    {
+      "label": "B2",
+      "run_id": "B2",
+      "status": "complete",
+      "epochs": 5,
+      "learning_rate": 0.0003,
+      "use_embeddings": true,
+      "metrics_test": {
+        "count": 8917,
+        "entity_exact": 99.42805876415835,
+        "entity_macro_f1": 99.42805876415835,
+        "bleu": 99.76230579673796,
+        "rouge_l": 99.88841369226861,
+        "by_relation": {
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 1416
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2214
+          },
+          "P364": {
+            "exact": 99.86595174262735,
+            "f1": 99.86595174262735,
+            "count": 2238
+          },
+          "P57": {
+            "exact": 97.85522788203752,
+            "f1": 97.85522788203752,
+            "count": 2238
+          },
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 811
+          }
+        },
+        "answerable_count": 8106,
+        "refusal_count": 811,
+        "answerable_entity_exact": 99.37083641746854,
+        "answerable_entity_macro_f1": 99.37083641746854,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 12.058134047320975,
+        "latency_p95_ms": 16.029545312449045,
+        "gold_total": 8917,
+        "prediction_coverage": 100.0
+      },
+      "metrics_valid": {
+        "count": 8857,
+        "entity_exact": 99.72902788754658,
+        "entity_macro_f1": 99.77870610816304,
+        "bleu": 99.72622569004915,
+        "rouge_l": 99.86488234107804,
+        "by_relation": {
+          "P57": {
+            "exact": 99.06040268456375,
+            "f1": 99.14988814317674,
+            "count": 2235
+          },
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 1356
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2229
+          },
+          "P364": {
+            "exact": 99.86559139784946,
+            "f1": 99.97311827956989,
+            "count": 2232
+          },
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 805
+          }
+        },
+        "answerable_count": 8052,
+        "refusal_count": 805,
+        "answerable_entity_exact": 99.70193740685544,
+        "answerable_entity_macro_f1": 99.75658221559861,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 11.885870317263741,
+        "latency_p95_ms": 15.686387499954435,
+        "gold_total": 8857,
+        "prediction_coverage": 100.0
+      },
+      "best_epoch": 1,
+      "validation_f1": 99.77870610816304,
+      "training_seconds": 6725.126046600002,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.06866878308830715,
+          "validation_loss": 0.002047867801000106,
+          "epoch_seconds": 1121.5079341000019,
+          "optimizer_updates": 2577,
+          "optimizer_updates_total": 2577,
+          "count": 8857,
+          "entity_exact": 99.72902788754658,
+          "entity_macro_f1": 99.77870610816304,
+          "bleu": 99.72622569004915,
+          "rouge_l": 99.86488234107804,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.70193740685544,
+          "answerable_entity_macro_f1": 99.75658221559861,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.885870317263741,
+          "latency_p95_ms": 15.686387499954435,
+          "gold_total": 8857,
+          "prediction_coverage": 100.0
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.0023444053568557614,
+          "validation_loss": 0.0001598925949570337,
+          "epoch_seconds": 1172.9187883999984,
+          "optimizer_updates": 2577,
+          "optimizer_updates_total": 5154,
+          "count": 8857,
+          "entity_exact": 99.72902788754658,
+          "entity_macro_f1": 99.77870610816304,
+          "bleu": 99.82199112334834,
+          "rouge_l": 99.88614393495625,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.70193740685544,
+          "answerable_entity_macro_f1": 99.75658221559861,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.25707722705911,
+          "latency_p95_ms": 14.711178125025981,
+          "gold_total": 8857,
+          "prediction_coverage": 100.0
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.0013691071623928089,
+          "validation_loss": 0.0014798908424069309,
+          "epoch_seconds": 1367.0559437999982,
+          "optimizer_updates": 2577,
+          "optimizer_updates_total": 7731,
+          "count": 8857,
+          "entity_exact": 99.71773738286102,
+          "entity_macro_f1": 99.77644800722592,
+          "bleu": 99.78334130350372,
+          "rouge_l": 99.87478218756056,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 99.92625368731564,
+              "f1": 99.98525073746313,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.68951813214109,
+          "answerable_entity_macro_f1": 99.75409836065575,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.292055481531383,
+          "latency_p95_ms": 14.872382812541218,
+          "gold_total": 8857,
+          "prediction_coverage": 100.0
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.000734785641695638,
+          "validation_loss": 0.0008512461602729852,
+          "epoch_seconds": 1651.6320645000014,
+          "optimizer_updates": 2577,
+          "optimizer_updates_total": 10308,
+          "count": 8857,
+          "entity_exact": 99.6951563734899,
+          "entity_macro_f1": 99.7719318053517,
+          "bleu": 99.79950844227305,
+          "rouge_l": 99.8715250825969,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 99.77876106194691,
+              "f1": 99.95575221238938,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.66467958271237,
+          "answerable_entity_macro_f1": 99.74913065076998,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 12.412847024947654,
+          "latency_p95_ms": 17.123642187470978,
+          "gold_total": 8857,
+          "prediction_coverage": 100.0
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.00022656366084335754,
+          "validation_loss": 0.00021053367049981122,
+          "epoch_seconds": 1411.4669439000063,
+          "optimizer_updates": 2577,
+          "optimizer_updates_total": 12885,
+          "count": 8857,
+          "entity_exact": 99.6951563734899,
+          "entity_macro_f1": 99.7719318053517,
+          "bleu": 99.8164068663091,
+          "rouge_l": 99.88341286394707,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 99.77876106194691,
+              "f1": 99.95575221238938,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.66467958271237,
+          "answerable_entity_macro_f1": 99.74913065076998,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 12.251358360616546,
+          "latency_p95_ms": 16.30433281252408,
+          "gold_total": 8857,
+          "prediction_coverage": 100.0
+        }
+      ],
+      "config": {
+        "run_id": "B2",
+        "model": "0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab",
+        "model_source_kind": "local_directory",
+        "input_max_length": 512,
+        "target_max_length": 96,
+        "eval_batch_size": 64,
+        "learning_rate": 0.0003,
+        "epochs": 5,
+        "batch_size": 8,
+        "gradient_accumulation": 2,
+        "effective_batch": 16,
+        "use_embeddings": true,
+        "seed": 42,
+        "shuffle_seed": 42,
+        "device": "cuda",
+        "smoke": false,
+        "torch_threads": 4,
+        "generation_precision": "float32",
+        "validation_entity_linking": true,
+        "selection_metric": "validation entity_macro_f1",
+        "qa_by_split": {
+          "train": 41220,
+          "valid": 8857,
+          "test": 8917
+        },
+        "effective_batch_note": "Maximum examples per optimizer update; the final accumulation window may be smaller.",
+        "input_sha256": {
+          "qa.jsonl": "2882b2077834d37f4b1ae8f9b8ea90561c8c5dacecf4247907311d0cbb8bb310",
+          "entities.json": "7c935d8fa1eecd9870df16e49d93460bdd75f90255661e4e4e397af9f667f3e8",
+          "splits.json": "dd24634f590e3e5dd38dc2e5ca7fd25b432ec3b562f74dc99a65b22d586113b7",
+          "triples.tsv": "42c9a5c665313b077a97650309bb8102ab573464ba40943a1b41ffb77c2f8e0a"
+        },
+        "transe_sha256": {
+          "mapping.json": "4897387a4b688470fad8f35f2cba6436f3393815c7464f89a89526c3bd1fe64a",
+          "embeddings.npz": "fe9cf70cba4eb0b509fca8ccfdf21ec7226aaf8ce9488f0a2bd3fb657745c71c"
+        },
+        "pretrained_sha256": {
+          "config.json": "439aa0fecf5a5546a1def68b1fc45e538e2c94528ce805378daf091e2bf6e4de",
+          "model.safetensors": "495fa51e204676f1a857a9fc13c4c89f3f5ba9f480b898cebca02add25e6d749",
+          "tokenizer.json": "fe2ebbbbde2985be723e0ce18217853e4020c5e9d35bd07be2c27ab9d3ead57a"
+        },
+        "training_batches_per_epoch": 5153,
+        "optimizer_updates_per_epoch": 2577,
+        "planned_optimizer_updates": 12885,
+        "training_precision": "bf16 autocast"
+      }
+    },
+    {
+      "label": "B3",
+      "run_id": "B3",
+      "status": "complete",
+      "epochs": 5,
+      "learning_rate": 0.001,
+      "use_embeddings": true,
+      "metrics_test": {
+        "count": 8917,
+        "entity_exact": 99.42805876415835,
+        "entity_macro_f1": 99.48188852753168,
+        "bleu": 99.56747014678446,
+        "rouge_l": 99.80441508652494,
+        "by_relation": {
+          "P136": {
+            "exact": 99.57627118644068,
+            "f1": 99.91525423728814,
+            "count": 1416
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2214
+          },
+          "P364": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2238
+          },
+          "P57": {
+            "exact": 97.98927613941018,
+            "f1": 97.98927613941018,
+            "count": 2238
+          },
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 811
+          }
+        },
+        "answerable_count": 8106,
+        "refusal_count": 811,
+        "answerable_entity_exact": 99.37083641746854,
+        "answerable_entity_macro_f1": 99.4300518134715,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 11.085138219122568,
+        "latency_p95_ms": 14.450712500092777,
+        "gold_total": 8917,
+        "prediction_coverage": 100.0
+      },
+      "metrics_valid": {
+        "count": 8857,
+        "entity_exact": 99.66128485943322,
+        "entity_macro_f1": 99.76515750254036,
+        "bleu": 99.72402030113251,
+        "rouge_l": 99.85613214602651,
+        "by_relation": {
+          "P57": {
+            "exact": 99.06040268456375,
+            "f1": 99.14988814317674,
+            "count": 2235
+          },
+          "P136": {
+            "exact": 99.5575221238938,
+            "f1": 99.91150442477877,
+            "count": 1356
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2229
+          },
+          "P364": {
+            "exact": 99.86559139784946,
+            "f1": 99.97311827956989,
+            "count": 2232
+          },
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 805
+          }
+        },
+        "answerable_count": 8052,
+        "refusal_count": 805,
+        "answerable_entity_exact": 99.6274217585693,
+        "answerable_entity_macro_f1": 99.74167908594139,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 11.11164554589181,
+        "latency_p95_ms": 14.458381250051389,
+        "gold_total": 8857,
+        "prediction_coverage": 100.0
+      },
+      "best_epoch": 4,
+      "validation_f1": 99.76515750254036,
+      "training_seconds": 6804.704608500004,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.051074655817253324,
+          "validation_loss": 0.0042530316687554226,
+          "epoch_seconds": 1396.3988621000026,
+          "optimizer_updates": 2577,
+          "optimizer_updates_total": 2577,
+          "count": 8857,
+          "entity_exact": 99.55967031726318,
+          "entity_macro_f1": 99.66354296037034,
+          "bleu": 99.62966743175178,
+          "rouge_l": 99.82895513504222,
+          "by_relation": {
+            "P57": {
+              "exact": 98.65771812080537,
+              "f1": 98.74720357941834,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 99.5575221238938,
+              "f1": 99.91150442477877,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.51564828614009,
+          "answerable_entity_macro_f1": 99.62990561351216,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 12.76593489893846,
+          "latency_p95_ms": 18.003846874989904,
+          "gold_total": 8857,
+          "prediction_coverage": 100.0
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.006408937070674904,
+          "validation_loss": 0.003345443438933022,
+          "epoch_seconds": 1444.6762496999872,
+          "optimizer_updates": 2577,
+          "optimizer_updates_total": 5154,
+          "count": 8857,
+          "entity_exact": 99.333860223552,
+          "entity_macro_f1": 99.68311316849197,
+          "bleu": 99.57602158004833,
+          "rouge_l": 99.80499217882345,
+          "by_relation": {
+            "P57": {
+              "exact": 98.79194630872483,
+              "f1": 99.06040268456375,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 99.77876106194691,
+              "f1": 99.95575221238938,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 98.83355764917003,
+              "f1": 99.7368027516076,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.26726279185296,
+          "answerable_entity_macro_f1": 99.65143235635038,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 12.164193124087733,
+          "latency_p95_ms": 16.130348437400244,
+          "gold_total": 8857,
+          "prediction_coverage": 100.0
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.003164319884407663,
+          "validation_loss": 0.0016683095846724727,
+          "epoch_seconds": 1429.0365020000027,
+          "optimizer_updates": 2577,
+          "optimizer_updates_total": 7731,
+          "count": 8857,
+          "entity_exact": 99.59354183131987,
+          "entity_macro_f1": 99.74709269504348,
+          "bleu": 99.71417661537676,
+          "rouge_l": 99.85933554711164,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 99.11504424778761,
+              "f1": 99.79351032448378,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.55290611028316,
+          "answerable_entity_macro_f1": 99.72180824639841,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.342052387939056,
+          "latency_p95_ms": 15.434929687671683,
+          "gold_total": 8857,
+          "prediction_coverage": 100.0
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.0016319571332839122,
+          "validation_loss": 0.0017339540420917318,
+          "epoch_seconds": 1348.832593900006,
+          "optimizer_updates": 2577,
+          "optimizer_updates_total": 10308,
+          "count": 8857,
+          "entity_exact": 99.66128485943322,
+          "entity_macro_f1": 99.76515750254036,
+          "bleu": 99.72402030113251,
+          "rouge_l": 99.85613214602651,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 99.5575221238938,
+              "f1": 99.91150442477877,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.6274217585693,
+          "answerable_entity_macro_f1": 99.74167908594139,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.11164554589181,
+          "latency_p95_ms": 14.458381250051389,
+          "gold_total": 8857,
+          "prediction_coverage": 100.0
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.00035198023701387484,
+          "validation_loss": 0.0012500925536373885,
+          "epoch_seconds": 1182.0922540000029,
+          "optimizer_updates": 2577,
+          "optimizer_updates_total": 12885,
+          "count": 8857,
+          "entity_exact": 99.66128485943322,
+          "entity_macro_f1": 99.76515750254036,
+          "bleu": 99.72731126145375,
+          "rouge_l": 99.86322105973899,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 99.5575221238938,
+              "f1": 99.91150442477877,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.6274217585693,
+          "answerable_entity_macro_f1": 99.74167908594139,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.242563317152523,
+          "latency_p95_ms": 15.03495624979223,
+          "gold_total": 8857,
+          "prediction_coverage": 100.0
+        }
+      ],
+      "config": {
+        "run_id": "B3",
+        "model": "0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab",
+        "model_source_kind": "local_directory",
+        "input_max_length": 512,
+        "target_max_length": 96,
+        "eval_batch_size": 64,
+        "learning_rate": 0.001,
+        "epochs": 5,
+        "batch_size": 8,
+        "gradient_accumulation": 2,
+        "effective_batch": 16,
+        "use_embeddings": true,
+        "seed": 42,
+        "shuffle_seed": 42,
+        "device": "cuda",
+        "smoke": false,
+        "torch_threads": 4,
+        "generation_precision": "float32",
+        "validation_entity_linking": true,
+        "selection_metric": "validation entity_macro_f1",
+        "qa_by_split": {
+          "train": 41220,
+          "valid": 8857,
+          "test": 8917
+        },
+        "effective_batch_note": "Maximum examples per optimizer update; the final accumulation window may be smaller.",
+        "input_sha256": {
+          "qa.jsonl": "2882b2077834d37f4b1ae8f9b8ea90561c8c5dacecf4247907311d0cbb8bb310",
+          "entities.json": "7c935d8fa1eecd9870df16e49d93460bdd75f90255661e4e4e397af9f667f3e8",
+          "splits.json": "dd24634f590e3e5dd38dc2e5ca7fd25b432ec3b562f74dc99a65b22d586113b7",
+          "triples.tsv": "42c9a5c665313b077a97650309bb8102ab573464ba40943a1b41ffb77c2f8e0a"
+        },
+        "transe_sha256": {
+          "mapping.json": "4897387a4b688470fad8f35f2cba6436f3393815c7464f89a89526c3bd1fe64a",
+          "embeddings.npz": "fe9cf70cba4eb0b509fca8ccfdf21ec7226aaf8ce9488f0a2bd3fb657745c71c"
+        },
+        "pretrained_sha256": {
+          "config.json": "439aa0fecf5a5546a1def68b1fc45e538e2c94528ce805378daf091e2bf6e4de",
+          "model.safetensors": "495fa51e204676f1a857a9fc13c4c89f3f5ba9f480b898cebca02add25e6d749",
+          "tokenizer.json": "fe2ebbbbde2985be723e0ce18217853e4020c5e9d35bd07be2c27ab9d3ead57a"
+        },
+        "training_batches_per_epoch": 5153,
+        "optimizer_updates_per_epoch": 2577,
+        "planned_optimizer_updates": 12885,
+        "training_precision": "bf16 autocast"
+      }
+    },
+    {
+      "label": "C0",
+      "run_id": "C0",
+      "status": "complete",
+      "epochs": 5,
+      "learning_rate": 0.0001,
+      "use_embeddings": false,
+      "metrics_test": {
+        "count": 8917,
+        "entity_exact": 99.49534596837502,
+        "entity_macro_f1": 99.49534596837502,
+        "bleu": 99.772267831008,
+        "rouge_l": 99.89321992114122,
+        "by_relation": {
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 1416
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2214
+          },
+          "P364": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2238
+          },
+          "P57": {
+            "exact": 97.98927613941018,
+            "f1": 97.98927613941018,
+            "count": 2238
+          },
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 811
+          }
+        },
+        "answerable_count": 8106,
+        "refusal_count": 811,
+        "answerable_entity_exact": 99.44485566247224,
+        "answerable_entity_macro_f1": 99.44485566247224,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 10.643701984961092,
+        "latency_p95_ms": 13.591434375030076,
+        "gold_total": 8917,
+        "prediction_coverage": 100.0
+      },
+      "metrics_valid": {
+        "count": 8857,
+        "entity_exact": 99.72902788754658,
+        "entity_macro_f1": 99.77870610816304,
+        "bleu": 99.76546781153809,
+        "rouge_l": 99.865736105684,
+        "by_relation": {
+          "P57": {
+            "exact": 99.06040268456375,
+            "f1": 99.14988814317674,
+            "count": 2235
+          },
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 1356
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2229
+          },
+          "P364": {
+            "exact": 99.86559139784946,
+            "f1": 99.97311827956989,
+            "count": 2232
+          },
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 805
+          }
+        },
+        "answerable_count": 8052,
+        "refusal_count": 805,
+        "answerable_entity_exact": 99.70193740685544,
+        "answerable_entity_macro_f1": 99.75658221559861,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 11.380442181323456,
+        "latency_p95_ms": 14.610635937515326,
+        "gold_total": 8857,
+        "prediction_coverage": 100.0
+      },
+      "best_epoch": 1,
+      "validation_f1": 99.77870610816304,
+      "training_seconds": 6135.215196299992,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.1075128813285039,
+          "validation_loss": 0.0025016950599511777,
+          "epoch_seconds": 1128.3901814000128,
+          "optimizer_updates": 2577,
+          "optimizer_updates_total": 2577,
+          "count": 8857,
+          "entity_exact": 99.72902788754658,
+          "entity_macro_f1": 99.77870610816304,
+          "bleu": 99.76546781153809,
+          "rouge_l": 99.865736105684,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.70193740685544,
+          "answerable_entity_macro_f1": 99.75658221559861,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.380442181323456,
+          "latency_p95_ms": 14.610635937515326,
+          "gold_total": 8857,
+          "prediction_coverage": 100.0
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.0011440298264922828,
+          "validation_loss": 0.00021532668611722549,
+          "epoch_seconds": 1314.5839227000106,
+          "optimizer_updates": 2577,
+          "optimizer_updates_total": 5154,
+          "count": 8857,
+          "entity_exact": 99.72902788754658,
+          "entity_macro_f1": 99.77870610816304,
+          "bleu": 99.81919780752287,
+          "rouge_l": 99.88348287324584,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.70193740685544,
+          "answerable_entity_macro_f1": 99.75658221559861,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.059028000458033,
+          "latency_p95_ms": 14.80375312507931,
+          "gold_total": 8857,
+          "prediction_coverage": 100.0
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.0009923088746158512,
+          "validation_loss": 0.001068755003586242,
+          "epoch_seconds": 1253.341678900004,
+          "optimizer_updates": 2577,
+          "optimizer_updates_total": 7731,
+          "count": 8857,
+          "entity_exact": 99.72902788754658,
+          "entity_macro_f1": 99.77870610816304,
+          "bleu": 99.81025806137633,
+          "rouge_l": 99.88274829444931,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.70193740685544,
+          "answerable_entity_macro_f1": 99.75658221559861,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.182837179629697,
+          "latency_p95_ms": 14.660109374972308,
+          "gold_total": 8857,
+          "prediction_coverage": 100.0
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.0005061765552966412,
+          "validation_loss": 0.0003893311625428397,
+          "epoch_seconds": 1168.5916587000102,
+          "optimizer_updates": 2577,
+          "optimizer_updates_total": 10308,
+          "count": 8857,
+          "entity_exact": 99.72902788754658,
+          "entity_macro_f1": 99.77870610816304,
+          "bleu": 99.81521989050843,
+          "rouge_l": 99.88393676862674,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.70193740685544,
+          "answerable_entity_macro_f1": 99.75658221559861,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.403698340303315,
+          "latency_p95_ms": 16.091009375031717,
+          "gold_total": 8857,
+          "prediction_coverage": 100.0
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.0002746787771662052,
+          "validation_loss": 0.000835786596925899,
+          "epoch_seconds": 1269.6259137000015,
+          "optimizer_updates": 2577,
+          "optimizer_updates_total": 12885,
+          "count": 8857,
+          "entity_exact": 99.72902788754658,
+          "entity_macro_f1": 99.77870610816304,
+          "bleu": 99.81025806137633,
+          "rouge_l": 99.88274829444931,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.70193740685544,
+          "answerable_entity_macro_f1": 99.75658221559861,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 10.948794761213264,
+          "latency_p95_ms": 14.517239062570297,
+          "gold_total": 8857,
+          "prediction_coverage": 100.0
+        }
+      ],
+      "config": {
+        "run_id": "C0",
+        "model": "0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab",
+        "model_source_kind": "local_directory",
+        "input_max_length": 512,
+        "target_max_length": 96,
+        "eval_batch_size": 64,
+        "learning_rate": 0.0001,
+        "epochs": 5,
+        "batch_size": 8,
+        "gradient_accumulation": 2,
+        "effective_batch": 16,
+        "use_embeddings": false,
+        "seed": 42,
+        "shuffle_seed": 42,
+        "device": "cuda",
+        "smoke": false,
+        "torch_threads": 4,
+        "generation_precision": "float32",
+        "validation_entity_linking": true,
+        "selection_metric": "validation entity_macro_f1",
+        "qa_by_split": {
+          "train": 41220,
+          "valid": 8857,
+          "test": 8917
+        },
+        "effective_batch_note": "Maximum examples per optimizer update; the final accumulation window may be smaller.",
+        "input_sha256": {
+          "qa.jsonl": "2882b2077834d37f4b1ae8f9b8ea90561c8c5dacecf4247907311d0cbb8bb310",
+          "entities.json": "7c935d8fa1eecd9870df16e49d93460bdd75f90255661e4e4e397af9f667f3e8",
+          "splits.json": "dd24634f590e3e5dd38dc2e5ca7fd25b432ec3b562f74dc99a65b22d586113b7",
+          "triples.tsv": "42c9a5c665313b077a97650309bb8102ab573464ba40943a1b41ffb77c2f8e0a"
+        },
+        "pretrained_sha256": {
+          "config.json": "439aa0fecf5a5546a1def68b1fc45e538e2c94528ce805378daf091e2bf6e4de",
+          "model.safetensors": "495fa51e204676f1a857a9fc13c4c89f3f5ba9f480b898cebca02add25e6d749",
+          "tokenizer.json": "fe2ebbbbde2985be723e0ce18217853e4020c5e9d35bd07be2c27ab9d3ead57a"
+        },
+        "training_batches_per_epoch": 5153,
+        "optimizer_updates_per_epoch": 2577,
+        "planned_optimizer_updates": 12885,
+        "training_precision": "bf16 autocast"
+      }
+    }
+  ],
+  "selected_run": "B0",
+  "A0": {
+    "metrics_test": {
+      "count": 8917,
+      "entity_exact": 100.0,
+      "entity_macro_f1": 100.0,
+      "bleu": 100.00000000000004,
+      "rouge_l": 100.0,
+      "by_relation": {
+        "P136": {
+          "exact": 100.0,
+          "f1": 100.0,
+          "count": 1416
+        },
+        "P495": {
+          "exact": 100.0,
+          "f1": 100.0,
+          "count": 2214
+        },
+        "P364": {
+          "exact": 100.0,
+          "f1": 100.0,
+          "count": 2238
+        },
+        "P57": {
+          "exact": 100.0,
+          "f1": 100.0,
+          "count": 2238
+        },
+        "UNKNOWN": {
+          "exact": 100.0,
+          "f1": 100.0,
+          "count": 811
+        }
+      },
+      "answerable_count": 8106,
+      "refusal_count": 811,
+      "answerable_entity_exact": 100.0,
+      "answerable_entity_macro_f1": 100.0,
+      "refusal_accuracy": 100.0,
+      "latency_mean_ms": 1.2822116518962272,
+      "latency_p95_ms": 1.5339000092353672,
+      "gold_total": 8917,
+      "prediction_coverage": 100.0
+    }
+  },
+  "evidence_dir": "verification/2026-10-30",
+  "figures": {
+    "图5-1 学习率与逐轮验证损失": "verification/2026-10-30/figures/learning_rate_loss.png",
+    "图5-2 学习率与测试指标": "verification/2026-10-30/figures/learning_rate_metrics.png",
+    "图5-3 六种系统的完整测试比较": "verification/2026-10-30/figures/system_metrics.png",
+    "图5-4 相同学习率下结构前缀消融": "verification/2026-10-30/figures/embedding_ablation.png",
+    "图5-5 各扰动类型的诊断成绩（别名使用89题，其余分母见表）": "verification/2026-10-30/figures/robustness.png",
+    "图5-6 TransE训练损失": "verification/2026-10-30/transe/loss.png",
+    "图5-7 5000部电影双系统实际浏览器测试": "verification/2026-10-30/live_ui/general.png",
+    "图5-8 特殊字符名称恢复的实际浏览器测试": "verification/2026-10-30/live_ui/name_recovery.png"
+  },
+  "analysis": {
+    "zhou": [
+      "冻结A0在8917道原始测试题上的集合准确率为100.00000%，实体F1为100.00000%。四种预设推理阈值的实体F1为0.30对应100.00%、0.70对应100.00%、0.90对应100.00%、0.99对应100.00%；这些是同一分类器的推理配置，不是四次训练，也未按测试成绩重新选阈值。",
+      "B0学习率0.0001，最佳第3轮，验证F1为99.77871%；B1学习率3e-05，最佳第1轮，验证F1为99.77871%；B2学习率0.0003，最佳第1轮，验证F1为99.77871%；B3学习率0.001，最佳第4轮，验证F1为99.76516%。最高验证F1对应B0,B1,B2，按预定较小B编号同分规则选定B0；C0不参与选模，测试成绩不用于挑选配置。",
+      "相同学习率1e-4下，B0测试F1为99.49535%，C0为99.49535%，B0减C0为+0.00000个百分点。该差值仅描述本轮结构前缀消融。",
+      "文本和结构两种预检均显示，原始三个划分在512 token输入、96 token参考目标和24条事实限制下均无截断，也没有遗漏保留事实中的目标实体。全库有78个实体标签遇到未知词元，验证范围有13个；这是分词器往返诊断，不能把所有生成错误都归因于它。",
+      "在原始验证选定B0后，独立固定名称恢复方法得到：验证集原始F1 99.77871%、恢复后100.00000%，修正24题、回退0题、文本变化39题；测试集原始F1 99.49535%、恢复后99.96636%，修正42题、回退0题、文本变化54题；扰动诊断集原始F1 83.97874%、恢复后83.97874%，修正0题、回退0题、文本变化4题。该方法只从实际链接的保留事实名称中作无歧义恢复；各划分原始实体ID及计时保持原样，模型选择依据仍为原始验证F1。",
+      "鲁棒性诊断共439题：原始100、改写100、别名89、拼写100、不可回答50；拼写实际改变99题。别名只与同源89道原始题比较，配对分数见paired_robustness.json；此覆盖导向抽样不代表自然问题总体。",
+      "每种配置只使用种子42进行一次训练，未估计多种子方差，差异仅描述本次实验。共享模板和固定完整图谱限制了外推范围。"
+    ],
+    "xia": [
+      "TransE完成100轮，记录的初始损失0.727160、最终损失0.001325。五组神经实验均完整训练5轮，每轮验证8857题，最终测试8917题；各自从同一预训练来源独立开始。",
+      "B0学习率0.0001，最佳第3轮，验证F1为99.77871%；B1学习率3e-05，最佳第1轮，验证F1为99.77871%；B2学习率0.0003，最佳第1轮，验证F1为99.77871%；B3学习率0.001，最佳第4轮，验证F1为99.76516%。最高验证F1对应B0,B1,B2，按预定较小B编号同分规则选定B0；C0不参与选模，测试成绩不用于挑选配置。",
+      "相同学习率1e-4下，B0测试F1为99.49535%，C0为99.49535%，B0减C0为+0.00000个百分点。该差值仅描述本轮结构前缀消融。",
+      "文本和结构两种预检均显示，原始三个划分在512 token输入、96 token参考目标和24条事实限制下均无截断，也没有遗漏保留事实中的目标实体。全库有78个实体标签遇到未知词元，验证范围有13个；这是分词器往返诊断，不能把所有生成错误都归因于它。",
+      "在原始验证选定B0后，独立固定名称恢复方法得到：验证集原始F1 99.77871%、恢复后100.00000%，修正24题、回退0题、文本变化39题；测试集原始F1 99.49535%、恢复后99.96636%，修正42题、回退0题、文本变化54题；扰动诊断集原始F1 83.97874%、恢复后83.97874%，修正0题、回退0题、文本变化4题。该方法只从实际链接的保留事实名称中作无歧义恢复；各划分原始实体ID及计时保持原样，模型选择依据仍为原始验证F1。",
+      "鲁棒性诊断共439题：原始100、改写100、别名89、拼写100、不可回答50；拼写实际改变99题。别名只与同源89道原始题比较，配对分数见paired_robustness.json；此覆盖导向抽样不代表自然问题总体。",
+      "每种配置只使用种子42进行一次训练，未估计多种子方差，差异仅描述本次实验。共享模板和固定完整图谱限制了外推范围。"
+    ]
+  },
+  "contributions": {
+    "zhou": "我负责冻结A0的配套推理与四种预设阈值检查、实体链接、当前答案实体解码及独立名称恢复评价基准、严格自动评价、配对鲁棒性诊断与验收接口；正式A0沿用原冻结分类器，本轮没有重新训练A0。",
+    "xia": "我负责冻结5000部电影数据核验、100轮TransE、B0—B3学习率对照和C0结构前缀消融的五组完整神经训练、统一训练配置和曲线整理；与A0共享同一图谱、电影划分及评价接口。"
+  },
+  "conclusion": {
+    "zhou": [
+      "原始验证选择B0，完整测试集合准确率99.49535%、实体F1 99.49535%；全部配置、预测、曲线和哈希证据见verification/2026-10-30。",
+      "结果适用于本轮固定图谱与模板问题，结论受单种子和小规模扰动诊断范围限制；独立人工评分尚待完成。名称恢复作为附加方法单列，原始系统成绩保留。"
+    ],
+    "xia": [
+      "原始验证选择B0，完整测试集合准确率99.49535%、实体F1 99.49535%；全部配置、预测、曲线和哈希证据见verification/2026-10-30。",
+      "结果适用于本轮固定图谱与模板问题，结论受单种子和小规模扰动诊断范围限制；独立人工评分尚待完成。名称恢复作为附加方法单列，原始系统成绩保留。"
+    ]
+  },
+  "evaluation_note": "Strict target-entity scores: generated answer payload, original-case short aliases, list boundaries, and retrieved-tail homonym resolution; unique unrelated names remain false positives. Full sentences are used for BLEU/ROUGE.",
+  "source_sha256": {
+    "acceptance.py": "bd0908ba925f0d931d0acea82e45db5bfb6f2d13bb56faac2f56c5f7899516f0",
+    "common.py": "8edce50100c3072bd134d77c77d0f4c45de5362219fe503b690b336fbc487705",
+    "dataset.py": "992f80c328e9bef9539ebb5cb023b1053d00d3bcb7d4326f1f9eb606e6a5973c",
+    "demo.py": "32a7469548e0758d5a80af61f99a11e23e5eeb9bb97e0302768c2c294229e2f2",
+    "environment_info.py": "1d2ddf004f0c67fefe2f9056d5a6d7ab70f35db668454ab6832757398cbeb772",
+    "error_analysis.py": "ead207765e838b41282b7fa642200737cc7f457a5ba357d950bc504e607b579b",
+    "evidence.py": "19b54b427bf231450044d2fb66a2f6a5aeb50db329e4b49305dc90d85e1e87a1",
+    "expand.py": "c05e34baf9690d6d947a062addb4682446ffc08b1ff6d7a1daff76dfff81e460",
+    "expanded_evaluation.py": "639b8ed9457262f1a104cf2ff2bd1e21f0855a758606cb5660c146412728ccdb",
+    "expanded_suite.py": "2ac4b33fa38910e1d3fd5cc455155b6b894354689783c1770e444fa2412e029f",
+    "fetch.py": "334410b0e4f59d95915b7f6e5bbdc0812521291bf0f72e43809035caaceee080",
+    "finalize.py": "b7d650455d073ac943dd02cb97d4e23329004b5a80334a8e357c04d287ed0474",
+    "human_eval.py": "131bd140753d3110ec11cdc26fb63d3554173a8e3bd09a1e6977d3983f0b22af",
+    "linker.py": "0a7e2bf48fbb7e523b4ba4f22a9ec293fe2be458e87a621a7601c61702fdb180",
+    "metrics.py": "aef96a0703a17af914883d46471df64adab40092d9d15bdac51c65da861c19cb",
+    "name_recovery.py": "ece3fbb1a5b4933d789b0943ccfc422c09febbfff0fe6e451d8953dca5645975",
+    "neural.py": "878331d0c9ffbc76f204d5fb46401d20d5c954b29cfbbf3315db1385b01265eb",
+    "neural_preflight.py": "56f92a7d432531967b01704aaf80b7beb3d35e75c4bc00866a5fe0b28bc4ec19",
+    "personal_experiment.py": "ff242bee9013eb88f670d3d9cbe85e08b78023b36ab18226ae01ca4136ee760b",
+    "pipeline.py": "a538df78000030d44a63e6a95bba3e5a67439ab626b71fa59b2ac003e74cf016",
+    "plots.py": "f51e1e5f09d125d180f3299beafd7e132856b2d21bdf54b13012cd6812a7c23a",
+    "prepare.py": "4bbf41bd7fb4aaa003be841a159fa7c8717fd3c20b1c99e5c615e17be6f32288",
+    "recovery_experiment.py": "d54258754bc8d23aa85a11ff56c3056c24113c77927ea43583cdd5388f48095c",
+    "report.py": "aed9cab5a3cc80a6c4d99f71958a70fd608c20ba87d290857ed342edf192bdf9",
+    "robustness.py": "4d54a6e5c2b5312bf36967daa9447e81246bd94f39b698b45212e9927d37270f",
+    "transe.py": "c9706f0e1e930f002787502a72e8689da0d84a6149a5ebea5cdd7d59ee3ee92f",
+    "web.py": "5129852b5d178ebb6c9d3685d871e6b2fe7dddaeb69a9b7364b4ccde31de9306",
+    "__init__.py": "83333eb7fb9796725f08ca7612bc659233d713cbbe2d423a70125fddbd865081"
+  },
+  "robustness": [
+    [
+      "clean",
+      100,
+      "100.00",
+      "100.00"
+    ],
+    [
+      "paraphrase",
+      100,
+      "75.00",
+      "68.00"
+    ],
+    [
+      "alias",
+      89,
+      "98.88",
+      "98.88"
+    ],
+    [
+      "typo",
+      100,
+      "53.00",
+      "61.00"
+    ],
+    [
+      "unanswerable",
+      50,
+      "100.00",
+      "100.00"
+    ]
+  ],
+  "robustness_metadata": {
+    "total": 439,
+    "variants": {
+      "clean": 100,
+      "paraphrase": 100,
+      "alias": 89,
+      "typo": 100,
+      "unanswerable": 50
+    },
+    "typo_actual_perturbed": 99,
+    "paired_metrics": "verification/2026-10-30/paired_robustness.json",
+    "source_split": "test"
+  },
+  "name_recovery": {
+    "run_id": "B0",
+    "scope": "独立名称恢复后处理；正式原始评分与原始验证选模均保持不变。",
+    "splits": {
+      "valid": {
+        "raw_metrics": {
+          "count": 8857,
+          "entity_exact": 99.72902788754658,
+          "entity_macro_f1": 99.77870610816304,
+          "bleu": 99.80900500239837,
+          "rouge_l": 99.87811390693399,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.70193740685544,
+          "answerable_entity_macro_f1": 99.75658221559861,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.97476371231327,
+          "latency_p95_ms": 15.840124999954242
+        },
+        "recovered_metrics": {
+          "count": 8857,
+          "entity_exact": 100.0,
+          "entity_macro_f1": 100.0,
+          "bleu": 99.92082861658078,
+          "rouge_l": 99.92392898117896,
+          "by_relation": {
+            "P57": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 100.0,
+          "answerable_entity_macro_f1": 100.0,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.97476371231327,
+          "latency_p95_ms": 15.840124999954242
+        },
+        "fixed": 24,
+        "regressed": 0,
+        "changed_texts": 39,
+        "baseline_id_differences": 0,
+        "processing_seconds": 3.3329807999980403,
+        "report": "verification/2026-10-30/name_recovery/B0_valid/report.json"
+      },
+      "test": {
+        "raw_metrics": {
+          "count": 8917,
+          "entity_exact": 99.49534596837502,
+          "entity_macro_f1": 99.49534596837502,
+          "bleu": 99.77551051994016,
+          "rouge_l": 99.89321992114122,
+          "by_relation": {
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1416
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2214
+            },
+            "P364": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2238
+            },
+            "P57": {
+              "exact": 97.98927613941018,
+              "f1": 97.98927613941018,
+              "count": 2238
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 811
+            }
+          },
+          "answerable_count": 8106,
+          "refusal_count": 811,
+          "answerable_entity_exact": 99.44485566247224,
+          "answerable_entity_macro_f1": 99.44485566247224,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.792072322518463,
+          "latency_p95_ms": 14.841156249985943
+        },
+        "recovered_metrics": {
+          "count": 8917,
+          "entity_exact": 99.96635639789166,
+          "entity_macro_f1": 99.96635639789166,
+          "bleu": 99.90827363428122,
+          "rouge_l": 99.9787568374339,
+          "by_relation": {
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1416
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2214
+            },
+            "P364": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2238
+            },
+            "P57": {
+              "exact": 99.86595174262735,
+              "f1": 99.86595174262735,
+              "count": 2238
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 811
+            }
+          },
+          "answerable_count": 8106,
+          "refusal_count": 811,
+          "answerable_entity_exact": 99.96299037749814,
+          "answerable_entity_macro_f1": 99.96299037749814,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.792072322518463,
+          "latency_p95_ms": 14.841156249985943
+        },
+        "fixed": 42,
+        "regressed": 0,
+        "changed_texts": 54,
+        "baseline_id_differences": 0,
+        "processing_seconds": 2.890979600007995,
+        "report": "verification/2026-10-30/name_recovery/B0_test/report.json"
+      },
+      "robustness": {
+        "raw_metrics": {
+          "count": 439,
+          "entity_exact": 83.5990888382688,
+          "entity_macro_f1": 83.97873955960516,
+          "bleu": 87.83190704578173,
+          "rouge_l": 91.5144957461769,
+          "by_relation": {
+            "P136": {
+              "exact": 81.44329896907216,
+              "f1": 82.4742268041237,
+              "count": 97
+            },
+            "P495": {
+              "exact": 56.25,
+              "f1": 56.94444444444444,
+              "count": 96
+            },
+            "P57": {
+              "exact": 88.77551020408163,
+              "f1": 88.77551020408163,
+              "count": 98
+            },
+            "P364": {
+              "exact": 98.9795918367347,
+              "f1": 98.9795918367347,
+              "count": 98
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 50
+            }
+          },
+          "answerable_count": 389,
+          "refusal_count": 50,
+          "answerable_entity_exact": 81.49100257069408,
+          "answerable_entity_macro_f1": 81.91945158526136,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 13.699595899833472,
+          "latency_p95_ms": 20.42245625011674
+        },
+        "recovered_metrics": {
+          "count": 439,
+          "entity_exact": 83.5990888382688,
+          "entity_macro_f1": 83.97873955960516,
+          "bleu": 88.05635721576219,
+          "rouge_l": 91.5144957461769,
+          "by_relation": {
+            "P136": {
+              "exact": 81.44329896907216,
+              "f1": 82.4742268041237,
+              "count": 97
+            },
+            "P495": {
+              "exact": 56.25,
+              "f1": 56.94444444444444,
+              "count": 96
+            },
+            "P57": {
+              "exact": 88.77551020408163,
+              "f1": 88.77551020408163,
+              "count": 98
+            },
+            "P364": {
+              "exact": 98.9795918367347,
+              "f1": 98.9795918367347,
+              "count": 98
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 50
+            }
+          },
+          "answerable_count": 389,
+          "refusal_count": 50,
+          "answerable_entity_exact": 81.49100257069408,
+          "answerable_entity_macro_f1": 81.91945158526136,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 13.699595899833472,
+          "latency_p95_ms": 20.42245625011674
+        },
+        "fixed": 0,
+        "regressed": 0,
+        "changed_texts": 4,
+        "baseline_id_differences": 0,
+        "processing_seconds": 79.5580406000081,
+        "report": "verification/2026-10-30/name_recovery/B0_robustness/report.json"
+      }
+    }
+  },
+  "runtime_evidence": {
+    "status": "PASS",
+    "cases": 2,
+    "mode": "B0 plus existing name recovery",
+    "record": "verification/2026-10-30/live_ui/checks.json",
+    "screenshots": {
+      "general.png": "ddeba2948032fa4c51188edd0d3481fb65db51d9e2870847d7ba773e31b46f5f",
+      "name_recovery.png": "e211cd6029fcfddeae3bf0d0cba5e59c0998da4f67724b7fe8cf6a6e8f8ac08a"
+    }
+  }
+}

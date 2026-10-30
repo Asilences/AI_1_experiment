@@ -1,0 +1,55 @@
+{
+  "created_at": "2026-10-30T16:08:42Z",
+  "questions_sha256": "045b5186f341b8cd767c7360d0ec9748b7c06cd550e2c7e337d7a494aa6ff988",
+  "selection": "Lexicographic movie ID; Chinese title and four nonempty facts; no prediction-based selection.",
+  "selected_movies": {
+    "valid": [
+      "Q1003845",
+      "Q101069738",
+      "Q101666960",
+      "Q102046208",
+      "Q102754",
+      "Q10307713",
+      "Q10384115",
+      "Q1046841",
+      "Q104814",
+      "Q105031"
+    ],
+    "test": [
+      "Q1020603",
+      "Q1035093",
+      "Q103569",
+      "Q1042931",
+      "Q1044523",
+      "Q1050815",
+      "Q1052826",
+      "Q105359456",
+      "Q1055332",
+      "Q1058555"
+    ]
+  },
+  "templates": {
+    "P57": [
+      "《{title}》的导演是谁？",
+      "谁执导了《{title}》？",
+      "请问《{title}》是哪位导演拍的？"
+    ],
+    "P136": [
+      "《{title}》是什么类型？",
+      "《{title}》属于哪种流派？",
+      "请告诉我《{title}》的电影类别。"
+    ],
+    "P495": [
+      "《{title}》的制片国家是哪里？",
+      "《{title}》来自哪个国家？",
+      "请问《{title}》的出品国是哪里？"
+    ],
+    "P364": [
+      "《{title}》的原始语言是什么？",
+      "《{title}》使用什么语种？",
+      "请问《{title}》的原声是什么语言？"
+    ]
+  },
+  "scope": "Deterministic template-controlled Chinese interface acceptance on movie-held-out valid/test IDs in a visible frozen knowledge graph; not independently collected natural Chinese QA, multilingual retraining, or open-domain generalization.",
+  "fixture_protocol": "v2 post-diagnostic revision: append the stored release year outside every positive title when available, uniformly across all selected movies and variants. v1 contained eight correctly refused ambiguous unqualified titles; no adapter change or correctness-based movie selection is made to force an answer."
+}

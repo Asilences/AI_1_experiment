@@ -10,13 +10,20 @@ from pykeen.training import SLCWATrainingLoop
 from pykeen.triples import TriplesFactory
 import torch
 
-from .common import ROOT, seed_all, setup_logging, write_json
+from .common import ROOT, seed_all, setup_logging, write_json, sha256
 
 
 def train(epochs=100):
     seed_all(42)
-    output = ROOT / 'models' / 'transe'; output.mkdir(parents=True, exist_ok=True)
+    output = ROOT / 'models' / 'transe'
+    if output.exists() and any(output.iterdir()):
+        raise FileExistsError('Refusing to overwrite existing TransE artifacts; use an isolated experiment project')
+    output.mkdir(parents=True, exist_ok=True)
     factory = TriplesFactory.from_path(ROOT / 'data' / 'processed' / 'triples.tsv', delimiter='\t')
+    write_json(output / 'config.json', {'epochs': epochs, 'seed': 42, 'embedding_dim': 100,
+               'learning_rate': .001, 'batch_size': 256, 'negative_samples': 5,
+               'entities': factory.num_entities, 'relations': factory.num_relations,
+               'triples_sha256': sha256(ROOT / 'data/processed/triples.tsv')})
     model = TransE(triples_factory=factory, embedding_dim=100, scoring_fct_norm=1,
                    loss='MarginRankingLoss', loss_kwargs={'margin': 1.0}, random_seed=42).to('cuda' if torch.cuda.is_available() else 'cpu')
     loop = SLCWATrainingLoop(model=model, triples_factory=factory, optimizer='Adam', optimizer_kwargs={'lr': .001},

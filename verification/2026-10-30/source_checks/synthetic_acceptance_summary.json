@@ -1,0 +1,78 @@
+{
+  "status": "PASS",
+  "source": "synthetic",
+  "scope": "Synthetic offline acceptance fixture; not a measured Wikidata result or a generalization benchmark.",
+  "scientific_result": false,
+  "paths_relative_to": "this summary.json directory",
+  "data_dir": "data/processed",
+  "run_dir": "runs/A0_acceptance",
+  "model_path": "runs/A0_acceptance/model.pkl",
+  "examples_path": "examples.json",
+  "checks": {
+    "run_complete": true,
+    "disjoint_movie_splits": true,
+    "full_test_coverage": true,
+    "all_test_answers_correct": true,
+    "four_relations_answered": true,
+    "known_movie_refusal": true,
+    "multiple_answer_example": true,
+    "alias_example": true,
+    "unknown_movie_refusal": true,
+    "reloaded_predictions_stable": true,
+    "sensitivity_complete_and_stable": true,
+    "validation_only_threshold": true,
+    "matched_alias_comparison": true
+  },
+  "fixture_metrics": {
+    "count": 30,
+    "entity_exact": 100.0,
+    "entity_macro_f1": 100.0,
+    "bleu": 100.00000000000004,
+    "rouge_l": 100.0,
+    "by_relation": {
+      "P57": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 6
+      },
+      "P136": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 6
+      },
+      "P495": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 6
+      },
+      "P364": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 6
+      },
+      "UNKNOWN": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 6
+      }
+    },
+    "answerable_count": 24,
+    "refusal_count": 6,
+    "answerable_entity_exact": 100.0,
+    "answerable_entity_macro_f1": 100.0,
+    "refusal_accuracy": 100.0,
+    "latency_mean_ms": 1.3654633323312737,
+    "latency_p95_ms": 1.7762000061338767,
+    "gold_total": 30,
+    "prediction_coverage": 100.0
+  },
+  "fixture_movies": 10,
+  "movie_split_sizes": {
+    "train": 6,
+    "valid": 2,
+    "test": 2
+  },
+  "training_runs": 1,
+  "test_forward_passes": 15,
+  "metric_interpretation": "Synthetic offline acceptance fixture; not a measured Wikidata result or a generalization benchmark."
+}

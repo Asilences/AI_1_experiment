@@ -1,0 +1,12 @@
+{
+  "scope": "Decoder correctness on training references only; gold IDs used for the audit comparison, never decoding.",
+  "train_rows": 41220,
+  "reference_comparisons": 78693,
+  "unique_text_movie_pairs": 28482,
+  "mismatches": 0,
+  "examples": [],
+  "seconds": 1.1467931000006502,
+  "entities_sha256": "7c935d8fa1eecd9870df16e49d93460bdd75f90255661e4e4e397af9f667f3e8",
+  "qa_sha256": "2882b2077834d37f4b1ae8f9b8ea90561c8c5dacecf4247907311d0cbb8bb310",
+  "decoder_source_sha256": "aef96a0703a17af914883d46471df64adab40092d9d15bdac51c65da861c19cb"
+}

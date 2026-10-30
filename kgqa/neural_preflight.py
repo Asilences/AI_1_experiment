@@ -81,7 +81,9 @@ def _label_summary(ids, entities, roundtrips, example_limit):
                          for qid in changed[:example_limit]]}
 
 
-def build_report(data_dir, tokenizer, *, tokenizer_source=None, mapping_path=None, example_limit=5):
+def build_report(data_dir, tokenizer, *, tokenizer_source=None, mapping_path=None, example_limit=5, input_max_length=INPUT_LIMIT):
+    if not isinstance(input_max_length, int) or isinstance(input_max_length, bool) or input_max_length < 1:
+        raise ValueError("input_max_length must be a positive integer")
     if not isinstance(example_limit, int) or isinstance(example_limit, bool) or example_limit < 0:
         raise ValueError('example_limit must be a nonnegative integer')
     data_dir = Path(data_dir)
@@ -123,7 +125,7 @@ def build_report(data_dir, tokenizer, *, tokenizer_source=None, mapping_path=Non
             max_input, max_target = max(max_input, input_count), max(max_target, target_info['tokens'])
             max_facts = max(max_facts, len(available))
             short = {'question_id': row['question_id']}
-            if input_count > INPUT_LIMIT:
+            if input_count > input_max_length:
                 counts['input_truncated_rows'] += 1
                 example('input_truncation', {**short, 'untruncated_tokens': input_count})
             if target_info['tokens'] > TARGET_LIMIT:
@@ -175,7 +177,7 @@ def build_report(data_dir, tokenizer, *, tokenizer_source=None, mapping_path=Non
         'schema_version': 1, 'kind': 'neural_data_preflight',
         'scope': 'Dataset/tokenizer inspection only; no model training, generation, or evaluation scores.',
         'protocol': {
-            'input_max_length': INPUT_LIMIT, 'target_max_length': TARGET_LIMIT, 'fact_limit': FACT_LIMIT,
+            'input_max_length': input_max_length, 'target_max_length': TARGET_LIMIT, 'fact_limit': FACT_LIMIT,
             'token_counts_include_special_tokens': True, 'target_reference_index': 0,
             'roundtrip_comparison': 'Exact equality after decode(skip_special_tokens=True), without truncation.',
             'context_selection': 'Gold movie for train; EntityLinker over all split movies for other splits.',
@@ -197,12 +199,13 @@ def main(argv=None):
     parser.add_argument('--tokenizer', required=True, help='Local tokenizer directory or cached model ID. Never downloaded.')
     parser.add_argument('--output', required=True, type=Path)
     parser.add_argument('--mapping', type=Path, help='Optional TransE mapping.json to reproduce B0 fact filtering.')
+    parser.add_argument('--input-max-length', type=int, default=INPUT_LIMIT)
     parser.add_argument('--example-limit', type=int, default=5)
     args = parser.parse_args(argv)
     from transformers import AutoTokenizer
     tokenizer = AutoTokenizer.from_pretrained(args.tokenizer, local_files_only=True)
     report = build_report(args.data_dir, tokenizer, tokenizer_source=args.tokenizer,
-                          mapping_path=args.mapping, example_limit=args.example_limit)
+                          mapping_path=args.mapping, example_limit=args.example_limit, input_max_length=args.input_max_length)
     write_json(args.output, report)
     print(json.dumps({'kind': report['kind'], 'rows': report['rows'],
                       'by_split': {split: {key: value for key, value in summary.items()

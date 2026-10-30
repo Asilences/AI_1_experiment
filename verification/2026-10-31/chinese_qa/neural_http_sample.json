@@ -1,0 +1,1150 @@
+{
+  "status": "COMPLETED",
+  "count": 16,
+  "entity_exact_or_correct_refusal": 0.0,
+  "positive_count": 8,
+  "negative_count": 8,
+  "positive_entity_exact": 0.0,
+  "negative_refusal_accuracy": 0.0,
+  "chinese_output_coverage": 0.0,
+  "scope": "Small real neural HTTP smoke sample; no statistical generalization claim.",
+  "server_status": {
+    "movie_count": 5000,
+    "fact_count": 35485,
+    "dataset_name": "扩展电影库 · 5000 部",
+    "relation_count": 4,
+    "custom_data": false,
+    "examples": [
+      {
+        "relation": "P57",
+        "question": "Who directed Shutter Island?"
+      },
+      {
+        "relation": "P136",
+        "question": "What genre is Boss Level?"
+      },
+      {
+        "relation": "P495",
+        "question": "Which country did Dogma originate in?"
+      },
+      {
+        "relation": "P364",
+        "question": "What is the original language of 10 Things I Hate About You?"
+      }
+    ],
+    "a0": {
+      "available": true,
+      "name": "A0 管道问答",
+      "detail": "本地模型就绪。"
+    },
+    "neural": {
+      "available": true,
+      "name": "B0 神经生成 + 名称恢复",
+      "run_id": "B0",
+      "detail": "首次使用时加载本地模型。"
+    }
+  },
+  "raw_responses": [
+    {
+      "question_id": "zh-controlled-v2-valid-Q1003845-P57-canonical",
+      "response": {
+        "question": "《黑洞頻率》（2000年版）的导演是谁？",
+        "results": [
+          {
+            "system": "best",
+            "name": "B0 神经生成 + 名称恢复",
+            "ok": true,
+            "answer": "Frequency was directed by Gregory Hoblit.",
+            "refused": false,
+            "movie": {
+              "id": "Q1003845",
+              "label": "Frequency"
+            },
+            "link_status": "exact",
+            "link_score": 1.0,
+            "relation": null,
+            "confidence": null,
+            "evidence": [
+              "Frequency | director | Gregory Hoblit",
+              "Frequency | genre | fantasy film",
+              "Frequency | genre | action film",
+              "Frequency | genre | science fiction film",
+              "Frequency | country of origin | United States",
+              "Frequency | original language | English"
+            ],
+            "cold_start": false,
+            "generation_ms": 351.03359998902306,
+            "raw_answer": "Frequency was directed by Gregory Hoblit.",
+            "replacements": [],
+            "recovery_ms": 0.9206999966409057,
+            "elapsed_ms": 810.98
+          }
+        ],
+        "elapsed_ms": 818.16
+      }
+    },
+    {
+      "question_id": "zh-controlled-v2-valid-Q1003845-P136-canonical",
+      "response": {
+        "question": "《黑洞頻率》（2000年版）是什么类型？",
+        "results": [
+          {
+            "system": "best",
+            "name": "B0 神经生成 + 名称恢复",
+            "ok": true,
+            "answer": "Frequency was directed by Gregory Hoblit.",
+            "refused": false,
+            "movie": {
+              "id": "Q1003845",
+              "label": "Frequency"
+            },
+            "link_status": "exact",
+            "link_score": 1.0,
+            "relation": null,
+            "confidence": null,
+            "evidence": [
+              "Frequency | director | Gregory Hoblit",
+              "Frequency | genre | fantasy film",
+              "Frequency | genre | action film",
+              "Frequency | genre | science fiction film",
+              "Frequency | country of origin | United States",
+              "Frequency | original language | English"
+            ],
+            "cold_start": false,
+            "generation_ms": 231.52440000558272,
+            "raw_answer": "Frequency was directed by Gregory Hoblit.",
+            "replacements": [],
+            "recovery_ms": 0.09549999958835542,
+            "elapsed_ms": 467.75
+          }
+        ],
+        "elapsed_ms": 474.47
+      }
+    },
+    {
+      "question_id": "zh-controlled-v2-valid-Q1003845-P495-canonical",
+      "response": {
+        "question": "《黑洞頻率》（2000年版）的制片国家是哪里？",
+        "results": [
+          {
+            "system": "best",
+            "name": "B0 神经生成 + 名称恢复",
+            "ok": true,
+            "answer": "Frequency was directed by Gregory Hoblit.",
+            "refused": false,
+            "movie": {
+              "id": "Q1003845",
+              "label": "Frequency"
+            },
+            "link_status": "exact",
+            "link_score": 1.0,
+            "relation": null,
+            "confidence": null,
+            "evidence": [
+              "Frequency | director | Gregory Hoblit",
+              "Frequency | genre | fantasy film",
+              "Frequency | genre | action film",
+              "Frequency | genre | science fiction film",
+              "Frequency | country of origin | United States",
+              "Frequency | original language | English"
+            ],
+            "cold_start": false,
+            "generation_ms": 237.82870000286493,
+            "raw_answer": "Frequency was directed by Gregory Hoblit.",
+            "replacements": [],
+            "recovery_ms": 0.09200000204145908,
+            "elapsed_ms": 675.47
+          }
+        ],
+        "elapsed_ms": 682.75
+      }
+    },
+    {
+      "question_id": "zh-controlled-v2-valid-Q1003845-P364-canonical",
+      "response": {
+        "question": "《黑洞頻率》（2000年版）的原始语言是什么？",
+        "results": [
+          {
+            "system": "best",
+            "name": "B0 神经生成 + 名称恢复",
+            "ok": true,
+            "answer": "Frequency was directed by Gregory Hoblit.",
+            "refused": false,
+            "movie": {
+              "id": "Q1003845",
+              "label": "Frequency"
+            },
+            "link_status": "exact",
+            "link_score": 1.0,
+            "relation": null,
+            "confidence": null,
+            "evidence": [
+              "Frequency | director | Gregory Hoblit",
+              "Frequency | genre | fantasy film",
+              "Frequency | genre | action film",
+              "Frequency | genre | science fiction film",
+              "Frequency | country of origin | United States",
+              "Frequency | original language | English"
+            ],
+            "cold_start": false,
+            "generation_ms": 231.3704999978654,
+            "raw_answer": "Frequency was directed by Gregory Hoblit.",
+            "replacements": [],
+            "recovery_ms": 0.0923000043258071,
+            "elapsed_ms": 465.04
+          }
+        ],
+        "elapsed_ms": 471.82
+      }
+    },
+    {
+      "question_id": "zh-controlled-v2-test-Q1020603-P57-canonical",
+      "response": {
+        "question": "《摘星梦难圆》（1937年版）的导演是谁？",
+        "results": [
+          {
+            "system": "best",
+            "name": "B0 神经生成 + 名称恢复",
+            "ok": true,
+            "answer": "Stage Door was directed by Gregory La Cava.",
+            "refused": false,
+            "movie": {
+              "id": "Q1020603",
+              "label": "Stage Door"
+            },
+            "link_status": "exact",
+            "link_score": 1.0,
+            "relation": null,
+            "confidence": null,
+            "evidence": [
+              "Stage Door | director | Gregory La Cava",
+              "Stage Door | genre | drama film",
+              "Stage Door | genre | comedy film",
+              "Stage Door | country of origin | United States",
+              "Stage Door | original language | English"
+            ],
+            "cold_start": false,
+            "generation_ms": 226.36929999862332,
+            "raw_answer": "Stage Door was directed by Gregory La Cava.",
+            "replacements": [],
+            "recovery_ms": 0.5874000053154305,
+            "elapsed_ms": 696.81
+          }
+        ],
+        "elapsed_ms": 703.45
+      }
+    },
+    {
+      "question_id": "zh-controlled-v2-test-Q1020603-P136-canonical",
+      "response": {
+        "question": "《摘星梦难圆》（1937年版）是什么类型？",
+        "results": [
+          {
+            "system": "best",
+            "name": "B0 神经生成 + 名称恢复",
+            "ok": true,
+            "answer": "Stage Door was directed by Gregory La Cava.",
+            "refused": false,
+            "movie": {
+              "id": "Q1020603",
+              "label": "Stage Door"
+            },
+            "link_status": "exact",
+            "link_score": 1.0,
+            "relation": null,
+            "confidence": null,
+            "evidence": [
+              "Stage Door | director | Gregory La Cava",
+              "Stage Door | genre | drama film",
+              "Stage Door | genre | comedy film",
+              "Stage Door | country of origin | United States",
+              "Stage Door | original language | English"
+            ],
+            "cold_start": false,
+            "generation_ms": 211.3703000068199,
+            "raw_answer": "Stage Door was directed by Gregory La Cava.",
+            "replacements": [],
+            "recovery_ms": 0.07920000643935055,
+            "elapsed_ms": 448.49
+          }
+        ],
+        "elapsed_ms": 455.93
+      }
+    },
+    {
+      "question_id": "zh-controlled-v2-test-Q1020603-P495-canonical",
+      "response": {
+        "question": "《摘星梦难圆》（1937年版）的制片国家是哪里？",
+        "results": [
+          {
+            "system": "best",
+            "name": "B0 神经生成 + 名称恢复",
+            "ok": true,
+            "answer": "Stage Door was directed by Gregory La Cava.",
+            "refused": false,
+            "movie": {
+              "id": "Q1020603",
+              "label": "Stage Door"
+            },
+            "link_status": "exact",
+            "link_score": 1.0,
+            "relation": null,
+            "confidence": null,
+            "evidence": [
+              "Stage Door | director | Gregory La Cava",
+              "Stage Door | genre | drama film",
+              "Stage Door | genre | comedy film",
+              "Stage Door | country of origin | United States",
+              "Stage Door | original language | English"
+            ],
+            "cold_start": false,
+            "generation_ms": 261.878399993293,
+            "raw_answer": "Stage Door was directed by Gregory La Cava.",
+            "replacements": [],
+            "recovery_ms": 0.0855999969644472,
+            "elapsed_ms": 735.37
+          }
+        ],
+        "elapsed_ms": 745.0
+      }
+    },
+    {
+      "question_id": "zh-controlled-v2-test-Q1020603-P364-canonical",
+      "response": {
+        "question": "《摘星梦难圆》（1937年版）的原始语言是什么？",
+        "results": [
+          {
+            "system": "best",
+            "name": "B0 神经生成 + 名称恢复",
+            "ok": true,
+            "answer": "Stage Door was directed by Gregory La Cava.",
+            "refused": false,
+            "movie": {
+              "id": "Q1020603",
+              "label": "Stage Door"
+            },
+            "link_status": "exact",
+            "link_score": 1.0,
+            "relation": null,
+            "confidence": null,
+            "evidence": [
+              "Stage Door | director | Gregory La Cava",
+              "Stage Door | genre | drama film",
+              "Stage Door | genre | comedy film",
+              "Stage Door | country of origin | United States",
+              "Stage Door | original language | English"
+            ],
+            "cold_start": false,
+            "generation_ms": 578.4319999947911,
+            "raw_answer": "Stage Door was directed by Gregory La Cava.",
+            "replacements": [],
+            "recovery_ms": 0.08959999831859022,
+            "elapsed_ms": 852.55
+          }
+        ],
+        "elapsed_ms": 862.53
+      }
+    },
+    {
+      "question_id": "zh-controlled-v2-test-negative-actor",
+      "response": {
+        "question": "《摘星梦难圆》的主演是谁？",
+        "results": [
+          {
+            "system": "best",
+            "name": "B0 神经生成 + 名称恢复",
+            "ok": true,
+            "answer": "Stage Door was directed by Gregory La Cava.",
+            "refused": false,
+            "movie": {
+              "id": "Q1020603",
+              "label": "Stage Door"
+            },
+            "link_status": "exact",
+            "link_score": 1.0,
+            "relation": null,
+            "confidence": null,
+            "evidence": [
+              "Stage Door | director | Gregory La Cava",
+              "Stage Door | genre | drama film",
+              "Stage Door | genre | comedy film",
+              "Stage Door | country of origin | United States",
+              "Stage Door | original language | English"
+            ],
+            "cold_start": false,
+            "generation_ms": 271.56739999190904,
+            "raw_answer": "Stage Door was directed by Gregory La Cava.",
+            "replacements": [],
+            "recovery_ms": 0.09030000364873558,
+            "elapsed_ms": 551.53
+          }
+        ],
+        "elapsed_ms": 562.05
+      }
+    },
+    {
+      "question_id": "zh-controlled-v2-valid-negative-actor",
+      "response": {
+        "question": "《黑洞頻率》的主演是谁？",
+        "results": [
+          {
+            "system": "best",
+            "name": "B0 神经生成 + 名称恢复",
+            "ok": true,
+            "answer": "Frequency belongs to the following genres: fantasy film, action film and science fiction film.",
+            "refused": false,
+            "movie": {
+              "id": "Q1003845",
+              "label": "Frequency"
+            },
+            "link_status": "exact",
+            "link_score": 1.0,
+            "relation": null,
+            "confidence": null,
+            "evidence": [
+              "Frequency | director | Gregory Hoblit",
+              "Frequency | genre | fantasy film",
+              "Frequency | genre | action film",
+              "Frequency | genre | science fiction film",
+              "Frequency | country of origin | United States",
+              "Frequency | original language | English"
+            ],
+            "cold_start": false,
+            "generation_ms": 456.01979999628384,
+            "raw_answer": "Frequency belongs to the following genres: fantasy film, action film and science fiction film.",
+            "replacements": [],
+            "recovery_ms": 0.106100007542409,
+            "elapsed_ms": 904.65
+          }
+        ],
+        "elapsed_ms": 912.93
+      }
+    },
+    {
+      "question_id": "zh-controlled-v2-test-negative-budget",
+      "response": {
+        "question": "《摘星梦难圆》的预算是多少？",
+        "results": [
+          {
+            "system": "best",
+            "name": "B0 神经生成 + 名称恢复",
+            "ok": true,
+            "answer": "Stage Door was directed by Gregory La Cava.",
+            "refused": false,
+            "movie": {
+              "id": "Q1020603",
+              "label": "Stage Door"
+            },
+            "link_status": "exact",
+            "link_score": 1.0,
+            "relation": null,
+            "confidence": null,
+            "evidence": [
+              "Stage Door | director | Gregory La Cava",
+              "Stage Door | genre | drama film",
+              "Stage Door | genre | comedy film",
+              "Stage Door | country of origin | United States",
+              "Stage Door | original language | English"
+            ],
+            "cold_start": false,
+            "generation_ms": 218.7978000001749,
+            "raw_answer": "Stage Door was directed by Gregory La Cava.",
+            "replacements": [],
+            "recovery_ms": 0.07639999967068434,
+            "elapsed_ms": 722.85
+          }
+        ],
+        "elapsed_ms": 729.71
+      }
+    },
+    {
+      "question_id": "zh-controlled-v2-valid-negative-budget",
+      "response": {
+        "question": "《黑洞頻率》的预算是多少？",
+        "results": [
+          {
+            "system": "best",
+            "name": "B0 神经生成 + 名称恢复",
+            "ok": true,
+            "answer": "Frequency belongs to the following genres: fantasy film, action film and science fiction film.",
+            "refused": false,
+            "movie": {
+              "id": "Q1003845",
+              "label": "Frequency"
+            },
+            "link_status": "exact",
+            "link_score": 1.0,
+            "relation": null,
+            "confidence": null,
+            "evidence": [
+              "Frequency | director | Gregory Hoblit",
+              "Frequency | genre | fantasy film",
+              "Frequency | genre | action film",
+              "Frequency | genre | science fiction film",
+              "Frequency | country of origin | United States",
+              "Frequency | original language | English"
+            ],
+            "cold_start": false,
+            "generation_ms": 420.3330000018468,
+            "raw_answer": "Frequency belongs to the following genres: fantasy film, action film and science fiction film.",
+            "replacements": [],
+            "recovery_ms": 0.09899999713525176,
+            "elapsed_ms": 692.98
+          }
+        ],
+        "elapsed_ms": 699.5
+      }
+    },
+    {
+      "question_id": "zh-controlled-v2-test-negative-multiple_relations",
+      "response": {
+        "question": "《摘星梦难圆》的导演和类型是什么？",
+        "results": [
+          {
+            "system": "best",
+            "name": "B0 神经生成 + 名称恢复",
+            "ok": true,
+            "answer": "Stage Door was directed by Gregory La Cava.",
+            "refused": false,
+            "movie": {
+              "id": "Q1020603",
+              "label": "Stage Door"
+            },
+            "link_status": "exact",
+            "link_score": 1.0,
+            "relation": null,
+            "confidence": null,
+            "evidence": [
+              "Stage Door | director | Gregory La Cava",
+              "Stage Door | genre | drama film",
+              "Stage Door | genre | comedy film",
+              "Stage Door | country of origin | United States",
+              "Stage Door | original language | English"
+            ],
+            "cold_start": false,
+            "generation_ms": 257.40059999225195,
+            "raw_answer": "Stage Door was directed by Gregory La Cava.",
+            "replacements": [],
+            "recovery_ms": 0.08100000559352338,
+            "elapsed_ms": 713.57
+          }
+        ],
+        "elapsed_ms": 720.34
+      }
+    },
+    {
+      "question_id": "zh-controlled-v2-valid-negative-multiple_relations",
+      "response": {
+        "question": "《黑洞頻率》的导演和类型是什么？",
+        "results": [
+          {
+            "system": "best",
+            "name": "B0 神经生成 + 名称恢复",
+            "ok": true,
+            "answer": "Frequency belongs to the following genres: fantasy film, action film and science fiction film.",
+            "refused": false,
+            "movie": {
+              "id": "Q1003845",
+              "label": "Frequency"
+            },
+            "link_status": "exact",
+            "link_score": 1.0,
+            "relation": null,
+            "confidence": null,
+            "evidence": [
+              "Frequency | director | Gregory Hoblit",
+              "Frequency | genre | fantasy film",
+              "Frequency | genre | action film",
+              "Frequency | genre | science fiction film",
+              "Frequency | country of origin | United States",
+              "Frequency | original language | English"
+            ],
+            "cold_start": false,
+            "generation_ms": 399.8742999974638,
+            "raw_answer": "Frequency belongs to the following genres: fantasy film, action film and science fiction film.",
+            "replacements": [],
+            "recovery_ms": 0.09560000034980476,
+            "elapsed_ms": 631.39
+          }
+        ],
+        "elapsed_ms": 638.2
+      }
+    },
+    {
+      "question_id": "zh-controlled-v2-test-negative-negative_director",
+      "response": {
+        "question": "谁不是《摘星梦难圆》的导演？",
+        "results": [
+          {
+            "system": "best",
+            "name": "B0 神经生成 + 名称恢复",
+            "ok": true,
+            "answer": "Stage Door was directed by Gregory La Cava.",
+            "refused": false,
+            "movie": {
+              "id": "Q1020603",
+              "label": "Stage Door"
+            },
+            "link_status": "exact",
+            "link_score": 1.0,
+            "relation": null,
+            "confidence": null,
+            "evidence": [
+              "Stage Door | director | Gregory La Cava",
+              "Stage Door | genre | drama film",
+              "Stage Door | genre | comedy film",
+              "Stage Door | country of origin | United States",
+              "Stage Door | original language | English"
+            ],
+            "cold_start": false,
+            "generation_ms": 221.64249999332242,
+            "raw_answer": "Stage Door was directed by Gregory La Cava.",
+            "replacements": [],
+            "recovery_ms": 0.08250000246334821,
+            "elapsed_ms": 473.9
+          }
+        ],
+        "elapsed_ms": 480.97
+      }
+    },
+    {
+      "question_id": "zh-controlled-v2-valid-negative-negative_director",
+      "response": {
+        "question": "谁不是《黑洞頻率》的导演？",
+        "results": [
+          {
+            "system": "best",
+            "name": "B0 神经生成 + 名称恢复",
+            "ok": true,
+            "answer": "Frequency belongs to the following genres: fantasy film, action film and science fiction film.",
+            "refused": false,
+            "movie": {
+              "id": "Q1003845",
+              "label": "Frequency"
+            },
+            "link_status": "exact",
+            "link_score": 1.0,
+            "relation": null,
+            "confidence": null,
+            "evidence": [
+              "Frequency | director | Gregory Hoblit",
+              "Frequency | genre | fantasy film",
+              "Frequency | genre | action film",
+              "Frequency | genre | science fiction film",
+              "Frequency | country of origin | United States",
+              "Frequency | original language | English"
+            ],
+            "cold_start": false,
+            "generation_ms": 428.29310000524856,
+            "raw_answer": "Frequency belongs to the following genres: fantasy film, action film and science fiction film.",
+            "replacements": [],
+            "recovery_ms": 0.09499999578110874,
+            "elapsed_ms": 854.06
+          }
+        ],
+        "elapsed_ms": 862.42
+      }
+    }
+  ],
+  "predictions": [
+    {
+      "question_id": "zh-controlled-v2-valid-Q1003845-P57-canonical",
+      "system": "best",
+      "name": "B0 神经生成 + 名称恢复",
+      "ok": true,
+      "answer": "Frequency was directed by Gregory Hoblit.",
+      "refused": false,
+      "movie": {
+        "id": "Q1003845",
+        "label": "Frequency"
+      },
+      "link_status": "exact",
+      "link_score": 1.0,
+      "relation": null,
+      "confidence": null,
+      "evidence": [
+        "Frequency | director | Gregory Hoblit",
+        "Frequency | genre | fantasy film",
+        "Frequency | genre | action film",
+        "Frequency | genre | science fiction film",
+        "Frequency | country of origin | United States",
+        "Frequency | original language | English"
+      ],
+      "cold_start": false,
+      "generation_ms": 351.03359998902306,
+      "raw_answer": "Frequency was directed by Gregory Hoblit.",
+      "replacements": [],
+      "recovery_ms": 0.9206999966409057,
+      "elapsed_ms": 810.98,
+      "movie_id": "Q1003845"
+    },
+    {
+      "question_id": "zh-controlled-v2-valid-Q1003845-P136-canonical",
+      "system": "best",
+      "name": "B0 神经生成 + 名称恢复",
+      "ok": true,
+      "answer": "Frequency was directed by Gregory Hoblit.",
+      "refused": false,
+      "movie": {
+        "id": "Q1003845",
+        "label": "Frequency"
+      },
+      "link_status": "exact",
+      "link_score": 1.0,
+      "relation": null,
+      "confidence": null,
+      "evidence": [
+        "Frequency | director | Gregory Hoblit",
+        "Frequency | genre | fantasy film",
+        "Frequency | genre | action film",
+        "Frequency | genre | science fiction film",
+        "Frequency | country of origin | United States",
+        "Frequency | original language | English"
+      ],
+      "cold_start": false,
+      "generation_ms": 231.52440000558272,
+      "raw_answer": "Frequency was directed by Gregory Hoblit.",
+      "replacements": [],
+      "recovery_ms": 0.09549999958835542,
+      "elapsed_ms": 467.75,
+      "movie_id": "Q1003845"
+    },
+    {
+      "question_id": "zh-controlled-v2-valid-Q1003845-P495-canonical",
+      "system": "best",
+      "name": "B0 神经生成 + 名称恢复",
+      "ok": true,
+      "answer": "Frequency was directed by Gregory Hoblit.",
+      "refused": false,
+      "movie": {
+        "id": "Q1003845",
+        "label": "Frequency"
+      },
+      "link_status": "exact",
+      "link_score": 1.0,
+      "relation": null,
+      "confidence": null,
+      "evidence": [
+        "Frequency | director | Gregory Hoblit",
+        "Frequency | genre | fantasy film",
+        "Frequency | genre | action film",
+        "Frequency | genre | science fiction film",
+        "Frequency | country of origin | United States",
+        "Frequency | original language | English"
+      ],
+      "cold_start": false,
+      "generation_ms": 237.82870000286493,
+      "raw_answer": "Frequency was directed by Gregory Hoblit.",
+      "replacements": [],
+      "recovery_ms": 0.09200000204145908,
+      "elapsed_ms": 675.47,
+      "movie_id": "Q1003845"
+    },
+    {
+      "question_id": "zh-controlled-v2-valid-Q1003845-P364-canonical",
+      "system": "best",
+      "name": "B0 神经生成 + 名称恢复",
+      "ok": true,
+      "answer": "Frequency was directed by Gregory Hoblit.",
+      "refused": false,
+      "movie": {
+        "id": "Q1003845",
+        "label": "Frequency"
+      },
+      "link_status": "exact",
+      "link_score": 1.0,
+      "relation": null,
+      "confidence": null,
+      "evidence": [
+        "Frequency | director | Gregory Hoblit",
+        "Frequency | genre | fantasy film",
+        "Frequency | genre | action film",
+        "Frequency | genre | science fiction film",
+        "Frequency | country of origin | United States",
+        "Frequency | original language | English"
+      ],
+      "cold_start": false,
+      "generation_ms": 231.3704999978654,
+      "raw_answer": "Frequency was directed by Gregory Hoblit.",
+      "replacements": [],
+      "recovery_ms": 0.0923000043258071,
+      "elapsed_ms": 465.04,
+      "movie_id": "Q1003845"
+    },
+    {
+      "question_id": "zh-controlled-v2-test-Q1020603-P57-canonical",
+      "system": "best",
+      "name": "B0 神经生成 + 名称恢复",
+      "ok": true,
+      "answer": "Stage Door was directed by Gregory La Cava.",
+      "refused": false,
+      "movie": {
+        "id": "Q1020603",
+        "label": "Stage Door"
+      },
+      "link_status": "exact",
+      "link_score": 1.0,
+      "relation": null,
+      "confidence": null,
+      "evidence": [
+        "Stage Door | director | Gregory La Cava",
+        "Stage Door | genre | drama film",
+        "Stage Door | genre | comedy film",
+        "Stage Door | country of origin | United States",
+        "Stage Door | original language | English"
+      ],
+      "cold_start": false,
+      "generation_ms": 226.36929999862332,
+      "raw_answer": "Stage Door was directed by Gregory La Cava.",
+      "replacements": [],
+      "recovery_ms": 0.5874000053154305,
+      "elapsed_ms": 696.81,
+      "movie_id": "Q1020603"
+    },
+    {
+      "question_id": "zh-controlled-v2-test-Q1020603-P136-canonical",
+      "system": "best",
+      "name": "B0 神经生成 + 名称恢复",
+      "ok": true,
+      "answer": "Stage Door was directed by Gregory La Cava.",
+      "refused": false,
+      "movie": {
+        "id": "Q1020603",
+        "label": "Stage Door"
+      },
+      "link_status": "exact",
+      "link_score": 1.0,
+      "relation": null,
+      "confidence": null,
+      "evidence": [
+        "Stage Door | director | Gregory La Cava",
+        "Stage Door | genre | drama film",
+        "Stage Door | genre | comedy film",
+        "Stage Door | country of origin | United States",
+        "Stage Door | original language | English"
+      ],
+      "cold_start": false,
+      "generation_ms": 211.3703000068199,
+      "raw_answer": "Stage Door was directed by Gregory La Cava.",
+      "replacements": [],
+      "recovery_ms": 0.07920000643935055,
+      "elapsed_ms": 448.49,
+      "movie_id": "Q1020603"
+    },
+    {
+      "question_id": "zh-controlled-v2-test-Q1020603-P495-canonical",
+      "system": "best",
+      "name": "B0 神经生成 + 名称恢复",
+      "ok": true,
+      "answer": "Stage Door was directed by Gregory La Cava.",
+      "refused": false,
+      "movie": {
+        "id": "Q1020603",
+        "label": "Stage Door"
+      },
+      "link_status": "exact",
+      "link_score": 1.0,
+      "relation": null,
+      "confidence": null,
+      "evidence": [
+        "Stage Door | director | Gregory La Cava",
+        "Stage Door | genre | drama film",
+        "Stage Door | genre | comedy film",
+        "Stage Door | country of origin | United States",
+        "Stage Door | original language | English"
+      ],
+      "cold_start": false,
+      "generation_ms": 261.878399993293,
+      "raw_answer": "Stage Door was directed by Gregory La Cava.",
+      "replacements": [],
+      "recovery_ms": 0.0855999969644472,
+      "elapsed_ms": 735.37,
+      "movie_id": "Q1020603"
+    },
+    {
+      "question_id": "zh-controlled-v2-test-Q1020603-P364-canonical",
+      "system": "best",
+      "name": "B0 神经生成 + 名称恢复",
+      "ok": true,
+      "answer": "Stage Door was directed by Gregory La Cava.",
+      "refused": false,
+      "movie": {
+        "id": "Q1020603",
+        "label": "Stage Door"
+      },
+      "link_status": "exact",
+      "link_score": 1.0,
+      "relation": null,
+      "confidence": null,
+      "evidence": [
+        "Stage Door | director | Gregory La Cava",
+        "Stage Door | genre | drama film",
+        "Stage Door | genre | comedy film",
+        "Stage Door | country of origin | United States",
+        "Stage Door | original language | English"
+      ],
+      "cold_start": false,
+      "generation_ms": 578.4319999947911,
+      "raw_answer": "Stage Door was directed by Gregory La Cava.",
+      "replacements": [],
+      "recovery_ms": 0.08959999831859022,
+      "elapsed_ms": 852.55,
+      "movie_id": "Q1020603"
+    },
+    {
+      "question_id": "zh-controlled-v2-test-negative-actor",
+      "system": "best",
+      "name": "B0 神经生成 + 名称恢复",
+      "ok": true,
+      "answer": "Stage Door was directed by Gregory La Cava.",
+      "refused": false,
+      "movie": {
+        "id": "Q1020603",
+        "label": "Stage Door"
+      },
+      "link_status": "exact",
+      "link_score": 1.0,
+      "relation": null,
+      "confidence": null,
+      "evidence": [
+        "Stage Door | director | Gregory La Cava",
+        "Stage Door | genre | drama film",
+        "Stage Door | genre | comedy film",
+        "Stage Door | country of origin | United States",
+        "Stage Door | original language | English"
+      ],
+      "cold_start": false,
+      "generation_ms": 271.56739999190904,
+      "raw_answer": "Stage Door was directed by Gregory La Cava.",
+      "replacements": [],
+      "recovery_ms": 0.09030000364873558,
+      "elapsed_ms": 551.53,
+      "movie_id": "Q1020603"
+    },
+    {
+      "question_id": "zh-controlled-v2-valid-negative-actor",
+      "system": "best",
+      "name": "B0 神经生成 + 名称恢复",
+      "ok": true,
+      "answer": "Frequency belongs to the following genres: fantasy film, action film and science fiction film.",
+      "refused": false,
+      "movie": {
+        "id": "Q1003845",
+        "label": "Frequency"
+      },
+      "link_status": "exact",
+      "link_score": 1.0,
+      "relation": null,
+      "confidence": null,
+      "evidence": [
+        "Frequency | director | Gregory Hoblit",
+        "Frequency | genre | fantasy film",
+        "Frequency | genre | action film",
+        "Frequency | genre | science fiction film",
+        "Frequency | country of origin | United States",
+        "Frequency | original language | English"
+      ],
+      "cold_start": false,
+      "generation_ms": 456.01979999628384,
+      "raw_answer": "Frequency belongs to the following genres: fantasy film, action film and science fiction film.",
+      "replacements": [],
+      "recovery_ms": 0.106100007542409,
+      "elapsed_ms": 904.65,
+      "movie_id": "Q1003845"
+    },
+    {
+      "question_id": "zh-controlled-v2-test-negative-budget",
+      "system": "best",
+      "name": "B0 神经生成 + 名称恢复",
+      "ok": true,
+      "answer": "Stage Door was directed by Gregory La Cava.",
+      "refused": false,
+      "movie": {
+        "id": "Q1020603",
+        "label": "Stage Door"
+      },
+      "link_status": "exact",
+      "link_score": 1.0,
+      "relation": null,
+      "confidence": null,
+      "evidence": [
+        "Stage Door | director | Gregory La Cava",
+        "Stage Door | genre | drama film",
+        "Stage Door | genre | comedy film",
+        "Stage Door | country of origin | United States",
+        "Stage Door | original language | English"
+      ],
+      "cold_start": false,
+      "generation_ms": 218.7978000001749,
+      "raw_answer": "Stage Door was directed by Gregory La Cava.",
+      "replacements": [],
+      "recovery_ms": 0.07639999967068434,
+      "elapsed_ms": 722.85,
+      "movie_id": "Q1020603"
+    },
+    {
+      "question_id": "zh-controlled-v2-valid-negative-budget",
+      "system": "best",
+      "name": "B0 神经生成 + 名称恢复",
+      "ok": true,
+      "answer": "Frequency belongs to the following genres: fantasy film, action film and science fiction film.",
+      "refused": false,
+      "movie": {
+        "id": "Q1003845",
+        "label": "Frequency"
+      },
+      "link_status": "exact",
+      "link_score": 1.0,
+      "relation": null,
+      "confidence": null,
+      "evidence": [
+        "Frequency | director | Gregory Hoblit",
+        "Frequency | genre | fantasy film",
+        "Frequency | genre | action film",
+        "Frequency | genre | science fiction film",
+        "Frequency | country of origin | United States",
+        "Frequency | original language | English"
+      ],
+      "cold_start": false,
+      "generation_ms": 420.3330000018468,
+      "raw_answer": "Frequency belongs to the following genres: fantasy film, action film and science fiction film.",
+      "replacements": [],
+      "recovery_ms": 0.09899999713525176,
+      "elapsed_ms": 692.98,
+      "movie_id": "Q1003845"
+    },
+    {
+      "question_id": "zh-controlled-v2-test-negative-multiple_relations",
+      "system": "best",
+      "name": "B0 神经生成 + 名称恢复",
+      "ok": true,
+      "answer": "Stage Door was directed by Gregory La Cava.",
+      "refused": false,
+      "movie": {
+        "id": "Q1020603",
+        "label": "Stage Door"
+      },
+      "link_status": "exact",
+      "link_score": 1.0,
+      "relation": null,
+      "confidence": null,
+      "evidence": [
+        "Stage Door | director | Gregory La Cava",
+        "Stage Door | genre | drama film",
+        "Stage Door | genre | comedy film",
+        "Stage Door | country of origin | United States",
+        "Stage Door | original language | English"
+      ],
+      "cold_start": false,
+      "generation_ms": 257.40059999225195,
+      "raw_answer": "Stage Door was directed by Gregory La Cava.",
+      "replacements": [],
+      "recovery_ms": 0.08100000559352338,
+      "elapsed_ms": 713.57,
+      "movie_id": "Q1020603"
+    },
+    {
+      "question_id": "zh-controlled-v2-valid-negative-multiple_relations",
+      "system": "best",
+      "name": "B0 神经生成 + 名称恢复",
+      "ok": true,
+      "answer": "Frequency belongs to the following genres: fantasy film, action film and science fiction film.",
+      "refused": false,
+      "movie": {
+        "id": "Q1003845",
+        "label": "Frequency"
+      },
+      "link_status": "exact",
+      "link_score": 1.0,
+      "relation": null,
+      "confidence": null,
+      "evidence": [
+        "Frequency | director | Gregory Hoblit",
+        "Frequency | genre | fantasy film",
+        "Frequency | genre | action film",
+        "Frequency | genre | science fiction film",
+        "Frequency | country of origin | United States",
+        "Frequency | original language | English"
+      ],
+      "cold_start": false,
+      "generation_ms": 399.8742999974638,
+      "raw_answer": "Frequency belongs to the following genres: fantasy film, action film and science fiction film.",
+      "replacements": [],
+      "recovery_ms": 0.09560000034980476,
+      "elapsed_ms": 631.39,
+      "movie_id": "Q1003845"
+    },
+    {
+      "question_id": "zh-controlled-v2-test-negative-negative_director",
+      "system": "best",
+      "name": "B0 神经生成 + 名称恢复",
+      "ok": true,
+      "answer": "Stage Door was directed by Gregory La Cava.",
+      "refused": false,
+      "movie": {
+        "id": "Q1020603",
+        "label": "Stage Door"
+      },
+      "link_status": "exact",
+      "link_score": 1.0,
+      "relation": null,
+      "confidence": null,
+      "evidence": [
+        "Stage Door | director | Gregory La Cava",
+        "Stage Door | genre | drama film",
+        "Stage Door | genre | comedy film",
+        "Stage Door | country of origin | United States",
+        "Stage Door | original language | English"
+      ],
+      "cold_start": false,
+      "generation_ms": 221.64249999332242,
+      "raw_answer": "Stage Door was directed by Gregory La Cava.",
+      "replacements": [],
+      "recovery_ms": 0.08250000246334821,
+      "elapsed_ms": 473.9,
+      "movie_id": "Q1020603"
+    },
+    {
+      "question_id": "zh-controlled-v2-valid-negative-negative_director",
+      "system": "best",
+      "name": "B0 神经生成 + 名称恢复",
+      "ok": true,
+      "answer": "Frequency belongs to the following genres: fantasy film, action film and science fiction film.",
+      "refused": false,
+      "movie": {
+        "id": "Q1003845",
+        "label": "Frequency"
+      },
+      "link_status": "exact",
+      "link_score": 1.0,
+      "relation": null,
+      "confidence": null,
+      "evidence": [
+        "Frequency | director | Gregory Hoblit",
+        "Frequency | genre | fantasy film",
+        "Frequency | genre | action film",
+        "Frequency | genre | science fiction film",
+        "Frequency | country of origin | United States",
+        "Frequency | original language | English"
+      ],
+      "cold_start": false,
+      "generation_ms": 428.29310000524856,
+      "raw_answer": "Frequency belongs to the following genres: fantasy film, action film and science fiction film.",
+      "replacements": [],
+      "recovery_ms": 0.09499999578110874,
+      "elapsed_ms": 854.06,
+      "movie_id": "Q1003845"
+    }
+  ],
+  "operator_supplied_model_sha256": {
+    "config.json": "b5ba6220a244394c6cdcded46a3e9fbfaee46ff82c2943298e37594d4be01aaf",
+    "generation_config.json": "ecae1f3c45a233e11c64c5c7c7ec8964bc37be51660dbd45a8059d4bc07e067a",
+    "graph_prefix.pt": "28c5302fa607e3795e2fd9bbda1817db73a997ab2535ff2f739f456520e62bcc",
+    "model.safetensors": "b41686667744a47547ded262eb8bce77e8a7c649e69472c1a092bb25d86358e1",
+    "special_tokens_map.json": "65d84a9271d68f1230ab99518c00f0f7eaef95c7b363001595ba6fa662d434b1",
+    "spiece.model": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86",
+    "tokenizer.json": "dc856f1be037756d043c1557df9a075bb8658c03c26405ef78a9fc759521cc3e",
+    "tokenizer_config.json": "f0f4630efa94e1d9e93c877ecdf2e45a8b9685037f752eddf0611508425b967b"
+  },
+  "model_identity_note": "Operator-supplied files; HTTP does not attest server checkpoint identity."
+}

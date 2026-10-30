@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "scope": "Local code, frozen experiment, report layout and offline deployment acceptance",
+  "data": {
+    "movies": 5000,
+    "entities": 7864,
+    "triples": 35485,
+    "qa": 58994
+  },
+  "training": {
+    "completed_models": 5,
+    "epochs_per_model": 5,
+    "full_validation_questions_per_epoch": 8857,
+    "full_test_questions_per_model": 8917,
+    "selected_run": "B0"
+  },
+  "evaluation": {
+    "revision": "v2",
+    "raw_B0_entity_f1": 99.52898957048335,
+    "B0_fixed_name_recovery_entity_f1": 100.0,
+    "reference_parser_checks": 112625,
+    "reference_parser_mismatches": 0,
+    "source_tests_passed": 344,
+    "targeted_tests_passed": 32,
+    "selection_unchanged": true,
+    "training_weights_unchanged": true
+  },
+  "reports": {
+    "个人实验报告.docx": {
+      "sha256": "803d97663396a0af41df4db93bf120a519aceda7d992468fb85310c35d241ccf",
+      "bytes": 538910,
+      "pages": 16
+    },
+    "夏俊杰_实验报告.docx": {
+      "sha256": "f184a8751d5c1f4c5dff337b0682a874b07509161250da60188c468749891234",
+      "bytes": 534902,
+      "pages": 16
+    }
+  },
+  "all_report_pages_reviewed": 32,
+  "real_browser_test_screenshots": 2,
+  "standalone_runtime": {
+    "status": "PASS",
+    "offline_cpu_cases": 4,
+    "runtime_assets_verified": 104,
+    "archive": {
+      "name": "AI_1_experiment_5000_runtime_20261030.zip",
+      "bytes": 296366323,
+      "sha256": "45d14ff84527f0c8a8a41bb9654169514523caadd4a7413b6c13b244061415e3"
+    }
+  },
+  "evidence": {
+    "runtime": "runtime_package_checks.json",
+    "reports": "report_layout.json",
+    "current_evaluation": "decoder_revision_v2/summary.json",
+    "source_tests": "decoder_revision_v2/provenance/source_checks.json"
+  },
+  "course_materials_pending": [
+    "Two independently completed human evaluation sheets",
+    "Real operating-system terminal environment screenshot for each student"
+  ]
+}

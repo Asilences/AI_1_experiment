@@ -1,0 +1,433 @@
+{
+  "schema_version": 1,
+  "kind": "neural_data_preflight",
+  "scope": "Dataset/tokenizer inspection only; no model training, generation, or evaluation scores.",
+  "protocol": {
+    "input_max_length": 512,
+    "target_max_length": 96,
+    "fact_limit": 24,
+    "token_counts_include_special_tokens": true,
+    "target_reference_index": 0,
+    "roundtrip_comparison": "Exact equality after decode(skip_special_tokens=True), without truncation.",
+    "context_selection": "Gold movie for train; EntityLinker over all split movies for other splits.",
+    "fact_filter": "Text facts without embedding mapping filter (C0).",
+    "label_scope_by_split": "Gold movie/answers plus linked movie and available fact tails before the slice.",
+    "missing_answers_note": "Check tail entity IDs. Separate 24-fact loss from prior absence (including linking/mapping). Token truncation can remove further text."
+  },
+  "provenance": {
+    "input_sha256": {
+      "entities.json": "7c935d8fa1eecd9870df16e49d93460bdd75f90255661e4e4e397af9f667f3e8",
+      "qa.jsonl": "2882b2077834d37f4b1ae8f9b8ea90561c8c5dacecf4247907311d0cbb8bb310",
+      "splits.json": "dd24634f590e3e5dd38dc2e5ca7fd25b432ec3b562f74dc99a65b22d586113b7"
+    },
+    "tokenizer": {
+      "class": "T5TokenizerFast",
+      "source_kind": "local_directory",
+      "source_name": "0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab",
+      "files_sha256": {
+        "tokenizer.json": "fe2ebbbbde2985be723e0ce18217853e4020c5e9d35bd07be2c27ab9d3ead57a",
+        "tokenizer_config.json": "fcde0f79bffda3688119c94330866a8fbf8de20ae65a8c492c9bd47c704655a0",
+        "special_tokens_map.json": "5c87151ef0f72a99d1f766a4c418bd2a1f90aaa30a8e22fe5eca9641daebb64f",
+        "spiece.model": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86"
+      },
+      "vocabulary_size": 32100,
+      "vocabulary_sha256": "3e4dac4c480136f1337a43a23a00b56e92b10e1e65483bb718ceb971eef2aa14",
+      "backend_sha256": "10e1c362713a22cc592cf66395ab98fa7461a36d33e3d1bf7226e30490cd20e7"
+    },
+    "source_sha256": {
+      "neural.py": "878331d0c9ffbc76f204d5fb46401d20d5c954b29cfbbf3315db1385b01265eb",
+      "neural_preflight.py": "56f92a7d432531967b01704aaf80b7beb3d35e75c4bc00866a5fe0b28bc4ec19",
+      "common.py": "8edce50100c3072bd134d77c77d0f4c45de5362219fe503b690b336fbc487705",
+      "linker.py": "0a7e2bf48fbb7e523b4ba4f22a9ec293fe2be458e87a621a7601c61702fdb180"
+    }
+  },
+  "rows": 58994,
+  "entity_labels": {
+    "unique_entities": 7864,
+    "roundtrip_changed_entities": 78,
+    "unknown_token_entities": 78,
+    "examples": [
+      {
+        "entity_id": "Q107017030",
+        "label": "Lucyna Smolińska",
+        "tokens": 9,
+        "decoded": "Lucyna Smoliska",
+        "changed": true,
+        "unknown_tokens": 1
+      },
+      {
+        "entity_id": "Q112352",
+        "label": "Bora Dağtekin",
+        "tokens": 7,
+        "decoded": "Bora Datekin",
+        "changed": true,
+        "unknown_tokens": 1
+      },
+      {
+        "entity_id": "Q11698784",
+        "label": "Franco de Peña",
+        "tokens": 6,
+        "decoded": "Franco de Pea",
+        "changed": true,
+        "unknown_tokens": 1
+      },
+      {
+        "entity_id": "Q1192295",
+        "label": "Juǀʼhoansi",
+        "tokens": 7,
+        "decoded": "Juhoansi",
+        "changed": true,
+        "unknown_tokens": 1
+      },
+      {
+        "entity_id": "Q12018",
+        "label": "8½",
+        "tokens": 5,
+        "decoded": "812",
+        "changed": true,
+        "unknown_tokens": 1
+      }
+    ]
+  },
+  "by_split": {
+    "test": {
+      "rows": 8917,
+      "gold_movies": 750,
+      "linked_movie_mismatch_rows": 0,
+      "input_truncated_rows": 0,
+      "target_truncated_rows": 0,
+      "target_roundtrip_changed_rows": 87,
+      "target_unknown_token_rows": 87,
+      "fact_truncated_rows": 0,
+      "answer_missing_from_retained_facts_rows": 0,
+      "answer_missing_entity_occurrences": 0,
+      "answer_dropped_by_fact_limit_rows": 0,
+      "answer_dropped_by_fact_limit_entity_occurrences": 0,
+      "max_untruncated_input_tokens": 299,
+      "max_untruncated_target_tokens": 36,
+      "max_available_facts": 21,
+      "fact_truncated_unique_movies": 0,
+      "entity_labels": {
+        "unique_entities": 1632,
+        "roundtrip_changed_entities": 15,
+        "unknown_token_entities": 15,
+        "examples": [
+          {
+            "entity_id": "Q112352",
+            "label": "Bora Dağtekin",
+            "tokens": 7,
+            "decoded": "Bora Datekin",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "entity_id": "Q1340391",
+            "label": "Kjell-Åke Andersson",
+            "tokens": 10,
+            "decoded": "Kjell-ke Andersson",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "entity_id": "Q1377022",
+            "label": "Paweł Pawlikowski",
+            "tokens": 7,
+            "decoded": "Pawe Pawlikowski",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "entity_id": "Q1782299",
+            "label": "Joachim Rønning",
+            "tokens": 7,
+            "decoded": "Joachim Rnning",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "entity_id": "Q2919862",
+            "label": "Æon Flux",
+            "tokens": 6,
+            "decoded": "on Flux",
+            "changed": true,
+            "unknown_tokens": 1
+          }
+        ]
+      },
+      "examples": {
+        "input_truncation": [],
+        "target_truncation": [],
+        "target_roundtrip": [
+          {
+            "question_id": "Q214013_P57_0",
+            "target": "21 Grams was directed by Alejandro González Iñárritu.",
+            "tokens": 22,
+            "decoded": "21 Grams was directed by Alejandro González Iárritu.",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "question_id": "Q214013_P57_1",
+            "target": "21 Grams was directed by Alejandro González Iñárritu.",
+            "tokens": 22,
+            "decoded": "21 Grams was directed by Alejandro González Iárritu.",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "question_id": "Q214013_P57_2",
+            "target": "21 Grams was directed by Alejandro González Iñárritu.",
+            "tokens": 22,
+            "decoded": "21 Grams was directed by Alejandro González Iárritu.",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "question_id": "Q528328_P57_0",
+            "target": "Fruits of Passion was directed by Shūji Terayama.",
+            "tokens": 16,
+            "decoded": "Fruits of Passion was directed by Shji Terayama.",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "question_id": "Q528328_P57_1",
+            "target": "Fruits of Passion was directed by Shūji Terayama.",
+            "tokens": 16,
+            "decoded": "Fruits of Passion was directed by Shji Terayama.",
+            "changed": true,
+            "unknown_tokens": 1
+          }
+        ],
+        "fact_truncation": [],
+        "answers_absent_from_retained_facts": []
+      }
+    },
+    "train": {
+      "rows": 41220,
+      "gold_movies": 3500,
+      "linked_movie_mismatch_rows": 0,
+      "input_truncated_rows": 0,
+      "target_truncated_rows": 0,
+      "target_roundtrip_changed_rows": 315,
+      "target_unknown_token_rows": 315,
+      "fact_truncated_rows": 0,
+      "answer_missing_from_retained_facts_rows": 0,
+      "answer_missing_entity_occurrences": 0,
+      "answer_dropped_by_fact_limit_rows": 0,
+      "answer_dropped_by_fact_limit_entity_occurrences": 0,
+      "max_untruncated_input_tokens": 402,
+      "max_untruncated_target_tokens": 40,
+      "max_available_facts": 24,
+      "fact_truncated_unique_movies": 0,
+      "entity_labels": {
+        "unique_entities": 5881,
+        "roundtrip_changed_entities": 61,
+        "unknown_token_entities": 61,
+        "examples": [
+          {
+            "entity_id": "Q107017030",
+            "label": "Lucyna Smolińska",
+            "tokens": 9,
+            "decoded": "Lucyna Smoliska",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "entity_id": "Q11698784",
+            "label": "Franco de Peña",
+            "tokens": 6,
+            "decoded": "Franco de Pea",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "entity_id": "Q12018",
+            "label": "8½",
+            "tokens": 5,
+            "decoded": "812",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "entity_id": "Q126693",
+            "label": "Yılmaz Güney",
+            "tokens": 9,
+            "decoded": "Ylmaz Güney",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "entity_id": "Q1268232",
+            "label": "Dušan Vukotić",
+            "tokens": 9,
+            "decoded": "Duan Vukoti",
+            "changed": true,
+            "unknown_tokens": 2
+          }
+        ]
+      },
+      "examples": {
+        "input_truncation": [],
+        "target_truncation": [],
+        "target_roundtrip": [
+          {
+            "question_id": "Q504121_P57_0",
+            "target": "The Princess was directed by Pál Erdőss.",
+            "tokens": 14,
+            "decoded": "The Princess was directed by Pál Erdss.",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "question_id": "Q504121_P57_1",
+            "target": "The Princess was directed by Pál Erdőss.",
+            "tokens": 14,
+            "decoded": "The Princess was directed by Pál Erdss.",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "question_id": "Q504121_P57_2",
+            "target": "The Princess was directed by Pál Erdőss.",
+            "tokens": 14,
+            "decoded": "The Princess was directed by Pál Erdss.",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "question_id": "Q500916_P57_0",
+            "target": "Love Hotel was directed by Shinji Sōmai.",
+            "tokens": 12,
+            "decoded": "Love Hotel was directed by Shinji Smai.",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "question_id": "Q500916_P57_1",
+            "target": "Love Hotel was directed by Shinji Sōmai.",
+            "tokens": 12,
+            "decoded": "Love Hotel was directed by Shinji Smai.",
+            "changed": true,
+            "unknown_tokens": 1
+          }
+        ],
+        "fact_truncation": [],
+        "answers_absent_from_retained_facts": []
+      }
+    },
+    "valid": {
+      "rows": 8857,
+      "gold_movies": 750,
+      "linked_movie_mismatch_rows": 0,
+      "input_truncated_rows": 0,
+      "target_truncated_rows": 0,
+      "target_roundtrip_changed_rows": 69,
+      "target_unknown_token_rows": 69,
+      "fact_truncated_rows": 0,
+      "answer_missing_from_retained_facts_rows": 0,
+      "answer_missing_entity_occurrences": 0,
+      "answer_dropped_by_fact_limit_rows": 0,
+      "answer_dropped_by_fact_limit_entity_occurrences": 0,
+      "max_untruncated_input_tokens": 283,
+      "max_untruncated_target_tokens": 39,
+      "max_available_facts": 23,
+      "fact_truncated_unique_movies": 0,
+      "entity_labels": {
+        "unique_entities": 1649,
+        "roundtrip_changed_entities": 13,
+        "unknown_token_entities": 13,
+        "examples": [
+          {
+            "entity_id": "Q1192295",
+            "label": "Juǀʼhoansi",
+            "tokens": 7,
+            "decoded": "Juhoansi",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "entity_id": "Q1335855",
+            "label": "Måns Mårlind",
+            "tokens": 9,
+            "decoded": "Mns Mrlind",
+            "changed": true,
+            "unknown_tokens": 2
+          },
+          {
+            "entity_id": "Q21699210",
+            "label": "Kōji Enokido",
+            "tokens": 10,
+            "decoded": "Kji Enokido",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "entity_id": "Q25461514",
+            "label": "Božidar Nikolić",
+            "tokens": 9,
+            "decoded": "Boidar Nikoli",
+            "changed": true,
+            "unknown_tokens": 2
+          },
+          {
+            "entity_id": "Q27957908",
+            "label": "Brahmāstra Part One: Shiva",
+            "tokens": 9,
+            "decoded": "Brahmstra Part One: Shiva",
+            "changed": true,
+            "unknown_tokens": 1
+          }
+        ]
+      },
+      "examples": {
+        "input_truncation": [],
+        "target_truncation": [],
+        "target_roundtrip": [
+          {
+            "question_id": "Q52559148_P57_0",
+            "target": "Dalíland was directed by Mary Harron.",
+            "tokens": 13,
+            "decoded": "Dalland was directed by Mary Harron.",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "question_id": "Q52559148_P57_1",
+            "target": "Dalíland was directed by Mary Harron.",
+            "tokens": 13,
+            "decoded": "Dalland was directed by Mary Harron.",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "question_id": "Q52559148_P57_2",
+            "target": "Dalíland was directed by Mary Harron.",
+            "tokens": 13,
+            "decoded": "Dalland was directed by Mary Harron.",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "question_id": "Q52559148_P136_0",
+            "target": "Dalíland belongs to the following genres: biographical film.",
+            "tokens": 16,
+            "decoded": "Dalland belongs to the following genres: biographical film.",
+            "changed": true,
+            "unknown_tokens": 1
+          },
+          {
+            "question_id": "Q52559148_P136_1",
+            "target": "Dalíland belongs to the following genres: biographical film.",
+            "tokens": 16,
+            "decoded": "Dalland belongs to the following genres: biographical film.",
+            "changed": true,
+            "unknown_tokens": 1
+          }
+        ],
+        "fact_truncation": [],
+        "answers_absent_from_retained_facts": []
+      }
+    }
+  }
+}

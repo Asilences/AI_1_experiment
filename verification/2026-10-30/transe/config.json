@@ -1,0 +1,11 @@
+{
+  "epochs": 100,
+  "seed": 42,
+  "embedding_dim": 100,
+  "learning_rate": 0.001,
+  "batch_size": 256,
+  "negative_samples": 5,
+  "entities": 7864,
+  "relations": 4,
+  "triples_sha256": "42c9a5c665313b077a97650309bb8102ab573464ba40943a1b41ffb77c2f8e0a"
+}

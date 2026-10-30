@@ -15,6 +15,7 @@ from urllib.parse import parse_qs, urlsplit
 import webbrowser
 
 from .common import REFUSAL, RELATIONS, ROOT, read_json, sha256
+from .chinese import ChineseAdapter
 
 ASSETS = Path(__file__).with_name('ui')
 SYSTEMS = {'a0', 'best', 'both'}
@@ -71,6 +72,7 @@ class QAService:
             entities = read_json(self.data_dir / 'entities.json')
             self.entities = entities
             splits = read_json(self.data_dir / 'splits.json')
+            display = ChineseAdapter(entities, sum(splits.values(), []))
             manifest_path = self.data_dir / 'manifest.json'
             if manifest_path.exists():
                 self.dataset_name = read_json(manifest_path).get('name', self.dataset_name)
@@ -81,6 +83,8 @@ class QAService:
                 self.movies.append({'id': qid, 'label': entity['label'],
                                     'display_label': entity.get('display_label', entity['label']),
                                     'question_title': entity.get('question_title', entity['label']),
+                                    'label_zh': display.format_entity(qid) if any('\u3400' <= c <= '\u9fff'
+                                                                                for c in display.format_entity(qid)) else '',
                                     'aliases': entity.get('aliases', []),
                                     'relations': [r for r in RELATIONS if facts[r]],
                                     'fact_count': sum(len(v) for v in facts.values())})
@@ -137,6 +141,7 @@ class QAService:
         if not available:
             neural.update(available=False, detail=self.data_error or '请先准备配套的 A0 模型和知识库。')
         examples = []
+        examples_zh = []
         priorities = {'Shutter Island': 0, 'Boss Level': 1, 'Dogma': 2, '10 Things I Hate About You': 3}
         preferred = sorted(self.movies, key=lambda m: (priorities.get(m['label'], 4), m['label']))
         templates = {'P57': 'Who directed {title}?', 'P136': 'What genre is {title}?',
@@ -149,9 +154,20 @@ class QAService:
             if movie:
                 used_movies.add(movie['id'])
                 examples.append({'relation': relation, 'question': template.format(title=movie['question_title'])})
+        chinese_templates = {'P57': '《{title}》的导演是谁？', 'P136': '《{title}》是什么类型的电影？',
+                             'P495': '《{title}》是哪个国家制作的？', 'P364': '《{title}》的原始语言是什么？'}
+        zh_priorities = {'Inception': 0, 'Titanic': 1}
+        zh_movies = sorted((m for m in self.movies if m['label_zh']),
+                           key=lambda m: (zh_priorities.get(m['label'], 2), m['label']))
+        for relation, template in chinese_templates.items():
+            movie = next((m for m in zh_movies if relation in m['relations']), None)
+            if movie:
+                examples_zh.append({'relation': relation, 'question': template.format(title=movie['label_zh'])})
         return {'movie_count': len(self.movies), 'fact_count': sum(m['fact_count'] for m in self.movies),
                 'dataset_name': self.dataset_name,
                 'relation_count': len(RELATIONS), 'custom_data': self.custom_paths, 'examples': examples,
+                'examples_zh': examples_zh, 'question_languages': ['zh', 'en'],
+                'chinese_coverage': {'movies': len(self.movies), 'with_chinese_title': len(zh_movies)},
                 'a0': {'available': available, 'name': 'A0 管道问答',
                        'detail': self.data_error or ('本地模型就绪。' if available else '未找到 A0 模型，请先完成训练或指定模型路径。')},
                 'neural': neural,
@@ -166,7 +182,7 @@ class QAService:
     def search(self, query='', offset=0, limit=30):
         query = query.casefold().strip()
         matches = [m for m in self.movies if not query or any(
-            query in str(name).casefold() for name in [m['label'], m['id'], *m['aliases']])]
+            query in str(name).casefold() for name in [m['label'], m['label_zh'], m['id'], *m['aliases']])]
         return {'movies': matches[offset:offset + limit], 'total': len(matches), 'offset': offset}
 
     def explore(self, question, movie_ids=None, offset=0, limit=30):
@@ -191,7 +207,7 @@ class QAService:
 
     def answer(self, question, system, mode='standard'):
         if not isinstance(question, str) or not question.strip() or len(question) > 1000:
-            raise APIError('请输入 1—1000 个字符的电影问题。')
+            raise APIError('请输入 1—1000 个字符的中文或英文电影问题。')
         if not isinstance(system, str) or system not in SYSTEMS:
             raise APIError('请选择有效的问答系统。')
         if not isinstance(mode, str) or mode not in {'standard', 'freeform'}:
@@ -229,15 +245,22 @@ class QAService:
                             raw = demo.answer_a0(model_question) if target == 'a0' else demo.answer_neural(model_question)
                         if interpretation:
                             movie_id, score, link_status = (interpretation['movie_id'], interpretation['link_score'], interpretation['link_status'])
+                        elif raw.get('language') == 'zh':
+                            movie_id = raw.get('movie_id')
+                            score, link_status = (1.0 if movie_id else 0.0), raw.get('link_status', '')
                         else:
                             movie_id, score, link_status = demo.linker.link(question)
-                        movie = ({'id': movie_id, 'label': demo.entities[movie_id].get('display_label', demo.entities[movie_id]['label'])}
+                        movie = ({'id': movie_id, 'label': (demo.chinese.format_entity(movie_id) if raw.get('language') == 'zh'
+                                                          else demo.entities[movie_id].get('display_label', demo.entities[movie_id]['label']))}
                                  if movie_id else None)
-                        result.update(ok=True, answer=raw['answer'], refused=raw['answer'] == REFUSAL,
+                        result.update(ok=True, answer=raw['answer'], refused=raw.get('refused', raw['answer'] == REFUSAL),
                                       movie=movie, link_status=link_status, link_score=score,
                                       relation=raw.get('relation'), confidence=raw.get('confidence'),
                                       evidence=raw.get('evidence', []), cold_start=cold,
                                       generation_ms=raw.get('latency_ms'))
+                        for key in ('language', 'model_question', 'original_answer', 'language_status', 'language_note', 'answer_ids'):
+                            if key in raw:
+                                result[key] = raw[key]
                         if 'raw_answer' in raw:
                             result.update(raw_answer=raw['raw_answer'], replacements=raw['replacements'],
                                           recovery_ms=raw['recovery_ms'])

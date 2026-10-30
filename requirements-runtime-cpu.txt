@@ -1,0 +1,13 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.6.0+cpu
+transformers==4.48.3
+tokenizers==0.21.0
+huggingface-hub==0.28.1
+sentencepiece==0.2.0
+numpy==1.26.4
+scikit-learn==1.6.1
+sacrebleu==2.5.1
+rouge-score==0.1.2
+matplotlib==3.10.0
+psutil==6.1.1
+requests==2.32.3

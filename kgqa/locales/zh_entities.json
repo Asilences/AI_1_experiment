@@ -1,0 +1,6167 @@
+{
+  "schema_version": 1,
+  "source": "https://www.wikidata.org/w/api.php",
+  "retrieved_at": "2026-10-30T16:05:23+00:00",
+  "languages": [
+    "en",
+    "zh",
+    "zh-hans",
+    "zh-hant"
+  ],
+  "purpose": "Optional Chinese display labels and movie aliases only; no facts or experiment inputs changed.",
+  "requested_entities": 602,
+  "entities": {
+    "Q16": {
+      "label_en": "Canada",
+      "source_label_en": "Canada",
+      "label_zh": "加拿大",
+      "aliases_zh": [
+        "北村之國",
+        "村之国",
+        "村国"
+      ],
+      "revision": 2561052467,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q16.json?revision=2561052467"
+    },
+    "Q17": {
+      "label_en": "Japan",
+      "source_label_en": "Japan",
+      "label_zh": "日本",
+      "aliases_zh": [
+        "扶桑",
+        "扶桑國",
+        "日"
+      ],
+      "revision": 2561032685,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q17.json?revision=2561032685"
+    },
+    "Q20": {
+      "label_en": "Norway",
+      "source_label_en": "Norway",
+      "label_zh": "挪威",
+      "aliases_zh": [
+        "挪威王国",
+        "挪威王國"
+      ],
+      "revision": 2561032921,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q20.json?revision=2561032921"
+    },
+    "Q27": {
+      "label_en": "Ireland",
+      "source_label_en": "Ireland",
+      "label_zh": "爱尔兰",
+      "aliases_zh": [
+        "愛爾蘭",
+        "愛爾蘭共和國",
+        "爱尔兰共和国"
+      ],
+      "revision": 2561033712,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q27.json?revision=2561033712"
+    },
+    "Q28": {
+      "label_en": "Hungary",
+      "source_label_en": "Hungary",
+      "label_zh": "匈牙利",
+      "aliases_zh": [
+        "匈牙利共和国",
+        "匈牙利共和國"
+      ],
+      "revision": 2561033810,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q28.json?revision=2561033810"
+    },
+    "Q29": {
+      "label_en": "Spain",
+      "source_label_en": "Spain",
+      "label_zh": "西班牙",
+      "aliases_zh": [
+        "日斯巴尼亚",
+        "日斯巴尼亞",
+        "西班牙王国",
+        "西班牙王國"
+      ],
+      "revision": 2562159263,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q29.json?revision=2562159263"
+    },
+    "Q30": {
+      "label_en": "United States",
+      "source_label_en": "United States",
+      "label_zh": "美国",
+      "aliases_zh": [
+        "美利坚合众国",
+        "美國",
+        "花旗国",
+        "花旗國"
+      ],
+      "revision": 2562540489,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q30.json?revision=2562540489"
+    },
+    "Q31": {
+      "label_en": "Belgium",
+      "source_label_en": "Belgium",
+      "label_zh": "比利时",
+      "aliases_zh": [
+        "比利时王国",
+        "比利時",
+        "比利時王國"
+      ],
+      "revision": 2560041125,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q31.json?revision=2560041125"
+    },
+    "Q32": {
+      "label_en": "Luxembourg",
+      "source_label_en": "Luxembourg",
+      "label_zh": "卢森堡",
+      "aliases_zh": [
+        "卢森堡公国",
+        "卢森堡大公国",
+        "盧森堡",
+        "盧森堡公國",
+        "盧森堡大公國"
+      ],
+      "revision": 2562604180,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q32.json?revision=2562604180"
+    },
+    "Q33": {
+      "label_en": "Finland",
+      "source_label_en": "Finland",
+      "label_zh": "芬兰",
+      "aliases_zh": [
+        "芬兰共和国",
+        "芬蘭"
+      ],
+      "revision": 2562406136,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q33.json?revision=2562406136"
+    },
+    "Q34": {
+      "label_en": "Sweden",
+      "source_label_en": "Sweden",
+      "label_zh": "瑞典",
+      "aliases_zh": [
+        "瑞典王国",
+        "瑞典王國"
+      ],
+      "revision": 2559752214,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q34.json?revision=2559752214"
+    },
+    "Q35": {
+      "label_en": "Denmark",
+      "source_label_en": "Denmark",
+      "label_zh": "丹麦",
+      "aliases_zh": [
+        "丹麥"
+      ],
+      "revision": 2560214637,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q35.json?revision=2560214637"
+    },
+    "Q36": {
+      "label_en": "Poland",
+      "source_label_en": "Poland",
+      "label_zh": "波兰",
+      "aliases_zh": [
+        "波兰共和国",
+        "波蘭",
+        "波蘭共和國"
+      ],
+      "revision": 2559771944,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q36.json?revision=2559771944"
+    },
+    "Q37": {
+      "label_en": "Lithuania",
+      "source_label_en": "Lithuania",
+      "label_zh": "立陶宛",
+      "aliases_zh": [
+        "立陶宛共和国",
+        "立陶宛共和國"
+      ],
+      "revision": 2560856276,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q37.json?revision=2560856276"
+    },
+    "Q38": {
+      "label_en": "Italy",
+      "source_label_en": "Italy",
+      "label_zh": "意大利",
+      "aliases_zh": [
+        "意大利共和国",
+        "意大利共和國",
+        "義大利",
+        "義大利共和國"
+      ],
+      "revision": 2559710780,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q38.json?revision=2559710780"
+    },
+    "Q39": {
+      "label_en": "Switzerland",
+      "source_label_en": "Switzerland",
+      "label_zh": "瑞士",
+      "aliases_zh": [
+        "埃德蒙特·舒尔希斯",
+        "瑞士联邦",
+        "瑞士聯邦"
+      ],
+      "revision": 2560226068,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q39.json?revision=2560226068"
+    },
+    "Q40": {
+      "label_en": "Austria",
+      "source_label_en": "Austria",
+      "label_zh": "奥地利",
+      "aliases_zh": [
+        "奥地利共和国",
+        "奧地利",
+        "奧地利共和國"
+      ],
+      "revision": 2560930187,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q40.json?revision=2560930187"
+    },
+    "Q41": {
+      "label_en": "Greece",
+      "source_label_en": "Greece",
+      "label_zh": "希腊",
+      "aliases_zh": [
+        "太陽岩石之地",
+        "太陽岩石共和国",
+        "希倫共和国",
+        "希腊共和国",
+        "希臘",
+        "希臘共和國",
+        "陽岩共和国"
+      ],
+      "revision": 2558708518,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q41.json?revision=2558708518"
+    },
+    "Q43": {
+      "label_en": "Turkey",
+      "source_label_en": "Turkey",
+      "label_zh": "土耳其",
+      "aliases_zh": [
+        "土耳其共和国",
+        "土耳其共和國"
+      ],
+      "revision": 2560410260,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q43.json?revision=2560410260"
+    },
+    "Q45": {
+      "label_en": "Portugal",
+      "source_label_en": "Portugal",
+      "label_zh": "葡萄牙",
+      "aliases_zh": [
+        "葡国",
+        "葡國",
+        "葡萄牙共和国",
+        "葡萄牙共和國",
+        "葡萄牙民國"
+      ],
+      "revision": 2562167285,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q45.json?revision=2562167285"
+    },
+    "Q55": {
+      "label_en": "Netherlands",
+      "source_label_en": "Netherlands",
+      "label_zh": "荷兰",
+      "aliases_zh": [
+        "和蘭",
+        "尼德兰",
+        "尼德兰王国",
+        "尼德蘭",
+        "尼德蘭王國",
+        "紅毛蕃",
+        "荷蘭"
+      ],
+      "revision": 2560758299,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q55.json?revision=2560758299"
+    },
+    "Q77": {
+      "label_en": "Uruguay",
+      "source_label_en": "Uruguay",
+      "label_zh": "乌拉圭",
+      "aliases_zh": [
+        "乌拉圭东岸共和国",
+        "烏拉圭",
+        "烏拉圭東岸共和國"
+      ],
+      "revision": 2559876293,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q77.json?revision=2559876293"
+    },
+    "Q79": {
+      "label_en": "Egypt",
+      "source_label_en": "Egypt",
+      "label_zh": "埃及",
+      "aliases_zh": [
+        "阿拉伯埃及共和国",
+        "阿拉伯埃及共和國"
+      ],
+      "revision": 2560585771,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q79.json?revision=2560585771"
+    },
+    "Q96": {
+      "label_en": "Mexico",
+      "source_label_en": "Mexico",
+      "label_zh": "墨西哥",
+      "aliases_zh": [
+        "墨西哥合众国",
+        "墨西哥合眾國"
+      ],
+      "revision": 2560855150,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q96.json?revision=2560855150"
+    },
+    "Q142": {
+      "label_en": "France",
+      "source_label_en": "France",
+      "label_zh": "法国",
+      "aliases_zh": [
+        "法兰西",
+        "法兰西共和国",
+        "法國",
+        "法蘭西",
+        "法蘭西共和國"
+      ],
+      "revision": 2560726253,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q142.json?revision=2560726253"
+    },
+    "Q145": {
+      "label_en": "United Kingdom",
+      "source_label_en": "United Kingdom",
+      "label_zh": "英国",
+      "aliases_zh": [
+        "不列颠",
+        "大不列顛及北愛爾蘭聯合王國",
+        "大不列顛暨北愛爾蘭聯合王國",
+        "大不列颠及北爱尔兰联合王国",
+        "联合王国",
+        "聯合王國",
+        "英國"
+      ],
+      "revision": 2559953550,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q145.json?revision=2559953550"
+    },
+    "Q148": {
+      "label_en": "People's Republic of China",
+      "source_label_en": "People's Republic of China",
+      "label_zh": "中华人民共和国",
+      "aliases_zh": [
+        "中",
+        "中华",
+        "中国",
+        "中国大陆",
+        "中國",
+        "中國大陸",
+        "中華人民共和國",
+        "共产中国",
+        "共產中國",
+        "北京當局",
+        "大陆",
+        "新中国",
+        "红色中国",
+        "陆"
+      ],
+      "revision": 2561325303,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q148.json?revision=2561325303"
+    },
+    "Q150": {
+      "label_en": "French",
+      "source_label_en": "French",
+      "label_zh": "法语",
+      "aliases_zh": [
+        "法兰西语",
+        "法文",
+        "法語"
+      ],
+      "revision": 2561496129,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q150.json?revision=2561496129"
+    },
+    "Q155": {
+      "label_en": "Brazil",
+      "source_label_en": "Brazil",
+      "label_zh": "巴西",
+      "aliases_zh": [],
+      "revision": 2561075119,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q155.json?revision=2561075119"
+    },
+    "Q159": {
+      "label_en": "Russia",
+      "source_label_en": "Russia",
+      "label_zh": "俄罗斯",
+      "aliases_zh": [
+        "俄",
+        "俄国",
+        "俄國",
+        "俄羅斯",
+        "露西亞"
+      ],
+      "revision": 2561786543,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q159.json?revision=2561786543"
+    },
+    "Q183": {
+      "label_en": "Germany",
+      "source_label_en": "Germany",
+      "label_zh": "德国",
+      "aliases_zh": [
+        "德國",
+        "德意志",
+        "德意志联邦",
+        "德意志联邦共和国",
+        "德意志聯邦",
+        "德意志聯邦共和國",
+        "獨逸"
+      ],
+      "revision": 2560941633,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q183.json?revision=2560941633"
+    },
+    "Q184": {
+      "label_en": "Belarus",
+      "source_label_en": "Belarus",
+      "label_zh": "白俄罗斯",
+      "aliases_zh": [
+        "白俄",
+        "白俄罗斯共和国",
+        "白俄羅斯",
+        "白俄羅斯共和國",
+        "白罗斯",
+        "白羅斯"
+      ],
+      "revision": 2561644385,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q184.json?revision=2561644385"
+    },
+    "Q188": {
+      "label_en": "German",
+      "source_label_en": "German",
+      "label_zh": "德语",
+      "aliases_zh": [
+        "德意志语",
+        "德文",
+        "德語"
+      ],
+      "revision": 2559724792,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q188.json?revision=2559724792"
+    },
+    "Q189": {
+      "label_en": "Iceland",
+      "source_label_en": "Iceland",
+      "label_zh": "冰岛",
+      "aliases_zh": [
+        "冰岛共和国",
+        "冰島",
+        "冰島共和國"
+      ],
+      "revision": 2560202406,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q189.json?revision=2560202406"
+    },
+    "Q191": {
+      "label_en": "Estonia",
+      "source_label_en": "Estonia",
+      "label_zh": "爱沙尼亚",
+      "aliases_zh": [
+        "愛沙尼亞",
+        "爱沙尼亚共和国"
+      ],
+      "revision": 2559941077,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q191.json?revision=2559941077"
+    },
+    "Q211": {
+      "label_en": "Latvia",
+      "source_label_en": "Latvia",
+      "label_zh": "拉脱维亚",
+      "aliases_zh": [
+        "拉脫維亞"
+      ],
+      "revision": 2560175325,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q211.json?revision=2560175325"
+    },
+    "Q212": {
+      "label_en": "Ukraine",
+      "source_label_en": "Ukraine",
+      "label_zh": "乌克兰",
+      "aliases_zh": [
+        "烏克蘭"
+      ],
+      "revision": 2561078547,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q212.json?revision=2561078547"
+    },
+    "Q213": {
+      "label_en": "Czech Republic",
+      "source_label_en": "Czech Republic",
+      "label_zh": "捷克",
+      "aliases_zh": [
+        "捷克共和國"
+      ],
+      "revision": 2559977060,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q213.json?revision=2559977060"
+    },
+    "Q214": {
+      "label_en": "Slovakia",
+      "source_label_en": "Slovakia",
+      "label_zh": "斯洛伐克",
+      "aliases_zh": [],
+      "revision": 2559912930,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q214.json?revision=2559912930"
+    },
+    "Q215": {
+      "label_en": "Slovenia",
+      "source_label_en": "Slovenia",
+      "label_zh": "斯洛文尼亚",
+      "aliases_zh": [
+        "斯洛文尼亞",
+        "斯洛維尼亞"
+      ],
+      "revision": 2560996195,
+      "retrieved_at": "2026-10-30T16:03:51+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q215.json?revision=2560996195"
+    },
+    "Q218": {
+      "label_en": "Romania",
+      "source_label_en": "Romania",
+      "label_zh": "罗马尼亚",
+      "aliases_zh": [
+        "羅馬尼亞"
+      ],
+      "revision": 2560233401,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q218.json?revision=2560233401"
+    },
+    "Q219": {
+      "label_en": "Bulgaria",
+      "source_label_en": "Bulgaria",
+      "label_zh": "保加利亚",
+      "aliases_zh": [
+        "保加利亞"
+      ],
+      "revision": 2560215946,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q219.json?revision=2560215946"
+    },
+    "Q221": {
+      "label_en": "North Macedonia",
+      "source_label_en": "North Macedonia",
+      "label_zh": "北马其顿",
+      "aliases_zh": [
+        "前南斯拉夫馬其頓共和國",
+        "前南斯拉夫马其顿共和国",
+        "北馬其頓",
+        "北馬其頓共和國",
+        "北马其顿共和国",
+        "馬其頓",
+        "馬其頓共和國",
+        "马其顿共和国"
+      ],
+      "revision": 2560899176,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q221.json?revision=2560899176"
+    },
+    "Q224": {
+      "label_en": "Croatia",
+      "source_label_en": "Croatia",
+      "label_zh": "克罗地亚",
+      "aliases_zh": [
+        "克羅地亞",
+        "克羅埃西亞"
+      ],
+      "revision": 2561797349,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q224.json?revision=2561797349"
+    },
+    "Q225": {
+      "label_en": "Bosnia and Herzegovina",
+      "source_label_en": "Bosnia and Herzegovina",
+      "label_zh": "波斯尼亚和黑塞哥维那",
+      "aliases_zh": [
+        "波士尼亚与黑塞哥维纳",
+        "波士尼亞與赫塞哥維納",
+        "波斯尼亞和黑塞哥維那",
+        "波赫",
+        "波黑"
+      ],
+      "revision": 2562593697,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q225.json?revision=2562593697"
+    },
+    "Q230": {
+      "label_en": "Georgia",
+      "source_label_en": "Georgia",
+      "label_zh": "格鲁吉亚",
+      "aliases_zh": [
+        "喬治亞",
+        "格魯吉亞",
+        "格鲁吉亚共和国"
+      ],
+      "revision": 2561969349,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q230.json?revision=2561969349"
+    },
+    "Q233": {
+      "label_en": "Malta",
+      "source_label_en": "Malta",
+      "label_zh": "马耳他",
+      "aliases_zh": [
+        "馬爾他",
+        "馬耳他"
+      ],
+      "revision": 2562593622,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q233.json?revision=2562593622"
+    },
+    "Q241": {
+      "label_en": "Cuba",
+      "source_label_en": "Cuba",
+      "label_zh": "古巴",
+      "aliases_zh": [
+        "古巴共和国"
+      ],
+      "revision": 2561797385,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q241.json?revision=2561797385"
+    },
+    "Q252": {
+      "label_en": "Indonesia",
+      "source_label_en": "Indonesia",
+      "label_zh": "印度尼西亚",
+      "aliases_zh": [
+        "努山達拉人民國",
+        "印度尼西亚共和国",
+        "印度尼西亚共和國",
+        "印度尼西亞"
+      ],
+      "revision": 2562482701,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q252.json?revision=2562482701"
+    },
+    "Q256": {
+      "label_en": "Turkish",
+      "source_label_en": "Turkish",
+      "label_zh": "土耳其语",
+      "aliases_zh": [
+        "土耳其語"
+      ],
+      "revision": 2562086271,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q256.json?revision=2562086271"
+    },
+    "Q258": {
+      "label_en": "South Africa",
+      "source_label_en": "South Africa",
+      "label_zh": "南非",
+      "aliases_zh": [
+        "南非共和国"
+      ],
+      "revision": 2559934760,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q258.json?revision=2559934760"
+    },
+    "Q262": {
+      "label_en": "Algeria",
+      "source_label_en": "Algeria",
+      "label_zh": "阿尔及利亚",
+      "aliases_zh": [
+        "阿尔及利亚人民民主共和国",
+        "阿爾及利亞",
+        "阿爾及利亞人民民主共和國",
+        "🇩🇿"
+      ],
+      "revision": 2561797645,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q262.json?revision=2561797645"
+    },
+    "Q294": {
+      "label_en": "Icelandic",
+      "source_label_en": "Icelandic",
+      "label_zh": "冰岛语",
+      "aliases_zh": [
+        "冰岛文",
+        "冰島文",
+        "冰島語"
+      ],
+      "revision": 2556567040,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q294.json?revision=2556567040"
+    },
+    "Q298": {
+      "label_en": "Chile",
+      "source_label_en": "Chile",
+      "label_zh": "智利",
+      "aliases_zh": [
+        "智利共和国",
+        "智利共和國"
+      ],
+      "revision": 2561449601,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q298.json?revision=2561449601"
+    },
+    "Q334": {
+      "label_en": "Singapore",
+      "source_label_en": "Singapore",
+      "label_zh": "新加坡",
+      "aliases_zh": [
+        "新加坡共和国",
+        "新加坡共和國",
+        "新国",
+        "星加坡",
+        "星国",
+        "星洲",
+        "狮城"
+      ],
+      "revision": 2560048243,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q334.json?revision=2560048243"
+    },
+    "Q347": {
+      "label_en": "Liechtenstein",
+      "source_label_en": "Liechtenstein",
+      "label_zh": "列支敦士登",
+      "aliases_zh": [
+        "列支敦斯登",
+        "列支敦斯登亲王國",
+        "列支敦斯登公國",
+        "力喜騰斯坦因"
+      ],
+      "revision": 2562346520,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q347.json?revision=2562346520"
+    },
+    "Q397": {
+      "label_en": "Latin",
+      "source_label_en": "Latin",
+      "label_zh": "拉丁语",
+      "aliases_zh": [
+        "拉丁語"
+      ],
+      "revision": 2556997315,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q397.json?revision=2556997315"
+    },
+    "Q399": {
+      "label_en": "Armenia",
+      "source_label_en": "Armenia",
+      "label_zh": "亚美尼亚",
+      "aliases_zh": [
+        "亚美尼亚共和国",
+        "亞美尼亞",
+        "亞美尼亞共和國",
+        "阿美尼亞"
+      ],
+      "revision": 2561671575,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q399.json?revision=2561671575"
+    },
+    "Q403": {
+      "label_en": "Serbia",
+      "source_label_en": "Serbia",
+      "label_zh": "塞尔维亚",
+      "aliases_zh": [
+        "塞国",
+        "塞爾維亞"
+      ],
+      "revision": 2558479802,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q403.json?revision=2558479802"
+    },
+    "Q408": {
+      "label_en": "Australia",
+      "source_label_en": "Australia",
+      "label_zh": "澳大利亚",
+      "aliases_zh": [
+        "澳",
+        "澳大利亚联邦",
+        "澳大利亞",
+        "澳大利亞聯邦",
+        "澳州联邦",
+        "澳州聯邦",
+        "澳洲"
+      ],
+      "revision": 2560163668,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q408.json?revision=2560163668"
+    },
+    "Q414": {
+      "label_en": "Argentina",
+      "source_label_en": "Argentina",
+      "label_zh": "阿根廷",
+      "aliases_zh": [
+        "亚根廷",
+        "亜爾然丁",
+        "亜爾然廷",
+        "阿根廷共和国",
+        "🇦🇷"
+      ],
+      "revision": 2559843802,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q414.json?revision=2559843802"
+    },
+    "Q419": {
+      "label_en": "Peru",
+      "source_label_en": "Peru",
+      "label_zh": "秘鲁",
+      "aliases_zh": [
+        "祕魯",
+        "祕魯共和國",
+        "秘魯",
+        "秘鲁共和国"
+      ],
+      "revision": 2558494612,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q419.json?revision=2558494612"
+    },
+    "Q652": {
+      "label_en": "Italian",
+      "source_label_en": "Italian",
+      "label_zh": "意大利语",
+      "aliases_zh": [
+        "意大利語",
+        "義大利語",
+        "義語"
+      ],
+      "revision": 2559724801,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q652.json?revision=2559724801"
+    },
+    "Q664": {
+      "label_en": "New Zealand",
+      "source_label_en": "New Zealand",
+      "label_zh": "新西兰",
+      "aliases_zh": [
+        "新西蘭",
+        "紐西蘭",
+        "纽西兰"
+      ],
+      "revision": 2562593633,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q664.json?revision=2562593633"
+    },
+    "Q668": {
+      "label_en": "India",
+      "source_label_en": "India",
+      "label_zh": "印度",
+      "aliases_zh": [
+        "印",
+        "天竺",
+        "神督",
+        "賢豆",
+        "贤督",
+        "身毒"
+      ],
+      "revision": 2559342809,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q668.json?revision=2559342809"
+    },
+    "Q717": {
+      "label_en": "Venezuela",
+      "source_label_en": "Venezuela",
+      "label_zh": "委内瑞拉",
+      "aliases_zh": [
+        "委內瑞拉"
+      ],
+      "revision": 2562427826,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q717.json?revision=2562427826"
+    },
+    "Q739": {
+      "label_en": "Colombia",
+      "source_label_en": "Colombia",
+      "label_zh": "哥伦比亚",
+      "aliases_zh": [
+        "哥倫比亞"
+      ],
+      "revision": 2558492397,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q739.json?revision=2558492397"
+    },
+    "Q790": {
+      "label_en": "Haiti",
+      "source_label_en": "Haiti",
+      "label_zh": "海地",
+      "aliases_zh": [],
+      "revision": 2562602444,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q790.json?revision=2562602444"
+    },
+    "Q794": {
+      "label_en": "Iran",
+      "source_label_en": "Iran",
+      "label_zh": "伊朗",
+      "aliases_zh": [],
+      "revision": 2562601486,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q794.json?revision=2562601486"
+    },
+    "Q801": {
+      "label_en": "Israel",
+      "source_label_en": "Israel",
+      "label_zh": "以色列",
+      "aliases_zh": [
+        "以国",
+        "以國"
+      ],
+      "revision": 2561702526,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q801.json?revision=2561702526"
+    },
+    "Q809": {
+      "label_en": "Polish",
+      "source_label_en": "Polish",
+      "label_zh": "波兰语",
+      "aliases_zh": [
+        "波蘭語"
+      ],
+      "revision": 2558978163,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q809.json?revision=2558978163"
+    },
+    "Q810": {
+      "label_en": "Jordan",
+      "source_label_en": "Jordan",
+      "label_zh": "约旦",
+      "aliases_zh": [
+        "約旦"
+      ],
+      "revision": 2559732956,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q810.json?revision=2559732956"
+    },
+    "Q822": {
+      "label_en": "Lebanon",
+      "source_label_en": "Lebanon",
+      "label_zh": "黎巴嫩",
+      "aliases_zh": [],
+      "revision": 2558490629,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q822.json?revision=2558490629"
+    },
+    "Q843": {
+      "label_en": "Pakistan",
+      "source_label_en": "Pakistan",
+      "label_zh": "巴基斯坦",
+      "aliases_zh": [
+        "巴国",
+        "巴基",
+        "巴基国"
+      ],
+      "revision": 2562601356,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q843.json?revision=2562601356"
+    },
+    "Q846": {
+      "label_en": "Qatar",
+      "source_label_en": "Qatar",
+      "label_zh": "卡塔尔",
+      "aliases_zh": [
+        "卡国",
+        "卡塔尔国",
+        "卡塔爾",
+        "卡達",
+        "🇶🇦"
+      ],
+      "revision": 2559344528,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q846.json?revision=2559344528"
+    },
+    "Q851": {
+      "label_en": "Saudi Arabia",
+      "source_label_en": "Saudi Arabia",
+      "label_zh": "沙特阿拉伯",
+      "aliases_zh": [
+        "沙乌地",
+        "沙乌地阿拉伯",
+        "沙地",
+        "沙地阿拉伯",
+        "沙烏地",
+        "沙烏地阿拉伯",
+        "沙烏地阿拉伯王國",
+        "沙特",
+        "沙特阿拉伯王国"
+      ],
+      "revision": 2562601531,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q851.json?revision=2562601531"
+    },
+    "Q865": {
+      "label_en": "Taiwan",
+      "source_label_en": "Taiwan",
+      "label_zh": "中华民国",
+      "aliases_zh": [
+        "R.O.C.",
+        "ROC",
+        "ROC 台湾",
+        "ROC 台灣",
+        "三民主义新中国",
+        "三民主義新中國",
+        "中",
+        "中华台北",
+        "中华民囻",
+        "中华民国台湾",
+        "中华民国自由地区",
+        "中华民国（台湾）",
+        "中華台北",
+        "中華民囻",
+        "中華民國",
+        "中華民國自由地區",
+        "中華民國臺灣",
+        "中華民國（台灣）",
+        "中華民國（臺灣）",
+        "华",
+        "反共中国",
+        "反共中國",
+        "台",
+        "台北当局",
+        "台北當局",
+        "台湾",
+        "台湾当局",
+        "台灣",
+        "台灣當局",
+        "国府中国",
+        "国民党中国",
+        "國府中國",
+        "國民黨中國",
+        "民国",
+        "民國",
+        "自由中国",
+        "自由中國",
+        "臺",
+        "臺灣",
+        "華"
+      ],
+      "revision": 2562601327,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q865.json?revision=2562601327"
+    },
+    "Q869": {
+      "label_en": "Thailand",
+      "source_label_en": "Thailand",
+      "label_zh": "泰国",
+      "aliases_zh": [
+        "泰國",
+        "泰王國"
+      ],
+      "revision": 2562601479,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q869.json?revision=2562601479"
+    },
+    "Q878": {
+      "label_en": "United Arab Emirates",
+      "source_label_en": "United Arab Emirates",
+      "label_zh": "阿拉伯联合酋长国",
+      "aliases_zh": [
+        "阿拉伯聯合大公國",
+        "阿联酋",
+        "阿聯酋"
+      ],
+      "revision": 2562602062,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q878.json?revision=2562602062"
+    },
+    "Q881": {
+      "label_en": "Vietnam",
+      "source_label_en": "Vietnam",
+      "label_zh": "越南",
+      "aliases_zh": [
+        "越南社会主义共和国",
+        "越南社會主義共和國"
+      ],
+      "revision": 2562601344,
+      "retrieved_at": "2026-10-30T16:03:55+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q881.json?revision=2562601344"
+    },
+    "Q884": {
+      "label_en": "South Korea",
+      "source_label_en": "South Korea",
+      "label_zh": "大韩民国",
+      "aliases_zh": [
+        "南朝鲜",
+        "南韓",
+        "南韩",
+        "大韓民國",
+        "韓國",
+        "韩国"
+      ],
+      "revision": 2562602082,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q884.json?revision=2562602082"
+    },
+    "Q902": {
+      "label_en": "Bangladesh",
+      "source_label_en": "Bangladesh",
+      "label_zh": "孟加拉国",
+      "aliases_zh": [
+        "孟加拉",
+        "孟加拉人民共和国",
+        "孟加拉人民共和國",
+        "孟加拉國"
+      ],
+      "revision": 2562601979,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q902.json?revision=2562601979"
+    },
+    "Q928": {
+      "label_en": "Philippines",
+      "source_label_en": "Philippines",
+      "label_zh": "菲律宾",
+      "aliases_zh": [
+        "比島",
+        "菲律宾共和国",
+        "菲律賓",
+        "菲律賓共和國"
+      ],
+      "revision": 2562601559,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q928.json?revision=2562601559"
+    },
+    "Q963": {
+      "label_en": "Botswana",
+      "source_label_en": "Botswana",
+      "label_zh": "博茨瓦纳",
+      "aliases_zh": [
+        "博国",
+        "博茨瓦納",
+        "博茨瓦納共和國",
+        "博茨瓦纳共和国",
+        "波札那",
+        "波札那共和國"
+      ],
+      "revision": 2562602702,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q963.json?revision=2562602702"
+    },
+    "Q1016": {
+      "label_en": "Libya",
+      "source_label_en": "Libya",
+      "label_zh": "利比亚",
+      "aliases_zh": [
+        "利比亚国",
+        "利比亞",
+        "利比亞國"
+      ],
+      "revision": 2560224728,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1016.json?revision=2560224728"
+    },
+    "Q1025": {
+      "label_en": "Mauritania",
+      "source_label_en": "Mauritania",
+      "label_zh": "毛里塔尼亚",
+      "aliases_zh": [
+        "毛里塔尼亞",
+        "茅利塔尼亞"
+      ],
+      "revision": 2561607426,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1025.json?revision=2561607426"
+    },
+    "Q1028": {
+      "label_en": "Morocco",
+      "source_label_en": "Morocco",
+      "label_zh": "摩洛哥",
+      "aliases_zh": [
+        "摩洛哥王國",
+        "菲兹王國"
+      ],
+      "revision": 2561607405,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1028.json?revision=2561607405"
+    },
+    "Q1041": {
+      "label_en": "Senegal",
+      "source_label_en": "Senegal",
+      "label_zh": "塞内加尔",
+      "aliases_zh": [
+        "塞內加爾",
+        "塞内加尔共和国"
+      ],
+      "revision": 2558478403,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1041.json?revision=2558478403"
+    },
+    "Q1321": {
+      "label_en": "Spanish",
+      "source_label_en": "Spanish",
+      "label_zh": "西班牙语",
+      "aliases_zh": [
+        "卡斯提亞語",
+        "呂文",
+        "西班牙語",
+        "西語",
+        "西语"
+      ],
+      "revision": 2562091485,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1321.json?revision=2562091485"
+    },
+    "Q1412": {
+      "label_en": "Finnish",
+      "source_label_en": "Finnish",
+      "label_zh": "芬兰语",
+      "aliases_zh": [
+        "芬蘭語"
+      ],
+      "revision": 2562146663,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1412.json?revision=2562146663"
+    },
+    "Q1568": {
+      "label_en": "Hindi",
+      "source_label_en": "Hindi",
+      "label_zh": "印地语",
+      "aliases_zh": [
+        "印地語"
+      ],
+      "revision": 2559350015,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1568.json?revision=2559350015"
+    },
+    "Q1617": {
+      "label_en": "Urdu",
+      "source_label_en": "Urdu",
+      "label_zh": "乌尔都语",
+      "aliases_zh": [
+        "烏爾都語"
+      ],
+      "revision": 2558975895,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1617.json?revision=2558975895"
+    },
+    "Q1860": {
+      "label_en": "English",
+      "source_label_en": "English",
+      "label_zh": "英语",
+      "aliases_zh": [
+        "英文",
+        "英語"
+      ],
+      "revision": 2561598071,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1860.json?revision=2561598071"
+    },
+    "Q2743": {
+      "label_en": "musical play",
+      "source_label_en": "musical play",
+      "label_zh": "音乐剧",
+      "aliases_zh": [
+        "音樂劇"
+      ],
+      "revision": 2558092971,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q2743.json?revision=2558092971"
+    },
+    "Q4184": {
+      "label_en": "autobiography",
+      "source_label_en": "autobiography",
+      "label_zh": "自传",
+      "aliases_zh": [
+        "自傳"
+      ],
+      "revision": 2562424292,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q4184.json?revision=2562424292"
+    },
+    "Q5137": {
+      "label_en": "Gujarati",
+      "source_label_en": "Gujarati",
+      "label_zh": "古吉拉特語",
+      "aliases_zh": [
+        "古加拉特語",
+        "古吉拉特语",
+        "古茶拉底语"
+      ],
+      "revision": 2556566933,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q5137.json?revision=2556566933"
+    },
+    "Q5146": {
+      "label_en": "Portuguese",
+      "source_label_en": "Portuguese",
+      "label_zh": "葡萄牙语",
+      "aliases_zh": [
+        "葡文",
+        "葡萄牙文",
+        "葡萄牙語",
+        "葡語",
+        "葡语"
+      ],
+      "revision": 2559741176,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q5146.json?revision=2559741176"
+    },
+    "Q5218": {
+      "label_en": "Quechua",
+      "source_label_en": "Quechua",
+      "label_zh": "克丘亚语",
+      "aliases_zh": [
+        "克丘亞語",
+        "奇楚瓦語"
+      ],
+      "revision": 2558558592,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q5218.json?revision=2558558592"
+    },
+    "Q5287": {
+      "label_en": "Japanese",
+      "source_label_en": "Japanese",
+      "label_zh": "日语",
+      "aliases_zh": [
+        "日文",
+        "日本文",
+        "日本話",
+        "日本語",
+        "日本语",
+        "日語"
+      ],
+      "revision": 2558862424,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q5287.json?revision=2558862424"
+    },
+    "Q5885": {
+      "label_en": "Tamil",
+      "source_label_en": "Tamil",
+      "label_zh": "泰米尔语",
+      "aliases_zh": [
+        "坦米爾語",
+        "泰米爾語",
+        "淡米尔语",
+        "淡米爾語"
+      ],
+      "revision": 2562092286,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q5885.json?revision=2562092286"
+    },
+    "Q6654": {
+      "label_en": "Croatian",
+      "source_label_en": "Croatian",
+      "label_zh": "克罗地亚语",
+      "aliases_zh": [
+        "克羅地亞語",
+        "克羅埃西亞語"
+      ],
+      "revision": 2561448603,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q6654.json?revision=2561448603"
+    },
+    "Q7026": {
+      "label_en": "Catalan",
+      "source_label_en": "Catalan",
+      "label_zh": "加泰罗尼亚语",
+      "aliases_zh": [
+        "加泰羅尼亞語",
+        "加泰隆尼亞語",
+        "加泰隆語",
+        "加泰隆语"
+      ],
+      "revision": 2558976432,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q7026.json?revision=2558976432"
+    },
+    "Q7318": {
+      "label_en": "Nazi Germany",
+      "source_label_en": "Nazi Germany",
+      "label_zh": "纳粹德国",
+      "aliases_zh": [
+        "德意志第三帝国",
+        "德意志第三帝國",
+        "第三帝国",
+        "第三帝國",
+        "納粹德國"
+      ],
+      "revision": 2561606735,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q7318.json?revision=2561606735"
+    },
+    "Q7411": {
+      "label_en": "Dutch",
+      "source_label_en": "Dutch",
+      "label_zh": "荷兰语",
+      "aliases_zh": [
+        "現代荷蘭語",
+        "荷蘭語"
+      ],
+      "revision": 2548091849,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q7411.json?revision=2548091849"
+    },
+    "Q7737": {
+      "label_en": "Russian",
+      "source_label_en": "Russian",
+      "label_zh": "俄语",
+      "aliases_zh": [
+        "俄国语",
+        "俄文",
+        "俄罗斯文",
+        "俄罗斯语",
+        "俄語"
+      ],
+      "revision": 2558975878,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q7737.json?revision=2558975878"
+    },
+    "Q7838": {
+      "label_en": "Swahili",
+      "source_label_en": "Swahili",
+      "label_zh": "斯瓦希里语",
+      "aliases_zh": [
+        "史瓦希利語",
+        "斯瓦希里語"
+      ],
+      "revision": 2561609186,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q7838.json?revision=2561609186"
+    },
+    "Q7850": {
+      "label_en": "Chinese",
+      "source_label_en": "Chinese",
+      "label_zh": "中文",
+      "aliases_zh": [
+        "中国话",
+        "中国语",
+        "华文",
+        "华语",
+        "唐文",
+        "唐话",
+        "汉文",
+        "汉话",
+        "汉语",
+        "漢語",
+        "華文",
+        "華語"
+      ],
+      "revision": 2556015121,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q7850.json?revision=2556015121"
+    },
+    "Q7913": {
+      "label_en": "Romanian",
+      "source_label_en": "Romanian",
+      "label_zh": "羅馬尼亞語",
+      "aliases_zh": [],
+      "revision": 2558338710,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q7913.json?revision=2558338710"
+    },
+    "Q7976": {
+      "label_en": "American English",
+      "source_label_en": "American English",
+      "label_zh": "美国英语",
+      "aliases_zh": [
+        "美國英語",
+        "美式英語",
+        "美式英语",
+        "美語",
+        "美语",
+        "英语 (美国)"
+      ],
+      "revision": 2557061668,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q7976.json?revision=2557061668"
+    },
+    "Q8097": {
+      "label_en": "Telugu",
+      "source_label_en": "Telugu",
+      "label_zh": "泰卢固语",
+      "aliases_zh": [
+        "泰盧固語"
+      ],
+      "revision": 2558976410,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q8097.json?revision=2558976410"
+    },
+    "Q8108": {
+      "label_en": "Georgian",
+      "source_label_en": "Georgian",
+      "label_zh": "格鲁吉亚语",
+      "aliases_zh": [
+        "喬治亞語",
+        "格魯吉亞語"
+      ],
+      "revision": 2556432301,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q8108.json?revision=2556432301"
+    },
+    "Q8341": {
+      "label_en": "jazz",
+      "source_label_en": "jazz",
+      "label_zh": "爵士乐",
+      "aliases_zh": [
+        "爵士樂",
+        "現代爵士"
+      ],
+      "revision": 2562482339,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q8341.json?revision=2562482339"
+    },
+    "Q8641": {
+      "label_en": "Yiddish",
+      "source_label_en": "Yiddish",
+      "label_zh": "意第绪语",
+      "aliases_zh": [
+        "依地语",
+        "意第緒語"
+      ],
+      "revision": 2560868290,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q8641.json?revision=2560868290"
+    },
+    "Q8646": {
+      "label_en": "Hong Kong",
+      "source_label_en": "Hong Kong",
+      "label_zh": "香港",
+      "aliases_zh": [
+        "中华人民共和国香港特别行政区",
+        "中国香港",
+        "中國香港",
+        "中華人民共和國香港特別行政區",
+        "香港特別行政區",
+        "香港特别行政区",
+        "香港特区",
+        "香港特區"
+      ],
+      "revision": 2558483220,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q8646.json?revision=2558483220"
+    },
+    "Q8748": {
+      "label_en": "Albanian",
+      "source_label_en": "Albanian",
+      "label_zh": "阿尔巴尼亚语",
+      "aliases_zh": [
+        "阿爾巴尼亞語"
+      ],
+      "revision": 2559921209,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q8748.json?revision=2559921209"
+    },
+    "Q8785": {
+      "label_en": "Armenian",
+      "source_label_en": "Armenian",
+      "label_zh": "亞美尼亞語",
+      "aliases_zh": [
+        "亚美尼亚语"
+      ],
+      "revision": 2552198805,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q8785.json?revision=2552198805"
+    },
+    "Q8798": {
+      "label_en": "Ukrainian",
+      "source_label_en": "Ukrainian",
+      "label_zh": "乌克兰语",
+      "aliases_zh": [
+        "乌克兰文",
+        "乌语",
+        "烏克蘭文",
+        "烏克蘭話",
+        "烏克蘭語"
+      ],
+      "revision": 2561948742,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q8798.json?revision=2561948742"
+    },
+    "Q9027": {
+      "label_en": "Swedish",
+      "source_label_en": "Swedish",
+      "label_zh": "瑞典语",
+      "aliases_zh": [
+        "瑞典語"
+      ],
+      "revision": 2548525393,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9027.json?revision=2548525393"
+    },
+    "Q9035": {
+      "label_en": "Danish",
+      "source_label_en": "Danish",
+      "label_zh": "丹麦语",
+      "aliases_zh": [
+        "丹麥語"
+      ],
+      "revision": 2556431963,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9035.json?revision=2556431963"
+    },
+    "Q9043": {
+      "label_en": "Norwegian",
+      "source_label_en": "Norwegian",
+      "label_zh": "挪威语",
+      "aliases_zh": [
+        "挪威語"
+      ],
+      "revision": 2553066312,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9043.json?revision=2553066312"
+    },
+    "Q9051": {
+      "label_en": "Luxembourgish",
+      "source_label_en": "Luxembourgish",
+      "label_zh": "卢森堡语",
+      "aliases_zh": [
+        "盧森堡語"
+      ],
+      "revision": 2558559270,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9051.json?revision=2558559270"
+    },
+    "Q9056": {
+      "label_en": "Czech",
+      "source_label_en": "Czech",
+      "label_zh": "捷克语",
+      "aliases_zh": [
+        "捷克文",
+        "捷克語"
+      ],
+      "revision": 2560736638,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9056.json?revision=2560736638"
+    },
+    "Q9058": {
+      "label_en": "Slovak",
+      "source_label_en": "Slovak",
+      "label_zh": "斯洛伐克语",
+      "aliases_zh": [
+        "斯洛伐克語"
+      ],
+      "revision": 2557167942,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9058.json?revision=2557167942"
+    },
+    "Q9067": {
+      "label_en": "Hungarian",
+      "source_label_en": "Hungarian",
+      "label_zh": "匈牙利语",
+      "aliases_zh": [
+        "匈牙利語"
+      ],
+      "revision": 2556567031,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9067.json?revision=2556567031"
+    },
+    "Q9072": {
+      "label_en": "Estonian",
+      "source_label_en": "Estonian",
+      "label_zh": "愛沙尼亞語",
+      "aliases_zh": [],
+      "revision": 2558975862,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9072.json?revision=2558975862"
+    },
+    "Q9078": {
+      "label_en": "Latvian",
+      "source_label_en": "Latvian",
+      "label_zh": "拉脫維亞語",
+      "aliases_zh": [],
+      "revision": 2551368498,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9078.json?revision=2551368498"
+    },
+    "Q9091": {
+      "label_en": "Belarusian",
+      "source_label_en": "Belarusian",
+      "label_zh": "白俄罗斯语",
+      "aliases_zh": [
+        "白俄羅斯語",
+        "白罗斯语"
+      ],
+      "revision": 2559904037,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9091.json?revision=2559904037"
+    },
+    "Q9129": {
+      "label_en": "Greek",
+      "source_label_en": "Greek",
+      "label_zh": "希腊语",
+      "aliases_zh": [
+        "希臘語"
+      ],
+      "revision": 2562589422,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9129.json?revision=2562589422"
+    },
+    "Q9142": {
+      "label_en": "Irish",
+      "source_label_en": "Irish",
+      "label_zh": "爱尔兰语",
+      "aliases_zh": [
+        "愛爾蘭語"
+      ],
+      "revision": 2558555864,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9142.json?revision=2558555864"
+    },
+    "Q9168": {
+      "label_en": "Persian",
+      "source_label_en": "Persian",
+      "label_zh": "波斯語",
+      "aliases_zh": [
+        "法尔斯语",
+        "波斯语"
+      ],
+      "revision": 2552159203,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9168.json?revision=2552159203"
+    },
+    "Q9176": {
+      "label_en": "Korean",
+      "source_label_en": "Korean",
+      "label_zh": "朝鲜语",
+      "aliases_zh": [
+        "朝鮮語",
+        "韓國語",
+        "韓文",
+        "韓語",
+        "韩国语",
+        "韩文",
+        "韩语",
+        "조선말",
+        "조선어",
+        "한국말",
+        "한국어"
+      ],
+      "revision": 2559903478,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9176.json?revision=2559903478"
+    },
+    "Q9186": {
+      "label_en": "Cantonese",
+      "source_label_en": "Cantonese",
+      "label_zh": "广州话",
+      "aliases_zh": [
+        "吉隆坡话",
+        "山打根话",
+        "广府话",
+        "廣州話",
+        "廣府話",
+        "廣東話",
+        "怡保话",
+        "粤话",
+        "粤语",
+        "粵話",
+        "粵語",
+        "粵音"
+      ],
+      "revision": 2553158359,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9186.json?revision=2553158359"
+    },
+    "Q9192": {
+      "label_en": "Mandarin",
+      "source_label_en": "Mandarin",
+      "label_zh": "官话",
+      "aliases_zh": [
+        "北方方言",
+        "官話"
+      ],
+      "revision": 2559879467,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9192.json?revision=2559879467"
+    },
+    "Q9199": {
+      "label_en": "Vietnamese",
+      "source_label_en": "Vietnamese",
+      "label_zh": "越南语",
+      "aliases_zh": [
+        "京语",
+        "安南话",
+        "安南语",
+        "越南文",
+        "越南語",
+        "越南话",
+        "越文",
+        "越語",
+        "越语"
+      ],
+      "revision": 2559879106,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9199.json?revision=2559879106"
+    },
+    "Q9217": {
+      "label_en": "Thai",
+      "source_label_en": "Thai",
+      "label_zh": "泰语",
+      "aliases_zh": [
+        "暹羅語",
+        "泰文",
+        "泰語",
+        "阿瑜陀耶語"
+      ],
+      "revision": 2539215937,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9217.json?revision=2539215937"
+    },
+    "Q9237": {
+      "label_en": "Malay",
+      "source_label_en": "Malay",
+      "label_zh": "马来语",
+      "aliases_zh": [
+        "馬來話",
+        "馬來語"
+      ],
+      "revision": 2551642918,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9237.json?revision=2551642918"
+    },
+    "Q9240": {
+      "label_en": "Indonesian",
+      "source_label_en": "Indonesian",
+      "label_zh": "印尼语",
+      "aliases_zh": [
+        "印尼語",
+        "印度尼西亚语",
+        "印度尼西亞語"
+      ],
+      "revision": 2561607317,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9240.json?revision=2561607317"
+    },
+    "Q9252": {
+      "label_en": "Kazakh",
+      "source_label_en": "Kazakh",
+      "label_zh": "哈萨克语",
+      "aliases_zh": [
+        "哈薩克語"
+      ],
+      "revision": 2558976388,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9252.json?revision=2558976388"
+    },
+    "Q9288": {
+      "label_en": "Hebrew",
+      "source_label_en": "Hebrew",
+      "label_zh": "希伯来语",
+      "aliases_zh": [
+        "希伯來語"
+      ],
+      "revision": 2556993763,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9288.json?revision=2556993763"
+    },
+    "Q9296": {
+      "label_en": "Macedonian",
+      "source_label_en": "Macedonian",
+      "label_zh": "马其顿语",
+      "aliases_zh": [
+        "馬其頓語"
+      ],
+      "revision": 2551458211,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9296.json?revision=2551458211"
+    },
+    "Q9299": {
+      "label_en": "Serbian",
+      "source_label_en": "Serbian",
+      "label_zh": "塞尔维亚语",
+      "aliases_zh": [
+        "塞爾維亞語"
+      ],
+      "revision": 2556432967,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9299.json?revision=2556432967"
+    },
+    "Q9301": {
+      "label_en": "Serbo-Croatian",
+      "source_label_en": "Serbo-Croatian",
+      "label_zh": "塞尔维亚-克罗地亚语",
+      "aliases_zh": [
+        "塞克語",
+        "塞爾維亞-克羅地亞語",
+        "塞爾維亞語",
+        "波克塞語",
+        "波克黑塞語",
+        "波斯尼亚-克罗地亚-塞尔维亚语",
+        "波斯尼亚-克罗地亚-黑山-塞尔维亚语"
+      ],
+      "revision": 2561038530,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9301.json?revision=2561038530"
+    },
+    "Q9303": {
+      "label_en": "Bosnian",
+      "source_label_en": "Bosnian",
+      "label_zh": "波斯尼亚语",
+      "aliases_zh": [
+        "波士尼亞語",
+        "波斯尼亞語"
+      ],
+      "revision": 2562110129,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9303.json?revision=2562110129"
+    },
+    "Q9307": {
+      "label_en": "Galician",
+      "source_label_en": "Galician",
+      "label_zh": "加利西亞語",
+      "aliases_zh": [],
+      "revision": 2558976425,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9307.json?revision=2558976425"
+    },
+    "Q9309": {
+      "label_en": "Welsh",
+      "source_label_en": "Welsh",
+      "label_zh": "威尔士语",
+      "aliases_zh": [
+        "威爾士語"
+      ],
+      "revision": 2559715163,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9309.json?revision=2559715163"
+    },
+    "Q9314": {
+      "label_en": "Scottish Gaelic",
+      "source_label_en": "Scottish Gaelic",
+      "label_zh": "苏格兰盖尔语",
+      "aliases_zh": [
+        "蓋爾文同盟",
+        "蘇格蘭蓋爾語正寫法"
+      ],
+      "revision": 2549940481,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9314.json?revision=2549940481"
+    },
+    "Q9610": {
+      "label_en": "Bangla",
+      "source_label_en": "Bangla",
+      "label_zh": "孟加拉语",
+      "aliases_zh": [
+        "孟加拉語"
+      ],
+      "revision": 2533189560,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9610.json?revision=2533189560"
+    },
+    "Q10134": {
+      "label_en": "Klingon",
+      "source_label_en": "Klingon",
+      "label_zh": "克林貢語",
+      "aliases_zh": [],
+      "revision": 2557928342,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q10134.json?revision=2557928342"
+    },
+    "Q10179": {
+      "label_en": "Zulu",
+      "source_label_en": "Zulu",
+      "label_zh": "祖鲁语",
+      "aliases_zh": [
+        "祖魯語"
+      ],
+      "revision": 2553616599,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q10179.json?revision=2553616599"
+    },
+    "Q11621": {
+      "label_en": "E.T. the Extra-Terrestrial",
+      "source_label_en": "E.T. the Extra-Terrestrial",
+      "label_zh": "E.T.外星人",
+      "aliases_zh": [],
+      "revision": 2560651064,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q11621.json?revision=2560651064"
+    },
+    "Q13201": {
+      "label_en": "Romani",
+      "source_label_en": "Romani",
+      "label_zh": "罗姆语",
+      "aliases_zh": [
+        "羅姆語"
+      ],
+      "revision": 2555745243,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q13201.json?revision=2555745243"
+    },
+    "Q13275": {
+      "label_en": "Somali",
+      "source_label_en": "Somali",
+      "label_zh": "索马里语",
+      "aliases_zh": [
+        "索馬利亞語",
+        "索馬利語",
+        "索馬里語"
+      ],
+      "revision": 2526705023,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q13275.json?revision=2526705023"
+    },
+    "Q13339": {
+      "label_en": "Mohawk",
+      "source_label_en": "Mohawk",
+      "label_zh": "莫霍克语",
+      "aliases_zh": [
+        "摩和克語",
+        "莫霍克語"
+      ],
+      "revision": 2556432666,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q13339.json?revision=2556432666"
+    },
+    "Q13354": {
+      "label_en": "Yucatec Maya",
+      "source_label_en": "Yucatec Maya",
+      "label_zh": "猶加敦馬雅語",
+      "aliases_zh": [
+        "猶加敦語"
+      ],
+      "revision": 2560705940,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q13354.json?revision=2560705940"
+    },
+    "Q13955": {
+      "label_en": "Arabic",
+      "source_label_en": "Arabic",
+      "label_zh": "阿拉伯语",
+      "aliases_zh": [
+        "阿拉伯文",
+        "阿拉伯語",
+        "阿拉伯語支",
+        "阿拉伯語族",
+        "阿拉伯语支",
+        "阿文",
+        "阿语"
+      ],
+      "revision": 2556431588,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q13955.json?revision=2556431588"
+    },
+    "Q14196": {
+      "label_en": "Afrikaans",
+      "source_label_en": "Afrikaans",
+      "label_zh": "阿非利卡语",
+      "aliases_zh": [
+        "南非荷兰语",
+        "南非荷蘭語",
+        "南非語",
+        "南非语",
+        "斐語",
+        "阿非利卡語",
+        "阿非利坎语",
+        "阿非利堪斯语"
+      ],
+      "revision": 2560058594,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q14196.json?revision=2560058594"
+    },
+    "Q14759": {
+      "label_en": "American Sign Language",
+      "source_label_en": "American Sign Language",
+      "label_zh": "美國手語",
+      "aliases_zh": [
+        "ASL"
+      ],
+      "revision": 2547973772,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q14759.json?revision=2547973772"
+    },
+    "Q15180": {
+      "label_en": "Soviet Union",
+      "source_label_en": "Soviet Union",
+      "label_zh": "苏联",
+      "aliases_zh": [
+        "前苏联",
+        "前蘇聯",
+        "苏维埃社会主义共和国联盟",
+        "苏维埃社会主义共和国联邦",
+        "苏维埃社会主义国家联盟",
+        "蘇維埃社會主義共和國聯盟",
+        "蘇維埃社會主義共和國聯邦",
+        "蘇維埃社會主義國家聯盟",
+        "蘇聯"
+      ],
+      "revision": 2562482440,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q15180.json?revision=2562482440"
+    },
+    "Q16957": {
+      "label_en": "East Germany",
+      "source_label_en": "East Germany",
+      "label_zh": "东德",
+      "aliases_zh": [
+        "德意志民主共和国",
+        "德意志民主共和國",
+        "東德",
+        "民主德国",
+        "民主德國"
+      ],
+      "revision": 2562556748,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q16957.json?revision=2562556748"
+    },
+    "Q18433": {
+      "label_en": "City of Women",
+      "source_label_en": "City of Women",
+      "label_zh": "女人城",
+      "aliases_zh": [],
+      "revision": 2554606774,
+      "retrieved_at": "2026-10-30T16:03:59+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q18433.json?revision=2554606774"
+    },
+    "Q19268": {
+      "label_en": "Paradise Alley",
+      "source_label_en": "Paradise Alley",
+      "label_zh": "陋巷風雲",
+      "aliases_zh": [
+        "拳威"
+      ],
+      "revision": 2560638106,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q19268.json?revision=2560638106"
+    },
+    "Q19311": {
+      "label_en": "Nothing Left to Do But Cry",
+      "source_label_en": "Nothing Left to Do But Cry",
+      "label_zh": "除了哭泣別無選擇",
+      "aliases_zh": [
+        "眼泪不再"
+      ],
+      "revision": 2554609576,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q19311.json?revision=2554609576"
+    },
+    "Q22890": {
+      "label_en": "Ireland",
+      "source_label_en": "Ireland",
+      "label_zh": "爱尔兰岛",
+      "aliases_zh": [
+        "愛爾蘭島",
+        "爱尔"
+      ],
+      "revision": 2559359842,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q22890.json?revision=2559359842"
+    },
+    "Q24925": {
+      "label_en": "science fiction",
+      "source_label_en": "science fiction",
+      "label_zh": "科学幻想",
+      "aliases_zh": [
+        "科学虚构",
+        "科學幻想",
+        "科學虛構",
+        "科幻",
+        "科幻作品"
+      ],
+      "revision": 2557995898,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q24925.json?revision=2557995898"
+    },
+    "Q25188": {
+      "label_en": "Inception",
+      "source_label_en": "Inception",
+      "label_zh": "盗梦空间",
+      "aliases_zh": [],
+      "revision": 2557100094,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q25188.json?revision=2557100094"
+    },
+    "Q25191": {
+      "label_en": "Christopher Nolan",
+      "source_label_en": "Christopher Nolan",
+      "label_zh": "克里斯托弗·诺兰",
+      "aliases_zh": [
+        "克里斯多夫·諾蘭",
+        "克里斯多福·諾蘭",
+        "诺兰"
+      ],
+      "revision": 2561671329,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q25191.json?revision=2561671329"
+    },
+    "Q25285": {
+      "label_en": "Tatar",
+      "source_label_en": "Tatar",
+      "label_zh": "鞑靼语",
+      "aliases_zh": [
+        "塔塔尔语",
+        "塔塔爾語",
+        "鞑靼文",
+        "韃靼語"
+      ],
+      "revision": 2560740461,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q25285.json?revision=2560740461"
+    },
+    "Q28602": {
+      "label_en": "Aramaic",
+      "source_label_en": "Aramaic",
+      "label_zh": "亞拉姆語",
+      "aliases_zh": [],
+      "revision": 2559904973,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q28602.json?revision=2559904973"
+    },
+    "Q29401": {
+      "label_en": "Assamese",
+      "source_label_en": "Assamese",
+      "label_zh": "阿萨姆语",
+      "aliases_zh": [
+        "阿薩姆語"
+      ],
+      "revision": 2560160350,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q29401.json?revision=2560160350"
+    },
+    "Q32972": {
+      "label_en": "Comanche",
+      "source_label_en": "Comanche",
+      "label_zh": "科滿車語",
+      "aliases_zh": [
+        "科曼奇語",
+        "科曼奇语"
+      ],
+      "revision": 2516920312,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q32972.json?revision=2516920312"
+    },
+    "Q33111": {
+      "label_en": "Corsican",
+      "source_label_en": "Corsican",
+      "label_zh": "科西嘉语",
+      "aliases_zh": [
+        "科西嘉島方言",
+        "科西嘉語"
+      ],
+      "revision": 2560338419,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q33111.json?revision=2560338419"
+    },
+    "Q33243": {
+      "label_en": "Bambara",
+      "source_label_en": "Bambara",
+      "label_zh": "班巴拉语",
+      "aliases_zh": [
+        "班巴拉語"
+      ],
+      "revision": 2560165742,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q33243.json?revision=2560165742"
+    },
+    "Q33274": {
+      "label_en": "Shawiya",
+      "source_label_en": "Shawiya",
+      "label_zh": "沙維雅語",
+      "aliases_zh": [
+        "沙維雅（شاوية）方言"
+      ],
+      "revision": 2559576308,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q33274.json?revision=2559576308"
+    },
+    "Q33350": {
+      "label_en": "Chechen",
+      "source_label_en": "Chechen",
+      "label_zh": "车臣语",
+      "aliases_zh": [
+        "車臣文",
+        "車臣語"
+      ],
+      "revision": 2560735324,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q33350.json?revision=2560735324"
+    },
+    "Q33357": {
+      "label_en": "Crimean Tatar",
+      "source_label_en": "Crimean Tatar",
+      "label_zh": "克里米亚鞑靼语",
+      "aliases_zh": [
+        "克里米亚土耳其语",
+        "克里米亞塔塔爾文",
+        "克里米亞塔塔爾語",
+        "克里米亞韃靼語"
+      ],
+      "revision": 2561012967,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q33357.json?revision=2561012967"
+    },
+    "Q33410": {
+      "label_en": "Haryanvi",
+      "source_label_en": "Haryanvi",
+      "label_zh": "哈里亚纳語",
+      "aliases_zh": [
+        "哈里亞納語"
+      ],
+      "revision": 2553998586,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q33410.json?revision=2553998586"
+    },
+    "Q33417": {
+      "label_en": "Isan",
+      "source_label_en": "Isan",
+      "label_zh": "伊善语",
+      "aliases_zh": [
+        "Isan語",
+        "lo-TH",
+        "伊善語",
+        "伊森語",
+        "依善話",
+        "依善語",
+        "依善语",
+        "東北泰語"
+      ],
+      "revision": 2554457766,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q33417.json?revision=2554457766"
+    },
+    "Q33569": {
+      "label_en": "Hawaiian",
+      "source_label_en": "Hawaiian",
+      "label_zh": "夏威夷语",
+      "aliases_zh": [
+        "夏威夷文",
+        "夏威夷語"
+      ],
+      "revision": 2526711117,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q33569.json?revision=2526711117"
+    },
+    "Q33573": {
+      "label_en": "Kinyarwanda",
+      "source_label_en": "Kinyarwanda",
+      "label_zh": "卢旺达语",
+      "aliases_zh": [
+        "基尼阿万达语",
+        "盧安達語"
+      ],
+      "revision": 2560700010,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q33573.json?revision=2560700010"
+    },
+    "Q33673": {
+      "label_en": "Kannada",
+      "source_label_en": "Kannada",
+      "label_zh": "卡纳达语",
+      "aliases_zh": [
+        "卡南達語",
+        "卡纳尔语",
+        "坎纳达语",
+        "坎那達語",
+        "康納達語"
+      ],
+      "revision": 2558481667,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q33673.json?revision=2558481667"
+    },
+    "Q33738": {
+      "label_en": "Mayan",
+      "source_label_en": "Mayan",
+      "label_zh": "玛雅语系",
+      "aliases_zh": [
+        "玛雅语族",
+        "玛雅语言",
+        "玛雅诸语言",
+        "瑪雅語系",
+        "馬雅語族",
+        "馬雅語系",
+        "馬雅諸語言",
+        "马牙语族"
+      ],
+      "revision": 2538684233,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q33738.json?revision=2538684233"
+    },
+    "Q33754": {
+      "label_en": "Lombard",
+      "source_label_en": "Lombard",
+      "label_zh": "倫巴底語",
+      "aliases_zh": [
+        "倫巴第語"
+      ],
+      "revision": 2561609165,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q33754.json?revision=2561609165"
+    },
+    "Q33845": {
+      "label_en": "Neapolitan language",
+      "source_label_en": "Neapolitan language",
+      "label_zh": "那不勒斯语",
+      "aliases_zh": [
+        "拿坡里語",
+        "那不勒斯語"
+      ],
+      "revision": 2540115595,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q33845.json?revision=2540115595"
+    },
+    "Q33946": {
+      "label_en": "Czechoslovakia",
+      "source_label_en": "Czechoslovakia",
+      "label_zh": "捷克斯洛伐克",
+      "aliases_zh": [
+        "捷克斯拉夫"
+      ],
+      "revision": 2557713719,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q33946.json?revision=2557713719"
+    },
+    "Q33973": {
+      "label_en": "Sicilian",
+      "source_label_en": "Sicilian",
+      "label_zh": "西西里语",
+      "aliases_zh": [],
+      "revision": 2545360692,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q33973.json?revision=2545360692"
+    },
+    "Q34024": {
+      "label_en": "Picard",
+      "source_label_en": "Picard",
+      "label_zh": "皮卡第语",
+      "aliases_zh": [],
+      "revision": 2560696426,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q34024.json?revision=2560696426"
+    },
+    "Q34065": {
+      "label_en": "Tuareg",
+      "source_label_en": "Tuareg",
+      "label_zh": "圖阿雷格語",
+      "aliases_zh": [
+        "图阿列格语",
+        "塔瑪舍克語",
+        "塔马舍克语"
+      ],
+      "revision": 2559500501,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q34065.json?revision=2559500501"
+    },
+    "Q34147": {
+      "label_en": "Flemish Dutch",
+      "source_label_en": "Flemish Dutch",
+      "label_zh": "弗拉芒语",
+      "aliases_zh": [
+        "佛兰芒语",
+        "佛拉蒙語",
+        "佛萊明語",
+        "佛萊芒語",
+        "法蘭德斯語"
+      ],
+      "revision": 2556432141,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q34147.json?revision=2556432141"
+    },
+    "Q34159": {
+      "label_en": "Tok Pisin",
+      "source_label_en": "Tok Pisin",
+      "label_zh": "巴布亚皮钦语",
+      "aliases_zh": [
+        "托克皮辛语",
+        "托克皮钦语",
+        "托皮辛"
+      ],
+      "revision": 2558556673,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q34159.json?revision=2558556673"
+    },
+    "Q34257": {
+      "label_en": "Wolof",
+      "source_label_en": "Wolof",
+      "label_zh": "沃洛夫語",
+      "aliases_zh": [
+        "渥魯夫語"
+      ],
+      "revision": 2556433321,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q34257.json?revision=2556433321"
+    },
+    "Q34271": {
+      "label_en": "Tibetan",
+      "source_label_en": "Tibetan",
+      "label_zh": "藏语",
+      "aliases_zh": [
+        "藏文",
+        "藏語",
+        "西藏語"
+      ],
+      "revision": 2560960685,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q34271.json?revision=2560960685"
+    },
+    "Q34290": {
+      "label_en": "Wu Chinese",
+      "source_label_en": "Wu Chinese",
+      "label_zh": "吴语",
+      "aliases_zh": [
+        "吳語",
+        "吴方言",
+        "吴越语",
+        "江南话",
+        "江浙话"
+      ],
+      "revision": 2555017012,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q34290.json?revision=2555017012"
+    },
+    "Q35497": {
+      "label_en": "Ancient Greek",
+      "source_label_en": "Ancient Greek",
+      "label_zh": "古希臘語",
+      "aliases_zh": [
+        "古代希腊语",
+        "古典希臘語",
+        "古希腊文",
+        "古希腊语"
+      ],
+      "revision": 2560334014,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q35497.json?revision=2560334014"
+    },
+    "Q36217": {
+      "label_en": "Lingala",
+      "source_label_en": "Lingala",
+      "label_zh": "林加拉语",
+      "aliases_zh": [
+        "林加拉語",
+        "林格拉語"
+      ],
+      "revision": 2561477929,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q36217.json?revision=2561477929"
+    },
+    "Q36236": {
+      "label_en": "Malayalam",
+      "source_label_en": "Malayalam",
+      "label_zh": "马拉雅拉姆语",
+      "aliases_zh": [
+        "馬來亞拉姆語",
+        "馬來雅拉姆語",
+        "馬拉亞姆語",
+        "馬拉亞拉姆語",
+        "馬拉雅拉姆語",
+        "马拉亚拉姆语"
+      ],
+      "revision": 2561609111,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q36236.json?revision=2561609111"
+    },
+    "Q36363": {
+      "label_en": "Mixtec",
+      "source_label_en": "Mixtec",
+      "label_zh": "米斯特克语",
+      "aliases_zh": [
+        "米斯泰克语",
+        "米斯特克語"
+      ],
+      "revision": 2496455840,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q36363.json?revision=2496455840"
+    },
+    "Q36368": {
+      "label_en": "Kurdish language",
+      "source_label_en": "Kurdish language",
+      "label_zh": "库尔德语",
+      "aliases_zh": [
+        "库尔德文",
+        "庫德語",
+        "庫爾德語"
+      ],
+      "revision": 2561651331,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q36368.json?revision=2561651331"
+    },
+    "Q36451": {
+      "label_en": "Māori",
+      "source_label_en": "Māori",
+      "label_zh": "毛利语",
+      "aliases_zh": [
+        "毛利文",
+        "毛利語",
+        "毛里語"
+      ],
+      "revision": 2558555610,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q36451.json?revision=2558555610"
+    },
+    "Q36510": {
+      "label_en": "Modern Greek",
+      "source_label_en": "Modern Greek",
+      "label_zh": "现代希腊语",
+      "aliases_zh": [
+        "現代希臘語"
+      ],
+      "revision": 2556586879,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q36510.json?revision=2556586879"
+    },
+    "Q36704": {
+      "label_en": "Yugoslavia",
+      "source_label_en": "Yugoslavia",
+      "label_zh": "南斯拉夫",
+      "aliases_zh": [
+        "前南斯拉夫",
+        "南聯盟"
+      ],
+      "revision": 2558330627,
+      "retrieved_at": "2026-10-30T16:04:01+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q36704.json?revision=2558330627"
+    },
+    "Q36778": {
+      "label_en": "Taiwanese Hokkien",
+      "source_label_en": "Taiwanese Hokkien",
+      "label_zh": "台湾话",
+      "aliases_zh": [
+        "佁萬話",
+        "台員話",
+        "台灣福建話",
+        "台灣話",
+        "台灣語",
+        "台灣閩南語",
+        "台語",
+        "台语",
+        "大員話",
+        "河洛話",
+        "福爾摩沙漢語",
+        "臺員話",
+        "臺灣台語",
+        "臺灣福建話",
+        "臺灣話",
+        "臺灣閩南語",
+        "臺語"
+      ],
+      "revision": 2509603875,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q36778.json?revision=2509603875"
+    },
+    "Q37024": {
+      "label_en": "Serbia and Montenegro",
+      "source_label_en": "Serbia and Montenegro",
+      "label_zh": "塞尔维亚和黑山",
+      "aliases_zh": [
+        "塞尔维亚与蒙特内哥罗",
+        "塞爾維亞及黑山",
+        "塞爾維亞和黑山",
+        "塞爾維亞與蒙特內哥羅",
+        "塞爾維亞與蒙特內格羅",
+        "塞爾維亞與蒙特尼哥羅",
+        "塞爾維亞與黑山",
+        "塞蒙",
+        "塞黑"
+      ],
+      "revision": 2559703250,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q37024.json?revision=2559703250"
+    },
+    "Q41148": {
+      "label_en": "Martin Scorsese",
+      "source_label_en": "Martin Scorsese",
+      "label_zh": "马丁·斯科塞斯",
+      "aliases_zh": [
+        "馬丁·史柯西斯",
+        "馬丁·斯科西斯",
+        "馬丁史柯西斯",
+        "馬田·史高西斯",
+        "馬田史高斯",
+        "馬田史高西斯",
+        "马丁·斯科西斯",
+        "马丁·西科塞斯"
+      ],
+      "revision": 2561735941,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q41148.json?revision=2561735941"
+    },
+    "Q41304": {
+      "label_en": "Weimar Republic",
+      "source_label_en": "Weimar Republic",
+      "label_zh": "魏瑪共和国",
+      "aliases_zh": [
+        "威瑪共和",
+        "威瑪共和國",
+        "德意志帝國共和時期",
+        "魏瑪共和",
+        "魏瑪共和國"
+      ],
+      "revision": 2560686822,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q41304.json?revision=2560686822"
+    },
+    "Q42574": {
+      "label_en": "James Cameron",
+      "source_label_en": "James Cameron",
+      "label_zh": "詹姆斯·卡梅伦",
+      "aliases_zh": [
+        "占士·金馬倫",
+        "詹姆士·卡梅伦",
+        "詹姆士·卡麥隆",
+        "詹姆士卡麥隆",
+        "詹姆斯·卡梅隆",
+        "詹姆斯·卡麥隆",
+        "詹姆斯·柯麥隆",
+        "詹姆斯·法蘭西斯·卡麥隆",
+        "詹姆斯卡麥隆"
+      ],
+      "revision": 2557948882,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q42574.json?revision=2557948882"
+    },
+    "Q44578": {
+      "label_en": "Titanic",
+      "source_label_en": "Titanic",
+      "label_zh": "泰坦尼克号",
+      "aliases_zh": [
+        "《泰坦尼克号》",
+        "泰坦尼克",
+        "鐵達尼號"
+      ],
+      "revision": 2560986621,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q44578.json?revision=2560986621"
+    },
+    "Q44679": {
+      "label_en": "Australian English",
+      "source_label_en": "Australian English",
+      "label_zh": "澳大利亚英语",
+      "aliases_zh": [
+        "澳州英語",
+        "澳洲英語"
+      ],
+      "revision": 2561028808,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q44679.json?revision=2561028808"
+    },
+    "Q46533": {
+      "label_en": "Favorites of the Moon",
+      "source_label_en": "Favorites of the Moon",
+      "label_zh": "月神的寵兒",
+      "aliases_zh": [
+        "月神的宠儿"
+      ],
+      "revision": 2554569921,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q46533.json?revision=2554569921"
+    },
+    "Q50868": {
+      "label_en": "Egyptian language",
+      "source_label_en": "Egyptian language",
+      "label_zh": "埃及語",
+      "aliases_zh": [
+        "埃及语"
+      ],
+      "revision": 2560277258,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q50868.json?revision=2560277258"
+    },
+    "Q53094": {
+      "label_en": "black comedy",
+      "source_label_en": "black comedy",
+      "label_zh": "黑色幽默",
+      "aliases_zh": [],
+      "revision": 2556701664,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q53094.json?revision=2556701664"
+    },
+    "Q56418": {
+      "label_en": "Spanglish",
+      "source_label_en": "Spanglish",
+      "label_zh": "拉丁英语",
+      "aliases_zh": [
+        "拉丁英語",
+        "求戀家庭",
+        "西班牙英語",
+        "西英混合語"
+      ],
+      "revision": 2505969488,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q56418.json?revision=2505969488"
+    },
+    "Q56426": {
+      "label_en": "Moroccan Arabic",
+      "source_label_en": "Moroccan Arabic",
+      "label_zh": "摩洛哥口語",
+      "aliases_zh": [
+        "摩洛哥阿拉伯語"
+      ],
+      "revision": 2558332797,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q56426.json?revision=2558332797"
+    },
+    "Q56539": {
+      "label_en": "Arikara",
+      "source_label_en": "Arikara",
+      "label_zh": "阿里卡拉語",
+      "aliases_zh": [],
+      "revision": 2536055839,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q56539.json?revision=2536055839"
+    },
+    "Q58635": {
+      "label_en": "Punjabi",
+      "source_label_en": "Punjabi",
+      "label_zh": "旁遮普语",
+      "aliases_zh": [
+        "东旁遮普语",
+        "旁加語",
+        "旁遮普文",
+        "旁遮普語",
+        "西旁遮普語"
+      ],
+      "revision": 2562164425,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q58635.json?revision=2562164425"
+    },
+    "Q58680": {
+      "label_en": "Pashto",
+      "source_label_en": "Pashto",
+      "label_zh": "普什图语",
+      "aliases_zh": [
+        "帕圖語",
+        "普什圖文",
+        "普什圖語",
+        "普什托語",
+        "阿富汗語"
+      ],
+      "revision": 2558976336,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q58680.json?revision=2558976336"
+    },
+    "Q59073": {
+      "label_en": "Places in the Heart",
+      "source_label_en": "Places in the Heart",
+      "label_zh": "心田深处",
+      "aliases_zh": [
+        "心中的故鄉",
+        "心田深處",
+        "我心深处",
+        "我心深處"
+      ],
+      "revision": 2560667142,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q59073.json?revision=2560667142"
+    },
+    "Q72909": {
+      "label_en": "They Live",
+      "source_label_en": "They Live",
+      "label_zh": "極度空間",
+      "aliases_zh": [
+        "X光人"
+      ],
+      "revision": 2560705671,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q72909.json?revision=2560705671"
+    },
+    "Q80837": {
+      "label_en": "supernatural",
+      "source_label_en": "supernatural",
+      "label_zh": "超自然现象",
+      "aliases_zh": [
+        "超自然",
+        "超自然力",
+        "超自然力量",
+        "超自然現象"
+      ],
+      "revision": 2555795250,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q80837.json?revision=2555795250"
+    },
+    "Q80930": {
+      "label_en": "tragedy",
+      "source_label_en": "tragedy",
+      "label_zh": "悲劇",
+      "aliases_zh": [
+        "悲剧"
+      ],
+      "revision": 2560377390,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q80930.json?revision=2560377390"
+    },
+    "Q83286": {
+      "label_en": "Socialist Federal Republic of Yugoslavia",
+      "source_label_en": "Socialist Federal Republic of Yugoslavia",
+      "label_zh": "南斯拉夫社会主义联邦共和国",
+      "aliases_zh": [
+        "南斯拉夫民主联盟",
+        "南斯拉夫社會主義聯邦共和國",
+        "南斯拉夫联邦",
+        "南斯拉夫聯邦",
+        "南斯拉夫聯邦人民共和國"
+      ],
+      "revision": 2562282737,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q83286.json?revision=2562282737"
+    },
+    "Q93204": {
+      "label_en": "documentary film",
+      "source_label_en": "documentary film",
+      "label_zh": "纪录影片",
+      "aliases_zh": [
+        "紀錄影片",
+        "紀錄片",
+        "紀錄片電影",
+        "紀錄電影",
+        "纪录片",
+        "纪录片电影",
+        "纪录电影",
+        "記錄片"
+      ],
+      "revision": 2562482289,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q93204.json?revision=2562482289"
+    },
+    "Q113171": {
+      "label_en": "Rollover",
+      "source_label_en": "Rollover",
+      "label_zh": "金融潮",
+      "aliases_zh": [
+        "金融大恐慌"
+      ],
+      "revision": 2560650357,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q113171.json?revision=2560650357"
+    },
+    "Q126370": {
+      "label_en": "Safari 3000",
+      "source_label_en": "Safari 3000",
+      "label_zh": "越野狂雄",
+      "aliases_zh": [],
+      "revision": 2560653328,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q126370.json?revision=2560653328"
+    },
+    "Q128758": {
+      "label_en": "satire",
+      "source_label_en": "satire",
+      "label_zh": "讽刺",
+      "aliases_zh": [
+        "諷刺",
+        "讽",
+        "風刺"
+      ],
+      "revision": 2550280058,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q128758.json?revision=2550280058"
+    },
+    "Q129286": {
+      "label_en": "British Raj",
+      "source_label_en": "British Raj",
+      "label_zh": "英属印度",
+      "aliases_zh": [
+        "印度帝國",
+        "英属印度帝国",
+        "英屬印度",
+        "英屬印度帝國"
+      ],
+      "revision": 2562482933,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q129286.json?revision=2562482933"
+    },
+    "Q130232": {
+      "label_en": "drama film",
+      "source_label_en": "drama film",
+      "label_zh": "剧情片",
+      "aliases_zh": [
+        "剧情",
+        "劇情片",
+        "家庭劇"
+      ],
+      "revision": 2562482276,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q130232.json?revision=2562482276"
+    },
+    "Q148204": {
+      "label_en": "Heaven's Gate",
+      "source_label_en": "Heaven's Gate",
+      "label_zh": "天国之门",
+      "aliases_zh": [
+        "天國之門",
+        "天堂之門",
+        "天堂之门"
+      ],
+      "revision": 2560654572,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q148204.json?revision=2560654572"
+    },
+    "Q157394": {
+      "label_en": "fantasy film",
+      "source_label_en": "fantasy film",
+      "label_zh": "奇幻电影",
+      "aliases_zh": [
+        "奇幻片",
+        "奇幻電影"
+      ],
+      "revision": 2562482690,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q157394.json?revision=2562482690"
+    },
+    "Q157443": {
+      "label_en": "comedy film",
+      "source_label_en": "comedy film",
+      "label_zh": "喜剧电影",
+      "aliases_zh": [
+        "喜剧片",
+        "喜劇片",
+        "喜劇電影"
+      ],
+      "revision": 2562482300,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q157443.json?revision=2562482300"
+    },
+    "Q162997": {
+      "label_en": "The Thin Blue Line",
+      "source_label_en": "The Thin Blue Line",
+      "label_zh": "细细的蓝线",
+      "aliases_zh": [
+        "正義難伸",
+        "細細的藍線",
+        "细蓝线",
+        "迷離殺"
+      ],
+      "revision": 2560686833,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q162997.json?revision=2560686833"
+    },
+    "Q169672": {
+      "label_en": "samurai cinema",
+      "source_label_en": "samurai cinema",
+      "label_zh": "武士電影",
+      "aliases_zh": [
+        "劍劇",
+        "日本武士電影",
+        "武士片"
+      ],
+      "revision": 2547563212,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q169672.json?revision=2547563212"
+    },
+    "Q172579": {
+      "label_en": "Kingdom of Italy",
+      "source_label_en": "Kingdom of Italy",
+      "label_zh": "意大利王国",
+      "aliases_zh": [
+        "義大利王國"
+      ],
+      "revision": 2559699123,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q172579.json?revision=2559699123"
+    },
+    "Q172980": {
+      "label_en": "Western film",
+      "source_label_en": "Western film",
+      "label_zh": "西部片",
+      "aliases_zh": [],
+      "revision": 2562482714,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q172980.json?revision=2562482714"
+    },
+    "Q174526": {
+      "label_en": "cyberpunk",
+      "source_label_en": "cyberpunk",
+      "label_zh": "赛博朋克",
+      "aliases_zh": [
+        "数字朋克",
+        "数字朋客",
+        "电脑朋客",
+        "網路叛客",
+        "賽博朋克",
+        "赛伯朋克",
+        "電腦判客",
+        "電腦叛客",
+        "電腦龐克",
+        "電馭叛客"
+      ],
+      "revision": 2543675877,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q174526.json?revision=2543675877"
+    },
+    "Q178440": {
+      "label_en": "Dari",
+      "source_label_en": "Dari",
+      "label_zh": "达里语",
+      "aliases_zh": [
+        "达利语",
+        "達利語"
+      ],
+      "revision": 2547969579,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q178440.json?revision=2547969579"
+    },
+    "Q179215": {
+      "label_en": "Indiana Jones and the Temple of Doom",
+      "source_label_en": "Indiana Jones and the Temple of Doom",
+      "label_zh": "魔宫传奇",
+      "aliases_zh": [
+        "魔域奇兵",
+        "魔宮傳奇"
+      ],
+      "revision": 2560656339,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q179215.json?revision=2560656339"
+    },
+    "Q182015": {
+      "label_en": "thriller",
+      "source_label_en": "thriller",
+      "label_zh": "惊悚",
+      "aliases_zh": [
+        "驚悚",
+        "驚悚作品"
+      ],
+      "revision": 2537757508,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q182015.json?revision=2537757508"
+    },
+    "Q185529": {
+      "label_en": "pornographic film",
+      "source_label_en": "pornographic film",
+      "label_zh": "色情片",
+      "aliases_zh": [
+        "A片",
+        "a片",
+        "三级片",
+        "动作片",
+        "咸片",
+        "咸碟",
+        "小电影",
+        "愛情動作片",
+        "成人影片",
+        "成人片",
+        "色情光碟",
+        "色情影片",
+        "色情电影",
+        "色情電影",
+        "鹹碟",
+        "黄片"
+      ],
+      "revision": 2562482847,
+      "retrieved_at": "2026-10-30T16:04:04+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q185529.json?revision=2562482847"
+    },
+    "Q185867": {
+      "label_en": "film noir",
+      "source_label_en": "film noir",
+      "label_zh": "黑色电影",
+      "aliases_zh": [
+        "黑色電影"
+      ],
+      "revision": 2562483478,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q185867.json?revision=2562483478"
+    },
+    "Q185884": {
+      "label_en": "Tetsuo: The Iron Man",
+      "source_label_en": "Tetsuo: The Iron Man",
+      "label_zh": "鐵男",
+      "aliases_zh": [
+        "鐵男：金屬獸"
+      ],
+      "revision": 2556609491,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q185884.json?revision=2556609491"
+    },
+    "Q186424": {
+      "label_en": "detective fiction",
+      "source_label_en": "detective fiction",
+      "label_zh": "推理作品",
+      "aliases_zh": [
+        "侦探小说",
+        "推理小說",
+        "推理小说",
+        "推理片",
+        "推理电影"
+      ],
+      "revision": 2538431299,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q186424.json?revision=2538431299"
+    },
+    "Q188473": {
+      "label_en": "action film",
+      "source_label_en": "action film",
+      "label_zh": "动作片",
+      "aliases_zh": [
+        "動作喜劇片",
+        "動作片",
+        "動作電影",
+        "武打电影"
+      ],
+      "revision": 2562482360,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q188473.json?revision=2562482360"
+    },
+    "Q191489": {
+      "label_en": "melodrama",
+      "source_label_en": "melodrama",
+      "label_zh": "家庭伦理片",
+      "aliases_zh": [
+        "家庭倫理片",
+        "情節劇"
+      ],
+      "revision": 2525862652,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q191489.json?revision=2525862652"
+    },
+    "Q192881": {
+      "label_en": "tragicomedy",
+      "source_label_en": "tragicomedy",
+      "label_zh": "悲喜剧",
+      "aliases_zh": [
+        "悲喜劇"
+      ],
+      "revision": 2548028401,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q192881.json?revision=2548028401"
+    },
+    "Q193979": {
+      "label_en": "farce",
+      "source_label_en": "farce",
+      "label_zh": "闹剧",
+      "aliases_zh": [
+        "鬧劇"
+      ],
+      "revision": 2561008703,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q193979.json?revision=2561008703"
+    },
+    "Q197949": {
+      "label_en": "post-apocalyptic fiction",
+      "source_label_en": "post-apocalyptic fiction",
+      "label_zh": "末日后幻想",
+      "aliases_zh": [
+        "世界末日后幻想",
+        "世界末日後幻想",
+        "后世界末日幻想",
+        "后末日幻想",
+        "後世界末日幻想",
+        "後末日幻想",
+        "末日和末日后幻想",
+        "末日後幻想"
+      ],
+      "revision": 2562537995,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q197949.json?revision=2562537995"
+    },
+    "Q200092": {
+      "label_en": "horror film",
+      "source_label_en": "horror film",
+      "label_zh": "恐怖电影",
+      "aliases_zh": [
+        "恐怖片",
+        "恐怖電影"
+      ],
+      "revision": 2562482414,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q200092.json?revision=2562482414"
+    },
+    "Q202866": {
+      "label_en": "animated film",
+      "source_label_en": "animated film",
+      "label_zh": "动画电影",
+      "aliases_zh": [
+        "剧场版",
+        "剧场版动画",
+        "劇場動畫",
+        "劇場版",
+        "動畫電影",
+        "電影動畫",
+        "電影版"
+      ],
+      "revision": 2556385379,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q202866.json?revision=2556385379"
+    },
+    "Q210364": {
+      "label_en": "Shutter Island",
+      "source_label_en": "Shutter Island",
+      "label_zh": "禁闭岛",
+      "aliases_zh": [
+        "Shutter island",
+        "不赦島",
+        "孤岛疑云",
+        "隔離島"
+      ],
+      "revision": 2561458522,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q210364.json?revision=2561458522"
+    },
+    "Q212781": {
+      "label_en": "Spaghetti Western",
+      "source_label_en": "Spaghetti Western",
+      "label_zh": "意大利式西部片",
+      "aliases_zh": [
+        "義式西部片"
+      ],
+      "revision": 2506720305,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q212781.json?revision=2506720305"
+    },
+    "Q219170": {
+      "label_en": "Day of the Dead",
+      "source_label_en": "Day of the Dead",
+      "label_zh": "喪屍出籠",
+      "aliases_zh": [
+        "侵入魔界",
+        "生人末日"
+      ],
+      "revision": 2560658721,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q219170.json?revision=2560658721"
+    },
+    "Q219794": {
+      "label_en": "Zombie vs. Ninja",
+      "source_label_en": "Zombie vs. Ninja",
+      "label_zh": "魔幻狂迷",
+      "aliases_zh": [],
+      "revision": 2510506175,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q219794.json?revision=2510506175"
+    },
+    "Q221759": {
+      "label_en": "The Last Woman",
+      "source_label_en": "The Last Woman",
+      "label_zh": "最后的女人",
+      "aliases_zh": [],
+      "revision": 2538436448,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q221759.json?revision=2538436448"
+    },
+    "Q222639": {
+      "label_en": "swashbuckler film",
+      "source_label_en": "swashbuckler film",
+      "label_zh": "俠盜片",
+      "aliases_zh": [
+        "劍客片",
+        "劍客電影"
+      ],
+      "revision": 2497046976,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q222639.json?revision=2497046976"
+    },
+    "Q222926": {
+      "label_en": "comedy of manners",
+      "source_label_en": "comedy of manners",
+      "label_zh": "儀態喜劇",
+      "aliases_zh": [],
+      "revision": 2523374742,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q222926.json?revision=2523374742"
+    },
+    "Q223685": {
+      "label_en": "steampunk",
+      "source_label_en": "steampunk",
+      "label_zh": "蒸汽朋克",
+      "aliases_zh": [
+        "蒸氣朋克",
+        "蒸氣龐克"
+      ],
+      "revision": 2515442372,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q223685.json?revision=2515442372"
+    },
+    "Q224700": {
+      "label_en": "comedy horror",
+      "source_label_en": "comedy horror",
+      "label_zh": "恐怖喜剧",
+      "aliases_zh": [
+        "喜劇恐怖",
+        "恐怖喜劇",
+        "恐怖喜劇片",
+        "恐怖幽默"
+      ],
+      "revision": 2562483314,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q224700.json?revision=2562483314"
+    },
+    "Q224989": {
+      "label_en": "alternate history",
+      "source_label_en": "alternate history",
+      "label_zh": "架空历史",
+      "aliases_zh": [
+        "另类历史",
+        "架空历史小说",
+        "架空历史虚构作品",
+        "架空歷史",
+        "虛構歷史"
+      ],
+      "revision": 2527821586,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q224989.json?revision=2527821586"
+    },
+    "Q226730": {
+      "label_en": "silent film",
+      "source_label_en": "silent film",
+      "label_zh": "无声电影",
+      "aliases_zh": [
+        "无声片",
+        "無聲電影",
+        "默片"
+      ],
+      "revision": 2562523196,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q226730.json?revision=2562523196"
+    },
+    "Q227474": {
+      "label_en": "Too Beautiful for You",
+      "source_label_en": "Too Beautiful for You",
+      "label_zh": "美得過火",
+      "aliases_zh": [
+        "你不配她",
+        "美得过火"
+      ],
+      "revision": 2537930302,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q227474.json?revision=2537930302"
+    },
+    "Q231967": {
+      "label_en": "Who Finds a Friend Finds a Treasure",
+      "source_label_en": "Who Finds a Friend Finds a Treasure",
+      "label_zh": "老虎都要威",
+      "aliases_zh": [],
+      "revision": 2560658816,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q231967.json?revision=2560658816"
+    },
+    "Q232248": {
+      "label_en": "Two of a Kind",
+      "source_label_en": "Two of a Kind",
+      "label_zh": "两情相悦",
+      "aliases_zh": [
+        "兩情相悅",
+        "天生一對"
+      ],
+      "revision": 2560658837,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q232248.json?revision=2560658837"
+    },
+    "Q248583": {
+      "label_en": "screwball comedy film",
+      "source_label_en": "screwball comedy film",
+      "label_zh": "脱线喜剧",
+      "aliases_zh": [
+        "脫線喜劇"
+      ],
+      "revision": 2535737966,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q248583.json?revision=2535737966"
+    },
+    "Q253566": {
+      "label_en": "Against All Odds",
+      "source_label_en": "Against All Odds",
+      "label_zh": "再看我一眼",
+      "aliases_zh": [
+        "危情",
+        "在看我一眼"
+      ],
+      "revision": 2560660283,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q253566.json?revision=2560660283"
+    },
+    "Q253978": {
+      "label_en": "Dirty Dancing",
+      "source_label_en": "Dirty Dancing",
+      "label_zh": "熱舞17",
+      "aliases_zh": [],
+      "revision": 2560690075,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q253978.json?revision=2560690075"
+    },
+    "Q262828": {
+      "label_en": "Standard Taiwanese Mandarin",
+      "source_label_en": "Standard Taiwanese Mandarin",
+      "label_zh": "中华民国国语",
+      "aliases_zh": [
+        "中華民國國語",
+        "中華民國國語文",
+        "台湾华语",
+        "台湾国语",
+        "台灣國語",
+        "台灣華語",
+        "国语",
+        "國語",
+        "標準國語",
+        "臺灣華語"
+      ],
+      "revision": 2543846386,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q262828.json?revision=2543846386"
+    },
+    "Q275934": {
+      "label_en": "tokusatsu",
+      "source_label_en": "tokusatsu",
+      "label_zh": "特摄片",
+      "aliases_zh": [
+        "日本特撮影片",
+        "特撮",
+        "特攝",
+        "特攝劇",
+        "特攝片",
+        "特攝電影",
+        "特殊攝影"
+      ],
+      "revision": 2523832482,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q275934.json?revision=2523832482"
+    },
+    "Q276734": {
+      "label_en": "Matador",
+      "source_label_en": "Matador",
+      "label_zh": "斗牛士",
+      "aliases_zh": [],
+      "revision": 2537926094,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q276734.json?revision=2537926094"
+    },
+    "Q281480": {
+      "label_en": "Lock Up",
+      "source_label_en": "Lock Up",
+      "label_zh": "叛獄",
+      "aliases_zh": [
+        "破繭威龍",
+        "破茧威龙"
+      ],
+      "revision": 2560691438,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q281480.json?revision=2560691438"
+    },
+    "Q302490": {
+      "label_en": "The Mission",
+      "source_label_en": "The Mission",
+      "label_zh": "战火浮生",
+      "aliases_zh": [],
+      "revision": 2557114855,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q302490.json?revision=2557114855"
+    },
+    "Q302927": {
+      "label_en": "Carry On Dick",
+      "source_label_en": "Carry On Dick",
+      "label_zh": "大賊嬉春",
+      "aliases_zh": [],
+      "revision": 2534702283,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q302927.json?revision=2534702283"
+    },
+    "Q303136": {
+      "label_en": "The Big Red One",
+      "source_label_en": "The Big Red One",
+      "label_zh": "鐵血軍營",
+      "aliases_zh": [
+        "紅一縱隊"
+      ],
+      "revision": 2560661386,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q303136.json?revision=2560661386"
+    },
+    "Q303391": {
+      "label_en": "Scandal",
+      "source_label_en": "Scandal",
+      "label_zh": "鳳舞英倫",
+      "aliases_zh": [
+        "丑闻",
+        "醜聞女神"
+      ],
+      "revision": 2538954532,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q303391.json?revision=2538954532"
+    },
+    "Q316939": {
+      "label_en": "Na'vi",
+      "source_label_en": "Na'vi",
+      "label_zh": "纳美语",
+      "aliases_zh": [
+        "納美語",
+        "纳威语"
+      ],
+      "revision": 2537654113,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q316939.json?revision=2537654113"
+    },
+    "Q319221": {
+      "label_en": "adventure film",
+      "source_label_en": "adventure film",
+      "label_zh": "冒险电影",
+      "aliases_zh": [
+        "冒險電影"
+      ],
+      "revision": 2562482499,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q319221.json?revision=2562482499"
+    },
+    "Q326439": {
+      "label_en": "high fantasy",
+      "source_label_en": "high fantasy",
+      "label_zh": "严肃奇幻",
+      "aliases_zh": [
+        "主流奇幻",
+        "史詩奇幻",
+        "嚴肅奇幻"
+      ],
+      "revision": 2543235937,
+      "retrieved_at": "2026-10-30T16:04:08+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q326439.json?revision=2543235937"
+    },
+    "Q330982": {
+      "label_en": "The Beyond",
+      "source_label_en": "The Beyond",
+      "label_zh": "鬼驱人",
+      "aliases_zh": [
+        "地獄三部曲之鬼驅人",
+        "鬼声啸啸",
+        "鬼聲嘯嘯"
+      ],
+      "revision": 2558339171,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q330982.json?revision=2558339171"
+    },
+    "Q332658": {
+      "label_en": "Absolution",
+      "source_label_en": "Absolution",
+      "label_zh": "赦免的罪人",
+      "aliases_zh": [],
+      "revision": 2538752051,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q332658.json?revision=2538752051"
+    },
+    "Q336144": {
+      "label_en": "anthology film",
+      "source_label_en": "anthology film",
+      "label_zh": "多段式电影",
+      "aliases_zh": [
+        "多段式電影"
+      ],
+      "revision": 2558984345,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q336144.json?revision=2558984345"
+    },
+    "Q337730": {
+      "label_en": "No Small Affair",
+      "source_label_en": "No Small Affair",
+      "label_zh": "愛情使你盲目",
+      "aliases_zh": [],
+      "revision": 2560662142,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q337730.json?revision=2560662142"
+    },
+    "Q369747": {
+      "label_en": "war film",
+      "source_label_en": "war film",
+      "label_zh": "战争片",
+      "aliases_zh": [
+        "戰事片",
+        "戰爭片",
+        "戰爭電影"
+      ],
+      "revision": 2562482664,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q369747.json?revision=2562482664"
+    },
+    "Q376117": {
+      "label_en": "The Only Son",
+      "source_label_en": "The Only Son",
+      "label_zh": "一人息子",
+      "aliases_zh": [],
+      "revision": 2538848140,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q376117.json?revision=2538848140"
+    },
+    "Q387066": {
+      "label_en": "Swiss German",
+      "source_label_en": "Swiss German",
+      "label_zh": "瑞士德语",
+      "aliases_zh": [
+        "瑞士德語"
+      ],
+      "revision": 2518988957,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q387066.json?revision=2518988957"
+    },
+    "Q392490": {
+      "label_en": "The Annunciation",
+      "source_label_en": "The Annunciation",
+      "label_zh": "天使报喜",
+      "aliases_zh": [
+        "天使報喜"
+      ],
+      "revision": 2534711539,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q392490.json?revision=2534711539"
+    },
+    "Q430525": {
+      "label_en": "concert film",
+      "source_label_en": "concert film",
+      "label_zh": "演唱会电影",
+      "aliases_zh": [
+        "演唱會影片",
+        "演唱會電影",
+        "表演紀錄片",
+        "音乐会电影",
+        "音樂會電影"
+      ],
+      "revision": 2497518292,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q430525.json?revision=2497518292"
+    },
+    "Q457832": {
+      "label_en": "stoner film",
+      "source_label_en": "stoner film",
+      "label_zh": "迷幻片",
+      "aliases_zh": [
+        "大麻電影"
+      ],
+      "revision": 2490333696,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q457832.json?revision=2490333696"
+    },
+    "Q459290": {
+      "label_en": "independent film",
+      "source_label_en": "independent film",
+      "label_zh": "独立电影",
+      "aliases_zh": [
+        "小成本电影",
+        "独电",
+        "独立制片",
+        "獨立電影"
+      ],
+      "revision": 2562483137,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q459290.json?revision=2562483137"
+    },
+    "Q459435": {
+      "label_en": "mockumentary",
+      "source_label_en": "mockumentary",
+      "label_zh": "偽紀錄片",
+      "aliases_zh": [],
+      "revision": 2545300917,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q459435.json?revision=2545300917"
+    },
+    "Q464410": {
+      "label_en": "The Skin",
+      "source_label_en": "The Skin",
+      "label_zh": "皮囊",
+      "aliases_zh": [],
+      "revision": 2537937882,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q464410.json?revision=2537937882"
+    },
+    "Q464634": {
+      "label_en": "D.O.A.",
+      "source_label_en": "D.O.A.",
+      "label_zh": "死亡漩渦",
+      "aliases_zh": [
+        "當場斃命",
+        "零時亡點"
+      ],
+      "revision": 2560698387,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q464634.json?revision=2560698387"
+    },
+    "Q468478": {
+      "label_en": "space opera",
+      "source_label_en": "space opera",
+      "label_zh": "太空歌剧",
+      "aliases_zh": [
+        "太空歌劇"
+      ],
+      "revision": 2550160199,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q468478.json?revision=2550160199"
+    },
+    "Q471839": {
+      "label_en": "science fiction film",
+      "source_label_en": "science fiction film",
+      "label_zh": "科幻电影",
+      "aliases_zh": [
+        "科幻片",
+        "科幻電影"
+      ],
+      "revision": 2562482634,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q471839.json?revision=2562482634"
+    },
+    "Q472528": {
+      "label_en": "Amityville 3-D",
+      "source_label_en": "Amityville 3-D",
+      "label_zh": "鬼屋3",
+      "aliases_zh": [
+        "鬼哭神嚎3之魂飞魄散",
+        "魂飛魄散"
+      ],
+      "revision": 2560665150,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q472528.json?revision=2560665150"
+    },
+    "Q472637": {
+      "label_en": "docufiction",
+      "source_label_en": "docufiction",
+      "label_zh": "紀錄劇情片",
+      "aliases_zh": [
+        "記錄劇情片"
+      ],
+      "revision": 2497192269,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q472637.json?revision=2497192269"
+    },
+    "Q473788": {
+      "label_en": "Triumph of the Spirit",
+      "source_label_en": "Triumph of the Spirit",
+      "label_zh": "魔鬼集中營",
+      "aliases_zh": [
+        "無敵男兒"
+      ],
+      "revision": 2560698505,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q473788.json?revision=2560698505"
+    },
+    "Q475800": {
+      "label_en": "Last Exit to Brooklyn",
+      "source_label_en": "Last Exit to Brooklyn",
+      "label_zh": "布魯克林黑街",
+      "aliases_zh": [
+        "慾孽布克林"
+      ],
+      "revision": 2560698518,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q475800.json?revision=2560698518"
+    },
+    "Q475925": {
+      "label_en": "Love and Anarchy",
+      "source_label_en": "Love and Anarchy",
+      "label_zh": "愛情無政府",
+      "aliases_zh": [
+        "愛與混亂",
+        "愛與無政府",
+        "爱情与无政府"
+      ],
+      "revision": 2534718253,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q475925.json?revision=2534718253"
+    },
+    "Q489117": {
+      "label_en": "Eat the Rich",
+      "source_label_en": "Eat the Rich",
+      "label_zh": "吃掉有錢人",
+      "aliases_zh": [
+        "吃得富",
+        "吃得起",
+        "喫掉有錢人"
+      ],
+      "revision": 2559997652,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q489117.json?revision=2559997652"
+    },
+    "Q491158": {
+      "label_en": "revisionist Western",
+      "source_label_en": "revisionist Western",
+      "label_zh": "修正主义西部片",
+      "aliases_zh": [],
+      "revision": 2556836611,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q491158.json?revision=2556836611"
+    },
+    "Q495138": {
+      "label_en": "Romero",
+      "source_label_en": "Romero",
+      "label_zh": "义无反顾",
+      "aliases_zh": [],
+      "revision": 2560699803,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q495138.json?revision=2560699803"
+    },
+    "Q496523": {
+      "label_en": "heist film",
+      "source_label_en": "heist film",
+      "label_zh": "搶劫片",
+      "aliases_zh": [
+        "抢劫片",
+        "搶劫電影",
+        "搶劫電視劇"
+      ],
+      "revision": 2545534671,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q496523.json?revision=2545534671"
+    },
+    "Q504121": {
+      "label_en": "The Princess",
+      "source_label_en": "The Princess",
+      "label_zh": "公主",
+      "aliases_zh": [
+        "公主（1983年電影）"
+      ],
+      "revision": 2466368229,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q504121.json?revision=2466368229"
+    },
+    "Q505198": {
+      "label_en": "Songhay",
+      "source_label_en": "Songhay",
+      "label_zh": "桑海語族",
+      "aliases_zh": [],
+      "revision": 2545337222,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q505198.json?revision=2545337222"
+    },
+    "Q515931": {
+      "label_en": "Willow",
+      "source_label_en": "Willow",
+      "label_zh": "风云际会",
+      "aliases_zh": [
+        "小魔仙",
+        "風雲際會"
+      ],
+      "revision": 2560701081,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q515931.json?revision=2560701081"
+    },
+    "Q517386": {
+      "label_en": "live action",
+      "source_label_en": "live action",
+      "label_zh": "真人实拍",
+      "aliases_zh": [
+        "實寫映畫",
+        "實景",
+        "實景真人電影",
+        "现场录制",
+        "現場錄製",
+        "真人實拍",
+        "真人版"
+      ],
+      "revision": 2551919354,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q517386.json?revision=2551919354"
+    },
+    "Q531067": {
+      "label_en": "metafiction",
+      "source_label_en": "metafiction",
+      "label_zh": "元虚构作品",
+      "aliases_zh": [
+        "元小说",
+        "后设作品",
+        "後設作品"
+      ],
+      "revision": 2550822692,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q531067.json?revision=2550822692"
+    },
+    "Q535518": {
+      "label_en": "Nazi exploitation",
+      "source_label_en": "Nazi exploitation",
+      "label_zh": "納粹剝削",
+      "aliases_zh": [],
+      "revision": 2547508135,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q535518.json?revision=2547508135"
+    },
+    "Q542475": {
+      "label_en": "period drama film",
+      "source_label_en": "period drama film",
+      "label_zh": "古装剧",
+      "aliases_zh": [
+        "古装片",
+        "古装电影",
+        "古装电视剧",
+        "古裝劇",
+        "古裝片",
+        "古裝電影",
+        "时代剧"
+      ],
+      "revision": 2496674592,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q542475.json?revision=2496674592"
+    },
+    "Q555540": {
+      "label_en": "Germany, Pale Mother",
+      "source_label_en": "Germany, Pale Mother",
+      "label_zh": "德國，蒼白的母親",
+      "aliases_zh": [],
+      "revision": 2534728753,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q555540.json?revision=2534728753"
+    },
+    "Q558927": {
+      "label_en": "Superfantagenio",
+      "source_label_en": "Superfantagenio",
+      "label_zh": "現代阿拉丁",
+      "aliases_zh": [
+        "阿拉丁"
+      ],
+      "revision": 2538831984,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q558927.json?revision=2538831984"
+    },
+    "Q562177": {
+      "label_en": "MacArthur",
+      "source_label_en": "MacArthur",
+      "label_zh": "麥克阿瑟 (1977年電影)",
+      "aliases_zh": [
+        "麥克阿瑟傳",
+        "麥克阿瑟將軍"
+      ],
+      "revision": 2560644011,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q562177.json?revision=2560644011"
+    },
+    "Q567072": {
+      "label_en": "Bull Durham",
+      "source_label_en": "Bull Durham",
+      "label_zh": "百萬金臂",
+      "aliases_zh": [],
+      "revision": 2560701831,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q567072.json?revision=2560701831"
+    },
+    "Q571167": {
+      "label_en": "Little Lord Fauntleroy",
+      "source_label_en": "Little Lord Fauntleroy",
+      "label_zh": "小公子 (1980年電影)",
+      "aliases_zh": [],
+      "revision": 2548323644,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q571167.json?revision=2548323644"
+    },
+    "Q572215": {
+      "label_en": "The Black Cat",
+      "source_label_en": "The Black Cat",
+      "label_zh": "神鬼入侵",
+      "aliases_zh": [
+        "黑猫"
+      ],
+      "revision": 2558339133,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q572215.json?revision=2558339133"
+    },
+    "Q574746": {
+      "label_en": "The Buddy System",
+      "source_label_en": "The Buddy System",
+      "label_zh": "佳人",
+      "aliases_zh": [
+        "談情老友記"
+      ],
+      "revision": 2560667248,
+      "retrieved_at": "2026-10-30T16:04:11+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q574746.json?revision=2560667248"
+    },
+    "Q580850": {
+      "label_en": "techno-thriller",
+      "source_label_en": "techno-thriller",
+      "label_zh": "科技驚悚",
+      "aliases_zh": [],
+      "revision": 2489505654,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q580850.json?revision=2489505654"
+    },
+    "Q586250": {
+      "label_en": "prison film",
+      "source_label_en": "prison film",
+      "label_zh": "監獄電影",
+      "aliases_zh": [
+        "监狱片",
+        "監獄片"
+      ],
+      "revision": 2549132657,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q586250.json?revision=2549132657"
+    },
+    "Q590103": {
+      "label_en": "psychological thriller",
+      "source_label_en": "psychological thriller",
+      "label_zh": "心理惊悚片",
+      "aliases_zh": [
+        "心理學驚悚",
+        "心理惊悚",
+        "心理惊悚電影",
+        "心理驚悚",
+        "心理驚悚片",
+        "心理驚悚電影"
+      ],
+      "revision": 2555769894,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q590103.json?revision=2555769894"
+    },
+    "Q599558": {
+      "label_en": "erotic film",
+      "source_label_en": "erotic film",
+      "label_zh": "情色電影",
+      "aliases_zh": [
+        "情色片"
+      ],
+      "revision": 2562482773,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q599558.json?revision=2562482773"
+    },
+    "Q604725": {
+      "label_en": "psychological horror fiction",
+      "source_label_en": "psychological horror fiction",
+      "label_zh": "心理恐怖",
+      "aliases_zh": [],
+      "revision": 2549164163,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q604725.json?revision=2549164163"
+    },
+    "Q622291": {
+      "label_en": "political thriller",
+      "source_label_en": "political thriller",
+      "label_zh": "政治惊悚",
+      "aliases_zh": [
+        "政治驚悚"
+      ],
+      "revision": 2545535084,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q622291.json?revision=2545535084"
+    },
+    "Q622370": {
+      "label_en": "docudrama",
+      "source_label_en": "docudrama",
+      "label_zh": "纪录剧情片",
+      "aliases_zh": [
+        "紀錄式劇情片",
+        "纪录剧"
+      ],
+      "revision": 2537407591,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q622370.json?revision=2537407591"
+    },
+    "Q622548": {
+      "label_en": "parody film",
+      "source_label_en": "parody film",
+      "label_zh": "嘲讽电影",
+      "aliases_zh": [
+        "嘲諷電影"
+      ],
+      "revision": 2546711589,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q622548.json?revision=2546711589"
+    },
+    "Q624771": {
+      "label_en": "slapstick",
+      "source_label_en": "slapstick",
+      "label_zh": "粗俗滑稽剧",
+      "aliases_zh": [
+        "打鬧劇",
+        "搞笑片",
+        "棍棒喜剧",
+        "棍棒喜劇",
+        "棍棒鬧劇",
+        "粗俗滑稽劇"
+      ],
+      "revision": 2551344132,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q624771.json?revision=2551344132"
+    },
+    "Q628165": {
+      "label_en": "road movie",
+      "source_label_en": "road movie",
+      "label_zh": "公路电影",
+      "aliases_zh": [
+        "公路片",
+        "公路電影"
+      ],
+      "revision": 2560388483,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q628165.json?revision=2560388483"
+    },
+    "Q629917": {
+      "label_en": "Jidaigeki",
+      "source_label_en": "Jidaigeki",
+      "label_zh": "時代劇",
+      "aliases_zh": [],
+      "revision": 2540149321,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q629917.json?revision=2540149321"
+    },
+    "Q643684": {
+      "label_en": "jukebox musical",
+      "source_label_en": "jukebox musical",
+      "label_zh": "點唱機音樂劇",
+      "aliases_zh": [],
+      "revision": 2489415542,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q643684.json?revision=2489415542"
+    },
+    "Q643873": {
+      "label_en": "legal drama",
+      "source_label_en": "legal drama",
+      "label_zh": "法庭剧情",
+      "aliases_zh": [
+        "律政剧",
+        "律政劇",
+        "律政片",
+        "法庭劇情",
+        "法律劇",
+        "法律劇情電影"
+      ],
+      "revision": 2527028578,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q643873.json?revision=2527028578"
+    },
+    "Q644437": {
+      "label_en": "snuff film",
+      "source_label_en": "snuff film",
+      "label_zh": "虐杀电影",
+      "aliases_zh": [
+        "虐殺電影"
+      ],
+      "revision": 2547965599,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q644437.json?revision=2547965599"
+    },
+    "Q645928": {
+      "label_en": "biographical film",
+      "source_label_en": "biographical film",
+      "label_zh": "传记电影",
+      "aliases_zh": [
+        "傳記電影"
+      ],
+      "revision": 2562482611,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q645928.json?revision=2562482611"
+    },
+    "Q650118": {
+      "label_en": "unreliable narrator",
+      "source_label_en": "unreliable narrator",
+      "label_zh": "不可靠的敘事者",
+      "aliases_zh": [],
+      "revision": 2555304292,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q650118.json?revision=2555304292"
+    },
+    "Q652256": {
+      "label_en": "epic film",
+      "source_label_en": "epic film",
+      "label_zh": "史诗片",
+      "aliases_zh": [
+        "史詩片"
+      ],
+      "revision": 2555355809,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q652256.json?revision=2555355809"
+    },
+    "Q663106": {
+      "label_en": "buddy film",
+      "source_label_en": "buddy film",
+      "label_zh": "伙伴片",
+      "aliases_zh": [
+        "友情電影",
+        "夥伴片",
+        "搭档片",
+        "搭檔片",
+        "搭檔電影"
+      ],
+      "revision": 2502202223,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q663106.json?revision=2502202223"
+    },
+    "Q713750": {
+      "label_en": "West Germany",
+      "source_label_en": "West Germany",
+      "label_zh": "西德",
+      "aliases_zh": [
+        "德意志联邦共和国",
+        "联邦德国"
+      ],
+      "revision": 2562559346,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q713750.json?revision=2562559346"
+    },
+    "Q725757": {
+      "label_en": "hard science fiction",
+      "source_label_en": "hard science fiction",
+      "label_zh": "硬科幻",
+      "aliases_zh": [],
+      "revision": 2561216348,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q725757.json?revision=2561216348"
+    },
+    "Q727694": {
+      "label_en": "Standard Chinese",
+      "source_label_en": "Standard Chinese",
+      "label_zh": "现代标准汉语",
+      "aliases_zh": [
+        "cmn",
+        "zh-CMN",
+        "中文",
+        "华语",
+        "国语",
+        "国语普通话",
+        "國語",
+        "普通話",
+        "普通话",
+        "标准官话",
+        "标准汉语",
+        "標準中文",
+        "標準官話",
+        "標準漢語",
+        "汉语普通话",
+        "漢語普通話",
+        "漢語普通话",
+        "现代汉语",
+        "現代標準漢語",
+        "現代漢語",
+        "華語"
+      ],
+      "revision": 2558556913,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q727694.json?revision=2558556913"
+    },
+    "Q754803": {
+      "label_en": "wuxia",
+      "source_label_en": "wuxia",
+      "label_zh": "武侠",
+      "aliases_zh": [
+        "武侠幻想",
+        "武侠文化",
+        "武俠文化"
+      ],
+      "revision": 2556832900,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q754803.json?revision=2556832900"
+    },
+    "Q761469": {
+      "label_en": "science fiction comedy",
+      "source_label_en": "science fiction comedy",
+      "label_zh": "漫画科幻作品",
+      "aliases_zh": [
+        "漫畫科幻作品",
+        "科幻喜剧",
+        "科幻喜劇"
+      ],
+      "revision": 2541558322,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q761469.json?revision=2541558322"
+    },
+    "Q775344": {
+      "label_en": "teen drama television",
+      "source_label_en": "teen drama television",
+      "label_zh": "青春戏剧片",
+      "aliases_zh": [
+        "青少年劇情",
+        "青少年節目",
+        "青春戲劇片",
+        "青春電視劇"
+      ],
+      "revision": 2560681928,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q775344.json?revision=2560681928"
+    },
+    "Q790192": {
+      "label_en": "experimental film",
+      "source_label_en": "experimental film",
+      "label_zh": "前卫电影",
+      "aliases_zh": [
+        "前衛電影",
+        "实验电影",
+        "實驗電影",
+        "欧洲先锋派电影运动"
+      ],
+      "revision": 2554463714,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q790192.json?revision=2554463714"
+    },
+    "Q794912": {
+      "label_en": "dark fantasy",
+      "source_label_en": "dark fantasy",
+      "label_zh": "黑暗奇幻",
+      "aliases_zh": [],
+      "revision": 2540154253,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q794912.json?revision=2540154253"
+    },
+    "Q814158": {
+      "label_en": "Japanese mythology",
+      "source_label_en": "Japanese mythology",
+      "label_zh": "日本神话",
+      "aliases_zh": [
+        "日本神話",
+        "日本神話人物",
+        "神代"
+      ],
+      "revision": 2523567155,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q814158.json?revision=2523567155"
+    },
+    "Q842256": {
+      "label_en": "musical film",
+      "source_label_en": "musical film",
+      "label_zh": "歌舞片",
+      "aliases_zh": [
+        "歌舞电影",
+        "歌舞電影",
+        "音乐歌舞片",
+        "音乐片"
+      ],
+      "revision": 2562482483,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q842256.json?revision=2562482483"
+    },
+    "Q846544": {
+      "label_en": "disaster film",
+      "source_label_en": "disaster film",
+      "label_zh": "灾难片",
+      "aliases_zh": [
+        "災難片",
+        "災難電影"
+      ],
+      "revision": 2545534764,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q846544.json?revision=2545534764"
+    },
+    "Q853630": {
+      "label_en": "slasher film",
+      "source_label_en": "slasher film",
+      "label_zh": "肢解电影",
+      "aliases_zh": [
+        "凶殺電影",
+        "砍杀电影",
+        "肢解電影"
+      ],
+      "revision": 2562483585,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q853630.json?revision=2562483585"
+    },
+    "Q853873": {
+      "label_en": "cantopop",
+      "source_label_en": "cantopop",
+      "label_zh": "粤语流行音乐",
+      "aliases_zh": [
+        "廣東歌",
+        "粤语流行歌曲",
+        "粵語歌曲",
+        "粵語流行",
+        "粵語流行曲",
+        "粵語流行歌",
+        "粵語流行歌曲",
+        "粵語流行音樂"
+      ],
+      "revision": 2562482993,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q853873.json?revision=2562482993"
+    },
+    "Q858784": {
+      "label_en": "mecha",
+      "source_label_en": "mecha",
+      "label_zh": "机甲",
+      "aliases_zh": [
+        "機甲"
+      ],
+      "revision": 2561543823,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q858784.json?revision=2561543823"
+    },
+    "Q859369": {
+      "label_en": "comedy drama",
+      "source_label_en": "comedy drama",
+      "label_zh": "剧情喜剧片",
+      "aliases_zh": [
+        "劇情喜劇片",
+        "喜剧剧情",
+        "喜剧剧情片",
+        "喜剧电视剧",
+        "喜剧类剧情",
+        "喜劇",
+        "喜劇劇情",
+        "喜劇劇情片",
+        "喜劇劇集",
+        "喜劇勵志劇情片",
+        "喜劇戲劇片",
+        "喜劇電視劇",
+        "喜劇類劇情",
+        "幽默剧情片",
+        "幽默劇情片",
+        "幽默戲劇",
+        "悲喜劇片",
+        "搞笑戲劇片",
+        "正喜剧",
+        "正喜劇"
+      ],
+      "revision": 2562482538,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q859369.json?revision=2562482538"
+    },
+    "Q860626": {
+      "label_en": "romantic comedy",
+      "source_label_en": "romantic comedy",
+      "label_zh": "浪漫喜劇",
+      "aliases_zh": [
+        "浪漫喜剧电影",
+        "浪漫喜劇電影"
+      ],
+      "revision": 2562482682,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q860626.json?revision=2562482682"
+    },
+    "Q883179": {
+      "label_en": "blaxploitation film",
+      "source_label_en": "blaxploitation film",
+      "label_zh": "黑人剥削电影",
+      "aliases_zh": [
+        "黑人主題",
+        "黑人剝削",
+        "黑人剝削電影"
+      ],
+      "revision": 2498459621,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q883179.json?revision=2498459621"
+    },
+    "Q904447": {
+      "label_en": "military science fiction",
+      "source_label_en": "military science fiction",
+      "label_zh": "军事科幻小说",
+      "aliases_zh": [
+        "軍事科幻"
+      ],
+      "revision": 2506255082,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q904447.json?revision=2506255082"
+    },
+    "Q909586": {
+      "label_en": "splatter film",
+      "source_label_en": "splatter film",
+      "label_zh": "飞溅电影",
+      "aliases_zh": [
+        "血腥虐杀电影",
+        "血腥虐殺電影",
+        "飛濺電影"
+      ],
+      "revision": 2542000271,
+      "retrieved_at": "2026-10-30T16:04:15+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q909586.json?revision=2542000271"
+    },
+    "Q919036": {
+      "label_en": "retrofuturism",
+      "source_label_en": "retrofuturism",
+      "label_zh": "复古未来主义",
+      "aliases_zh": [],
+      "revision": 2542153335,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q919036.json?revision=2542153335"
+    },
+    "Q936866": {
+      "label_en": "Joe Carnahan",
+      "source_label_en": "Joe Carnahan",
+      "label_zh": "乔·卡纳汉",
+      "aliases_zh": [
+        "喬·卡納漢",
+        "喬伊·康納翰",
+        "祖·卡萊漢"
+      ],
+      "revision": 2540298290,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q936866.json?revision=2540298290"
+    },
+    "Q959790": {
+      "label_en": "crime film",
+      "source_label_en": "crime film",
+      "label_zh": "犯罪片",
+      "aliases_zh": [
+        "犯罪戲劇"
+      ],
+      "revision": 2562482425,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q959790.json?revision=2562482425"
+    },
+    "Q1033891": {
+      "label_en": "martial arts film",
+      "source_label_en": "martial arts film",
+      "label_zh": "武侠电影",
+      "aliases_zh": [
+        "武俠電影",
+        "武術片"
+      ],
+      "revision": 2562483114,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1033891.json?revision=2562483114"
+    },
+    "Q1048980": {
+      "label_en": "Singaporean Mandarin",
+      "source_label_en": "Singaporean Mandarin",
+      "label_zh": "新加坡华语",
+      "aliases_zh": [
+        "新加坡華語"
+      ],
+      "revision": 2530034867,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1048980.json?revision=2530034867"
+    },
+    "Q1054574": {
+      "label_en": "romance film",
+      "source_label_en": "romance film",
+      "label_zh": "爱情片",
+      "aliases_zh": [
+        "愛情片",
+        "爱情电影"
+      ],
+      "revision": 2562482378,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1054574.json?revision=2562482378"
+    },
+    "Q1054923": {
+      "label_en": "British Hong Kong",
+      "source_label_en": "British Hong Kong",
+      "label_zh": "英属香港",
+      "aliases_zh": [
+        "殖民地政府",
+        "港英",
+        "港英政府",
+        "港英時代",
+        "英屬香港",
+        "英殖時期",
+        "英治香港",
+        "英治香港時期",
+        "香港",
+        "香港政府",
+        "香港殖民地"
+      ],
+      "revision": 2562149258,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1054923.json?revision=2562149258"
+    },
+    "Q1065444": {
+      "label_en": "kaiju",
+      "source_label_en": "kaiju",
+      "label_zh": "怪兽",
+      "aliases_zh": [
+        "怪獸"
+      ],
+      "revision": 2525893071,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1065444.json?revision=2525893071"
+    },
+    "Q1067324": {
+      "label_en": "exploitation film",
+      "source_label_en": "exploitation film",
+      "label_zh": "剥削电影",
+      "aliases_zh": [
+        "剝削電影"
+      ],
+      "revision": 2549255078,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1067324.json?revision=2549255078"
+    },
+    "Q1077883": {
+      "label_en": "biopunk",
+      "source_label_en": "biopunk",
+      "label_zh": "生物朋克",
+      "aliases_zh": [
+        "生化朋克"
+      ],
+      "revision": 2545533611,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1077883.json?revision=2545533611"
+    },
+    "Q1078597": {
+      "label_en": "artistic language",
+      "source_label_en": "artistic language",
+      "label_zh": "艺术语言",
+      "aliases_zh": [
+        "藝術語言"
+      ],
+      "revision": 2555373486,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1078597.json?revision=2555373486"
+    },
+    "Q1080374": {
+      "label_en": "science fantasy",
+      "source_label_en": "science fantasy",
+      "label_zh": "科学奇幻",
+      "aliases_zh": [
+        "科學奇幻"
+      ],
+      "revision": 2545534198,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1080374.json?revision=2545534198"
+    },
+    "Q1117103": {
+      "label_en": "Z movie",
+      "source_label_en": "Z movie",
+      "label_zh": "Z級電影",
+      "aliases_zh": [
+        "Z电影",
+        "Z級片",
+        "垃圾片"
+      ],
+      "revision": 2503489491,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1117103.json?revision=2503489491"
+    },
+    "Q1128592": {
+      "label_en": "contemporary fantasy",
+      "source_label_en": "contemporary fantasy",
+      "label_zh": "當代奇幻",
+      "aliases_zh": [],
+      "revision": 2507703162,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1128592.json?revision=2507703162"
+    },
+    "Q1135802": {
+      "label_en": "art film",
+      "source_label_en": "art film",
+      "label_zh": "艺术电影",
+      "aliases_zh": [
+        "藝術電影"
+      ],
+      "revision": 2561416048,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1135802.json?revision=2561416048"
+    },
+    "Q1141200": {
+      "label_en": "locked room mystery",
+      "source_label_en": "locked room mystery",
+      "label_zh": "密室推理",
+      "aliases_zh": [
+        "密室殺人"
+      ],
+      "revision": 2442487820,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1141200.json?revision=2442487820"
+    },
+    "Q1146335": {
+      "label_en": "teen film",
+      "source_label_en": "teen film",
+      "label_zh": "青春片",
+      "aliases_zh": [
+        "校園電影"
+      ],
+      "revision": 2562482906,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1146335.json?revision=2562482906"
+    },
+    "Q1188977": {
+      "label_en": "urban fantasy",
+      "source_label_en": "urban fantasy",
+      "label_zh": "都市奇幻",
+      "aliases_zh": [
+        "城市幻想",
+        "都會奇幻"
+      ],
+      "revision": 2509696208,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1188977.json?revision=2509696208"
+    },
+    "Q1190502": {
+      "label_en": "surrealist film",
+      "source_label_en": "surrealist film",
+      "label_zh": "超现实主义电影",
+      "aliases_zh": [
+        "超現實主義電影"
+      ],
+      "revision": 2515896519,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1190502.json?revision=2515896519"
+    },
+    "Q1192295": {
+      "label_en": "Juǀʼhoansi",
+      "source_label_en": "Juǀʼhoansi",
+      "label_zh": "穹瓦西語",
+      "aliases_zh": [],
+      "revision": 2472855787,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1192295.json?revision=2472855787"
+    },
+    "Q1194365": {
+      "label_en": "pink film",
+      "source_label_en": "pink film",
+      "label_zh": "粉红色电影",
+      "aliases_zh": [
+        "桃色電影",
+        "粉紅色電影"
+      ],
+      "revision": 2471248231,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1194365.json?revision=2471248231"
+    },
+    "Q1200678": {
+      "label_en": "mystery film",
+      "source_label_en": "mystery film",
+      "label_zh": "神秘片",
+      "aliases_zh": [
+        "推理片",
+        "推理電影",
+        "神秘電影"
+      ],
+      "revision": 2562482748,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1200678.json?revision=2562482748"
+    },
+    "Q1206012": {
+      "label_en": "German Reich",
+      "source_label_en": "German Reich",
+      "label_zh": "德意志国",
+      "aliases_zh": [
+        "德意志國",
+        "德意志帝国 (国号)"
+      ],
+      "revision": 2562483561,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1206012.json?revision=2562483561"
+    },
+    "Q1207611": {
+      "label_en": "Crow",
+      "source_label_en": "Crow",
+      "label_zh": "克羅語",
+      "aliases_zh": [
+        "克羅印第安語"
+      ],
+      "revision": 2550168506,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1207611.json?revision=2550168506"
+    },
+    "Q1332055": {
+      "label_en": "giallo",
+      "source_label_en": "giallo",
+      "label_zh": "铅黄电影",
+      "aliases_zh": [
+        "鉛黃電影"
+      ],
+      "revision": 2550157059,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1332055.json?revision=2550157059"
+    },
+    "Q1339864": {
+      "label_en": "sport film",
+      "source_label_en": "sport film",
+      "label_zh": "運動電影",
+      "aliases_zh": [
+        "運動片"
+      ],
+      "revision": 2562483216,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1339864.json?revision=2562483216"
+    },
+    "Q1341051": {
+      "label_en": "post-apocalyptic film",
+      "source_label_en": "post-apocalyptic film",
+      "label_zh": "文明崩潰後世界題材電影",
+      "aliases_zh": [],
+      "revision": 2434873671,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1341051.json?revision=2434873671"
+    },
+    "Q1342372": {
+      "label_en": "monster film",
+      "source_label_en": "monster film",
+      "label_zh": "怪兽电影",
+      "aliases_zh": [
+        "怪獸電影"
+      ],
+      "revision": 2551161891,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1342372.json?revision=2551161891"
+    },
+    "Q1361932": {
+      "label_en": "family film",
+      "source_label_en": "family film",
+      "label_zh": "家庭电影",
+      "aliases_zh": [
+        "家庭電影"
+      ],
+      "revision": 2562482918,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1361932.json?revision=2562482918"
+    },
+    "Q1433443": {
+      "label_en": "sword-and-sandal film",
+      "source_label_en": "sword-and-sandal film",
+      "label_zh": "剑与凉鞋",
+      "aliases_zh": [
+        "刀剑与凉鞋片",
+        "劍與沙"
+      ],
+      "revision": 2545673643,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1433443.json?revision=2545673643"
+    },
+    "Q1436734": {
+      "label_en": "adventure",
+      "source_label_en": "adventure",
+      "label_zh": "冒險",
+      "aliases_zh": [],
+      "revision": 2561818684,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1436734.json?revision=2561818684"
+    },
+    "Q1535153": {
+      "label_en": "superhero film",
+      "source_label_en": "superhero film",
+      "label_zh": "超级英雄电影",
+      "aliases_zh": [
+        "超級英雄電影"
+      ],
+      "revision": 2552350977,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1535153.json?revision=2552350977"
+    },
+    "Q1723850": {
+      "label_en": "cannibal film",
+      "source_label_en": "cannibal film",
+      "label_zh": "食人族电影",
+      "aliases_zh": [
+        "食人族電影"
+      ],
+      "revision": 2422285111,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1723850.json?revision=2422285111"
+    },
+    "Q1747837": {
+      "label_en": "zombie comedy",
+      "source_label_en": "zombie comedy",
+      "label_zh": "丧尸喜剧",
+      "aliases_zh": [
+        "喪屍喜劇",
+        "喪屍喜劇片",
+        "殭屍喜劇片"
+      ],
+      "revision": 2530486476,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1747837.json?revision=2530486476"
+    },
+    "Q1760610": {
+      "label_en": "comic book",
+      "source_label_en": "comic book",
+      "label_zh": "漫画书",
+      "aliases_zh": [
+        "漫畫書",
+        "漫畫書 (雜誌)"
+      ],
+      "revision": 2556555214,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1760610.json?revision=2556555214"
+    },
+    "Q1760864": {
+      "label_en": "nature documentary",
+      "source_label_en": "nature documentary",
+      "label_zh": "自然生态纪录片",
+      "aliases_zh": [
+        "自然生態紀錄片",
+        "自然紀錄片",
+        "自然纪实",
+        "自然纪录片"
+      ],
+      "revision": 2507318042,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1760864.json?revision=2507318042"
+    },
+    "Q1762165": {
+      "label_en": "action fiction",
+      "source_label_en": "action fiction",
+      "label_zh": "动作作品",
+      "aliases_zh": [
+        "动作体裁",
+        "动作冒险",
+        "动作幻想",
+        "动作类虚构作品",
+        "动作虚构作品",
+        "動作",
+        "動作 (小說)",
+        "動作作品",
+        "動作小說",
+        "動作小説",
+        "動作幻想",
+        "動作虛構",
+        "動作虛構作品",
+        "動作題材",
+        "動作類虛構作品"
+      ],
+      "revision": 2474782426,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1762165.json?revision=2474782426"
+    },
+    "Q1770859": {
+      "label_en": "absurdist fiction",
+      "source_label_en": "absurdist fiction",
+      "label_zh": "荒诞作品",
+      "aliases_zh": [
+        "荒誕小說"
+      ],
+      "revision": 2557984324,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1770859.json?revision=2557984324"
+    },
+    "Q1776156": {
+      "label_en": "girls with guns",
+      "source_label_en": "girls with guns",
+      "label_zh": "带枪的女孩",
+      "aliases_zh": [
+        "持槍的女孩"
+      ],
+      "revision": 2540150363,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1776156.json?revision=2540150363"
+    },
+    "Q1786567": {
+      "label_en": "medical drama",
+      "source_label_en": "medical drama",
+      "label_zh": "医务剧",
+      "aliases_zh": [
+        "醫務劇",
+        "醫學電視劇",
+        "醫療劇"
+      ],
+      "revision": 2560685937,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1786567.json?revision=2560685937"
+    },
+    "Q1894374": {
+      "label_en": "tech noir",
+      "source_label_en": "tech noir",
+      "label_zh": "黑色科幻片",
+      "aliases_zh": [],
+      "revision": 2539224267,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1894374.json?revision=2539224267"
+    },
+    "Q1919632": {
+      "label_en": "melodrama",
+      "source_label_en": "melodrama",
+      "label_zh": "浪漫片",
+      "aliases_zh": [],
+      "revision": 2562483257,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1919632.json?revision=2562483257"
+    },
+    "Q1935609": {
+      "label_en": "propaganda film",
+      "source_label_en": "propaganda film",
+      "label_zh": "宣传片",
+      "aliases_zh": [
+        "宣傳片",
+        "政治宣传影片",
+        "政治宣傳影片"
+      ],
+      "revision": 2555434530,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1935609.json?revision=2555434530"
+    },
+    "Q1941707": {
+      "label_en": "mockbuster",
+      "source_label_en": "mockbuster",
+      "label_zh": "恶搞影片",
+      "aliases_zh": [
+        "恶搞片",
+        "惡搞影片",
+        "惡搞片",
+        "惡搞電影"
+      ],
+      "revision": 2532257227,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1941707.json?revision=2532257227"
+    },
+    "Q1957385": {
+      "label_en": "cinematic fairy tale",
+      "source_label_en": "cinematic fairy tale",
+      "label_zh": "神话片",
+      "aliases_zh": [
+        "神話片"
+      ],
+      "revision": 2528886380,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1957385.json?revision=2528886380"
+    },
+    "Q2000136": {
+      "label_en": "softcore pornography",
+      "source_label_en": "softcore pornography",
+      "label_zh": "软调色情",
+      "aliases_zh": [
+        "軟性色情",
+        "軟調色情"
+      ],
+      "revision": 2516742804,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q2000136.json?revision=2516742804"
+    },
+    "Q2075808": {
+      "label_en": "chick flick",
+      "source_label_en": "chick flick",
+      "label_zh": "小妞電影",
+      "aliases_zh": [
+        "小妞电影",
+        "雞仔電影"
+      ],
+      "revision": 2515011094,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q2075808.json?revision=2515011094"
+    },
+    "Q2101714": {
+      "label_en": "police film",
+      "source_label_en": "police film",
+      "label_zh": "警匪片",
+      "aliases_zh": [],
+      "revision": 2515918142,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q2101714.json?revision=2515918142"
+    },
+    "Q2137852": {
+      "label_en": "vampire film",
+      "source_label_en": "vampire film",
+      "label_zh": "吸血鬼電影",
+      "aliases_zh": [
+        "吸血鬼电影"
+      ],
+      "revision": 2562518976,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q2137852.json?revision=2562518976"
+    },
+    "Q2143665": {
+      "label_en": "children's film",
+      "source_label_en": "children's film",
+      "label_zh": "儿童电影",
+      "aliases_zh": [
+        "兒童片",
+        "兒童電影",
+        "家庭电影",
+        "家庭電影"
+      ],
+      "revision": 2562482834,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q2143665.json?revision=2562482834"
+    },
+    "Q2254193": {
+      "label_en": "rape and revenge film",
+      "source_label_en": "rape and revenge film",
+      "label_zh": "強暴和復仇電影",
+      "aliases_zh": [],
+      "revision": 2503793404,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q2254193.json?revision=2503793404"
+    },
+    "Q2292320": {
+      "label_en": "sexploitation film",
+      "source_label_en": "sexploitation film",
+      "label_zh": "性剥削电影",
+      "aliases_zh": [
+        "性剝削電影"
+      ],
+      "revision": 2547770916,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q2292320.json?revision=2547770916"
+    },
+    "Q2297927": {
+      "label_en": "spy film",
+      "source_label_en": "spy film",
+      "label_zh": "间谍片",
+      "aliases_zh": [
+        "動作片",
+        "諜報片",
+        "諜戰片",
+        "間諜片",
+        "間諜電影"
+      ],
+      "revision": 2562483389,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q2297927.json?revision=2562483389"
+    },
+    "Q2321734": {
+      "label_en": "police procedural",
+      "source_label_en": "police procedural",
+      "label_zh": "警察刑侦",
+      "aliases_zh": [
+        "刑偵",
+        "刑偵劇",
+        "刑偵調查",
+        "疑案小說",
+        "罪案調查",
+        "警匪",
+        "警匪劇",
+        "警察刑偵",
+        "警察型別",
+        "警察小說",
+        "警察犯罪劇",
+        "警察疑案",
+        "警察破案",
+        "警察程序",
+        "警方程序",
+        "警方程式",
+        "警案"
+      ],
+      "revision": 2555054860,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q2321734.json?revision=2555054860"
+    },
+    "Q2376899": {
+      "label_en": "dieselpunk",
+      "source_label_en": "dieselpunk",
+      "label_zh": "柴油朋克",
+      "aliases_zh": [],
+      "revision": 2549640004,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q2376899.json?revision=2549640004"
+    },
+    "Q2392433": {
+      "label_en": "parseltongue",
+      "source_label_en": "parseltongue",
+      "label_zh": "爬說語",
+      "aliases_zh": [],
+      "revision": 2548546123,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q2392433.json?revision=2548546123"
+    },
+    "Q2421031": {
+      "label_en": "neo-noir",
+      "source_label_en": "neo-noir",
+      "label_zh": "新黑色电影",
+      "aliases_zh": [
+        "新黑色",
+        "新黑色電影"
+      ],
+      "revision": 2555314738,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q2421031.json?revision=2555314738"
+    },
+    "Q2439025": {
+      "label_en": "erotic thriller",
+      "source_label_en": "erotic thriller",
+      "label_zh": "情慾驚悚",
+      "aliases_zh": [
+        "情慾惊悚",
+        "情色驚悚",
+        "情色驚悚片",
+        "色情驚悚"
+      ],
+      "revision": 2545534637,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q2439025.json?revision=2545534637"
+    },
+    "Q2447078": {
+      "label_en": "alien invasion",
+      "source_label_en": "alien invasion",
+      "label_zh": "外星生命入侵",
+      "aliases_zh": [
+        "外星人入侵"
+      ],
+      "revision": 2556779007,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q2447078.json?revision=2556779007"
+    },
+    "Q2484376": {
+      "label_en": "thriller film",
+      "source_label_en": "thriller film",
+      "label_zh": "惊悚电影",
+      "aliases_zh": [
+        "惊悚片",
+        "懸疑片",
+        "驚悚片"
+      ],
+      "revision": 2562482393,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q2484376.json?revision=2562482393"
+    },
+    "Q2490520": {
+      "label_en": "legal thriller",
+      "source_label_en": "legal thriller",
+      "label_zh": "法律驚慄",
+      "aliases_zh": [],
+      "revision": 2489503632,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q2490520.json?revision=2489503632"
+    },
+    "Q2561438": {
+      "label_en": "slice of life",
+      "source_label_en": "slice of life",
+      "label_zh": "生活片段",
+      "aliases_zh": [
+        "空氣系"
+      ],
+      "revision": 2546777605,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q2561438.json?revision=2546777605"
+    },
+    "Q2584671": {
+      "label_en": "Japanese horror",
+      "source_label_en": "Japanese horror",
+      "label_zh": "日式恐怖電影",
+      "aliases_zh": [],
+      "revision": 2551335432,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q2584671.json?revision=2551335432"
+    },
+    "Q2600085": {
+      "label_en": "Osage",
+      "source_label_en": "Osage",
+      "label_zh": "奥沙格语",
+      "aliases_zh": [
+        "奧塞奇語",
+        "奧沙格語",
+        "歐塞奇語"
+      ],
+      "revision": 2529146194,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q2600085.json?revision=2529146194"
+    },
+    "Q2630193": {
+      "label_en": "planetary romance",
+      "source_label_en": "planetary romance",
+      "label_zh": "劍與星球",
+      "aliases_zh": [],
+      "revision": 2545534111,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q2630193.json?revision=2545534111"
+    },
+    "Q2642760": {
+      "label_en": "vigilante film",
+      "source_label_en": "vigilante film",
+      "label_zh": "復仇電影",
+      "aliases_zh": [
+        "义务警员电影",
+        "义务警察影片",
+        "私刑電影",
+        "義警電影"
+      ],
+      "revision": 2514397085,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q2642760.json?revision=2514397085"
+    },
+    "Q2678111": {
+      "label_en": "action comedy film",
+      "source_label_en": "action comedy film",
+      "label_zh": "動作喜劇",
+      "aliases_zh": [
+        "喜劇動作片"
+      ],
+      "revision": 2556794474,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q2678111.json?revision=2556794474"
+    },
+    "Q2973181": {
+      "label_en": "speculative fiction film",
+      "source_label_en": "speculative fiction film",
+      "label_zh": "硬科幻电影",
+      "aliases_zh": [
+        "科學幻想電影"
+      ],
+      "revision": 2506909568,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q2973181.json?revision=2506909568"
+    },
+    "Q2973201": {
+      "label_en": "political film",
+      "source_label_en": "political film",
+      "label_zh": "政治电影",
+      "aliases_zh": [
+        "政治片",
+        "政治電影"
+      ],
+      "revision": 2515926935,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q2973201.json?revision=2515926935"
+    },
+    "Q2975633": {
+      "label_en": "coming-of-age fiction",
+      "source_label_en": "coming-of-age fiction",
+      "label_zh": "少年成长故事",
+      "aliases_zh": [
+        "少年成長故事",
+        "成年故事",
+        "成長",
+        "成長故事",
+        "成長電影",
+        "成長題材",
+        "成长故事",
+        "長大成人的故事",
+        "青少年成長故事",
+        "青春小說",
+        "青春小说",
+        "青春成長故事"
+      ],
+      "revision": 2556555861,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q2975633.json?revision=2556555861"
+    },
+    "Q2991560": {
+      "label_en": "sex comedy",
+      "source_label_en": "sex comedy",
+      "label_zh": "性喜剧",
+      "aliases_zh": [
+        "性喜劇",
+        "情色喜剧"
+      ],
+      "revision": 2533179381,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q2991560.json?revision=2533179381"
+    },
+    "Q3028680": {
+      "label_en": "Masala film",
+      "source_label_en": "Masala film",
+      "label_zh": "瑪撒拉電影",
+      "aliases_zh": [],
+      "revision": 2497226081,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3028680.json?revision=2497226081"
+    },
+    "Q3038946": {
+      "label_en": "romantic drama",
+      "source_label_en": "romantic drama",
+      "label_zh": "浪漫主义戏剧",
+      "aliases_zh": [],
+      "revision": 2524281792,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3038946.json?revision=2524281792"
+    },
+    "Q3072039": {
+      "label_en": "trial film",
+      "source_label_en": "trial film",
+      "label_zh": "审判电影",
+      "aliases_zh": [
+        "审判片",
+        "審判電影",
+        "法庭電影"
+      ],
+      "revision": 2485796073,
+      "retrieved_at": "2026-10-30T16:04:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3072039.json?revision=2485796073"
+    },
+    "Q3072042": {
+      "label_en": "kung fu film",
+      "source_label_en": "kung fu film",
+      "label_zh": "功夫片",
+      "aliases_zh": [],
+      "revision": 2490594729,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3072042.json?revision=2490594729"
+    },
+    "Q3072043": {
+      "label_en": "dance film",
+      "source_label_en": "dance film",
+      "label_zh": "舞蹈片",
+      "aliases_zh": [],
+      "revision": 2494233621,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3072043.json?revision=2494233621"
+    },
+    "Q3072049": {
+      "label_en": "zombie film",
+      "source_label_en": "zombie film",
+      "label_zh": "丧尸片",
+      "aliases_zh": [
+        "丧尸电影",
+        "喪屍片",
+        "喪屍電影"
+      ],
+      "revision": 2545534799,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3072049.json?revision=2545534799"
+    },
+    "Q3111983": {
+      "label_en": "Salish–Spokane–Kalispel",
+      "source_label_en": "Salish–Spokane–Kalispel",
+      "label_zh": "萨利什-斯波坎-卡利斯佩尔语",
+      "aliases_zh": [],
+      "revision": 2551978472,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3111983.json?revision=2551978472"
+    },
+    "Q3272147": {
+      "label_en": "found footage film",
+      "source_label_en": "found footage film",
+      "label_zh": "拾得录像",
+      "aliases_zh": [
+        "尋獲佚失影片",
+        "尋獲影片",
+        "尋獲片段",
+        "尋獲資料片段",
+        "拾得录像 (片种)",
+        "拾得錄像"
+      ],
+      "revision": 2550581878,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3272147.json?revision=2550581878"
+    },
+    "Q3327002": {
+      "label_en": "medieval film",
+      "source_label_en": "medieval film",
+      "label_zh": "中世纪主题电影",
+      "aliases_zh": [],
+      "revision": 2491550200,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3327002.json?revision=2491550200"
+    },
+    "Q3437230": {
+      "label_en": "Asháninka",
+      "source_label_en": "Asháninka",
+      "label_zh": "阿什寧卡語",
+      "aliases_zh": [],
+      "revision": 2558440176,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3437230.json?revision=2558440176"
+    },
+    "Q3442060": {
+      "label_en": "partisan film",
+      "source_label_en": "partisan film",
+      "label_zh": "游击队电影",
+      "aliases_zh": [],
+      "revision": 2498375476,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3442060.json?revision=2498375476"
+    },
+    "Q3846528": {
+      "label_en": "Singaporean Hokkien",
+      "source_label_en": "Singaporean Hokkien",
+      "label_zh": "新加坡福建话",
+      "aliases_zh": [
+        "新加坡福建話",
+        "新加坡閩南話",
+        "新加坡閩南語"
+      ],
+      "revision": 2471362599,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3846528.json?revision=2471362599"
+    },
+    "Q3990883": {
+      "label_en": "action thriller",
+      "source_label_en": "action thriller",
+      "label_zh": "动作惊悚片",
+      "aliases_zh": [
+        "動作驚悚片"
+      ],
+      "revision": 2484566930,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3990883.json?revision=2484566930"
+    },
+    "Q4235011": {
+      "label_en": "space Western",
+      "source_label_en": "space Western",
+      "label_zh": "科幻西部",
+      "aliases_zh": [
+        "太空西部"
+      ],
+      "revision": 2550159953,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q4235011.json?revision=2550159953"
+    },
+    "Q4674071": {
+      "label_en": "acid Western",
+      "source_label_en": "acid Western",
+      "label_zh": "酸味西部片",
+      "aliases_zh": [
+        "迷幻西部片"
+      ],
+      "revision": 2501595824,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q4674071.json?revision=2501595824"
+    },
+    "Q4984974": {
+      "label_en": "buddy cop film",
+      "source_label_en": "buddy cop film",
+      "label_zh": "警察搭檔片",
+      "aliases_zh": [],
+      "revision": 2489725282,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q4984974.json?revision=2489725282"
+    },
+    "Q5366020": {
+      "label_en": "science fiction anime and manga",
+      "source_label_en": "science fiction anime and manga",
+      "label_zh": "科幻日本动漫",
+      "aliases_zh": [
+        "科幻日本動漫"
+      ],
+      "revision": 2500113072,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q5366020.json?revision=2500113072"
+    },
+    "Q5422387": {
+      "label_en": "extreme cinema",
+      "source_label_en": "extreme cinema",
+      "label_zh": "极端电影",
+      "aliases_zh": [],
+      "revision": 2489612259,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q5422387.json?revision=2489612259"
+    },
+    "Q5778924": {
+      "label_en": "black comedy film",
+      "source_label_en": "black comedy film",
+      "label_zh": "黑色幽默电影",
+      "aliases_zh": [
+        "黑色喜剧电影",
+        "黑色幽默電影"
+      ],
+      "revision": 2477546835,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q5778924.json?revision=2477546835"
+    },
+    "Q5937792": {
+      "label_en": "crime fiction",
+      "source_label_en": "crime fiction",
+      "label_zh": "犯罪作品",
+      "aliases_zh": [
+        "兇殺懸疑",
+        "犯罪小说",
+        "終極警網",
+        "虛構犯罪"
+      ],
+      "revision": 2558139496,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q5937792.json?revision=2558139496"
+    },
+    "Q6585139": {
+      "label_en": "mystery fiction",
+      "source_label_en": "mystery fiction",
+      "label_zh": "悬疑",
+      "aliases_zh": [
+        "悬疑小说",
+        "懸疑小說",
+        "神祕"
+      ],
+      "revision": 2548025816,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q6585139.json?revision=2548025816"
+    },
+    "Q7033959": {
+      "label_en": "Yue Chinese",
+      "source_label_en": "Yue Chinese",
+      "label_zh": "粤语",
+      "aliases_zh": [
+        "唐话",
+        "广东话",
+        "广东语",
+        "广州话",
+        "广府话",
+        "白话",
+        "粵文",
+        "粵語"
+      ],
+      "revision": 2531933367,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q7033959.json?revision=2531933367"
+    },
+    "Q7168625": {
+      "label_en": "historical drama",
+      "source_label_en": "historical drama",
+      "label_zh": "時代劇",
+      "aliases_zh": [
+        "时代剧"
+      ],
+      "revision": 2555360205,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q7168625.json?revision=2555360205"
+    },
+    "Q7189589": {
+      "label_en": "physical comedy",
+      "source_label_en": "physical comedy",
+      "label_zh": "動作喜劇",
+      "aliases_zh": [
+        "肢體喜劇"
+      ],
+      "revision": 2463109524,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q7189589.json?revision=2463109524"
+    },
+    "Q7210294": {
+      "label_en": "political drama",
+      "source_label_en": "political drama",
+      "label_zh": "政治剧",
+      "aliases_zh": [
+        "政治剧情",
+        "政治劇情片"
+      ],
+      "revision": 2447805929,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q7210294.json?revision=2447805929"
+    },
+    "Q7225114": {
+      "label_en": "political satire",
+      "source_label_en": "political satire",
+      "label_zh": "政治讽刺",
+      "aliases_zh": [
+        "搞笑政治家",
+        "政治諷刺",
+        "政治諷刺文學",
+        "政治諷刺片",
+        "政治讽刺片"
+      ],
+      "revision": 2527167664,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q7225114.json?revision=2527167664"
+    },
+    "Q7234396": {
+      "label_en": "postmodernist film",
+      "source_label_en": "postmodernist film",
+      "label_zh": "後現代主義電影",
+      "aliases_zh": [],
+      "revision": 2463596631,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q7234396.json?revision=2463596631"
+    },
+    "Q7444356": {
+      "label_en": "gangster film",
+      "source_label_en": "gangster film",
+      "label_zh": "黑幫電影",
+      "aliases_zh": [
+        "幫派電影",
+        "黑道電影"
+      ],
+      "revision": 2545534660,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q7444356.json?revision=2545534660"
+    },
+    "Q7644030": {
+      "label_en": "supernatural fiction",
+      "source_label_en": "supernatural fiction",
+      "label_zh": "超自然题材作品",
+      "aliases_zh": [
+        "虛構超自然作品",
+        "超自然小說",
+        "超自然小説",
+        "超自然电影",
+        "超自然題材",
+        "超自然題材作品",
+        "超自然驚悚",
+        "靈異作品",
+        "靈異小說",
+        "靈異題材"
+      ],
+      "revision": 2489699370,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q7644030.json?revision=2489699370"
+    },
+    "Q7645884": {
+      "label_en": "surf film",
+      "source_label_en": "surf film",
+      "label_zh": "海灘電影",
+      "aliases_zh": [],
+      "revision": 2499517467,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q7645884.json?revision=2499517467"
+    },
+    "Q7696995": {
+      "label_en": "comedy television program",
+      "source_label_en": "comedy television program",
+      "label_zh": "喜剧电视",
+      "aliases_zh": [
+        "喜劇電視",
+        "電視喜劇"
+      ],
+      "revision": 2550640262,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q7696995.json?revision=2550640262"
+    },
+    "Q8812380": {
+      "label_en": "pseudo-documentary",
+      "source_label_en": "pseudo-documentary",
+      "label_zh": "偽紀錄片",
+      "aliases_zh": [],
+      "revision": 2495222813,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q8812380.json?revision=2495222813"
+    },
+    "Q9326077": {
+      "label_en": "speculative fiction",
+      "source_label_en": "speculative fiction",
+      "label_zh": "推想虚构作品",
+      "aliases_zh": [
+        "推想虛構作品"
+      ],
+      "revision": 2551887339,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q9326077.json?revision=2551887339"
+    },
+    "Q12912091": {
+      "label_en": "fiction film",
+      "source_label_en": "fiction film",
+      "label_zh": "科幻电影",
+      "aliases_zh": [
+        "敘事電影",
+        "科幻電影"
+      ],
+      "revision": 2562482892,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q12912091.json?revision=2562482892"
+    },
+    "Q15062348": {
+      "label_en": "dystopian fiction",
+      "source_label_en": "dystopian fiction",
+      "label_zh": "反乌托邦作品",
+      "aliases_zh": [],
+      "revision": 2541742518,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q15062348.json?revision=2541742518"
+    },
+    "Q15858553": {
+      "label_en": "wuxia film",
+      "source_label_en": "wuxia film",
+      "label_zh": "武俠片",
+      "aliases_zh": [],
+      "revision": 2489998578,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q15858553.json?revision=2489998578"
+    },
+    "Q15898171": {
+      "label_en": "survival film",
+      "source_label_en": "survival film",
+      "label_zh": "生存片",
+      "aliases_zh": [
+        "求生片",
+        "求生電影",
+        "生存电影",
+        "生存電影"
+      ],
+      "revision": 2466243934,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q15898171.json?revision=2466243934"
+    },
+    "Q17013749": {
+      "label_en": "historical film",
+      "source_label_en": "historical film",
+      "label_zh": "历史片",
+      "aliases_zh": [
+        "历史电影",
+        "歷史片",
+        "歷史電影"
+      ],
+      "revision": 2562482761,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q17013749.json?revision=2562482761"
+    },
+    "Q18089587": {
+      "label_en": "stop-motion animated film",
+      "source_label_en": "stop-motion animated film",
+      "label_zh": "定格动画电影",
+      "aliases_zh": [
+        "定格動畫電影"
+      ],
+      "revision": 2499899523,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q18089587.json?revision=2499899523"
+    },
+    "Q20442589": {
+      "label_en": "LGBTQ-related film",
+      "source_label_en": "LGBTQ-related film",
+      "label_zh": "同志片",
+      "aliases_zh": [
+        "LGBT电影",
+        "LGBT電影",
+        "同志电影",
+        "同志電影",
+        "性小眾相關電影",
+        "性少数相关电影",
+        "性少数者电影",
+        "性少數者電影"
+      ],
+      "revision": 2562482722,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q20442589.json?revision=2562482722"
+    },
+    "Q20443008": {
+      "label_en": "dystopian film",
+      "source_label_en": "dystopian film",
+      "label_zh": "反乌托邦电影",
+      "aliases_zh": [
+        "反烏托邦電影"
+      ],
+      "revision": 2497223754,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q20443008.json?revision=2497223754"
+    },
+    "Q20656232": {
+      "label_en": "science fiction action film",
+      "source_label_en": "science fiction action film",
+      "label_zh": "科幻动作片",
+      "aliases_zh": [
+        "科幻動作片"
+      ],
+      "revision": 2484793243,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q20656232.json?revision=2484793243"
+    },
+    "Q20656352": {
+      "label_en": "alternate history film",
+      "source_label_en": "alternate history film",
+      "label_zh": "架空历史电影",
+      "aliases_zh": [
+        "架空歷史電影"
+      ],
+      "revision": 2495837565,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q20656352.json?revision=2495837565"
+    },
+    "Q21010853": {
+      "label_en": "drama fiction",
+      "source_label_en": "drama fiction",
+      "label_zh": "电视电影",
+      "aliases_zh": [
+        "剧情向",
+        "剧情类",
+        "劇情",
+        "劇情向",
+        "家庭劇",
+        "戲劇",
+        "電視電影"
+      ],
+      "revision": 2489722658,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q21010853.json?revision=2489722658"
+    },
+    "Q21192427": {
+      "label_en": "crossover fiction",
+      "source_label_en": "crossover fiction",
+      "label_zh": "跨界作品",
+      "aliases_zh": [
+        "交叉",
+        "交叉大事件",
+        "交錯劇情"
+      ],
+      "revision": 2540151341,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q21192427.json?revision=2540151341"
+    },
+    "Q21401869": {
+      "label_en": "flashback film",
+      "source_label_en": "flashback film",
+      "label_zh": "倒叙电影",
+      "aliases_zh": [
+        "倒敘電影"
+      ],
+      "revision": 2466086007,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q21401869.json?revision=2466086007"
+    },
+    "Q21802675": {
+      "label_en": "adventure fiction",
+      "source_label_en": "adventure fiction",
+      "label_zh": "冒险类虚构作品",
+      "aliases_zh": [
+        "冒险作品",
+        "冒险小说",
+        "冒险故事",
+        "冒险题材",
+        "冒險作品",
+        "冒險小說",
+        "冒險故事",
+        "冒險題材",
+        "冒險類虛構作品",
+        "历险作品",
+        "历险小说",
+        "歷險小說"
+      ],
+      "revision": 2538985048,
+      "retrieved_at": "2026-10-30T16:04:20+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q21802675.json?revision=2538985048"
+    },
+    "Q21858363": {
+      "label_en": "psychedelic film",
+      "source_label_en": "psychedelic film",
+      "label_zh": "迷幻電影",
+      "aliases_zh": [],
+      "revision": 2490331851,
+      "retrieved_at": "2026-10-30T16:05:14+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q21858363.json?revision=2490331851"
+    },
+    "Q22025254": {
+      "label_en": "sageuk",
+      "source_label_en": "sageuk",
+      "label_zh": "史劇",
+      "aliases_zh": [
+        "史剧"
+      ],
+      "revision": 2515634589,
+      "retrieved_at": "2026-10-30T16:05:14+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q22025254.json?revision=2515634589"
+    },
+    "Q22981906": {
+      "label_en": "treasure hunt film",
+      "source_label_en": "treasure hunt film",
+      "label_zh": "寻宝电影",
+      "aliases_zh": [
+        "尋寶電影"
+      ],
+      "revision": 2512563765,
+      "retrieved_at": "2026-10-30T16:05:14+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q22981906.json?revision=2512563765"
+    },
+    "Q24841726": {
+      "label_en": "Putonghua",
+      "source_label_en": "Putonghua",
+      "label_zh": "普通话",
+      "aliases_zh": [
+        "普通話",
+        "汉语普通话"
+      ],
+      "revision": 2552229592,
+      "retrieved_at": "2026-10-30T16:05:14+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q24841726.json?revision=2552229592"
+    },
+    "Q25110269": {
+      "label_en": "live-action/animated film",
+      "source_label_en": "live-action/animated film",
+      "label_zh": "真人动画电影",
+      "aliases_zh": [
+        "真人動作動畫電影",
+        "真人動畫電影"
+      ],
+      "revision": 2529424078,
+      "retrieved_at": "2026-10-30T16:05:14+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q25110269.json?revision=2529424078"
+    },
+    "Q26268098": {
+      "label_en": "ostern",
+      "source_label_en": "ostern",
+      "label_zh": "罗宋汤西部片",
+      "aliases_zh": [
+        "东方片",
+        "罗宋汤西部片#匈牙利红烩牛肉西部片",
+        "羅宋湯西部片",
+        "羅宋湯西部片#匈牙利紅燴牛肉西部片",
+        "苏联西部片"
+      ],
+      "revision": 2533645402,
+      "retrieved_at": "2026-10-30T16:05:14+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q26268098.json?revision=2533645402"
+    },
+    "Q28026639": {
+      "label_en": "Christmas film",
+      "source_label_en": "Christmas film",
+      "label_zh": "圣诞电影",
+      "aliases_zh": [
+        "聖誕電影"
+      ],
+      "revision": 2562483425,
+      "retrieved_at": "2026-10-30T16:05:14+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q28026639.json?revision=2562483425"
+    },
+    "Q43911809": {
+      "label_en": "supernatural horror film",
+      "source_label_en": "supernatural horror film",
+      "label_zh": "超自然恐怖",
+      "aliases_zh": [
+        "超自然恐怖片",
+        "超自然恐怖電影",
+        "超自然驚悚",
+        "靈異恐怖片"
+      ],
+      "revision": 2562543678,
+      "retrieved_at": "2026-10-30T16:05:14+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q43911809.json?revision=2562543678"
+    },
+    "Q52162262": {
+      "label_en": "film based on a literary work",
+      "source_label_en": "film based on a literary work",
+      "label_zh": "基于文学的电影",
+      "aliases_zh": [
+        "基於文學的電影"
+      ],
+      "revision": 2550717189,
+      "retrieved_at": "2026-10-30T16:05:14+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q52162262.json?revision=2550717189"
+    },
+    "Q52207310": {
+      "label_en": "film based on a book",
+      "source_label_en": "film based on a book",
+      "label_zh": "书籍改编电影",
+      "aliases_zh": [
+        "书籍翻拍电影",
+        "書籍改編電影",
+        "書籍翻拍電影"
+      ],
+      "revision": 2550717448,
+      "retrieved_at": "2026-10-30T16:05:14+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q52207310.json?revision=2550717448"
+    },
+    "Q52207399": {
+      "label_en": "film based on a novel",
+      "source_label_en": "film based on a novel",
+      "label_zh": "小说改编电影",
+      "aliases_zh": [
+        "小說改編電影"
+      ],
+      "revision": 2555901067,
+      "retrieved_at": "2026-10-30T16:05:14+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q52207399.json?revision=2555901067"
+    },
+    "Q54894945": {
+      "label_en": "Boss Level",
+      "source_label_en": "Boss Level",
+      "label_zh": "领袖水准",
+      "aliases_zh": [
+        "迴路追殺令",
+        "領袖水準"
+      ],
+      "revision": 2553150121,
+      "retrieved_at": "2026-10-30T16:05:14+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q54894945.json?revision=2553150121"
+    },
+    "Q60753838": {
+      "label_en": "screenlife",
+      "source_label_en": "screenlife",
+      "label_zh": "電腦熒幕電影",
+      "aliases_zh": [
+        "螢幕生活",
+        "計算機螢幕",
+        "计算机屏幕",
+        "電腦螢幕電影"
+      ],
+      "revision": 2513975403,
+      "retrieved_at": "2026-10-30T16:05:14+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q60753838.json?revision=2513975403"
+    },
+    "Q63214877": {
+      "label_en": "psychological drama film",
+      "source_label_en": "psychological drama film",
+      "label_zh": "心理剧电影",
+      "aliases_zh": [
+        "心理劇電影"
+      ],
+      "revision": 2521518349,
+      "retrieved_at": "2026-10-30T16:05:14+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q63214877.json?revision=2521518349"
+    },
+    "Q102429885": {
+      "label_en": "coming-of-age film",
+      "source_label_en": "coming-of-age film",
+      "label_zh": "成長片",
+      "aliases_zh": [
+        "成長電影"
+      ],
+      "revision": 2562483309,
+      "retrieved_at": "2026-10-30T16:05:14+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q102429885.json?revision=2562483309"
+    },
+    "Q104623069": {
+      "label_en": "thriller anime",
+      "source_label_en": "thriller anime",
+      "label_zh": "惊悚日本动画",
+      "aliases_zh": [],
+      "revision": 2488114804,
+      "retrieved_at": "2026-10-30T16:05:14+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q104623069.json?revision=2488114804"
+    },
+    "Q108102008": {
+      "label_en": "psychological drama",
+      "source_label_en": "psychological drama",
+      "label_zh": "心理劇",
+      "aliases_zh": [
+        "心理劇情"
+      ],
+      "revision": 2555122602,
+      "retrieved_at": "2026-10-30T16:05:14+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q108102008.json?revision=2555122602"
+    },
+    "Q109629396": {
+      "label_en": "psychological horror film",
+      "source_label_en": "psychological horror film",
+      "label_zh": "心理恐怖電影",
+      "aliases_zh": [],
+      "revision": 2528385570,
+      "retrieved_at": "2026-10-30T16:05:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q109629396.json?revision=2528385570"
+    },
+    "Q109733333": {
+      "label_en": "political thriller film",
+      "source_label_en": "political thriller film",
+      "label_zh": "政治驚悚片",
+      "aliases_zh": [],
+      "revision": 2491533529,
+      "retrieved_at": "2026-10-30T16:05:18+00:00",
+      "source_url": "https://www.wikidata.org/wiki/Special:EntityData/Q109733333.json?revision=2491533529"
+    }
+  }
+}

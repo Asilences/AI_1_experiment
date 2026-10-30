@@ -1,0 +1,41 @@
+{
+  "count": 8857,
+  "entity_exact": 99.72902788754658,
+  "entity_macro_f1": 99.77870610816304,
+  "bleu": 99.80900500239837,
+  "rouge_l": 99.87811390693399,
+  "by_relation": {
+    "P57": {
+      "exact": 99.06040268456375,
+      "f1": 99.14988814317674,
+      "count": 2235
+    },
+    "P136": {
+      "exact": 100.0,
+      "f1": 100.0,
+      "count": 1356
+    },
+    "P495": {
+      "exact": 100.0,
+      "f1": 100.0,
+      "count": 2229
+    },
+    "P364": {
+      "exact": 99.86559139784946,
+      "f1": 99.97311827956989,
+      "count": 2232
+    },
+    "UNKNOWN": {
+      "exact": 100.0,
+      "f1": 100.0,
+      "count": 805
+    }
+  },
+  "answerable_count": 8052,
+  "refusal_count": 805,
+  "answerable_entity_exact": 99.70193740685544,
+  "answerable_entity_macro_f1": 99.75658221559861,
+  "refusal_accuracy": 100.0,
+  "latency_mean_ms": 11.97476371231327,
+  "latency_p95_ms": 15.840124999954242
+}

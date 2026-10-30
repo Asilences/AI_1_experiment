@@ -1,0 +1,260 @@
+{"question_id": "zh-controlled-v2-valid-Q1003845-P57-canonical", "movie_id": "Q1003845", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q267524"]}
+{"question_id": "zh-controlled-v2-valid-Q1003845-P57-paraphrase", "movie_id": "Q1003845", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q267524"]}
+{"question_id": "zh-controlled-v2-valid-Q1003845-P57-mixed_name", "movie_id": "Q1003845", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q267524"]}
+{"question_id": "zh-controlled-v2-valid-Q1003845-P136-canonical", "movie_id": "Q1003845", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q157394", "Q188473", "Q471839"]}
+{"question_id": "zh-controlled-v2-valid-Q1003845-P136-paraphrase", "movie_id": "Q1003845", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q157394", "Q188473", "Q471839"]}
+{"question_id": "zh-controlled-v2-valid-Q1003845-P136-mixed_name", "movie_id": "Q1003845", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q157394", "Q188473", "Q471839"]}
+{"question_id": "zh-controlled-v2-valid-Q1003845-P495-canonical", "movie_id": "Q1003845", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-valid-Q1003845-P495-paraphrase", "movie_id": "Q1003845", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-valid-Q1003845-P495-mixed_name", "movie_id": "Q1003845", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-valid-Q1003845-P364-canonical", "movie_id": "Q1003845", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-valid-Q1003845-P364-paraphrase", "movie_id": "Q1003845", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-valid-Q1003845-P364-mixed_name", "movie_id": "Q1003845", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-valid-Q101069738-P57-canonical", "movie_id": "Q101069738", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q6216955"]}
+{"question_id": "zh-controlled-v2-valid-Q101069738-P57-paraphrase", "movie_id": "Q101069738", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q6216955"]}
+{"question_id": "zh-controlled-v2-valid-Q101069738-P57-mixed_name", "movie_id": "Q101069738", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q6216955"]}
+{"question_id": "zh-controlled-v2-valid-Q101069738-P136-canonical", "movie_id": "Q101069738", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q188473", "Q200092", "Q1077883", "Q3072049", "Q10663882"]}
+{"question_id": "zh-controlled-v2-valid-Q101069738-P136-paraphrase", "movie_id": "Q101069738", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q188473", "Q200092", "Q1077883", "Q3072049", "Q10663882"]}
+{"question_id": "zh-controlled-v2-valid-Q101069738-P136-mixed_name", "movie_id": "Q101069738", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q188473", "Q200092", "Q1077883", "Q3072049", "Q10663882"]}
+{"question_id": "zh-controlled-v2-valid-Q101069738-P495-canonical", "movie_id": "Q101069738", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30", "Q145", "Q183"]}
+{"question_id": "zh-controlled-v2-valid-Q101069738-P495-paraphrase", "movie_id": "Q101069738", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30", "Q145", "Q183"]}
+{"question_id": "zh-controlled-v2-valid-Q101069738-P495-mixed_name", "movie_id": "Q101069738", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30", "Q145", "Q183"]}
+{"question_id": "zh-controlled-v2-valid-Q101069738-P364-canonical", "movie_id": "Q101069738", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-valid-Q101069738-P364-paraphrase", "movie_id": "Q101069738", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-valid-Q101069738-P364-mixed_name", "movie_id": "Q101069738", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-valid-Q101666960-P57-canonical", "movie_id": "Q101666960", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q465139"]}
+{"question_id": "zh-controlled-v2-valid-Q101666960-P57-paraphrase", "movie_id": "Q101666960", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q465139"]}
+{"question_id": "zh-controlled-v2-valid-Q101666960-P57-mixed_name", "movie_id": "Q101666960", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q465139"]}
+{"question_id": "zh-controlled-v2-valid-Q101666960-P136-canonical", "movie_id": "Q101666960", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q2484376"]}
+{"question_id": "zh-controlled-v2-valid-Q101666960-P136-paraphrase", "movie_id": "Q101666960", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q2484376"]}
+{"question_id": "zh-controlled-v2-valid-Q101666960-P136-mixed_name", "movie_id": "Q101666960", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q2484376"]}
+{"question_id": "zh-controlled-v2-valid-Q101666960-P495-canonical", "movie_id": "Q101666960", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-valid-Q101666960-P495-paraphrase", "movie_id": "Q101666960", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-valid-Q101666960-P495-mixed_name", "movie_id": "Q101666960", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-valid-Q101666960-P364-canonical", "movie_id": "Q101666960", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-valid-Q101666960-P364-paraphrase", "movie_id": "Q101666960", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-valid-Q101666960-P364-mixed_name", "movie_id": "Q101666960", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-valid-Q102046208-P57-canonical", "movie_id": "Q102046208", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q1159118"]}
+{"question_id": "zh-controlled-v2-valid-Q102046208-P57-paraphrase", "movie_id": "Q102046208", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q1159118"]}
+{"question_id": "zh-controlled-v2-valid-Q102046208-P57-mixed_name", "movie_id": "Q102046208", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q1159118"]}
+{"question_id": "zh-controlled-v2-valid-Q102046208-P136-canonical", "movie_id": "Q102046208", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q157443"]}
+{"question_id": "zh-controlled-v2-valid-Q102046208-P136-paraphrase", "movie_id": "Q102046208", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q157443"]}
+{"question_id": "zh-controlled-v2-valid-Q102046208-P136-mixed_name", "movie_id": "Q102046208", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q157443"]}
+{"question_id": "zh-controlled-v2-valid-Q102046208-P495-canonical", "movie_id": "Q102046208", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-valid-Q102046208-P495-paraphrase", "movie_id": "Q102046208", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-valid-Q102046208-P495-mixed_name", "movie_id": "Q102046208", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-valid-Q102046208-P364-canonical", "movie_id": "Q102046208", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-valid-Q102046208-P364-paraphrase", "movie_id": "Q102046208", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-valid-Q102046208-P364-mixed_name", "movie_id": "Q102046208", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-valid-Q102754-P57-canonical", "movie_id": "Q102754", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q314882"]}
+{"question_id": "zh-controlled-v2-valid-Q102754-P57-paraphrase", "movie_id": "Q102754", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q314882"]}
+{"question_id": "zh-controlled-v2-valid-Q102754-P57-mixed_name", "movie_id": "Q102754", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q314882"]}
+{"question_id": "zh-controlled-v2-valid-Q102754-P136-canonical", "movie_id": "Q102754", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q188473", "Q319221", "Q2297927", "Q2484376"]}
+{"question_id": "zh-controlled-v2-valid-Q102754-P136-paraphrase", "movie_id": "Q102754", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q188473", "Q319221", "Q2297927", "Q2484376"]}
+{"question_id": "zh-controlled-v2-valid-Q102754-P136-mixed_name", "movie_id": "Q102754", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q188473", "Q319221", "Q2297927", "Q2484376"]}
+{"question_id": "zh-controlled-v2-valid-Q102754-P495-canonical", "movie_id": "Q102754", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q145"]}
+{"question_id": "zh-controlled-v2-valid-Q102754-P495-paraphrase", "movie_id": "Q102754", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q145"]}
+{"question_id": "zh-controlled-v2-valid-Q102754-P495-mixed_name", "movie_id": "Q102754", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q145"]}
+{"question_id": "zh-controlled-v2-valid-Q102754-P364-canonical", "movie_id": "Q102754", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-valid-Q102754-P364-paraphrase", "movie_id": "Q102754", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-valid-Q102754-P364-mixed_name", "movie_id": "Q102754", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-valid-Q10307713-P57-canonical", "movie_id": "Q10307713", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q561387"]}
+{"question_id": "zh-controlled-v2-valid-Q10307713-P57-paraphrase", "movie_id": "Q10307713", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q561387"]}
+{"question_id": "zh-controlled-v2-valid-Q10307713-P57-mixed_name", "movie_id": "Q10307713", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q561387"]}
+{"question_id": "zh-controlled-v2-valid-Q10307713-P136-canonical", "movie_id": "Q10307713", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q130232", "Q188473", "Q369747", "Q471839", "Q20443008"]}
+{"question_id": "zh-controlled-v2-valid-Q10307713-P136-paraphrase", "movie_id": "Q10307713", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q130232", "Q188473", "Q369747", "Q471839", "Q20443008"]}
+{"question_id": "zh-controlled-v2-valid-Q10307713-P136-mixed_name", "movie_id": "Q10307713", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q130232", "Q188473", "Q369747", "Q471839", "Q20443008"]}
+{"question_id": "zh-controlled-v2-valid-Q10307713-P495-canonical", "movie_id": "Q10307713", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30", "Q183"]}
+{"question_id": "zh-controlled-v2-valid-Q10307713-P495-paraphrase", "movie_id": "Q10307713", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30", "Q183"]}
+{"question_id": "zh-controlled-v2-valid-Q10307713-P495-mixed_name", "movie_id": "Q10307713", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30", "Q183"]}
+{"question_id": "zh-controlled-v2-valid-Q10307713-P364-canonical", "movie_id": "Q10307713", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-valid-Q10307713-P364-paraphrase", "movie_id": "Q10307713", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-valid-Q10307713-P364-mixed_name", "movie_id": "Q10307713", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-valid-Q10384115-P57-canonical", "movie_id": "Q10384115", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q460144"]}
+{"question_id": "zh-controlled-v2-valid-Q10384115-P57-paraphrase", "movie_id": "Q10384115", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q460144"]}
+{"question_id": "zh-controlled-v2-valid-Q10384115-P57-mixed_name", "movie_id": "Q10384115", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q460144"]}
+{"question_id": "zh-controlled-v2-valid-Q10384115-P136-canonical", "movie_id": "Q10384115", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q130232", "Q188473", "Q471839", "Q2484376", "Q20443008"]}
+{"question_id": "zh-controlled-v2-valid-Q10384115-P136-paraphrase", "movie_id": "Q10384115", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q130232", "Q188473", "Q471839", "Q2484376", "Q20443008"]}
+{"question_id": "zh-controlled-v2-valid-Q10384115-P136-mixed_name", "movie_id": "Q10384115", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q130232", "Q188473", "Q471839", "Q2484376", "Q20443008"]}
+{"question_id": "zh-controlled-v2-valid-Q10384115-P495-canonical", "movie_id": "Q10384115", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-valid-Q10384115-P495-paraphrase", "movie_id": "Q10384115", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-valid-Q10384115-P495-mixed_name", "movie_id": "Q10384115", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-valid-Q10384115-P364-canonical", "movie_id": "Q10384115", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-valid-Q10384115-P364-paraphrase", "movie_id": "Q10384115", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-valid-Q10384115-P364-mixed_name", "movie_id": "Q10384115", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-valid-Q1046841-P57-canonical", "movie_id": "Q1046841", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q466320"]}
+{"question_id": "zh-controlled-v2-valid-Q1046841-P57-paraphrase", "movie_id": "Q1046841", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q466320"]}
+{"question_id": "zh-controlled-v2-valid-Q1046841-P57-mixed_name", "movie_id": "Q1046841", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q466320"]}
+{"question_id": "zh-controlled-v2-valid-Q1046841-P136-canonical", "movie_id": "Q1046841", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q130232", "Q542475", "Q859369", "Q860626", "Q7168625"]}
+{"question_id": "zh-controlled-v2-valid-Q1046841-P136-paraphrase", "movie_id": "Q1046841", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q130232", "Q542475", "Q859369", "Q860626", "Q7168625"]}
+{"question_id": "zh-controlled-v2-valid-Q1046841-P136-mixed_name", "movie_id": "Q1046841", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q130232", "Q542475", "Q859369", "Q860626", "Q7168625"]}
+{"question_id": "zh-controlled-v2-valid-Q1046841-P495-canonical", "movie_id": "Q1046841", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30", "Q145"]}
+{"question_id": "zh-controlled-v2-valid-Q1046841-P495-paraphrase", "movie_id": "Q1046841", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30", "Q145"]}
+{"question_id": "zh-controlled-v2-valid-Q1046841-P495-mixed_name", "movie_id": "Q1046841", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30", "Q145"]}
+{"question_id": "zh-controlled-v2-valid-Q1046841-P364-canonical", "movie_id": "Q1046841", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-valid-Q1046841-P364-paraphrase", "movie_id": "Q1046841", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-valid-Q1046841-P364-mixed_name", "movie_id": "Q1046841", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-valid-Q104814-P57-canonical", "movie_id": "Q104814", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q42574"]}
+{"question_id": "zh-controlled-v2-valid-Q104814-P57-paraphrase", "movie_id": "Q104814", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q42574"]}
+{"question_id": "zh-controlled-v2-valid-Q104814-P57-mixed_name", "movie_id": "Q104814", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q42574"]}
+{"question_id": "zh-controlled-v2-valid-Q104814-P136-canonical", "movie_id": "Q104814", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q188473", "Q200092", "Q319221", "Q369747", "Q471839", "Q1342372", "Q2484376", "Q10663882", "Q11304653", "Q20656232"]}
+{"question_id": "zh-controlled-v2-valid-Q104814-P136-paraphrase", "movie_id": "Q104814", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q188473", "Q200092", "Q319221", "Q369747", "Q471839", "Q1342372", "Q2484376", "Q10663882", "Q11304653", "Q20656232"]}
+{"question_id": "zh-controlled-v2-valid-Q104814-P136-mixed_name", "movie_id": "Q104814", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q188473", "Q200092", "Q319221", "Q369747", "Q471839", "Q1342372", "Q2484376", "Q10663882", "Q11304653", "Q20656232"]}
+{"question_id": "zh-controlled-v2-valid-Q104814-P495-canonical", "movie_id": "Q104814", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-valid-Q104814-P495-paraphrase", "movie_id": "Q104814", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-valid-Q104814-P495-mixed_name", "movie_id": "Q104814", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-valid-Q104814-P364-canonical", "movie_id": "Q104814", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-valid-Q104814-P364-paraphrase", "movie_id": "Q104814", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-valid-Q104814-P364-mixed_name", "movie_id": "Q104814", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-valid-Q105031-P57-canonical", "movie_id": "Q105031", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q75079"]}
+{"question_id": "zh-controlled-v2-valid-Q105031-P57-paraphrase", "movie_id": "Q105031", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q75079"]}
+{"question_id": "zh-controlled-v2-valid-Q105031-P57-mixed_name", "movie_id": "Q105031", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q75079"]}
+{"question_id": "zh-controlled-v2-valid-Q105031-P136-canonical", "movie_id": "Q105031", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q157443", "Q319221", "Q1361932", "Q28026639"]}
+{"question_id": "zh-controlled-v2-valid-Q105031-P136-paraphrase", "movie_id": "Q105031", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q157443", "Q319221", "Q1361932", "Q28026639"]}
+{"question_id": "zh-controlled-v2-valid-Q105031-P136-mixed_name", "movie_id": "Q105031", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q157443", "Q319221", "Q1361932", "Q28026639"]}
+{"question_id": "zh-controlled-v2-valid-Q105031-P495-canonical", "movie_id": "Q105031", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-valid-Q105031-P495-paraphrase", "movie_id": "Q105031", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-valid-Q105031-P495-mixed_name", "movie_id": "Q105031", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-valid-Q105031-P364-canonical", "movie_id": "Q105031", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-valid-Q105031-P364-paraphrase", "movie_id": "Q105031", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-valid-Q105031-P364-mixed_name", "movie_id": "Q105031", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-valid-negative-actor", "movie_id": null, "relation_id": null, "expected_refusal": true, "answer_ids": []}
+{"question_id": "zh-controlled-v2-valid-negative-release_time", "movie_id": null, "relation_id": null, "expected_refusal": true, "answer_ids": []}
+{"question_id": "zh-controlled-v2-valid-negative-multiple_relations", "movie_id": null, "relation_id": null, "expected_refusal": true, "answer_ids": []}
+{"question_id": "zh-controlled-v2-valid-negative-two_movies", "movie_id": null, "relation_id": null, "expected_refusal": true, "answer_ids": []}
+{"question_id": "zh-controlled-v2-valid-negative-unknown_title", "movie_id": null, "relation_id": null, "expected_refusal": true, "answer_ids": []}
+{"question_id": "zh-controlled-v2-valid-negative-negative_director", "movie_id": null, "relation_id": null, "expected_refusal": true, "answer_ids": []}
+{"question_id": "zh-controlled-v2-valid-negative-runtime", "movie_id": null, "relation_id": null, "expected_refusal": true, "answer_ids": []}
+{"question_id": "zh-controlled-v2-valid-negative-plot", "movie_id": null, "relation_id": null, "expected_refusal": true, "answer_ids": []}
+{"question_id": "zh-controlled-v2-valid-negative-budget", "movie_id": null, "relation_id": null, "expected_refusal": true, "answer_ids": []}
+{"question_id": "zh-controlled-v2-valid-negative-two_quoted_titles", "movie_id": null, "relation_id": null, "expected_refusal": true, "answer_ids": []}
+{"question_id": "zh-controlled-v2-test-Q1020603-P57-canonical", "movie_id": "Q1020603", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q269585"]}
+{"question_id": "zh-controlled-v2-test-Q1020603-P57-paraphrase", "movie_id": "Q1020603", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q269585"]}
+{"question_id": "zh-controlled-v2-test-Q1020603-P57-mixed_name", "movie_id": "Q1020603", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q269585"]}
+{"question_id": "zh-controlled-v2-test-Q1020603-P136-canonical", "movie_id": "Q1020603", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q130232", "Q157443"]}
+{"question_id": "zh-controlled-v2-test-Q1020603-P136-paraphrase", "movie_id": "Q1020603", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q130232", "Q157443"]}
+{"question_id": "zh-controlled-v2-test-Q1020603-P136-mixed_name", "movie_id": "Q1020603", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q130232", "Q157443"]}
+{"question_id": "zh-controlled-v2-test-Q1020603-P495-canonical", "movie_id": "Q1020603", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-test-Q1020603-P495-paraphrase", "movie_id": "Q1020603", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-test-Q1020603-P495-mixed_name", "movie_id": "Q1020603", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-test-Q1020603-P364-canonical", "movie_id": "Q1020603", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-test-Q1020603-P364-paraphrase", "movie_id": "Q1020603", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-test-Q1020603-P364-mixed_name", "movie_id": "Q1020603", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-test-Q1035093-P57-canonical", "movie_id": "Q1035093", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q1386207"]}
+{"question_id": "zh-controlled-v2-test-Q1035093-P57-paraphrase", "movie_id": "Q1035093", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q1386207"]}
+{"question_id": "zh-controlled-v2-test-Q1035093-P57-mixed_name", "movie_id": "Q1035093", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q1386207"]}
+{"question_id": "zh-controlled-v2-test-Q1035093-P136-canonical", "movie_id": "Q1035093", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q157394", "Q188473", "Q369747", "Q471839", "Q1535153", "Q2484376"]}
+{"question_id": "zh-controlled-v2-test-Q1035093-P136-paraphrase", "movie_id": "Q1035093", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q157394", "Q188473", "Q369747", "Q471839", "Q1535153", "Q2484376"]}
+{"question_id": "zh-controlled-v2-test-Q1035093-P136-mixed_name", "movie_id": "Q1035093", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q157394", "Q188473", "Q369747", "Q471839", "Q1535153", "Q2484376"]}
+{"question_id": "zh-controlled-v2-test-Q1035093-P495-canonical", "movie_id": "Q1035093", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30", "Q83286"]}
+{"question_id": "zh-controlled-v2-test-Q1035093-P495-paraphrase", "movie_id": "Q1035093", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30", "Q83286"]}
+{"question_id": "zh-controlled-v2-test-Q1035093-P495-mixed_name", "movie_id": "Q1035093", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30", "Q83286"]}
+{"question_id": "zh-controlled-v2-test-Q1035093-P364-canonical", "movie_id": "Q1035093", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-test-Q1035093-P364-paraphrase", "movie_id": "Q1035093", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-test-Q1035093-P364-mixed_name", "movie_id": "Q1035093", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-test-Q103569-P57-canonical", "movie_id": "Q103569", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q56005"]}
+{"question_id": "zh-controlled-v2-test-Q103569-P57-paraphrase", "movie_id": "Q103569", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q56005"]}
+{"question_id": "zh-controlled-v2-test-Q103569-P57-mixed_name", "movie_id": "Q103569", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q56005"]}
+{"question_id": "zh-controlled-v2-test-Q103569-P136-canonical", "movie_id": "Q103569", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q157394", "Q188473", "Q200092", "Q319221", "Q471839", "Q1200678", "Q1342372", "Q1776156", "Q2484376", "Q10663882", "Q11304653", "Q20656232", "Q102260466"]}
+{"question_id": "zh-controlled-v2-test-Q103569-P136-paraphrase", "movie_id": "Q103569", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q157394", "Q188473", "Q200092", "Q319221", "Q471839", "Q1200678", "Q1342372", "Q1776156", "Q2484376", "Q10663882", "Q11304653", "Q20656232", "Q102260466"]}
+{"question_id": "zh-controlled-v2-test-Q103569-P136-mixed_name", "movie_id": "Q103569", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q157394", "Q188473", "Q200092", "Q319221", "Q471839", "Q1200678", "Q1342372", "Q1776156", "Q2484376", "Q10663882", "Q11304653", "Q20656232", "Q102260466"]}
+{"question_id": "zh-controlled-v2-test-Q103569-P495-canonical", "movie_id": "Q103569", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30", "Q145"]}
+{"question_id": "zh-controlled-v2-test-Q103569-P495-paraphrase", "movie_id": "Q103569", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30", "Q145"]}
+{"question_id": "zh-controlled-v2-test-Q103569-P495-mixed_name", "movie_id": "Q103569", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30", "Q145"]}
+{"question_id": "zh-controlled-v2-test-Q103569-P364-canonical", "movie_id": "Q103569", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-test-Q103569-P364-paraphrase", "movie_id": "Q103569", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-test-Q103569-P364-mixed_name", "movie_id": "Q103569", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-test-Q1042931-P57-canonical", "movie_id": "Q1042931", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q51575"]}
+{"question_id": "zh-controlled-v2-test-Q1042931-P57-paraphrase", "movie_id": "Q1042931", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q51575"]}
+{"question_id": "zh-controlled-v2-test-Q1042931-P57-mixed_name", "movie_id": "Q1042931", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q51575"]}
+{"question_id": "zh-controlled-v2-test-Q1042931-P136-canonical", "movie_id": "Q1042931", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q130232", "Q319221"]}
+{"question_id": "zh-controlled-v2-test-Q1042931-P136-paraphrase", "movie_id": "Q1042931", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q130232", "Q319221"]}
+{"question_id": "zh-controlled-v2-test-Q1042931-P136-mixed_name", "movie_id": "Q1042931", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q130232", "Q319221"]}
+{"question_id": "zh-controlled-v2-test-Q1042931-P495-canonical", "movie_id": "Q1042931", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30", "Q145", "Q408"]}
+{"question_id": "zh-controlled-v2-test-Q1042931-P495-paraphrase", "movie_id": "Q1042931", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30", "Q145", "Q408"]}
+{"question_id": "zh-controlled-v2-test-Q1042931-P495-mixed_name", "movie_id": "Q1042931", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30", "Q145", "Q408"]}
+{"question_id": "zh-controlled-v2-test-Q1042931-P364-canonical", "movie_id": "Q1042931", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-test-Q1042931-P364-paraphrase", "movie_id": "Q1042931", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-test-Q1042931-P364-mixed_name", "movie_id": "Q1042931", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-test-Q1044523-P57-canonical", "movie_id": "Q1044523", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q434585"]}
+{"question_id": "zh-controlled-v2-test-Q1044523-P57-paraphrase", "movie_id": "Q1044523", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q434585"]}
+{"question_id": "zh-controlled-v2-test-Q1044523-P57-mixed_name", "movie_id": "Q1044523", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q434585"]}
+{"question_id": "zh-controlled-v2-test-Q1044523-P136-canonical", "movie_id": "Q1044523", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q157443"]}
+{"question_id": "zh-controlled-v2-test-Q1044523-P136-paraphrase", "movie_id": "Q1044523", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q157443"]}
+{"question_id": "zh-controlled-v2-test-Q1044523-P136-mixed_name", "movie_id": "Q1044523", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q157443"]}
+{"question_id": "zh-controlled-v2-test-Q1044523-P495-canonical", "movie_id": "Q1044523", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-test-Q1044523-P495-paraphrase", "movie_id": "Q1044523", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-test-Q1044523-P495-mixed_name", "movie_id": "Q1044523", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-test-Q1044523-P364-canonical", "movie_id": "Q1044523", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-test-Q1044523-P364-paraphrase", "movie_id": "Q1044523", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-test-Q1044523-P364-mixed_name", "movie_id": "Q1044523", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-test-Q1050815-P57-canonical", "movie_id": "Q1050815", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q107404"]}
+{"question_id": "zh-controlled-v2-test-Q1050815-P57-paraphrase", "movie_id": "Q1050815", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q107404"]}
+{"question_id": "zh-controlled-v2-test-Q1050815-P57-mixed_name", "movie_id": "Q1050815", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q107404"]}
+{"question_id": "zh-controlled-v2-test-Q1050815-P136-canonical", "movie_id": "Q1050815", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q200092", "Q853630", "Q2484376"]}
+{"question_id": "zh-controlled-v2-test-Q1050815-P136-paraphrase", "movie_id": "Q1050815", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q200092", "Q853630", "Q2484376"]}
+{"question_id": "zh-controlled-v2-test-Q1050815-P136-mixed_name", "movie_id": "Q1050815", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q200092", "Q853630", "Q2484376"]}
+{"question_id": "zh-controlled-v2-test-Q1050815-P495-canonical", "movie_id": "Q1050815", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-test-Q1050815-P495-paraphrase", "movie_id": "Q1050815", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-test-Q1050815-P495-mixed_name", "movie_id": "Q1050815", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-test-Q1050815-P364-canonical", "movie_id": "Q1050815", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-test-Q1050815-P364-paraphrase", "movie_id": "Q1050815", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-test-Q1050815-P364-mixed_name", "movie_id": "Q1050815", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-test-Q1052826-P57-canonical", "movie_id": "Q1052826", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q25089"]}
+{"question_id": "zh-controlled-v2-test-Q1052826-P57-paraphrase", "movie_id": "Q1052826", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q25089"]}
+{"question_id": "zh-controlled-v2-test-Q1052826-P57-mixed_name", "movie_id": "Q1052826", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q25089"]}
+{"question_id": "zh-controlled-v2-test-Q1052826-P136-canonical", "movie_id": "Q1052826", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q157443", "Q859369"]}
+{"question_id": "zh-controlled-v2-test-Q1052826-P136-paraphrase", "movie_id": "Q1052826", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q157443", "Q859369"]}
+{"question_id": "zh-controlled-v2-test-Q1052826-P136-mixed_name", "movie_id": "Q1052826", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q157443", "Q859369"]}
+{"question_id": "zh-controlled-v2-test-Q1052826-P495-canonical", "movie_id": "Q1052826", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-test-Q1052826-P495-paraphrase", "movie_id": "Q1052826", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-test-Q1052826-P495-mixed_name", "movie_id": "Q1052826", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-test-Q1052826-P364-canonical", "movie_id": "Q1052826", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-test-Q1052826-P364-paraphrase", "movie_id": "Q1052826", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-test-Q1052826-P364-mixed_name", "movie_id": "Q1052826", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-test-Q105359456-P57-canonical", "movie_id": "Q105359456", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q944763"]}
+{"question_id": "zh-controlled-v2-test-Q105359456-P57-paraphrase", "movie_id": "Q105359456", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q944763"]}
+{"question_id": "zh-controlled-v2-test-Q105359456-P57-mixed_name", "movie_id": "Q105359456", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q944763"]}
+{"question_id": "zh-controlled-v2-test-Q105359456-P136-canonical", "movie_id": "Q105359456", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q157394", "Q157443", "Q188473", "Q319221", "Q471839", "Q2484376"]}
+{"question_id": "zh-controlled-v2-test-Q105359456-P136-paraphrase", "movie_id": "Q105359456", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q157394", "Q157443", "Q188473", "Q319221", "Q471839", "Q2484376"]}
+{"question_id": "zh-controlled-v2-test-Q105359456-P136-mixed_name", "movie_id": "Q105359456", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q157394", "Q157443", "Q188473", "Q319221", "Q471839", "Q2484376"]}
+{"question_id": "zh-controlled-v2-test-Q105359456-P495-canonical", "movie_id": "Q105359456", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-test-Q105359456-P495-paraphrase", "movie_id": "Q105359456", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-test-Q105359456-P495-mixed_name", "movie_id": "Q105359456", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-test-Q105359456-P364-canonical", "movie_id": "Q105359456", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-test-Q105359456-P364-paraphrase", "movie_id": "Q105359456", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-test-Q105359456-P364-mixed_name", "movie_id": "Q105359456", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-test-Q1055332-P57-canonical", "movie_id": "Q1055332", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q56094"]}
+{"question_id": "zh-controlled-v2-test-Q1055332-P57-paraphrase", "movie_id": "Q1055332", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q56094"]}
+{"question_id": "zh-controlled-v2-test-Q1055332-P57-mixed_name", "movie_id": "Q1055332", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q56094"]}
+{"question_id": "zh-controlled-v2-test-Q1055332-P136-canonical", "movie_id": "Q1055332", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q130232", "Q1146335", "Q102429885"]}
+{"question_id": "zh-controlled-v2-test-Q1055332-P136-paraphrase", "movie_id": "Q1055332", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q130232", "Q1146335", "Q102429885"]}
+{"question_id": "zh-controlled-v2-test-Q1055332-P136-mixed_name", "movie_id": "Q1055332", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q130232", "Q1146335", "Q102429885"]}
+{"question_id": "zh-controlled-v2-test-Q1055332-P495-canonical", "movie_id": "Q1055332", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-test-Q1055332-P495-paraphrase", "movie_id": "Q1055332", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-test-Q1055332-P495-mixed_name", "movie_id": "Q1055332", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-test-Q1055332-P364-canonical", "movie_id": "Q1055332", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-test-Q1055332-P364-paraphrase", "movie_id": "Q1055332", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-test-Q1055332-P364-mixed_name", "movie_id": "Q1055332", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-test-Q1058555-P57-canonical", "movie_id": "Q1058555", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q446960"]}
+{"question_id": "zh-controlled-v2-test-Q1058555-P57-paraphrase", "movie_id": "Q1058555", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q446960"]}
+{"question_id": "zh-controlled-v2-test-Q1058555-P57-mixed_name", "movie_id": "Q1058555", "relation_id": "P57", "expected_refusal": false, "answer_ids": ["Q446960"]}
+{"question_id": "zh-controlled-v2-test-Q1058555-P136-canonical", "movie_id": "Q1058555", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q130232"]}
+{"question_id": "zh-controlled-v2-test-Q1058555-P136-paraphrase", "movie_id": "Q1058555", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q130232"]}
+{"question_id": "zh-controlled-v2-test-Q1058555-P136-mixed_name", "movie_id": "Q1058555", "relation_id": "P136", "expected_refusal": false, "answer_ids": ["Q130232"]}
+{"question_id": "zh-controlled-v2-test-Q1058555-P495-canonical", "movie_id": "Q1058555", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-test-Q1058555-P495-paraphrase", "movie_id": "Q1058555", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-test-Q1058555-P495-mixed_name", "movie_id": "Q1058555", "relation_id": "P495", "expected_refusal": false, "answer_ids": ["Q30"]}
+{"question_id": "zh-controlled-v2-test-Q1058555-P364-canonical", "movie_id": "Q1058555", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-test-Q1058555-P364-paraphrase", "movie_id": "Q1058555", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-test-Q1058555-P364-mixed_name", "movie_id": "Q1058555", "relation_id": "P364", "expected_refusal": false, "answer_ids": ["Q1860"]}
+{"question_id": "zh-controlled-v2-test-negative-actor", "movie_id": null, "relation_id": null, "expected_refusal": true, "answer_ids": []}
+{"question_id": "zh-controlled-v2-test-negative-release_time", "movie_id": null, "relation_id": null, "expected_refusal": true, "answer_ids": []}
+{"question_id": "zh-controlled-v2-test-negative-multiple_relations", "movie_id": null, "relation_id": null, "expected_refusal": true, "answer_ids": []}
+{"question_id": "zh-controlled-v2-test-negative-two_movies", "movie_id": null, "relation_id": null, "expected_refusal": true, "answer_ids": []}
+{"question_id": "zh-controlled-v2-test-negative-unknown_title", "movie_id": null, "relation_id": null, "expected_refusal": true, "answer_ids": []}
+{"question_id": "zh-controlled-v2-test-negative-negative_director", "movie_id": null, "relation_id": null, "expected_refusal": true, "answer_ids": []}
+{"question_id": "zh-controlled-v2-test-negative-runtime", "movie_id": null, "relation_id": null, "expected_refusal": true, "answer_ids": []}
+{"question_id": "zh-controlled-v2-test-negative-plot", "movie_id": null, "relation_id": null, "expected_refusal": true, "answer_ids": []}
+{"question_id": "zh-controlled-v2-test-negative-budget", "movie_id": null, "relation_id": null, "expected_refusal": true, "answer_ids": []}
+{"question_id": "zh-controlled-v2-test-negative-two_quoted_titles", "movie_id": null, "relation_id": null, "expected_refusal": true, "answer_ids": []}

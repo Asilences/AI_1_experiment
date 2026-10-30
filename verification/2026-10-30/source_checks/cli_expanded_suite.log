@@ -1,0 +1,18 @@
+usage: expanded_suite.py [-h] --work-dir WORK_DIR [--resume]
+                         [--model-name MODEL_NAME] [--batch-size BATCH_SIZE]
+                         [--eval-batch-size EVAL_BATCH_SIZE]
+                         [--input-max-length INPUT_MAX_LENGTH]
+
+Offline, isolated 5000-film suite; checkpoints remain under WORK/project.
+Resume only reuses hash-verified complete stages. A failed/interrupted stage
+requires a new work directory; this runner never overwrites its partial
+output.
+
+options:
+  -h, --help            show this help message and exit
+  --work-dir WORK_DIR
+  --resume
+  --model-name MODEL_NAME
+  --batch-size BATCH_SIZE
+  --eval-batch-size EVAL_BATCH_SIZE
+  --input-max-length INPUT_MAX_LENGTH

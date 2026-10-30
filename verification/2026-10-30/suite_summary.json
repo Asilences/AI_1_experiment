@@ -1,0 +1,522 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "config": {
+    "seed": 42,
+    "epochs": 5,
+    "transe_epochs": 100,
+    "batch_size": 8,
+    "eval_batch_size": 64,
+    "gradient_accumulation": 2,
+    "input_max_length": 512,
+    "target_max_length": 96,
+    "torch_threads": 4,
+    "generation_precision": "float32",
+    "runner_source_sha256": "2ac4b33fa38910e1d3fd5cc455155b6b894354689783c1770e444fa2412e029f",
+    "model": "0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab",
+    "pretrained_sha256": {
+      "config.json": "439aa0fecf5a5546a1def68b1fc45e538e2c94528ce805378daf091e2bf6e4de",
+      "generation_config.json": "f5a1c7e2be8092018d8835128987edf0111637dd98e90599cc80310fef75d95a",
+      "model.safetensors": "495fa51e204676f1a857a9fc13c4c89f3f5ba9f480b898cebca02add25e6d749",
+      "special_tokens_map.json": "5c87151ef0f72a99d1f766a4c418bd2a1f90aaa30a8e22fe5eca9641daebb64f",
+      "spiece.model": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86",
+      "tokenizer.json": "fe2ebbbbde2985be723e0ce18217853e4020c5e9d35bd07be2c27ab9d3ead57a",
+      "tokenizer_config.json": "fcde0f79bffda3688119c94330866a8fbf8de20ae65a8c492c9bd47c704655a0"
+    }
+  },
+  "runs": [
+    {
+      "run_id": "B0",
+      "learning_rate": 0.0001,
+      "use_embeddings": true,
+      "valid": {
+        "count": 8857,
+        "entity_exact": 99.72902788754658,
+        "entity_macro_f1": 99.77870610816304,
+        "bleu": 99.80900500239837,
+        "rouge_l": 99.87811390693399,
+        "by_relation": {
+          "P57": {
+            "exact": 99.06040268456375,
+            "f1": 99.14988814317674,
+            "count": 2235
+          },
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 1356
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2229
+          },
+          "P364": {
+            "exact": 99.86559139784946,
+            "f1": 99.97311827956989,
+            "count": 2232
+          },
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 805
+          }
+        },
+        "answerable_count": 8052,
+        "refusal_count": 805,
+        "answerable_entity_exact": 99.70193740685544,
+        "answerable_entity_macro_f1": 99.75658221559861,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 11.97476371231327,
+        "latency_p95_ms": 15.840124999954242,
+        "gold_total": 8857,
+        "prediction_coverage": 100.0
+      },
+      "test": {
+        "count": 8917,
+        "entity_exact": 99.49534596837502,
+        "entity_macro_f1": 99.49534596837502,
+        "bleu": 99.77551051994016,
+        "rouge_l": 99.89321992114122,
+        "by_relation": {
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 1416
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2214
+          },
+          "P364": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2238
+          },
+          "P57": {
+            "exact": 97.98927613941018,
+            "f1": 97.98927613941018,
+            "count": 2238
+          },
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 811
+          }
+        },
+        "answerable_count": 8106,
+        "refusal_count": 811,
+        "answerable_entity_exact": 99.44485566247224,
+        "answerable_entity_macro_f1": 99.44485566247224,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 11.792072322518463,
+        "latency_p95_ms": 14.841156249985943,
+        "gold_total": 8917,
+        "prediction_coverage": 100.0
+      },
+      "selection": {
+        "best_valid_f1": 99.77870610816304,
+        "best_epoch": 3,
+        "validation_entity_linking": true,
+        "training_seconds": 5670.208741499999
+      }
+    },
+    {
+      "run_id": "B1",
+      "learning_rate": 3e-05,
+      "use_embeddings": true,
+      "valid": {
+        "count": 8857,
+        "entity_exact": 99.72902788754658,
+        "entity_macro_f1": 99.77870610816304,
+        "bleu": 99.82931357719812,
+        "rouge_l": 99.88739843547685,
+        "by_relation": {
+          "P57": {
+            "exact": 99.06040268456375,
+            "f1": 99.14988814317674,
+            "count": 2235
+          },
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 1356
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2229
+          },
+          "P364": {
+            "exact": 99.86559139784946,
+            "f1": 99.97311827956989,
+            "count": 2232
+          },
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 805
+          }
+        },
+        "answerable_count": 8052,
+        "refusal_count": 805,
+        "answerable_entity_exact": 99.70193740685544,
+        "answerable_entity_macro_f1": 99.75658221559861,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 11.886814734111551,
+        "latency_p95_ms": 15.56074531242757,
+        "gold_total": 8857,
+        "prediction_coverage": 100.0
+      },
+      "test": {
+        "count": 8917,
+        "entity_exact": 99.49534596837502,
+        "entity_macro_f1": 99.49534596837502,
+        "bleu": 99.77551051994016,
+        "rouge_l": 99.89321992114122,
+        "by_relation": {
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 1416
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2214
+          },
+          "P364": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2238
+          },
+          "P57": {
+            "exact": 97.98927613941018,
+            "f1": 97.98927613941018,
+            "count": 2238
+          },
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 811
+          }
+        },
+        "answerable_count": 8106,
+        "refusal_count": 811,
+        "answerable_entity_exact": 99.44485566247224,
+        "answerable_entity_macro_f1": 99.44485566247224,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 11.676575137376258,
+        "latency_p95_ms": 15.10078281251026,
+        "gold_total": 8917,
+        "prediction_coverage": 100.0
+      },
+      "selection": {
+        "best_valid_f1": 99.77870610816304,
+        "best_epoch": 1,
+        "validation_entity_linking": true,
+        "training_seconds": 5624.958602600003
+      }
+    },
+    {
+      "run_id": "B2",
+      "learning_rate": 0.0003,
+      "use_embeddings": true,
+      "valid": {
+        "count": 8857,
+        "entity_exact": 99.72902788754658,
+        "entity_macro_f1": 99.77870610816304,
+        "bleu": 99.72622569004915,
+        "rouge_l": 99.86488234107804,
+        "by_relation": {
+          "P57": {
+            "exact": 99.06040268456375,
+            "f1": 99.14988814317674,
+            "count": 2235
+          },
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 1356
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2229
+          },
+          "P364": {
+            "exact": 99.86559139784946,
+            "f1": 99.97311827956989,
+            "count": 2232
+          },
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 805
+          }
+        },
+        "answerable_count": 8052,
+        "refusal_count": 805,
+        "answerable_entity_exact": 99.70193740685544,
+        "answerable_entity_macro_f1": 99.75658221559861,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 11.885870317263741,
+        "latency_p95_ms": 15.686387499954435,
+        "gold_total": 8857,
+        "prediction_coverage": 100.0
+      },
+      "test": {
+        "count": 8917,
+        "entity_exact": 99.42805876415835,
+        "entity_macro_f1": 99.42805876415835,
+        "bleu": 99.76230579673796,
+        "rouge_l": 99.88841369226861,
+        "by_relation": {
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 1416
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2214
+          },
+          "P364": {
+            "exact": 99.86595174262735,
+            "f1": 99.86595174262735,
+            "count": 2238
+          },
+          "P57": {
+            "exact": 97.85522788203752,
+            "f1": 97.85522788203752,
+            "count": 2238
+          },
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 811
+          }
+        },
+        "answerable_count": 8106,
+        "refusal_count": 811,
+        "answerable_entity_exact": 99.37083641746854,
+        "answerable_entity_macro_f1": 99.37083641746854,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 12.058134047320975,
+        "latency_p95_ms": 16.029545312449045,
+        "gold_total": 8917,
+        "prediction_coverage": 100.0
+      },
+      "selection": {
+        "best_valid_f1": 99.77870610816304,
+        "best_epoch": 1,
+        "validation_entity_linking": true,
+        "training_seconds": 6725.126046600002
+      }
+    },
+    {
+      "run_id": "B3",
+      "learning_rate": 0.001,
+      "use_embeddings": true,
+      "valid": {
+        "count": 8857,
+        "entity_exact": 99.66128485943322,
+        "entity_macro_f1": 99.76515750254036,
+        "bleu": 99.72402030113251,
+        "rouge_l": 99.85613214602651,
+        "by_relation": {
+          "P57": {
+            "exact": 99.06040268456375,
+            "f1": 99.14988814317674,
+            "count": 2235
+          },
+          "P136": {
+            "exact": 99.5575221238938,
+            "f1": 99.91150442477877,
+            "count": 1356
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2229
+          },
+          "P364": {
+            "exact": 99.86559139784946,
+            "f1": 99.97311827956989,
+            "count": 2232
+          },
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 805
+          }
+        },
+        "answerable_count": 8052,
+        "refusal_count": 805,
+        "answerable_entity_exact": 99.6274217585693,
+        "answerable_entity_macro_f1": 99.74167908594139,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 11.11164554589181,
+        "latency_p95_ms": 14.458381250051389,
+        "gold_total": 8857,
+        "prediction_coverage": 100.0
+      },
+      "test": {
+        "count": 8917,
+        "entity_exact": 99.42805876415835,
+        "entity_macro_f1": 99.48188852753168,
+        "bleu": 99.56747014678446,
+        "rouge_l": 99.80441508652494,
+        "by_relation": {
+          "P136": {
+            "exact": 99.57627118644068,
+            "f1": 99.91525423728814,
+            "count": 1416
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2214
+          },
+          "P364": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2238
+          },
+          "P57": {
+            "exact": 97.98927613941018,
+            "f1": 97.98927613941018,
+            "count": 2238
+          },
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 811
+          }
+        },
+        "answerable_count": 8106,
+        "refusal_count": 811,
+        "answerable_entity_exact": 99.37083641746854,
+        "answerable_entity_macro_f1": 99.4300518134715,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 11.085138219122568,
+        "latency_p95_ms": 14.450712500092777,
+        "gold_total": 8917,
+        "prediction_coverage": 100.0
+      },
+      "selection": {
+        "best_valid_f1": 99.76515750254036,
+        "best_epoch": 4,
+        "validation_entity_linking": true,
+        "training_seconds": 6804.704608500004
+      }
+    },
+    {
+      "run_id": "C0",
+      "learning_rate": 0.0001,
+      "use_embeddings": false,
+      "valid": {
+        "count": 8857,
+        "entity_exact": 99.72902788754658,
+        "entity_macro_f1": 99.77870610816304,
+        "bleu": 99.76546781153809,
+        "rouge_l": 99.865736105684,
+        "by_relation": {
+          "P57": {
+            "exact": 99.06040268456375,
+            "f1": 99.14988814317674,
+            "count": 2235
+          },
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 1356
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2229
+          },
+          "P364": {
+            "exact": 99.86559139784946,
+            "f1": 99.97311827956989,
+            "count": 2232
+          },
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 805
+          }
+        },
+        "answerable_count": 8052,
+        "refusal_count": 805,
+        "answerable_entity_exact": 99.70193740685544,
+        "answerable_entity_macro_f1": 99.75658221559861,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 11.380442181323456,
+        "latency_p95_ms": 14.610635937515326,
+        "gold_total": 8857,
+        "prediction_coverage": 100.0
+      },
+      "test": {
+        "count": 8917,
+        "entity_exact": 99.49534596837502,
+        "entity_macro_f1": 99.49534596837502,
+        "bleu": 99.772267831008,
+        "rouge_l": 99.89321992114122,
+        "by_relation": {
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 1416
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2214
+          },
+          "P364": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2238
+          },
+          "P57": {
+            "exact": 97.98927613941018,
+            "f1": 97.98927613941018,
+            "count": 2238
+          },
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 811
+          }
+        },
+        "answerable_count": 8106,
+        "refusal_count": 811,
+        "answerable_entity_exact": 99.44485566247224,
+        "answerable_entity_macro_f1": 99.44485566247224,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 10.643701984961092,
+        "latency_p95_ms": 13.591434375030076,
+        "gold_total": 8917,
+        "prediction_coverage": 100.0
+      },
+      "selection": {
+        "best_valid_f1": 99.77870610816304,
+        "best_epoch": 1,
+        "validation_entity_linking": true,
+        "training_seconds": 6135.215196299992
+      }
+    }
+  ],
+  "selected_run": "B0",
+  "selection_split": "valid",
+  "selection_metric": "entity_macro_f1",
+  "tie_break": "smallest B run ID",
+  "excluded_from_selection": [
+    "C0"
+  ],
+  "input_manifest": "input_manifest.json"
+}

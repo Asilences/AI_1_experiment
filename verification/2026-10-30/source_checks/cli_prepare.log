@@ -1,0 +1,12 @@
+usage: prepare.py [-h] --snapshot SNAPSHOT [--output-dir OUTPUT_DIR]
+                  [--base-splits BASE_SPLITS]
+
+options:
+  -h, --help            show this help message and exit
+  --snapshot SNAPSHOT
+  --output-dir OUTPUT_DIR
+                        New isolated output directory; existing files are
+                        never overwritten.
+  --base-splits BASE_SPLITS
+                        Preserve movie assignments from a previous
+                        splits.json.

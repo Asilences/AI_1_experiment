@@ -18,7 +18,7 @@ def test_graph_and_linking_use_explicit_dataset_and_embeddings(tmp_path):
     np.savez(embeddings / 'embeddings.npz', entity=np.zeros((2, 100)), relation=np.zeros((1, 100)))
     graph = GraphData(True, data, embeddings)
     assert graph.facts('Q1')[0][1].shape == (300,)
-    rows = [{'question': 'Who directed Example Film?', 'reference_answers': ['Example Director.'], 'movie_id': 'Q1'}]
+    rows = [{'question_id': 'q', 'question': 'Who directed Example Film?', 'reference_answers': ['Example Director.'], 'movie_id': 'Q1'}]
     dataset = QADataset(rows, graph, link_questions=True)
     assert dataset.linked_movie_ids == ['Q1'] and 'Example Director' in dataset[0]['text']
 

@@ -1,0 +1,51 @@
+{
+  "scope": "Byte-identical actual post-diagnostic A0 threshold evidence; public runner adapts paths/CLI only.",
+  "original_runner": "runner_original.py",
+  "original_runner_sha256": "eb83044184dcafa8e036914526756921bbd44921d82dbd6c94ebff4e6950da4d",
+  "public_runner": "../../benchmarks/run_report_threshold_sensitivity.py",
+  "public_runner_sha256": "59c6eb74c93b56f4eeb5432f5386636092405f1b3ef472534c28fa142ea9ce11",
+  "path_adaptation_only": true,
+  "prediction_scoring_protocol_unchanged": true,
+  "actual_files": {
+    "summary.json": {
+      "bytes": 10200,
+      "sha256": "6b7ec0a94e11b2d0ac2dcab88e88c8bec5071936b930f453d652601dfc8a852b"
+    },
+    "threshold_0.300.jsonl": {
+      "bytes": 3723430,
+      "sha256": "d9ae9436943d03e901990cd88ff6bc439d8fff8d60225d328ce4677d4172b808"
+    },
+    "threshold_0.300_metrics.json": {
+      "bytes": 1246,
+      "sha256": "132e2d182d2c7f45bf787f7f79969dead2a1eac38a8ba5bcc43dd1631d549ef1"
+    },
+    "threshold_0.995.jsonl": {
+      "bytes": 3723416,
+      "sha256": "132c0d48e206830a538de9064332e997257c93deff1e5b3eaa58499fcdd7b836"
+    },
+    "threshold_0.995_metrics.json": {
+      "bytes": 1248,
+      "sha256": "4b0c680dacc2fe84a86962702d5364d0dc868c69589912d952e634fe8877ab2e"
+    },
+    "threshold_0.998.jsonl": {
+      "bytes": 3604602,
+      "sha256": "5f406bb794fd194844b67c1571bb34086d42ba9ac4ef893707fbeb3eb220b5cf"
+    },
+    "threshold_0.998_metrics.json": {
+      "bytes": 1300,
+      "sha256": "754f73a808eb380e05c11f9d6a5b3a909bae9d760c7ec3e7e3e28d3e3916cc9c"
+    },
+    "threshold_0.999.jsonl": {
+      "bytes": 3588127,
+      "sha256": "a94438615e2b5b1abc1ad670c80eec35ed85f8193c452219b8befd1e6946e7b2"
+    },
+    "threshold_0.999_metrics.json": {
+      "bytes": 1256,
+      "sha256": "78eead5a8824f9977eb6a8b0b4eeeeab22a2d7c72cb1e6669aad69bbd909ffbc"
+    },
+    "runner_original.py": {
+      "bytes": 4298,
+      "sha256": "eb83044184dcafa8e036914526756921bbd44921d82dbd6c94ebff4e6950da4d"
+    }
+  }
+}

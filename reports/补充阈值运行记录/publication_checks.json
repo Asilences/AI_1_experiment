@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "scope": "Supplemental report runner path/CLI adaptation; no retraining or experiment rerun.",
+  "checks": {
+    "cli_help": "PASS",
+    "python_compile": "PASS",
+    "ruff_fatal_errors": "PASS",
+    "existing_output_refused": "PASS",
+    "nine_actual_output_files_byte_identical": "PASS",
+    "original_runner_byte_identical": "PASS",
+    "prediction_scoring_loop_identical": "PASS",
+    "frozen_kgqa_data_model_sha256_unchanged": "PASS",
+    "public_text_private_path_scan": "PASS"
+  }
+}

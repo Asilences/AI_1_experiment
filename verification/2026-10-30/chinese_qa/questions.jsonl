@@ -1,0 +1,260 @@
+{"question_id": "zh-controlled-v1-valid-Q1003845-P57-canonical", "split": "valid", "variant": "canonical", "question": "《黑洞頻率》的导演是谁？"}
+{"question_id": "zh-controlled-v1-valid-Q1003845-P57-paraphrase", "split": "valid", "variant": "paraphrase", "question": "谁执导了《黑洞頻率》？"}
+{"question_id": "zh-controlled-v1-valid-Q1003845-P57-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请问《Frequency》是哪位导演拍的？"}
+{"question_id": "zh-controlled-v1-valid-Q1003845-P136-canonical", "split": "valid", "variant": "canonical", "question": "《黑洞頻率》是什么类型？"}
+{"question_id": "zh-controlled-v1-valid-Q1003845-P136-paraphrase", "split": "valid", "variant": "paraphrase", "question": "《黑洞頻率》属于哪种流派？"}
+{"question_id": "zh-controlled-v1-valid-Q1003845-P136-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请告诉我《Frequency》的电影类别。"}
+{"question_id": "zh-controlled-v1-valid-Q1003845-P495-canonical", "split": "valid", "variant": "canonical", "question": "《黑洞頻率》的制片国家是哪里？"}
+{"question_id": "zh-controlled-v1-valid-Q1003845-P495-paraphrase", "split": "valid", "variant": "paraphrase", "question": "《黑洞頻率》来自哪个国家？"}
+{"question_id": "zh-controlled-v1-valid-Q1003845-P495-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请问《Frequency》的出品国是哪里？"}
+{"question_id": "zh-controlled-v1-valid-Q1003845-P364-canonical", "split": "valid", "variant": "canonical", "question": "《黑洞頻率》的原始语言是什么？"}
+{"question_id": "zh-controlled-v1-valid-Q1003845-P364-paraphrase", "split": "valid", "variant": "paraphrase", "question": "《黑洞頻率》使用什么语种？"}
+{"question_id": "zh-controlled-v1-valid-Q1003845-P364-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请问《Frequency》的原声是什么语言？"}
+{"question_id": "zh-controlled-v1-valid-Q101069738-P57-canonical", "split": "valid", "variant": "canonical", "question": "《惡靈古堡首部曲：拉昆市》的导演是谁？"}
+{"question_id": "zh-controlled-v1-valid-Q101069738-P57-paraphrase", "split": "valid", "variant": "paraphrase", "question": "谁执导了《惡靈古堡首部曲：拉昆市》？"}
+{"question_id": "zh-controlled-v1-valid-Q101069738-P57-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请问《Resident Evil: Welcome to Raccoon City》是哪位导演拍的？"}
+{"question_id": "zh-controlled-v1-valid-Q101069738-P136-canonical", "split": "valid", "variant": "canonical", "question": "《惡靈古堡首部曲：拉昆市》是什么类型？"}
+{"question_id": "zh-controlled-v1-valid-Q101069738-P136-paraphrase", "split": "valid", "variant": "paraphrase", "question": "《惡靈古堡首部曲：拉昆市》属于哪种流派？"}
+{"question_id": "zh-controlled-v1-valid-Q101069738-P136-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请告诉我《Resident Evil: Welcome to Raccoon City》的电影类别。"}
+{"question_id": "zh-controlled-v1-valid-Q101069738-P495-canonical", "split": "valid", "variant": "canonical", "question": "《惡靈古堡首部曲：拉昆市》的制片国家是哪里？"}
+{"question_id": "zh-controlled-v1-valid-Q101069738-P495-paraphrase", "split": "valid", "variant": "paraphrase", "question": "《惡靈古堡首部曲：拉昆市》来自哪个国家？"}
+{"question_id": "zh-controlled-v1-valid-Q101069738-P495-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请问《Resident Evil: Welcome to Raccoon City》的出品国是哪里？"}
+{"question_id": "zh-controlled-v1-valid-Q101069738-P364-canonical", "split": "valid", "variant": "canonical", "question": "《惡靈古堡首部曲：拉昆市》的原始语言是什么？"}
+{"question_id": "zh-controlled-v1-valid-Q101069738-P364-paraphrase", "split": "valid", "variant": "paraphrase", "question": "《惡靈古堡首部曲：拉昆市》使用什么语种？"}
+{"question_id": "zh-controlled-v1-valid-Q101069738-P364-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请问《Resident Evil: Welcome to Raccoon City》的原声是什么语言？"}
+{"question_id": "zh-controlled-v1-valid-Q101666960-P57-canonical", "split": "valid", "variant": "canonical", "question": "《接線追緝》的导演是谁？"}
+{"question_id": "zh-controlled-v1-valid-Q101666960-P57-paraphrase", "split": "valid", "variant": "paraphrase", "question": "谁执导了《接線追緝》？"}
+{"question_id": "zh-controlled-v1-valid-Q101666960-P57-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请问《The Guilty (2021)》是哪位导演拍的？"}
+{"question_id": "zh-controlled-v1-valid-Q101666960-P136-canonical", "split": "valid", "variant": "canonical", "question": "《接線追緝》是什么类型？"}
+{"question_id": "zh-controlled-v1-valid-Q101666960-P136-paraphrase", "split": "valid", "variant": "paraphrase", "question": "《接線追緝》属于哪种流派？"}
+{"question_id": "zh-controlled-v1-valid-Q101666960-P136-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请告诉我《The Guilty (2021)》的电影类别。"}
+{"question_id": "zh-controlled-v1-valid-Q101666960-P495-canonical", "split": "valid", "variant": "canonical", "question": "《接線追緝》的制片国家是哪里？"}
+{"question_id": "zh-controlled-v1-valid-Q101666960-P495-paraphrase", "split": "valid", "variant": "paraphrase", "question": "《接線追緝》来自哪个国家？"}
+{"question_id": "zh-controlled-v1-valid-Q101666960-P495-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请问《The Guilty (2021)》的出品国是哪里？"}
+{"question_id": "zh-controlled-v1-valid-Q101666960-P364-canonical", "split": "valid", "variant": "canonical", "question": "《接線追緝》的原始语言是什么？"}
+{"question_id": "zh-controlled-v1-valid-Q101666960-P364-paraphrase", "split": "valid", "variant": "paraphrase", "question": "《接線追緝》使用什么语种？"}
+{"question_id": "zh-controlled-v1-valid-Q101666960-P364-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请问《The Guilty (2021)》的原声是什么语言？"}
+{"question_id": "zh-controlled-v1-valid-Q102046208-P57-canonical", "split": "valid", "variant": "canonical", "question": "《小鬼當家之耶誕大作戰》的导演是谁？"}
+{"question_id": "zh-controlled-v1-valid-Q102046208-P57-paraphrase", "split": "valid", "variant": "paraphrase", "question": "谁执导了《小鬼當家之耶誕大作戰》？"}
+{"question_id": "zh-controlled-v1-valid-Q102046208-P57-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请问《Home Sweet Home Alone》是哪位导演拍的？"}
+{"question_id": "zh-controlled-v1-valid-Q102046208-P136-canonical", "split": "valid", "variant": "canonical", "question": "《小鬼當家之耶誕大作戰》是什么类型？"}
+{"question_id": "zh-controlled-v1-valid-Q102046208-P136-paraphrase", "split": "valid", "variant": "paraphrase", "question": "《小鬼當家之耶誕大作戰》属于哪种流派？"}
+{"question_id": "zh-controlled-v1-valid-Q102046208-P136-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请告诉我《Home Sweet Home Alone》的电影类别。"}
+{"question_id": "zh-controlled-v1-valid-Q102046208-P495-canonical", "split": "valid", "variant": "canonical", "question": "《小鬼當家之耶誕大作戰》的制片国家是哪里？"}
+{"question_id": "zh-controlled-v1-valid-Q102046208-P495-paraphrase", "split": "valid", "variant": "paraphrase", "question": "《小鬼當家之耶誕大作戰》来自哪个国家？"}
+{"question_id": "zh-controlled-v1-valid-Q102046208-P495-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请问《Home Sweet Home Alone》的出品国是哪里？"}
+{"question_id": "zh-controlled-v1-valid-Q102046208-P364-canonical", "split": "valid", "variant": "canonical", "question": "《小鬼當家之耶誕大作戰》的原始语言是什么？"}
+{"question_id": "zh-controlled-v1-valid-Q102046208-P364-paraphrase", "split": "valid", "variant": "paraphrase", "question": "《小鬼當家之耶誕大作戰》使用什么语种？"}
+{"question_id": "zh-controlled-v1-valid-Q102046208-P364-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请问《Home Sweet Home Alone》的原声是什么语言？"}
+{"question_id": "zh-controlled-v1-valid-Q102754-P57-canonical", "split": "valid", "variant": "canonical", "question": "《鐵金剛勇破神秘島》的导演是谁？"}
+{"question_id": "zh-controlled-v1-valid-Q102754-P57-paraphrase", "split": "valid", "variant": "paraphrase", "question": "谁执导了《鐵金剛勇破神秘島》？"}
+{"question_id": "zh-controlled-v1-valid-Q102754-P57-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请问《Dr. No》是哪位导演拍的？"}
+{"question_id": "zh-controlled-v1-valid-Q102754-P136-canonical", "split": "valid", "variant": "canonical", "question": "《鐵金剛勇破神秘島》是什么类型？"}
+{"question_id": "zh-controlled-v1-valid-Q102754-P136-paraphrase", "split": "valid", "variant": "paraphrase", "question": "《鐵金剛勇破神秘島》属于哪种流派？"}
+{"question_id": "zh-controlled-v1-valid-Q102754-P136-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请告诉我《Dr. No》的电影类别。"}
+{"question_id": "zh-controlled-v1-valid-Q102754-P495-canonical", "split": "valid", "variant": "canonical", "question": "《鐵金剛勇破神秘島》的制片国家是哪里？"}
+{"question_id": "zh-controlled-v1-valid-Q102754-P495-paraphrase", "split": "valid", "variant": "paraphrase", "question": "《鐵金剛勇破神秘島》来自哪个国家？"}
+{"question_id": "zh-controlled-v1-valid-Q102754-P495-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请问《Dr. No》的出品国是哪里？"}
+{"question_id": "zh-controlled-v1-valid-Q102754-P364-canonical", "split": "valid", "variant": "canonical", "question": "《鐵金剛勇破神秘島》的原始语言是什么？"}
+{"question_id": "zh-controlled-v1-valid-Q102754-P364-paraphrase", "split": "valid", "variant": "paraphrase", "question": "《鐵金剛勇破神秘島》使用什么语种？"}
+{"question_id": "zh-controlled-v1-valid-Q102754-P364-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请问《Dr. No》的原声是什么语言？"}
+{"question_id": "zh-controlled-v1-valid-Q10307713-P57-canonical", "split": "valid", "variant": "canonical", "question": "《飢餓遊戲：自由幻夢 終結戰》的导演是谁？"}
+{"question_id": "zh-controlled-v1-valid-Q10307713-P57-paraphrase", "split": "valid", "variant": "paraphrase", "question": "谁执导了《飢餓遊戲：自由幻夢 終結戰》？"}
+{"question_id": "zh-controlled-v1-valid-Q10307713-P57-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请问《The Hunger Games: Mockingjay – Part 2》是哪位导演拍的？"}
+{"question_id": "zh-controlled-v1-valid-Q10307713-P136-canonical", "split": "valid", "variant": "canonical", "question": "《飢餓遊戲：自由幻夢 終結戰》是什么类型？"}
+{"question_id": "zh-controlled-v1-valid-Q10307713-P136-paraphrase", "split": "valid", "variant": "paraphrase", "question": "《飢餓遊戲：自由幻夢 終結戰》属于哪种流派？"}
+{"question_id": "zh-controlled-v1-valid-Q10307713-P136-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请告诉我《The Hunger Games: Mockingjay – Part 2》的电影类别。"}
+{"question_id": "zh-controlled-v1-valid-Q10307713-P495-canonical", "split": "valid", "variant": "canonical", "question": "《飢餓遊戲：自由幻夢 終結戰》的制片国家是哪里？"}
+{"question_id": "zh-controlled-v1-valid-Q10307713-P495-paraphrase", "split": "valid", "variant": "paraphrase", "question": "《飢餓遊戲：自由幻夢 終結戰》来自哪个国家？"}
+{"question_id": "zh-controlled-v1-valid-Q10307713-P495-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请问《The Hunger Games: Mockingjay – Part 2》的出品国是哪里？"}
+{"question_id": "zh-controlled-v1-valid-Q10307713-P364-canonical", "split": "valid", "variant": "canonical", "question": "《飢餓遊戲：自由幻夢 終結戰》的原始语言是什么？"}
+{"question_id": "zh-controlled-v1-valid-Q10307713-P364-paraphrase", "split": "valid", "variant": "paraphrase", "question": "《飢餓遊戲：自由幻夢 終結戰》使用什么语种？"}
+{"question_id": "zh-controlled-v1-valid-Q10307713-P364-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请问《The Hunger Games: Mockingjay – Part 2》的原声是什么语言？"}
+{"question_id": "zh-controlled-v1-valid-Q10384115-P57-canonical", "split": "valid", "variant": "canonical", "question": "《全面進化》的导演是谁？"}
+{"question_id": "zh-controlled-v1-valid-Q10384115-P57-paraphrase", "split": "valid", "variant": "paraphrase", "question": "谁执导了《全面進化》？"}
+{"question_id": "zh-controlled-v1-valid-Q10384115-P57-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请问《Transcendence》是哪位导演拍的？"}
+{"question_id": "zh-controlled-v1-valid-Q10384115-P136-canonical", "split": "valid", "variant": "canonical", "question": "《全面進化》是什么类型？"}
+{"question_id": "zh-controlled-v1-valid-Q10384115-P136-paraphrase", "split": "valid", "variant": "paraphrase", "question": "《全面進化》属于哪种流派？"}
+{"question_id": "zh-controlled-v1-valid-Q10384115-P136-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请告诉我《Transcendence》的电影类别。"}
+{"question_id": "zh-controlled-v1-valid-Q10384115-P495-canonical", "split": "valid", "variant": "canonical", "question": "《全面進化》的制片国家是哪里？"}
+{"question_id": "zh-controlled-v1-valid-Q10384115-P495-paraphrase", "split": "valid", "variant": "paraphrase", "question": "《全面進化》来自哪个国家？"}
+{"question_id": "zh-controlled-v1-valid-Q10384115-P495-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请问《Transcendence》的出品国是哪里？"}
+{"question_id": "zh-controlled-v1-valid-Q10384115-P364-canonical", "split": "valid", "variant": "canonical", "question": "《全面進化》的原始语言是什么？"}
+{"question_id": "zh-controlled-v1-valid-Q10384115-P364-paraphrase", "split": "valid", "variant": "paraphrase", "question": "《全面進化》使用什么语种？"}
+{"question_id": "zh-controlled-v1-valid-Q10384115-P364-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请问《Transcendence》的原声是什么语言？"}
+{"question_id": "zh-controlled-v1-valid-Q1046841-P57-canonical", "split": "valid", "variant": "canonical", "question": "《浮華新世界》的导演是谁？"}
+{"question_id": "zh-controlled-v1-valid-Q1046841-P57-paraphrase", "split": "valid", "variant": "paraphrase", "question": "谁执导了《浮華新世界》？"}
+{"question_id": "zh-controlled-v1-valid-Q1046841-P57-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请问《Vanity Fair》是哪位导演拍的？"}
+{"question_id": "zh-controlled-v1-valid-Q1046841-P136-canonical", "split": "valid", "variant": "canonical", "question": "《浮華新世界》是什么类型？"}
+{"question_id": "zh-controlled-v1-valid-Q1046841-P136-paraphrase", "split": "valid", "variant": "paraphrase", "question": "《浮華新世界》属于哪种流派？"}
+{"question_id": "zh-controlled-v1-valid-Q1046841-P136-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请告诉我《Vanity Fair》的电影类别。"}
+{"question_id": "zh-controlled-v1-valid-Q1046841-P495-canonical", "split": "valid", "variant": "canonical", "question": "《浮華新世界》的制片国家是哪里？"}
+{"question_id": "zh-controlled-v1-valid-Q1046841-P495-paraphrase", "split": "valid", "variant": "paraphrase", "question": "《浮華新世界》来自哪个国家？"}
+{"question_id": "zh-controlled-v1-valid-Q1046841-P495-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请问《Vanity Fair》的出品国是哪里？"}
+{"question_id": "zh-controlled-v1-valid-Q1046841-P364-canonical", "split": "valid", "variant": "canonical", "question": "《浮華新世界》的原始语言是什么？"}
+{"question_id": "zh-controlled-v1-valid-Q1046841-P364-paraphrase", "split": "valid", "variant": "paraphrase", "question": "《浮華新世界》使用什么语种？"}
+{"question_id": "zh-controlled-v1-valid-Q1046841-P364-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请问《Vanity Fair》的原声是什么语言？"}
+{"question_id": "zh-controlled-v1-valid-Q104814-P57-canonical", "split": "valid", "variant": "canonical", "question": "《異形2》的导演是谁？"}
+{"question_id": "zh-controlled-v1-valid-Q104814-P57-paraphrase", "split": "valid", "variant": "paraphrase", "question": "谁执导了《異形2》？"}
+{"question_id": "zh-controlled-v1-valid-Q104814-P57-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请问《Aliens》是哪位导演拍的？"}
+{"question_id": "zh-controlled-v1-valid-Q104814-P136-canonical", "split": "valid", "variant": "canonical", "question": "《異形2》是什么类型？"}
+{"question_id": "zh-controlled-v1-valid-Q104814-P136-paraphrase", "split": "valid", "variant": "paraphrase", "question": "《異形2》属于哪种流派？"}
+{"question_id": "zh-controlled-v1-valid-Q104814-P136-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请告诉我《Aliens》的电影类别。"}
+{"question_id": "zh-controlled-v1-valid-Q104814-P495-canonical", "split": "valid", "variant": "canonical", "question": "《異形2》的制片国家是哪里？"}
+{"question_id": "zh-controlled-v1-valid-Q104814-P495-paraphrase", "split": "valid", "variant": "paraphrase", "question": "《異形2》来自哪个国家？"}
+{"question_id": "zh-controlled-v1-valid-Q104814-P495-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请问《Aliens》的出品国是哪里？"}
+{"question_id": "zh-controlled-v1-valid-Q104814-P364-canonical", "split": "valid", "variant": "canonical", "question": "《異形2》的原始语言是什么？"}
+{"question_id": "zh-controlled-v1-valid-Q104814-P364-paraphrase", "split": "valid", "variant": "paraphrase", "question": "《異形2》使用什么语种？"}
+{"question_id": "zh-controlled-v1-valid-Q104814-P364-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请问《Aliens》的原声是什么语言？"}
+{"question_id": "zh-controlled-v1-valid-Q105031-P57-canonical", "split": "valid", "variant": "canonical", "question": "《小鬼當家》的导演是谁？"}
+{"question_id": "zh-controlled-v1-valid-Q105031-P57-paraphrase", "split": "valid", "variant": "paraphrase", "question": "谁执导了《小鬼當家》？"}
+{"question_id": "zh-controlled-v1-valid-Q105031-P57-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请问《Home Alone》是哪位导演拍的？"}
+{"question_id": "zh-controlled-v1-valid-Q105031-P136-canonical", "split": "valid", "variant": "canonical", "question": "《小鬼當家》是什么类型？"}
+{"question_id": "zh-controlled-v1-valid-Q105031-P136-paraphrase", "split": "valid", "variant": "paraphrase", "question": "《小鬼當家》属于哪种流派？"}
+{"question_id": "zh-controlled-v1-valid-Q105031-P136-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请告诉我《Home Alone》的电影类别。"}
+{"question_id": "zh-controlled-v1-valid-Q105031-P495-canonical", "split": "valid", "variant": "canonical", "question": "《小鬼當家》的制片国家是哪里？"}
+{"question_id": "zh-controlled-v1-valid-Q105031-P495-paraphrase", "split": "valid", "variant": "paraphrase", "question": "《小鬼當家》来自哪个国家？"}
+{"question_id": "zh-controlled-v1-valid-Q105031-P495-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请问《Home Alone》的出品国是哪里？"}
+{"question_id": "zh-controlled-v1-valid-Q105031-P364-canonical", "split": "valid", "variant": "canonical", "question": "《小鬼當家》的原始语言是什么？"}
+{"question_id": "zh-controlled-v1-valid-Q105031-P364-paraphrase", "split": "valid", "variant": "paraphrase", "question": "《小鬼當家》使用什么语种？"}
+{"question_id": "zh-controlled-v1-valid-Q105031-P364-mixed_name", "split": "valid", "variant": "mixed_name", "question": "请问《Home Alone》的原声是什么语言？"}
+{"question_id": "zh-controlled-v1-valid-negative-actor", "split": "valid", "variant": "negative", "category": "actor", "question": "《黑洞頻率》的主演是谁？"}
+{"question_id": "zh-controlled-v1-valid-negative-release_time", "split": "valid", "variant": "negative", "category": "release_time", "question": "《黑洞頻率》是什么时候上映的？"}
+{"question_id": "zh-controlled-v1-valid-negative-multiple_relations", "split": "valid", "variant": "negative", "category": "multiple_relations", "question": "《黑洞頻率》的导演和类型是什么？"}
+{"question_id": "zh-controlled-v1-valid-negative-two_movies", "split": "valid", "variant": "negative", "category": "two_movies", "question": "Q1003845和Q105031的导演是谁？"}
+{"question_id": "zh-controlled-v1-valid-negative-unknown_title", "split": "valid", "variant": "negative", "category": "unknown_title", "question": "《中文受控验收不存在的电影_20261030》的导演是谁？"}
+{"question_id": "zh-controlled-v1-valid-negative-negative_director", "split": "valid", "variant": "negative", "category": "negative_director", "question": "谁不是《黑洞頻率》的导演？"}
+{"question_id": "zh-controlled-v1-valid-negative-runtime", "split": "valid", "variant": "negative", "category": "runtime", "question": "《黑洞頻率》的片长是多少？"}
+{"question_id": "zh-controlled-v1-valid-negative-plot", "split": "valid", "variant": "negative", "category": "plot", "question": "请介绍《黑洞頻率》的剧情。"}
+{"question_id": "zh-controlled-v1-valid-negative-budget", "split": "valid", "variant": "negative", "category": "budget", "question": "《黑洞頻率》的预算是多少？"}
+{"question_id": "zh-controlled-v1-valid-negative-two_quoted_titles", "split": "valid", "variant": "negative", "category": "two_quoted_titles", "question": "《黑洞頻率》和《小鬼當家》的原始语言是什么？"}
+{"question_id": "zh-controlled-v1-test-Q1020603-P57-canonical", "split": "test", "variant": "canonical", "question": "《摘星梦难圆》的导演是谁？"}
+{"question_id": "zh-controlled-v1-test-Q1020603-P57-paraphrase", "split": "test", "variant": "paraphrase", "question": "谁执导了《摘星梦难圆》？"}
+{"question_id": "zh-controlled-v1-test-Q1020603-P57-mixed_name", "split": "test", "variant": "mixed_name", "question": "请问《Stage Door》是哪位导演拍的？"}
+{"question_id": "zh-controlled-v1-test-Q1020603-P136-canonical", "split": "test", "variant": "canonical", "question": "《摘星梦难圆》是什么类型？"}
+{"question_id": "zh-controlled-v1-test-Q1020603-P136-paraphrase", "split": "test", "variant": "paraphrase", "question": "《摘星梦难圆》属于哪种流派？"}
+{"question_id": "zh-controlled-v1-test-Q1020603-P136-mixed_name", "split": "test", "variant": "mixed_name", "question": "请告诉我《Stage Door》的电影类别。"}
+{"question_id": "zh-controlled-v1-test-Q1020603-P495-canonical", "split": "test", "variant": "canonical", "question": "《摘星梦难圆》的制片国家是哪里？"}
+{"question_id": "zh-controlled-v1-test-Q1020603-P495-paraphrase", "split": "test", "variant": "paraphrase", "question": "《摘星梦难圆》来自哪个国家？"}
+{"question_id": "zh-controlled-v1-test-Q1020603-P495-mixed_name", "split": "test", "variant": "mixed_name", "question": "请问《Stage Door》的出品国是哪里？"}
+{"question_id": "zh-controlled-v1-test-Q1020603-P364-canonical", "split": "test", "variant": "canonical", "question": "《摘星梦难圆》的原始语言是什么？"}
+{"question_id": "zh-controlled-v1-test-Q1020603-P364-paraphrase", "split": "test", "variant": "paraphrase", "question": "《摘星梦难圆》使用什么语种？"}
+{"question_id": "zh-controlled-v1-test-Q1020603-P364-mixed_name", "split": "test", "variant": "mixed_name", "question": "请问《Stage Door》的原声是什么语言？"}
+{"question_id": "zh-controlled-v1-test-Q1035093-P57-canonical", "split": "test", "variant": "canonical", "question": "《美國隊長》的导演是谁？"}
+{"question_id": "zh-controlled-v1-test-Q1035093-P57-paraphrase", "split": "test", "variant": "paraphrase", "question": "谁执导了《美國隊長》？"}
+{"question_id": "zh-controlled-v1-test-Q1035093-P57-mixed_name", "split": "test", "variant": "mixed_name", "question": "请问《Captain America》是哪位导演拍的？"}
+{"question_id": "zh-controlled-v1-test-Q1035093-P136-canonical", "split": "test", "variant": "canonical", "question": "《美國隊長》是什么类型？"}
+{"question_id": "zh-controlled-v1-test-Q1035093-P136-paraphrase", "split": "test", "variant": "paraphrase", "question": "《美國隊長》属于哪种流派？"}
+{"question_id": "zh-controlled-v1-test-Q1035093-P136-mixed_name", "split": "test", "variant": "mixed_name", "question": "请告诉我《Captain America》的电影类别。"}
+{"question_id": "zh-controlled-v1-test-Q1035093-P495-canonical", "split": "test", "variant": "canonical", "question": "《美國隊長》的制片国家是哪里？"}
+{"question_id": "zh-controlled-v1-test-Q1035093-P495-paraphrase", "split": "test", "variant": "paraphrase", "question": "《美國隊長》来自哪个国家？"}
+{"question_id": "zh-controlled-v1-test-Q1035093-P495-mixed_name", "split": "test", "variant": "mixed_name", "question": "请问《Captain America》的出品国是哪里？"}
+{"question_id": "zh-controlled-v1-test-Q1035093-P364-canonical", "split": "test", "variant": "canonical", "question": "《美國隊長》的原始语言是什么？"}
+{"question_id": "zh-controlled-v1-test-Q1035093-P364-paraphrase", "split": "test", "variant": "paraphrase", "question": "《美國隊長》使用什么语种？"}
+{"question_id": "zh-controlled-v1-test-Q1035093-P364-mixed_name", "split": "test", "variant": "mixed_name", "question": "请问《Captain America》的原声是什么语言？"}
+{"question_id": "zh-controlled-v1-test-Q103569-P57-canonical", "split": "test", "variant": "canonical", "question": "《異形》的导演是谁？"}
+{"question_id": "zh-controlled-v1-test-Q103569-P57-paraphrase", "split": "test", "variant": "paraphrase", "question": "谁执导了《異形》？"}
+{"question_id": "zh-controlled-v1-test-Q103569-P57-mixed_name", "split": "test", "variant": "mixed_name", "question": "请问《Alien (1979)》是哪位导演拍的？"}
+{"question_id": "zh-controlled-v1-test-Q103569-P136-canonical", "split": "test", "variant": "canonical", "question": "《異形》是什么类型？"}
+{"question_id": "zh-controlled-v1-test-Q103569-P136-paraphrase", "split": "test", "variant": "paraphrase", "question": "《異形》属于哪种流派？"}
+{"question_id": "zh-controlled-v1-test-Q103569-P136-mixed_name", "split": "test", "variant": "mixed_name", "question": "请告诉我《Alien (1979)》的电影类别。"}
+{"question_id": "zh-controlled-v1-test-Q103569-P495-canonical", "split": "test", "variant": "canonical", "question": "《異形》的制片国家是哪里？"}
+{"question_id": "zh-controlled-v1-test-Q103569-P495-paraphrase", "split": "test", "variant": "paraphrase", "question": "《異形》来自哪个国家？"}
+{"question_id": "zh-controlled-v1-test-Q103569-P495-mixed_name", "split": "test", "variant": "mixed_name", "question": "请问《Alien (1979)》的出品国是哪里？"}
+{"question_id": "zh-controlled-v1-test-Q103569-P364-canonical", "split": "test", "variant": "canonical", "question": "《異形》的原始语言是什么？"}
+{"question_id": "zh-controlled-v1-test-Q103569-P364-paraphrase", "split": "test", "variant": "paraphrase", "question": "《異形》使用什么语种？"}
+{"question_id": "zh-controlled-v1-test-Q103569-P364-mixed_name", "split": "test", "variant": "mixed_name", "question": "请问《Alien (1979)》的原声是什么语言？"}
+{"question_id": "zh-controlled-v1-test-Q1042931-P57-canonical", "split": "test", "variant": "canonical", "question": "《霸王鐵金剛》的导演是谁？"}
+{"question_id": "zh-controlled-v1-test-Q1042931-P57-paraphrase", "split": "test", "variant": "paraphrase", "question": "谁执导了《霸王鐵金剛》？"}
+{"question_id": "zh-controlled-v1-test-Q1042931-P57-mixed_name", "split": "test", "variant": "mixed_name", "question": "请问《The Man Who Would Be King》是哪位导演拍的？"}
+{"question_id": "zh-controlled-v1-test-Q1042931-P136-canonical", "split": "test", "variant": "canonical", "question": "《霸王鐵金剛》是什么类型？"}
+{"question_id": "zh-controlled-v1-test-Q1042931-P136-paraphrase", "split": "test", "variant": "paraphrase", "question": "《霸王鐵金剛》属于哪种流派？"}
+{"question_id": "zh-controlled-v1-test-Q1042931-P136-mixed_name", "split": "test", "variant": "mixed_name", "question": "请告诉我《The Man Who Would Be King》的电影类别。"}
+{"question_id": "zh-controlled-v1-test-Q1042931-P495-canonical", "split": "test", "variant": "canonical", "question": "《霸王鐵金剛》的制片国家是哪里？"}
+{"question_id": "zh-controlled-v1-test-Q1042931-P495-paraphrase", "split": "test", "variant": "paraphrase", "question": "《霸王鐵金剛》来自哪个国家？"}
+{"question_id": "zh-controlled-v1-test-Q1042931-P495-mixed_name", "split": "test", "variant": "mixed_name", "question": "请问《The Man Who Would Be King》的出品国是哪里？"}
+{"question_id": "zh-controlled-v1-test-Q1042931-P364-canonical", "split": "test", "variant": "canonical", "question": "《霸王鐵金剛》的原始语言是什么？"}
+{"question_id": "zh-controlled-v1-test-Q1042931-P364-paraphrase", "split": "test", "variant": "paraphrase", "question": "《霸王鐵金剛》使用什么语种？"}
+{"question_id": "zh-controlled-v1-test-Q1042931-P364-mixed_name", "split": "test", "variant": "mixed_name", "question": "请问《The Man Who Would Be King》的原声是什么语言？"}
+{"question_id": "zh-controlled-v1-test-Q1044523-P57-canonical", "split": "test", "variant": "canonical", "question": "《上班一條蟲》的导演是谁？"}
+{"question_id": "zh-controlled-v1-test-Q1044523-P57-paraphrase", "split": "test", "variant": "paraphrase", "question": "谁执导了《上班一條蟲》？"}
+{"question_id": "zh-controlled-v1-test-Q1044523-P57-mixed_name", "split": "test", "variant": "mixed_name", "question": "请问《Office Space》是哪位导演拍的？"}
+{"question_id": "zh-controlled-v1-test-Q1044523-P136-canonical", "split": "test", "variant": "canonical", "question": "《上班一條蟲》是什么类型？"}
+{"question_id": "zh-controlled-v1-test-Q1044523-P136-paraphrase", "split": "test", "variant": "paraphrase", "question": "《上班一條蟲》属于哪种流派？"}
+{"question_id": "zh-controlled-v1-test-Q1044523-P136-mixed_name", "split": "test", "variant": "mixed_name", "question": "请告诉我《Office Space》的电影类别。"}
+{"question_id": "zh-controlled-v1-test-Q1044523-P495-canonical", "split": "test", "variant": "canonical", "question": "《上班一條蟲》的制片国家是哪里？"}
+{"question_id": "zh-controlled-v1-test-Q1044523-P495-paraphrase", "split": "test", "variant": "paraphrase", "question": "《上班一條蟲》来自哪个国家？"}
+{"question_id": "zh-controlled-v1-test-Q1044523-P495-mixed_name", "split": "test", "variant": "mixed_name", "question": "请问《Office Space》的出品国是哪里？"}
+{"question_id": "zh-controlled-v1-test-Q1044523-P364-canonical", "split": "test", "variant": "canonical", "question": "《上班一條蟲》的原始语言是什么？"}
+{"question_id": "zh-controlled-v1-test-Q1044523-P364-paraphrase", "split": "test", "variant": "paraphrase", "question": "《上班一條蟲》使用什么语种？"}
+{"question_id": "zh-controlled-v1-test-Q1044523-P364-mixed_name", "split": "test", "variant": "mixed_name", "question": "请问《Office Space》的原声是什么语言？"}
+{"question_id": "zh-controlled-v1-test-Q1050815-P57-canonical", "split": "test", "variant": "canonical", "question": "《H20抓鬼節》的导演是谁？"}
+{"question_id": "zh-controlled-v1-test-Q1050815-P57-paraphrase", "split": "test", "variant": "paraphrase", "question": "谁执导了《H20抓鬼節》？"}
+{"question_id": "zh-controlled-v1-test-Q1050815-P57-mixed_name", "split": "test", "variant": "mixed_name", "question": "请问《Halloween H20: 20 Years Later》是哪位导演拍的？"}
+{"question_id": "zh-controlled-v1-test-Q1050815-P136-canonical", "split": "test", "variant": "canonical", "question": "《H20抓鬼節》是什么类型？"}
+{"question_id": "zh-controlled-v1-test-Q1050815-P136-paraphrase", "split": "test", "variant": "paraphrase", "question": "《H20抓鬼節》属于哪种流派？"}
+{"question_id": "zh-controlled-v1-test-Q1050815-P136-mixed_name", "split": "test", "variant": "mixed_name", "question": "请告诉我《Halloween H20: 20 Years Later》的电影类别。"}
+{"question_id": "zh-controlled-v1-test-Q1050815-P495-canonical", "split": "test", "variant": "canonical", "question": "《H20抓鬼節》的制片国家是哪里？"}
+{"question_id": "zh-controlled-v1-test-Q1050815-P495-paraphrase", "split": "test", "variant": "paraphrase", "question": "《H20抓鬼節》来自哪个国家？"}
+{"question_id": "zh-controlled-v1-test-Q1050815-P495-mixed_name", "split": "test", "variant": "mixed_name", "question": "请问《Halloween H20: 20 Years Later》的出品国是哪里？"}
+{"question_id": "zh-controlled-v1-test-Q1050815-P364-canonical", "split": "test", "variant": "canonical", "question": "《H20抓鬼節》的原始语言是什么？"}
+{"question_id": "zh-controlled-v1-test-Q1050815-P364-paraphrase", "split": "test", "variant": "paraphrase", "question": "《H20抓鬼節》使用什么语种？"}
+{"question_id": "zh-controlled-v1-test-Q1050815-P364-mixed_name", "split": "test", "variant": "mixed_name", "question": "请问《Halloween H20: 20 Years Later》的原声是什么语言？"}
+{"question_id": "zh-controlled-v1-test-Q1052826-P57-canonical", "split": "test", "variant": "canonical", "question": "《名人錄》的导演是谁？"}
+{"question_id": "zh-controlled-v1-test-Q1052826-P57-paraphrase", "split": "test", "variant": "paraphrase", "question": "谁执导了《名人錄》？"}
+{"question_id": "zh-controlled-v1-test-Q1052826-P57-mixed_name", "split": "test", "variant": "mixed_name", "question": "请问《Celebrity》是哪位导演拍的？"}
+{"question_id": "zh-controlled-v1-test-Q1052826-P136-canonical", "split": "test", "variant": "canonical", "question": "《名人錄》是什么类型？"}
+{"question_id": "zh-controlled-v1-test-Q1052826-P136-paraphrase", "split": "test", "variant": "paraphrase", "question": "《名人錄》属于哪种流派？"}
+{"question_id": "zh-controlled-v1-test-Q1052826-P136-mixed_name", "split": "test", "variant": "mixed_name", "question": "请告诉我《Celebrity》的电影类别。"}
+{"question_id": "zh-controlled-v1-test-Q1052826-P495-canonical", "split": "test", "variant": "canonical", "question": "《名人錄》的制片国家是哪里？"}
+{"question_id": "zh-controlled-v1-test-Q1052826-P495-paraphrase", "split": "test", "variant": "paraphrase", "question": "《名人錄》来自哪个国家？"}
+{"question_id": "zh-controlled-v1-test-Q1052826-P495-mixed_name", "split": "test", "variant": "mixed_name", "question": "请问《Celebrity》的出品国是哪里？"}
+{"question_id": "zh-controlled-v1-test-Q1052826-P364-canonical", "split": "test", "variant": "canonical", "question": "《名人錄》的原始语言是什么？"}
+{"question_id": "zh-controlled-v1-test-Q1052826-P364-paraphrase", "split": "test", "variant": "paraphrase", "question": "《名人錄》使用什么语种？"}
+{"question_id": "zh-controlled-v1-test-Q1052826-P364-mixed_name", "split": "test", "variant": "mixed_name", "question": "请问《Celebrity》的原声是什么语言？"}
+{"question_id": "zh-controlled-v1-test-Q105359456-P57-canonical", "split": "test", "variant": "canonical", "question": "《蟻人與黃蜂女：量子狂熱》的导演是谁？"}
+{"question_id": "zh-controlled-v1-test-Q105359456-P57-paraphrase", "split": "test", "variant": "paraphrase", "question": "谁执导了《蟻人與黃蜂女：量子狂熱》？"}
+{"question_id": "zh-controlled-v1-test-Q105359456-P57-mixed_name", "split": "test", "variant": "mixed_name", "question": "请问《Ant-Man and the Wasp: Quantumania》是哪位导演拍的？"}
+{"question_id": "zh-controlled-v1-test-Q105359456-P136-canonical", "split": "test", "variant": "canonical", "question": "《蟻人與黃蜂女：量子狂熱》是什么类型？"}
+{"question_id": "zh-controlled-v1-test-Q105359456-P136-paraphrase", "split": "test", "variant": "paraphrase", "question": "《蟻人與黃蜂女：量子狂熱》属于哪种流派？"}
+{"question_id": "zh-controlled-v1-test-Q105359456-P136-mixed_name", "split": "test", "variant": "mixed_name", "question": "请告诉我《Ant-Man and the Wasp: Quantumania》的电影类别。"}
+{"question_id": "zh-controlled-v1-test-Q105359456-P495-canonical", "split": "test", "variant": "canonical", "question": "《蟻人與黃蜂女：量子狂熱》的制片国家是哪里？"}
+{"question_id": "zh-controlled-v1-test-Q105359456-P495-paraphrase", "split": "test", "variant": "paraphrase", "question": "《蟻人與黃蜂女：量子狂熱》来自哪个国家？"}
+{"question_id": "zh-controlled-v1-test-Q105359456-P495-mixed_name", "split": "test", "variant": "mixed_name", "question": "请问《Ant-Man and the Wasp: Quantumania》的出品国是哪里？"}
+{"question_id": "zh-controlled-v1-test-Q105359456-P364-canonical", "split": "test", "variant": "canonical", "question": "《蟻人與黃蜂女：量子狂熱》的原始语言是什么？"}
+{"question_id": "zh-controlled-v1-test-Q105359456-P364-paraphrase", "split": "test", "variant": "paraphrase", "question": "《蟻人與黃蜂女：量子狂熱》使用什么语种？"}
+{"question_id": "zh-controlled-v1-test-Q105359456-P364-mixed_name", "split": "test", "variant": "mixed_name", "question": "请问《Ant-Man and the Wasp: Quantumania》的原声是什么语言？"}
+{"question_id": "zh-controlled-v1-test-Q1055332-P57-canonical", "split": "test", "variant": "canonical", "question": "《小教父》的导演是谁？"}
+{"question_id": "zh-controlled-v1-test-Q1055332-P57-paraphrase", "split": "test", "variant": "paraphrase", "question": "谁执导了《小教父》？"}
+{"question_id": "zh-controlled-v1-test-Q1055332-P57-mixed_name", "split": "test", "variant": "mixed_name", "question": "请问《The Outsiders》是哪位导演拍的？"}
+{"question_id": "zh-controlled-v1-test-Q1055332-P136-canonical", "split": "test", "variant": "canonical", "question": "《小教父》是什么类型？"}
+{"question_id": "zh-controlled-v1-test-Q1055332-P136-paraphrase", "split": "test", "variant": "paraphrase", "question": "《小教父》属于哪种流派？"}
+{"question_id": "zh-controlled-v1-test-Q1055332-P136-mixed_name", "split": "test", "variant": "mixed_name", "question": "请告诉我《The Outsiders》的电影类别。"}
+{"question_id": "zh-controlled-v1-test-Q1055332-P495-canonical", "split": "test", "variant": "canonical", "question": "《小教父》的制片国家是哪里？"}
+{"question_id": "zh-controlled-v1-test-Q1055332-P495-paraphrase", "split": "test", "variant": "paraphrase", "question": "《小教父》来自哪个国家？"}
+{"question_id": "zh-controlled-v1-test-Q1055332-P495-mixed_name", "split": "test", "variant": "mixed_name", "question": "请问《The Outsiders》的出品国是哪里？"}
+{"question_id": "zh-controlled-v1-test-Q1055332-P364-canonical", "split": "test", "variant": "canonical", "question": "《小教父》的原始语言是什么？"}
+{"question_id": "zh-controlled-v1-test-Q1055332-P364-paraphrase", "split": "test", "variant": "paraphrase", "question": "《小教父》使用什么语种？"}
+{"question_id": "zh-controlled-v1-test-Q1055332-P364-mixed_name", "split": "test", "variant": "mixed_name", "question": "请问《The Outsiders》的原声是什么语言？"}
+{"question_id": "zh-controlled-v1-test-Q1058555-P57-canonical", "split": "test", "variant": "canonical", "question": "《奇蹟》的导演是谁？"}
+{"question_id": "zh-controlled-v1-test-Q1058555-P57-paraphrase", "split": "test", "variant": "paraphrase", "question": "谁执导了《奇蹟》？"}
+{"question_id": "zh-controlled-v1-test-Q1058555-P57-mixed_name", "split": "test", "variant": "mixed_name", "question": "请问《Lorenzo's Oil》是哪位导演拍的？"}
+{"question_id": "zh-controlled-v1-test-Q1058555-P136-canonical", "split": "test", "variant": "canonical", "question": "《奇蹟》是什么类型？"}
+{"question_id": "zh-controlled-v1-test-Q1058555-P136-paraphrase", "split": "test", "variant": "paraphrase", "question": "《奇蹟》属于哪种流派？"}
+{"question_id": "zh-controlled-v1-test-Q1058555-P136-mixed_name", "split": "test", "variant": "mixed_name", "question": "请告诉我《Lorenzo's Oil》的电影类别。"}
+{"question_id": "zh-controlled-v1-test-Q1058555-P495-canonical", "split": "test", "variant": "canonical", "question": "《奇蹟》的制片国家是哪里？"}
+{"question_id": "zh-controlled-v1-test-Q1058555-P495-paraphrase", "split": "test", "variant": "paraphrase", "question": "《奇蹟》来自哪个国家？"}
+{"question_id": "zh-controlled-v1-test-Q1058555-P495-mixed_name", "split": "test", "variant": "mixed_name", "question": "请问《Lorenzo's Oil》的出品国是哪里？"}
+{"question_id": "zh-controlled-v1-test-Q1058555-P364-canonical", "split": "test", "variant": "canonical", "question": "《奇蹟》的原始语言是什么？"}
+{"question_id": "zh-controlled-v1-test-Q1058555-P364-paraphrase", "split": "test", "variant": "paraphrase", "question": "《奇蹟》使用什么语种？"}
+{"question_id": "zh-controlled-v1-test-Q1058555-P364-mixed_name", "split": "test", "variant": "mixed_name", "question": "请问《Lorenzo's Oil》的原声是什么语言？"}
+{"question_id": "zh-controlled-v1-test-negative-actor", "split": "test", "variant": "negative", "category": "actor", "question": "《摘星梦难圆》的主演是谁？"}
+{"question_id": "zh-controlled-v1-test-negative-release_time", "split": "test", "variant": "negative", "category": "release_time", "question": "《摘星梦难圆》是什么时候上映的？"}
+{"question_id": "zh-controlled-v1-test-negative-multiple_relations", "split": "test", "variant": "negative", "category": "multiple_relations", "question": "《摘星梦难圆》的导演和类型是什么？"}
+{"question_id": "zh-controlled-v1-test-negative-two_movies", "split": "test", "variant": "negative", "category": "two_movies", "question": "Q1020603和Q1058555的导演是谁？"}
+{"question_id": "zh-controlled-v1-test-negative-unknown_title", "split": "test", "variant": "negative", "category": "unknown_title", "question": "《中文受控验收不存在的电影_20261030》的导演是谁？"}
+{"question_id": "zh-controlled-v1-test-negative-negative_director", "split": "test", "variant": "negative", "category": "negative_director", "question": "谁不是《摘星梦难圆》的导演？"}
+{"question_id": "zh-controlled-v1-test-negative-runtime", "split": "test", "variant": "negative", "category": "runtime", "question": "《摘星梦难圆》的片长是多少？"}
+{"question_id": "zh-controlled-v1-test-negative-plot", "split": "test", "variant": "negative", "category": "plot", "question": "请介绍《摘星梦难圆》的剧情。"}
+{"question_id": "zh-controlled-v1-test-negative-budget", "split": "test", "variant": "negative", "category": "budget", "question": "《摘星梦难圆》的预算是多少？"}
+{"question_id": "zh-controlled-v1-test-negative-two_quoted_titles", "split": "test", "variant": "negative", "category": "two_quoted_titles", "question": "《摘星梦难圆》和《奇蹟》的原始语言是什么？"}

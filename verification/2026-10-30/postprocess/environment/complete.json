@@ -1,0 +1,16 @@
+{
+  "identity": {
+    "postprocess_expanded_suite.py": "d09c2b74b762675a860bf28a42452b946fe5cb7ad81d61230fed355124f96f0d",
+    "input_manifest.json": "df9e474c2b57dec142cc86b9c6207763566a8b651618571746703cde82332ced",
+    "suite_summary.json": "7a547d0b47e199d87707a45bd0d9071cc0241e5a086d9ef249016e7acb2ed731"
+  },
+  "command": [
+    "environment\\Scripts\\python.exe",
+    "-m",
+    "kgqa.environment_info"
+  ],
+  "sha256": {
+    "project\\output\\environment.json": "d22951be2d212b1b92237d409daac9e83af22878ab7b760d03d72674c622a7d5",
+    "logs\\postprocess_environment.log": "6f010a3d7a288c3d2c57c420d1f7799a3980fb07cc37c26b1080663de389b7c2"
+  }
+}

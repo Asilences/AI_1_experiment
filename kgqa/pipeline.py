@@ -13,21 +13,31 @@ from sklearn.pipeline import FeatureUnion
 
 from .common import ROOT, REFUSAL, answer_text, read_json, read_jsonl, setup_logging, sha256, utc_now, write_json, write_jsonl
 from .linker import EntityLinker
+from .chinese import ChineseAdapter
 
 
 class PipelineQA:
     def __init__(self, entities, movies, classifier, threshold):
         self.entities, self.classifier, self.threshold = entities, classifier, threshold
+        movies = list(movies)
         self.linker = EntityLinker(movies, entities)
+        self.chinese = ChineseAdapter(entities, movies)
 
     def predict(self, question):
         started = time.perf_counter()
-        movie_id, link_score, link_status = self.linker.link(question)
+        prepared = self.chinese.prepare(question)
+        chinese = prepared.language == 'zh'
+        if chinese:
+            movie_id = prepared.movie_id if prepared.status == 'success' else None
+            link_score = 1.0 if movie_id else 0.0
+            link_status = 'exact' if movie_id else prepared.status
+        else:
+            movie_id, link_score, link_status = self.linker.link(question)
         result = {'question': question, 'movie_id': movie_id, 'link_score': link_score, 'link_status': link_status,
                   'relation_id': 'UNKNOWN', 'answer_ids': [], 'answer': REFUSAL, 'evidence': []}
         if movie_id:
             title = self.entities[movie_id]['label']
-            masked = self.linker.mask(question, movie_id)
+            masked = self.linker.mask(prepared.model_question if chinese else question, movie_id)
             probabilities = self.classifier.predict_proba([masked])[0]
             index = int(np.argmax(probabilities))
             relation = self.classifier.classes_[index]
@@ -38,6 +48,14 @@ class PipelineQA:
                 names = [self.entities[qid]['label'] for qid in answer_ids]
                 result.update(answer_ids=answer_ids, answer=answer_text(title, relation, names),
                               evidence=[[movie_id, relation, qid] for qid in answer_ids])
+        if chinese:
+            result.update(language='zh', model_question=prepared.model_question,
+                          original_answer=result['answer'], language_status=prepared.status,
+                          language_note=prepared.reason or '中文问题经离线片名与属性识别后，交由原 A0 分类器与图谱查询处理。',
+                          input_relation_id=prepared.relation_id)
+            result['answer'] = (self.chinese.format_answer(movie_id, result['relation_id'], result['answer_ids'])
+                                if result['answer_ids'] else prepared.reason or self.chinese.localize_generated(REFUSAL, movie_id))
+            result['refused'] = not bool(result['answer_ids'])
         result['latency_ms'] = (time.perf_counter() - started) * 1000
         return result
 

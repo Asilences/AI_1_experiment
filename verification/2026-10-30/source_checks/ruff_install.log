@@ -1,0 +1,6 @@
+Looking in indexes: http<private-path>
+Collecting ruff==0.12.12
+  Downloading http<private-path> (13.2 MB)
+     --------------------------------------- 13.2/13.2 MB 29.6 MB/s eta 0:00:00
+Installing collected packages: ruff
+Successfully installed ruff-0.12.12

@@ -1,0 +1,4 @@
+2026-10-30 11:27:20,296 INFO START transe cwd=.
+2026-10-30 11:27:20,411 INFO Inferred unique=False for Embedding()
+2026-10-30 11:27:20,416 INFO Inferred unique=False for Embedding()
+2026-10-30 11:29:05,793 INFO COMPLETE TransE epochs=100 final_loss=0.001325

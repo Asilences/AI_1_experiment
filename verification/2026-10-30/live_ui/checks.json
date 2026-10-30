@@ -1,0 +1,186 @@
+{
+  "status": "PASS",
+  "scope": "Actual local browser model tests; optional name recovery enabled",
+  "browser": "156.0.4314.50",
+  "dataset": {
+    "movie_count": 5000,
+    "fact_count": 35485,
+    "dataset_name": "扩展电影库 · 5000 部",
+    "relation_count": 4,
+    "custom_data": false,
+    "examples": [
+      {
+        "relation": "P57",
+        "question": "Who directed Shutter Island?"
+      },
+      {
+        "relation": "P136",
+        "question": "What genre is Boss Level?"
+      },
+      {
+        "relation": "P495",
+        "question": "Which country did Dogma originate in?"
+      },
+      {
+        "relation": "P364",
+        "question": "What is the original language of 10 Things I Hate About You?"
+      }
+    ],
+    "a0": {
+      "available": true,
+      "name": "A0 管道问答",
+      "detail": "本地模型就绪。"
+    },
+    "neural": {
+      "available": true,
+      "name": "B0 神经生成 + 名称恢复",
+      "run_id": "B0",
+      "detail": "首次使用时加载本地模型。"
+    }
+  },
+  "results": [
+    {
+      "name": "general",
+      "question": "Who directed Shutter Island?",
+      "response": {
+        "question": "Who directed Shutter Island?",
+        "results": [
+          {
+            "system": "a0",
+            "name": "A0 管道问答",
+            "ok": true,
+            "answer": "Shutter Island was directed by Martin Scorsese.",
+            "refused": false,
+            "movie": {
+              "id": "Q210364",
+              "label": "Shutter Island"
+            },
+            "link_status": "exact",
+            "link_score": 1,
+            "relation": "P57",
+            "confidence": 0.9982801521372827,
+            "evidence": [
+              "Shutter Island (Q210364) --P57--> Martin Scorsese (Q41148)"
+            ],
+            "cold_start": false,
+            "generation_ms": 2.5377999991178513,
+            "elapsed_ms": 2.63
+          },
+          {
+            "system": "best",
+            "name": "B0 神经生成 + 名称恢复",
+            "ok": true,
+            "answer": "Shutter Island was directed by Martin Scorsese.",
+            "refused": false,
+            "movie": {
+              "id": "Q210364",
+              "label": "Shutter Island"
+            },
+            "link_status": "exact",
+            "link_score": 1,
+            "relation": null,
+            "confidence": null,
+            "evidence": [
+              "Shutter Island | director | Martin Scorsese",
+              "Shutter Island | genre | drama film",
+              "Shutter Island | genre | action film",
+              "Shutter Island | genre | horror film",
+              "Shutter Island | genre | adventure film",
+              "Shutter Island | genre | psychological thriller",
+              "Shutter Island | genre | crime film",
+              "Shutter Island | genre | mystery film",
+              "Shutter Island | genre | neo-noir",
+              "Shutter Island | genre | thriller film",
+              "Shutter Island | genre | suspense film",
+              "Shutter Island | genre | crime thriller film",
+              "Shutter Island | genre | psychological drama film",
+              "Shutter Island | genre | psychological horror film",
+              "Shutter Island | genre | psychological thriller film",
+              "Shutter Island | genre | crime drama film",
+              "Shutter Island | country of origin | United States",
+              "Shutter Island | original language | English"
+            ],
+            "cold_start": false,
+            "generation_ms": 280.6817999953637,
+            "raw_answer": "Shutter Island was directed by Martin Scorsese.",
+            "replacements": [],
+            "recovery_ms": 0.1765000051818788,
+            "elapsed_ms": 712.56
+          }
+        ],
+        "elapsed_ms": 721.96
+      },
+      "screenshot": "general.png"
+    },
+    {
+      "name": "name_recovery",
+      "question": "Who directed Fruits of Passion?",
+      "response": {
+        "question": "Who directed Fruits of Passion?",
+        "results": [
+          {
+            "system": "a0",
+            "name": "A0 管道问答",
+            "ok": true,
+            "answer": "Fruits of Passion was directed by Shūji Terayama.",
+            "refused": false,
+            "movie": {
+              "id": "Q528328",
+              "label": "Fruits of Passion"
+            },
+            "link_status": "exact",
+            "link_score": 1,
+            "relation": "P57",
+            "confidence": 0.9982801521372827,
+            "evidence": [
+              "Fruits of Passion (Q528328) --P57--> Shūji Terayama (Q739129)"
+            ],
+            "cold_start": false,
+            "generation_ms": 2.5077000027522445,
+            "elapsed_ms": 2.6
+          },
+          {
+            "system": "best",
+            "name": "B0 神经生成 + 名称恢复",
+            "ok": true,
+            "answer": "Fruits of Passion was directed by Shūji Terayama.",
+            "refused": false,
+            "movie": {
+              "id": "Q528328",
+              "label": "Fruits of Passion"
+            },
+            "link_status": "exact",
+            "link_score": 1,
+            "relation": null,
+            "confidence": null,
+            "evidence": [
+              "Fruits of Passion | director | Shūji Terayama",
+              "Fruits of Passion | genre | drama film",
+              "Fruits of Passion | country of origin | Japan",
+              "Fruits of Passion | country of origin | France",
+              "Fruits of Passion | original language | French",
+              "Fruits of Passion | original language | English"
+            ],
+            "cold_start": false,
+            "generation_ms": 327.00269999622833,
+            "raw_answer": "Fruits of Passion was directed by Shji Terayama.",
+            "replacements": [
+              {
+                "entity_id": "Q739129",
+                "before": "Shji Terayama",
+                "after": "Shūji Terayama",
+                "start": 34,
+                "end": 47
+              }
+            ],
+            "recovery_ms": 1.1917000083485618,
+            "elapsed_ms": 579.29
+          }
+        ],
+        "elapsed_ms": 597.72
+      },
+      "screenshot": "name_recovery.png"
+    }
+  ],
+  "page_errors": []
+}

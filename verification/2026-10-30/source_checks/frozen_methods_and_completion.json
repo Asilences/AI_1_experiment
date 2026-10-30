@@ -1,0 +1,107 @@
+{
+  "scope": "Read-only observation of the completed frozen suite; no training or inference performed by these checks.",
+  "frozen_source_hashes": {
+    "metrics_matches_freeze_manifest": true,
+    "neural_matches_freeze_manifest": true,
+    "metrics_sha256": "aef96a0703a17af914883d46471df64adab40092d9d15bdac51c65da861c19cb",
+    "neural_sha256": "878331d0c9ffbc76f204d5fb46401d20d5c954b29cfbbf3315db1385b01265eb"
+  },
+  "scoring_methods": {
+    "current_score_rows_ast_equals_frozen": true,
+    "score_rows_ast_sha256": "fa847680a6f1dcc0c66648fdc3a60ca715d2f9a352c0bf06ac6b672a4c307cd5",
+    "entity_exact": "Exact equality of answer-ID sets; normalized refusal equality for unanswerable rows.",
+    "entity_macro_f1": "Arithmetic mean of per-row set precision/recall F1, scaled to 100; refusal rows use exact refusal correctness.",
+    "bleu": "sacrebleu.corpus_bleu with tokenizer='13a' and available reference streams.",
+    "rouge_l": "Mean best-reference ROUGE-L F measure with stemming, scaled to 100.",
+    "additional_decoder": "Current AnswerEntityIndex provides generated-answer payload/name decoding; the score_rows formula matches the frozen source."
+  },
+  "runs": [
+    {
+      "run_id": "B0",
+      "status": "complete",
+      "configured_epochs": 5,
+      "completed_epochs": 5,
+      "history_epochs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "optimizer_updates": 12885,
+      "best_epoch": 3,
+      "test_count": 8917
+    },
+    {
+      "run_id": "B1",
+      "status": "complete",
+      "configured_epochs": 5,
+      "completed_epochs": 5,
+      "history_epochs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "optimizer_updates": 12885,
+      "best_epoch": 1,
+      "test_count": 8917
+    },
+    {
+      "run_id": "B2",
+      "status": "complete",
+      "configured_epochs": 5,
+      "completed_epochs": 5,
+      "history_epochs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "optimizer_updates": 12885,
+      "best_epoch": 1,
+      "test_count": 8917
+    },
+    {
+      "run_id": "B3",
+      "status": "complete",
+      "configured_epochs": 5,
+      "completed_epochs": 5,
+      "history_epochs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "optimizer_updates": 12885,
+      "best_epoch": 4,
+      "test_count": 8917
+    },
+    {
+      "run_id": "C0",
+      "status": "complete",
+      "configured_epochs": 5,
+      "completed_epochs": 5,
+      "history_epochs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "optimizer_updates": 12885,
+      "best_epoch": 1,
+      "test_count": 8917
+    }
+  ],
+  "total_completed_neural_epochs": 25,
+  "all_five_runs_complete_with_five_history_epochs": true,
+  "recovery_adapter": {
+    "source": "benchmarks/run_frozen_recovery.py",
+    "sha256": "d8c492c5f009e948a784f2f2f0540abfb4b8813165c49d7d0c8ee8dd2d9e26e9",
+    "equals_validation_report_lock": true
+  }
+}

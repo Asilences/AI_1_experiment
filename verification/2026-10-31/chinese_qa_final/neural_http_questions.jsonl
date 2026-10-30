@@ -1,0 +1,16 @@
+{"question_id": "zh-controlled-v2-valid-Q1003845-P57-canonical", "split": "valid", "variant": "canonical", "question": "《黑洞頻率》（2000年版）的导演是谁？"}
+{"question_id": "zh-controlled-v2-valid-Q1003845-P136-canonical", "split": "valid", "variant": "canonical", "question": "《黑洞頻率》（2000年版）是什么类型？"}
+{"question_id": "zh-controlled-v2-valid-Q1003845-P495-canonical", "split": "valid", "variant": "canonical", "question": "《黑洞頻率》（2000年版）的制片国家是哪里？"}
+{"question_id": "zh-controlled-v2-valid-Q1003845-P364-canonical", "split": "valid", "variant": "canonical", "question": "《黑洞頻率》（2000年版）的原始语言是什么？"}
+{"question_id": "zh-controlled-v2-test-Q1020603-P57-canonical", "split": "test", "variant": "canonical", "question": "《摘星梦难圆》（1937年版）的导演是谁？"}
+{"question_id": "zh-controlled-v2-test-Q1020603-P136-canonical", "split": "test", "variant": "canonical", "question": "《摘星梦难圆》（1937年版）是什么类型？"}
+{"question_id": "zh-controlled-v2-test-Q1020603-P495-canonical", "split": "test", "variant": "canonical", "question": "《摘星梦难圆》（1937年版）的制片国家是哪里？"}
+{"question_id": "zh-controlled-v2-test-Q1020603-P364-canonical", "split": "test", "variant": "canonical", "question": "《摘星梦难圆》（1937年版）的原始语言是什么？"}
+{"question_id": "zh-controlled-v2-test-negative-actor", "split": "test", "variant": "negative", "category": "actor", "question": "《摘星梦难圆》的主演是谁？"}
+{"question_id": "zh-controlled-v2-valid-negative-actor", "split": "valid", "variant": "negative", "category": "actor", "question": "《黑洞頻率》的主演是谁？"}
+{"question_id": "zh-controlled-v2-test-negative-budget", "split": "test", "variant": "negative", "category": "budget", "question": "《摘星梦难圆》的预算是多少？"}
+{"question_id": "zh-controlled-v2-valid-negative-budget", "split": "valid", "variant": "negative", "category": "budget", "question": "《黑洞頻率》的预算是多少？"}
+{"question_id": "zh-controlled-v2-test-negative-multiple_relations", "split": "test", "variant": "negative", "category": "multiple_relations", "question": "《摘星梦难圆》的导演和类型是什么？"}
+{"question_id": "zh-controlled-v2-valid-negative-multiple_relations", "split": "valid", "variant": "negative", "category": "multiple_relations", "question": "《黑洞頻率》的导演和类型是什么？"}
+{"question_id": "zh-controlled-v2-test-negative-negative_director", "split": "test", "variant": "negative", "category": "negative_director", "question": "谁不是《摘星梦难圆》的导演？"}
+{"question_id": "zh-controlled-v2-valid-negative-negative_director", "split": "valid", "variant": "negative", "category": "negative_director", "question": "谁不是《黑洞頻率》的导演？"}

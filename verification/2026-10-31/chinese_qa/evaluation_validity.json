@@ -1,0 +1,12 @@
+{
+  "status": "INVALID_SERVER_VERSION",
+  "a0_acceptance_valid": true,
+  "a0_count": 260,
+  "http_neural_metrics_valid": false,
+  "reason": "Server status did not advertise Chinese question_languages and successful responses omitted answer_ids, language and model_question. Missing answer_ids were incorrectly scored as empty predictions by the initial harness version.",
+  "interpretation": "The recorded zero neural entity accuracy is unscorable, not a measured neural answer-quality result. The English outputs and failed Chinese refusal behavior document an old HTTP interface deployment.",
+  "initial_summary_sha256": "2041feeaac8ab3897121c22632d89b603556441f2d02942809cf49533879631e",
+  "raw_response_artifact_sha256": "4fb6fff5bfc34f61db0e8eed47931b5f9a55a12b9e06d8d02ae21eedabe9e00b",
+  "initial_files_preserved": true,
+  "subsequent_harness_check": "Reject unsupported server status or absent observable prediction fields before reporting neural accuracy."
+}

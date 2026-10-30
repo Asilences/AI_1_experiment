@@ -1,0 +1,15 @@
+usage: web.py [-h] [--port PORT] [--data-dir DATA_DIR]
+              [--model-path MODEL_PATH] [--open] [--legacy] [--recover-names]
+
+Local browser UI for the existing QA models; no extra web dependencies.
+
+options:
+  -h, --help            show this help message and exit
+  --port PORT
+  --data-dir DATA_DIR   Custom processed data; enables A0 only.
+  --model-path MODEL_PATH
+                        Custom A0 model.pkl; enables A0 only.
+  --open                Open the local UI in your browser.
+  --legacy              Use default experiment data and neural models instead
+                        of the activated A0 profile.
+  --recover-names       Enable auditable name recovery for neural answers.

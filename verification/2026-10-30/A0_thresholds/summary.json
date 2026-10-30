@@ -1,0 +1,242 @@
+{
+  "created_at": "2026-10-30T04:44:52Z",
+  "scope": "Four preset inference configurations of one frozen classifier; zero retraining runs.",
+  "threshold_policy": "Presets 0.30/0.70/0.90/0.99 retained from the original 200-movie experiment. No threshold is selected using test results.",
+  "selected_baseline_threshold": 0.3,
+  "test_count": 8917,
+  "movie_count": 5000,
+  "data_dir": "data/processed/movies_5000_20261029",
+  "model_path": "models/pipeline_5000_20261029/model.pkl",
+  "input_hashes": {
+    "qa.jsonl": "2882b2077834d37f4b1ae8f9b8ea90561c8c5dacecf4247907311d0cbb8bb310",
+    "entities.json": "7c935d8fa1eecd9870df16e49d93460bdd75f90255661e4e4e397af9f667f3e8",
+    "splits.json": "dd24634f590e3e5dd38dc2e5ca7fd25b432ec3b562f74dc99a65b22d586113b7"
+  },
+  "model_sha256": "a14f3ee60168e3f0a2eefcda403c58400e861c1708dceebe63c396e1e8faa8dd",
+  "config_sha256": "8d8e16320f9fbae2f20eda977e01c38fbcdd45fccc46c5a7928fb47f21929ce8",
+  "source_sha256": {
+    "benchmarks\\run_frozen_thresholds.py": "841d4a79c59ba17c067efbe68fb59325fd0d0c7e65c7da1ee43577d5a65b44d4",
+    "kgqa\\pipeline.py": "a538df78000030d44a63e6a95bba3e5a67439ab626b71fa59b2ac003e74cf016",
+    "kgqa\\linker.py": "0a7e2bf48fbb7e523b4ba4f22a9ec293fe2be458e87a621a7601c61702fdb180",
+    "kgqa\\metrics.py": "aef96a0703a17af914883d46471df64adab40092d9d15bdac51c65da861c19cb",
+    "kgqa\\common.py": "8edce50100c3072bd134d77c77d0f4c45de5362219fe503b690b336fbc487705",
+    "kgqa\\personal_experiment.py": "ff242bee9013eb88f670d3d9cbe85e08b78023b36ab18226ae01ca4136ee760b"
+  },
+  "frozen_inputs_unchanged": true,
+  "results": [
+    {
+      "setting": "threshold_0.30",
+      "threshold": 0.3,
+      "is_baseline": true,
+      "inference_wall_seconds": 14.475539999999455,
+      "metrics": {
+        "count": 8917,
+        "entity_exact": 100.0,
+        "entity_macro_f1": 100.0,
+        "bleu": 100.00000000000004,
+        "rouge_l": 100.0,
+        "by_relation": {
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 1416
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2214
+          },
+          "P364": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2238
+          },
+          "P57": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2238
+          },
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 811
+          }
+        },
+        "answerable_count": 8106,
+        "refusal_count": 811,
+        "answerable_entity_exact": 100.0,
+        "answerable_entity_macro_f1": 100.0,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 1.6191790063593707,
+        "latency_p95_ms": 2.6154999941354617,
+        "gold_total": 8917,
+        "prediction_coverage": 100.0
+      },
+      "predictions_sha256": "981e70bb1cae3e2eeff4176fb9d6d943e2e8e98bb2d3b744d9094fb683d627ff"
+    },
+    {
+      "setting": "threshold_0.70",
+      "threshold": 0.7,
+      "is_baseline": false,
+      "inference_wall_seconds": 15.514020499998878,
+      "metrics": {
+        "count": 8917,
+        "entity_exact": 100.0,
+        "entity_macro_f1": 100.0,
+        "bleu": 100.00000000000004,
+        "rouge_l": 100.0,
+        "by_relation": {
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 1416
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2214
+          },
+          "P364": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2238
+          },
+          "P57": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2238
+          },
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 811
+          }
+        },
+        "answerable_count": 8106,
+        "refusal_count": 811,
+        "answerable_entity_exact": 100.0,
+        "answerable_entity_macro_f1": 100.0,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 1.7347761018802415,
+        "latency_p95_ms": 2.619700004288461,
+        "gold_total": 8917,
+        "prediction_coverage": 100.0
+      },
+      "predictions_sha256": "1d314604f3d4882b585cdd73a0279dbc47fb5b08c87b7ba3630c681940ab2ade"
+    },
+    {
+      "setting": "threshold_0.90",
+      "threshold": 0.9,
+      "is_baseline": false,
+      "inference_wall_seconds": 13.001679900000454,
+      "metrics": {
+        "count": 8917,
+        "entity_exact": 100.0,
+        "entity_macro_f1": 100.0,
+        "bleu": 100.00000000000004,
+        "rouge_l": 100.0,
+        "by_relation": {
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 1416
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2214
+          },
+          "P364": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2238
+          },
+          "P57": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2238
+          },
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 811
+          }
+        },
+        "answerable_count": 8106,
+        "refusal_count": 811,
+        "answerable_entity_exact": 100.0,
+        "answerable_entity_macro_f1": 100.0,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 1.4539142984783147,
+        "latency_p95_ms": 1.9987000050605275,
+        "gold_total": 8917,
+        "prediction_coverage": 100.0
+      },
+      "predictions_sha256": "fb89741c1413df3f0922f19bb6d680875b294a11701eb7a5e8b1b2faef49d2ac"
+    },
+    {
+      "setting": "threshold_0.99",
+      "threshold": 0.99,
+      "is_baseline": false,
+      "inference_wall_seconds": 13.192939300002763,
+      "metrics": {
+        "count": 8917,
+        "entity_exact": 100.0,
+        "entity_macro_f1": 100.0,
+        "bleu": 100.00000000000004,
+        "rouge_l": 100.0,
+        "by_relation": {
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 1416
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2214
+          },
+          "P364": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2238
+          },
+          "P57": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2238
+          },
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 811
+          }
+        },
+        "answerable_count": 8106,
+        "refusal_count": 811,
+        "answerable_entity_exact": 100.0,
+        "answerable_entity_macro_f1": 100.0,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 1.475277380321969,
+        "latency_p95_ms": 2.103999999235384,
+        "gold_total": 8917,
+        "prediction_coverage": 100.0
+      },
+      "predictions_sha256": "6ea4bb127c6fdb6c7b5e793b0df768ee5cd4fe5b9e9d9a564f11a3d0b6e55cb3"
+    }
+  ],
+  "environment": {
+    "python": "3.12.8 | packaged by Anaconda, Inc. | (main, Dec 11 2024, 16:48:34) [MSC v.1929 64 bit (AMD64)]",
+    "executable": "environment/Scripts/python.exe",
+    "platform": "Windows-11-10.0.22631-SP0",
+    "OMP_NUM_THREADS": "2",
+    "MKL_NUM_THREADS": "2",
+    "versions": {
+      "numpy": "1.26.4",
+      "scikit-learn": "1.6.1",
+      "sacrebleu": "2.5.1",
+      "rouge-score": "0.1.2",
+      "threadpoolctl": "3.7.0"
+    }
+  }
+}

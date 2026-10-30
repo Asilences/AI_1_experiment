@@ -64,6 +64,7 @@ jobs:
           python -m kgqa.neural_preflight --help
           python -m kgqa.recovery_experiment --help
           python -m kgqa.expanded_evaluation --help
+          python -m kgqa.expanded_suite --help
 
       - name: 运行核心测试
         run: python -m pytest -q

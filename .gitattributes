@@ -2,3 +2,5 @@
 data/raw/expansion_5000_20261029/snapshot_5000.json -text linguist-generated=true
 data/processed/movies_5000_20261029/** -text linguist-generated=true
 models/pipeline_5000_20261029/** -text linguist-generated=true
+# Preserve the actual supplemental predictions and their recorded SHA-256 bytes.
+reports/补充阈值运行记录/** -text

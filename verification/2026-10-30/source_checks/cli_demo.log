@@ -1,0 +1,15 @@
+usage: demo.py [-h] [--question QUESTION] [--system {a0,best,both}]
+               [--data-dir DATA_DIR] [--model-path MODEL_PATH]
+               [--recover-names]
+
+Interactive comparison of A0 and the validation-selected neural system.
+
+options:
+  -h, --help            show this help message and exit
+  --question QUESTION
+  --system {a0,best,both}
+  --data-dir DATA_DIR   Processed data directory for A0 only.
+  --model-path MODEL_PATH
+                        A0 model.pkl from a personal or acceptance run.
+  --recover-names       Restore unambiguous tokenizer-damaged names from
+                        retrieved facts; retain raw output.

@@ -1,0 +1,41 @@
+{
+  "scope": "Training questions only; pretrained random graph prefix; throughput calibration, not a quality evaluation.",
+  "results": [
+    {
+      "batch_size": 128,
+      "precision": "float32",
+      "status": "PASS",
+      "seconds": 2.74143180000101,
+      "rows_per_second": 46.690929900190426,
+      "output_length": 82,
+      "peak_mb": 1428.716796875
+    },
+    {
+      "batch_size": 128,
+      "precision": "bf16",
+      "status": "PASS",
+      "seconds": 2.2095409000030486,
+      "rows_per_second": 57.930586394586946,
+      "output_length": 81,
+      "peak_mb": 1132.66552734375
+    },
+    {
+      "batch_size": 256,
+      "precision": "float32",
+      "status": "PASS",
+      "seconds": 5.040308700001333,
+      "rows_per_second": 50.79053987307014,
+      "output_length": 82,
+      "peak_mb": 2553.0361328125
+    },
+    {
+      "batch_size": 256,
+      "precision": "bf16",
+      "status": "PASS",
+      "seconds": 3.3180394999944838,
+      "rows_per_second": 77.1539940981491,
+      "output_length": 81,
+      "peak_mb": 1928.63916015625
+    }
+  ]
+}
