@@ -219,8 +219,6 @@ class Explorer:
             return finish('unsupported', '内容推荐需要明确筛选条件与相关性验证，当前暂未开放。' if zh else 'Content recommendation awaits explicit filters and relevance validation.')
         records = []
         if op == 'facts':
-            if len(ids) == 1 and len(props) == 1 and re.search(r'\band\b|和|与|與', normalized(question)):
-                return finish('needs_clarification', '可能还有未识别的电影或条件，请使用两个明确QID或拆开提问。' if zh else 'A second movie or constraint may be unresolved. Use explicit QIDs or separate the questions.')
             for qid in ids:
                 for prop in props:
                     rows = self.by_pair[qid, prop]

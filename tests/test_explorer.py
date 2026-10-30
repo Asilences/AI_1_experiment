@@ -133,6 +133,14 @@ def test_ambiguous_movie_confirmation_preserves_other_resolved_movie(explorer):
     assert multiple['status'] == 'needs_clarification' and not multiple['evidence']
 
 
+def test_conjunction_within_complete_title_is_not_an_unresolved_movie(explorer):
+    from kgqa.candidates import CandidateIndex
+    explorer.movies['Q1']['label'] = 'Harry Potter and the Deathly Hallows – Part 2'
+    explorer.index = CandidateIndex(list(explorer.movies.values()))
+    result = explorer.answer('Who is in the cast of Harry Potter and the Deathly Hallows – Part 2?')
+    assert result['status'] == 'answered' and result['total'] == 2
+
+
 def test_real_http_explore_confirmation_and_validation(explorer, tmp_path):
     service = QAService(data_dir=tmp_path/'absent', model_path=tmp_path/'absent.pkl')
     service.explorer = explorer
