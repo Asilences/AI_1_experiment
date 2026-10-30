@@ -1,0 +1,32 @@
+{
+  "reason": "Native BF16 detection fix; preserve interrupted attempt; restart original B0 in float32",
+  "archive_sha256": "dd156164d98a5d609c83557f2d3ec75ad50e8bc7d456e1e376a0ab741c1f596b",
+  "changes": [
+    {
+      "path": "configs/freeform-v2-training-plan.json",
+      "before_sha256": "286e77bbd3906e631259dd33b920890af9a851c004a8ea11151abbe5b86ec3dc",
+      "after_sha256": "fd04229be68bf387af64d81a365edb6b9737b35902b5a2b9448920ccfcfcb7fa"
+    },
+    {
+      "path": "configs/v100-freeform-env.json",
+      "before_sha256": "a67721275cd457a614f261c8dd45140ff9a2073f0bdede55db07fbc13626c868",
+      "after_sha256": "e13a9478cdf9ae4185115f13aff41c7aaef4a0d646a76a6fb269e3bb2634aa62"
+    },
+    {
+      "path": "docs/\u81ea\u7531\u95ee\u6cd5\u8bad\u7ec3\u542f\u52a8\u8bb0\u5f55_20261031.md",
+      "before_sha256": "0cde747eb89c4267ec61b58ea09eb804b43ba793e6058d2f1a40b81a5607dec1",
+      "after_sha256": "e1176c844ecea76198ce75de32292cc055d324bd42913531f19deee66f8c393f"
+    },
+    {
+      "path": "kgqa/freeform_experiment.py",
+      "before_sha256": "f4dd63574a59aa9ccaea3f9368682153668375a6181ee07db381ddf0ad068706",
+      "after_sha256": "e9e9d4dabbf03d078ba144979cd572eb7c06f9e14600712e43daa917ace92636"
+    },
+    {
+      "path": "kgqa/neural.py",
+      "before_sha256": "3aa4913cf715d94f1467cf906ebb9dec2afd3a70603cc2da578c11b14e42fbed",
+      "after_sha256": "7520b35b0e54af0d5eb25e49cc04da51954b6aef6a87aacdb194c93f06a280ac"
+    }
+  ],
+  "commit": "f71e82c10d1f3419778757867382c5c39975193f"
+}

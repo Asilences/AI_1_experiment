@@ -1,0 +1,55 @@
+{
+  "mode": "witness",
+  "run_id": "v100_freeform_v2_fp32_doccheck_20261031",
+  "data_dir": "data/processed/movies_5000_freeform_en_v2",
+  "embedding_dir": "assets/5000_runtime_20261030/models/transe",
+  "initial_checkpoint": "assets/5000_runtime_20261030/runs/B0/checkpoint",
+  "gpu": 1,
+  "memory_fraction": 0.25,
+  "threads": 2,
+  "batch_size": 8,
+  "eval_batch_size": 32,
+  "input_max_length": 512,
+  "gradient_accumulation": 2,
+  "learning_rate": 3e-05,
+  "epochs": 3,
+  "bindings": {
+    "dataset": {
+      "manifest.json": "db17dbd8b8924c4c9a4863acba685ab8b2e8aafd5dfdec24a5a454017982ec74",
+      "qa.jsonl": "2f193a52087e32b6c48992bbf35ab94038511ed5a40c68487bca6bc8b7c7492e",
+      "entities.json": "7c935d8fa1eecd9870df16e49d93460bdd75f90255661e4e4e397af9f667f3e8",
+      "splits.json": "dd24634f590e3e5dd38dc2e5ca7fd25b432ec3b562f74dc99a65b22d586113b7",
+      "triples.tsv": "42c9a5c665313b077a97650309bb8102ab573464ba40943a1b41ffb77c2f8e0a"
+    },
+    "embedding": {
+      "embeddings.npz": "fe9cf70cba4eb0b509fca8ccfdf21ec7226aaf8ce9488f0a2bd3fb657745c71c",
+      "mapping.json": "4897387a4b688470fad8f35f2cba6436f3393815c7464f89a89526c3bd1fe64a"
+    },
+    "checkpoint": {
+      "config.json": "b5ba6220a244394c6cdcded46a3e9fbfaee46ff82c2943298e37594d4be01aaf",
+      "generation_config.json": "ecae1f3c45a233e11c64c5c7c7ec8964bc37be51660dbd45a8059d4bc07e067a",
+      "graph_prefix.pt": "28c5302fa607e3795e2fd9bbda1817db73a997ab2535ff2f739f456520e62bcc",
+      "model.safetensors": "b41686667744a47547ded262eb8bce77e8a7c649e69472c1a092bb25d86358e1",
+      "special_tokens_map.json": "65d84a9271d68f1230ab99518c00f0f7eaef95c7b363001595ba6fa662d434b1",
+      "spiece.model": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86",
+      "tokenizer.json": "dc856f1be037756d043c1557df9a075bb8658c03c26405ef78a9fc759521cc3e",
+      "tokenizer_config.json": "f0f4630efa94e1d9e93c877ecdf2e45a8b9685037f752eddf0611508425b967b"
+    },
+    "source": {
+      "kgqa/neural.py": "7520b35b0e54af0d5eb25e49cc04da51954b6aef6a87aacdb194c93f06a280ac",
+      "kgqa/freeform_experiment.py": "e9e9d4dabbf03d078ba144979cd572eb7c06f9e14600712e43daa917ace92636",
+      "kgqa/metrics.py": "5f3f71568e3fb204a30ae845362d9814a60558c65687822b15b4692277afaf74",
+      "kgqa/linker.py": "0a7e2bf48fbb7e523b4ba4f22a9ec293fe2be458e87a621a7601c61702fdb180"
+    }
+  },
+  "pid": 17789,
+  "created_at": "2026-10-30T20:35:43Z",
+  "torch": "2.6.0+cu118",
+  "cuda": "11.8",
+  "torch_threads": 2,
+  "training_precision": "float32",
+  "gpu_name": "Tesla V100-SXM2-32GB",
+  "gpu_memory_total": 34079899648,
+  "allocator_cap_bytes": 8519974912,
+  "cap_scope": "PyTorch allocator only; sampled process peak includes CUDA overhead."
+}

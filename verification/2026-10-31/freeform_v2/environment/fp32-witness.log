@@ -1,0 +1,4 @@
+2026-10-30 20:35:48,167 INFO KERNEL_WITNESS shape=(128, 128) device=Tesla V100-SXM2-32GB finite=True
+2026-10-30 20:35:51,274 INFO MODEL_WITNESS batch=8 precision=float32 finite=True nonempty=8
+2026-10-30 20:35:51,274 INFO TRAINING_PRECISION_WITNESS selected=float32 capability=(7, 0)
+2026-10-30 20:35:51,339 INFO FINISHED status=complete seconds=8.0 peak_reserved_mib=3464.0 process_peak_mib=4468

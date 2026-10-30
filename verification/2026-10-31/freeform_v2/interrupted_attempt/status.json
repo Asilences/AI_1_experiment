@@ -1,0 +1,15 @@
+{
+  "status": "interrupted",
+  "reason": "Torch2.6 is_bf16_supported includes software emulation on V100; intended precision is float32. Preserve this attempt; restart in a new run after native support detection fix.",
+  "previous_status": {
+    "status": "running",
+    "stage": "training",
+    "current_epoch": 1,
+    "step": 100,
+    "total_batches": 9151,
+    "optimizer_updates": 50,
+    "mean_loss": 0.040994884134779565,
+    "updated_at": "2026-10-30T20:32:06Z"
+  },
+  "pid": 15415
+}
