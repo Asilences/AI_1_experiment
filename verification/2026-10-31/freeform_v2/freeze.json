@@ -1,0 +1,28 @@
+{
+  "dataset_dir": "data/processed/movies_5000_freeform_en_v2",
+  "recipe": "v2",
+  "files": {
+    "entities.json": {
+      "sha256": "7c935d8fa1eecd9870df16e49d93460bdd75f90255661e4e4e397af9f667f3e8",
+      "bytes": 4454440
+    },
+    "manifest.json": {
+      "sha256": "db17dbd8b8924c4c9a4863acba685ab8b2e8aafd5dfdec24a5a454017982ec74",
+      "bytes": 6241
+    },
+    "qa.jsonl": {
+      "sha256": "2f193a52087e32b6c48992bbf35ab94038511ed5a40c68487bca6bc8b7c7492e",
+      "bytes": 41901082
+    },
+    "splits.json": {
+      "sha256": "dd24634f590e3e5dd38dc2e5ca7fd25b432ec3b562f74dc99a65b22d586113b7",
+      "bytes": 82873
+    },
+    "triples.tsv": {
+      "sha256": "42c9a5c665313b077a97650309bb8102ab573464ba40943a1b41ffb77c2f8e0a",
+      "bytes": 732671
+    }
+  },
+  "changes_before_scoring": true,
+  "test_not_used_for_recipe_revision": true
+}

@@ -1,0 +1,205 @@
+{
+  "created_at": "2026-10-30T19:12:17Z",
+  "snapshot": "data\\raw\\expansion_5000_20261029\\snapshot_5000.json",
+  "snapshot_sha256": "486faa982e84fd5781f62872fd02db11100fad82a013b37f454bbe4da520d867",
+  "movies": 5000,
+  "entities": 7864,
+  "triples": 35485,
+  "qa": 86974,
+  "qa_by_split": {
+    "train": 73202,
+    "valid": 6868,
+    "test": 6904
+  },
+  "qa_by_relation": {
+    "P57": 20387,
+    "P136": 12453,
+    "P495": 20102,
+    "P364": 20285,
+    "UNKNOWN": 13747
+  },
+  "movie_split_sizes": {
+    "train": 3500,
+    "valid": 750,
+    "test": 750
+  },
+  "base_splits_sha256": "46514c22319f7fcadafa91b51f0d6cd69634b6fcb8e03b1603948b39727c6be0",
+  "split_policy": "Preserve all previous movie assignments; seed-42 shuffle additions to reach 70/15/15.",
+  "name": "5000电影英文自然问法受控改写",
+  "dataset_role": "synthetic English paraphrase training and family-held-out regression",
+  "prepare_source_sha256": "b58706ee0cb15cc4e0afada08de52ed0374e8c102889cccb6c7a2344ff4164e7",
+  "source_hashes": {
+    "entities.json": "7c935d8fa1eecd9870df16e49d93460bdd75f90255661e4e4e397af9f667f3e8",
+    "splits.json": "dd24634f590e3e5dd38dc2e5ca7fd25b432ec3b562f74dc99a65b22d586113b7",
+    "qa.jsonl": "2882b2077834d37f4b1ae8f9b8ea90561c8c5dacecf4247907311d0cbb8bb310",
+    "triples.tsv": "42c9a5c665313b077a97650309bb8102ab573464ba40943a1b41ffb77c2f8e0a"
+  },
+  "graph_unchanged": true,
+  "movie_splits_unchanged": true,
+  "original_qa_included_in": [
+    "train"
+  ],
+  "question_language": "en",
+  "recipe_version": "v2",
+  "recipe_revision_reason": "Disambiguate original language, director and country of origin before scoring.",
+  "unsupported_scope": "UNKNOWN labels apply to the four-relation neural task, not the V2 catalog tools.",
+  "families": {
+    "train": {
+      "P57": [
+        {
+          "id": "director_identity",
+          "template": "Could you tell me the director of {title}?"
+        },
+        {
+          "id": "helm_credit",
+          "template": "Who helmed {title}?"
+        }
+      ],
+      "P136": [
+        {
+          "id": "genre_explanation",
+          "template": "Tell me the genre of {title}, please."
+        },
+        {
+          "id": "genre_request",
+          "template": "I would like to know the genres of {title}."
+        }
+      ],
+      "P495": [
+        {
+          "id": "production_country",
+          "template": "Which countries produced {title}?"
+        },
+        {
+          "id": "country_request",
+          "template": "Tell me the country of origin for {title}, please."
+        }
+      ],
+      "P364": [
+        {
+          "id": "original_audio",
+          "template": "What were the original audio languages of {title}?"
+        },
+        {
+          "id": "language_request",
+          "template": "Please tell me the original language of {title}."
+        }
+      ],
+      "UNKNOWN": [
+        {
+          "id": "cast_request",
+          "template": "Please list the cast of {title}."
+        },
+        {
+          "id": "budget_request",
+          "template": "Tell me the production budget of {title}."
+        }
+      ]
+    },
+    "valid": {
+      "P57": [
+        {
+          "id": "directing_credit",
+          "template": "Who receives the directing credit for {title}?"
+        },
+        {
+          "id": "director_lookup",
+          "template": "Can you look up who directed {title}?"
+        }
+      ],
+      "P136": [
+        {
+          "id": "genre_classification",
+          "template": "How would you classify {title} by genre?"
+        },
+        {
+          "id": "genre_catalog",
+          "template": "Which genres are recorded for {title}?"
+        }
+      ],
+      "P495": [
+        {
+          "id": "country_catalog",
+          "template": "What production countries are recorded for {title}?"
+        },
+        {
+          "id": "nation_lookup",
+          "template": "Can you name the nations that made {title}?"
+        }
+      ],
+      "P364": [
+        {
+          "id": "language_catalog",
+          "template": "What original languages are recorded for {title}?"
+        },
+        {
+          "id": "original_language_lookup",
+          "template": "Can you identify the original language of {title}?"
+        }
+      ],
+      "UNKNOWN": [
+        {
+          "id": "box_office_lookup",
+          "template": "How much did {title} earn at the box office?"
+        },
+        {
+          "id": "composer_lookup",
+          "template": "Who composed the music for {title}?"
+        }
+      ]
+    },
+    "test": {
+      "P57": [
+        {
+          "id": "directorial_credit",
+          "template": "Which person has the directorial credit on {title}?"
+        },
+        {
+          "id": "director_name",
+          "template": "Name the director responsible for directing {title}."
+        }
+      ],
+      "P136": [
+        {
+          "id": "genre_membership",
+          "template": "In terms of genre, where does {title} belong?"
+        },
+        {
+          "id": "genre_summary",
+          "template": "Give me the genre classification of {title}."
+        }
+      ],
+      "P495": [
+        {
+          "id": "country_origin_summary",
+          "template": "What is the country of origin of {title}?"
+        },
+        {
+          "id": "nation_summary",
+          "template": "List the nations behind the production of {title}."
+        }
+      ],
+      "P364": [
+        {
+          "id": "language_summary",
+          "template": "Which languages did the makers originally use in {title}?"
+        },
+        {
+          "id": "language_fact",
+          "template": "Give me the original-language information for {title}."
+        }
+      ],
+      "UNKNOWN": [
+        {
+          "id": "writer_lookup",
+          "template": "Who wrote {title}?"
+        },
+        {
+          "id": "release_lookup",
+          "template": "When was {title} released?"
+        }
+      ]
+    }
+  },
+  "scope_note": "Authored synthetic paraphrases; family-held-out results are not independent human free-question evaluation."
+}
