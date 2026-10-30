@@ -21,6 +21,7 @@ def test_multiple_exact_titles_and_chinese_alias_are_supported():
     movies = index()
     assert movies.mentions('盗梦空间的演员和编剧是谁？')[0] == ['Q1']
     assert movies.mentions('Q1 and Q2 shared cast')[0] == ['Q1', 'Q2']
+    assert movies.mentions('Q1的演员是谁？')[0] == ['Q1']
 
 
 def test_homonyms_unknown_sequels_and_ordinary_short_words_do_not_auto_accept():

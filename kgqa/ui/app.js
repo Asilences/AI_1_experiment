@@ -163,6 +163,8 @@ function setBusy(value) {
   $('#ask-label').textContent = value ? '正在处理' : '开始提问';
   $('#question-form').setAttribute('aria-busy', String(value));
   $('#loading').hidden = !value;
+  $('#loading strong').textContent = $('#explore-mode').checked ? '正在查询扩展事实' : '正在查询与生成答案';
+  $('#loading p').textContent = $('#explore-mode').checked ? '正在核对电影、属性与本地证据。' : '首次使用神经系统需要加载模型，请稍候。';
   $('#results').hidden = value;
   $('#explore-results').hidden = value || !latestResult?.plan;
   $('#empty-state').hidden = value || !!latestResult;

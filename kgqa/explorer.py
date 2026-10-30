@@ -122,7 +122,7 @@ class Explorer:
                 name = normalized(name)
                 if name:
                     text = re.sub(r'(?<!\w)' + re.escape(name) + r'(?!\w)' if re.fullmatch(r'[a-z0-9 ]+', name) else re.escape(name), ' ', text)
-        text = re.sub(r'\bq\d+\b', ' ', text)
+        text = re.sub(r'(?<![a-z0-9])q\d+(?![a-z0-9])', ' ', text)
         props = [p for p, pattern in INTENTS.items() if re.search(pattern, text)]
         if 'P725' in props and 'P161' in props:
             props.remove('P161')

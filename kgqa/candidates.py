@@ -37,6 +37,14 @@ class CandidateIndex:
         for name in self.names:
             for gram in grams(name):
                 self.postings[gram].add(name)
+        self.matchers = []
+        for name, ids in self.names.items():
+            pattern = re.escape(name)
+            if re.match(r'[a-z0-9]', name):
+                pattern = r'(?<![\w])' + pattern
+            if re.search(r'[a-z0-9]$', name):
+                pattern += r'(?![\w])'
+            self.matchers.append((name, re.compile(pattern), ids))
 
     def card(self, qid, score=1., method='exact'):
         movie = self.movies[qid]
@@ -68,24 +76,19 @@ class CandidateIndex:
     def mentions(self, question):
         """Exact complete aliases only. Never promote a retrieved typo to a fact."""
         text = normalized(question)
-        explicit = list(dict.fromkeys(q.upper() for q in re.findall(r'\bQ[1-9]\d*\b', question, re.I)))
+        explicit = list(dict.fromkeys(q.upper() for q in re.findall(r'(?<![a-z0-9])Q[1-9]\d*(?![a-z0-9])', question, re.I)))
         if explicit:
             if any(q not in self.movies for q in explicit):
                 return [], [], 'not_found'
             return explicit, [], 'qid'
         spans = []
-        for name, ids in self.names.items():
+        quoted_names = {normalized(m) for m in re.findall(r'[《"“](.*?)[》"”]', question)}
+        for name, matcher, ids in self.matchers:
             if (name in AMBIGUOUS_WORDS or len(name) < 4 and re.fullmatch(r'[a-z0-9 ]+', name)) and text != name:
                 # Short ordinary words in a question are not reliable titles.
-                quoted = any(normalized(m) == name for m in re.findall(r'[《"“](.*?)[》"”]', question))
-                if not quoted:
+                if name not in quoted_names:
                     continue
-            pattern = re.escape(name)
-            if re.match(r'[a-z0-9]', name):
-                pattern = r'(?<![\w])' + pattern
-            if re.search(r'[a-z0-9]$', name):
-                pattern += r'(?![\w])'
-            for match in re.finditer(pattern, text):
+            for match in matcher.finditer(text):
                 spans.append((match.start(), match.end(), ids))
         chosen = []
         for span in sorted(spans, key=lambda s: (-(s[1]-s[0]), s[0])):
