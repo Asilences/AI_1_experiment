@@ -1,0 +1,28 @@
+{
+  "ref": "origin/main",
+  "sha": "2df88adf489787eb8cfdb2cf7f7cd3733160cb3a",
+  "merged_prs": [
+    9,
+    10,
+    11
+  ],
+  "relevant_changes": [
+    "Chinese adapter and name recovery",
+    "AnswerEntityIndex revision and retrieved-fact context",
+    "Neural input length/evaluation batch/model source parameters",
+    "5000 full training and report evidence"
+  ],
+  "resolution": "Merge main ca71f04; use keyword train parameters; keep all upstream fixes and resource logs; match original B0 input512 before new scores",
+  "source_commits": [
+    "ca71f0453ab84bc1e1aab584575e05f038139188",
+    "d51daba4b1dd0faf646ecdf2599bff2a33bdb229"
+  ],
+  "local_validation": {
+    "pytest_cpu": "517 passed, 1 skipped, 16.37 seconds",
+    "neural_environment": "5 path/thread tests passed",
+    "ruff_fatal": "passed",
+    "compileall": "passed",
+    "dataset_verify_smoke": "passed"
+  },
+  "note": "Historical snapshot; another fetch is required immediately before formal training."
+}
