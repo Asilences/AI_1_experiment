@@ -118,7 +118,7 @@ def move(batch, device):
 def predictions(model, loader, tokenizer, entities, device):
     model.eval(); output = []
     name_index = EntityNameIndex(entities)
-    for batch in loader:
+    for step, batch in enumerate(loader, 1):
         rows = batch.pop('rows'); batch = move(batch, device); batch.pop('labels', None)
         if device.type == 'cuda': torch.cuda.synchronize()
         started = time.perf_counter(); generated = model.generate(**batch)
@@ -128,6 +128,8 @@ def predictions(model, loader, tokenizer, entities, device):
         for row, text in zip(rows, texts):
             output.append({'question_id': row['question_id'], 'question': row['question'], 'answer': text,
                            'answer_ids': entity_ids_from_text(text, entities, row['movie_id'], index=name_index), 'latency_ms': elapsed})
+        if step % 100 == 0 or step == len(loader):
+            logging.info('prediction batches=%s/%s questions=%s', step, len(loader), len(output))
     return output
 
 
@@ -136,7 +138,7 @@ def validation_outputs(model, loader, tokenizer, entities, device):
     model.eval(); output, losses = [], []
     name_index = EntityNameIndex(entities)
     use_bf16 = device.type == 'cuda' and torch.cuda.is_bf16_supported()
-    for batch in loader:
+    for step, batch in enumerate(loader, 1):
         rows = batch.pop('rows'); batch = move(batch, device)
         context = torch.autocast('cuda', dtype=torch.bfloat16) if use_bf16 else nullcontext()
         with context:
@@ -150,6 +152,8 @@ def validation_outputs(model, loader, tokenizer, entities, device):
         for row, text in zip(rows, texts):
             output.append({'question_id': row['question_id'], 'question': row['question'], 'answer': text,
                            'answer_ids': entity_ids_from_text(text, entities, row['movie_id'], index=name_index), 'latency_ms': elapsed})
+        if step % 100 == 0 or step == len(loader):
+            logging.info('validation batches=%s/%s questions=%s', step, len(loader), len(output))
     return output, float(np.mean(losses))
 
 
@@ -231,6 +235,10 @@ def train(run_id, learning_rate, use_embeddings=True, epochs=5, smoke=False,
                     if scaler.get_scale() >= previous_scale:
                         scheduler.step(); optimizer_updates += 1; epoch_updates += 1
                     optimizer.zero_grad()
+                if step % 100 == 0 or step == batches_per_epoch:
+                    logging.info('run=%s epoch=%s batch=%s/%s loss=%.5f updates=%s peak_reserved_mib=%.1f',
+                                 run_id, epoch, step, batches_per_epoch, loss.item(), optimizer_updates,
+                                 torch.cuda.max_memory_reserved() / 2**20 if device.type == 'cuda' else 0)
             valid_predictions, valid_loss = validation_outputs(model, loaders['valid'], tokenizer, graph.entities, device)
             metrics = score_rows(data['valid'], valid_predictions, graph.entities)
             metrics.update(gold_total=len(data['valid']), prediction_coverage=100.0)
