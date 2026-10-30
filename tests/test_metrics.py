@@ -147,6 +147,16 @@ def test_evaluate_full_split_and_saved_coverage(evaluation_files):
     assert read_json(root / 'runs/run/metrics_test.json') == result
 
 
+def test_custom_run_evaluates_the_new_question_version_instead_of_default(evaluation_files):
+    root = evaluation_files
+    write_evaluation(root, [gold_row('old_question')], [prediction('new_question')])
+    write_json(root / 'runs/run/config.json', {'data_dir': 'new_data'})
+    write_json(root / 'new_data/entities.json', ENTITIES)
+    write_jsonl(root / 'new_data/qa.jsonl', [gold_row('new_question')])
+    result = metrics.evaluate('run')
+    assert result['entity_exact'] == 100 and result['prediction_coverage'] == 100
+
+
 def test_evaluate_smoke_subset_reports_partial_coverage(evaluation_files):
     write_evaluation(evaluation_files, [gold_row(), gold_row('q2')], [prediction()], smoke=True)
     result = metrics.evaluate('run')

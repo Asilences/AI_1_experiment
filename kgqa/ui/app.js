@@ -2,7 +2,7 @@
 
 const $ = (selector, scope = document) => scope.querySelector(selector);
 const relationNames = {P57: '导演', P136: '电影类型', P495: '制作国家', P364: '原始语言', UNKNOWN: '未支持的关系'};
-const linkNames = {exact: '名称 / 别名匹配', fuzzy: '模糊匹配', ambiguous: '实体存在歧义', not_found: '未找到电影'};
+const linkNames = {exact: '名称 / 别名匹配', alias: '中文名称 / 别名匹配', qid: 'QID 明确指定', fuzzy: '模糊匹配', ambiguous: '实体存在歧义', not_found: '未找到电影'};
 const storageKey = 'film-kgqa-questions-v1';
 let appStatus = null;
 let latestResult = null;
@@ -13,6 +13,7 @@ let toastTimer;
 let offset = 0;
 let selectedMovie = null;
 let history = [];
+let exploreRequest = null;
 try { history = JSON.parse(localStorage.getItem(storageKey) || '[]'); } catch { /* Storage is optional. */ }
 if (!Array.isArray(history)) history = [];
 history = history.filter(item => typeof item === 'string').slice(0, 6);
@@ -158,11 +159,14 @@ function renderResult(result) {
 
 function setBusy(value) {
   busy = value;
-  $('#ask-button').disabled = value || !appStatus?.a0.available;
+  $('#ask-button').disabled = value || (!appStatus?.a0.available && !($('#explore-mode').checked && appStatus?.explorer?.available));
   $('#ask-label').textContent = value ? '正在处理' : '开始提问';
   $('#question-form').setAttribute('aria-busy', String(value));
   $('#loading').hidden = !value;
+  $('#loading strong').textContent = $('#explore-mode').checked ? '正在查询扩展事实' : '正在查询与生成答案';
+  $('#loading p').textContent = $('#explore-mode').checked ? '正在核对电影、属性与本地证据。' : '首次使用神经系统需要加载模型，请稍候。';
   $('#results').hidden = value;
+  $('#explore-results').hidden = value || !latestResult?.plan;
   $('#empty-state').hidden = value || !!latestResult;
   $('#export-result').disabled = value || !latestResult;
   $('#answered-question').hidden = value || !latestResult;
@@ -173,6 +177,11 @@ $('#question-form').addEventListener('submit', async event => {
   if (busy) return;
   const question = $('#question').value.trim();
   if (!question) { $('#question').focus(); return; }
+  if ($('#explore-mode').checked && appStatus?.explorer?.available) {
+    await submitExplore({question});
+    return;
+  }
+  $('#explore-results').hidden = true;
   const system = $('input[name="system"]:checked').value;
   const errorBox = $('#request-error');
   errorBox.hidden = true;
@@ -180,9 +189,30 @@ $('#question-form').addEventListener('submit', async event => {
   $('#timing-note').hidden = true;
   setBusy(true);
   try {
-    const data = await request('/api/answer', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({question, system})});
+    const mode = appStatus?.freeform?.available && $('#freeform-mode').checked ? 'freeform' : 'standard';
+    const data = await request('/api/answer', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({question, system, mode})});
     latestResult = {...data, saved_at: new Date().toISOString()};
     $('#answered-question').textContent = `已回答的问题：${data.question}`;
+    const parsed = data.interpretation;
+    $('#interpretation').hidden = !parsed;
+    if (parsed) {
+      $('#interpretation-text').textContent = parsed.canonical_question && parsed.status === 'ready'
+        ? `理解为：${parsed.canonical_question} ${parsed.message}` : parsed.message;
+      const options = $('#clarification-options');
+      options.replaceChildren();
+      for (const suggestion of parsed.suggestions || []) {
+        const button = node('button', 'example-chip', suggestion);
+        button.type = 'button';
+        button.addEventListener('click', () => setQuestion(suggestion));
+        options.append(button);
+      }
+      for (const candidate of parsed.candidates || []) {
+        const button = node('button', 'example-chip', `${candidate.label} (${candidate.id})`);
+        button.type = 'button';
+        button.addEventListener('click', () => setQuestion(`${candidate.id}: ${data.question}`));
+        options.append(button);
+      }
+    }
     const results = $('#results');
     results.replaceChildren(...data.results.map(renderResult));
     results.classList.toggle('single', data.results.length === 1);
@@ -193,6 +223,103 @@ $('#question-form').addEventListener('submit', async event => {
     errorBox.textContent = error instanceof TypeError ? '无法连接本地服务，请确认启动终端仍在运行。' : error.message;
     errorBox.hidden = false;
   } finally { setBusy(false); }
+});
+
+async function submitExplore(payload) {
+  if (busy) return;
+  $('#request-error').hidden = true;
+  $('#interpretation').hidden = true;
+  setBusy(true);
+  try {
+    const data = await request('/api/explore', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(payload)});
+    exploreRequest = payload;
+    latestResult = {...data, saved_at: new Date().toISOString()};
+    $('#answered-question').textContent = `当前问题：${data.question}`;
+    $('#results').replaceChildren();
+    renderExplore(data);
+    $('#request-timing').textContent = `工具耗时 ${formatTime(data.elapsed_ms)}`;
+    $('#timing-note').hidden = true;
+    remember(data.question);
+  } catch (error) {
+    $('#request-error').textContent = error.message;
+    $('#request-error').hidden = false;
+  } finally { setBusy(false); }
+}
+
+function renderExplore(data) {
+  const target = $('#explore-results');
+  target.replaceChildren();
+  const card = node('article', 'answer-card explore-card');
+  const top = node('div', 'card-top');
+  const heading = node('div');
+  heading.append(node('span', 'card-eyebrow', 'EXTENDED CATALOGUE / EVIDENCE TOOLS'), node('h3', 'system-name', '扩展事实与查询工具'));
+  const labels = {answered: '查询完成', partial: '部分可回答', needs_confirmation: '请选择电影', not_found: '未找到电影',
+    needs_clarification: '需要补充信息', unsupported: '暂未支持', not_comparable: '口径不足以比较', unanswerable: '缺少事实',
+    no_recorded_overlap: '未发现已记录共同项', no_recorded_other_works: '片库未记录其他作品'};
+  top.append(heading, node('span', 'result-badge', labels[data.status] || data.status));
+  const body = node('div', 'card-body');
+  body.append(node('p', 'answer-text', data.answer));
+  if (data.plan.candidates.length) {
+    const choices = node('div', 'candidate-cards');
+    for (const movie of data.plan.candidates) {
+      const button = node('button', 'candidate-card');
+      button.type = 'button';
+      button.append(node('strong', '', movie.label_zh || movie.label), node('span', '', `${movie.label} · ${movie.year || '年份未知'} · ${movie.id}`),
+        node('span', '', '选择这部电影 →'));
+      button.addEventListener('click', () => submitExplore({question: data.question, movie_ids: [movie.id]}));
+      choices.append(button);
+    }
+    body.append(choices);
+  }
+  const plan = node('details', 'evidence-details');
+  plan.append(node('summary', '', '查看理解与查询范围'), node('pre', 'query-plan', JSON.stringify({
+    operation: data.plan.operation, movie_ids: data.plan.movie_ids, properties: data.plan.properties, scope: '当前冻结片库',
+    total: data.total, offset: data.offset, limit: data.limit
+  }, null, 2)));
+  body.append(plan);
+  if (data.evidence.length) {
+    const details = node('details', 'evidence-details');
+    details.open = true;
+    details.append(node('summary', '', `来源与限定条件 · ${data.evidence.length} 条`));
+    const list = node('ul', 'evidence-list');
+    for (const fact of data.evidence) {
+      const item = node('li');
+      item.append(node('span', '', fact.text));
+      const citation = node('a', 'source-link', `Wikidata · 修订 ${fact.revision || '未知'} · 提取 ${fact.retrieved_at || '未知'}`);
+      // Source URLs are supplied by the importer, not generated prose.
+      if (/^https:\/\/www\.wikidata\.org\/wiki\/Q[1-9]\d*$/.test(fact.source_url)) {
+        citation.href = `${fact.source_url}?oldid=${encodeURIComponent(fact.revision || '')}`;
+        citation.target = '_blank';
+        citation.rel = 'noopener noreferrer';
+      }
+      item.append(citation);
+      if (fact.references.length) {
+        const refs = node('details', 'reference-details');
+        refs.append(node('summary', '', `原始参考来源 ${fact.references.length} 组`), node('pre', 'query-plan', JSON.stringify(fact.references, null, 2)));
+        item.append(refs);
+      }
+      list.append(item);
+    }
+    details.append(list);
+    body.append(details);
+  }
+  if (data.next_offset !== null) {
+    const next = node('button', 'example-chip', `下一页 · 共 ${data.total} 项`);
+    next.type = 'button';
+    next.addEventListener('click', () => submitExplore({...exploreRequest, offset: data.next_offset}));
+    body.append(next);
+  }
+  card.append(top, body);
+  target.append(card);
+}
+
+$('#explore-mode').addEventListener('change', () => {
+  const active = $('#explore-mode').checked;
+  $('.system-switch').hidden = active;
+  $('#freeform-control').hidden = active || !appStatus?.freeform?.available;
+  $('#question').placeholder = active ? '《盗梦空间》的导演和演员是谁？ / Who wrote Inception?' : appStatus.examples[0]?.question || '';
+  $('#question-hint').textContent = active ? '扩展事实按问题语言回答；近似片名先确认，长列表分页显示' : 'Enter 提问，Shift + Enter 换行';
+  setBusy(busy);
 });
 
 $('#question').addEventListener('input', updateCount);
@@ -231,6 +358,12 @@ async function init() {
   $('#ask-button').disabled = true;
   try {
     appStatus = await request('/api/status');
+    $('#explore-control').hidden = !appStatus.explorer?.available;
+    if (appStatus.explorer?.available) {
+      $('#explore-summary').textContent = `${appStatus.explorer.movie_count.toLocaleString()} 部电影 · ${appStatus.explorer.statement_count.toLocaleString()} 条扩展声明`;
+      if (appStatus.explorer.unresolved_entity_label_count) $('#explore-control p').textContent += ` 部分实体名称待补齐，暂以QID显示，可点击来源核对。`;
+    }
+    $('#freeform-control').hidden = !appStatus.freeform?.available;
     const connection = $('#connection');
     connection.classList.add('connected');
     connection.lastChild.textContent = '本地服务已连接';

@@ -5,3 +5,4 @@ scikit-learn==1.6.1
 sacrebleu==2.5.1
 rouge-score==0.1.2
 pytest==8.3.4
+opencc-python-reimplemented==0.1.7

@@ -1,0 +1,25 @@
+{
+  "requested_model": "gpt-6-astra",
+  "requested_reasoning_effort": "xhigh",
+  "reviewer_identity": "Codex, GPT-6 family; exact serving variant unavailable.",
+  "executor_identity": "Codex, GPT-6 family; exact serving variant unavailable",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "raw_reply": "{\n  \"model_identity\": \"Codex, GPT-6 family; exact serving variant unavailable.\",\n  \"assurance\": \"Provisional same-family review, not independent acceptance.\",\n  \"undeclared\": [\n    {\n      \"site\": \"kgqa/freeform.py:68-83\",\n      \"decision\": \"A unique Chinese alias overrides an ambiguous English linker result when no QID is supplied.\",\n      \"why_it_matters\": \"Reproduced against the actual 5000-film data: 'Who directed 黑客帝国 (The Matrix) and Inception?' becomes 'Who directed The Matrix?' and returns only The Matrix's directors. The English linker correctly reports ambiguity, but the adapter discards it. This contradicts the declared multi-movie clarification boundary.\",\n      \"class\": \"semantic\"\n    },\n    {\n      \"site\": \"kgqa/freeform.py:109-123\",\n      \"decision\": \"One recognized relation keyword plus no listed unsupported keyword is treated as sufficient evidence for the corresponding canonical fact request; other semantic qualifiers are discarded.\",\n      \"why_it_matters\": \"Actual end-to-end reproductions: 'Which countries banned The Matrix?' returns its production countries; 'What language is The Matrix dubbed in?' returns its original language. Neither requested fact is supported. The ledger declares unsupported-fact refusal but does not declare this keyword-based substitution of different facts.\",\n      \"class\": \"semantic\"\n    }\n  ],\n  \"stale_rows\": [\n    {\n      \"id\": \"A-001\",\n      \"site\": \"implement-stage/freeform-20261030/ASSUMPTIONS.md:7\",\n      \"recorded\": \"Multiple movies require clarification; unsupported facts receive refusal.\",\n      \"actual\": \"Mixed Chinese/English mentions can suppress an existing ambiguity, and unsupported country/language questions can receive canonical answers about different facts. Both behaviors were reproduced with the actual dataset and A0 model.\"\n    }\n  ],\n  \"semantic_undeclared\": 2,\n  \"verdict\": \"gaps\"\n}",
+  "executor_followup": [
+    {
+      "finding": "mixed-language ambiguity",
+      "action": "Preserve ambiguous English linker output and add real-shaped regression cases."
+    },
+    {
+      "finding": "unsupported country/language qualifiers",
+      "action": "Refuse banned/dubbed/subtitles/location qualifiers and add English/Chinese regressions; bounded rules remain approximate."
+    },
+    {
+      "finding": "executor-detected evaluation data path",
+      "action": "Read per-run data directory in metric evaluation; add an old-versus-new-question regression."
+    }
+  ],
+  "re_sweep_performed": false,
+  "note": "One balanced-budget sweep completed. Post-review changes verified by executor checks only; no independent acceptance is claimed."
+}
