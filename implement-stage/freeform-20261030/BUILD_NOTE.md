@@ -6,7 +6,7 @@
 | F1 | 自然问法解析、实体消歧和拒答 | `python -m pytest -q tests/test_freeform.py` | MUST | 通过 |
 | F2 | 显式网页模式与解析结果 | `python -m pytest -q tests/test_web.py tests/test_freeform.py` | MUST | 通过 |
 | F3 | 独立问句导出与后续训练参数 | `python -m pytest -q tests/test_freeform_data.py tests/test_freeform.py` | MUST | 通过 |
-| F4 | 完整回归与使用说明 | `python -m pytest -q` | MUST | 待执行 |
+| F4 | 完整回归与使用说明 | `python -m pytest -q` | MUST | 通过 |
 
 ## 运行记录
 
@@ -21,6 +21,8 @@ F2：46 项检查通过（9.16 秒）。首次运行遇到既有超长请求测�
 F3：36 项数据与解析检查通过，连同网页共 51 项通过。完整神经依赖环境另有 4 项 CPU 检查通过，覆盖实际数据/映射目录和训练在模型加载前记录所选 QA/检查点；没有执行 GPU 训练。首次生成器测试缺少夹具三元组文件，补全夹具并在写入前检查源文件。
 
 实际另存 `data/processed/movies_5000_freeform_en_v1`：86974 道问答，train/valid/test 为 73202/6868/6904。原 11 个冻结分发资产全部哈希校验通过。合成改写不能视为独立人工自由问法数据。
+
+F4：完整 CPU 检查 290 项通过，1 个可选神经测试模块因轻量环境未安装 torch 而跳过（13.06 秒）；该模块在完整环境另有 4 项通过（5.50 秒）。Ruff、compileall、actionlint、JS 语法、CLI 和 F0 再运行通过。使用说明与训练交接已写入 `docs/自由问法与训练交接.md`。本阶段只能确认上述执行检查通过，不能据此声称自由问题泛化效果已被证明。
 
 ## 延后
 
