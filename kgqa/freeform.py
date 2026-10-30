@@ -26,7 +26,7 @@ PATTERNS = {
 }
 UNSUPPORTED = (
     r'\b(?:budget|box office|runtime|screenplay|writer|writers|write|wrote|written|cast|actor|actors|producer|producers|'
-    r'composer|rating|ratings|award|awards|plot|story|recommend|recommendation|born|filmed|filming|shot|location|'
+    r'composer|composed|rating|ratings|award|awards|plot|story|recommend|recommendation|born|filmed|filming|shot|location|'
     r'released|when|why|earn|earned|cost|sequel|starring|played)\b|\b(?:how many|other films|other movies|better than)\b'
     r'|\brelease\b.*\b(?:date|year)\b|演员|演員|主演|编剧|編劇|预算|預算|票房|评分|評分|时长|時長|上映|'
     r'制片人|製片人|配乐|配樂|剧情|劇情|推荐|推薦|好看|拍摄地|拍攝地|取景|在哪拍|在哪裡拍'
