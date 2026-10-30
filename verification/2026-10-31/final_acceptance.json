@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "scope": "Local Chinese interface, frozen model reuse, controlled acceptance and browser behavior",
+  "source_checks": "source_checks/summary.json",
+  "unit_tests": 432,
+  "chinese_a0": {
+    "answerable_correct": 240,
+    "answerable_count": 240,
+    "refusal_correct": 20,
+    "refusal_count": 20
+  },
+  "real_neural_http": {
+    "answerable_correct": 8,
+    "answerable_count": 8,
+    "refusal_correct": 8,
+    "refusal_count": 8
+  },
+  "real_browser_cases": 4,
+  "english_a0_regression": {
+    "count": 8917,
+    "changed_predictions": 0
+  },
+  "dataset_and_weights_changed": false,
+  "runtime_archive": {
+    "name": "AI_1_experiment_5000_chinese_runtime_20261031.zip",
+    "bytes": 296972295,
+    "sha256": "f9fecfa8ba8fa23936ac23541afffd27e66241912bab0e476b9d6ba3524b5b8a"
+  },
+  "limits": [
+    "Controlled templates; no arbitrary Chinese accuracy claim",
+    "Original English neural weights reused; no multilingual retraining",
+    "Runtime API and browser checks use B0 with fixed name recovery"
+  ]
+}

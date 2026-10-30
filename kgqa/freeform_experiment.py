@@ -104,14 +104,17 @@ def main(argv=None):
     write_json(evidence / 'launch.json', {**vars(args), 'data_dir': str(args.data_dir), 'embedding_dir': str(args.embedding_dir),
                'initial_checkpoint': str(args.initial_checkpoint), 'bindings': bindings,
                'pid': os.getpid(), 'created_at': utc_now(), 'torch': torch.__version__, 'cuda': torch.version.cuda,
+               'torch_threads': torch.get_num_threads(),
                'gpu_name': torch.cuda.get_device_name(0), 'gpu_memory_total': torch.cuda.get_device_properties(0).total_memory,
                'allocator_cap_bytes': int(torch.cuda.get_device_properties(0).total_memory * args.memory_fraction),
                'cap_scope': 'PyTorch allocator only; sampled process peak includes CUDA overhead.'})
     status = 'failed'
     try:
         if args.mode == 'train':
-            train(args.run_id, args.learning_rate, True, args.epochs, False, args.batch_size,
-                  args.gradient_accumulation, args.data_dir, args.embedding_dir, args.initial_checkpoint)
+            train(args.run_id, args.learning_rate, True, args.epochs, False,
+                  batch_size=args.batch_size, gradient_accumulation=args.gradient_accumulation,
+                  input_max_length=384, eval_batch_size=args.batch_size,
+                  data_dir=args.data_dir, embedding_dir=args.embedding_dir, initial_checkpoint=args.initial_checkpoint)
         else:
             graph = GraphData(True, args.data_dir, args.embedding_dir)
             tokenizer = AutoTokenizer.from_pretrained(checkpoint, local_files_only=True)
@@ -132,7 +135,7 @@ def main(argv=None):
                 write_json(run / 'config.json', {'data_dir': str(args.data_dir), 'embedding_dir': str(args.embedding_dir),
                            'initial_checkpoint': str(args.initial_checkpoint), 'mode': 'baseline_valid_only',
                            'test_used': False, 'batch_size': args.batch_size, 'seed': 42,
-                           'metric_note': 'Raw generation; current branch EntityNameIndex decoder, no name recovery/adapter.'})
+                           'metric_note': 'Raw generation; main AnswerEntityIndex decoder with retrieved fact context; no name recovery/adapter.'})
             else:
                 # Real CUDA dispatch, gradients and optimizer states, then actual T5 generation.
                 x = torch.randn(128, 128, device=device, requires_grad=True)

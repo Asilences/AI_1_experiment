@@ -1,0 +1,46 @@
+{
+  "started_date": "2026-10-29",
+  "completed_date": "2026-10-30",
+  "base_commit": "b2431f69690431d164c20f9fa6968c265ce0cce9",
+  "checks": [
+    {
+      "command": "python -m pytest -q",
+      "passed": 297,
+      "seconds": 16.08,
+      "exit_code": 0
+    },
+    {
+      "command": "python -m compileall -q kgqa tests",
+      "exit_code": 0
+    },
+    {
+      "command": "PowerShell parser check for scripts/*.ps1",
+      "exit_code": 0
+    },
+    {
+      "command": "python -m kgqa.acceptance --output-dir output/acceptance/name-and-unicode-20261029",
+      "status": "PASS synthetic offline acceptance",
+      "exit_code": 0
+    },
+    {
+      "command": "python -m kgqa.dataset verify --smoke",
+      "status": "PASS",
+      "asset_files": 11,
+      "asset_bytes": 40422065,
+      "exit_code": 0
+    },
+    {
+      "command": "python -m kgqa.recovery_experiment --help",
+      "exit_code": 0
+    },
+    {
+      "command": "python -m kgqa.expanded_evaluation --help",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    }
+  ],
+  "scope": "Existing 200-movie B0 postprocessing plus frozen 5000-movie A0 Unicode linking. No neural retraining, human ratings or terminal screenshots claimed."
+}

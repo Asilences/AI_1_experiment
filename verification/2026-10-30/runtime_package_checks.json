@@ -1,0 +1,315 @@
+{
+  "status": "PASS",
+  "scope": "Extracted standalone runtime, clean CPU environment, offline model loading",
+  "python_version": "3.12.14",
+  "packages": {
+    "torch": "2.6.0+cpu",
+    "scikit-learn": "1.6.1",
+    "transformers": "4.48.3"
+  },
+  "cuda_available": false,
+  "dataset": {
+    "movie_count": 5000,
+    "fact_count": 35485,
+    "dataset_name": "扩展电影库 · 5000 部",
+    "relation_count": 4,
+    "custom_data": false,
+    "examples": [
+      {
+        "relation": "P57",
+        "question": "Who directed Shutter Island?"
+      },
+      {
+        "relation": "P136",
+        "question": "What genre is Boss Level?"
+      },
+      {
+        "relation": "P495",
+        "question": "Which country did Dogma originate in?"
+      },
+      {
+        "relation": "P364",
+        "question": "What is the original language of 10 Things I Hate About You?"
+      }
+    ],
+    "a0": {
+      "available": true,
+      "name": "A0 管道问答",
+      "detail": "本地模型就绪。"
+    },
+    "neural": {
+      "available": true,
+      "name": "B0 神经生成 + 名称恢复",
+      "run_id": "B0",
+      "detail": "首次使用时加载本地模型。"
+    }
+  },
+  "cases": [
+    {
+      "name": "general",
+      "question": "Who directed Shutter Island?",
+      "results": [
+        {
+          "system": "a0",
+          "name": "A0 管道问答",
+          "ok": true,
+          "answer": "Shutter Island was directed by Martin Scorsese.",
+          "refused": false,
+          "movie": {
+            "id": "Q210364",
+            "label": "Shutter Island"
+          },
+          "link_status": "exact",
+          "link_score": 1.0,
+          "relation": "P57",
+          "confidence": 0.9982801521372827,
+          "evidence": [
+            "Shutter Island (Q210364) --P57--> Martin Scorsese (Q41148)"
+          ],
+          "cold_start": true,
+          "generation_ms": 2.512499995646067,
+          "elapsed_ms": 910.67
+        },
+        {
+          "system": "best",
+          "name": "B0 神经生成 + 名称恢复",
+          "ok": true,
+          "answer": "Shutter Island was directed by Martin Scorsese.",
+          "refused": false,
+          "movie": {
+            "id": "Q210364",
+            "label": "Shutter Island"
+          },
+          "link_status": "exact",
+          "link_score": 1.0,
+          "relation": null,
+          "confidence": null,
+          "evidence": [
+            "Shutter Island | director | Martin Scorsese",
+            "Shutter Island | genre | drama film",
+            "Shutter Island | genre | action film",
+            "Shutter Island | genre | horror film",
+            "Shutter Island | genre | adventure film",
+            "Shutter Island | genre | psychological thriller",
+            "Shutter Island | genre | crime film",
+            "Shutter Island | genre | mystery film",
+            "Shutter Island | genre | neo-noir",
+            "Shutter Island | genre | thriller film",
+            "Shutter Island | genre | suspense film",
+            "Shutter Island | genre | crime thriller film",
+            "Shutter Island | genre | psychological drama film",
+            "Shutter Island | genre | psychological horror film",
+            "Shutter Island | genre | psychological thriller film",
+            "Shutter Island | genre | crime drama film",
+            "Shutter Island | country of origin | United States",
+            "Shutter Island | original language | English"
+          ],
+          "cold_start": true,
+          "generation_ms": 510.0664999918081,
+          "raw_answer": "Shutter Island was directed by Martin Scorsese.",
+          "replacements": [],
+          "recovery_ms": 4.36039999476634,
+          "elapsed_ms": 22974.48
+        }
+      ],
+      "elapsed_ms": 23901.12
+    },
+    {
+      "name": "name_recovery",
+      "question": "Who directed Fruits of Passion?",
+      "results": [
+        {
+          "system": "a0",
+          "name": "A0 管道问答",
+          "ok": true,
+          "answer": "Fruits of Passion was directed by Shūji Terayama.",
+          "refused": false,
+          "movie": {
+            "id": "Q528328",
+            "label": "Fruits of Passion"
+          },
+          "link_status": "exact",
+          "link_score": 1.0,
+          "relation": "P57",
+          "confidence": 0.9982801521372827,
+          "evidence": [
+            "Fruits of Passion (Q528328) --P57--> Shūji Terayama (Q739129)"
+          ],
+          "cold_start": false,
+          "generation_ms": 2.213400002801791,
+          "elapsed_ms": 2.31
+        },
+        {
+          "system": "best",
+          "name": "B0 神经生成 + 名称恢复",
+          "ok": true,
+          "answer": "Fruits of Passion was directed by Shūji Terayama.",
+          "refused": false,
+          "movie": {
+            "id": "Q528328",
+            "label": "Fruits of Passion"
+          },
+          "link_status": "exact",
+          "link_score": 1.0,
+          "relation": null,
+          "confidence": null,
+          "evidence": [
+            "Fruits of Passion | director | Shūji Terayama",
+            "Fruits of Passion | genre | drama film",
+            "Fruits of Passion | country of origin | Japan",
+            "Fruits of Passion | country of origin | France",
+            "Fruits of Passion | original language | French",
+            "Fruits of Passion | original language | English"
+          ],
+          "cold_start": false,
+          "generation_ms": 411.10460000345483,
+          "raw_answer": "Fruits of Passion was directed by Shji Terayama.",
+          "replacements": [
+            {
+              "entity_id": "Q739129",
+              "before": "Shji Terayama",
+              "after": "Shūji Terayama",
+              "start": 34,
+              "end": 47
+            }
+          ],
+          "recovery_ms": 0.9929999941959977,
+          "elapsed_ms": 917.65
+        }
+      ],
+      "elapsed_ms": 932.48
+    },
+    {
+      "name": "coordination",
+      "question": "Who directed Office Christmas Party?",
+      "results": [
+        {
+          "system": "a0",
+          "name": "A0 管道问答",
+          "ok": true,
+          "answer": "Office Christmas Party was directed by Will Speck and Josh Gordon.",
+          "refused": false,
+          "movie": {
+            "id": "Q23755403",
+            "label": "Office Christmas Party"
+          },
+          "link_status": "exact",
+          "link_score": 1.0,
+          "relation": "P57",
+          "confidence": 0.9982801521372827,
+          "evidence": [
+            "Office Christmas Party (Q23755403) --P57--> Will Speck (Q8003113)",
+            "Office Christmas Party (Q23755403) --P57--> Josh Gordon (Q22323567)"
+          ],
+          "cold_start": false,
+          "generation_ms": 2.071699986117892,
+          "elapsed_ms": 2.14
+        },
+        {
+          "system": "best",
+          "name": "B0 神经生成 + 名称恢复",
+          "ok": true,
+          "answer": "Office Christmas Party was directed by Will Speck and Josh Gordon.",
+          "refused": false,
+          "movie": {
+            "id": "Q23755403",
+            "label": "Office Christmas Party"
+          },
+          "link_status": "exact",
+          "link_score": 1.0,
+          "relation": null,
+          "confidence": null,
+          "evidence": [
+            "Office Christmas Party | director | Will Speck",
+            "Office Christmas Party | director | Josh Gordon",
+            "Office Christmas Party | genre | comedy film",
+            "Office Christmas Party | genre | Christmas film",
+            "Office Christmas Party | country of origin | United States",
+            "Office Christmas Party | original language | English"
+          ],
+          "cold_start": false,
+          "generation_ms": 377.0432000019355,
+          "raw_answer": "Office Christmas Party was directed by Will Speck and Josh Gordon.",
+          "replacements": [],
+          "recovery_ms": 1.3310000067576766,
+          "elapsed_ms": 677.43
+        }
+      ],
+      "elapsed_ms": 690.94
+    },
+    {
+      "name": "refusal",
+      "question": "Who directed Zyxwuv Qpkjrt?",
+      "results": [
+        {
+          "system": "a0",
+          "name": "A0 管道问答",
+          "ok": true,
+          "answer": "The available knowledge graph does not contain enough information to answer this question.",
+          "refused": true,
+          "movie": null,
+          "link_status": "not_found",
+          "link_score": 0.0,
+          "relation": "UNKNOWN",
+          "confidence": null,
+          "evidence": [],
+          "cold_start": false,
+          "generation_ms": 312.4520000128541,
+          "elapsed_ms": 607.24
+        },
+        {
+          "system": "best",
+          "name": "B0 神经生成 + 名称恢复",
+          "ok": true,
+          "answer": "The available knowledge graph does not contain enough information to answer this question.",
+          "refused": true,
+          "movie": null,
+          "link_status": "not_found",
+          "link_score": 0.0,
+          "relation": null,
+          "confidence": null,
+          "evidence": [],
+          "cold_start": false,
+          "generation_ms": 0,
+          "raw_answer": "The available knowledge graph does not contain enough information to answer this question.",
+          "replacements": [],
+          "recovery_ms": 0,
+          "elapsed_ms": 582.75
+        }
+      ],
+      "elapsed_ms": 1203.73
+    }
+  ],
+  "coordination_ids": [
+    "Q22323567",
+    "Q8003113"
+  ],
+  "archive": {
+    "name": "AI_1_experiment_5000_runtime_20261030.zip",
+    "bytes": 296366323,
+    "sha256": "45d14ff84527f0c8a8a41bb9654169514523caadd4a7413b6c13b244061415e3"
+  },
+  "inventory_files_verified": 103,
+  "behavioral_test_archive": {
+    "name": "AI_1_experiment_5000_runtime_20261030.zip",
+    "bytes": 296365743,
+    "sha256": "254db0274c3ad1af135c5a59666fb7f25add281d1093e8c31735f290cd8605e6"
+  },
+  "final_rebuild": {
+    "scope": "Only CPU dependency instructions/specification changed after the behavioral test.",
+    "changed_files": [
+      "README.md",
+      "docs/提交验收说明.md",
+      "运行说明.txt"
+    ],
+    "added_files": [
+      "requirements-runtime-cpu.txt"
+    ],
+    "removed_files": [],
+    "critical_runtime_assets_identical_to_tested_archive": true,
+    "critical_assets_verified": 71,
+    "all_final_inventory_files_verified": 104
+  },
+  "dependency_spec_sha256": "fd544ecb04e741e18174aaacdecf8eb446da1f3050d96d47be5ad29f60b0178e",
+  "pip_check": "PASS: No broken requirements found."
+}

@@ -10,6 +10,17 @@ from kgqa import neural
 from kgqa.neural import GraphData, QADataset
 
 
+def test_seeding_respects_shared_server_cpu_budget(monkeypatch):
+    from kgqa.common import seed_all
+    previous = neural.torch.get_num_threads()
+    try:
+        monkeypatch.setenv('OMP_NUM_THREADS', '2')
+        seed_all(42)
+        assert neural.torch.get_num_threads() == 2
+    finally:
+        neural.torch.set_num_threads(previous)
+
+
 def test_graph_and_linking_use_explicit_dataset_and_embeddings(tmp_path):
     data, embeddings = tmp_path / 'dataset', tmp_path / 'embeddings'
     write_json(data / 'entities.json', {'Q1': {'label': 'Example Film', 'facts': {'P57': ['Q2']}}, 'Q2': {'label': 'Example Director'}})
@@ -18,7 +29,7 @@ def test_graph_and_linking_use_explicit_dataset_and_embeddings(tmp_path):
     np.savez(embeddings / 'embeddings.npz', entity=np.zeros((2, 100)), relation=np.zeros((1, 100)))
     graph = GraphData(True, data, embeddings)
     assert graph.facts('Q1')[0][1].shape == (300,)
-    rows = [{'question': 'Who directed Example Film?', 'reference_answers': ['Example Director.'], 'movie_id': 'Q1'}]
+    rows = [{'question_id': 'q', 'question': 'Who directed Example Film?', 'reference_answers': ['Example Director.'], 'movie_id': 'Q1'}]
     dataset = QADataset(rows, graph, link_questions=True)
     assert dataset.linked_movie_ids == ['Q1'] and 'Example Director' in dataset[0]['text']
 

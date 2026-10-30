@@ -1,0 +1,50 @@
+{
+  "threshold": 0.995,
+  "test_count": 8917,
+  "inference_wall_seconds": 10.441539799998282,
+  "metrics": {
+    "count": 8917,
+    "entity_exact": 100.0,
+    "entity_macro_f1": 100.0,
+    "bleu": 100.00000000000004,
+    "rouge_l": 100.0,
+    "by_relation": {
+      "P136": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 1416
+      },
+      "P495": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2214
+      },
+      "P364": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2238
+      },
+      "P57": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2238
+      },
+      "UNKNOWN": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 811
+      }
+    },
+    "answerable_count": 8106,
+    "refusal_count": 811,
+    "answerable_entity_exact": 100.0,
+    "answerable_entity_macro_f1": 100.0,
+    "refusal_accuracy": 100.0,
+    "latency_mean_ms": 1.1679386005018342,
+    "latency_p95_ms": 1.6272999928332865
+  },
+  "false_refusals": 0,
+  "answerable_confidence_min": 0.9973375740710936,
+  "answerable_confidence_max": 0.9987837391395324,
+  "predictions_sha256": "132c0d48e206830a538de9064332e997257c93deff1e5b3eaa58499fcdd7b836"
+}

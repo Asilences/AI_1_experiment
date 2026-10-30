@@ -1,0 +1,416 @@
+{
+  "status": "PASS",
+  "scope": "Actual local browser form submissions using paired frozen models and offline Chinese labels",
+  "viewport": {
+    "width": 1280,
+    "height": 1100
+  },
+  "interactions": {
+    "defaults": {
+      "language": "zh",
+      "system": "both",
+      "examples": [
+        "导演《盗梦空间》的导演是谁？",
+        "电影类型《盗梦空间》是什么类型的电影？",
+        "制作国家《盗梦空间》是哪个国家制作的？",
+        "原始语言《盗梦空间》的原始语言是什么？"
+      ]
+    },
+    "movie_selection": {
+      "movie_id": "Q210364",
+      "label": "禁闭岛",
+      "relation_questions": [
+        {
+          "relation": "导演",
+          "question": "《禁闭岛》的导演是谁？"
+        },
+        {
+          "relation": "电影类型",
+          "question": "《禁闭岛》是什么类型的电影？"
+        },
+        {
+          "relation": "制作国家",
+          "question": "《禁闭岛》是哪个国家制作的？"
+        },
+        {
+          "relation": "原始语言",
+          "question": "《禁闭岛》的原始语言是什么？"
+        }
+      ],
+      "english_question": "What is the original language of Shutter Island?",
+      "language_round_trip": "PASS"
+    }
+  },
+  "results": [
+    {
+      "question": "《禁闭岛》的导演是谁？",
+      "response": {
+        "question": "《禁闭岛》的导演是谁？",
+        "results": [
+          {
+            "system": "a0",
+            "name": "A0 管道问答",
+            "ok": true,
+            "answer": "《禁闭岛》的导演是马丁·斯科塞斯。",
+            "refused": false,
+            "movie": {
+              "id": "Q210364",
+              "label": "禁闭岛"
+            },
+            "link_status": "exact",
+            "link_score": 1,
+            "relation": "P57",
+            "confidence": 0.9982801521372827,
+            "evidence": [
+              "Shutter Island (Q210364) --P57--> Martin Scorsese (Q41148)"
+            ],
+            "cold_start": false,
+            "generation_ms": 1.4569000049959868,
+            "language": "zh",
+            "model_question": "Who directed Shutter Island?",
+            "original_answer": "Shutter Island was directed by Martin Scorsese.",
+            "language_status": "success",
+            "language_note": "中文问题经离线片名与属性识别后，交由原 A0 分类器与图谱查询处理。",
+            "answer_ids": [
+              "Q41148"
+            ],
+            "elapsed_ms": 1.47
+          },
+          {
+            "system": "best",
+            "name": "B0 神经生成 + 名称恢复",
+            "ok": true,
+            "answer": "《禁闭岛》的导演是马丁·斯科塞斯。",
+            "refused": false,
+            "movie": {
+              "id": "Q210364",
+              "label": "禁闭岛"
+            },
+            "link_status": "exact, score=1.000",
+            "link_score": 1,
+            "relation": null,
+            "confidence": null,
+            "evidence": [
+              "Shutter Island | director | Martin Scorsese",
+              "Shutter Island | genre | drama film",
+              "Shutter Island | genre | action film",
+              "Shutter Island | genre | horror film",
+              "Shutter Island | genre | adventure film",
+              "Shutter Island | genre | psychological thriller",
+              "Shutter Island | genre | crime film",
+              "Shutter Island | genre | mystery film",
+              "Shutter Island | genre | neo-noir",
+              "Shutter Island | genre | thriller film",
+              "Shutter Island | genre | suspense film",
+              "Shutter Island | genre | crime thriller film",
+              "Shutter Island | genre | psychological drama film",
+              "Shutter Island | genre | psychological horror film",
+              "Shutter Island | genre | psychological thriller film",
+              "Shutter Island | genre | crime drama film",
+              "Shutter Island | country of origin | United States",
+              "Shutter Island | original language | English"
+            ],
+            "cold_start": false,
+            "generation_ms": 297.9983999975957,
+            "language": "zh",
+            "model_question": "Who directed Shutter Island?",
+            "original_answer": "Shutter Island was directed by Martin Scorsese.",
+            "language_status": "success",
+            "language_note": "中文问题经离线片名与属性识别后，交由原英文神经模型生成；中文展示保留实际生成内容。",
+            "answer_ids": [
+              "Q41148"
+            ],
+            "raw_answer": "Shutter Island was directed by Martin Scorsese.",
+            "replacements": [],
+            "recovery_ms": 0.15910000365693122,
+            "elapsed_ms": 493.14
+          }
+        ],
+        "elapsed_ms": 503.54
+      },
+      "displayed_answers": [
+        "《禁闭岛》的导演是马丁·斯科塞斯。",
+        "《禁闭岛》的导演是马丁·斯科塞斯。"
+      ],
+      "expanded_processing_detail": "查看语言处理与模型原文\n中文问题 → 英文模型输入\n\nWho directed Shutter Island?\n\n语言处理说明\n\n中文问题经离线片名与属性识别后，交由原英文神经模型生成；中文展示保留实际生成内容。\n\n中文呈现前的原答案\n\nShutter Island was directed by Martin Scorsese.\n\n名称恢复前的神经原始生成\n\nShutter Island was directed by Martin Scorsese.\n\n名称恢复\n\n0 处 · 0 ms",
+      "screenshot": "chinese_director.png"
+    },
+    {
+      "question": "《盗梦空间》的原始语言是什么？",
+      "response": {
+        "question": "《盗梦空间》的原始语言是什么？",
+        "results": [
+          {
+            "system": "a0",
+            "name": "A0 管道问答",
+            "ok": true,
+            "answer": "《盗梦空间》的原始语言是法语、英语、日语。",
+            "refused": false,
+            "movie": {
+              "id": "Q25188",
+              "label": "盗梦空间"
+            },
+            "link_status": "exact",
+            "link_score": 1,
+            "relation": "P364",
+            "confidence": 0.9982663066001409,
+            "evidence": [
+              "Inception (Q25188) --P364--> French (Q150)",
+              "Inception (Q25188) --P364--> English (Q1860)",
+              "Inception (Q25188) --P364--> Japanese (Q5287)"
+            ],
+            "cold_start": false,
+            "generation_ms": 1.5607999957865104,
+            "language": "zh",
+            "model_question": "What is the original language of Inception?",
+            "original_answer": "The original languages of Inception are French, English and Japanese.",
+            "language_status": "success",
+            "language_note": "中文问题经离线片名与属性识别后，交由原 A0 分类器与图谱查询处理。",
+            "answer_ids": [
+              "Q150",
+              "Q1860",
+              "Q5287"
+            ],
+            "elapsed_ms": 1.58,
+            "expected_graph_labels_present": [
+              {
+                "id": "Q150",
+                "label": "法语",
+                "present": true
+              },
+              {
+                "id": "Q1860",
+                "label": "英语",
+                "present": true
+              },
+              {
+                "id": "Q5287",
+                "label": "日语",
+                "present": true
+              }
+            ]
+          },
+          {
+            "system": "best",
+            "name": "B0 神经生成 + 名称恢复",
+            "ok": true,
+            "answer": "《盗梦空间》的原始语言是法语, 英语 and 日语。",
+            "refused": false,
+            "movie": {
+              "id": "Q25188",
+              "label": "盗梦空间"
+            },
+            "link_status": "exact, score=1.000",
+            "link_score": 1,
+            "relation": null,
+            "confidence": null,
+            "evidence": [
+              "Inception | director | Christopher Nolan",
+              "Inception | genre | drama film",
+              "Inception | genre | action film",
+              "Inception | genre | adventure film",
+              "Inception | genre | science fiction film",
+              "Inception | genre | heist film",
+              "Inception | genre | mystery film",
+              "Inception | genre | thriller film",
+              "Inception | genre | science fiction action film",
+              "Inception | country of origin | United States",
+              "Inception | country of origin | United Kingdom",
+              "Inception | original language | French",
+              "Inception | original language | English",
+              "Inception | original language | Japanese"
+            ],
+            "cold_start": false,
+            "generation_ms": 273.73919999809004,
+            "language": "zh",
+            "model_question": "What is the original language of Inception?",
+            "original_answer": "The original languages of Inception are French, English and Japanese.",
+            "language_status": "success",
+            "language_note": "中文问题经离线片名与属性识别后，交由原英文神经模型生成；中文展示保留实际生成内容。",
+            "answer_ids": [
+              "Q150",
+              "Q1860",
+              "Q5287"
+            ],
+            "raw_answer": "The original languages of Inception are French, English and Japanese.",
+            "replacements": [],
+            "recovery_ms": 0.19079999765381217,
+            "elapsed_ms": 698.41,
+            "expected_graph_labels_present": [
+              {
+                "id": "Q150",
+                "label": "法语",
+                "present": true
+              },
+              {
+                "id": "Q1860",
+                "label": "英语",
+                "present": true
+              },
+              {
+                "id": "Q5287",
+                "label": "日语",
+                "present": true
+              }
+            ]
+          }
+        ],
+        "elapsed_ms": 709.08
+      },
+      "displayed_answers": [
+        "《盗梦空间》的原始语言是法语、英语、日语。",
+        "《盗梦空间》的原始语言是法语, 英语 and 日语。"
+      ],
+      "expected_graph_facts": {
+        "movie_id": "Q25188",
+        "relation": "P364",
+        "facts": [
+          {
+            "id": "Q150",
+            "label_en": "French",
+            "display_label": "法语"
+          },
+          {
+            "id": "Q1860",
+            "label_en": "English",
+            "display_label": "英语"
+          },
+          {
+            "id": "Q5287",
+            "label_en": "Japanese",
+            "display_label": "日语"
+          }
+        ]
+      },
+      "screenshot": "chinese_languages.png"
+    },
+    {
+      "question": "《禁闭岛》的主演是谁？",
+      "response": {
+        "question": "《禁闭岛》的主演是谁？",
+        "results": [
+          {
+            "system": "a0",
+            "name": "A0 管道问答",
+            "ok": true,
+            "answer": "目前支持单部电影的导演、类型、制片国家和原始语言；请每次询问其中一项。",
+            "refused": true,
+            "movie": null,
+            "link_status": "unsupported",
+            "link_score": 0,
+            "relation": "UNKNOWN",
+            "confidence": null,
+            "evidence": [],
+            "cold_start": false,
+            "generation_ms": 0.053499999921768904,
+            "language": "zh",
+            "model_question": "《禁闭岛》的主演是谁？",
+            "original_answer": "The available knowledge graph does not contain enough information to answer this question.",
+            "language_status": "unsupported",
+            "language_note": "目前支持单部电影的导演、类型、制片国家和原始语言；请每次询问其中一项。",
+            "answer_ids": [],
+            "elapsed_ms": 0.06
+          },
+          {
+            "system": "best",
+            "name": "B0 神经生成 + 名称恢复",
+            "ok": true,
+            "answer": "目前支持单部电影的导演、类型、制片国家和原始语言；请每次询问其中一项。",
+            "refused": true,
+            "movie": null,
+            "link_status": "unsupported",
+            "link_score": 0,
+            "relation": null,
+            "confidence": null,
+            "evidence": [],
+            "cold_start": false,
+            "generation_ms": 0,
+            "language": "zh",
+            "model_question": "《禁闭岛》的主演是谁？",
+            "original_answer": "The available knowledge graph does not contain enough information to answer this question.",
+            "language_status": "unsupported",
+            "language_note": "目前支持单部电影的导演、类型、制片国家和原始语言；请每次询问其中一项。",
+            "answer_ids": [],
+            "elapsed_ms": 0.03
+          }
+        ],
+        "elapsed_ms": 8.39
+      },
+      "displayed_answers": [
+        "目前支持单部电影的导演、类型、制片国家和原始语言；请每次询问其中一项。",
+        "目前支持单部电影的导演、类型、制片国家和原始语言；请每次询问其中一项。"
+      ]
+    },
+    {
+      "question": "《美國隊長》的导演是谁？",
+      "response": {
+        "question": "《美國隊長》的导演是谁？",
+        "results": [
+          {
+            "system": "a0",
+            "name": "A0 管道问答",
+            "ok": true,
+            "answer": "片名对应多个版本：美國隊長（1990，Q1035093）、美國隊長（2011，Q275120）。请补充年份或电影 QID。",
+            "refused": true,
+            "movie": null,
+            "link_status": "ambiguous",
+            "link_score": 0,
+            "relation": "UNKNOWN",
+            "confidence": null,
+            "evidence": [],
+            "cold_start": false,
+            "generation_ms": 0.13859999307896942,
+            "language": "zh",
+            "model_question": "《美國隊長》的导演是谁？",
+            "original_answer": "The available knowledge graph does not contain enough information to answer this question.",
+            "language_status": "ambiguous",
+            "language_note": "片名对应多个版本：美國隊長（1990，Q1035093）、美國隊長（2011，Q275120）。请补充年份或电影 QID。",
+            "answer_ids": [],
+            "elapsed_ms": 0.15
+          },
+          {
+            "system": "best",
+            "name": "B0 神经生成 + 名称恢复",
+            "ok": true,
+            "answer": "片名对应多个版本：美國隊長（1990，Q1035093）、美國隊長（2011，Q275120）。请补充年份或电影 QID。",
+            "refused": true,
+            "movie": null,
+            "link_status": "ambiguous",
+            "link_score": 0,
+            "relation": null,
+            "confidence": null,
+            "evidence": [],
+            "cold_start": false,
+            "generation_ms": 0,
+            "language": "zh",
+            "model_question": "《美國隊長》的导演是谁？",
+            "original_answer": "The available knowledge graph does not contain enough information to answer this question.",
+            "language_status": "ambiguous",
+            "language_note": "片名对应多个版本：美國隊長（1990，Q1035093）、美國隊長（2011，Q275120）。请补充年份或电影 QID。",
+            "answer_ids": [],
+            "elapsed_ms": 0.06
+          }
+        ],
+        "elapsed_ms": 8.37
+      },
+      "displayed_answers": [
+        "片名对应多个版本：美國隊長（1990，Q1035093）、美國隊長（2011，Q275120）。请补充年份或电影 QID。",
+        "片名对应多个版本：美國隊長（1990，Q1035093）、美國隊長（2011，Q275120）。请补充年份或电影 QID。"
+      ]
+    }
+  ],
+  "page_errors": [],
+  "console_errors": [],
+  "request_failures": [],
+  "dataset": {
+    "movie_count": 5000,
+    "fact_count": 35485,
+    "relation_count": 4,
+    "neural_run": "B0",
+    "chinese_coverage": {
+      "movies": 5000,
+      "with_chinese_title": 4035
+    }
+  },
+  "browser": "156.0.4314.50"
+}

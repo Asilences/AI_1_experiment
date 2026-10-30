@@ -1,6 +1,7 @@
 import http.client
 import json
 import threading
+from types import SimpleNamespace
 
 import pytest
 
@@ -139,6 +140,49 @@ def test_catalog_counts_only_unique_facts_with_named_entities(tmp_path):
     service = QAService(tmp_path, tmp_path / 'model.pkl')
     assert service.status()['fact_count'] == 1
     assert service.search()['movies'][0]['relations'] == ['P57']
+
+
+def test_recovery_requires_neural_paths_and_is_forwarded_lazily(tmp_path, monkeypatch):
+    from kgqa import demo, web
+    with pytest.raises(ValueError, match='default neural dataset'):
+        QAService(tmp_path, tmp_path / 'model.pkl', recover_names=True)
+    monkeypatch.setattr(web, 'ROOT', tmp_path)
+    received = []
+    monkeypatch.setattr(demo, 'Demo', lambda **kwargs: received.append(kwargs) or object())
+    service = QAService(recover_names=True)
+    assert service.demo is None
+    service._load_demo()
+    assert received == [{'load_neural': False, 'recover_names': True}]
+
+
+def test_web_names_improved_system_and_preserves_recovery_evidence(tmp_path, monkeypatch):
+    from kgqa import web
+    monkeypatch.setattr(web, 'ROOT', tmp_path)
+    data = tmp_path / 'data/processed'
+    write_json(data / 'entities.json', {'M': {'label': 'Film', 'facts': {}}})
+    write_json(data / 'splits.json', {'train': ['M'], 'valid': [], 'test': []})
+    write_json(tmp_path / 'output/selected_model.json', {'selected_run': 'B0'})
+    write_json(tmp_path / 'runs/B0/config.json', {'use_embeddings': False})
+    for name in ('config.json', 'tokenizer_config.json', 'model.safetensors'):
+        write_json(tmp_path / 'runs/B0/checkpoint' / name, {})
+    model = tmp_path / 'models/pipeline/model.pkl'
+    model.parent.mkdir(parents=True)
+    model.write_bytes(b'fixture')
+    monkeypatch.setattr(web.importlib.util, 'find_spec', lambda name: object())
+    service = QAService(recover_names=True)
+    assert service.status()['neural']['name'] == 'B0 神经生成 + 名称恢复'
+    fake_demo = SimpleNamespace(
+        neural=object(), entities={'M': {'label': 'Film'}},
+        linker=SimpleNamespace(link=lambda question: ('M', 1, 'exact')),
+        answer_neural=lambda question: {'answer': 'restored', 'raw_answer': 'original',
+            'replacements': [{'entity_id': 'D'}], 'recovery_ms': .2, 'latency_ms': 10, 'evidence': ['fact']},
+    )
+    monkeypatch.setattr(service, '_load_demo', lambda: fake_demo)
+    answer = service.answer('Who directed Film?', 'best')['results'][0]
+    assert answer['ok'] and answer['name'] == 'B0 神经生成 + 名称恢复'
+    assert answer['answer'] == 'restored' and answer['raw_answer'] == 'original'
+    assert answer['replacements'] == [{'entity_id': 'D'}]
+    assert answer['recovery_ms'] == .2 and answer['generation_ms'] == 10
 
 
 def test_freeform_mode_returns_canonical_question_and_keeps_standard_default(web_server):

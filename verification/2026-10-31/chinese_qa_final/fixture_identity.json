@@ -1,0 +1,7 @@
+{
+  "frozen_v2_questions": "verification/2026-10-30/chinese_qa_v2/questions.jsonl",
+  "frozen_v2_sha256": "045b5186f341b8cd767c7360d0ec9748b7c06cd550e2c7e337d7a494aa6ff988",
+  "final_fixture_sha256": "045b5186f341b8cd767c7360d0ec9748b7c06cd550e2c7e337d7a494aa6ff988",
+  "byte_identical": true,
+  "original_v2_fixture_unchanged": true
+}

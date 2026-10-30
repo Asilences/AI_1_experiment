@@ -1,0 +1,94 @@
+{
+  "v1": {
+    "count": 8857,
+    "entity_exact": 100.0,
+    "entity_macro_f1": 100.0,
+    "bleu": 99.92082861658078,
+    "rouge_l": 99.92392898117896,
+    "by_relation": {
+      "P57": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2235
+      },
+      "P136": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 1356
+      },
+      "P495": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2229
+      },
+      "P364": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2232
+      },
+      "UNKNOWN": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 805
+      }
+    },
+    "answerable_count": 8052,
+    "refusal_count": 805,
+    "answerable_entity_exact": 100.0,
+    "answerable_entity_macro_f1": 100.0,
+    "refusal_accuracy": 100.0,
+    "latency_mean_ms": 11.97476371231327,
+    "latency_p95_ms": 15.840124999954242
+  },
+  "v2": {
+    "count": 8857,
+    "entity_exact": 100.0,
+    "entity_macro_f1": 100.0,
+    "bleu": 99.92082861658078,
+    "rouge_l": 99.92392898117896,
+    "by_relation": {
+      "P57": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2235
+      },
+      "P136": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 1356
+      },
+      "P495": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2229
+      },
+      "P364": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2232
+      },
+      "UNKNOWN": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 805
+      }
+    },
+    "answerable_count": 8052,
+    "refusal_count": 805,
+    "answerable_entity_exact": 100.0,
+    "answerable_entity_macro_f1": 100.0,
+    "refusal_accuracy": 100.0,
+    "latency_mean_ms": 11.97476371231327,
+    "latency_p95_ms": 15.840124999954242
+  },
+  "changed_ids": [],
+  "fixed_question_ids": [],
+  "regressed_question_ids": [],
+  "changed_count": 0,
+  "fixed_count": 0,
+  "regressed_count": 0,
+  "source_sha256": "c44305827823572b4532c0235d6cec76d98a1c148f98bc5fb63316f0f97aaf6d",
+  "a0_canonical_parse_discrepancies": [],
+  "text_and_generation_latency_unchanged": true,
+  "bleu_rouge_unchanged_by_decoder": true
+}

@@ -1,0 +1,59 @@
+{
+  "scope": "Training questions only; pretrained random graph prefix; throughput calibration, not a quality evaluation.",
+  "results": [
+    {
+      "batch_size": 16,
+      "precision": "float32",
+      "status": "PASS",
+      "seconds": 1.255522799998289,
+      "rows_per_second": 12.743695295714108,
+      "output_length": 59,
+      "peak_mb": 438.7685546875
+    },
+    {
+      "batch_size": 16,
+      "precision": "bf16",
+      "status": "PASS",
+      "seconds": 1.8143339000016567,
+      "rows_per_second": 8.818663422419318,
+      "output_length": 59,
+      "peak_mb": 494.3818359375
+    },
+    {
+      "batch_size": 32,
+      "precision": "float32",
+      "status": "PASS",
+      "seconds": 2.076654199998302,
+      "rows_per_second": 15.409402297227032,
+      "output_length": 59,
+      "peak_mb": 566.39453125
+    },
+    {
+      "batch_size": 32,
+      "precision": "bf16",
+      "status": "PASS",
+      "seconds": 1.5682763000004343,
+      "rows_per_second": 20.404567741023147,
+      "output_length": 59,
+      "peak_mb": 571.8271484375
+    },
+    {
+      "batch_size": 64,
+      "precision": "float32",
+      "status": "PASS",
+      "seconds": 1.750384099999792,
+      "rows_per_second": 36.56340342671509,
+      "output_length": 72,
+      "peak_mb": 851.8642578125
+    },
+    {
+      "batch_size": 64,
+      "precision": "bf16",
+      "status": "PASS",
+      "seconds": 1.9166411999976845,
+      "rows_per_second": 33.39174802257059,
+      "output_length": 72,
+      "peak_mb": 735.72900390625
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "document": "../../reports/个人实验报告.docx",
+  "sha256": "ac2330e8238e93003b36eaa9cc1f38e2d5b81cefd7c887b164d6a721f6568e62",
+  "bytes": 908183,
+  "pages": 13,
+  "tables": 9,
+  "figures": 4,
+  "renderer": "Microsoft Word PDF export and bundled Poppler rasterization",
+  "packaged_renderer_diagnosis": "Bundled LibreOffice executable unavailable; native Word used",
+  "visual_review": {
+    "all_pages_individually_viewed": true,
+    "result": "PASS",
+    "reviewer_1": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "reviewer_2": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ]
+  },
+  "pdf_sha256": "dffd063e1f2fb472c693344553d56e379954f0bd0576821b1925f2053d671090",
+  "page_png_sha256": {
+    "page-01.png": "6ce0666617eeb2fcbd29fd5e79a914df8adcada2cbdf6156b57691156232a4df",
+    "page-02.png": "14002f9a2c4b8896b32762c0e92f57327dc9731ad09d68dbd65e46d49c23e57c",
+    "page-03.png": "7f7de61e0026683c1c9dc31c7a73a0f5d51400ff40b0cd5f6d6b2fdc5ab7fc58",
+    "page-04.png": "292598b12b8fb4bef2c3cca7a90b20bcdd18b84dd3cfd5de89d3a6980d2c9af3",
+    "page-05.png": "87225e19a87069d8231ee9841118b951e1b9b4dee66297f97275b08a6c5409d2",
+    "page-06.png": "f7d03a2bc53ae1a8607f00d7fddfbfc6d27323919858dbb3c58d7132df74a1ac",
+    "page-07.png": "1adbbd39f73a3d44a9eda0858f2af3038ec79274f6f3c68f7f12545bdaaa175e",
+    "page-08.png": "e931f76284ca76afb3c076de814eee1e007b6c2947d61f71c7357a1a180f92c2",
+    "page-09.png": "ea4eea451bb12f82a6438ec2245f81a08f435563901c9b6e9d3dff7925f311f3",
+    "page-10.png": "3ea483deddf801ca3540f68820a80e13faa1bca7ab5125ccb9841e675e971841",
+    "page-11.png": "cf2dc421ad623d1f6a1da0069cfd20dd11d1e36ac0c41cf389f89c7fd14054f1",
+    "page-12.png": "13efd721f7ffb2d3c0e869cd575765d5441a10075918309a829fceafb2efd465",
+    "page-13.png": "8ba2d42bec83cf0af2d7a13a066f7d2c057f6acec92e88899c9ee0113a63680c"
+  },
+  "original_desktop_file_unchanged": true,
+  "editorial_markers_absent": true,
+  "completion_date_basis": "Final completed supplemental inference run converted to Asia/Shanghai",
+  "remaining_user_materials": [
+    "Class name for basic information",
+    "One genuine operating-system terminal environment screenshot for chapter 2"
+  ],
+  "teacher_compliance_complete": false
+}

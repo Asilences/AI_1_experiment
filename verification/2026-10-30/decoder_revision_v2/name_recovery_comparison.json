@@ -1,0 +1,530 @@
+{
+  "scope": "The same fixed recovery, scored with common decoder v2; original method records retained.",
+  "splits": {
+    "valid": {
+      "raw_metrics": {
+        "count": 8857,
+        "entity_exact": 99.72902788754658,
+        "entity_macro_f1": 99.77870610816304,
+        "bleu": 99.80900500239837,
+        "rouge_l": 99.87811390693399,
+        "by_relation": {
+          "P57": {
+            "exact": 99.06040268456375,
+            "f1": 99.14988814317674,
+            "count": 2235
+          },
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 1356
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2229
+          },
+          "P364": {
+            "exact": 99.86559139784946,
+            "f1": 99.97311827956989,
+            "count": 2232
+          },
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 805
+          }
+        },
+        "answerable_count": 8052,
+        "refusal_count": 805,
+        "answerable_entity_exact": 99.70193740685544,
+        "answerable_entity_macro_f1": 99.75658221559861,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 11.97476371231327,
+        "latency_p95_ms": 15.840124999954242
+      },
+      "recovered_metrics": {
+        "count": 8857,
+        "entity_exact": 100.0,
+        "entity_macro_f1": 100.0,
+        "bleu": 99.92082861658078,
+        "rouge_l": 99.92392898117896,
+        "by_relation": {
+          "P57": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2235
+          },
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 1356
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2229
+          },
+          "P364": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2232
+          },
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 805
+          }
+        },
+        "answerable_count": 8052,
+        "refusal_count": 805,
+        "answerable_entity_exact": 100.0,
+        "answerable_entity_macro_f1": 100.0,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 11.97476371231327,
+        "latency_p95_ms": 15.840124999954242
+      },
+      "fixed": 24,
+      "regressed": 0,
+      "changed_texts": 39,
+      "baseline_id_differences": 0,
+      "processing_seconds": 3.3329807999980403,
+      "report": "verification/2026-10-30/decoder_revision_v2/name_recovery_comparison.json",
+      "metrics_frozen_v1": {
+        "raw": {
+          "count": 8857,
+          "entity_exact": 99.72902788754658,
+          "entity_macro_f1": 99.77870610816304,
+          "bleu": 99.80900500239837,
+          "rouge_l": 99.87811390693399,
+          "by_relation": {
+            "P57": {
+              "exact": 99.06040268456375,
+              "f1": 99.14988814317674,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 99.86559139784946,
+              "f1": 99.97311827956989,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 99.70193740685544,
+          "answerable_entity_macro_f1": 99.75658221559861,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.97476371231327,
+          "latency_p95_ms": 15.840124999954242
+        },
+        "recovered": {
+          "count": 8857,
+          "entity_exact": 100.0,
+          "entity_macro_f1": 100.0,
+          "bleu": 99.92082861658078,
+          "rouge_l": 99.92392898117896,
+          "by_relation": {
+            "P57": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2235
+            },
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1356
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2229
+            },
+            "P364": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2232
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 805
+            }
+          },
+          "answerable_count": 8052,
+          "refusal_count": 805,
+          "answerable_entity_exact": 100.0,
+          "answerable_entity_macro_f1": 100.0,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.97476371231327,
+          "latency_p95_ms": 15.840124999954242
+        }
+      },
+      "original_method_report": "verification/2026-10-30/name_recovery/B0_valid/report.json"
+    },
+    "test": {
+      "raw_metrics": {
+        "count": 8917,
+        "entity_exact": 99.52898957048335,
+        "entity_macro_f1": 99.52898957048335,
+        "bleu": 99.77551051994016,
+        "rouge_l": 99.89321992114122,
+        "by_relation": {
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 1416
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2214
+          },
+          "P364": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2238
+          },
+          "P57": {
+            "exact": 98.12332439678283,
+            "f1": 98.12332439678283,
+            "count": 2238
+          },
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 811
+          }
+        },
+        "answerable_count": 8106,
+        "refusal_count": 811,
+        "answerable_entity_exact": 99.48186528497409,
+        "answerable_entity_macro_f1": 99.48186528497409,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 11.792072322518463,
+        "latency_p95_ms": 14.841156249985943
+      },
+      "recovered_metrics": {
+        "count": 8917,
+        "entity_exact": 100.0,
+        "entity_macro_f1": 100.0,
+        "bleu": 99.90827363428122,
+        "rouge_l": 99.9787568374339,
+        "by_relation": {
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 1416
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2214
+          },
+          "P364": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2238
+          },
+          "P57": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 2238
+          },
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 811
+          }
+        },
+        "answerable_count": 8106,
+        "refusal_count": 811,
+        "answerable_entity_exact": 100.0,
+        "answerable_entity_macro_f1": 100.0,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 11.792072322518463,
+        "latency_p95_ms": 14.841156249985943
+      },
+      "fixed": 42,
+      "regressed": 0,
+      "changed_texts": 54,
+      "baseline_id_differences": 0,
+      "processing_seconds": 2.890979600007995,
+      "report": "verification/2026-10-30/decoder_revision_v2/name_recovery_comparison.json",
+      "metrics_frozen_v1": {
+        "raw": {
+          "count": 8917,
+          "entity_exact": 99.49534596837502,
+          "entity_macro_f1": 99.49534596837502,
+          "bleu": 99.77551051994016,
+          "rouge_l": 99.89321992114122,
+          "by_relation": {
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1416
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2214
+            },
+            "P364": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2238
+            },
+            "P57": {
+              "exact": 97.98927613941018,
+              "f1": 97.98927613941018,
+              "count": 2238
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 811
+            }
+          },
+          "answerable_count": 8106,
+          "refusal_count": 811,
+          "answerable_entity_exact": 99.44485566247224,
+          "answerable_entity_macro_f1": 99.44485566247224,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.792072322518463,
+          "latency_p95_ms": 14.841156249985943
+        },
+        "recovered": {
+          "count": 8917,
+          "entity_exact": 99.96635639789166,
+          "entity_macro_f1": 99.96635639789166,
+          "bleu": 99.90827363428122,
+          "rouge_l": 99.9787568374339,
+          "by_relation": {
+            "P136": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 1416
+            },
+            "P495": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2214
+            },
+            "P364": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 2238
+            },
+            "P57": {
+              "exact": 99.86595174262735,
+              "f1": 99.86595174262735,
+              "count": 2238
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 811
+            }
+          },
+          "answerable_count": 8106,
+          "refusal_count": 811,
+          "answerable_entity_exact": 99.96299037749814,
+          "answerable_entity_macro_f1": 99.96299037749814,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 11.792072322518463,
+          "latency_p95_ms": 14.841156249985943
+        }
+      },
+      "original_method_report": "verification/2026-10-30/name_recovery/B0_test/report.json"
+    },
+    "robustness": {
+      "raw_metrics": {
+        "count": 439,
+        "entity_exact": 83.5990888382688,
+        "entity_macro_f1": 83.97873955960516,
+        "bleu": 87.83190704578173,
+        "rouge_l": 91.5144957461769,
+        "by_relation": {
+          "P136": {
+            "exact": 81.44329896907216,
+            "f1": 82.4742268041237,
+            "count": 97
+          },
+          "P495": {
+            "exact": 56.25,
+            "f1": 56.94444444444444,
+            "count": 96
+          },
+          "P57": {
+            "exact": 88.77551020408163,
+            "f1": 88.77551020408163,
+            "count": 98
+          },
+          "P364": {
+            "exact": 98.9795918367347,
+            "f1": 98.9795918367347,
+            "count": 98
+          },
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 50
+          }
+        },
+        "answerable_count": 389,
+        "refusal_count": 50,
+        "answerable_entity_exact": 81.49100257069408,
+        "answerable_entity_macro_f1": 81.91945158526136,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 13.699595899833472,
+        "latency_p95_ms": 20.42245625011674
+      },
+      "recovered_metrics": {
+        "count": 439,
+        "entity_exact": 83.5990888382688,
+        "entity_macro_f1": 83.97873955960516,
+        "bleu": 88.05635721576219,
+        "rouge_l": 91.5144957461769,
+        "by_relation": {
+          "P136": {
+            "exact": 81.44329896907216,
+            "f1": 82.4742268041237,
+            "count": 97
+          },
+          "P495": {
+            "exact": 56.25,
+            "f1": 56.94444444444444,
+            "count": 96
+          },
+          "P57": {
+            "exact": 88.77551020408163,
+            "f1": 88.77551020408163,
+            "count": 98
+          },
+          "P364": {
+            "exact": 98.9795918367347,
+            "f1": 98.9795918367347,
+            "count": 98
+          },
+          "UNKNOWN": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 50
+          }
+        },
+        "answerable_count": 389,
+        "refusal_count": 50,
+        "answerable_entity_exact": 81.49100257069408,
+        "answerable_entity_macro_f1": 81.91945158526136,
+        "refusal_accuracy": 100.0,
+        "latency_mean_ms": 13.699595899833472,
+        "latency_p95_ms": 20.42245625011674
+      },
+      "fixed": 0,
+      "regressed": 0,
+      "changed_texts": 4,
+      "baseline_id_differences": 0,
+      "processing_seconds": 79.5580406000081,
+      "report": "verification/2026-10-30/decoder_revision_v2/name_recovery_comparison.json",
+      "metrics_frozen_v1": {
+        "raw": {
+          "count": 439,
+          "entity_exact": 83.5990888382688,
+          "entity_macro_f1": 83.97873955960516,
+          "bleu": 87.83190704578173,
+          "rouge_l": 91.5144957461769,
+          "by_relation": {
+            "P136": {
+              "exact": 81.44329896907216,
+              "f1": 82.4742268041237,
+              "count": 97
+            },
+            "P495": {
+              "exact": 56.25,
+              "f1": 56.94444444444444,
+              "count": 96
+            },
+            "P57": {
+              "exact": 88.77551020408163,
+              "f1": 88.77551020408163,
+              "count": 98
+            },
+            "P364": {
+              "exact": 98.9795918367347,
+              "f1": 98.9795918367347,
+              "count": 98
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 50
+            }
+          },
+          "answerable_count": 389,
+          "refusal_count": 50,
+          "answerable_entity_exact": 81.49100257069408,
+          "answerable_entity_macro_f1": 81.91945158526136,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 13.699595899833472,
+          "latency_p95_ms": 20.42245625011674
+        },
+        "recovered": {
+          "count": 439,
+          "entity_exact": 83.5990888382688,
+          "entity_macro_f1": 83.97873955960516,
+          "bleu": 88.05635721576219,
+          "rouge_l": 91.5144957461769,
+          "by_relation": {
+            "P136": {
+              "exact": 81.44329896907216,
+              "f1": 82.4742268041237,
+              "count": 97
+            },
+            "P495": {
+              "exact": 56.25,
+              "f1": 56.94444444444444,
+              "count": 96
+            },
+            "P57": {
+              "exact": 88.77551020408163,
+              "f1": 88.77551020408163,
+              "count": 98
+            },
+            "P364": {
+              "exact": 98.9795918367347,
+              "f1": 98.9795918367347,
+              "count": 98
+            },
+            "UNKNOWN": {
+              "exact": 100.0,
+              "f1": 100.0,
+              "count": 50
+            }
+          },
+          "answerable_count": 389,
+          "refusal_count": 50,
+          "answerable_entity_exact": 81.49100257069408,
+          "answerable_entity_macro_f1": 81.91945158526136,
+          "refusal_accuracy": 100.0,
+          "latency_mean_ms": 13.699595899833472,
+          "latency_p95_ms": 20.42245625011674
+        }
+      },
+      "original_method_report": "verification/2026-10-30/name_recovery/B0_robustness/report.json"
+    }
+  }
+}

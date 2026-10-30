@@ -29,6 +29,7 @@ def parser():
     ('盜夢空間的原始語言是什麼？', 'Q2', 'P364'),
     ('q1的导演是谁？', 'Q1', 'P57'),
     ('Who directed The Last Language?', 'Q5', 'P57'),
+    ('The Last Language的导演是谁？', 'Q5', 'P57'),
 ])
 def test_supported_natural_questions(parser, question, movie, relation):
     parsed = parser.parse(question)
@@ -56,6 +57,10 @@ def test_supported_natural_questions(parser, question, movie, relation):
     ('What country is The Matrix set in?', 'unanswerable'),
     ('黑客帝国在哪些国家被禁映？', 'unanswerable'),
     ('盗梦空间的配音语言是什么？', 'unanswerable'),
+    ('未知 The Matrix 电影的导演是谁？', 'unanswerable'),
+    ('The Matrix 未知电影的导演是谁？', 'unanswerable'),
+    ('Unknown The Matrix的导演是谁？', 'unanswerable'),
+    ('The Matrix的导演和盗梦空间的导演是谁？', 'needs_clarification'),
 ])
 def test_ambiguous_unsupported_or_missing_facts_do_not_reach_model(parser, question, status):
     parsed = parser.parse(question)

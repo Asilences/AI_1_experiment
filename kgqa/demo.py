@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path
+import time
 
 from .common import REFUSAL, ROOT, read_json
 from .linker import EntityLinker
@@ -15,15 +16,18 @@ def entity_label(entities, qid):
 
 
 class Demo:
-    def __init__(self, load_neural=True, data_dir=None, model_path=None):
-        if load_neural and (data_dir is not None or model_path is not None):
+    def __init__(self, load_neural=True, data_dir=None, model_path=None, recover_names=False):
+        if (load_neural or recover_names) and (data_dir is not None or model_path is not None):
             raise ValueError('Custom data/model paths require --system a0')
+        self.recover_names = recover_names
+        self.name_recovery = None
         data = Path(data_dir) if data_dir is not None else ROOT / 'data' / 'processed'
         self.entities = read_json(data / 'entities.json')
         self.splits = read_json(data / 'splits.json')
         self.movie_ids = sum(self.splits.values(), [])
         model, threshold = load_model(Path(model_path)) if model_path is not None else load_model()
         self.pipeline = PipelineQA(self.entities, self.movie_ids, model, threshold)
+        self.chinese = self.pipeline.chinese
         self.linker = EntityLinker(self.movie_ids, self.entities)
         self.neural_run = None
         self.neural = None
@@ -39,6 +43,7 @@ class Demo:
             self.neural_run = read_json(ROOT / 'output' / 'selected_model.json')['selected_run']
         run = ROOT / 'runs' / self.neural_run
         config = read_json(run / 'config.json')
+        self.neural_config = config
         self.graph = GraphData(config['use_embeddings'])
         self.tokenizer = AutoTokenizer.from_pretrained(run / 'checkpoint')
         self.neural = GraphPrefixModel(str(run / 'checkpoint'), config['use_embeddings'])
@@ -57,7 +62,7 @@ class Demo:
             f"{entity_label(self.entities, head)} --{relation}--> {entity_label(self.entities, tail)}"
             for head, relation, tail in result.get('evidence', [])
         ]
-        return {
+        response = {
             'system': 'A0 管道式系统',
             'movie': entity_label(self.entities, result.get('movie_id')),
             'link_status': result.get('link_status', ''),
@@ -67,25 +72,76 @@ class Demo:
             'answer': result['answer'],
             'latency_ms': result.get('latency_ms', 0),
         }
+        response.update(movie_id=result.get('movie_id'), answer_ids=result.get('answer_ids', []))
+        for key in ('language', 'model_question', 'original_answer', 'language_status', 'language_note', 'refused'):
+            if key in result:
+                response[key] = result[key]
+        return response
 
     def answer_neural(self, question):
+        prepared = None
+        if any('\u3400' <= char <= '\u9fff' for char in question):
+            prepared = self.chinese.prepare(question)
+            if prepared.language != 'zh':
+                prepared = None
+        if prepared is not None and prepared.status != 'success':
+            return {'system': '神经生成系统', 'movie': '未识别', 'movie_id': None,
+                    'link_status': prepared.status, 'evidence': [], 'answer_ids': [],
+                    'answer': prepared.reason, 'original_answer': REFUSAL, 'refused': True,
+                    'language': 'zh', 'model_question': prepared.model_question,
+                    'language_status': prepared.status, 'language_note': prepared.reason, 'latency_ms': 0}
         if self.neural is None:
             self._load_neural()
+        system_name = f'{self.neural_run} 神经生成系统' + (' + 名称恢复' if self.recover_names else '')
+        if prepared is not None:
+            movie_id, link_score, link_status = prepared.movie_id, 1.0, 'exact'
+        else:
+            movie_id, link_score, link_status = self.linker.link(question)
+        if not movie_id:
+            return {'system': system_name, 'movie': '未识别', 'link_status': link_status,
+                    'evidence': [], **self._recover_generated(REFUSAL, None), 'latency_ms': 0}
         from torch.utils.data import DataLoader
         from .neural import Collator, QADataset, predictions
-        movie_id, link_score, link_status = self.linker.link(question)
-        if not movie_id:
-            return {'system': f'{self.neural_run} 神经生成系统', 'movie': '未识别', 'link_status': link_status,
-                    'evidence': [], 'answer': REFUSAL, 'latency_ms': 0}
-        row = {'question_id': 'interactive', 'question': question, 'movie_id': movie_id,
+        row = {'question_id': 'interactive', 'question': prepared.model_question if prepared else question, 'movie_id': movie_id,
                'reference_answers': [REFUSAL], 'answer_ids': [], 'relation_id': 'UNKNOWN', 'is_answerable': False}
         loader = DataLoader(QADataset([row], self.graph), batch_size=1,
-                            collate_fn=Collator(self.tokenizer, self.graph.use_embeddings))
+                            collate_fn=Collator(self.tokenizer, self.graph.use_embeddings,
+                                                getattr(self, 'neural_config', {}).get('input_max_length', 384)))
         result = predictions(self.neural, loader, self.tokenizer, self.entities, self.device)[0]
         evidence = [item[0] for item in self.graph.facts(movie_id)]
-        return {'system': f'{self.neural_run} 神经生成系统', 'movie': entity_label(self.entities, movie_id),
+        response = {'system': system_name, 'movie': entity_label(self.entities, movie_id), 'movie_id': movie_id,
                 'link_status': f'{link_status}, score={link_score:.3f}', 'evidence': evidence,
-                'answer': result['answer'], 'latency_ms': result['latency_ms']}
+                **self._recover_generated(result['answer'], movie_id), 'latency_ms': result['latency_ms']}
+        if prepared is not None:
+            from .metrics import AnswerEntityIndex
+            original = response['answer']
+            if not hasattr(self, 'answer_index'):
+                self.answer_index = AnswerEntityIndex(self.entities)
+            candidates = self.graph.fact_tail_ids(movie_id) if hasattr(self.graph, 'fact_tail_ids') else ()
+            predicted_ids = self.answer_index.match(original, movie_id, preferred_ids=candidates)
+            response.update(language='zh', model_question=prepared.model_question,
+                            original_answer=original, language_status=prepared.status,
+                            language_note='中文问题经离线片名与属性识别后，交由原英文神经模型生成；中文展示保留实际生成内容。',
+                            input_relation=prepared.relation_id, answer_ids=predicted_ids,
+                            refused=original == REFUSAL)
+            response['answer'] = self.chinese.localize_generated(original, movie_id)
+        return response
+
+    def _recover_generated(self, raw_answer, movie_id):
+        if not self.recover_names:
+            return {'answer': raw_answer}
+        if not movie_id:
+            return {'answer': raw_answer, 'raw_answer': raw_answer, 'replacements': [], 'recovery_ms': 0}
+        from .name_recovery import NameRecovery
+        from .neural_preflight import _facts
+        started = time.perf_counter()
+        if self.name_recovery is None:
+            self.name_recovery = NameRecovery(self.entities, self.tokenizer)
+        mapping = ({'entity_to_id': self.graph.entity_to_id, 'relation_to_id': self.graph.relation_to_id}
+                   if self.graph.use_embeddings else None)
+        candidates = [tail for _, tail in _facts(movie_id, self.entities, mapping)[:24]]
+        recovered = self.name_recovery.recover(raw_answer, candidates)
+        return {**recovered, 'recovery_ms': (time.perf_counter() - started) * 1000}
 
 
 def print_result(result):
@@ -103,19 +159,25 @@ def print_result(result):
     else:
         print('  - 无可用证据')
     print(f"答案：{result['answer']}")
+    if 'raw_answer' in result:
+        print(f"原始生成：{result['raw_answer']}")
+        print(f"名称恢复：{len(result['replacements'])} 处，{result['recovery_ms']:.2f} ms")
     print(f"生成延迟：{result['latency_ms']:.2f} ms")
 
 
-def run(question=None, system='both', data_dir=None, model_path=None):
-    demo = Demo(load_neural=system in ('both', 'best'), data_dir=data_dir, model_path=model_path)
+def run(question=None, system='both', data_dir=None, model_path=None, recover_names=False):
+    if recover_names and system == 'a0':
+        raise ValueError('--recover-names requires --system best or both')
+    demo = Demo(load_neural=system in ('both', 'best'), data_dir=data_dir, model_path=model_path,
+                recover_names=recover_names)
     def answer(text):
         print(f"\n问题：{text}")
         if system in ('a0', 'both'): print_result(demo.answer_a0(text))
         if system in ('best', 'both'): print_result(demo.answer_neural(text))
     if question:
         answer(question); return
-    print('电影知识图谱问答演示。请输入英文问题；输入 exit 结束。')
-    print('示例：Who directed Shutter Island? / What genre is Boss Level?')
+    print('电影知识图谱问答演示。可输入中文或英文问题；输入 exit 结束。')
+    print('示例：《盗梦空间》的导演是谁？ / Who directed Shutter Island?')
     while True:
         try: text = input('\nQuestion> ').strip()
         except (EOFError, KeyboardInterrupt): break
@@ -128,11 +190,14 @@ if __name__ == '__main__':
     parser.add_argument('--question'); parser.add_argument('--system', choices=['a0', 'best', 'both'], default='both')
     parser.add_argument('--data-dir', type=Path, help='Processed data directory for A0 only.')
     parser.add_argument('--model-path', type=Path, help='A0 model.pkl from a personal or acceptance run.')
+    parser.add_argument('--recover-names', action='store_true', help='Restore unambiguous tokenizer-damaged names from retrieved facts; retain raw output.')
     args = parser.parse_args()
     if args.system != 'a0' and (args.data_dir is not None or args.model_path is not None):
         parser.error('--data-dir and --model-path require --system a0')
+    if args.recover_names and args.system == 'a0':
+        parser.error('--recover-names requires --system best or both')
     try:
-        run(args.question, args.system, args.data_dir, args.model_path)
+        run(args.question, args.system, args.data_dir, args.model_path, args.recover_names)
     except FileNotFoundError as error:
         parser.exit(2, f'Missing data or model: {error.filename or error}. '
                        'Run python -m kgqa.acceptance for an offline A0 example; '

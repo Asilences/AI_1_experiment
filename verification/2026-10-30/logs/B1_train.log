@@ -1,0 +1,12 @@
+2026-10-30 13:49:20,687 INFO START B1 cwd=.
+Passing a tuple of `past_key_values` is deprecated and will be removed in Transformers v4.48.0. You should pass an instance of `EncoderDecoderCache` instead, e.g. `past_key_values=EncoderDecoderCache.from_legacy_cache(past_key_values)`.
+2026-10-30 14:08:03,099 INFO Using default tokenizer.
+2026-10-30 14:08:07,814 INFO run=B1 epoch=1 train_loss=0.19412 valid_loss=0.00007 valid_f1=99.779 updates=2577 seconds=1122.5
+2026-10-30 14:26:49,913 INFO Using default tokenizer.
+2026-10-30 14:26:54,801 INFO run=B1 epoch=2 train_loss=0.00213 valid_loss=0.00002 valid_f1=99.779 updates=2577 seconds=1126.3
+2026-10-30 14:45:37,622 INFO Using default tokenizer.
+2026-10-30 14:45:42,483 INFO run=B1 epoch=3 train_loss=0.00115 valid_loss=0.00002 valid_f1=99.779 updates=2577 seconds=1127.7
+2026-10-30 15:04:26,330 INFO Using default tokenizer.
+2026-10-30 15:04:31,346 INFO run=B1 epoch=4 train_loss=0.00081 valid_loss=0.00002 valid_f1=99.779 updates=2577 seconds=1128.9
+2026-10-30 15:23:05,642 INFO Using default tokenizer.
+2026-10-30 15:23:10,319 INFO run=B1 epoch=5 train_loss=0.00056 valid_loss=0.00003 valid_f1=99.779 updates=2577 seconds=1119.0

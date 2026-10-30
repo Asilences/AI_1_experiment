@@ -1,0 +1,19 @@
+usage: neural_preflight.py [-h] --data-dir DATA_DIR --tokenizer TOKENIZER
+                           --output OUTPUT [--mapping MAPPING]
+                           [--input-max-length INPUT_MAX_LENGTH]
+                           [--example-limit EXAMPLE_LIMIT]
+
+Inspect neural data/tokenizer limits without loading a model or scoring it.
+
+options:
+  -h, --help            show this help message and exit
+  --data-dir DATA_DIR   Processed directory with entities.json, qa.jsonl,
+                        splits.json.
+  --tokenizer TOKENIZER
+                        Local tokenizer directory or cached model ID. Never
+                        downloaded.
+  --output OUTPUT
+  --mapping MAPPING     Optional TransE mapping.json to reproduce B0 fact
+                        filtering.
+  --input-max-length INPUT_MAX_LENGTH
+  --example-limit EXAMPLE_LIMIT

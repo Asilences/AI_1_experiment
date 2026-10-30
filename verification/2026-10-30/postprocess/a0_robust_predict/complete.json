@@ -1,0 +1,17 @@
+{
+  "identity": {
+    "postprocess_expanded_suite.py": "d09c2b74b762675a860bf28a42452b946fe5cb7ad81d61230fed355124f96f0d",
+    "input_manifest.json": "df9e474c2b57dec142cc86b9c6207763566a8b651618571746703cde82332ced",
+    "suite_summary.json": "7a547d0b47e199d87707a45bd0d9071cc0241e5a086d9ef249016e7acb2ed731"
+  },
+  "command": [
+    "environment\\Scripts\\python.exe",
+    "-m",
+    "kgqa.pipeline",
+    "robust"
+  ],
+  "sha256": {
+    "project\\runs\\A0\\predictions_robustness.jsonl": "4b807cecb3b08e845f7c4ba1c9651a76d3779878b736e1912a0593cac73e9bc4",
+    "logs\\postprocess_a0_robust_predict.log": "d0febb34d76e83d759c3701b9fdc4cb87cddac70549c623fe0da1e954a0f0e35"
+  }
+}

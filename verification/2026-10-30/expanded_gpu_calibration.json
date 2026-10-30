@@ -1,0 +1,33 @@
+{
+  "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "torch_threads": 4,
+  "training": [
+    {
+      "batch_size": 4,
+      "status": "PASS",
+      "input_tokens": 402,
+      "target_tokens": 40,
+      "facts": 24,
+      "step_seconds": 0.1913978999994773,
+      "peak_mb": 2010.27490234375
+    },
+    {
+      "batch_size": 8,
+      "status": "PASS",
+      "input_tokens": 402,
+      "target_tokens": 40,
+      "facts": 24,
+      "step_seconds": 0.3523927999995067,
+      "peak_mb": 3030.794921875
+    },
+    {
+      "batch_size": 16,
+      "status": "PASS",
+      "input_tokens": 402,
+      "target_tokens": 40,
+      "facts": 24,
+      "step_seconds": 3.891875366665772,
+      "peak_mb": 4964.423828125
+    }
+  ]
+}

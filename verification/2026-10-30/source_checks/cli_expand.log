@@ -1,0 +1,28 @@
+usage: expand.py [-h] [--base-snapshot BASE_SNAPSHOT] [--target TARGET]
+                 [--candidate-cache CANDIDATE_CACHE] --work-dir WORK_DIR
+                 [--batch-size BATCH_SIZE] [--proxy PROXY]
+                 [--backend {api,sparql}] [--output-dir OUTPUT_DIR]
+                 [--model-dir MODEL_DIR] [--base-splits BASE_SPLITS]
+                 [--activate]
+
+Extend a frozen movie snapshot using cached Wikidata truthy SPARQL facts.
+
+options:
+  -h, --help            show this help message and exit
+  --base-snapshot BASE_SNAPSHOT
+  --target TARGET
+  --candidate-cache CANDIDATE_CACHE
+  --work-dir WORK_DIR
+  --batch-size BATCH_SIZE
+  --proxy PROXY         Optional HTTP proxy, e.g. htt<private-path>
+  --backend {api,sparql}
+  --output-dir OUTPUT_DIR
+                        New isolated processed-data directory.
+  --model-dir MODEL_DIR
+                        New isolated A0 model directory; requires --output-
+                        dir.
+  --base-splits BASE_SPLITS
+                        Optional original splits.json to preserve film
+                        assignments.
+  --activate            Use the completed paired A0 dataset/model in the
+                        browser UI.

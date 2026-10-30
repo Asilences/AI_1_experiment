@@ -1,0 +1,63 @@
+{
+  "scope": "Post-evaluation error analysis only; no preset or model changes",
+  "count": 3,
+  "errors": [
+    {
+      "question_id": "Q23755403_P57_0",
+      "question": "Who directed Office Christmas Party?",
+      "movie_id": "Q23755403",
+      "relation_id": "P57",
+      "gold_ids": [
+        "Q8003113",
+        "Q22323567"
+      ],
+      "predicted_ids": [
+        "Q106916461"
+      ],
+      "reference_answers": [
+        "Office Christmas Party was directed by Will Speck and Josh Gordon.",
+        "The director or directors of Office Christmas Party are Will Speck and Josh Gordon."
+      ],
+      "raw_answer": "Office Christmas Party was directed by Will Speck and Josh Gordon.",
+      "answer": "Office Christmas Party was directed by Will Speck and Josh Gordon."
+    },
+    {
+      "question_id": "Q23755403_P57_1",
+      "question": "Who was the director of Office Christmas Party?",
+      "movie_id": "Q23755403",
+      "relation_id": "P57",
+      "gold_ids": [
+        "Q8003113",
+        "Q22323567"
+      ],
+      "predicted_ids": [
+        "Q106916461"
+      ],
+      "reference_answers": [
+        "Office Christmas Party was directed by Will Speck and Josh Gordon.",
+        "The director or directors of Office Christmas Party are Will Speck and Josh Gordon."
+      ],
+      "raw_answer": "Office Christmas Party was directed by Will Speck and Josh Gordon.",
+      "answer": "Office Christmas Party was directed by Will Speck and Josh Gordon."
+    },
+    {
+      "question_id": "Q23755403_P57_2",
+      "question": "Name the director or directors of Office Christmas Party.",
+      "movie_id": "Q23755403",
+      "relation_id": "P57",
+      "gold_ids": [
+        "Q8003113",
+        "Q22323567"
+      ],
+      "predicted_ids": [
+        "Q106916461"
+      ],
+      "reference_answers": [
+        "Office Christmas Party was directed by Will Speck and Josh Gordon.",
+        "The director or directors of Office Christmas Party are Will Speck and Josh Gordon."
+      ],
+      "raw_answer": "Office Christmas Party was directed by Will Speck and Josh Gordon.",
+      "answer": "Office Christmas Party was directed by Will Speck and Josh Gordon."
+    }
+  ]
+}

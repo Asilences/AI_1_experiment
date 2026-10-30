@@ -1,0 +1,19 @@
+{
+  "full_pytest": {
+    "passed": 344,
+    "seconds": 17.03,
+    "evidence": "Completed preceding console run with CPU threads 2 and CUDA hidden; not rerun by this adapter."
+  },
+  "targeted_pytest": {
+    "passed": 32,
+    "seconds": 2.97
+  },
+  "prior_fix_pytest": {
+    "passed": 342,
+    "seconds": 17.35
+  },
+  "previous_v1_pytest": {
+    "passed": 330,
+    "preserved_evidence": "verification/2026-10-30/source_checks/pytest.log"
+  }
+}

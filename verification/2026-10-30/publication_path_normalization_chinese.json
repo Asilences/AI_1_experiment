@@ -1,0 +1,30 @@
+{
+  "purpose": "Remove local executable paths from public evidence; preserve original bytes and metric values.",
+  "records": [
+    {
+      "path": "verification/2026-10-30/chinese_qa_v2/summary.json",
+      "original_sha256": "cee2861d7a0c7aefc87f5691e2a51f8784cfb23a5c4156ec929c448a0b0b767c",
+      "published_sha256": "33cb5f009077001c4f1b24cd6cfb1a29908da604223bcb4f54a72e7e370626bd",
+      "normalized_fields": [
+        "environment.executable"
+      ],
+      "replacement": "python",
+      "all_other_fields_unchanged": true,
+      "metrics_unchanged": true,
+      "original_bytes_preserved_privately": true
+    },
+    {
+      "path": "verification/2026-10-30/chinese_english_regression/summary.json",
+      "original_sha256": "22872f6568dc2aee66b49ef6f95ae715e370c5619eb48fbb1d8f516312b05dee",
+      "published_sha256": "43a0c9fdb18aeb1b7ba6cd389f7361bd8d670980f57b548c24eae97cc09639fc",
+      "normalized_fields": [
+        "environment.executable"
+      ],
+      "replacement": "python",
+      "all_other_fields_unchanged": true,
+      "metrics_unchanged": true,
+      "original_bytes_preserved_privately": true
+    }
+  ],
+  "prior_diagnostic_sha_note": "prior_diagnostic.summary_sha256 continues to identify the preserved original diagnostic bytes; use original_sha256/published_sha256 mapping when a summary is normalized."
+}

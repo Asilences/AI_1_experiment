@@ -15,6 +15,7 @@ from urllib.parse import parse_qs, urlsplit
 import webbrowser
 
 from .common import REFUSAL, RELATIONS, ROOT, read_json, sha256
+from .chinese import ChineseAdapter
 
 ASSETS = Path(__file__).with_name('ui')
 SYSTEMS = {'a0', 'best', 'both'}
@@ -52,8 +53,11 @@ class APIError(Exception):
 
 
 class QAService:
-    def __init__(self, data_dir=None, model_path=None, catalog_dir=None):
+    def __init__(self, data_dir=None, model_path=None, catalog_dir=None, recover_names=False):
         self.custom_paths = data_dir is not None or model_path is not None
+        if recover_names and self.custom_paths:
+            raise ValueError('Name recovery requires the default neural dataset, not custom A0 paths')
+        self.recover_names = recover_names
         self.data_dir = Path(data_dir) if data_dir else ROOT / 'data' / 'processed'
         self.model_path = Path(model_path) if model_path else ROOT / 'models' / 'pipeline' / 'model.pkl'
         self.demo = None
@@ -68,6 +72,7 @@ class QAService:
             entities = read_json(self.data_dir / 'entities.json')
             self.entities = entities
             splits = read_json(self.data_dir / 'splits.json')
+            display = ChineseAdapter(entities, sum(splits.values(), []))
             manifest_path = self.data_dir / 'manifest.json'
             if manifest_path.exists():
                 self.dataset_name = read_json(manifest_path).get('name', self.dataset_name)
@@ -78,6 +83,8 @@ class QAService:
                 self.movies.append({'id': qid, 'label': entity['label'],
                                     'display_label': entity.get('display_label', entity['label']),
                                     'question_title': entity.get('question_title', entity['label']),
+                                    'label_zh': display.format_entity(qid) if any('\u3400' <= c <= '\u9fff'
+                                                                                for c in display.format_entity(qid)) else '',
                                     'aliases': entity.get('aliases', []),
                                     'relations': [r for r in RELATIONS if facts[r]],
                                     'fact_count': sum(len(v) for v in facts.values())})
@@ -123,7 +130,7 @@ class QAService:
                     or not any((checkpoint / name).is_file() for name in ('model.safetensors', 'pytorch_model.bin'))):
                 raise FileNotFoundError('Missing checkpoint')
             dependencies = all(importlib.util.find_spec(name) is not None for name in ('torch', 'transformers'))
-            return {'available': dependencies, 'name': f'{run_id} 神经生成', 'run_id': run_id,
+            return {'available': dependencies, 'name': f'{run_id} 神经生成' + (' + 名称恢复' if self.recover_names else ''), 'run_id': run_id,
                     'detail': '首次使用时加载本地模型。' if dependencies else '当前 Python 环境未安装神经模型依赖。'}
         except (OSError, ValueError, KeyError, TypeError):
             return {'available': False, 'name': '神经生成', 'detail': '未找到完整的本地神经模型，请先完成训练或恢复检查点。'}
@@ -134,6 +141,7 @@ class QAService:
         if not available:
             neural.update(available=False, detail=self.data_error or '请先准备配套的 A0 模型和知识库。')
         examples = []
+        examples_zh = []
         priorities = {'Shutter Island': 0, 'Boss Level': 1, 'Dogma': 2, '10 Things I Hate About You': 3}
         preferred = sorted(self.movies, key=lambda m: (priorities.get(m['label'], 4), m['label']))
         templates = {'P57': 'Who directed {title}?', 'P136': 'What genre is {title}?',
@@ -146,9 +154,20 @@ class QAService:
             if movie:
                 used_movies.add(movie['id'])
                 examples.append({'relation': relation, 'question': template.format(title=movie['question_title'])})
+        chinese_templates = {'P57': '《{title}》的导演是谁？', 'P136': '《{title}》是什么类型的电影？',
+                             'P495': '《{title}》是哪个国家制作的？', 'P364': '《{title}》的原始语言是什么？'}
+        zh_priorities = {'Inception': 0, 'Titanic': 1}
+        zh_movies = sorted((m for m in self.movies if m['label_zh']),
+                           key=lambda m: (zh_priorities.get(m['label'], 2), m['label']))
+        for relation, template in chinese_templates.items():
+            movie = next((m for m in zh_movies if relation in m['relations']), None)
+            if movie:
+                examples_zh.append({'relation': relation, 'question': template.format(title=movie['label_zh'])})
         return {'movie_count': len(self.movies), 'fact_count': sum(m['fact_count'] for m in self.movies),
                 'dataset_name': self.dataset_name,
                 'relation_count': len(RELATIONS), 'custom_data': self.custom_paths, 'examples': examples,
+                'examples_zh': examples_zh, 'question_languages': ['zh', 'en'],
+                'chinese_coverage': {'movies': len(self.movies), 'with_chinese_title': len(zh_movies)},
                 'a0': {'available': available, 'name': 'A0 管道问答',
                        'detail': self.data_error or ('本地模型就绪。' if available else '未找到 A0 模型，请先完成训练或指定模型路径。')},
                 'neural': neural,
@@ -163,7 +182,7 @@ class QAService:
     def search(self, query='', offset=0, limit=30):
         query = query.casefold().strip()
         matches = [m for m in self.movies if not query or any(
-            query in str(name).casefold() for name in [m['label'], m['id'], *m['aliases']])]
+            query in str(name).casefold() for name in [m['label'], m['label_zh'], m['id'], *m['aliases']])]
         return {'movies': matches[offset:offset + limit], 'total': len(matches), 'offset': offset}
 
     def explore(self, question, movie_ids=None, offset=0, limit=30):
@@ -183,12 +202,12 @@ class QAService:
         if self.demo is None:
             from .demo import Demo
             self.demo = (Demo(load_neural=False, data_dir=self.data_dir, model_path=self.model_path)
-                         if self.custom_paths else Demo(load_neural=False))
+                         if self.custom_paths else Demo(load_neural=False, recover_names=self.recover_names))
         return self.demo
 
     def answer(self, question, system, mode='standard'):
         if not isinstance(question, str) or not question.strip() or len(question) > 1000:
-            raise APIError('请输入 1—1000 个字符的电影问题。')
+            raise APIError('请输入 1—1000 个字符的中文或英文电影问题。')
         if not isinstance(system, str) or system not in SYSTEMS:
             raise APIError('请选择有效的问答系统。')
         if not isinstance(mode, str) or mode not in {'standard', 'freeform'}:
@@ -226,15 +245,25 @@ class QAService:
                             raw = demo.answer_a0(model_question) if target == 'a0' else demo.answer_neural(model_question)
                         if interpretation:
                             movie_id, score, link_status = (interpretation['movie_id'], interpretation['link_score'], interpretation['link_status'])
+                        elif raw.get('language') == 'zh':
+                            movie_id = raw.get('movie_id')
+                            score, link_status = (1.0 if movie_id else 0.0), raw.get('link_status', '')
                         else:
                             movie_id, score, link_status = demo.linker.link(question)
-                        movie = ({'id': movie_id, 'label': demo.entities[movie_id].get('display_label', demo.entities[movie_id]['label'])}
+                        movie = ({'id': movie_id, 'label': (demo.chinese.format_entity(movie_id) if raw.get('language') == 'zh'
+                                                          else demo.entities[movie_id].get('display_label', demo.entities[movie_id]['label']))}
                                  if movie_id else None)
-                        result.update(ok=True, answer=raw['answer'], refused=raw['answer'] == REFUSAL,
+                        result.update(ok=True, answer=raw['answer'], refused=raw.get('refused', raw['answer'] == REFUSAL),
                                       movie=movie, link_status=link_status, link_score=score,
                                       relation=raw.get('relation'), confidence=raw.get('confidence'),
                                       evidence=raw.get('evidence', []), cold_start=cold,
                                       generation_ms=raw.get('latency_ms'))
+                        for key in ('language', 'model_question', 'original_answer', 'language_status', 'language_note', 'answer_ids'):
+                            if key in raw:
+                                result[key] = raw[key]
+                        if 'raw_answer' in raw:
+                            result.update(raw_answer=raw['raw_answer'], replacements=raw['replacements'],
+                                          recovery_ms=raw['recovery_ms'])
                     except Exception:
                         logging.exception('UI inference failed for %s', target)
                         result['error'] = '本地模型运行失败，请检查启动终端的错误信息及数据、模型是否配套。'
@@ -339,7 +368,8 @@ def main(argv=None):
     parser.add_argument('--model-path', type=Path, help='Custom A0 model.pkl; enables A0 only.')
     parser.add_argument('--catalog-dir', type=Path, help='Separate frozen V2 catalogue for extended tool queries.')
     parser.add_argument('--open', action='store_true', help='Open the local UI in your browser.')
-    parser.add_argument('--legacy', action='store_true', help='Use the original 1000-film data and neural models.')
+    parser.add_argument('--legacy', action='store_true', help='Use default experiment data and neural models instead of the activated A0 profile.')
+    parser.add_argument('--recover-names', action='store_true', help='Enable auditable name recovery for neural answers.')
     args = parser.parse_args(argv)
     if not 1 <= args.port <= 65535:
         parser.error('--port must be between 1 and 65535')
@@ -350,8 +380,11 @@ def main(argv=None):
         data_dir, model_path = startup_paths(args.data_dir, args.model_path, args.legacy)
     except (OSError, ValueError, KeyError, TypeError) as error:
         parser.exit(1, f'数据版本配置无效：{error}。可用 --legacy 启动原始实验库，或重新激活配套数据与模型。\n')
+    if args.recover_names and (data_dir is not None or model_path is not None):
+        parser.error('--recover-names requires the default neural dataset; use --legacy when an A0-only profile is active')
     try:
-        server = make_server(QAService(data_dir, model_path, args.catalog_dir), args.port)
+        server = make_server(QAService(data_dir, model_path, catalog_dir=args.catalog_dir,
+                                       recover_names=args.recover_names), args.port)
     except OSError as error:
         parser.exit(1, f'无法启动本地页面：{error}。可使用 --port 7861 更换端口。\n')
     url = f'http://127.0.0.1:{args.port}'

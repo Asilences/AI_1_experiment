@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "renderer": "Microsoft Word and Poppler",
+  "inspected_pages": 32,
+  "reports": {
+    "个人实验报告.docx": {
+      "sha256": "803d97663396a0af41df4db93bf120a519aceda7d992468fb85310c35d241ccf",
+      "bytes": 538910,
+      "pages": 16
+    },
+    "夏俊杰_实验报告.docx": {
+      "sha256": "f184a8751d5c1f4c5dff337b0682a874b07509161250da60188c468749891234",
+      "bytes": 534902,
+      "pages": 16
+    }
+  },
+  "native_equations_per_report": 4,
+  "layout_issues": []
+}

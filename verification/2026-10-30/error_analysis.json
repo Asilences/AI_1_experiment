@@ -1,0 +1,49 @@
+{
+  "A0": {
+    "run_id": "A0",
+    "total": 8917,
+    "counts": {
+      "correct": 8917
+    },
+    "percentages": {
+      "correct": 100.0
+    },
+    "examples": {}
+  },
+  "B0": {
+    "run_id": "B0",
+    "total": 8917,
+    "counts": {
+      "correct": 8872,
+      "missed_answer": 39,
+      "unsupported_answer_entity": 6
+    },
+    "percentages": {
+      "correct": 99.49534596837502,
+      "missed_answer": 0.43736682740832117,
+      "unsupported_answer_entity": 0.0672872042166648
+    },
+    "examples": {
+      "missed_answer": {
+        "question_id": "Q528328_P57_0",
+        "question": "Who directed Fruits of Passion?",
+        "gold_answer_ids": [
+          "Q739129"
+        ],
+        "predicted_answer_ids": [],
+        "answer": "Fruits of Passion was directed by Shji Terayama."
+      },
+      "unsupported_answer_entity": {
+        "question_id": "Q196685_P57_0",
+        "question": "Who directed Escape Plan?",
+        "gold_answer_ids": [
+          "Q450630"
+        ],
+        "predicted_answer_ids": [
+          "Q127021"
+        ],
+        "answer": "Escape Plan was directed by Mikael Hfström."
+      }
+    }
+  }
+}

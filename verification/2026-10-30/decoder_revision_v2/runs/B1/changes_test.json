@@ -1,0 +1,129 @@
+{
+  "v1": {
+    "count": 8917,
+    "entity_exact": 99.49534596837502,
+    "entity_macro_f1": 99.49534596837502,
+    "bleu": 99.77551051994016,
+    "rouge_l": 99.89321992114122,
+    "by_relation": {
+      "P136": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 1416
+      },
+      "P495": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2214
+      },
+      "P364": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2238
+      },
+      "P57": {
+        "exact": 97.98927613941018,
+        "f1": 97.98927613941018,
+        "count": 2238
+      },
+      "UNKNOWN": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 811
+      }
+    },
+    "answerable_count": 8106,
+    "refusal_count": 811,
+    "answerable_entity_exact": 99.44485566247224,
+    "answerable_entity_macro_f1": 99.44485566247224,
+    "refusal_accuracy": 100.0,
+    "latency_mean_ms": 11.676575137376258,
+    "latency_p95_ms": 15.10078281251026
+  },
+  "v2": {
+    "count": 8917,
+    "entity_exact": 99.52898957048335,
+    "entity_macro_f1": 99.52898957048335,
+    "bleu": 99.77551051994016,
+    "rouge_l": 99.89321992114122,
+    "by_relation": {
+      "P136": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 1416
+      },
+      "P495": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2214
+      },
+      "P364": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2238
+      },
+      "P57": {
+        "exact": 98.12332439678283,
+        "f1": 98.12332439678283,
+        "count": 2238
+      },
+      "UNKNOWN": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 811
+      }
+    },
+    "answerable_count": 8106,
+    "refusal_count": 811,
+    "answerable_entity_exact": 99.48186528497409,
+    "answerable_entity_macro_f1": 99.48186528497409,
+    "refusal_accuracy": 100.0,
+    "latency_mean_ms": 11.676575137376258,
+    "latency_p95_ms": 15.10078281251026
+  },
+  "changed_ids": [
+    {
+      "question_id": "Q23755403_P57_0",
+      "v1_ids": [
+        "Q106916461"
+      ],
+      "v2_ids": [
+        "Q22323567",
+        "Q8003113"
+      ]
+    },
+    {
+      "question_id": "Q23755403_P57_1",
+      "v1_ids": [
+        "Q106916461"
+      ],
+      "v2_ids": [
+        "Q22323567",
+        "Q8003113"
+      ]
+    },
+    {
+      "question_id": "Q23755403_P57_2",
+      "v1_ids": [
+        "Q106916461"
+      ],
+      "v2_ids": [
+        "Q22323567",
+        "Q8003113"
+      ]
+    }
+  ],
+  "fixed_question_ids": [
+    "Q23755403_P57_0",
+    "Q23755403_P57_1",
+    "Q23755403_P57_2"
+  ],
+  "regressed_question_ids": [],
+  "changed_count": 3,
+  "fixed_count": 3,
+  "regressed_count": 0,
+  "source_sha256": "1841cce4715dc673387e65a12f22ec632140b048994963920f1fc5540c1118be",
+  "a0_canonical_parse_discrepancies": [],
+  "text_and_generation_latency_unchanged": true,
+  "bleu_rouge_unchanged_by_decoder": true
+}

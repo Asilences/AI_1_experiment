@@ -1,0 +1,579 @@
+{
+  "evaluated_at": "2026-10-29T16:06:21Z",
+  "scope": "Frozen A0 re-evaluation and seeded matched robustness diagnostics; no retraining or test-based tuning.",
+  "movie_count": 5000,
+  "entity_count": 7864,
+  "qa_count": 58994,
+  "input_hashes": {
+    "qa.jsonl": "2882b2077834d37f4b1ae8f9b8ea90561c8c5dacecf4247907311d0cbb8bb310",
+    "entities.json": "7c935d8fa1eecd9870df16e49d93460bdd75f90255661e4e4e397af9f667f3e8",
+    "splits.json": "dd24634f590e3e5dd38dc2e5ca7fd25b432ec3b562f74dc99a65b22d586113b7"
+  },
+  "model_sha256": "a14f3ee60168e3f0a2eefcda403c58400e861c1708dceebe63c396e1e8faa8dd",
+  "selected_threshold": 0.3,
+  "seed": 42,
+  "requested_answerable_limit": 100,
+  "evaluation_split": "test",
+  "test": {
+    "count": 8917,
+    "entity_exact": 100.0,
+    "entity_macro_f1": 100.0,
+    "bleu": 100.00000000000004,
+    "rouge_l": 100.0,
+    "by_relation": {
+      "P136": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 1416
+      },
+      "P495": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2214
+      },
+      "P364": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2238
+      },
+      "P57": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2238
+      },
+      "UNKNOWN": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 811
+      }
+    },
+    "answerable_count": 8106,
+    "refusal_count": 811,
+    "answerable_entity_exact": 100.0,
+    "answerable_entity_macro_f1": 100.0,
+    "refusal_accuracy": 100.0,
+    "latency_mean_ms": 1.2934414264896708,
+    "latency_p95_ms": 1.7187000003104913
+  },
+  "robustness": {
+    "alias": {
+      "count": 89,
+      "entity_exact": 98.87640449438202,
+      "entity_macro_f1": 98.87640449438202,
+      "bleu": 98.54464762999804,
+      "rouge_l": 98.97854954034729,
+      "by_relation": {
+        "P136": {
+          "exact": 100.0,
+          "f1": 100.0,
+          "count": 22
+        },
+        "P495": {
+          "exact": 95.23809523809523,
+          "f1": 95.23809523809523,
+          "count": 21
+        },
+        "P57": {
+          "exact": 100.0,
+          "f1": 100.0,
+          "count": 23
+        },
+        "P364": {
+          "exact": 100.0,
+          "f1": 100.0,
+          "count": 23
+        }
+      },
+      "answerable_count": 89,
+      "refusal_count": 0,
+      "answerable_entity_exact": 98.87640449438202,
+      "answerable_entity_macro_f1": 98.87640449438202,
+      "latency_mean_ms": 8.52124494381672,
+      "latency_p95_ms": 10.12959999980012
+    },
+    "clean": {
+      "count": 100,
+      "entity_exact": 100.0,
+      "entity_macro_f1": 100.0,
+      "bleu": 100.00000000000004,
+      "rouge_l": 100.0,
+      "by_relation": {
+        "P136": {
+          "exact": 100.0,
+          "f1": 100.0,
+          "count": 25
+        },
+        "P495": {
+          "exact": 100.0,
+          "f1": 100.0,
+          "count": 25
+        },
+        "P57": {
+          "exact": 100.0,
+          "f1": 100.0,
+          "count": 25
+        },
+        "P364": {
+          "exact": 100.0,
+          "f1": 100.0,
+          "count": 25
+        }
+      },
+      "answerable_count": 100,
+      "refusal_count": 0,
+      "answerable_entity_exact": 100.0,
+      "answerable_entity_macro_f1": 100.0,
+      "latency_mean_ms": 1.4150250000238884,
+      "latency_p95_ms": 1.6286000000036438
+    },
+    "paraphrase": {
+      "count": 100,
+      "entity_exact": 75.0,
+      "entity_macro_f1": 75.0,
+      "bleu": 87.50401874798635,
+      "rouge_l": 91.53070234776118,
+      "by_relation": {
+        "P136": {
+          "exact": 100.0,
+          "f1": 100.0,
+          "count": 25
+        },
+        "P495": {
+          "exact": 0.0,
+          "f1": 0,
+          "count": 25
+        },
+        "P57": {
+          "exact": 100.0,
+          "f1": 100.0,
+          "count": 25
+        },
+        "P364": {
+          "exact": 100.0,
+          "f1": 100.0,
+          "count": 25
+        }
+      },
+      "answerable_count": 100,
+      "refusal_count": 0,
+      "answerable_entity_exact": 75.0,
+      "answerable_entity_macro_f1": 75.0,
+      "latency_mean_ms": 1.3576830000010887,
+      "latency_p95_ms": 1.6283999998449872
+    },
+    "typo": {
+      "count": 100,
+      "entity_exact": 53.0,
+      "entity_macro_f1": 53.666666666666664,
+      "bleu": 49.89317913086391,
+      "rouge_l": 58.307113855588014,
+      "by_relation": {
+        "P136": {
+          "exact": 60.0,
+          "f1": 60.0,
+          "count": 25
+        },
+        "P495": {
+          "exact": 28.000000000000004,
+          "f1": 30.666666666666664,
+          "count": 25
+        },
+        "P57": {
+          "exact": 56.00000000000001,
+          "f1": 56.00000000000001,
+          "count": 25
+        },
+        "P364": {
+          "exact": 68.0,
+          "f1": 68.0,
+          "count": 25
+        }
+      },
+      "answerable_count": 100,
+      "refusal_count": 0,
+      "answerable_entity_exact": 53.0,
+      "answerable_entity_macro_f1": 53.666666666666664,
+      "latency_mean_ms": 1149.9201470000162,
+      "latency_p95_ms": 3218.2879000001776
+    },
+    "unanswerable": {
+      "count": 50,
+      "entity_exact": 100.0,
+      "entity_macro_f1": 100.0,
+      "bleu": 100.00000000000004,
+      "rouge_l": 100.0,
+      "by_relation": {
+        "UNKNOWN": {
+          "exact": 100.0,
+          "f1": 100.0,
+          "count": 50
+        }
+      },
+      "answerable_count": 0,
+      "refusal_count": 50,
+      "refusal_accuracy": 100.0,
+      "latency_mean_ms": 1.1978459999954794,
+      "latency_p95_ms": 1.781699999810371
+    }
+  },
+  "paired_comparisons": {
+    "alias": {
+      "matched_count": 89,
+      "clean": {
+        "count": 89,
+        "entity_exact": 100.0,
+        "entity_macro_f1": 100.0,
+        "bleu": 100.00000000000004,
+        "rouge_l": 100.0,
+        "by_relation": {
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 22
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 21
+          },
+          "P57": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 23
+          },
+          "P364": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 23
+          }
+        },
+        "answerable_count": 89,
+        "refusal_count": 0,
+        "answerable_entity_exact": 100.0,
+        "answerable_entity_macro_f1": 100.0,
+        "latency_mean_ms": 1.276464044969564,
+        "latency_p95_ms": 1.5694999997322157
+      },
+      "variant": {
+        "count": 89,
+        "entity_exact": 98.87640449438202,
+        "entity_macro_f1": 98.87640449438202,
+        "bleu": 98.54464762999804,
+        "rouge_l": 98.97854954034729,
+        "by_relation": {
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 22
+          },
+          "P495": {
+            "exact": 95.23809523809523,
+            "f1": 95.23809523809523,
+            "count": 21
+          },
+          "P57": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 23
+          },
+          "P364": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 23
+          }
+        },
+        "answerable_count": 89,
+        "refusal_count": 0,
+        "answerable_entity_exact": 98.87640449438202,
+        "answerable_entity_macro_f1": 98.87640449438202,
+        "latency_mean_ms": 8.52124494381672,
+        "latency_p95_ms": 10.12959999980012
+      }
+    },
+    "paraphrase": {
+      "matched_count": 100,
+      "clean": {
+        "count": 100,
+        "entity_exact": 100.0,
+        "entity_macro_f1": 100.0,
+        "bleu": 100.00000000000004,
+        "rouge_l": 100.0,
+        "by_relation": {
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 25
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 25
+          },
+          "P57": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 25
+          },
+          "P364": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 25
+          }
+        },
+        "answerable_count": 100,
+        "refusal_count": 0,
+        "answerable_entity_exact": 100.0,
+        "answerable_entity_macro_f1": 100.0,
+        "latency_mean_ms": 1.4150250000238884,
+        "latency_p95_ms": 1.6286000000036438
+      },
+      "variant": {
+        "count": 100,
+        "entity_exact": 75.0,
+        "entity_macro_f1": 75.0,
+        "bleu": 87.50401874798635,
+        "rouge_l": 91.53070234776118,
+        "by_relation": {
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 25
+          },
+          "P495": {
+            "exact": 0.0,
+            "f1": 0,
+            "count": 25
+          },
+          "P57": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 25
+          },
+          "P364": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 25
+          }
+        },
+        "answerable_count": 100,
+        "refusal_count": 0,
+        "answerable_entity_exact": 75.0,
+        "answerable_entity_macro_f1": 75.0,
+        "latency_mean_ms": 1.3576830000010887,
+        "latency_p95_ms": 1.6283999998449872
+      }
+    },
+    "typo": {
+      "matched_count": 100,
+      "clean": {
+        "count": 100,
+        "entity_exact": 100.0,
+        "entity_macro_f1": 100.0,
+        "bleu": 100.00000000000004,
+        "rouge_l": 100.0,
+        "by_relation": {
+          "P136": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 25
+          },
+          "P495": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 25
+          },
+          "P57": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 25
+          },
+          "P364": {
+            "exact": 100.0,
+            "f1": 100.0,
+            "count": 25
+          }
+        },
+        "answerable_count": 100,
+        "refusal_count": 0,
+        "answerable_entity_exact": 100.0,
+        "answerable_entity_macro_f1": 100.0,
+        "latency_mean_ms": 1.4150250000238884,
+        "latency_p95_ms": 1.6286000000036438
+      },
+      "variant": {
+        "count": 100,
+        "entity_exact": 53.0,
+        "entity_macro_f1": 53.666666666666664,
+        "bleu": 49.89317913086391,
+        "rouge_l": 58.307113855588014,
+        "by_relation": {
+          "P136": {
+            "exact": 60.0,
+            "f1": 60.0,
+            "count": 25
+          },
+          "P495": {
+            "exact": 28.000000000000004,
+            "f1": 30.666666666666664,
+            "count": 25
+          },
+          "P57": {
+            "exact": 56.00000000000001,
+            "f1": 56.00000000000001,
+            "count": 25
+          },
+          "P364": {
+            "exact": 68.0,
+            "f1": 68.0,
+            "count": 25
+          }
+        },
+        "answerable_count": 100,
+        "refusal_count": 0,
+        "answerable_entity_exact": 53.0,
+        "answerable_entity_macro_f1": 53.666666666666664,
+        "latency_mean_ms": 1149.9201470000162,
+        "latency_p95_ms": 3218.2879000001776
+      }
+    }
+  },
+  "robustness_errors": {
+    "alias": {
+      "incorrect_rows": 1,
+      "by_first_failing_stage": {
+        "movie_not_linked": 1
+      },
+      "examples": [
+        {
+          "question_id": "robust_alias_Q673195_P495_0",
+          "question": "Which country did 索拉力星 originate in?",
+          "reason": "movie_not_linked",
+          "gold_movie_id": "Q673195",
+          "predicted_movie_id": null,
+          "answer": "The available knowledge graph does not contain enough information to answer this question."
+        }
+      ]
+    },
+    "clean": {
+      "incorrect_rows": 0,
+      "by_first_failing_stage": {},
+      "examples": []
+    },
+    "paraphrase": {
+      "incorrect_rows": 25,
+      "by_first_failing_stage": {
+        "wrong_relation": 25
+      },
+      "examples": [
+        {
+          "question_id": "robust_paraphrase_Q208344_P495_2",
+          "question": "Where was Armageddon produced originally?",
+          "reason": "wrong_relation",
+          "gold_movie_id": "Q208344",
+          "predicted_movie_id": "Q208344",
+          "answer": "The original languages of Armageddon are English."
+        },
+        {
+          "question_id": "robust_paraphrase_Q423001_P495_1",
+          "question": "Where was Sumuru produced originally?",
+          "reason": "wrong_relation",
+          "gold_movie_id": "Q423001",
+          "predicted_movie_id": "Q423001",
+          "answer": "The original languages of Sumuru are English."
+        },
+        {
+          "question_id": "robust_paraphrase_Q488075_P495_1",
+          "question": "Where was 301 produced originally?",
+          "reason": "wrong_relation",
+          "gold_movie_id": "Q488075",
+          "predicted_movie_id": "Q488075",
+          "answer": "The original languages of 301 are Korean."
+        },
+        {
+          "question_id": "robust_paraphrase_Q16970789_P495_1",
+          "question": "Where was American Sniper produced originally?",
+          "reason": "wrong_relation",
+          "gold_movie_id": "Q16970789",
+          "predicted_movie_id": "Q16970789",
+          "answer": "The original languages of American Sniper are English and Arabic."
+        },
+        {
+          "question_id": "robust_paraphrase_Q124246470_P495_2",
+          "question": "Where was Karate Kid: Legends produced originally?",
+          "reason": "wrong_relation",
+          "gold_movie_id": "Q124246470",
+          "predicted_movie_id": "Q124246470",
+          "answer": "The original languages of Karate Kid: Legends are English."
+        }
+      ]
+    },
+    "typo": {
+      "incorrect_rows": 47,
+      "by_first_failing_stage": {
+        "movie_not_linked": 45,
+        "wrong_movie": 2
+      },
+      "examples": [
+        {
+          "question_id": "robust_typo_Q302490_P136_1",
+          "question": "Which genres does The Missoin belong to?",
+          "reason": "movie_not_linked",
+          "gold_movie_id": "Q302490",
+          "predicted_movie_id": null,
+          "answer": "The available knowledge graph does not contain enough information to answer this question."
+        },
+        {
+          "question_id": "robust_typo_Q208344_P495_2",
+          "question": "Name the countries of origin of Armaegddon.",
+          "reason": "movie_not_linked",
+          "gold_movie_id": "Q208344",
+          "predicted_movie_id": null,
+          "answer": "The available knowledge graph does not contain enough information to answer this question."
+        },
+        {
+          "question_id": "robust_typo_Q423001_P495_1",
+          "question": "What is the country of origin of uSmuru?",
+          "reason": "movie_not_linked",
+          "gold_movie_id": "Q423001",
+          "predicted_movie_id": null,
+          "answer": "The available knowledge graph does not contain enough information to answer this question."
+        },
+        {
+          "question_id": "robust_typo_Q16970789_P495_1",
+          "question": "What is the country of origin of American nSiper?",
+          "reason": "wrong_movie",
+          "gold_movie_id": "Q16970789",
+          "predicted_movie_id": "Q1164740",
+          "answer": "The American originated in United States and Italy."
+        },
+        {
+          "question_id": "robust_typo_Q55436290_P364_1",
+          "question": "Which languages was Babrie originally made in?",
+          "reason": "movie_not_linked",
+          "gold_movie_id": "Q55436290",
+          "predicted_movie_id": null,
+          "answer": "The available knowledge graph does not contain enough information to answer this question."
+        }
+      ]
+    },
+    "unanswerable": {
+      "incorrect_rows": 0,
+      "by_first_failing_stage": {},
+      "examples": []
+    }
+  },
+  "archived_test_regression": {
+    "archived_predictions_sha256": "ff0998842a045d71641ddc4a7ffdbba94b7bafdfe3281df6baf4eb089de25ac8",
+    "same_question_ids": true,
+    "same_answers_and_entity_sets": true
+  },
+  "frozen_inputs_unchanged": true,
+  "source_sha256": {
+    "expanded_evaluation.py": "639b8ed9457262f1a104cf2ff2bd1e21f0855a758606cb5660c146412728ccdb",
+    "robustness.py": "4d54a6e5c2b5312bf36967daa9447e81246bd94f39b698b45212e9927d37270f",
+    "pipeline.py": "a538df78000030d44a63e6a95bba3e5a67439ab626b71fa59b2ac003e74cf016",
+    "linker.py": "0a7e2bf48fbb7e523b4ba4f22a9ec293fe2be458e87a621a7601c61702fdb180",
+    "metrics.py": "e49751f90e07a92b86af5cc12f19bd6796ff7555fd0f0d2985c47597704ec890"
+  },
+  "interpretation": "Fixed templates on a visible knowledge base are separate from perturbation performance. Alias comparisons use their matched clean subset."
+}

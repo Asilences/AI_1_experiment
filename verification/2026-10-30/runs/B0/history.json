@@ -1,0 +1,247 @@
+[
+  {
+    "epoch": 1,
+    "train_loss": 0.1095650664553354,
+    "validation_loss": 0.002019350294687934,
+    "epoch_seconds": 1165.0739468999964,
+    "optimizer_updates": 2577,
+    "optimizer_updates_total": 2577,
+    "count": 8857,
+    "entity_exact": 99.6951563734899,
+    "entity_macro_f1": 99.7719318053517,
+    "bleu": 99.75521145280821,
+    "rouge_l": 99.86455971768603,
+    "by_relation": {
+      "P57": {
+        "exact": 99.06040268456375,
+        "f1": 99.14988814317674,
+        "count": 2235
+      },
+      "P136": {
+        "exact": 99.77876106194691,
+        "f1": 99.95575221238938,
+        "count": 1356
+      },
+      "P495": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2229
+      },
+      "P364": {
+        "exact": 99.86559139784946,
+        "f1": 99.97311827956989,
+        "count": 2232
+      },
+      "UNKNOWN": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 805
+      }
+    },
+    "answerable_count": 8052,
+    "refusal_count": 805,
+    "answerable_entity_exact": 99.66467958271237,
+    "answerable_entity_macro_f1": 99.74913065076998,
+    "refusal_accuracy": 100.0,
+    "latency_mean_ms": 12.046570193072279,
+    "latency_p95_ms": 15.875870312470397,
+    "gold_total": 8857,
+    "prediction_coverage": 100.0
+  },
+  {
+    "epoch": 2,
+    "train_loss": 0.0016388615870080133,
+    "validation_loss": 0.0002641005989819413,
+    "epoch_seconds": 1131.8707005999968,
+    "optimizer_updates": 2577,
+    "optimizer_updates_total": 5154,
+    "count": 8857,
+    "entity_exact": 99.70644687817546,
+    "entity_macro_f1": 99.75612509879191,
+    "bleu": 99.81864920002907,
+    "rouge_l": 99.87894277612361,
+    "by_relation": {
+      "P57": {
+        "exact": 98.97091722595079,
+        "f1": 99.06040268456375,
+        "count": 2235
+      },
+      "P136": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 1356
+      },
+      "P495": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2229
+      },
+      "P364": {
+        "exact": 99.86559139784946,
+        "f1": 99.97311827956989,
+        "count": 2232
+      },
+      "UNKNOWN": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 805
+      }
+    },
+    "answerable_count": 8052,
+    "refusal_count": 805,
+    "answerable_entity_exact": 99.67709885742673,
+    "answerable_entity_macro_f1": 99.73174366616989,
+    "refusal_accuracy": 100.0,
+    "latency_mean_ms": 12.259598825786723,
+    "latency_p95_ms": 16.15515468756712,
+    "gold_total": 8857,
+    "prediction_coverage": 100.0
+  },
+  {
+    "epoch": 3,
+    "train_loss": 0.0009125994553287794,
+    "validation_loss": 0.0010064459499315788,
+    "epoch_seconds": 1132.4379544999974,
+    "optimizer_updates": 2577,
+    "optimizer_updates_total": 7731,
+    "count": 8857,
+    "entity_exact": 99.72902788754658,
+    "entity_macro_f1": 99.77870610816304,
+    "bleu": 99.80900500239837,
+    "rouge_l": 99.87811390693399,
+    "by_relation": {
+      "P57": {
+        "exact": 99.06040268456375,
+        "f1": 99.14988814317674,
+        "count": 2235
+      },
+      "P136": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 1356
+      },
+      "P495": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2229
+      },
+      "P364": {
+        "exact": 99.86559139784946,
+        "f1": 99.97311827956989,
+        "count": 2232
+      },
+      "UNKNOWN": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 805
+      }
+    },
+    "answerable_count": 8052,
+    "refusal_count": 805,
+    "answerable_entity_exact": 99.70193740685544,
+    "answerable_entity_macro_f1": 99.75658221559861,
+    "refusal_accuracy": 100.0,
+    "latency_mean_ms": 11.97476371231327,
+    "latency_p95_ms": 15.840124999954242,
+    "gold_total": 8857,
+    "prediction_coverage": 100.0
+  },
+  {
+    "epoch": 4,
+    "train_loss": 0.0003452418736855802,
+    "validation_loss": 0.0014366260432750327,
+    "epoch_seconds": 1121.0796193999995,
+    "optimizer_updates": 2577,
+    "optimizer_updates_total": 10308,
+    "count": 8857,
+    "entity_exact": 99.72902788754658,
+    "entity_macro_f1": 99.77870610816304,
+    "bleu": 99.81676323421121,
+    "rouge_l": 99.88065549240433,
+    "by_relation": {
+      "P57": {
+        "exact": 99.06040268456375,
+        "f1": 99.14988814317674,
+        "count": 2235
+      },
+      "P136": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 1356
+      },
+      "P495": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2229
+      },
+      "P364": {
+        "exact": 99.86559139784946,
+        "f1": 99.97311827956989,
+        "count": 2232
+      },
+      "UNKNOWN": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 805
+      }
+    },
+    "answerable_count": 8052,
+    "refusal_count": 805,
+    "answerable_entity_exact": 99.70193740685544,
+    "answerable_entity_macro_f1": 99.75658221559861,
+    "refusal_accuracy": 100.0,
+    "latency_mean_ms": 11.970891464379335,
+    "latency_p95_ms": 16.09358124994742,
+    "gold_total": 8857,
+    "prediction_coverage": 100.0
+  },
+  {
+    "epoch": 5,
+    "train_loss": 0.0002593865866119271,
+    "validation_loss": 0.002771746233452454,
+    "epoch_seconds": 1118.0248015999969,
+    "optimizer_updates": 2577,
+    "optimizer_updates_total": 12885,
+    "count": 8857,
+    "entity_exact": 99.72902788754658,
+    "entity_macro_f1": 99.77870610816304,
+    "bleu": 99.81676323421121,
+    "rouge_l": 99.88065549240433,
+    "by_relation": {
+      "P57": {
+        "exact": 99.06040268456375,
+        "f1": 99.14988814317674,
+        "count": 2235
+      },
+      "P136": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 1356
+      },
+      "P495": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 2229
+      },
+      "P364": {
+        "exact": 99.86559139784946,
+        "f1": 99.97311827956989,
+        "count": 2232
+      },
+      "UNKNOWN": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 805
+      }
+    },
+    "answerable_count": 8052,
+    "refusal_count": 805,
+    "answerable_entity_exact": 99.70193740685544,
+    "answerable_entity_macro_f1": 99.75658221559861,
+    "refusal_accuracy": 100.0,
+    "latency_mean_ms": 12.029626216549639,
+    "latency_p95_ms": 15.774692187505934,
+    "gold_total": 8857,
+    "prediction_coverage": 100.0
+  }
+]

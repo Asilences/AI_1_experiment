@@ -1,0 +1,21 @@
+{
+  "identity": {
+    "postprocess_expanded_suite.py": "d09c2b74b762675a860bf28a42452b946fe5cb7ad81d61230fed355124f96f0d",
+    "input_manifest.json": "df9e474c2b57dec142cc86b9c6207763566a8b651618571746703cde82332ced",
+    "suite_summary.json": "7a547d0b47e199d87707a45bd0d9071cc0241e5a086d9ef249016e7acb2ed731"
+  },
+  "command": [
+    "environment\\Scripts\\python.exe",
+    "-m",
+    "kgqa.plots"
+  ],
+  "sha256": {
+    "project\\output\\summary_metrics.json": "64066d1d2742cb69a357bbc6f39949679d839532c5b4479e14a4451799848841",
+    "project\\output\\figures\\learning_rate_loss.png": "060b5d5ce1a9f43b1f5c3f1391f396769f1d2510ee3b83af43732355ec0acff8",
+    "project\\output\\figures\\learning_rate_metrics.png": "d2e98656a5b1a5283576579e14601ac8b43ca53c0fb23033eda1957ff5d1ed95",
+    "project\\output\\figures\\system_metrics.png": "2db239f664da6692813b6cc419d1b4189ecccdbd210c52c877b1c9dfbc7d772e",
+    "project\\output\\figures\\embedding_ablation.png": "36d2b79af58f4265ec19e902391e760be0c3d1378996086b7a2556cc19fe76f2",
+    "project\\output\\figures\\robustness.png": "4da52dfd107277089e759e52626b2dd23149a0ece8b1ecea5fefb2df6cab16c3",
+    "logs\\postprocess_plots.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

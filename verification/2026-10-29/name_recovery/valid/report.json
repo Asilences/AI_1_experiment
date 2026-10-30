@@ -1,0 +1,134 @@
+{
+  "split": "valid",
+  "protocol": {
+    "method": "Unique tokenizer-unknown name restoration from linked retained fact tails",
+    "fact_limit": 24,
+    "minimum_alphanumeric_characters": 3,
+    "input_sha256": {
+      "entities.json": "84fc4bbf3f9f106677dde191584ee2f7c2c408a22a689c91054596a6f4971c89",
+      "splits.json": "2a2a59486b30dca05a8a74dde1b0913cff4898fa50bf8a86fc0f3a93380c53cc",
+      "qa.jsonl": "e5b68040859b3d6e777905aa3adf1fc27791202028fa5d2af210b42231b41b67"
+    },
+    "mapping_sha256": "63d5a3c09627b4438629896bbd67f63727b21fc9214496a590211fbc0171223b",
+    "tokenizer": {
+      "class": "T5TokenizerFast",
+      "source_kind": "local_directory",
+      "source_name": "checkpoint",
+      "files_sha256": {
+        "tokenizer.json": "dc856f1be037756d043c1557df9a075bb8658c03c26405ef78a9fc759521cc3e",
+        "tokenizer_config.json": "f0f4630efa94e1d9e93c877ecdf2e45a8b9685037f752eddf0611508425b967b",
+        "special_tokens_map.json": "65d84a9271d68f1230ab99518c00f0f7eaef95c7b363001595ba6fa662d434b1",
+        "spiece.model": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86"
+      },
+      "vocabulary_size": 32100,
+      "vocabulary_sha256": "3e4dac4c480136f1337a43a23a00b56e92b10e1e65483bb718ceb971eef2aa14",
+      "backend_sha256": "cf4c68f352e784c0c87cd36533197cd982c4ba3421817823ebe28725b3963647"
+    },
+    "source_sha256": {
+      "name_recovery.py": "ece3fbb1a5b4933d789b0943ccfc422c09febbfff0fe6e451d8953dca5645975",
+      "recovery_experiment.py": "d54258754bc8d23aa85a11ff56c3056c24113c77927ea43583cdd5388f48095c",
+      "neural_preflight.py": "109339cc4a8701d91ca11530c39dc04cb6798f9894e2c70468e144527a913726",
+      "linker.py": "0a7e2bf48fbb7e523b4ba4f22a9ec293fe2be458e87a621a7601c61702fdb180",
+      "metrics.py": "e49751f90e07a92b86af5cc12f19bd6796ff7555fd0f0d2985c47597704ec890"
+    }
+  },
+  "scope": "Postprocessing frozen predictions; no retraining or regeneration. Strict scores unchanged in definition.",
+  "latency_note": "latency_ms is frozen generation timing; recovery_ms includes linking, restoration and extraction.",
+  "predictions_sha256": "bc29c90b5cb65724fc138a8bbaf9fe49e26bdcce5d0756d6b9a4e3929606efca",
+  "baseline": {
+    "count": 373,
+    "entity_exact": 99.19571045576407,
+    "entity_macro_f1": 99.19571045576407,
+    "bleu": 98.84082742597084,
+    "rouge_l": 99.61322736104026,
+    "by_relation": {
+      "P57": {
+        "exact": 96.66666666666667,
+        "f1": 96.66666666666667,
+        "count": 90
+      },
+      "P136": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 75
+      },
+      "P495": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 84
+      },
+      "P364": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 90
+      },
+      "UNKNOWN": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 34
+      }
+    },
+    "answerable_count": 339,
+    "refusal_count": 34,
+    "answerable_entity_exact": 99.11504424778761,
+    "answerable_entity_macro_f1": 99.11504424778761,
+    "refusal_accuracy": 100.0,
+    "latency_mean_ms": 95.1961865951723,
+    "latency_p95_ms": 133.59937500001706
+  },
+  "with_name_recovery": {
+    "count": 373,
+    "entity_exact": 100.0,
+    "entity_macro_f1": 100.0,
+    "bleu": 98.99220809936965,
+    "rouge_l": 99.74022044697224,
+    "by_relation": {
+      "P57": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 90
+      },
+      "P136": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 75
+      },
+      "P495": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 84
+      },
+      "P364": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 90
+      },
+      "UNKNOWN": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 34
+      }
+    },
+    "answerable_count": 339,
+    "refusal_count": 34,
+    "answerable_entity_exact": 100.0,
+    "answerable_entity_macro_f1": 100.0,
+    "refusal_accuracy": 100.0,
+    "latency_mean_ms": 95.1961865951723,
+    "latency_p95_ms": 133.59937500001706
+  },
+  "fixed_question_ids": [
+    "Q622008_P57_0",
+    "Q622008_P57_1",
+    "Q622008_P57_2"
+  ],
+  "regressed_question_ids": [],
+  "changed_question_ids": [
+    "Q622008_P57_0",
+    "Q622008_P57_1",
+    "Q622008_P57_2"
+  ],
+  "remaining_errors": [],
+  "selected_on_validation": true,
+  "recovery_mean_ms": 0.49609812332400954
+}

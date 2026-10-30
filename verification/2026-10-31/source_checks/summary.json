@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "pytest",
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "compile",
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "ruff",
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "javascript",
+      "returncode": 0,
+      "status": "PASS"
+    }
+  ]
+}

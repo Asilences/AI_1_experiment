@@ -1,0 +1,14 @@
+{
+  "scope": "Publication-only path normalization after the completed rescoring audit. Numerical results and all input/model/source hashes remain unchanged.",
+  "file": "A0_thresholds/summary.json",
+  "fields": [
+    "data_dir",
+    "model_path",
+    "environment.executable"
+  ],
+  "original_sha256": "240f7b8b82132b64dc3eef4bab38e8ac16238a82ecef33214f4d01d2975ad8ff",
+  "published_sha256": "ee18f8cec05f3f3cbb089217a5757e7d71c3f225bdef3f4387487237acb4d6d1",
+  "original_retained_locally": true,
+  "metrics_unchanged": true,
+  "rescore_immutability_scope": "The 356-file v2 audit covers the completed rescoring operation before this publication metadata normalization."
+}

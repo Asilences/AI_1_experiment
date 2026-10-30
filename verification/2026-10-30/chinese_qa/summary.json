@@ -1,0 +1,135 @@
+{
+  "created_at": "2026-10-30T15:58:32Z",
+  "benchmark": "chinese_controlled_acceptance_v1",
+  "scope": "Deterministic template-controlled Chinese interface acceptance on movie-held-out valid/test IDs in a visible frozen knowledge graph; not independently collected natural Chinese QA, multilingual retraining, or open-domain generalization.",
+  "independent_natural_language_collection": false,
+  "training_runs": 0,
+  "fixture_sha256": "c7ba7ac290436b96e172ee2e358eaa22bf9bf3ef048bbae8bf1d8781075443ae",
+  "gold_sha256": "3afdf4ff8c6d2901854152fc1eb3d56702fbe83dd3f64902f6cd61d02a35723c",
+  "source_sha256": {
+    "kgqa/chinese.py": "730cb48ecf8bd2174f18bae5318b68411ffd6240530c5b9fa154e405b814c62a",
+    "kgqa/pipeline.py": "6712db1e6acc5d5d44f0ba15e8de2505acb9d3ecf3ed995eb50eaa996091b89d",
+    "kgqa/linker.py": "0a7e2bf48fbb7e523b4ba4f22a9ec293fe2be458e87a621a7601c61702fdb180",
+    "kgqa/common.py": "8edce50100c3072bd134d77c77d0f4c45de5362219fe503b690b336fbc487705",
+    "benchmarks/run_chinese_acceptance.py": "863287edb6e4420fd14f2daa81d3b01cce827991a6d2a7ee02d321b648d706da"
+  },
+  "asset_sha256_before": {
+    "data/entities.json": "7c935d8fa1eecd9870df16e49d93460bdd75f90255661e4e4e397af9f667f3e8",
+    "data/splits.json": "dd24634f590e3e5dd38dc2e5ca7fd25b432ec3b562f74dc99a65b22d586113b7",
+    "data/qa.jsonl": "2882b2077834d37f4b1ae8f9b8ea90561c8c5dacecf4247907311d0cbb8bb310",
+    "data/manifest.json": "5f74de78743157698334c0682bcd2b0e990e54a71a3c920fa970b73e9e544d06",
+    "model/model.pkl": "a14f3ee60168e3f0a2eefcda403c58400e861c1708dceebe63c396e1e8faa8dd",
+    "model/config.json": "8d8e16320f9fbae2f20eda977e01c38fbcdd45fccc46c5a7928fb47f21929ce8"
+  },
+  "a0": {
+    "count": 260,
+    "positive_count": 240,
+    "negative_count": 20,
+    "positive_entity_exact": 0.9666666666666667,
+    "input_entity_link_accuracy": 0.9666666666666667,
+    "input_intent_accuracy": 1.0,
+    "predicted_relation_accuracy": 0.9666666666666667,
+    "negative_refusal_accuracy": 1.0,
+    "chinese_output_coverage": 1.0,
+    "by_split": {
+      "test": {
+        "count": 130,
+        "positive_count": 120,
+        "negative_count": 10,
+        "positive_entity_exact": 0.9333333333333333,
+        "input_entity_link_accuracy": 0.9333333333333333,
+        "input_intent_accuracy": 1.0,
+        "predicted_relation_accuracy": 0.9333333333333333,
+        "negative_refusal_accuracy": 1.0,
+        "chinese_output_coverage": 1.0
+      },
+      "valid": {
+        "count": 130,
+        "positive_count": 120,
+        "negative_count": 10,
+        "positive_entity_exact": 1.0,
+        "input_entity_link_accuracy": 1.0,
+        "input_intent_accuracy": 1.0,
+        "predicted_relation_accuracy": 1.0,
+        "negative_refusal_accuracy": 1.0,
+        "chinese_output_coverage": 1.0
+      }
+    },
+    "by_variant": {
+      "canonical": {
+        "count": 80,
+        "positive_count": 80,
+        "negative_count": 0,
+        "positive_entity_exact": 0.95,
+        "input_entity_link_accuracy": 0.95,
+        "input_intent_accuracy": 1.0,
+        "predicted_relation_accuracy": 0.95,
+        "negative_refusal_accuracy": null,
+        "chinese_output_coverage": 1.0
+      },
+      "mixed_name": {
+        "count": 80,
+        "positive_count": 80,
+        "negative_count": 0,
+        "positive_entity_exact": 1.0,
+        "input_entity_link_accuracy": 1.0,
+        "input_intent_accuracy": 1.0,
+        "predicted_relation_accuracy": 1.0,
+        "negative_refusal_accuracy": null,
+        "chinese_output_coverage": 1.0
+      },
+      "negative": {
+        "count": 20,
+        "positive_count": 0,
+        "negative_count": 20,
+        "positive_entity_exact": null,
+        "input_entity_link_accuracy": null,
+        "input_intent_accuracy": null,
+        "predicted_relation_accuracy": null,
+        "negative_refusal_accuracy": 1.0,
+        "chinese_output_coverage": 1.0
+      },
+      "paraphrase": {
+        "count": 80,
+        "positive_count": 80,
+        "negative_count": 0,
+        "positive_entity_exact": 0.95,
+        "input_entity_link_accuracy": 0.95,
+        "input_intent_accuracy": 1.0,
+        "predicted_relation_accuracy": 0.95,
+        "negative_refusal_accuracy": null,
+        "chinese_output_coverage": 1.0
+      }
+    },
+    "status": "FAIL"
+  },
+  "chinese_metadata_coverage": {
+    "movie_count": 5000,
+    "movies_with_chinese_label": 3984,
+    "selected_movies": 20,
+    "answer_entity_occurrences": 450,
+    "answer_entity_occurrences_with_chinese_label": 0,
+    "fallback": "Original entity label, then QID; no fabricated Chinese translation."
+  },
+  "status": "FAIL",
+  "model_dataset_pairing_config_checked": true,
+  "limits": [
+    "Shared hand-written templates; only 20 selected movies at default size.",
+    "Visible graph facts are the answer source; movie holdout is not graph holdout.",
+    "Incomplete movies and movies without Chinese labels are excluded by design.",
+    "mixed_name preserves stored question_title, which may itself be Chinese.",
+    "A Chinese sentence can contain original names when Chinese metadata is missing.",
+    "Does not replace, rescore, or alter the frozen English neural experiment."
+  ],
+  "asset_sha256_after": {
+    "data/entities.json": "7c935d8fa1eecd9870df16e49d93460bdd75f90255661e4e4e397af9f667f3e8",
+    "data/splits.json": "dd24634f590e3e5dd38dc2e5ca7fd25b432ec3b562f74dc99a65b22d586113b7",
+    "data/qa.jsonl": "2882b2077834d37f4b1ae8f9b8ea90561c8c5dacecf4247907311d0cbb8bb310",
+    "data/manifest.json": "5f74de78743157698334c0682bcd2b0e990e54a71a3c920fa970b73e9e544d06",
+    "model/model.pkl": "a14f3ee60168e3f0a2eefcda403c58400e861c1708dceebe63c396e1e8faa8dd",
+    "model/config.json": "8d8e16320f9fbae2f20eda977e01c38fbcdd45fccc46c5a7928fb47f21929ce8"
+  },
+  "input_assets_unchanged": true,
+  "fixture_unchanged": true,
+  "source_unchanged": true
+}

@@ -7,6 +7,11 @@ def normalize(text):
     return re.sub(r'[^a-z0-9]+', ' ', unicodedata.normalize('NFKC', text).casefold()).strip()
 
 
+def _unicode_normalize(text):
+    text = unicodedata.normalize('NFKC', text).casefold()
+    return ' '.join(''.join(char if char.isalnum() else ' ' for char in text).split())
+
+
 class EntityLinker:
     """Match complete title spans, and refuse uncertain fuzzy matches.
 
@@ -15,10 +20,14 @@ class EntityLinker:
 
     def __init__(self, movie_ids, entities, fuzzy_threshold=.88, ambiguity_margin=.06):
         self.names = {}
+        self.unicode_names = {}
         self.fuzzy_threshold, self.ambiguity_margin = fuzzy_threshold, ambiguity_margin
         for qid in movie_ids:
             entity = entities[qid]
             for name in [entity['label'], *entity.get('aliases', [])]:
+                unicode_key = _unicode_normalize(name)
+                if unicode_key and (len(unicode_key) >= 2 or not unicode_key.isascii()):
+                    self.unicode_names.setdefault(unicode_key, set()).add(qid)
                 key = normalize(name)
                 if len(key) >= 2:
                     self.names.setdefault(key, set()).add(qid)
@@ -28,17 +37,23 @@ class EntityLinker:
             # Short fuzzy titles are too easily confused with ordinary words.
             if len(name) >= 6:
                 self.fuzzy_names.setdefault(len(name.split()), []).append((name, ids))
-        self.extensions = {}
-        for name, ids in self.names.items():
+        self.extensions = self._build_extensions(self.names)
+        self.unicode_extensions = self._build_extensions(self.unicode_names)
+
+    @staticmethod
+    def _build_extensions(names):
+        extensions = {}
+        for name, ids in names.items():
             words = name.split()
             for start in range(len(words)):
                 for end in range(start + 1, len(words) + 1):
                     short_name = ' '.join(words[start:end])
-                    short_ids = self.names.get(short_name, set())
+                    short_ids = names.get(short_name, set())
                     other_ids = ids - short_ids
                     if short_ids and other_ids and short_name != name:
-                        self.extensions.setdefault(short_name, []).append(
+                        extensions.setdefault(short_name, []).append(
                             (words[:start], words[end:], other_ids))
+        return extensions
 
     @staticmethod
     def _non_overlapping(mentions):
@@ -60,19 +75,20 @@ class EntityLinker:
                     mentions.append((left, right, ids))
         return self._non_overlapping(mentions)
 
-    def _extended_match(self, query, exact):
+    def _extended_match(self, query, exact, extensions=None):
         """Check distinguishing words before accepting an exact nested title.
 
         Matching the added words separately prevents a long shared title prefix
         from making an unrelated sequel look like a high-confidence typo.
         """
+        extensions = self.extensions if extensions is None else extensions
         tokens = list(re.finditer(r'\S+', query))
         starts = {token.start(): i for i, token in enumerate(tokens)}
         ends = {token.end(): i + 1 for i, token in enumerate(tokens)}
         candidates, extension_seen = {}, False
         for left, right, _ in exact:
             anchor_start, anchor_end = starts[left], ends[right]
-            for before, after, ids in self.extensions.get(query[left:right], []):
+            for before, after, ids in extensions.get(query[left:right], []):
                 # A recognizable extension cue with an unknown completion must
                 # not silently fall back to the shorter movie.
                 cues = []
@@ -87,7 +103,10 @@ class EntityLinker:
                     extension_seen = True
                     continue
                 if any(len(expected) >= 4 and SequenceMatcher(
-                        None, expected, actual, autojunk=False).ratio() >= self.fuzzy_threshold
+                        None, expected, actual, autojunk=False).ratio() >= (
+                            min(self.fuzzy_threshold, 1 - 1 / len(expected))
+                            if extensions is self.unicode_extensions and not expected.isascii()
+                            else self.fuzzy_threshold)
                        for expected, actual in cues):
                     extension_seen = True
                 prefix_counts = range(max(1, len(before) - 1), len(before) + 2) if before else (0,)
@@ -166,11 +185,70 @@ class EntityLinker:
             return None, score, 'ambiguous', []
         return winner, score, 'fuzzy', [(left, right, {winner})]
 
+    def _unicode_match(self, query):
+        # Preserve complete Unicode names; never score their ASCII remnants.
+        mentions = []
+        for name, ids in self.unicode_names.items():
+            start = 0
+            while (left := query.find(name, start)) >= 0:
+                right = left + len(name)
+                if ((left == 0 or not query[left - 1].isalnum())
+                        and (right == len(query) or not query[right].isalnum())):
+                    mentions.append((left, right, ids))
+                start = left + 1
+        unicode_mentions = [item for item in mentions
+                            if not query[item[0]:item[1]].isascii()]
+        filtered = []
+        for mention in mentions:
+            left, right, _ = mention
+            if query[left:right].isascii():
+                # An ASCII word inside an unknown mixed-script title is not
+                # independent evidence for an unrelated ASCII movie.
+                adjacent = []
+                before = re.search(r'\S+$', query[:left].rstrip())
+                after = re.search(r'\S+', query[right:])
+                if before:
+                    adjacent.append((before.start(), before.end()))
+                if after:
+                    adjacent.append((right + after.start(), right + after.end()))
+                if any(not query[start:end].isascii()
+                       and not any(a <= start and end <= b for a, b, _ in unicode_mentions)
+                       for start, end in adjacent):
+                    continue
+            filtered.append(mention)
+        mentions = filtered
+        mentions = self._non_overlapping(mentions)
+        if not mentions:
+            return None, 0.0, 'not_found', []
+        ids = set().union(*(item[2] for item in mentions))
+        if len(ids) != 1:
+            return None, 0.0, 'ambiguous', []
+        extended = self._extended_match(query, mentions, self.unicode_extensions)
+        if extended is not None:
+            # Unicode linking remains exact-only: a suspected extension must
+            # not become a guessed sequel, even when its typo score is high.
+            return None, extended[1], 'ambiguous', []
+        return next(iter(ids)), 1.0, 'exact', mentions
+
     def link(self, question):
+        query = _unicode_normalize(question)
+        if any(not char.isascii() and char.isalnum() for char in query):
+            return self._unicode_match(query)[:3]
         return self._match(normalize(question))[:3]
 
     def mask(self, question, movie_id):
         """Mask a title or alias without replacing parts of other words."""
+        unicode_query = _unicode_normalize(question)
+        if any(not char.isascii() and char.isalnum() for char in unicode_query):
+            linked_id, _, _, mentions = self._unicode_match(unicode_query)
+            if not movie_id or linked_id != movie_id:
+                return normalize(question)
+            parts, start = [], 0
+            for left, right, _ in mentions:
+                parts.extend((normalize(unicode_query[start:left]), 'movie_title'))
+                start = right
+            parts.append(normalize(unicode_query[start:]))
+            return ' '.join(part for part in parts if part)
         query = normalize(question)
         if not movie_id:
             return query
