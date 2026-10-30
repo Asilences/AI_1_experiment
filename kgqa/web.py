@@ -57,11 +57,14 @@ class QAService:
         self.data_dir = Path(data_dir) if data_dir else ROOT / 'data' / 'processed'
         self.model_path = Path(model_path) if model_path else ROOT / 'models' / 'pipeline' / 'model.pkl'
         self.demo = None
+        self.freeform_parser = None
+        self.entities = {}
         self.lock = threading.Lock()
         self.movies, self.data_error = [], ''
         self.dataset_name = '原始实验电影库'
         try:
             entities = read_json(self.data_dir / 'entities.json')
+            self.entities = entities
             splits = read_json(self.data_dir / 'splits.json')
             manifest_path = self.data_dir / 'manifest.json'
             if manifest_path.exists():
@@ -130,7 +133,9 @@ class QAService:
                 'relation_count': len(RELATIONS), 'custom_data': self.custom_paths, 'examples': examples,
                 'a0': {'available': available, 'name': 'A0 管道问答',
                        'detail': self.data_error or ('本地模型就绪。' if available else '未找到 A0 模型，请先完成训练或指定模型路径。')},
-                'neural': neural}
+                'neural': neural,
+                'freeform': {'available': True, 'method': 'bounded_rules_v1',
+                             'detail': '四类单跳自然问法；有限中文转英文标准问题，答案保持英文。'}}
 
     def search(self, query='', offset=0, limit=30):
         query = query.casefold().strip()
@@ -145,16 +150,24 @@ class QAService:
                          if self.custom_paths else Demo(load_neural=False))
         return self.demo
 
-    def answer(self, question, system):
+    def answer(self, question, system, mode='standard'):
         if not isinstance(question, str) or not question.strip() or len(question) > 1000:
-            raise APIError('请输入 1—1000 个字符的英文电影问题。')
+            raise APIError('请输入 1—1000 个字符的电影问题。')
         if not isinstance(system, str) or system not in SYSTEMS:
             raise APIError('请选择有效的问答系统。')
+        if not isinstance(mode, str) or mode not in {'standard', 'freeform'}:
+            raise APIError('请选择有效的问题处理模式。')
         if not self.lock.acquire(blocking=False):
             raise APIError('上一条问题仍在处理中，请稍后再试。', 409)
         started = time.perf_counter()
         try:
             state = self.status()
+            interpretation = None
+            if mode == 'freeform' and not self.data_error:
+                if self.freeform_parser is None:
+                    from .freeform import FreeformParser
+                    self.freeform_parser = FreeformParser([movie['id'] for movie in self.movies], self.entities)
+                interpretation = self.freeform_parser.parse(question)
             results = []
             for target in (('a0', 'best') if system == 'both' else (system,)):
                 entry = state['a0' if target == 'a0' else 'neural']
@@ -167,8 +180,18 @@ class QAService:
                         first_load = self.demo is None
                         demo = self._load_demo()
                         cold = first_load or target == 'best' and demo.neural is None
-                        raw = demo.answer_a0(question) if target == 'a0' else demo.answer_neural(question)
-                        movie_id, score, link_status = demo.linker.link(question)
+                        model_question = interpretation['canonical_question'] if interpretation else question
+                        if interpretation and interpretation['status'] == 'ready':
+                            if demo.linker.link(model_question)[0] != interpretation['movie_id']:
+                                interpretation.update(status='needs_clarification', message='标准片名仍有歧义，请选择明确版本。')
+                        if interpretation and interpretation['status'] != 'ready':
+                            raw = {'answer': REFUSAL, 'relation': interpretation['relation_id'], 'evidence': []}
+                        else:
+                            raw = demo.answer_a0(model_question) if target == 'a0' else demo.answer_neural(model_question)
+                        if interpretation:
+                            movie_id, score, link_status = (interpretation['movie_id'], interpretation['link_score'], interpretation['link_status'])
+                        else:
+                            movie_id, score, link_status = demo.linker.link(question)
                         movie = ({'id': movie_id, 'label': demo.entities[movie_id].get('display_label', demo.entities[movie_id]['label'])}
                                  if movie_id else None)
                         result.update(ok=True, answer=raw['answer'], refused=raw['answer'] == REFUSAL,
@@ -181,7 +204,7 @@ class QAService:
                         result['error'] = '本地模型运行失败，请检查启动终端的错误信息及数据、模型是否配套。'
                 result['elapsed_ms'] = round((time.perf_counter() - tick) * 1000, 2)
                 results.append(result)
-            return {'question': question.strip(), 'results': results,
+            return {'question': question.strip(), 'mode': mode, 'interpretation': interpretation, 'results': results,
                     'elapsed_ms': round((time.perf_counter() - started) * 1000, 2)}
         finally:
             self.lock.release()
@@ -258,7 +281,7 @@ def make_server(service, port=7860):
                 data = json.loads(self.rfile.read(length))
                 if not isinstance(data, dict):
                     raise APIError('请求格式无效。')
-                self.send_json(service.answer(data.get('question'), data.get('system', 'both')))
+                self.send_json(service.answer(data.get('question'), data.get('system', 'both'), data.get('mode', 'standard')))
             except (ValueError, UnicodeError):
                 self.send_json({'error': '请求格式无效。'}, 400)
             except APIError as error:

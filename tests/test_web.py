@@ -139,3 +139,23 @@ def test_catalog_counts_only_unique_facts_with_named_entities(tmp_path):
     service = QAService(tmp_path, tmp_path / 'model.pkl')
     assert service.status()['fact_count'] == 1
     assert service.search()['movies'][0]['relations'] == ['P57']
+
+
+def test_freeform_mode_returns_canonical_question_and_keeps_standard_default(web_server):
+    status, result, _ = request(web_server, '/api/answer', {
+        'question': 'Could you tell me who helmed Juniper Trail?', 'system': 'a0', 'mode': 'freeform'})
+    assert status == 200 and result['mode'] == 'freeform'
+    assert result['interpretation']['canonical_question'] == 'Who directed Juniper Trail?'
+    assert result['results'][0]['ok'] and not result['results'][0]['refused']
+    _, standard, _ = request(web_server, '/api/answer', {'question': 'Who directed Juniper Trail?', 'system': 'a0'})
+    assert standard['mode'] == 'standard' and standard['interpretation'] is None
+
+
+def test_freeform_unsupported_and_multi_intent_queries_refuse_without_neural_calls(web_server):
+    for question, expected in [('What was the budget of Juniper Trail?', 'unanswerable'),
+                               ('Tell me the director and genre of Juniper Trail', 'needs_clarification')]:
+        status, result, _ = request(web_server, '/api/answer', {'question': question, 'system': 'a0', 'mode': 'freeform'})
+        assert status == 200 and result['interpretation']['status'] == expected
+        assert result['results'][0]['refused'] and not result['results'][0]['evidence']
+    status, _, _ = request(web_server, '/api/answer', {'question': 'test', 'system': 'a0', 'mode': []})
+    assert status == 400

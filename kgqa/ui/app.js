@@ -2,7 +2,7 @@
 
 const $ = (selector, scope = document) => scope.querySelector(selector);
 const relationNames = {P57: '导演', P136: '电影类型', P495: '制作国家', P364: '原始语言', UNKNOWN: '未支持的关系'};
-const linkNames = {exact: '名称 / 别名匹配', fuzzy: '模糊匹配', ambiguous: '实体存在歧义', not_found: '未找到电影'};
+const linkNames = {exact: '名称 / 别名匹配', alias: '中文名称 / 别名匹配', qid: 'QID 明确指定', fuzzy: '模糊匹配', ambiguous: '实体存在歧义', not_found: '未找到电影'};
 const storageKey = 'film-kgqa-questions-v1';
 let appStatus = null;
 let latestResult = null;
@@ -180,9 +180,30 @@ $('#question-form').addEventListener('submit', async event => {
   $('#timing-note').hidden = true;
   setBusy(true);
   try {
-    const data = await request('/api/answer', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({question, system})});
+    const mode = appStatus?.freeform?.available && $('#freeform-mode').checked ? 'freeform' : 'standard';
+    const data = await request('/api/answer', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({question, system, mode})});
     latestResult = {...data, saved_at: new Date().toISOString()};
     $('#answered-question').textContent = `已回答的问题：${data.question}`;
+    const parsed = data.interpretation;
+    $('#interpretation').hidden = !parsed;
+    if (parsed) {
+      $('#interpretation-text').textContent = parsed.canonical_question && parsed.status === 'ready'
+        ? `理解为：${parsed.canonical_question} ${parsed.message}` : parsed.message;
+      const options = $('#clarification-options');
+      options.replaceChildren();
+      for (const suggestion of parsed.suggestions || []) {
+        const button = node('button', 'example-chip', suggestion);
+        button.type = 'button';
+        button.addEventListener('click', () => setQuestion(suggestion));
+        options.append(button);
+      }
+      for (const candidate of parsed.candidates || []) {
+        const button = node('button', 'example-chip', `${candidate.label} (${candidate.id})`);
+        button.type = 'button';
+        button.addEventListener('click', () => setQuestion(`${candidate.id}: ${data.question}`));
+        options.append(button);
+      }
+    }
     const results = $('#results');
     results.replaceChildren(...data.results.map(renderResult));
     results.classList.toggle('single', data.results.length === 1);
@@ -231,6 +252,7 @@ async function init() {
   $('#ask-button').disabled = true;
   try {
     appStatus = await request('/api/status');
+    $('#freeform-control').hidden = !appStatus.freeform?.available;
     const connection = $('#connection');
     connection.classList.add('connected');
     connection.lastChild.textContent = '本地服务已连接';

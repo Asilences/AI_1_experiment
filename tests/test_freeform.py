@@ -58,6 +58,7 @@ def test_ambiguous_unsupported_or_missing_facts_do_not_reach_model(parser, quest
 
 def test_qid_can_disambiguate_a_shared_title(parser):
     assert parser.parse('Q3 的导演是谁？')['movie_id'] == 'Q3'
+    assert parser.parse('Q3: 同名电影的导演是谁？')['movie_id'] == 'Q3'
     assert parser.parse('Who directed The Matrix Q2?')['status'] == 'needs_clarification'
 
 

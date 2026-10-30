@@ -43,7 +43,7 @@
 
       <section class="composer" aria-label="输入问题">
         <form id="question-form">
-          <div class="composer-top"><label for="question">你想了解什么？</label><span class="language-tag">英文提问 · 中文界面</span></div>
+          <div class="composer-top"><label for="question">你想了解什么？</label><label id="freeform-control" class="language-tag" hidden><input id="freeform-mode" type="checkbox" checked> 自然问法 · 有限中文支持</label></div>
           <textarea id="question" name="question" rows="2" maxlength="1000" placeholder="Who directed Shutter Island?" required aria-describedby="question-hint"></textarea>
           <div class="composer-bottom">
             <fieldset class="system-switch"><legend class="visually-hidden">选择问答系统</legend><label><input type="radio" name="system" value="both" checked><span>双系统对比</span></label><label><input type="radio" name="system" value="a0"><span>A0 管道问答</span></label><label><input type="radio" name="system" value="best"><span id="neural-option">神经生成</span></label></fieldset>
@@ -59,11 +59,12 @@
       <section class="answer-section" aria-labelledby="answer-title">
         <div class="answer-section-heading"><h2 id="answer-title">答案与依据<span class="section-number">02</span></h2><div class="answer-actions"><span id="request-timing"></span><button id="export-result" class="text-button export-button" type="button" disabled><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2v10m-4-4 4 4 4-4M3 13v4h14v-4"/></svg>导出结果</button></div></div>
         <p id="answered-question" class="answered-question" hidden></p>
+        <div id="interpretation" class="notice" hidden><p id="interpretation-text"></p><div id="clarification-options" class="example-list"></div></div>
         <div id="loading" class="loading-state" role="status" hidden><span class="spinner"></span><div><strong>正在查询与生成答案</strong><p>首次使用神经系统需要加载模型，请稍候。</p></div></div>
         <div id="results" class="results-grid"></div>
         <div id="empty-state" class="empty-state">
           <svg class="graph-illustration" viewBox="0 0 220 110" aria-hidden="true"><path d="m49 55 60-28 62 28-62 28zM49 55h122M109 27v56"/><circle cx="49" cy="55" r="8"/><circle cx="109" cy="27" r="8"/><circle cx="109" cy="83" r="8"/><circle cx="171" cy="55" r="8"/><circle class="graph-center" cx="109" cy="55" r="12"/></svg>
-          <h3>让事实连接起你的问题</h3><p>输入英文问题，或从左侧选择一部电影。<br>这里将展示回答、实体链接与图谱事实。</p>
+          <h3>让事实连接起你的问题</h3><p>从左侧选择电影，或直接输入问题。<br>自然问法支持四类单跳事实，答案保持英文。</p>
           <div class="relation-tags"><span>导演</span><span>电影类型</span><span>制作国家</span><span>原始语言</span></div>
         </div>
         <p id="timing-note" class="timing-note" hidden>处理耗时包含问答调用，首次使用可能包含模型加载；双系统对比时按顺序处理。页面耗时仅供交互观察，不作为正式性能评测。</p>

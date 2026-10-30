@@ -9,7 +9,7 @@ import unicodedata
 
 from .common import REFUSAL, ROOT, write_json
 from .demo import Demo
-from .linker import EntityLinker
+from .linker import EntityLinker, normalize
 
 DEFAULT_DATA = ROOT / 'data/processed/movies_5000_20261029'
 DEFAULT_MODEL = ROOT / 'models/pipeline_5000_20261029/model.pkl'
@@ -70,9 +70,12 @@ class FreeformParser:
         if movie_id:
             ids.add(movie_id)
         if qids:
-            if len(qids) > 1 or ids - qids:
+            chosen = next(iter(qids))
+            all_mentions = mentions + self.linker._exact_mentions(normalize(question))
+            if (len(qids) > 1 or any(chosen not in item[2] for item in all_mentions)
+                    or movie_id and movie_id != chosen):
                 return None, 0., 'ambiguous', sorted(ids | qids)
-            return next(iter(qids)), 1., 'qid', []
+            return chosen, 1., 'qid', []
         if len(ids) > 1:
             return None, 0., 'ambiguous', sorted(ids)
         if ids:
