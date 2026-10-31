@@ -1,0 +1,19 @@
+{
+  "status": {
+    "status": "running",
+    "stage": "training",
+    "current_epoch": 1,
+    "step": 200,
+    "total_batches": 9151,
+    "optimizer_updates": 100,
+    "mean_loss": 0.03827005446080875,
+    "updated_at": "2026-10-30T20:39:20Z"
+  },
+  "pid": 18754,
+  "screen": "kgqa_ff_v2_fp32",
+  "precision": "float32",
+  "torch_threads": 2,
+  "allocator_cap_bytes": 8519974912,
+  "gpu_process_snapshot": "53110, 2116 MiB\n55414, 1672 MiB\n55418, 1674 MiB\n18754, 4718 MiB\n55421, 1674 MiB\n55425, 1672 MiB\n",
+  "note": "Live snapshot; neither all epochs nor final test is complete."
+}

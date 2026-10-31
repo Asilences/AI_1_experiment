@@ -1,0 +1,10 @@
+{
+  "status": "failed",
+  "elapsed_seconds": 95.08068388514221,
+  "peak_allocated_bytes": 3085154304,
+  "peak_reserved_bytes": 3424649216,
+  "sampled_peak_process_mib": 4270,
+  "sampling_interval_seconds": 20,
+  "sampling_error": null,
+  "completed_at": "2026-10-30T20:32:39Z"
+}

@@ -1,0 +1,68 @@
+{
+  "audit_skill": "experiment-audit",
+  "verdict": "WARN",
+  "integrity_status": "warn",
+  "reason_code": "development_scope_and_partial_source_hash_coverage",
+  "reviewer_model": "gpt-6-astra",
+  "reviewer_reasoning": "ultra",
+  "reviewer_family": "openai",
+  "executor_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "agent_id": "/root/trainfree_integrity_audit",
+  "verdict_id": "/root/trainfree_integrity_audit",
+  "generated_at": "2026-10-31T02:35:39Z",
+  "trace_path": "H:\\AI1experiment\\.aris\\traces\\experiment-audit\\trainfree-20261031",
+  "checks": {
+    "gt_provenance": {
+      "status": "pass"
+    },
+    "score_normalization": {
+      "status": "pass"
+    },
+    "result_existence": {
+      "status": "warn",
+      "details": "Model/data/result hashes and recomputed scores match. Pre/post source list omits pipeline.py; overlay and current source hash agree, without retroactive pre/post guarantee."
+    },
+    "dead_code": {
+      "status": "pass"
+    },
+    "scope": {
+      "status": "warn",
+      "details": "48 development cases, six answerable movies, one run per configuration, no independent test or new human evaluation."
+    },
+    "eval_type": "development_acceptance / KB-derived synthetic QA"
+  },
+  "audited_input_hashes": {
+    "verification/2026-10-31/trainfree/runtime_5000_final_v2/summary.json": "79fa8c6e1edc79f8537a5fa41a89dfa19b96b7cb38951226e4be12d92e7cddba",
+    "verification/2026-10-31/trainfree/runtime_5000_final_v2/manifest.json": "382cdc6809a10ed0b8d06e56dc3f831fb0a3f2ea5fec3c87d93430bb817d4303",
+    "verification/2026-10-31/trainfree/expanded_5000_final_v2/summary.json": "f93322a01717720da6e858332393136f99060a920705617e6da01012218d7af5",
+    "benchmarks/trainfree_challenge_v1.jsonl": "a1a6251e447ec4a45b6ebd637d034a7155c95258a14a0e195206dc8e8aab5072",
+    "kgqa/trainfree_experiment.py": "e2c28e0ae5bebef67a7e39cbbe0b59a9be28c2b528cec323b91cc1dca8f755d9",
+    "kgqa/guarded.py": "6a7d9bcb8a7f4a4a4c0b89f91d329f7be9ee88a3ff558e87518300310e7a64be",
+    "kgqa/freeform.py": "4c91af9445580f5b081d88060c8b120643becb59277dd09242f5ca46f857638e"
+  },
+  "engineering_evidence": [
+    "pytest_ci.txt",
+    "pytest_neural_targeted.txt",
+    "ruff.txt",
+    "local_gpu.txt"
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "Development acceptance figures match saved predictions",
+      "impact": "supported"
+    },
+    {
+      "id": "C2",
+      "claim": "Hybrid perfect score proves pure neural/freeform generalization",
+      "impact": "unsupported"
+    },
+    {
+      "id": "C3",
+      "claim": "The two 5000 A0 executions are independent statistical cross-validation",
+      "impact": "unsupported"
+    }
+  ]
+}

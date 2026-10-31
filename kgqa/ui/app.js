@@ -105,11 +105,23 @@ function renderMovieTemplates(fillQuestion = false) {
 function renderExamples() {
   const examples = $('#example-list');
   examples.replaceChildren();
-  const items = questionLanguage() === 'zh' ? appStatus?.examples_zh || [] : appStatus?.examples || [];
+  let items = questionLanguage() === 'zh' ? appStatus?.examples_zh || [] : appStatus?.examples || [];
+  if ($('#semantic-mode').checked) {
+    items = (questionLanguage() === 'zh' ? [
+      '《盗梦空间》是谁执导的，剧本又是谁写的？',
+      '《盗梦空间》和《星际穿越》里，有谁两部都出演过？',
+      '我看完《盗梦空间》了，同一位导演还拍过哪些片？'
+    ] : [
+      'Who directed Inception, and who wrote the screenplay?',
+      'Who appeared in both Inception and Interstellar?',
+      'I enjoyed Inception. What other films in this catalogue share its director?'
+    ]).map(question => ({question}));
+  }
   for (const example of items) {
     const chip = node('button', 'example-chip');
     chip.type = 'button';
-    chip.append(node('span', '', relationNames[example.relation]), document.createTextNode(example.question));
+    if (example.relation) chip.append(node('span', '', relationNames[example.relation]));
+    chip.append(document.createTextNode(example.question));
     chip.addEventListener('click', () => setQuestion(example.question));
     examples.append(chip);
   }
@@ -192,7 +204,9 @@ function renderResult(result) {
   card.classList.toggle('failed', !result.ok);
   $('.card-eyebrow', card).textContent = result.system === 'a0' ? 'PIPELINE / FACT QUERY' : 'NEURAL / ANSWER GENERATION';
   $('.system-name', card).textContent = result.name;
-  $('.result-badge', card).textContent = !result.ok ? '暂不可用' : result.refused ? '信息不足 · 拒答' : '回答完成';
+  $('.result-badge', card).textContent = !result.ok ? '暂不可用'
+    : result.guard?.action === 'clarify' ? '请确认问题'
+    : result.refused ? '信息不足 · 拒答' : result.fallback_used ? '工具回退' : '回答完成';
   $('.system-timing', card).textContent = result.ok ? `处理耗时 ${formatTime(result.elapsed_ms)}${result.cold_start ? ' · 含首次加载' : ''}` : '';
   const copy = $('.copy-button', card);
   if (!result.ok) {
@@ -217,7 +231,8 @@ function renderResult(result) {
   $('.link-method', card).textContent = `${linkNames[result.link_status] || result.link_status}${result.movie && result.link_status === 'fuzzy' ? ` · 相似度 ${result.link_score.toFixed(3)}` : ''}`;
   const relation = $('.relation-name', card);
   relation.textContent = result.relation ? `${relationNames[result.relation] || result.relation}${result.confidence != null ? ` · 置信度 ${(result.confidence * 100).toFixed(1)}%` : ''}` : '';
-  $('.evidence-label', card).textContent = result.system === 'a0' ? '回答命中的事实' : '输入给模型的候选事实';
+  $('.evidence-label', card).textContent = result.guard ? '最终回答所依据的事实'
+    : result.system === 'a0' ? '回答命中的事实' : '输入给模型的候选事实';
   $('.evidence-count', card).textContent = String(result.evidence.length);
   const evidence = $('.evidence-list', card);
   for (const fact of result.evidence) evidence.append(node('li', '', fact));
@@ -232,13 +247,20 @@ function renderResult(result) {
   };
   if (result.model_question) addDetail(result.language === 'zh' ? '中文问题 → 英文模型输入' : '英文模型输入', result.model_question, 'en');
   if (result.language_note) addDetail('语言处理说明', result.language_note);
+  if (result.guard) {
+    const actions = {accepted: '回答通过核验', rejected: '生成未通过核验', tool_fallback: '使用图谱查询与模板回退',
+      clarify: '需要用户确认', blocked: '范围或证据不足'};
+    addDetail('回答处理', `${actions[result.guard.action] || result.guard.action} · ${result.guard.reason}`);
+    addDetail('工具介入', result.fallback_used ? '最终答案由知识库查询与模板给出，模型原始输出保留如下。' : '未使用工具模板替换。');
+    if (result.model_evidence?.length) addDetail('实际提供给生成器的证据', result.model_evidence.join('\n'));
+  }
   if (typeof result.original_answer === 'string' && result.original_answer !== result.answer) {
     addDetail('中文呈现前的原答案', result.original_answer, 'en');
   }
   if (typeof result.raw_answer === 'string') {
-    addDetail('名称恢复前的神经原始生成', result.raw_answer, 'en');
+    addDetail(result.guard ? '核验与回退前的原始输出' : '名称恢复前的神经原始生成', result.raw_answer, 'en');
     const replacements = Array.isArray(result.replacements) ? result.replacements : [];
-    addDetail('名称恢复', `${replacements.length} 处${result.recovery_ms != null ? ` · ${formatTime(result.recovery_ms)}` : ''}`);
+    if (!result.guard) addDetail('名称恢复', `${replacements.length} 处${result.recovery_ms != null ? ` · ${formatTime(result.recovery_ms)}` : ''}`);
     if (replacements.length) {
       const list = node('ul', 'recovery-list');
       for (const item of replacements) list.append(node('li', '', `${item.before || '原名称'} → ${item.after || item.entity_id}${item.after && item.entity_id ? ` (${item.entity_id})` : ''}`));
@@ -251,14 +273,17 @@ function renderResult(result) {
 
 function setBusy(value) {
   busy = value;
-  $('#ask-button').disabled = value || (!appStatus?.a0.available && !($('#explore-mode').checked && appStatus?.explorer?.available));
+  const semantic = $('#semantic-mode').checked;
+  const extended = $('#explore-mode').checked;
+  const available = semantic ? appStatus?.semantic?.available : extended ? appStatus?.explorer?.available : appStatus?.a0.available;
+  $('#ask-button').disabled = value || !available;
   $('#ask-label').textContent = value ? '正在处理' : '开始提问';
   $('#question-form').setAttribute('aria-busy', String(value));
   $('#loading').hidden = !value;
-  $('#loading strong').textContent = $('#explore-mode').checked ? '正在查询扩展事实' : '正在查询与生成答案';
-  $('#loading p').textContent = $('#explore-mode').checked ? '正在核对电影、属性与本地证据。' : '首次使用神经系统需要加载模型，请稍候。';
+  $('#loading strong').textContent = semantic ? '正在理解问题并查询图谱' : extended ? '正在查询扩展事实' : '正在查询与生成答案';
+  $('#loading p').textContent = semantic ? '正在生成查询计划、核对事实并组织回答，请稍候。' : extended ? '正在核对电影、属性与本地证据。' : '首次使用神经系统需要加载模型，请稍候。';
   $('#results').hidden = value;
-  $('#explore-results').hidden = value || !latestResult?.plan;
+  $('#explore-results').hidden = value || !(latestResult?.plan || latestResult?.ui_mode === 'semantic');
   $('#empty-state').hidden = value || !!latestResult;
   $('#export-result').disabled = value || !latestResult;
   $('#answered-question').hidden = value || !latestResult;
@@ -269,6 +294,10 @@ $('#question-form').addEventListener('submit', async event => {
   if (busy) return;
   const question = $('#question').value.trim();
   if (!question) { $('#question').focus(); return; }
+  if ($('#semantic-mode').checked) {
+    await submitExtended({question}, true);
+    return;
+  }
   if ($('#explore-mode').checked && appStatus?.explorer?.available) {
     await submitExplore({question});
     return;
@@ -281,7 +310,7 @@ $('#question-form').addEventListener('submit', async event => {
   $('#timing-note').hidden = true;
   setBusy(true);
   try {
-    const mode = appStatus?.freeform?.available && $('#freeform-mode').checked ? 'freeform' : 'standard';
+    const mode = appStatus?.guarded?.available && $('#freeform-mode').checked ? 'guarded' : 'standard';
     const data = await request('/api/answer', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({question, system, mode})});
     latestResult = {...data, saved_at: new Date().toISOString()};
     $('#answered-question').textContent = `已回答的问题：${data.question}`;
@@ -301,7 +330,14 @@ $('#question-form').addEventListener('submit', async event => {
       for (const candidate of parsed.candidates || []) {
         const button = node('button', 'example-chip', `${candidate.label} (${candidate.id})`);
         button.type = 'button';
-        button.addEventListener('click', () => setQuestion(`${candidate.id}: ${data.question}`));
+        button.addEventListener('click', () => {
+          if (candidate.question) setQuestion(candidate.question);
+          else {
+            $('#movie-search').value = candidate.id;
+            loadMovies();
+            toast('请在左侧选择电影，再选择问题类型；原问题的额外条件需要另行确认。');
+          }
+        });
         options.append(button);
       }
     }
@@ -318,58 +354,78 @@ $('#question-form').addEventListener('submit', async event => {
 });
 
 async function submitExplore(payload) {
+  return submitExtended(payload, false);
+}
+
+async function submitExtended(payload, semantic = false) {
   if (busy) return;
   $('#request-error').hidden = true;
   $('#interpretation').hidden = true;
   setBusy(true);
   try {
-    const data = await request('/api/explore', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(payload)});
+    const data = await request(semantic ? '/api/semantic' : '/api/explore', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(payload)});
     exploreRequest = payload;
-    latestResult = {...data, saved_at: new Date().toISOString()};
+    latestResult = {...data, ui_mode: semantic ? 'semantic' : 'explore', saved_at: new Date().toISOString()};
     $('#answered-question').textContent = `当前问题：${data.question}`;
     $('#results').replaceChildren();
-    renderExplore(data);
-    $('#request-timing').textContent = `工具耗时 ${formatTime(data.elapsed_ms)}`;
+    renderExplore(data, semantic);
+    $('#request-timing').textContent = `${semantic ? 'P0 总耗时' : '工具耗时'} ${formatTime(data.elapsed_ms || 0)}`;
+    if (semantic) $('#semantic-summary').textContent = data.status === 'unavailable' || data.status === 'service_unavailable' ? '模型服务暂不可用' : '冻结模型服务已响应';
     $('#timing-note').hidden = true;
     remember(data.question);
   } catch (error) {
+    if (semantic) $('#semantic-summary').textContent = '本次请求未完成，请检查提示';
     $('#request-error').textContent = error.message;
     $('#request-error').hidden = false;
   } finally { setBusy(false); }
 }
 
-function renderExplore(data) {
+function renderExplore(data, semantic = false) {
   const target = $('#explore-results');
   target.replaceChildren();
   const card = node('article', 'answer-card explore-card');
   const top = node('div', 'card-top');
   const heading = node('div');
-  heading.append(node('span', 'card-eyebrow', 'EXTENDED CATALOGUE / EVIDENCE TOOLS'), node('h3', 'system-name', '扩展事实与查询工具'));
+  heading.append(node('span', 'card-eyebrow', semantic ? 'FROZEN MODEL / KNOWLEDGE GRAPH' : 'EXTENDED CATALOGUE / EVIDENCE TOOLS'), node('h3', 'system-name', semantic ? 'P0 自然语言图谱问答' : '扩展事实与查询工具'));
   const labels = {answered: '查询完成', partial: '部分可回答', needs_confirmation: '请选择电影', not_found: '未找到电影',
     needs_clarification: '需要补充信息', unsupported: '暂未支持', not_comparable: '口径不足以比较', unanswerable: '缺少事实',
-    no_recorded_overlap: '未发现已记录共同项', no_recorded_other_works: '片库未记录其他作品'};
+    no_recorded_overlap: '未发现已记录共同项', no_recorded_other_works: '片库未记录其他作品',
+    unavailable: '模型服务不可用', service_unavailable: '模型服务不可用', invalid_plan: '查询计划未通过核验'};
   top.append(heading, node('span', 'result-badge', labels[data.status] || data.status));
   const body = node('div', 'card-body');
-  body.append(node('p', 'answer-text', data.answer));
-  if (data.plan.candidates.length) {
+  body.append(node('p', 'answer-text', data.answer || data.message || '本次没有产生可显示的回答。'));
+  if (semantic && data.fallback_used) body.append(node('p', 'semantic-note', '最终回答使用了图谱结果与完整句模板。模型原始输出保留在下方。'));
+  const queryPlan = data.plan || {};
+  const candidates = data.candidates || queryPlan.candidates || [];
+  if (candidates.length) {
     const choices = node('div', 'candidate-cards');
-    for (const movie of data.plan.candidates) {
+    for (const movie of candidates) {
       const button = node('button', 'candidate-card');
       button.type = 'button';
       button.append(node('strong', '', movie.label_zh || movie.label), node('span', '', `${movie.label} · ${movie.year || '年份未知'} · ${movie.id}`),
         node('span', '', '选择这部电影 →'));
-      button.addEventListener('click', () => submitExplore({question: data.question, movie_ids: [movie.id]}));
+      button.addEventListener('click', () => submitExtended({question: data.question, movie_ids: [...new Set([...(exploreRequest?.movie_ids || []), movie.id])]}, semantic));
       choices.append(button);
     }
     body.append(choices);
   }
   const plan = node('details', 'evidence-details');
-  plan.append(node('summary', '', '查看理解与查询范围'), node('pre', 'query-plan', JSON.stringify({
-    operation: data.plan.operation, movie_ids: data.plan.movie_ids, properties: data.plan.properties, scope: '当前冻结片库',
+  plan.open = semantic;
+  plan.append(node('summary', '', semantic ? '问题理解与查询计划' : '查看理解与查询范围'), node('pre', 'query-plan', JSON.stringify({
+    ...queryPlan, scope: '当前冻结片库',
     total: data.total, offset: data.offset, limit: data.limit
   }, null, 2)));
   body.append(plan);
-  if (data.evidence.length) {
+  if (semantic && (data.raw_answer != null || data.raw_plan != null || data.guard || data.model)) {
+    const raw = node('details', 'processing-details');
+    raw.append(node('summary', '', '查看模型输出与核验记录'));
+    for (const [label, value] of [['原始规划', data.raw_plan], ['原始回答', data.raw_answer], ['核验结果', data.guard], ['模型信息', data.model]]) {
+      if (value == null) continue;
+      raw.append(node('span', 'processing-label', label), node('pre', 'query-plan', typeof value === 'string' ? value : JSON.stringify(value, null, 2)));
+    }
+    body.append(raw);
+  }
+  if ((data.evidence || []).length) {
     const details = node('details', 'evidence-details');
     details.open = true;
     details.append(node('summary', '', `来源与限定条件 · ${data.evidence.length} 条`));
@@ -385,7 +441,7 @@ function renderExplore(data) {
         citation.rel = 'noopener noreferrer';
       }
       item.append(citation);
-      if (fact.references.length) {
+      if ((fact.references || []).length) {
         const refs = node('details', 'reference-details');
         refs.append(node('summary', '', `原始参考来源 ${fact.references.length} 组`), node('pre', 'query-plan', JSON.stringify(fact.references, null, 2)));
         item.append(refs);
@@ -395,24 +451,40 @@ function renderExplore(data) {
     details.append(list);
     body.append(details);
   }
-  if (data.next_offset !== null) {
+  if (data.next_offset != null) {
     const next = node('button', 'example-chip', `下一页 · 共 ${data.total} 项`);
     next.type = 'button';
-    next.addEventListener('click', () => submitExplore({...exploreRequest, offset: data.next_offset}));
+    next.addEventListener('click', () => submitExtended({...exploreRequest, offset: data.next_offset}, semantic));
     body.append(next);
   }
   card.append(top, body);
   target.append(card);
 }
 
-$('#explore-mode').addEventListener('change', () => {
-  const active = $('#explore-mode').checked;
+function updateMode() {
+  const semantic = $('#semantic-mode').checked;
+  const active = $('#explore-mode').checked || semantic;
+  $('#stat-facts').textContent = (active ? appStatus?.explorer?.statement_count || 0 : appStatus?.fact_count || 0).toLocaleString();
+  $('#stat-relations').textContent = String(active ? 12 : appStatus?.relation_count || 4);
   $('.system-switch').hidden = active;
   $('#freeform-control').hidden = active || !appStatus?.freeform?.available;
-  if (active) $('#question').placeholder = '《盗梦空间》的导演和演员是谁？ / Who wrote Inception?';
-  else renderExamples();
-  $('#question-hint').textContent = active ? '扩展事实按问题语言回答；近似片名先确认，长列表分页显示' : 'Enter 提问，Shift + Enter 换行';
+  $('#movie-templates').hidden = active || !selectedMovie;
+  renderExamples();
+  if (active && !semantic) $('#question').placeholder = '《盗梦空间》的导演和演员是谁？ / Who wrote Inception?';
+  $('#question-hint').textContent = semantic ? '中英文自然提问；有歧义时请确认，未支持的条件会说明' : active ? '扩展事实按问题语言回答；近似片名先确认，长列表分页显示' : 'Enter 提问，Shift + Enter 换行';
+  $('#question-scope').textContent = semantic ? 'P0 查询当前十二属性片库，支持多属性、共同演员和导演其他作品；剧情、推荐及未实现的条件仍有边界。'
+    : active ? '扩展目录支持十二种属性；金额和日期保留原始口径与限定条件。'
+    : questionLanguage() === 'zh' ? '支持中文或英文提问：导演、电影类型、制作国家、原始语言。' : '英文提问支持：导演、电影类型、制作国家、原始语言；界面与证据说明保留中文。';
   setBusy(busy);
+}
+
+$('#explore-mode').addEventListener('change', () => {
+  if ($('#explore-mode').checked) $('#semantic-mode').checked = false;
+  updateMode();
+});
+$('#semantic-mode').addEventListener('change', () => {
+  if ($('#semantic-mode').checked) $('#explore-mode').checked = false;
+  updateMode();
 });
 
 $('#question').addEventListener('input', updateCount);
@@ -423,6 +495,7 @@ $('#question-language').addEventListener('change', () => {
   renderMovieTemplates(useTemplate);
   $('#question-scope').textContent = questionLanguage() === 'zh' ? '支持中文或英文提问：导演、电影类型、制作国家、原始语言。' : '英文提问支持：导演、电影类型、制作国家、原始语言；界面与证据说明保留中文。';
   $('#empty-description').replaceChildren(document.createTextNode(questionLanguage() === 'zh' ? '输入中文问题，或选择电影与问题类型。' : '输入英文问题，或选择电影与问题类型。'), node('br'), document.createTextNode('这里将展示回答、实体链接与图谱事实。'));
+  updateMode();
 });
 $('#question').addEventListener('keydown', event => {
   if (event.key === 'Enter' && !event.shiftKey && !event.isComposing) {
@@ -459,6 +532,8 @@ async function init() {
   $('#ask-button').disabled = true;
   try {
     appStatus = await request('/api/status');
+    $('#semantic-control').hidden = !appStatus.semantic?.available;
+    if (appStatus.semantic?.available) $('#semantic-summary').textContent = appStatus.semantic.model_status === 'reachable' ? '冻结模型服务已响应' : '模型服务首次提问时验证';
     $('#explore-control').hidden = !appStatus.explorer?.available;
     if (appStatus.explorer?.available) {
       $('#explore-summary').textContent = `${appStatus.explorer.movie_count.toLocaleString()} 部电影 · ${appStatus.explorer.statement_count.toLocaleString()} 条扩展声明`;

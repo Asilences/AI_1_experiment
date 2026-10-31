@@ -1,0 +1,86 @@
+{
+  "verified_at": "2026-10-31T08:09:50.380604+00:00",
+  "read_only": true,
+  "visual_inspection": "31页已逐页检查，未发现裁切、公式缺字或表格溢出",
+  "documents": [
+    {
+      "path": "H:\\AI1experiment\\reports\\个人实验报告.docx",
+      "sha256": "415475a68ef4dbe5d3dc40d8f0daba4fefbb06628322a41ea10355c2c23ae4a5",
+      "pages": 14,
+      "paragraphs": 128,
+      "tables": 10,
+      "inline_images": 4,
+      "omml_equations": 0,
+      "checks": {
+        "render_matches_final_docx": true,
+        "pages_match": true,
+        "png_count_matches": true,
+        "a4_all_sections": true,
+        "margins_match": true,
+        "original_media_bytes_preserved": true,
+        "original_math_preserved": true,
+        "expected_inline_images": true,
+        "p0_result_consistent": true,
+        "completion_date": true,
+        "pending_manual_rating_disclosed": true,
+        "identity_correct": true,
+        "subsections_5_1_to_5_5_once": true
+      }
+    },
+    {
+      "path": "H:\\AI1experiment\\reports\\夏俊杰_实验报告.docx",
+      "sha256": "06ab54b4cd43de306c8d0b9966ba3d2b12da2c739a2eca8a0a77483e371b945c",
+      "pages": 14,
+      "paragraphs": 135,
+      "tables": 9,
+      "inline_images": 8,
+      "omml_equations": 4,
+      "checks": {
+        "render_matches_final_docx": true,
+        "pages_match": true,
+        "png_count_matches": true,
+        "a4_all_sections": true,
+        "margins_match": true,
+        "original_media_bytes_preserved": true,
+        "original_math_preserved": true,
+        "expected_inline_images": true,
+        "p0_result_consistent": true,
+        "completion_date": true,
+        "pending_manual_rating_disclosed": true,
+        "identity_correct": true,
+        "subsections_5_1_to_5_5_once": true
+      }
+    },
+    {
+      "path": "H:\\AI1experiment\\reports\\双人分工与复现实验计划.docx",
+      "sha256": "3ed317fb4b55249f40a245175d8e619d582e8a2be532be30483b485c377e6532",
+      "pages": 3,
+      "paragraphs": 31,
+      "tables": 4,
+      "inline_images": 0,
+      "omml_equations": 0,
+      "checks": {
+        "render_matches_final_docx": true,
+        "pages_match": true,
+        "png_count_matches": true,
+        "a4_all_sections": true,
+        "margins_match": true,
+        "original_media_bytes_preserved": true,
+        "original_math_preserved": true,
+        "expected_inline_images": true,
+        "p0_result_consistent": true,
+        "completion_date": true,
+        "pending_manual_rating_disclosed": true,
+        "both_identities_correct": true
+      }
+    }
+  ],
+  "regression_observed_in_prior_tool_execution": "716 passed in 39.21s",
+  "outstanding": [
+    "真实终端环境截图",
+    "独立人工评分",
+    "独立自然问题泛化测试"
+  ],
+  "github_pushed_this_round": false,
+  "all_checks_passed": true
+}

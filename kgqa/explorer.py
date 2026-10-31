@@ -181,10 +181,47 @@ class Explorer:
                 'link_status': status, 'blocked': block}
 
     def answer(self, question, confirmed=None, offset=0, limit=30):
-        if not isinstance(offset, int) or isinstance(offset, bool) or offset < 0 or not isinstance(limit, int) or isinstance(limit, bool) or not 1 <= limit <= 100:
-            raise ValueError('分页要求offset≥0，limit为1—100。')
+        self._validate_page(offset, limit)
         started = time.perf_counter()
         plan = self.plan(question, confirmed)
+        return self._execute(plan, offset, limit, started)
+
+    @staticmethod
+    def _validate_page(offset, limit):
+        if not isinstance(offset, int) or isinstance(offset, bool) or offset < 0 or not isinstance(limit, int) or isinstance(limit, bool) or not 1 <= limit <= 100:
+            raise ValueError('分页要求offset≥0，limit为1—100。')
+
+    def execute(self, plan, offset=0, limit=None, *, allowed_movie_ids, question=''):
+        """Execute a candidate-bound typed plan without rule-based reparsing.
+
+        The semantic caller must resolve candidate ambiguity before passing a
+        ready plan. Non-ready plans produce no evidence or graph operations.
+        Pagination is applied after complete set/path computation.
+        """
+        from .planning import validate_plan
+
+        started = time.perf_counter()
+        validated = validate_plan(plan, allowed_movie_ids, catalogue_movie_ids=self.movies)
+        limit = validated['limit'] if limit is None else limit
+        self._validate_page(offset, limit)
+        if not isinstance(question, str) or len(question) > 1000:
+            raise ValueError('question must be text of at most 1000 characters')
+        legacy = {'method': 'validated_plan_tools_v1', 'question': question,
+                  'language': validated['language'], 'movie_ids': validated['movie_ids'],
+                  'properties': validated['properties'], 'operation': validated['operation'],
+                  'candidates': [], 'link_status': 'confirmed', 'blocked': None}
+        if validated['status'] == 'needs_clarification':
+            legacy['link_status'] = 'needs_clarification'
+        elif validated['status'] == 'unsupported':
+            legacy['blocked'] = validated['clarification'] or '; '.join(validated['unhandled_constraints'])
+        result = self._execute(legacy, offset, limit, started)
+        result['validated_plan'] = validated
+        if validated['status'] == 'needs_clarification':
+            result['answer'] = validated['clarification'] or '; '.join(validated['unhandled_constraints'])
+        return result
+
+    def _execute(self, plan, offset, limit, started):
+        question = plan['question']
         zh = plan['language'] == 'zh'
         result = {'question': question, 'plan': plan, 'status': 'answered', 'answer': '', 'evidence': [],
                   'items': [], 'missing': [], 'scope': 'current frozen catalogue', 'total': 0, 'offset': offset,

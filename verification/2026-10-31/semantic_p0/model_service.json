@@ -1,0 +1,14 @@
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "Qwen2.5-3B-Instruct",
+      "model": "Qwen/Qwen2.5-3B-Instruct",
+      "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "device": "cuda",
+      "dtype": "torch.float16",
+      "frozen": true,
+      "memory_fraction": 0.25
+    }
+  ]
+}

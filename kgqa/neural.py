@@ -129,10 +129,17 @@ def move(batch, device):
     return {key: value.to(device) if torch.is_tensor(value) else value for key, value in batch.items()}
 
 
+def native_bf16_supported(device):
+    # PyTorch 2.6 defaults to accepting software emulation. V100 (sm70) has
+    # no native BF16, so that default silently defeats the float32 fallback.
+    return (device.type == 'cuda' and torch.cuda.get_device_capability(device)[0] >= 8
+            and torch.cuda.is_bf16_supported(including_emulation=False))
+
+
 def predictions(model, loader, tokenizer, entities, device):
     model.eval(); output = []
     name_index = AnswerEntityIndex(entities)
-    for batch in loader:
+    for step, batch in enumerate(loader, 1):
         rows = batch.pop('rows'); batch = move(batch, device); batch.pop('labels', None)
         if device.type == 'cuda': torch.cuda.synchronize()
         started = time.perf_counter(); generated = model.generate(**batch)
@@ -143,6 +150,8 @@ def predictions(model, loader, tokenizer, entities, device):
             output.append({'question_id': row['question_id'], 'question': row['question'], 'answer': text,
                            'answer_ids': entity_ids_from_text(text, entities, row['movie_id'], index=name_index,
                                preferred_ids=loader.dataset.name_context[row['question_id']]), 'latency_ms': elapsed})
+        if step % 100 == 0 or step == len(loader):
+            logging.info('prediction batches=%s/%s questions=%s', step, len(loader), len(output))
     return output
 
 
@@ -150,8 +159,8 @@ def predictions(model, loader, tokenizer, entities, device):
 def validation_outputs(model, loader, tokenizer, entities, device):
     model.eval(); output, losses = [], []
     name_index = AnswerEntityIndex(entities)
-    use_bf16 = device.type == 'cuda' and torch.cuda.is_bf16_supported()
-    for batch in loader:
+    use_bf16 = native_bf16_supported(device)
+    for step, batch in enumerate(loader, 1):
         rows = batch.pop('rows'); batch = move(batch, device)
         context = torch.autocast('cuda', dtype=torch.bfloat16) if use_bf16 else nullcontext()
         with context:
@@ -166,6 +175,8 @@ def validation_outputs(model, loader, tokenizer, entities, device):
             output.append({'question_id': row['question_id'], 'question': row['question'], 'answer': text,
                            'answer_ids': entity_ids_from_text(text, entities, row['movie_id'], index=name_index,
                                preferred_ids=loader.dataset.name_context[row['question_id']]), 'latency_ms': elapsed})
+        if step % 100 == 0 or step == len(loader):
+            logging.info('validation batches=%s/%s questions=%s', step, len(loader), len(output))
     return output, float(np.mean(losses))
 
 
@@ -243,7 +254,7 @@ def train(run_id, learning_rate, use_embeddings=True, epochs=5, smoke=False,
         config.update(training_batches_per_epoch=batches_per_epoch, optimizer_updates_per_epoch=updates_per_epoch,
                       planned_optimizer_updates=updates)
         write_json(run / 'config.json', config)
-        use_bf16 = device.type == 'cuda' and torch.cuda.is_bf16_supported()
+        use_bf16 = native_bf16_supported(device)
         config['training_precision'] = 'bf16 autocast' if use_bf16 else 'float32'
         write_json(run / 'config.json', config)
         scaler = torch.amp.GradScaler('cuda', enabled=False); history, best = [], (-1, None)
@@ -267,6 +278,9 @@ def train(run_id, learning_rate, use_embeddings=True, epochs=5, smoke=False,
                         scheduler.step(); optimizer_updates += 1; epoch_updates += 1
                     optimizer.zero_grad()
                 if step % 100 == 0 or step == batches_per_epoch:
+                    logging.info('run=%s epoch=%s batch=%s/%s loss=%.5f updates=%s peak_reserved_mib=%.1f',
+                                 run_id, epoch, step, batches_per_epoch, loss.item(), optimizer_updates,
+                                 torch.cuda.max_memory_reserved() / 2**20 if device.type == 'cuda' else 0)
                     write_json(run / 'status.json', {'status': 'running', 'stage': 'training',
                                'current_epoch': epoch, 'step': step, 'total_batches': batches_per_epoch,
                                'optimizer_updates': optimizer_updates, 'mean_loss': float(np.mean(losses)),

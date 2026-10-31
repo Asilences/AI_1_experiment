@@ -1,0 +1,945 @@
+{
+  "D0": {
+    "count": 20,
+    "plan_evaluable_count": 16,
+    "declared_plan_match": {
+      "numerator": 12,
+      "denominator": 16,
+      "percent": 75.0
+    },
+    "tool_result_match": {
+      "numerator": 8,
+      "denominator": 16,
+      "percent": 50.0
+    },
+    "status_match": {
+      "numerator": 12,
+      "denominator": 20,
+      "percent": 60.0
+    },
+    "structured_task_match": {
+      "numerator": 12,
+      "denominator": 20,
+      "percent": 60.0
+    },
+    "fallback_rate": {
+      "numerator": 0,
+      "denominator": 20,
+      "percent": 0.0
+    },
+    "mean_latency_ms": 15.802350002195453,
+    "p95_latency_ms": 26.303000006009825,
+    "status_counts": {
+      "needs_clarification": 2,
+      "unsupported": 8,
+      "answered": 6,
+      "unanswerable": 2,
+      "needs_confirmation": 2
+    },
+    "text_semantics_human_reviewed": false,
+    "by_category": {
+      "amount_scope": {
+        "count": 2,
+        "plan_evaluable_count": 2,
+        "declared_plan_match": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "tool_result_match": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "status_match": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "structured_task_match": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "fallback_rate": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "mean_latency_ms": 14.746649998414796,
+        "p95_latency_ms": 19.429399995715357,
+        "status_counts": {
+          "unsupported": 2
+        },
+        "text_semantics_human_reviewed": false
+      },
+      "extended_property": {
+        "count": 2,
+        "plan_evaluable_count": 2,
+        "declared_plan_match": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "tool_result_match": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "status_match": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "structured_task_match": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "fallback_rate": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "mean_latency_ms": 10.531150001042988,
+        "p95_latency_ms": 12.126700006774627,
+        "status_counts": {
+          "answered": 2
+        },
+        "text_semantics_human_reviewed": false
+      },
+      "fuzzy_confirmation": {
+        "count": 2,
+        "plan_evaluable_count": 0,
+        "declared_plan_match": {
+          "numerator": 0,
+          "denominator": 0,
+          "percent": null
+        },
+        "tool_result_match": {
+          "numerator": 0,
+          "denominator": 0,
+          "percent": null
+        },
+        "status_match": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "structured_task_match": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "fallback_rate": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "mean_latency_ms": 29.0582000016002,
+        "p95_latency_ms": 46.897799998987466,
+        "status_counts": {
+          "needs_confirmation": 2
+        },
+        "text_semantics_human_reviewed": false
+      },
+      "intersection": {
+        "count": 2,
+        "plan_evaluable_count": 2,
+        "declared_plan_match": {
+          "numerator": 1,
+          "denominator": 2,
+          "percent": 50.0
+        },
+        "tool_result_match": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "status_match": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "structured_task_match": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "fallback_rate": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "mean_latency_ms": 15.027449997432996,
+        "p95_latency_ms": 17.494599989731796,
+        "status_counts": {
+          "unsupported": 2
+        },
+        "text_semantics_human_reviewed": false
+      },
+      "missing_fact": {
+        "count": 2,
+        "plan_evaluable_count": 2,
+        "declared_plan_match": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "tool_result_match": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "status_match": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "structured_task_match": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "fallback_rate": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "mean_latency_ms": 11.37159999780124,
+        "p95_latency_ms": 13.753799998085015,
+        "status_counts": {
+          "unanswerable": 2
+        },
+        "text_semantics_human_reviewed": false
+      },
+      "multiple_movies": {
+        "count": 2,
+        "plan_evaluable_count": 2,
+        "declared_plan_match": {
+          "numerator": 1,
+          "denominator": 2,
+          "percent": 50.0
+        },
+        "tool_result_match": {
+          "numerator": 1,
+          "denominator": 2,
+          "percent": 50.0
+        },
+        "status_match": {
+          "numerator": 1,
+          "denominator": 2,
+          "percent": 50.0
+        },
+        "structured_task_match": {
+          "numerator": 1,
+          "denominator": 2,
+          "percent": 50.0
+        },
+        "fallback_rate": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "mean_latency_ms": 18.093600003339816,
+        "p95_latency_ms": 25.932799995644018,
+        "status_counts": {
+          "unsupported": 1,
+          "answered": 1
+        },
+        "text_semantics_human_reviewed": false
+      },
+      "multiple_properties": {
+        "count": 2,
+        "plan_evaluable_count": 2,
+        "declared_plan_match": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "tool_result_match": {
+          "numerator": 1,
+          "denominator": 2,
+          "percent": 50.0
+        },
+        "status_match": {
+          "numerator": 1,
+          "denominator": 2,
+          "percent": 50.0
+        },
+        "structured_task_match": {
+          "numerator": 1,
+          "denominator": 2,
+          "percent": 50.0
+        },
+        "fallback_rate": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "mean_latency_ms": 17.963600002985913,
+        "p95_latency_ms": 26.303000006009825,
+        "status_counts": {
+          "unsupported": 1,
+          "answered": 1
+        },
+        "text_semantics_human_reviewed": false
+      },
+      "single_fact": {
+        "count": 2,
+        "plan_evaluable_count": 2,
+        "declared_plan_match": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "tool_result_match": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "status_match": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "structured_task_match": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "fallback_rate": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "mean_latency_ms": 13.47495000663912,
+        "p95_latency_ms": 18.94380000885576,
+        "status_counts": {
+          "needs_clarification": 2
+        },
+        "text_semantics_human_reviewed": false
+      },
+      "two_hop": {
+        "count": 2,
+        "plan_evaluable_count": 2,
+        "declared_plan_match": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "tool_result_match": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "status_match": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "structured_task_match": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "fallback_rate": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "mean_latency_ms": 16.67825000913581,
+        "p95_latency_ms": 21.52130000467878,
+        "status_counts": {
+          "answered": 2
+        },
+        "text_semantics_human_reviewed": false
+      },
+      "unsupported_condition": {
+        "count": 2,
+        "plan_evaluable_count": 0,
+        "declared_plan_match": {
+          "numerator": 0,
+          "denominator": 0,
+          "percent": null
+        },
+        "tool_result_match": {
+          "numerator": 0,
+          "denominator": 0,
+          "percent": null
+        },
+        "status_match": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "structured_task_match": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "fallback_rate": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "mean_latency_ms": 11.078050003561657,
+        "p95_latency_ms": 12.676300000748597,
+        "status_counts": {
+          "unsupported": 2
+        },
+        "text_semantics_human_reviewed": false
+      }
+    },
+    "by_language": {
+      "en": {
+        "count": 10,
+        "plan_evaluable_count": 8,
+        "declared_plan_match": {
+          "numerator": 5,
+          "denominator": 8,
+          "percent": 62.5
+        },
+        "tool_result_match": {
+          "numerator": 3,
+          "denominator": 8,
+          "percent": 37.5
+        },
+        "status_match": {
+          "numerator": 5,
+          "denominator": 10,
+          "percent": 50.0
+        },
+        "structured_task_match": {
+          "numerator": 5,
+          "denominator": 10,
+          "percent": 50.0
+        },
+        "fallback_rate": {
+          "numerator": 0,
+          "denominator": 10,
+          "percent": 0.0
+        },
+        "mean_latency_ms": 21.507950000523124,
+        "p95_latency_ms": 46.897799998987466,
+        "status_counts": {
+          "needs_clarification": 1,
+          "unsupported": 5,
+          "answered": 2,
+          "unanswerable": 1,
+          "needs_confirmation": 1
+        },
+        "text_semantics_human_reviewed": false
+      },
+      "zh": {
+        "count": 10,
+        "plan_evaluable_count": 8,
+        "declared_plan_match": {
+          "numerator": 7,
+          "denominator": 8,
+          "percent": 87.5
+        },
+        "tool_result_match": {
+          "numerator": 5,
+          "denominator": 8,
+          "percent": 62.5
+        },
+        "status_match": {
+          "numerator": 7,
+          "denominator": 10,
+          "percent": 70.0
+        },
+        "structured_task_match": {
+          "numerator": 7,
+          "denominator": 10,
+          "percent": 70.0
+        },
+        "fallback_rate": {
+          "numerator": 0,
+          "denominator": 10,
+          "percent": 0.0
+        },
+        "mean_latency_ms": 10.096750003867783,
+        "p95_latency_ms": 12.560300005134195,
+        "status_counts": {
+          "needs_clarification": 1,
+          "answered": 4,
+          "unsupported": 3,
+          "unanswerable": 1,
+          "needs_confirmation": 1
+        },
+        "text_semantics_human_reviewed": false
+      }
+    }
+  },
+  "P0": {
+    "count": 20,
+    "plan_evaluable_count": 16,
+    "declared_plan_match": {
+      "numerator": 7,
+      "denominator": 16,
+      "percent": 43.75
+    },
+    "tool_result_match": {
+      "numerator": 7,
+      "denominator": 16,
+      "percent": 43.75
+    },
+    "status_match": {
+      "numerator": 14,
+      "denominator": 20,
+      "percent": 70.0
+    },
+    "structured_task_match": {
+      "numerator": 10,
+      "denominator": 20,
+      "percent": 50.0
+    },
+    "fallback_rate": {
+      "numerator": 11,
+      "denominator": 20,
+      "percent": 55.0
+    },
+    "mean_latency_ms": 5954.602975001035,
+    "p95_latency_ms": 16901.104200005648,
+    "status_counts": {
+      "answered": 13,
+      "needs_clarification": 4,
+      "needs_confirmation": 2,
+      "unsupported": 1
+    },
+    "text_semantics_human_reviewed": false,
+    "by_category": {
+      "amount_scope": {
+        "count": 2,
+        "plan_evaluable_count": 2,
+        "declared_plan_match": {
+          "numerator": 1,
+          "denominator": 2,
+          "percent": 50.0
+        },
+        "tool_result_match": {
+          "numerator": 1,
+          "denominator": 2,
+          "percent": 50.0
+        },
+        "status_match": {
+          "numerator": 1,
+          "denominator": 2,
+          "percent": 50.0
+        },
+        "structured_task_match": {
+          "numerator": 1,
+          "denominator": 2,
+          "percent": 50.0
+        },
+        "fallback_rate": {
+          "numerator": 1,
+          "denominator": 2,
+          "percent": 50.0
+        },
+        "mean_latency_ms": 6638.624700004584,
+        "p95_latency_ms": 6989.847100005136,
+        "status_counts": {
+          "needs_clarification": 1,
+          "answered": 1
+        },
+        "text_semantics_human_reviewed": false
+      },
+      "extended_property": {
+        "count": 2,
+        "plan_evaluable_count": 2,
+        "declared_plan_match": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "tool_result_match": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "status_match": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "structured_task_match": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "fallback_rate": {
+          "numerator": 1,
+          "denominator": 2,
+          "percent": 50.0
+        },
+        "mean_latency_ms": 15318.28864999261,
+        "p95_latency_ms": 20364.34859999281,
+        "status_counts": {
+          "answered": 2
+        },
+        "text_semantics_human_reviewed": false
+      },
+      "fuzzy_confirmation": {
+        "count": 2,
+        "plan_evaluable_count": 0,
+        "declared_plan_match": {
+          "numerator": 0,
+          "denominator": 0,
+          "percent": null
+        },
+        "tool_result_match": {
+          "numerator": 0,
+          "denominator": 0,
+          "percent": null
+        },
+        "status_match": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "structured_task_match": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "fallback_rate": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "mean_latency_ms": 997.8869000042323,
+        "p95_latency_ms": 1105.7640000071842,
+        "status_counts": {
+          "needs_confirmation": 2
+        },
+        "text_semantics_human_reviewed": false
+      },
+      "intersection": {
+        "count": 2,
+        "plan_evaluable_count": 2,
+        "declared_plan_match": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "tool_result_match": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "status_match": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "structured_task_match": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "fallback_rate": {
+          "numerator": 1,
+          "denominator": 2,
+          "percent": 50.0
+        },
+        "mean_latency_ms": 11066.255450001336,
+        "p95_latency_ms": 16901.104200005648,
+        "status_counts": {
+          "answered": 2
+        },
+        "text_semantics_human_reviewed": false
+      },
+      "missing_fact": {
+        "count": 2,
+        "plan_evaluable_count": 2,
+        "declared_plan_match": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "tool_result_match": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "status_match": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "structured_task_match": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "fallback_rate": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "mean_latency_ms": 5365.799149993109,
+        "p95_latency_ms": 5434.5699999976205,
+        "status_counts": {
+          "answered": 2
+        },
+        "text_semantics_human_reviewed": false
+      },
+      "multiple_movies": {
+        "count": 2,
+        "plan_evaluable_count": 2,
+        "declared_plan_match": {
+          "numerator": 1,
+          "denominator": 2,
+          "percent": 50.0
+        },
+        "tool_result_match": {
+          "numerator": 1,
+          "denominator": 2,
+          "percent": 50.0
+        },
+        "status_match": {
+          "numerator": 1,
+          "denominator": 2,
+          "percent": 50.0
+        },
+        "structured_task_match": {
+          "numerator": 1,
+          "denominator": 2,
+          "percent": 50.0
+        },
+        "fallback_rate": {
+          "numerator": 1,
+          "denominator": 2,
+          "percent": 50.0
+        },
+        "mean_latency_ms": 3792.5845499994466,
+        "p95_latency_ms": 6844.088900004863,
+        "status_counts": {
+          "needs_clarification": 1,
+          "answered": 1
+        },
+        "text_semantics_human_reviewed": false
+      },
+      "multiple_properties": {
+        "count": 2,
+        "plan_evaluable_count": 2,
+        "declared_plan_match": {
+          "numerator": 1,
+          "denominator": 2,
+          "percent": 50.0
+        },
+        "tool_result_match": {
+          "numerator": 1,
+          "denominator": 2,
+          "percent": 50.0
+        },
+        "status_match": {
+          "numerator": 1,
+          "denominator": 2,
+          "percent": 50.0
+        },
+        "structured_task_match": {
+          "numerator": 1,
+          "denominator": 2,
+          "percent": 50.0
+        },
+        "fallback_rate": {
+          "numerator": 1,
+          "denominator": 2,
+          "percent": 50.0
+        },
+        "mean_latency_ms": 3274.588850006694,
+        "p95_latency_ms": 5591.525800002273,
+        "status_counts": {
+          "needs_clarification": 1,
+          "answered": 1
+        },
+        "text_semantics_human_reviewed": false
+      },
+      "single_fact": {
+        "count": 2,
+        "plan_evaluable_count": 2,
+        "declared_plan_match": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "tool_result_match": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "status_match": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "structured_task_match": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "fallback_rate": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "mean_latency_ms": 5109.155050005938,
+        "p95_latency_ms": 5306.114600010915,
+        "status_counts": {
+          "answered": 2
+        },
+        "text_semantics_human_reviewed": false
+      },
+      "two_hop": {
+        "count": 2,
+        "plan_evaluable_count": 2,
+        "declared_plan_match": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "tool_result_match": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "status_match": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "structured_task_match": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "fallback_rate": {
+          "numerator": 2,
+          "denominator": 2,
+          "percent": 100.0
+        },
+        "mean_latency_ms": 4868.158850003965,
+        "p95_latency_ms": 5112.697000004118,
+        "status_counts": {
+          "answered": 2
+        },
+        "text_semantics_human_reviewed": false
+      },
+      "unsupported_condition": {
+        "count": 2,
+        "plan_evaluable_count": 0,
+        "declared_plan_match": {
+          "numerator": 0,
+          "denominator": 0,
+          "percent": null
+        },
+        "tool_result_match": {
+          "numerator": 0,
+          "denominator": 0,
+          "percent": null
+        },
+        "status_match": {
+          "numerator": 1,
+          "denominator": 2,
+          "percent": 50.0
+        },
+        "structured_task_match": {
+          "numerator": 1,
+          "denominator": 2,
+          "percent": 50.0
+        },
+        "fallback_rate": {
+          "numerator": 0,
+          "denominator": 2,
+          "percent": 0.0
+        },
+        "mean_latency_ms": 3114.687599998433,
+        "p95_latency_ms": 5327.075599998352,
+        "status_counts": {
+          "needs_clarification": 1,
+          "unsupported": 1
+        },
+        "text_semantics_human_reviewed": false
+      }
+    },
+    "by_language": {
+      "en": {
+        "count": 10,
+        "plan_evaluable_count": 8,
+        "declared_plan_match": {
+          "numerator": 3,
+          "denominator": 8,
+          "percent": 37.5
+        },
+        "tool_result_match": {
+          "numerator": 3,
+          "denominator": 8,
+          "percent": 37.5
+        },
+        "status_match": {
+          "numerator": 6,
+          "denominator": 10,
+          "percent": 60.0
+        },
+        "structured_task_match": {
+          "numerator": 4,
+          "denominator": 10,
+          "percent": 40.0
+        },
+        "fallback_rate": {
+          "numerator": 4,
+          "denominator": 10,
+          "percent": 40.0
+        },
+        "mean_latency_ms": 5130.579320000834,
+        "p95_latency_ms": 20364.34859999281,
+        "status_counts": {
+          "answered": 5,
+          "needs_clarification": 4,
+          "needs_confirmation": 1
+        },
+        "text_semantics_human_reviewed": false
+      },
+      "zh": {
+        "count": 10,
+        "plan_evaluable_count": 8,
+        "declared_plan_match": {
+          "numerator": 4,
+          "denominator": 8,
+          "percent": 50.0
+        },
+        "tool_result_match": {
+          "numerator": 4,
+          "denominator": 8,
+          "percent": 50.0
+        },
+        "status_match": {
+          "numerator": 8,
+          "denominator": 10,
+          "percent": 80.0
+        },
+        "structured_task_match": {
+          "numerator": 6,
+          "denominator": 10,
+          "percent": 60.0
+        },
+        "fallback_rate": {
+          "numerator": 7,
+          "denominator": 10,
+          "percent": 70.0
+        },
+        "mean_latency_ms": 6778.626630001236,
+        "p95_latency_ms": 16901.104200005648,
+        "status_counts": {
+          "answered": 8,
+          "needs_confirmation": 1,
+          "unsupported": 1
+        },
+        "text_semantics_human_reviewed": false
+      }
+    }
+  }
+}

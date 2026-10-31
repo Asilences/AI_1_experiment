@@ -1,0 +1,69 @@
+{
+  "created_at": "2026-10-31T02:10:13Z",
+  "evaluation_type": "development_acceptance",
+  "scope": "Program-authored bilingual cases; four-property fixed-KB task, not human evaluation or held-out generalization.",
+  "training_performed": false,
+  "test_used_for_selection": false,
+  "model_weights_updated": false,
+  "movie_count": 1000,
+  "relations": [
+    "P57",
+    "P136",
+    "P495",
+    "P364"
+  ],
+  "systems": [
+    "a0",
+    "neural"
+  ],
+  "neural_run": "B2",
+  "initialization_seconds": 12.899645400000736,
+  "supported_question_movie_split_counts": {
+    "test": 8,
+    "train": 16
+  },
+  "latency_note": "Sequential wall time per query; model initialization excluded; cold first-query costs retained; no warmup.",
+  "bindings": {
+    "data\\processed\\entities.json": "1851a5e26e2c117e09e35e409caf4dc2fce545b2182e8ed0655d7f7265ecfe37",
+    "data\\processed\\splits.json": "46514c22319f7fcadafa91b51f0d6cd69634b6fcb8e03b1603948b39727c6be0",
+    "data\\processed\\manifest.json": "d07f1fbb970ddce8119e61d65c8d1c9968d81f65cd5ba0008f75bf08adb756c8",
+    "benchmarks\\trainfree_challenge_v1.jsonl": "a1a6251e447ec4a45b6ebd637d034a7155c95258a14a0e195206dc8e8aab5072",
+    "models\\pipeline\\model.pkl": "c74fe8d4ea6559e5946862390edf64dc411fa641cfd257f2b4f69724f05dd515",
+    "runs\\B2\\config.json": "ac0c6aa78ae640ee5d8606626ce140b85240f9d9807fba196534f59923c3813e",
+    "runs\\B2\\checkpoint\\config.json": "f34ca7b9fe0aecc026e92f748e52c7b758cd8ea2a881f7cd1e17b4e62c940876",
+    "runs\\B2\\checkpoint\\generation_config.json": "ecae1f3c45a233e11c64c5c7c7ec8964bc37be51660dbd45a8059d4bc07e067a",
+    "runs\\B2\\checkpoint\\graph_prefix.pt": "816a263760916bf0c12eedd683b10f718750a3c684f7b103afe4f3e137000d2f",
+    "runs\\B2\\checkpoint\\model.safetensors": "81d6d6e4baad8458fe3c0a5028581e39c93407605c77b4a89cc2e20721a28408",
+    "runs\\B2\\checkpoint\\special_tokens_map.json": "65d84a9271d68f1230ab99518c00f0f7eaef95c7b363001595ba6fa662d434b1",
+    "runs\\B2\\checkpoint\\spiece.model": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86",
+    "runs\\B2\\checkpoint\\tokenizer.json": "dc856f1be037756d043c1557df9a075bb8658c03c26405ef78a9fc759521cc3e",
+    "runs\\B2\\checkpoint\\tokenizer_config.json": "f0f4630efa94e1d9e93c877ecdf2e45a8b9685037f752eddf0611508425b967b",
+    "output\\selected_model.json": "909954f38f192ef005c7d9986746abec70097fd9018d0c8163e82fb153c83ddb",
+    "models\\transe\\embeddings.npz": "c3e7930ada17320bd74239a086fa23a37d7b1857ddeee84f7995487fcf08f981",
+    "models\\transe\\mapping.json": "584eee16819a7fe99f3332c307059524f70dfcd321b609eed2fd3db921822f26"
+  },
+  "source_sha256": {
+    "kgqa/trainfree_experiment.py": "710dede5841f4ede810337b8852bf1a41589555a9467c39f24ae08e0d6f38e6d",
+    "kgqa/guarded.py": "45ba33b8b35a49cfd9faf05cadfd7130b9e206cd0b0581e5281ef429d851688c",
+    "kgqa/freeform.py": "5da00566b62459e8a1713f1efd117bdb3678898184cd929bf662e89005329f39",
+    "kgqa/demo.py": "fed1eab23cf7dfe71dde15eaf3a6bb3cfcff05e2b484cd8cd4c30f3268a699c7",
+    "kgqa/metrics.py": "5f3f71568e3fb204a30ae845362d9814a60558c65687822b15b4692277afaf74",
+    "kgqa/chinese.py": "4e8312a0f4ff8d6fdb55bb1c109506e272d04b3adb7c286ea0522819c40db33f",
+    "kgqa/linker.py": "0a7e2bf48fbb7e523b4ba4f22a9ec293fe2be458e87a621a7601c61702fdb180"
+  },
+  "scoring_note": "All rates use declared case counts; raw systems cannot emit clarification state. Tool fallback is a hybrid system.",
+  "refusal_detection_note": "Final explicit refused flag or exact canonical refusal text; raw paraphrased refusals/clarifications require manual review. Unsafe-answer rate is an automatic non-refusal proxy, not human factual scoring.",
+  "relation_metric_note": "Movie+relation+entity exact requires an explicitly emitted relation; raw neural responses may not report one. Use movie+entity exact for that comparison.",
+  "completed_at": "2026-10-31T02:11:01Z",
+  "source_sha256_after": {
+    "kgqa/trainfree_experiment.py": "710dede5841f4ede810337b8852bf1a41589555a9467c39f24ae08e0d6f38e6d",
+    "kgqa/guarded.py": "45ba33b8b35a49cfd9faf05cadfd7130b9e206cd0b0581e5281ef429d851688c",
+    "kgqa/freeform.py": "5da00566b62459e8a1713f1efd117bdb3678898184cd929bf662e89005329f39",
+    "kgqa/demo.py": "fed1eab23cf7dfe71dde15eaf3a6bb3cfcff05e2b484cd8cd4c30f3268a699c7",
+    "kgqa/metrics.py": "5f3f71568e3fb204a30ae845362d9814a60558c65687822b15b4692277afaf74",
+    "kgqa/chinese.py": "4e8312a0f4ff8d6fdb55bb1c109506e272d04b3adb7c286ea0522819c40db33f",
+    "kgqa/linker.py": "0a7e2bf48fbb7e523b4ba4f22a9ec293fe2be458e87a621a7601c61702fdb180"
+  },
+  "source_unchanged": true,
+  "status": "complete"
+}

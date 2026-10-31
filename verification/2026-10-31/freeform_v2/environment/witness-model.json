@@ -1,0 +1,21 @@
+{
+  "seed": 42,
+  "losses": [
+    0.06967949867248535,
+    0.011642811819911003
+  ],
+  "precision": "float32",
+  "batch": 8,
+  "max_input_tokens": 372,
+  "graph_prefix_count": 24,
+  "generated": [
+    "The available knowledge graph does not contain enough information to answer this question.",
+    "The available knowledge graph does not contain enough information to answer this question.",
+    "Death Proof was directed by Quentin Tarantino.",
+    "The available knowledge graph does not contain enough information to answer this question.",
+    "Inglourious Basterds was directed by Quentin Tarantino.",
+    "The available knowledge graph does not contain enough information to answer this question.",
+    "The original languages of Inglourious Basterds are French, German and English.",
+    "The original languages of Inglourious Basterds are French, German and English."
+  ]
+}

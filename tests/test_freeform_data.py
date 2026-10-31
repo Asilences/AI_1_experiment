@@ -2,7 +2,7 @@ import pytest
 
 from kgqa.acceptance import build_fixture
 from kgqa.common import read_json, read_jsonl, sha256, write_jsonl
-from kgqa.freeform_data import FAMILIES, build
+from kgqa.freeform_data import RECIPES, build
 
 
 @pytest.fixture
@@ -35,14 +35,30 @@ def test_export_preserves_frozen_graph_splits_answers_and_source_bytes(source, t
     assert read_json(output / 'manifest.json')['source_hashes']['qa.jsonl'] == before['qa.jsonl']
 
 
-def test_sentence_families_and_exact_templates_are_held_out_between_splits():
+@pytest.mark.parametrize('families', RECIPES.values(), ids=RECIPES.keys())
+def test_sentence_families_and_exact_templates_are_held_out_between_splits(families):
     family_ids, templates = {}, {}
-    for split, relations in FAMILIES.items():
+    for split, relations in families.items():
         family_ids[split] = {family for values in relations.values() for family, _ in values}
         templates[split] = {template.casefold() for values in relations.values() for _, template in values}
     for left, right in [('train', 'valid'), ('train', 'test'), ('valid', 'test')]:
         assert not family_ids[left] & family_ids[right]
         assert not templates[left] & templates[right]
+
+
+def test_v2_clarifies_property_meaning_and_records_version_without_changing_v1(source, tmp_path):
+    first, second = tmp_path / 'v1', tmp_path / 'v2'
+    build(source, first, 'v1')
+    manifest = build(source, second, 'v2')
+    assert manifest['recipe_version'] == 'v2'
+    assert manifest['source_hashes'] == read_json(first / 'manifest.json')['source_hashes']
+    old = RECIPES['v1']
+    assert 'spoken' in old['train']['P364'][0][1]
+    assert 'behind the camera' in old['test']['P57'][0][1]
+    for split in ('train', 'valid', 'test'):
+        assert all('original' in template for _, template in RECIPES['v2'][split]['P364'])
+    assert all('director' in template for _, template in RECIPES['v2']['test']['P57'])
+    assert len(read_jsonl(first / 'qa.jsonl')) == len(read_jsonl(second / 'qa.jsonl'))
 
 
 def test_existing_dataset_is_not_overwritten(source, tmp_path):

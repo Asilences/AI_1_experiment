@@ -62,6 +62,9 @@ class QAService:
         self.model_path = Path(model_path) if model_path else ROOT / 'models' / 'pipeline' / 'model.pkl'
         self.demo = None
         self.freeform_parser = None
+        self.guarded = None
+        self.semantic_engine = None
+        self.semantic_service_status = 'not_checked'
         self.entities = {}
         self.lock = threading.Lock()
         self.movies, self.data_error = [], ''
@@ -176,8 +179,15 @@ class QAService:
                              'statement_count': len(self.explorer.rows) if self.explorer else 0,
                              'unresolved_entity_label_count': self.explorer.manifest.get('unresolved_entity_label_count', 0) if self.explorer else 0,
                              'detail': self.catalog_error or '独立扩展事实与只读工具，含来源、限定条件和候选确认。'},
-                'freeform': {'available': True, 'method': 'bounded_rules_v1',
-                             'detail': '四类单跳自然问法；有限中文转英文标准问题，答案保持英文。'}}
+                'semantic': {'available': self.explorer is not None, 'method': 'frozen_plan_v1',
+                             'name': 'P0 自然语言图谱问答', 'model_status': self.semantic_service_status,
+                             'model': os.environ.get('KGQA_LLM_MODEL', 'Qwen2.5-3B-Instruct'),
+                             'detail': self.catalog_error or ('冻结模型解释问题，图谱工具查询证据后组织回答。模型服务首次提问时验证。'
+                                        if self.explorer is not None else '需要配套的十二属性扩展目录。')},
+                'freeform': {'available': True, 'method': 'bounded_rules_v2',
+                             'detail': '四类单跳自然问法；歧义和未支持的条件需澄清。'},
+                'guarded': {'available': True, 'method': 'evidence_guard_v1',
+                            'detail': '问法规范化、关系证据核验、显式工具回退；保留原始生成。'}}
 
     def search(self, query='', offset=0, limit=30):
         query = query.casefold().strip()
@@ -198,6 +208,42 @@ class QAService:
         finally:
             self.lock.release()
 
+    def semantic(self, question, movie_ids=None, offset=0, limit=30):
+        """The frozen-model system is separate from both experiment baselines."""
+        if not isinstance(question, str) or not question.strip() or len(question) > 1000:
+            raise APIError('请输入 1—1000 个字符的中文或英文电影问题。')
+        if (not isinstance(offset, int) or isinstance(offset, bool) or offset < 0 or
+                not isinstance(limit, int) or isinstance(limit, bool) or not 1 <= limit <= 100):
+            raise APIError('分页要求 offset≥0，limit 为 1—100。')
+        if movie_ids is not None and (not isinstance(movie_ids, list) or len(movie_ids) > 5 or
+                any(not isinstance(qid, str) for qid in movie_ids)):
+            raise APIError('确认电影必须是最多 5 个有效 QID。')
+        if self.explorer is None:
+            raise APIError(self.catalog_error or 'P0 需要已冻结的十二属性扩展目录。', 503)
+        if movie_ids is not None and any(qid not in self.explorer.movies for qid in movie_ids):
+            raise APIError('确认电影不在当前扩展目录中。')
+        if not self.lock.acquire(blocking=False):
+            raise APIError('上一条问题仍在处理中，请稍后再试。', 409)
+        try:
+            try:
+                if self.semantic_engine is None:
+                    from .semantic_qa import SemanticQA
+                    self.semantic_engine = SemanticQA(self.explorer)
+                result = self.semantic_engine.answer(question, confirmed=movie_ids, offset=offset, limit=limit)
+                self.semantic_service_status = ('unavailable' if result.get('status') in {'unavailable', 'service_unavailable'}
+                                                else 'reachable')
+                return result
+            except ValueError as error:
+                raise APIError('P0 查询计划或请求参数无效，请调整问题后重试。') from error
+            except Exception as error:
+                self.semantic_service_status = 'unavailable'
+                # Model transport errors may contain credentials or raw response
+                # text. Neither the browser nor the log receives those details.
+                logging.warning('P0 request failed (%s)', type(error).__name__)
+                raise APIError('P0 模型服务暂不可用。请先启动模型服务并检查连接配置，或切换到扩展事实问答。', 503) from error
+        finally:
+            self.lock.release()
+
     def _load_demo(self):
         if self.demo is None:
             from .demo import Demo
@@ -210,7 +256,7 @@ class QAService:
             raise APIError('请输入 1—1000 个字符的中文或英文电影问题。')
         if not isinstance(system, str) or system not in SYSTEMS:
             raise APIError('请选择有效的问答系统。')
-        if not isinstance(mode, str) or mode not in {'standard', 'freeform'}:
+        if not isinstance(mode, str) or mode not in {'standard', 'freeform', 'guarded'}:
             raise APIError('请选择有效的问题处理模式。')
         if not self.lock.acquire(blocking=False):
             raise APIError('上一条问题仍在处理中，请稍后再试。', 409)
@@ -239,7 +285,15 @@ class QAService:
                         if interpretation and interpretation['status'] == 'ready':
                             if demo.linker.link(model_question)[0] != interpretation['movie_id']:
                                 interpretation.update(status='needs_clarification', message='标准片名仍有歧义，请选择明确版本。')
-                        if interpretation and interpretation['status'] != 'ready':
+                        if mode == 'guarded':
+                            if self.guarded is None:
+                                from .guarded import GuardedQA
+                                self.guarded = GuardedQA(demo)
+                            enhanced = self.guarded.answer(question, 'a0' if target == 'a0' else 'neural')
+                            interpretation, raw = enhanced['interpretation'], enhanced['result']
+                            suffix = ' + 工具回退' if raw['fallback_used'] else ' + 证据核验'
+                            result['name'] = entry['name'] + suffix
+                        elif interpretation and interpretation['status'] != 'ready':
                             raw = {'answer': REFUSAL, 'relation': interpretation['relation_id'], 'evidence': []}
                         else:
                             raw = demo.answer_a0(model_question) if target == 'a0' else demo.answer_neural(model_question)
@@ -257,13 +311,14 @@ class QAService:
                                       movie=movie, link_status=link_status, link_score=score,
                                       relation=raw.get('relation'), confidence=raw.get('confidence'),
                                       evidence=raw.get('evidence', []), cold_start=cold,
-                                      generation_ms=raw.get('latency_ms'))
-                        for key in ('language', 'model_question', 'original_answer', 'language_status', 'language_note', 'answer_ids'):
+                                      generation_ms=raw.get('generation_ms', raw.get('latency_ms')))
+                        for key in ('language', 'model_question', 'original_answer', 'language_status', 'language_note', 'answer_ids',
+                                    'guard', 'fallback_used', 'model_evidence'):
                             if key in raw:
                                 result[key] = raw[key]
                         if 'raw_answer' in raw:
-                            result.update(raw_answer=raw['raw_answer'], replacements=raw['replacements'],
-                                          recovery_ms=raw['recovery_ms'])
+                            result.update(raw_answer=raw['raw_answer'], replacements=raw.get('replacements', []),
+                                          recovery_ms=raw.get('recovery_ms', 0))
                     except Exception:
                         logging.exception('UI inference failed for %s', target)
                         result['error'] = '本地模型运行失败，请检查启动终端的错误信息及数据、模型是否配套。'
@@ -335,7 +390,7 @@ def make_server(service, port=7860):
             if not self.valid_request():
                 return
             path = urlsplit(self.path).path
-            if path not in {'/api/answer', '/api/explore'}:
+            if path not in {'/api/answer', '/api/explore', '/api/semantic'}:
                 self.send_json({'error': '接口不存在。'}, 404)
                 return
             try:
@@ -349,6 +404,8 @@ def make_server(service, port=7860):
                     raise APIError('请求格式无效。')
                 if path == '/api/explore':
                     self.send_json(service.explore(data.get('question'), data.get('movie_ids'), data.get('offset', 0), data.get('limit', 30)))
+                elif path == '/api/semantic':
+                    self.send_json(service.semantic(data.get('question'), data.get('movie_ids'), data.get('offset', 0), data.get('limit', 30)))
                 else:
                     self.send_json(service.answer(data.get('question'), data.get('system', 'both'), data.get('mode', 'standard')))
             except (ValueError, UnicodeError):

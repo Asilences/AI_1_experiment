@@ -1,0 +1,149 @@
+[
+  {
+    "epoch": 1,
+    "train_loss": 0.0019706229790750567,
+    "validation_loss": 0.01837584488093853,
+    "epoch_seconds": 5007.330771205947,
+    "optimizer_updates": 4576,
+    "optimizer_updates_total": 4576,
+    "count": 6868,
+    "entity_exact": 92.9237041351194,
+    "entity_macro_f1": 92.96641428848767,
+    "bleu": 91.62034291491742,
+    "rouge_l": 93.71263467979584,
+    "by_relation": {
+      "P136": {
+        "exact": 99.88938053097345,
+        "f1": 99.88938053097345,
+        "count": 904
+      },
+      "P364": {
+        "exact": 99.86559139784946,
+        "f1": 99.97311827956989,
+        "count": 1488
+      },
+      "P495": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 1486
+      },
+      "P57": {
+        "exact": 98.59060402684564,
+        "f1": 98.68008948545861,
+        "count": 1490
+      },
+      "UNKNOWN": {
+        "exact": 69.19999999999999,
+        "f1": 69.19999999999999,
+        "count": 1500
+      }
+    },
+    "answerable_count": 5368,
+    "refusal_count": 1500,
+    "answerable_entity_exact": 99.55290611028316,
+    "answerable_entity_macro_f1": 99.60755091902634,
+    "refusal_accuracy": 69.19999999999999,
+    "latency_mean_ms": 45.27789282780108,
+    "latency_p95_ms": 73.60346146742813,
+    "gold_total": 6868,
+    "prediction_coverage": 100.0
+  },
+  {
+    "epoch": 2,
+    "train_loss": 0.00020830712035815334,
+    "validation_loss": 0.028174547361599845,
+    "epoch_seconds": 5128.447940104641,
+    "optimizer_updates": 4576,
+    "optimizer_updates_total": 9152,
+    "count": 6868,
+    "entity_exact": 89.57483983692487,
+    "entity_macro_f1": 89.63890506697729,
+    "bleu": 87.30543683248754,
+    "rouge_l": 90.59947510318463,
+    "by_relation": {
+      "P136": {
+        "exact": 99.88938053097345,
+        "f1": 99.88938053097345,
+        "count": 904
+      },
+      "P364": {
+        "exact": 99.86559139784946,
+        "f1": 99.97311827956989,
+        "count": 1488
+      },
+      "P495": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 1486
+      },
+      "P57": {
+        "exact": 98.59060402684564,
+        "f1": 98.7785234899329,
+        "count": 1490
+      },
+      "UNKNOWN": {
+        "exact": 53.86666666666666,
+        "f1": 53.86666666666666,
+        "count": 1500
+      }
+    },
+    "answerable_count": 5368,
+    "refusal_count": 1500,
+    "answerable_entity_exact": 99.55290611028316,
+    "answerable_entity_macro_f1": 99.63487332339791,
+    "refusal_accuracy": 53.86666666666666,
+    "latency_mean_ms": 60.987100018981366,
+    "latency_p95_ms": 78.18115249392577,
+    "gold_total": 6868,
+    "prediction_coverage": 100.0
+  },
+  {
+    "epoch": 3,
+    "train_loss": 0.00022592086597069113,
+    "validation_loss": 0.01889507329134747,
+    "epoch_seconds": 5051.502379216254,
+    "optimizer_updates": 4576,
+    "optimizer_updates_total": 13728,
+    "count": 6868,
+    "entity_exact": 93.15666860803728,
+    "entity_macro_f1": 93.19937876140555,
+    "bleu": 91.69422495656868,
+    "rouge_l": 93.8502118877981,
+    "by_relation": {
+      "P136": {
+        "exact": 99.5575221238938,
+        "f1": 99.5575221238938,
+        "count": 904
+      },
+      "P364": {
+        "exact": 99.86559139784946,
+        "f1": 99.97311827956989,
+        "count": 1488
+      },
+      "P495": {
+        "exact": 100.0,
+        "f1": 100.0,
+        "count": 1486
+      },
+      "P57": {
+        "exact": 98.52348993288591,
+        "f1": 98.61297539149888,
+        "count": 1490
+      },
+      "UNKNOWN": {
+        "exact": 70.53333333333333,
+        "f1": 70.53333333333333,
+        "count": 1500
+      }
+    },
+    "answerable_count": 5368,
+    "refusal_count": 1500,
+    "answerable_entity_exact": 99.47839046199702,
+    "answerable_entity_macro_f1": 99.53303527074019,
+    "refusal_accuracy": 70.53333333333333,
+    "latency_mean_ms": 59.9405424936252,
+    "latency_p95_ms": 75.7476910657715,
+    "gold_total": 6868,
+    "prediction_coverage": 100.0
+  }
+]

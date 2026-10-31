@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-31",
+  "code_commit": "aa5b14249326a56a8d4d58787598bb88990345b1",
+  "pytest": {
+    "command": ".work/ci-venv/Scripts/python.exe -m pytest -q",
+    "exit_code": 0,
+    "summary": "330 passed, 1 skipped in 15.48s"
+  },
+  "ruff": {
+    "command": "python -m ruff check --no-cache --select E9,F63,F7,F82 kgqa tests",
+    "exit_code": 0
+  },
+  "compileall": {
+    "command": "python -m compileall -q kgqa tests",
+    "exit_code": 0
+  },
+  "dataset_verify": {
+    "command": "python -m kgqa.dataset verify --smoke",
+    "exit_code": 0,
+    "files": 11,
+    "bytes": 40422065
+  },
+  "audit_script": {
+    "command": "python verification/2026-10-31/a0_audit/recompute.py",
+    "exit_code": 0,
+    "live_count": 8917
+  },
+  "github_ci": {
+    "head": "aa5b14249326a56a8d4d58787598bb88990345b1",
+    "run_id": 41109859429,
+    "conclusion": "success",
+    "url": "https://github.com/Asilences/AI_1_experiment/actions/runs/41109859429"
+  },
+  "note": "No retraining; published data/model/metrics unchanged. Pytest has one optional neural dependency skip."
+}

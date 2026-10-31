@@ -1,0 +1,56 @@
+{
+  "summary_path": "H:\\AI1experiment\\verification\\2026-10-31\\trainfree\\runtime_5000_final_v2\\summary.json",
+  "summary_sha256": "79fa8c6e1edc79f8537a5fa41a89dfa19b96b7cb38951226e4be12d92e7cddba",
+  "script_sha256": "4dab2c057a5f9b741684b90e355b59cd230adb2e6957bc8caf551e685b9e6ed8",
+  "matplotlib": "3.10.0",
+  "numpy": "1.26.4",
+  "scope": "48 authored development-acceptance cases; not held-out generalization or human evaluation.",
+  "percentage_axis_limits": [
+    0,
+    100
+  ],
+  "values": {
+    "a0_raw": {
+      "supported_entity_f1": 100.0,
+      "unanswerable_refusal_accuracy": 50.0,
+      "supported_answer_coverage": 100.0,
+      "tool_fallback_rate": 0.0
+    },
+    "a0_guarded": {
+      "supported_entity_f1": 100.0,
+      "unanswerable_refusal_accuracy": 100.0,
+      "supported_answer_coverage": 100.0,
+      "tool_fallback_rate": 0.0
+    },
+    "a0_hybrid": {
+      "supported_entity_f1": 100.0,
+      "unanswerable_refusal_accuracy": 100.0,
+      "supported_answer_coverage": 100.0,
+      "tool_fallback_rate": 0.0
+    },
+    "neural_raw": {
+      "supported_entity_f1": 94.79166666666666,
+      "unanswerable_refusal_accuracy": 50.0,
+      "supported_answer_coverage": 100.0,
+      "tool_fallback_rate": 0.0
+    },
+    "neural_guarded": {
+      "supported_entity_f1": 91.66666666666666,
+      "unanswerable_refusal_accuracy": 100.0,
+      "supported_answer_coverage": 91.66666666666667,
+      "tool_fallback_rate": 0.0
+    },
+    "neural_hybrid": {
+      "supported_entity_f1": 100.0,
+      "unanswerable_refusal_accuracy": 100.0,
+      "supported_answer_coverage": 100.0,
+      "tool_fallback_rate": 4.166666666666667
+    }
+  },
+  "outputs": [
+    "H:\\AI1experiment\\verification\\2026-10-31\\trainfree\\figures\\trainfree_quality.png",
+    "H:\\AI1experiment\\verification\\2026-10-31\\trainfree\\figures\\trainfree_quality.svg",
+    "H:\\AI1experiment\\verification\\2026-10-31\\trainfree\\figures\\trainfree_coverage.png",
+    "H:\\AI1experiment\\verification\\2026-10-31\\trainfree\\figures\\trainfree_coverage.svg"
+  ]
+}

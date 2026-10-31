@@ -1,0 +1,12 @@
+{
+  "created_at": "2026-10-31T02:35:39Z",
+  "docx": "H:\\AI1experiment\\reports\\无需训练增强实验补充报告_20261031.docx",
+  "pdf": "H:\\AI1experiment\\reports\\无需训练增强实验补充报告_20261031.pdf",
+  "pages": 4,
+  "renderer": "Installed Microsoft Word fixed-format PDF, followed by bundled pypdfium2 rasterization",
+  "preferred_renderer": "render_docx.py attempted; LibreOffice not installed",
+  "inspected_images": "H:\\AI1experiment\\.work\\trainfree_report_render\\contact-final.png",
+  "visual_check": "All 4 pages inspected; table intact, no orphan trailing page, title border removed, figures/captions fit.",
+  "docx_sha256": "0f4c65ac2791dfc7757a1087c163382348b9943dae7282514df56c2abf518373",
+  "pdf_sha256": "06960f8e65528d2573d28ebe27ee28fc78fa1b6b6dc9665bcddba1da4d3acf9c"
+}

@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 from collections import Counter
+from copy import deepcopy
 import json
 from pathlib import Path
 import shutil
@@ -35,8 +36,22 @@ FAMILIES = {
     },
 }
 
+# Keep v1 byte-reproducible. v2 fixes property semantics before any new scores
+# are inspected; these questions still do not constitute a human benchmark.
+FAMILIES_V2 = deepcopy(FAMILIES)
+FAMILIES_V2['train']['P364'][0] = ('original_audio', 'What were the original audio languages of {title}?')
+FAMILIES_V2['valid']['P364'][1] = ('original_language_lookup', 'Can you identify the original language of {title}?')
+FAMILIES_V2['test']['P57'] = [
+    ('directorial_credit', 'Which person has the directorial credit on {title}?'),
+    ('director_name', 'Name the director responsible for directing {title}.')]
+FAMILIES_V2['test']['P495'][0] = ('country_origin_summary', 'What is the country of origin of {title}?')
+RECIPES = {'v1': FAMILIES, 'v2': FAMILIES_V2}
 
-def build(source_dir, output_dir):
+
+def build(source_dir, output_dir, recipe='v1'):
+    if recipe not in RECIPES:
+        raise ValueError(f'Unknown paraphrase recipe: {recipe}')
+    families = RECIPES[recipe]
     source, output = Path(source_dir).resolve(), Path(output_dir).resolve()
     if source == output or source.is_relative_to(output) or output.is_relative_to(source):
         raise ValueError('Source and output must be separate, non-nested directories')
@@ -69,7 +84,7 @@ def build(source_dir, output_dir):
             for row in source_rows if row['split'] == 'train']
     for (movie, relation), row in sorted(pairs.items()):
         title = entities[movie].get('question_title', entities[movie]['label'])
-        for family, template in FAMILIES[row['split']][relation]:
+        for family, template in families[row['split']][relation]:
             rows.append({**row, 'question_id': f'freeform_{movie}_{relation}_{family}',
                          'question': template.format(title=title), 'template_family': family,
                          'question_source': 'synthetic_paraphrase', 'source_question_id': row['question_id']})
@@ -85,8 +100,12 @@ def build(source_dir, output_dir):
                 'source_hashes': {name: sha256(source / name) for name in ('entities.json', 'splits.json', 'qa.jsonl', 'triples.tsv')},
                 'graph_unchanged': True, 'movie_splits_unchanged': True,
                 'original_qa_included_in': ['train'], 'question_language': 'en',
+                'recipe_version': recipe,
+                'recipe_revision_reason': ('Disambiguate original language, director and country of origin before scoring.'
+                                           if recipe == 'v2' else 'Original authored paraphrase recipe.'),
+                'unsupported_scope': 'UNKNOWN labels apply to the four-relation neural task, not the V2 catalog tools.',
                 'families': {split: {relation: [{'id': family, 'template': template} for family, template in templates]
-                                     for relation, templates in relations.items()} for split, relations in FAMILIES.items()},
+                                     for relation, templates in relations.items()} for split, relations in families.items()},
                 'scope_note': 'Authored synthetic paraphrases; family-held-out results are not independent human free-question evaluation.'}
     write_json(output / 'manifest.json', manifest)
     return manifest
@@ -96,9 +115,10 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--source-dir', type=Path, default=ROOT / 'data/processed/movies_5000_20261029')
     parser.add_argument('--output-dir', type=Path, required=True)
+    parser.add_argument('--recipe', choices=sorted(RECIPES), default='v1', help='Use v2 for the clarified property semantics; v1 is retained for reproduction.')
     args = parser.parse_args(argv)
     try:
-        manifest = build(args.source_dir, args.output_dir)
+        manifest = build(args.source_dir, args.output_dir, args.recipe)
     except (OSError, ValueError, KeyError) as error:
         parser.error(str(error))
     print(json.dumps({key: manifest[key] for key in ('name', 'qa', 'qa_by_split', 'graph_unchanged')}, ensure_ascii=False, indent=2))

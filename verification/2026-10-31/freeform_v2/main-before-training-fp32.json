@@ -1,0 +1,9 @@
+{
+  "checked_at": "2026-10-30T20:35:34Z",
+  "origin_main": "2df88adf489787eb8cfdb2cf7f7cd3733160cb3a",
+  "branch_head": "f71e82c10d1f3419778757867382c5c39975193f",
+  "main_is_ancestor": true,
+  "new_upstream_commits": 0,
+  "source_deployed_compute": "f71e82c10d1f3419778757867382c5c39975193f",
+  "authorization": "User requested latest main review before training; re-fetched after native BF16 correction before final launch."
+}

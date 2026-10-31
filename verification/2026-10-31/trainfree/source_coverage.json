@@ -1,0 +1,226 @@
+{
+  "created_at": "2026-10-31T02:33:29Z",
+  "scope": "Post-run root/runtime/overlay source comparison, not retroactive proof of before/after execution state for unbound indirect dependencies.",
+  "pipeline_bound_in_evaluation_prepost": false,
+  "pipeline_bound_in_overlay": true,
+  "pipeline": {
+    "overlay": "6712db1e6acc5d5d44f0ba15e8de2505acb9d3ecf3ed995eb50eaa996091b89d",
+    "root_current": "6712db1e6acc5d5d44f0ba15e8de2505acb9d3ecf3ed995eb50eaa996091b89d",
+    "runtime_current": "6712db1e6acc5d5d44f0ba15e8de2505acb9d3ecf3ed995eb50eaa996091b89d"
+  },
+  "all_overlay_sources_current_match": true,
+  "archive_sha256": "45d14ff84527f0c8a8a41bb9654169514523caadd4a7413b6c13b244061415e3",
+  "packaged_files_verified": 104,
+  "current_source_checks": {
+    "kgqa/acceptance.py": {
+      "overlay": "0fd68df6708eafcee4cb84ede7f8a057dc9525ac9d8f922bc3031e9112eac4fb",
+      "root_current": "0fd68df6708eafcee4cb84ede7f8a057dc9525ac9d8f922bc3031e9112eac4fb",
+      "runtime_current": "0fd68df6708eafcee4cb84ede7f8a057dc9525ac9d8f922bc3031e9112eac4fb"
+    },
+    "kgqa/candidates.py": {
+      "overlay": "e4542718cb966ec455bf9403c9efc43c0b1caea371c81a0f5167f46ad3d94031",
+      "root_current": "e4542718cb966ec455bf9403c9efc43c0b1caea371c81a0f5167f46ad3d94031",
+      "runtime_current": "e4542718cb966ec455bf9403c9efc43c0b1caea371c81a0f5167f46ad3d94031"
+    },
+    "kgqa/chinese.py": {
+      "overlay": "4e8312a0f4ff8d6fdb55bb1c109506e272d04b3adb7c286ea0522819c40db33f",
+      "root_current": "4e8312a0f4ff8d6fdb55bb1c109506e272d04b3adb7c286ea0522819c40db33f",
+      "runtime_current": "4e8312a0f4ff8d6fdb55bb1c109506e272d04b3adb7c286ea0522819c40db33f"
+    },
+    "kgqa/common.py": {
+      "overlay": "fd6b9443f5fb502a6effbd001b0a8ebadbad744aacd2f73616f17717ea0c549b",
+      "root_current": "fd6b9443f5fb502a6effbd001b0a8ebadbad744aacd2f73616f17717ea0c549b",
+      "runtime_current": "fd6b9443f5fb502a6effbd001b0a8ebadbad744aacd2f73616f17717ea0c549b"
+    },
+    "kgqa/dataset.py": {
+      "overlay": "52c3021b77a1d6a03d4eae62404782a9fb09860b9d1f85c7268d839b3d9380c6",
+      "root_current": "52c3021b77a1d6a03d4eae62404782a9fb09860b9d1f85c7268d839b3d9380c6",
+      "runtime_current": "52c3021b77a1d6a03d4eae62404782a9fb09860b9d1f85c7268d839b3d9380c6"
+    },
+    "kgqa/demo.py": {
+      "overlay": "fed1eab23cf7dfe71dde15eaf3a6bb3cfcff05e2b484cd8cd4c30f3268a699c7",
+      "root_current": "fed1eab23cf7dfe71dde15eaf3a6bb3cfcff05e2b484cd8cd4c30f3268a699c7",
+      "runtime_current": "fed1eab23cf7dfe71dde15eaf3a6bb3cfcff05e2b484cd8cd4c30f3268a699c7"
+    },
+    "kgqa/environment_info.py": {
+      "overlay": "1d2ddf004f0c67fefe2f9056d5a6d7ab70f35db668454ab6832757398cbeb772",
+      "root_current": "1d2ddf004f0c67fefe2f9056d5a6d7ab70f35db668454ab6832757398cbeb772",
+      "runtime_current": "1d2ddf004f0c67fefe2f9056d5a6d7ab70f35db668454ab6832757398cbeb772"
+    },
+    "kgqa/error_analysis.py": {
+      "overlay": "8021d148023efc4cf3a8296254c16dc26c1ad87b16aa23a7ee7e702a05c2b937",
+      "root_current": "8021d148023efc4cf3a8296254c16dc26c1ad87b16aa23a7ee7e702a05c2b937",
+      "runtime_current": "8021d148023efc4cf3a8296254c16dc26c1ad87b16aa23a7ee7e702a05c2b937"
+    },
+    "kgqa/evidence.py": {
+      "overlay": "a57bb5ce6ac30cccd4bc5a657324ceb40ec668e82cf8d1dfaae6d98027f4f70e",
+      "root_current": "a57bb5ce6ac30cccd4bc5a657324ceb40ec668e82cf8d1dfaae6d98027f4f70e",
+      "runtime_current": "a57bb5ce6ac30cccd4bc5a657324ceb40ec668e82cf8d1dfaae6d98027f4f70e"
+    },
+    "kgqa/expand.py": {
+      "overlay": "c05e34baf9690d6d947a062addb4682446ffc08b1ff6d7a1daff76dfff81e460",
+      "root_current": "c05e34baf9690d6d947a062addb4682446ffc08b1ff6d7a1daff76dfff81e460",
+      "runtime_current": "c05e34baf9690d6d947a062addb4682446ffc08b1ff6d7a1daff76dfff81e460"
+    },
+    "kgqa/expanded_evaluation.py": {
+      "overlay": "1e0a4577f8383755ee55d5b973677fcf58003a1b475de8db2afce63f67203faf",
+      "root_current": "1e0a4577f8383755ee55d5b973677fcf58003a1b475de8db2afce63f67203faf",
+      "runtime_current": "1e0a4577f8383755ee55d5b973677fcf58003a1b475de8db2afce63f67203faf"
+    },
+    "kgqa/expanded_suite.py": {
+      "overlay": "33e7cc75934200cfe98707dc085c27f78d56cd9ce819db3e5eb0e3b9bdad143f",
+      "root_current": "33e7cc75934200cfe98707dc085c27f78d56cd9ce819db3e5eb0e3b9bdad143f",
+      "runtime_current": "33e7cc75934200cfe98707dc085c27f78d56cd9ce819db3e5eb0e3b9bdad143f"
+    },
+    "kgqa/explorer.py": {
+      "overlay": "0e966cc35e4c0681a4eabe2ad45aa90485eb41998c89059f86ea7a78e1a41471",
+      "root_current": "0e966cc35e4c0681a4eabe2ad45aa90485eb41998c89059f86ea7a78e1a41471",
+      "runtime_current": "0e966cc35e4c0681a4eabe2ad45aa90485eb41998c89059f86ea7a78e1a41471"
+    },
+    "kgqa/fetch.py": {
+      "overlay": "334410b0e4f59d95915b7f6e5bbdc0812521291bf0f72e43809035caaceee080",
+      "root_current": "334410b0e4f59d95915b7f6e5bbdc0812521291bf0f72e43809035caaceee080",
+      "runtime_current": "334410b0e4f59d95915b7f6e5bbdc0812521291bf0f72e43809035caaceee080"
+    },
+    "kgqa/finalize.py": {
+      "overlay": "b7d650455d073ac943dd02cb97d4e23329004b5a80334a8e357c04d287ed0474",
+      "root_current": "b7d650455d073ac943dd02cb97d4e23329004b5a80334a8e357c04d287ed0474",
+      "runtime_current": "b7d650455d073ac943dd02cb97d4e23329004b5a80334a8e357c04d287ed0474"
+    },
+    "kgqa/freeform.py": {
+      "overlay": "4c91af9445580f5b081d88060c8b120643becb59277dd09242f5ca46f857638e",
+      "root_current": "4c91af9445580f5b081d88060c8b120643becb59277dd09242f5ca46f857638e",
+      "runtime_current": "4c91af9445580f5b081d88060c8b120643becb59277dd09242f5ca46f857638e"
+    },
+    "kgqa/freeform_data.py": {
+      "overlay": "6915304243bc02a71c8420aa1eececf8c7a667007cfd633f1eff62d10bdfdcb4",
+      "root_current": "6915304243bc02a71c8420aa1eececf8c7a667007cfd633f1eff62d10bdfdcb4",
+      "runtime_current": "6915304243bc02a71c8420aa1eececf8c7a667007cfd633f1eff62d10bdfdcb4"
+    },
+    "kgqa/freeform_experiment.py": {
+      "overlay": "670b9abf256692b4c751b1dd987f1b20cc713083de63b2ac6b39260185860eb0",
+      "root_current": "670b9abf256692b4c751b1dd987f1b20cc713083de63b2ac6b39260185860eb0",
+      "runtime_current": "670b9abf256692b4c751b1dd987f1b20cc713083de63b2ac6b39260185860eb0"
+    },
+    "kgqa/guarded.py": {
+      "overlay": "6a7d9bcb8a7f4a4a4c0b89f91d329f7be9ee88a3ff558e87518300310e7a64be",
+      "root_current": "6a7d9bcb8a7f4a4a4c0b89f91d329f7be9ee88a3ff558e87518300310e7a64be",
+      "runtime_current": "6a7d9bcb8a7f4a4a4c0b89f91d329f7be9ee88a3ff558e87518300310e7a64be"
+    },
+    "kgqa/human_eval.py": {
+      "overlay": "131bd140753d3110ec11cdc26fb63d3554173a8e3bd09a1e6977d3983f0b22af",
+      "root_current": "131bd140753d3110ec11cdc26fb63d3554173a8e3bd09a1e6977d3983f0b22af",
+      "runtime_current": "131bd140753d3110ec11cdc26fb63d3554173a8e3bd09a1e6977d3983f0b22af"
+    },
+    "kgqa/linker.py": {
+      "overlay": "0a7e2bf48fbb7e523b4ba4f22a9ec293fe2be458e87a621a7601c61702fdb180",
+      "root_current": "0a7e2bf48fbb7e523b4ba4f22a9ec293fe2be458e87a621a7601c61702fdb180",
+      "runtime_current": "0a7e2bf48fbb7e523b4ba4f22a9ec293fe2be458e87a621a7601c61702fdb180"
+    },
+    "kgqa/metrics.py": {
+      "overlay": "5f3f71568e3fb204a30ae845362d9814a60558c65687822b15b4692277afaf74",
+      "root_current": "5f3f71568e3fb204a30ae845362d9814a60558c65687822b15b4692277afaf74",
+      "runtime_current": "5f3f71568e3fb204a30ae845362d9814a60558c65687822b15b4692277afaf74"
+    },
+    "kgqa/name_recovery.py": {
+      "overlay": "a45700316b61b4c8e3bfcee2f7aabafe2d92b381bcb46830c596dd9e5719185d",
+      "root_current": "a45700316b61b4c8e3bfcee2f7aabafe2d92b381bcb46830c596dd9e5719185d",
+      "runtime_current": "a45700316b61b4c8e3bfcee2f7aabafe2d92b381bcb46830c596dd9e5719185d"
+    },
+    "kgqa/neural.py": {
+      "overlay": "7520b35b0e54af0d5eb25e49cc04da51954b6aef6a87aacdb194c93f06a280ac",
+      "root_current": "7520b35b0e54af0d5eb25e49cc04da51954b6aef6a87aacdb194c93f06a280ac",
+      "runtime_current": "7520b35b0e54af0d5eb25e49cc04da51954b6aef6a87aacdb194c93f06a280ac"
+    },
+    "kgqa/neural_preflight.py": {
+      "overlay": "56f92a7d432531967b01704aaf80b7beb3d35e75c4bc00866a5fe0b28bc4ec19",
+      "root_current": "56f92a7d432531967b01704aaf80b7beb3d35e75c4bc00866a5fe0b28bc4ec19",
+      "runtime_current": "56f92a7d432531967b01704aaf80b7beb3d35e75c4bc00866a5fe0b28bc4ec19"
+    },
+    "kgqa/personal_experiment.py": {
+      "overlay": "551a752da21691cb0565d97b4b1bff422b1d99ee2e207c8de90d915e71b7c422",
+      "root_current": "551a752da21691cb0565d97b4b1bff422b1d99ee2e207c8de90d915e71b7c422",
+      "runtime_current": "551a752da21691cb0565d97b4b1bff422b1d99ee2e207c8de90d915e71b7c422"
+    },
+    "kgqa/pipeline.py": {
+      "overlay": "6712db1e6acc5d5d44f0ba15e8de2505acb9d3ecf3ed995eb50eaa996091b89d",
+      "root_current": "6712db1e6acc5d5d44f0ba15e8de2505acb9d3ecf3ed995eb50eaa996091b89d",
+      "runtime_current": "6712db1e6acc5d5d44f0ba15e8de2505acb9d3ecf3ed995eb50eaa996091b89d"
+    },
+    "kgqa/plots.py": {
+      "overlay": "f51e1e5f09d125d180f3299beafd7e132856b2d21bdf54b13012cd6812a7c23a",
+      "root_current": "f51e1e5f09d125d180f3299beafd7e132856b2d21bdf54b13012cd6812a7c23a",
+      "runtime_current": "f51e1e5f09d125d180f3299beafd7e132856b2d21bdf54b13012cd6812a7c23a"
+    },
+    "kgqa/prepare.py": {
+      "overlay": "4bbf41bd7fb4aaa003be841a159fa7c8717fd3c20b1c99e5c615e17be6f32288",
+      "root_current": "4bbf41bd7fb4aaa003be841a159fa7c8717fd3c20b1c99e5c615e17be6f32288",
+      "runtime_current": "4bbf41bd7fb4aaa003be841a159fa7c8717fd3c20b1c99e5c615e17be6f32288"
+    },
+    "kgqa/recovery_experiment.py": {
+      "overlay": "6d3ef6434a19c782583ba32bc16d48f1dd638f35b7ac742b2e5ced1851443589",
+      "root_current": "6d3ef6434a19c782583ba32bc16d48f1dd638f35b7ac742b2e5ced1851443589",
+      "runtime_current": "6d3ef6434a19c782583ba32bc16d48f1dd638f35b7ac742b2e5ced1851443589"
+    },
+    "kgqa/report.py": {
+      "overlay": "aed9cab5a3cc80a6c4d99f71958a70fd608c20ba87d290857ed342edf192bdf9",
+      "root_current": "aed9cab5a3cc80a6c4d99f71958a70fd608c20ba87d290857ed342edf192bdf9",
+      "runtime_current": "aed9cab5a3cc80a6c4d99f71958a70fd608c20ba87d290857ed342edf192bdf9"
+    },
+    "kgqa/robustness.py": {
+      "overlay": "4d54a6e5c2b5312bf36967daa9447e81246bd94f39b698b45212e9927d37270f",
+      "root_current": "4d54a6e5c2b5312bf36967daa9447e81246bd94f39b698b45212e9927d37270f",
+      "runtime_current": "4d54a6e5c2b5312bf36967daa9447e81246bd94f39b698b45212e9927d37270f"
+    },
+    "kgqa/trainfree_experiment.py": {
+      "overlay": "e2c28e0ae5bebef67a7e39cbbe0b59a9be28c2b528cec323b91cc1dca8f755d9",
+      "root_current": "e2c28e0ae5bebef67a7e39cbbe0b59a9be28c2b528cec323b91cc1dca8f755d9",
+      "runtime_current": "e2c28e0ae5bebef67a7e39cbbe0b59a9be28c2b528cec323b91cc1dca8f755d9"
+    },
+    "kgqa/transe.py": {
+      "overlay": "c9706f0e1e930f002787502a72e8689da0d84a6149a5ebea5cdd7d59ee3ee92f",
+      "root_current": "c9706f0e1e930f002787502a72e8689da0d84a6149a5ebea5cdd7d59ee3ee92f",
+      "runtime_current": "c9706f0e1e930f002787502a72e8689da0d84a6149a5ebea5cdd7d59ee3ee92f"
+    },
+    "kgqa/v2_data.py": {
+      "overlay": "66e69d18e02bf6fe48abd6ee0daa204ea740f9543eadb1e5a70195e53c295055",
+      "root_current": "66e69d18e02bf6fe48abd6ee0daa204ea740f9543eadb1e5a70195e53c295055",
+      "runtime_current": "66e69d18e02bf6fe48abd6ee0daa204ea740f9543eadb1e5a70195e53c295055"
+    },
+    "kgqa/web.py": {
+      "overlay": "51b45a2fcd0979983a8723cda897ebce09dba40e662ce9de2f69a981bc31c7c0",
+      "root_current": "51b45a2fcd0979983a8723cda897ebce09dba40e662ce9de2f69a981bc31c7c0",
+      "runtime_current": "51b45a2fcd0979983a8723cda897ebce09dba40e662ce9de2f69a981bc31c7c0"
+    },
+    "kgqa/__init__.py": {
+      "overlay": "6fb1444fe2d1b724c7d635b40aa925d31952031fe92cb07889316a8291b0915e",
+      "root_current": "6fb1444fe2d1b724c7d635b40aa925d31952031fe92cb07889316a8291b0915e",
+      "runtime_current": "6fb1444fe2d1b724c7d635b40aa925d31952031fe92cb07889316a8291b0915e"
+    },
+    "kgqa/locales/zh_entities.json": {
+      "overlay": "04af74abbd757d09994c7d84ec39aec9e62786ea82a09bad5b75247c00372313",
+      "root_current": "04af74abbd757d09994c7d84ec39aec9e62786ea82a09bad5b75247c00372313",
+      "runtime_current": "04af74abbd757d09994c7d84ec39aec9e62786ea82a09bad5b75247c00372313"
+    },
+    "kgqa/ui/app.js": {
+      "overlay": "6015133beb7d77c08add2619074498fbe903045fe1574f0311f30ac552a5976e",
+      "root_current": "6015133beb7d77c08add2619074498fbe903045fe1574f0311f30ac552a5976e",
+      "runtime_current": "6015133beb7d77c08add2619074498fbe903045fe1574f0311f30ac552a5976e"
+    },
+    "kgqa/ui/index.html": {
+      "overlay": "672d2f3390a7ed9aed765d44e71892673c5ae8156783f6f43bc13e66da4598c7",
+      "root_current": "672d2f3390a7ed9aed765d44e71892673c5ae8156783f6f43bc13e66da4598c7",
+      "runtime_current": "672d2f3390a7ed9aed765d44e71892673c5ae8156783f6f43bc13e66da4598c7"
+    },
+    "kgqa/ui/styles.css": {
+      "overlay": "0c49cfd4cd8e04422c3183a894b5792c5cdb34df67f81c191579eb292e891f58",
+      "root_current": "0c49cfd4cd8e04422c3183a894b5792c5cdb34df67f81c191579eb292e891f58",
+      "runtime_current": "0c49cfd4cd8e04422c3183a894b5792c5cdb34df67f81c191579eb292e891f58"
+    },
+    "benchmarks/trainfree_challenge_v1.jsonl": {
+      "overlay": "a1a6251e447ec4a45b6ebd637d034a7155c95258a14a0e195206dc8e8aab5072",
+      "root_current": "a1a6251e447ec4a45b6ebd637d034a7155c95258a14a0e195206dc8e8aab5072",
+      "runtime_current": "a1a6251e447ec4a45b6ebd637d034a7155c95258a14a0e195206dc8e8aab5072"
+    }
+  }
+}

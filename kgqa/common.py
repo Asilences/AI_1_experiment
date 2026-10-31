@@ -62,7 +62,11 @@ def seed_all(seed=42):
     np.random.seed(seed)
     torch.manual_seed(seed)
     torch.cuda.manual_seed_all(seed)
-    torch.set_num_threads(4)
+    # Respect an explicitly allocated CPU budget on shared training servers.
+    threads = int(os.environ.get('OMP_NUM_THREADS', '4'))
+    if threads < 1:
+        raise ValueError('OMP_NUM_THREADS must be positive')
+    torch.set_num_threads(threads)
     torch.backends.cudnn.benchmark = False
     torch.backends.cuda.matmul.allow_tf32 = False
 

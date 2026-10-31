@@ -1,0 +1,6 @@
+{
+  "status": "interrupted",
+  "at": "2026-10-31T02:12:53Z",
+  "reason": "Source changed during development; own stale benchmark process stopped; raw evidence retained. Final run must use a new directory.",
+  "process_id": 59608
+}

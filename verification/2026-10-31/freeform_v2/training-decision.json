@@ -1,0 +1,99 @@
+{
+  "train": true,
+  "reason": "New authored validation wording causes factual false refusals despite correct linking/evidence",
+  "baseline_metrics": {
+    "count": 6868,
+    "entity_exact": 89.60396039603961,
+    "entity_macro_f1": 89.65346534653466,
+    "bleu": 88.06626029252686,
+    "rouge_l": 90.64701333247717,
+    "by_relation": {
+      "P136": {
+        "exact": 90.7079646017699,
+        "f1": 90.7079646017699,
+        "count": 904
+      },
+      "P364": {
+        "exact": 99.86559139784946,
+        "f1": 99.97311827956989,
+        "count": 1488
+      },
+      "P495": {
+        "exact": 99.52893674293405,
+        "f1": 99.6052041274114,
+        "count": 1486
+      },
+      "P57": {
+        "exact": 62.88590604026846,
+        "f1": 62.93064876957495,
+        "count": 1490
+      },
+      "UNKNOWN": {
+        "exact": 95.46666666666667,
+        "f1": 95.46666666666667,
+        "count": 1500
+      }
+    },
+    "answerable_count": 5368,
+    "refusal_count": 1500,
+    "answerable_entity_exact": 87.96572280178837,
+    "answerable_entity_macro_f1": 88.02906110283159,
+    "refusal_accuracy": 95.46666666666667,
+    "latency_mean_ms": 57.81021342034049,
+    "latency_p95_ms": 75.71339423884638,
+    "validation_loss": 0.044655346541210665
+  },
+  "thresholds": {
+    "validation_entity_macro_f1_below": 99.5,
+    "or_validation_refusal_accuracy_below": 99.0
+  },
+  "test_used": false,
+  "main_check": {
+    "checked_at": "2026-10-30T20:30:47Z",
+    "origin_main": "2df88adf489787eb8cfdb2cf7f7cd3733160cb3a",
+    "branch_head": "008eaf58ce28751786342fbed8bea57b5d6d1588",
+    "main_is_ancestor": true,
+    "new_upstream_commits": 0,
+    "source_deployed_compute": "9a4fc7c645f5882cbb2ea0cfdfe44e3d71284d77",
+    "source_note": "008eaf5 only adds README/plan/provenance; executable wrapper from9a4fc7c, main merged in ca71f04",
+    "authorization": "User requested checking latest main before training; fetched immediately before launch."
+  },
+  "gpu_snapshot": "0, Tesla V100-SXM2-32GB, 3791 MiB, 32768 MiB, 5 %\n1, Tesla V100-SXM2-32GB, 1677 MiB, 32768 MiB, 13 %\n2, Tesla V100-SXM2-32GB, 1677 MiB, 32768 MiB, 11 %\n3, Tesla V100-SXM2-32GB, 1675 MiB, 32768 MiB, 13 %\n",
+  "screen": "kgqa_ff_v2_train",
+  "script": "/home/junjiex/AI1experiment/.work/freeform-v2-train.sh",
+  "command": [
+    "/home/junjiex/AI1experiment/.venv/bin/python",
+    "-u",
+    "-m",
+    "kgqa.freeform_experiment",
+    "train",
+    "--run-id",
+    "B0_5000_freeform_en_v2_20261031_b32",
+    "--data-dir",
+    "data/processed/movies_5000_freeform_en_v2",
+    "--embedding-dir",
+    "assets/5000_runtime_20261030/models/transe",
+    "--initial-checkpoint",
+    "assets/5000_runtime_20261030/runs/B0/checkpoint",
+    "--gpu",
+    "1",
+    "--memory-fraction",
+    "0.25",
+    "--threads",
+    "2",
+    "--batch-size",
+    "8",
+    "--eval-batch-size",
+    "32",
+    "--input-max-length",
+    "512",
+    "--learning-rate",
+    "3e-05",
+    "--epochs",
+    "3",
+    "--gradient-accumulation",
+    "2"
+  ],
+  "plan_sha256": "286e77bbd3906e631259dd33b920890af9a851c004a8ea11151abbe5b86ec3dc",
+  "baseline_predictions_sha256": "a557a441dffd8db452496c21d2473419b86c99ce84955e34fae5cc8d99d4372b"
+}

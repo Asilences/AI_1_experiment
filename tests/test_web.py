@@ -203,3 +203,16 @@ def test_freeform_unsupported_and_multi_intent_queries_refuse_without_neural_cal
         assert result['results'][0]['refused'] and not result['results'][0]['evidence']
     status, _, _ = request(web_server, '/api/answer', {'question': 'test', 'system': 'a0', 'mode': []})
     assert status == 400
+
+
+def test_guarded_http_mode_keeps_evidence_and_original_output(web_server):
+    status, response, _ = request(web_server, '/api/answer', {
+        'question': 'Who directed Juniper Trail?', 'system': 'a0', 'mode': 'guarded'})
+    result = response['results'][0]
+    assert status == 200 and response['mode'] == 'guarded' and result['ok']
+    assert result['guard']['action'] == 'accepted' and result['raw_answer'] == result['answer']
+    assert result['evidence'] and result['answer_ids'] and not result['fallback_used']
+    _, response, _ = request(web_server, '/api/answer', {
+        'question': 'Which directors of Juniper Trail were born before 1980?', 'system': 'a0', 'mode': 'guarded'})
+    result = response['results'][0]
+    assert result['refused'] and result['raw_answer'] is None and not result['evidence']

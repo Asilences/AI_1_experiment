@@ -1,0 +1,57 @@
+{
+  "run_id": "B0_5000_freeform_en_v2_20261031_fp32",
+  "model": "checkpoint",
+  "model_source_kind": "local_directory",
+  "input_max_length": 512,
+  "target_max_length": 96,
+  "eval_batch_size": 32,
+  "learning_rate": 3e-05,
+  "epochs": 3,
+  "batch_size": 8,
+  "gradient_accumulation": 2,
+  "effective_batch": 16,
+  "use_embeddings": true,
+  "seed": 42,
+  "shuffle_seed": 42,
+  "device": "cuda",
+  "smoke": false,
+  "torch_threads": 2,
+  "generation_precision": "float32",
+  "data_dir": "data/processed/movies_5000_freeform_en_v2",
+  "embedding_dir": "assets/5000_runtime_20261030/models/transe",
+  "initial_checkpoint": "assets/5000_runtime_20261030/runs/B0/checkpoint",
+  "optimizer_state_resumed": false,
+  "input_hashes": {
+    "entities.json": "7c935d8fa1eecd9870df16e49d93460bdd75f90255661e4e4e397af9f667f3e8",
+    "splits.json": "dd24634f590e3e5dd38dc2e5ca7fd25b432ec3b562f74dc99a65b22d586113b7",
+    "qa.jsonl": "2f193a52087e32b6c48992bbf35ab94038511ed5a40c68487bca6bc8b7c7492e"
+  },
+  "validation_entity_linking": true,
+  "selection_metric": "validation entity_macro_f1",
+  "qa_by_split": {
+    "train": 73202,
+    "valid": 6868,
+    "test": 6904
+  },
+  "effective_batch_note": "Maximum examples per optimizer update; the final accumulation window may be smaller.",
+  "input_sha256": {
+    "entities.json": "7c935d8fa1eecd9870df16e49d93460bdd75f90255661e4e4e397af9f667f3e8",
+    "splits.json": "dd24634f590e3e5dd38dc2e5ca7fd25b432ec3b562f74dc99a65b22d586113b7",
+    "qa.jsonl": "2f193a52087e32b6c48992bbf35ab94038511ed5a40c68487bca6bc8b7c7492e",
+    "triples.tsv": "42c9a5c665313b077a97650309bb8102ab573464ba40943a1b41ffb77c2f8e0a"
+  },
+  "transe_sha256": {
+    "mapping.json": "4897387a4b688470fad8f35f2cba6436f3393815c7464f89a89526c3bd1fe64a",
+    "embeddings.npz": "fe9cf70cba4eb0b509fca8ccfdf21ec7226aaf8ce9488f0a2bd3fb657745c71c"
+  },
+  "pretrained_sha256": {
+    "config.json": "b5ba6220a244394c6cdcded46a3e9fbfaee46ff82c2943298e37594d4be01aaf",
+    "model.safetensors": "b41686667744a47547ded262eb8bce77e8a7c649e69472c1a092bb25d86358e1",
+    "tokenizer.json": "dc856f1be037756d043c1557df9a075bb8658c03c26405ef78a9fc759521cc3e",
+    "graph_prefix.pt": "28c5302fa607e3795e2fd9bbda1817db73a997ab2535ff2f739f456520e62bcc"
+  },
+  "training_batches_per_epoch": 9151,
+  "optimizer_updates_per_epoch": 4576,
+  "planned_optimizer_updates": 13728,
+  "training_precision": "float32"
+}

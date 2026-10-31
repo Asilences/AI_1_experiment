@@ -1,0 +1,10 @@
+{
+  "status": "complete",
+  "elapsed_seconds": 7.732033372856677,
+  "peak_allocated_bytes": 3140783104,
+  "peak_reserved_bytes": 3632267264,
+  "sampled_peak_process_mib": 4468,
+  "sampling_interval_seconds": 20,
+  "sampling_error": null,
+  "completed_at": "2026-10-30T20:17:31Z"
+}

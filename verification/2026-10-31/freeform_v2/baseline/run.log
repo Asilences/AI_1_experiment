@@ -1,0 +1,6 @@
+Passing a tuple of `past_key_values` is deprecated and will be removed in Transformers v4.48.0. You should pass an instance of `EncoderDecoderCache` instead, e.g. `past_key_values=EncoderDecoderCache.from_legacy_cache(past_key_values)`.
+2026-10-30 20:25:56,019 INFO validation batches=100/215 questions=3200
+2026-10-30 20:29:25,214 INFO validation batches=200/215 questions=6400
+2026-10-30 20:29:55,754 INFO validation batches=215/215 questions=6868
+2026-10-30 20:29:55,907 INFO Using default tokenizer.
+2026-10-30 20:30:08,991 INFO FINISHED status=complete seconds=455.7 peak_reserved_mib=1590.0 process_peak_mib=2562

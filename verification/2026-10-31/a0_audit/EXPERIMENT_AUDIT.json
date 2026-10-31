@@ -1,0 +1,85 @@
+{
+  "audit_skill": "experiment-audit",
+  "verdict": "WARN",
+  "reason_code": "controlled_template_scope_and_missing_200_inputs",
+  "summary": "5000 A0 full score is reproducible; no fake GT, self-normalization or hardcoded accuracy found in the reviewed scope. Shared templates/visible graph limit claims; complete 200-movie inputs missing.",
+  "audited_input_hashes": {
+    "kgqa/prepare.py": "sha256:4bbf41bd7fb4aaa003be841a159fa7c8717fd3c20b1c99e5c615e17be6f32288",
+    "kgqa/common.py": "sha256:7c917833b34c0db7181398a4b494be3fdeb03e256f7513c2c3a2b97e4a518623",
+    "kgqa/pipeline.py": "sha256:a538df78000030d44a63e6a95bba3e5a67439ab626b71fa59b2ac003e74cf016",
+    "kgqa/linker.py": "sha256:4e251eefe5dd8481907e82ad7f0d050dfacb6a11a358aa94a4b233c34f20933f",
+    "kgqa/metrics.py": "sha256:aa3b4f8c8fd1c690fca59580eb42583a76e724e760f919035fd0c6d85583ba0f",
+    "kgqa/personal_experiment.py": "sha256:551a752da21691cb0565d97b4b1bff422b1d99ee2e207c8de90d915e71b7c422",
+    "kgqa/neural.py": "sha256:5ad9040757f9df26eb4221c12147589146237f90ca336ba14cb10ce52a13f39b",
+    "kgqa/expand.py": "sha256:c05e34baf9690d6d947a062addb4682446ffc08b1ff6d7a1daff76dfff81e460",
+    "models/pipeline_5000_20261029/metrics_test.json": "sha256:59f23f773ddf2bc03635debbd5a196b377b18e9118a88173fee38bc824b03284",
+    "models/pipeline_5000_20261029/config.json": "sha256:8d8e16320f9fbae2f20eda977e01c38fbcdd45fccc46c5a7928fb47f21929ce8",
+    "verification/2026-10-31/a0_audit/recomputed.json": "sha256:0dc236dce743e03194ab8846cbee1ccfbb68b9d6e0e1eee16bb295d9dfb533fd"
+  },
+  "trace_path": ".aris/traces/experiment-audit/2026-10-31_run01",
+  "agent_id": "/root/a0_integrity_audit",
+  "verdict_id": "/root/a0_integrity_audit",
+  "executor_model": null,
+  "executor_family": "gpt-6",
+  "reviewer_model": null,
+  "requested_reviewer_model": "gpt-6-astra",
+  "requested_reviewer_reasoning": "ultra",
+  "reviewer_family": "gpt-6",
+  "reported_identity": "Exact model unknown; same GPT-6 family per review context.",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "review_completed": true,
+  "review_scope_complete": false,
+  "scope_limitation": "200-movie complete QA/entities/splits unavailable. Requested 5000 and historical 1000 checks completed.",
+  "generated_at": "2026-10-30T18:57:49.153779+00:00",
+  "date": "2026-10-31",
+  "auditor": "fresh read-only native reviewer; exact runtime model unverified",
+  "overall_verdict": "warn",
+  "integrity_status": "warn",
+  "checks": {
+    "gt_provenance": {
+      "status": "pass",
+      "details": "Wikidata snapshot facts and programmatic answer templates; not predictions. All 58994 gold answer sets and first references verified against that same visible graph/formatter."
+    },
+    "score_normalization": {
+      "status": "pass",
+      "details": "Strict question-ID alignment, set exact/F1 and text BLEU/ROUGE. No prediction-statistics normalization or hardcoded accuracy found."
+    },
+    "result_existence": {
+      "status": "warn",
+      "details": "5000 and historical 1000 predictions verified. Matching full 200-movie GT/inputs are absent here, so that archived version was not independently rescored."
+    },
+    "dead_code": {
+      "status": "pass",
+      "details": "score_rows is called in A0 build/personal experiment and neural validation/test evaluation; saved metrics independently reproduced."
+    },
+    "scope": {
+      "status": "warn",
+      "details": "Movie splits disjoint but all 15 question templates shared; full test facts visible, and expanded ambiguous titles include year/QID. Thresholds are repeated inference, not separate training runs."
+    },
+    "eval_type": "real_gt",
+    "gt_subtype": "dataset_derived_programmatic_template_gt"
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "A0 scores 100% on this frozen 5000-movie template test",
+      "impact": "supported"
+    },
+    {
+      "id": "C2",
+      "claim": "A0 answers arbitrary natural questions or unseen facts with 100% accuracy",
+      "impact": "unsupported"
+    },
+    {
+      "id": "C3",
+      "claim": "All A0 evaluations are 100%",
+      "impact": "unsupported"
+    },
+    {
+      "id": "C4",
+      "claim": "Repeated inference measures independent training stability",
+      "impact": "unsupported"
+    }
+  ]
+}
