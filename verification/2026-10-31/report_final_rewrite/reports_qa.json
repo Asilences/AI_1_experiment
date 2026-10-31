@@ -1,0 +1,78 @@
+{
+  "date": "2026-10-31",
+  "source_commit": "2c8fb5581c5b2d102054fc2fd6f5e8fa75233494",
+  "reports": [
+    {
+      "path": "reports/周新永_实验报告.docx",
+      "author": "周新永",
+      "sha256": "8e13e0c90b6e1dfece13a1e4765e2d1ff68ef3c753d635c7d55a6c2153260e04",
+      "bytes": 1106640,
+      "pages": 14,
+      "tables": 14,
+      "figures": 6,
+      "native_equations": 0,
+      "all_pages_visually_checked": true,
+      "three_line_widths_pt": [
+        1.5,
+        0.75,
+        1.5
+      ]
+    },
+    {
+      "path": "reports/夏俊杰_实验报告.docx",
+      "author": "夏俊杰",
+      "sha256": "a0861874d93a8eed89624feb21341161e7ef3f091f8267688c70aa31b26cb76e",
+      "bytes": 613408,
+      "pages": 17,
+      "tables": 15,
+      "figures": 10,
+      "native_equations": 4,
+      "all_pages_visually_checked": true,
+      "three_line_widths_pt": [
+        1.5,
+        0.75,
+        1.5
+      ]
+    }
+  ],
+  "total_pages": 31,
+  "table_count": 29,
+  "all_tables_three_line": true,
+  "line_widths_pt": [
+    1.5,
+    0.75,
+    1.5
+  ],
+  "no_vertical_or_body_grid_lines": true,
+  "same_answer_quality_section_and_table": true,
+  "chapter_structure": "1基本信息；2环境；3数据与设置；4方法；5.1—5.5主实验；6扩展；7答案质量评价；8总结；9参考文献；附录",
+  "new_environment_screenshot": {
+    "path": "verification/2026-10-31/report_final_rewrite/zhou_environment.png",
+    "sha256": "71a61ffc0b2ba8f7c2872ef7257e4bffb89c2882ac4cab6968e278e2915a4838",
+    "source": "用户提供的2026-10-31 21:11:43原始终端截图",
+    "original_pixels_preserved": true,
+    "project_directory_alias": "AI1:\\"
+  },
+  "renderer": "Microsoft Word read-only PDF export and bundled Poppler PNG rendering",
+  "rendered_sources_unchanged": true,
+  "native_equations_preserved": 4,
+  "legacy_alias": {
+    "path": "reports/个人实验报告.docx",
+    "canonical": "reports/周新永_实验报告.docx",
+    "bytes_identical": true,
+    "sha256": "8e13e0c90b6e1dfece13a1e4765e2d1ff68ef3c753d635c7d55a6c2153260e04"
+  },
+  "evaluation": {
+    "type": "AI_auxiliary_review",
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "ultra",
+    "independent_contexts": 2,
+    "questions": 100,
+    "answers": 200,
+    "judgments": 400,
+    "all_four_exact_agreement": 0.995,
+    "real_human_ratings_completed": false,
+    "original_rating_files_changed": false
+  },
+  "scope": "上传用户已审查通过的全文改写和三线表版本，并同步入口与文件索引；不修改实验代码、模型、数据及评分原判。"
+}
