@@ -1,0 +1,86 @@
+{
+  "date": "2026-10-31",
+  "source_commit": "c8fb6e430ff0748009219aa9508133a2bc87b014",
+  "reports": [
+    {
+      "path": "reports/周新永_实验报告.docx",
+      "pages": 16,
+      "sha256": "03c31813fca431d9d6979b288f9a1a2ad9472c2b7a03dfe844574251d35a6896",
+      "bytes": 980170,
+      "tables": 11,
+      "inline_images": 5,
+      "native_equations": 0,
+      "original_media_preserved": true,
+      "all_pages_visually_checked": true,
+      "clipping_or_overlap": false
+    },
+    {
+      "path": "reports/夏俊杰_实验报告.docx",
+      "pages": 17,
+      "sha256": "c6c6f26df829856f6f4fd97a9085e78251d9514fa9dc97da7c199e492969c460",
+      "bytes": 622160,
+      "tables": 11,
+      "inline_images": 10,
+      "native_equations": 4,
+      "original_media_preserved": true,
+      "all_pages_visually_checked": true,
+      "clipping_or_overlap": false
+    }
+  ],
+  "total_pages": 33,
+  "legacy_alias": {
+    "path": "reports/个人实验报告.docx",
+    "canonical": "reports/周新永_实验报告.docx",
+    "sha256": "03c31813fca431d9d6979b288f9a1a2ad9472c2b7a03dfe844574251d35a6896",
+    "bytes_identical": true
+  },
+  "environment_screenshots": [
+    {
+      "path": "verification/2026-10-31/report_environment_update/zhou_environment.png",
+      "owner": "周新永",
+      "usage": "本机保留的RTX3050主实验环境",
+      "source": "用户提供的原始终端截图",
+      "bytes": 61420,
+      "sha256": "41fd01919d2ef8e7eab5a145fbc3527d8361385829382bcdb02acf09891f4287",
+      "git_blob_sha1": "c31fc0d40dd3639d819b36f2d0eb04fa79366e12"
+    },
+    {
+      "path": "verification/2026-10-31/report_environment_update/xia_local_environment.png",
+      "owner": "夏俊杰",
+      "usage": "H盘RTX3070Ti本机复核环境",
+      "source": "用户提供的原始终端截图",
+      "bytes": 58878,
+      "sha256": "a05d1b73b562fd59ac4cb39d7dc6accbdc39af7ab68e3efc45a4028bb0fb727a",
+      "git_blob_sha1": "7034d1482921b84a42951f2e07fa2f52c35efc6f"
+    },
+    {
+      "path": "verification/2026-10-31/report_environment_update/xia_server_environment.png",
+      "owner": "夏俊杰",
+      "usage": "V100补充训练与P0服务环境",
+      "source": "用户提供的原始终端截图",
+      "bytes": 80172,
+      "sha256": "5e24e5db7b4916c2560157b91308c82a30abb27f5d903ca9de87498551d8f7f6",
+      "git_blob_sha1": "2e3e3992cbd6c2caa054e299dc4b3ead590e60ba"
+    }
+  ],
+  "renderer": "Microsoft Word read-only PDF export, bundled Poppler PNG rendering",
+  "template_checks": {
+    "same_title_and_subtitle": true,
+    "same_cover_fields": true,
+    "same_main_chapters": true,
+    "same_page_settings": true,
+    "same_common_styles": true,
+    "same_subjective_protocol": true,
+    "same_subjective_status": true,
+    "table_numbering_contiguous": true
+  },
+  "subjective_evaluation": {
+    "questions": 100,
+    "answers": 200,
+    "same_sample_and_rubric": true,
+    "completed_real_human_ratings": false,
+    "subjective_scores_inserted": false
+  },
+  "scope": "两份个人报告的截图、模板、夏5.5分析与版面检查；不代表人工评价要求已完成。",
+  "historical_records": "PR13三份35页及更早检查保留各自历史文件上下文，分工计划未在本次重写。"
+}
