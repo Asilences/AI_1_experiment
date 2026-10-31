@@ -1,0 +1,29 @@
+{
+  "method": "nvidia-smi own frozen service PID, three one-second snapshots",
+  "samples": [
+    {
+      "timestamp_utc": "2026-10-31T09:21:20.177011+00:00",
+      "pid": 10804,
+      "gpu_uuid": "GPU-8d2a77b6-ffc2-146b-156d-10665c593ce9",
+      "used_memory_mib": 7542,
+      "command": "/home/junjiex/AI1experiment/.venv/bin/python -u /home/junjiex/AI1experiment/.work/serve_frozen_llm.py --model-dir /home/junjiex/AI1experiment/.work/semantic-p0-20261031/Qwen2.5-3B-Instruct --gpu-memory-fraction 0.25 "
+    },
+    {
+      "timestamp_utc": "2026-10-31T09:21:21.236374+00:00",
+      "pid": 10804,
+      "gpu_uuid": "GPU-8d2a77b6-ffc2-146b-156d-10665c593ce9",
+      "used_memory_mib": 7542,
+      "command": "/home/junjiex/AI1experiment/.venv/bin/python -u /home/junjiex/AI1experiment/.work/serve_frozen_llm.py --model-dir /home/junjiex/AI1experiment/.work/semantic-p0-20261031/Qwen2.5-3B-Instruct --gpu-memory-fraction 0.25 "
+    },
+    {
+      "timestamp_utc": "2026-10-31T09:21:22.295184+00:00",
+      "pid": 10804,
+      "gpu_uuid": "GPU-8d2a77b6-ffc2-146b-156d-10665c593ce9",
+      "used_memory_mib": 7542,
+      "command": "/home/junjiex/AI1experiment/.venv/bin/python -u /home/junjiex/AI1experiment/.work/serve_frozen_llm.py --model-dir /home/junjiex/AI1experiment/.work/semantic-p0-20261031/Qwen2.5-3B-Instruct --gpu-memory-fraction 0.25 "
+    }
+  ],
+  "sampled_max_mib": 7542,
+  "lifetime_peak_measured": false,
+  "correction": "The earlier 2.1-2.5 GiB assertion had no supporting own-process trace and is withdrawn."
+}

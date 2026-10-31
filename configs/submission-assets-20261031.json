@@ -1,0 +1,143 @@
+{
+  "schema": "kgqa-submission-assets/1",
+  "release_tag": "submission-assets-20261031",
+  "note": "Exact frozen experiment assets. Recollecting Wikidata creates a different data version.",
+  "assets": {
+    "catalog_v2": {
+      "filename": "catalog_v2-frozen-20261031.zip",
+      "url": "https://github.com/Asilences/AI_1_experiment/releases/download/submission-assets-20261031/catalog_v2-frozen-20261031.zip",
+      "bytes": 19445265,
+      "sha256": "5b355f0e5328d8187767419d6a529d27b28b1deb2279a8a4abcc17eac14c3963",
+      "files": {
+        "data/processed/movies_v2_20261030/coverage.json": {
+          "bytes": 789226,
+          "sha256": "1f30892c4977861e67657c2146e47577ce99bf992bc12fa163a820b2b16b1ae1"
+        },
+        "data/processed/movies_v2_20261030/entities.json": {
+          "bytes": 10189311,
+          "sha256": "835e83d4763beb269f7574ab61124d810ce3c16eca3a2628e524e280f071c12b"
+        },
+        "data/processed/movies_v2_20261030/manifest.json": {
+          "bytes": 8302,
+          "sha256": "8fb1e7fa522b96688be97bd7114b0adf64e81b6aceea7709744307461ad71ea7"
+        },
+        "data/processed/movies_v2_20261030/movies.json": {
+          "bytes": 3020286,
+          "sha256": "6beaa4078a7dfa09a48e06fd2e6e2ec80e92a91f17be4f4bee614daebf2536a3"
+        },
+        "data/processed/movies_v2_20261030/provenance.json": {
+          "bytes": 4002509,
+          "sha256": "8c733539fbc8ca06ad95d4b2950efe1c61dc88b166e6793e128d07c054f294fc"
+        },
+        "data/processed/movies_v2_20261030/statements.jsonl": {
+          "bytes": 320315463,
+          "sha256": "c3b05ce471efd9a99959145a42bdf3b0e340a1318a64b9f462ed0666e3a2d2fb"
+        }
+      }
+    },
+    "freeform_v2": {
+      "filename": "freeform_v2-frozen-20261031.zip",
+      "url": "https://github.com/Asilences/AI_1_experiment/releases/download/submission-assets-20261031/freeform_v2-frozen-20261031.zip",
+      "bytes": 293934867,
+      "sha256": "33a62f1e23ea202df95038dc35642e4960bd37dbae54ff47ff91cc356bda0ddd",
+      "files": {
+        "data/processed/movies_5000_freeform_en_v2/entities.json": {
+          "bytes": 4454440,
+          "sha256": "7c935d8fa1eecd9870df16e49d93460bdd75f90255661e4e4e397af9f667f3e8"
+        },
+        "data/processed/movies_5000_freeform_en_v2/manifest.json": {
+          "bytes": 6241,
+          "sha256": "db17dbd8b8924c4c9a4863acba685ab8b2e8aafd5dfdec24a5a454017982ec74"
+        },
+        "data/processed/movies_5000_freeform_en_v2/qa.jsonl": {
+          "bytes": 41901082,
+          "sha256": "2f193a52087e32b6c48992bbf35ab94038511ed5a40c68487bca6bc8b7c7492e"
+        },
+        "data/processed/movies_5000_freeform_en_v2/splits.json": {
+          "bytes": 82873,
+          "sha256": "dd24634f590e3e5dd38dc2e5ca7fd25b432ec3b562f74dc99a65b22d586113b7"
+        },
+        "data/processed/movies_5000_freeform_en_v2/triples.tsv": {
+          "bytes": 732671,
+          "sha256": "42c9a5c665313b077a97650309bb8102ab573464ba40943a1b41ffb77c2f8e0a"
+        },
+        "runs/B0_5000_freeform_en_v2_20261031_fp32/checkpoint/config.json": {
+          "bytes": 1610,
+          "sha256": "0bbc5d3d68b38ccae3b42afeecf38951e7d1bb293f256df359458664bde1fc5b"
+        },
+        "runs/B0_5000_freeform_en_v2_20261031_fp32/checkpoint/generation_config.json": {
+          "bytes": 142,
+          "sha256": "508c61562bc26634b6fdb3acd0f6671a1d6ed2d8c70320ef83a32aec8d98250c"
+        },
+        "runs/B0_5000_freeform_en_v2_20261031_fp32/checkpoint/graph_prefix.pt": {
+          "bytes": 622712,
+          "sha256": "2137edb5b2bd5066a5ea3c3d914844ce935b22d4c93905892bc2ca4b6ea1999c"
+        },
+        "runs/B0_5000_freeform_en_v2_20261031_fp32/checkpoint/model.safetensors": {
+          "bytes": 307867048,
+          "sha256": "58fca8c13abf5dbfde43139dc742d0b031f0379d651ea0a6ac5be4217957a8aa"
+        },
+        "runs/B0_5000_freeform_en_v2_20261031_fp32/checkpoint/special_tokens_map.json": {
+          "bytes": 2543,
+          "sha256": "7a1985a994c41886db38c719d2a3d2f40606663cc19d7c5d6a85d349320e06d2"
+        },
+        "runs/B0_5000_freeform_en_v2_20261031_fp32/checkpoint/spiece.model": {
+          "bytes": 791656,
+          "sha256": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86"
+        },
+        "runs/B0_5000_freeform_en_v2_20261031_fp32/checkpoint/tokenizer.json": {
+          "bytes": 2422486,
+          "sha256": "dc856f1be037756d043c1557df9a075bb8658c03c26405ef78a9fc759521cc3e"
+        },
+        "runs/B0_5000_freeform_en_v2_20261031_fp32/checkpoint/tokenizer_config.json": {
+          "bytes": 21020,
+          "sha256": "5d51431e59b9ed6d2507a6bb51dffce534ea1c998458bb11de231495c2fcc104"
+        },
+        "runs/B0_5000_freeform_en_v2_20261031_fp32/config.json": {
+          "bytes": 2390,
+          "sha256": "8825ca491be53292ce48f8036abf900309d42438e2d4cd98a23e2ae07d03734b"
+        },
+        "runs/B0_5000_freeform_en_v2_20261031_fp32/history.json": {
+          "bytes": 3930,
+          "sha256": "25c24c3be4ff2455b36e08b3fbce1e2a33e3144c0fb94c859cc37d249ad9e1b2"
+        },
+        "runs/B0_5000_freeform_en_v2_20261031_fp32/metrics_test.json": {
+          "bytes": 1017,
+          "sha256": "eeb62c2c5491747c045fe9810abec79f6133a005bd90c20dfb455b154eb76feb"
+        },
+        "runs/B0_5000_freeform_en_v2_20261031_fp32/metrics_valid.json": {
+          "bytes": 1008,
+          "sha256": "fc538ac623220500679b602dfee6b3327b6eebc2f95d4b78a018131c307bbec9"
+        },
+        "runs/B0_5000_freeform_en_v2_20261031_fp32/predictions_test.jsonl": {
+          "bytes": 1807730,
+          "sha256": "26e004995e8f86ca365e92ba932fa77c7be7d7249b6a647359cb7bc517953f71"
+        },
+        "runs/B0_5000_freeform_en_v2_20261031_fp32/predictions_valid.jsonl": {
+          "bytes": 1811254,
+          "sha256": "cacba53e8d1c00f3c3c34e4015e74a481c411d7f667aa72c564183f77b2db7cb"
+        },
+        "runs/B0_5000_freeform_en_v2_20261031_fp32/selection.json": {
+          "bytes": 138,
+          "sha256": "7673ca7202cc6683586fa06ad2bc08ffeaa125e6b312b3129197024a09d9c36b"
+        },
+        "runs/B0_5000_freeform_en_v2_20261031_fp32/status.json": {
+          "bytes": 201,
+          "sha256": "4dddf364c1aed90089b1b34487812e20be190e2551c31a68ecc587e45b715ee6"
+        },
+        "assets/5000_runtime_20261030/models/transe/config.json": {
+          "bytes": 265,
+          "sha256": "f113da0a9cf9363f111dc5c53b1a3786d4a5ff82b6433a228fd1cf10e4976692"
+        },
+        "assets/5000_runtime_20261030/models/transe/embeddings.npz": {
+          "bytes": 2918841,
+          "sha256": "fe9cf70cba4eb0b509fca8ccfdf21ec7226aaf8ce9488f0a2bd3fb657745c71c"
+        },
+        "assets/5000_runtime_20261030/models/transe/mapping.json": {
+          "bytes": 175997,
+          "sha256": "4897387a4b688470fad8f35f2cba6436f3393815c7464f89a89526c3bd1fe64a"
+        }
+      }
+    }
+  }
+}

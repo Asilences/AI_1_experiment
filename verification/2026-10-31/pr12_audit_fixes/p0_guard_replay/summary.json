@@ -1,0 +1,12 @@
+{
+  "evaluation_type": "offline_controller_replay",
+  "counts": {
+    "count": 20,
+    "fallback_used": 13,
+    "raw_generation_present": 3,
+    "newly_blocked_old_accepted": 2
+  },
+  "source_sha256": "494946104fb39c67e857bbea3af8710362d185a194493e713982a61ff74e5ead",
+  "model_rerun": false,
+  "scope": "Original plan, tool and status metrics remain unchanged. Latency is not remeasured."
+}

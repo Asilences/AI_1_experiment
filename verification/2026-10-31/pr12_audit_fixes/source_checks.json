@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-31",
+  "pytest": {
+    "passed": 740,
+    "latest_seconds": 37.12,
+    "previous_seconds": 37.94
+  },
+  "ruff": {
+    "select": "E9,F63,F7,F82",
+    "paths": [
+      "kgqa",
+      "tests",
+      "scripts"
+    ],
+    "passed": true
+  },
+  "compileall": {
+    "paths": [
+      "kgqa",
+      "tests",
+      "scripts"
+    ],
+    "passed": true
+  },
+  "powershell_show_environment_syntax": true,
+  "git_diff_check": true,
+  "source_hashes": {
+    "kgqa/semantic_qa.py": "9ac13285c6115aaa250e479b4ef79680606d6987e9dabf464be1ae3f97cbcd6e",
+    "kgqa/freeform_data.py": "f713f26ec72124cf4bf67b5e8739e3b706398aa825df9df5df4f4cbddccc5b05",
+    "kgqa/human_eval.py": "86e3b1d438ed84e1c25d20ef105f6f2cceda5f4f157fd0ffcf100804dd8e2914",
+    "kgqa/human_review_web.py": "b9cee5c3c3451f72595bfee2f46f54d7aaf29ca1e804a53b41bbea6a796ff0e8",
+    "kgqa/submission_assets.py": "520c2c402adcb884a40d70b85b9ea3e745b1082bdb56bd6f9c90cfa2811c7f04"
+  },
+  "scope": "Engineering checks; no human scores fabricated."
+}

@@ -1,0 +1,23 @@
+{
+  "release_url": "https://github.com/Asilences/AI_1_experiment/releases/tag/submission-assets-20261031",
+  "assets": [
+    {
+      "name": "catalog_v2-frozen-20261031.zip",
+      "url": "https://github.com/Asilences/AI_1_experiment/releases/download/submission-assets-20261031/catalog_v2-frozen-20261031.zip",
+      "bytes": 19445265,
+      "digest": "sha256:5b355f0e5328d8187767419d6a529d27b28b1deb2279a8a4abcc17eac14c3963"
+    },
+    {
+      "name": "freeform_v2-frozen-20261031.zip",
+      "url": "https://github.com/Asilences/AI_1_experiment/releases/download/submission-assets-20261031/freeform_v2-frozen-20261031.zip",
+      "bytes": 293934867,
+      "digest": "sha256:33a62f1e23ea202df95038dc35642e4960bd37dbae54ff47ff91cc356bda0ddd"
+    },
+    {
+      "name": "submission-assets-20261031.json",
+      "url": "https://github.com/Asilences/AI_1_experiment/releases/download/submission-assets-20261031/submission-assets-20261031.json",
+      "bytes": 6949,
+      "digest": "sha256:37a909cbef53b4c55cb19f0e7b5b529f22b7d733fd288bdf58746bc247b57a30"
+    }
+  ]
+}
