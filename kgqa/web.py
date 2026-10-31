@@ -62,6 +62,7 @@ class QAService:
         self.model_path = Path(model_path) if model_path else ROOT / 'models' / 'pipeline' / 'model.pkl'
         self.demo = None
         self.freeform_parser = None
+        self.guarded = None
         self.entities = {}
         self.lock = threading.Lock()
         self.movies, self.data_error = [], ''
@@ -176,8 +177,10 @@ class QAService:
                              'statement_count': len(self.explorer.rows) if self.explorer else 0,
                              'unresolved_entity_label_count': self.explorer.manifest.get('unresolved_entity_label_count', 0) if self.explorer else 0,
                              'detail': self.catalog_error or '独立扩展事实与只读工具，含来源、限定条件和候选确认。'},
-                'freeform': {'available': True, 'method': 'bounded_rules_v1',
-                             'detail': '四类单跳自然问法；有限中文转英文标准问题，答案保持英文。'}}
+                'freeform': {'available': True, 'method': 'bounded_rules_v2',
+                             'detail': '四类单跳自然问法；歧义和未支持的条件需澄清。'},
+                'guarded': {'available': True, 'method': 'evidence_guard_v1',
+                            'detail': '问法规范化、关系证据核验、显式工具回退；保留原始生成。'}}
 
     def search(self, query='', offset=0, limit=30):
         query = query.casefold().strip()
@@ -210,7 +213,7 @@ class QAService:
             raise APIError('请输入 1—1000 个字符的中文或英文电影问题。')
         if not isinstance(system, str) or system not in SYSTEMS:
             raise APIError('请选择有效的问答系统。')
-        if not isinstance(mode, str) or mode not in {'standard', 'freeform'}:
+        if not isinstance(mode, str) or mode not in {'standard', 'freeform', 'guarded'}:
             raise APIError('请选择有效的问题处理模式。')
         if not self.lock.acquire(blocking=False):
             raise APIError('上一条问题仍在处理中，请稍后再试。', 409)
@@ -239,7 +242,15 @@ class QAService:
                         if interpretation and interpretation['status'] == 'ready':
                             if demo.linker.link(model_question)[0] != interpretation['movie_id']:
                                 interpretation.update(status='needs_clarification', message='标准片名仍有歧义，请选择明确版本。')
-                        if interpretation and interpretation['status'] != 'ready':
+                        if mode == 'guarded':
+                            if self.guarded is None:
+                                from .guarded import GuardedQA
+                                self.guarded = GuardedQA(demo)
+                            enhanced = self.guarded.answer(question, 'a0' if target == 'a0' else 'neural')
+                            interpretation, raw = enhanced['interpretation'], enhanced['result']
+                            suffix = ' + 工具回退' if raw['fallback_used'] else ' + 证据核验'
+                            result['name'] = entry['name'] + suffix
+                        elif interpretation and interpretation['status'] != 'ready':
                             raw = {'answer': REFUSAL, 'relation': interpretation['relation_id'], 'evidence': []}
                         else:
                             raw = demo.answer_a0(model_question) if target == 'a0' else demo.answer_neural(model_question)
@@ -257,13 +268,14 @@ class QAService:
                                       movie=movie, link_status=link_status, link_score=score,
                                       relation=raw.get('relation'), confidence=raw.get('confidence'),
                                       evidence=raw.get('evidence', []), cold_start=cold,
-                                      generation_ms=raw.get('latency_ms'))
-                        for key in ('language', 'model_question', 'original_answer', 'language_status', 'language_note', 'answer_ids'):
+                                      generation_ms=raw.get('generation_ms', raw.get('latency_ms')))
+                        for key in ('language', 'model_question', 'original_answer', 'language_status', 'language_note', 'answer_ids',
+                                    'guard', 'fallback_used', 'model_evidence'):
                             if key in raw:
                                 result[key] = raw[key]
                         if 'raw_answer' in raw:
-                            result.update(raw_answer=raw['raw_answer'], replacements=raw['replacements'],
-                                          recovery_ms=raw['recovery_ms'])
+                            result.update(raw_answer=raw['raw_answer'], replacements=raw.get('replacements', []),
+                                          recovery_ms=raw.get('recovery_ms', 0))
                     except Exception:
                         logging.exception('UI inference failed for %s', target)
                         result['error'] = '本地模型运行失败，请检查启动终端的错误信息及数据、模型是否配套。'

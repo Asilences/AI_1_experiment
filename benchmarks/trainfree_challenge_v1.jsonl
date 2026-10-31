@@ -1,0 +1,48 @@
+{"question_id":"tf001","question":"Who directed Shutter Island?","expected_status":"ready","movie_id":"Q210364","relation_id":"P57","category":"supported_standard","language":"en"}
+{"question_id":"tf002","question":"《Shutter Island》属于什么类型的电影？","expected_status":"ready","movie_id":"Q210364","relation_id":"P136","category":"supported_multivalue","language":"zh"}
+{"question_id":"tf003","question":"Which countries did Shutter Island originate in?","expected_status":"ready","movie_id":"Q210364","relation_id":"P495","category":"supported_paraphrase","language":"en"}
+{"question_id":"tf004","question":"《Shutter Island》的原始语言是什么？","expected_status":"ready","movie_id":"Q210364","relation_id":"P364","category":"supported_standard","language":"zh"}
+{"question_id":"tf005","question":"《Boss Level》是谁执导的？","expected_status":"ready","movie_id":"Q54894945","relation_id":"P57","category":"supported_paraphrase","language":"zh"}
+{"question_id":"tf006","question":"What genre is Boss Level?","expected_status":"ready","movie_id":"Q54894945","relation_id":"P136","category":"supported_multivalue","language":"en"}
+{"question_id":"tf007","question":"《Boss Level》的制片国家有哪些？","expected_status":"ready","movie_id":"Q54894945","relation_id":"P495","category":"supported_standard","language":"zh"}
+{"question_id":"tf008","question":"What is the original language of Boss Level?","expected_status":"ready","movie_id":"Q54894945","relation_id":"P364","category":"supported_standard","language":"en"}
+{"question_id":"tf009","question":"Could you tell me who helmed Shaolin?","expected_status":"ready","movie_id":"Q24515","relation_id":"P57","category":"supported_paraphrase","language":"en"}
+{"question_id":"tf010","question":"《Shaolin》的电影类型是什么？","expected_status":"ready","movie_id":"Q24515","relation_id":"P136","category":"supported_multivalue","language":"zh"}
+{"question_id":"tf011","question":"Which countries did Shaolin originate in?","expected_status":"ready","movie_id":"Q24515","relation_id":"P495","category":"supported_multivalue","language":"en"}
+{"question_id":"tf012","question":"《Shaolin》的原始语言有哪些？","expected_status":"ready","movie_id":"Q24515","relation_id":"P364","category":"supported_multivalue","language":"zh"}
+{"question_id":"tf013","question":"Q280947的导演是谁？","expected_status":"ready","movie_id":"Q280947","relation_id":"P57","category":"supported_qid","language":"zh"}
+{"question_id":"tf014","question":"What genre is The Monster from the Arcana Galaxy?","expected_status":"ready","movie_id":"Q280947","relation_id":"P136","category":"supported_alias","language":"en"}
+{"question_id":"tf015","question":"《Visitors from the Galaxy》的制作国家是什么？","expected_status":"ready","movie_id":"Q280947","relation_id":"P495","category":"supported_standard","language":"zh"}
+{"question_id":"tf016","question":"List the original languages of Visitors from the Galaxy.","expected_status":"ready","movie_id":"Q280947","relation_id":"P364","category":"supported_paraphrase","language":"en"}
+{"question_id":"tf017","question":"Who directed Passion of the Christ?","expected_status":"ready","movie_id":"Q51668","relation_id":"P57","category":"supported_alias","language":"en"}
+{"question_id":"tf018","question":"《The Passion of the Christ》是什么类型的电影？","expected_status":"ready","movie_id":"Q51668","relation_id":"P136","category":"supported_multivalue","language":"zh"}
+{"question_id":"tf019","question":"Which countries did The Passion of the Christ originate in?","expected_status":"ready","movie_id":"Q51668","relation_id":"P495","category":"supported_multivalue","language":"en"}
+{"question_id":"tf020","question":"Q51668的原始语言有哪些？","expected_status":"ready","movie_id":"Q51668","relation_id":"P364","category":"supported_qid","language":"zh"}
+{"question_id":"tf021","question":"《The Black Cat》的导演是谁？","expected_status":"ready","movie_id":"Q572215","relation_id":"P57","category":"supported_standard","language":"zh"}
+{"question_id":"tf022","question":"What kind of film is The Black Cat?","expected_status":"ready","movie_id":"Q572215","relation_id":"P136","category":"supported_paraphrase","language":"en"}
+{"question_id":"tf023","question":"《The Black Cat》的制作国家有哪些？","expected_status":"ready","movie_id":"Q572215","relation_id":"P495","category":"supported_standard","language":"zh"}
+{"question_id":"tf024","question":"What is the original language of The Black Cat?","expected_status":"ready","movie_id":"Q572215","relation_id":"P364","category":"supported_standard","language":"en"}
+{"question_id":"tf025","question":"Who starred in Shutter Island?","expected_status":"unanswerable","category":"unsupported_property","language":"en"}
+{"question_id":"tf026","question":"《Boss Level》的预算是多少？","expected_status":"unanswerable","category":"unsupported_property","language":"zh"}
+{"question_id":"tf027","question":"Who composed the soundtrack for Shaolin?","expected_status":"unanswerable","category":"unsupported_property","language":"en"}
+{"question_id":"tf028","question":"《The Black Cat》的票房是多少？","expected_status":"unanswerable","category":"unsupported_property","language":"zh"}
+{"question_id":"tf029","question":"Where was Shutter Island filmed?","expected_status":"unanswerable","category":"unsupported_property","language":"en"}
+{"question_id":"tf030","question":"《Boss Level》的配音语言是什么？","expected_status":"unanswerable","category":"unsupported_property","language":"zh"}
+{"question_id":"tf031","question":"Who directed Zyxwuv Qpkjrt?","expected_status":"unanswerable","category":"unknown_entity","language":"en"}
+{"question_id":"tf032","question":"Q999999999的导演是谁？","expected_status":"unanswerable","category":"unknown_entity","language":"zh"}
+{"question_id":"tf033","question":"Summarize the plot of Shutter Island.","expected_status":"unanswerable","category":"unsupported_property","language":"en"}
+{"question_id":"tf034","question":"《Shaolin》在哪里取景？","expected_status":"unanswerable","category":"unsupported_property","language":"zh"}
+{"question_id":"tf035","question":"Which languages is Boss Level dubbed in?","expected_status":"unanswerable","category":"unsupported_property","language":"en"}
+{"question_id":"tf036","question":"《The Passion of the Christ》的字幕有哪些语言？","expected_status":"unanswerable","category":"unsupported_property","language":"zh"}
+{"question_id":"tf037","question":"Who directed Shutter Island and Boss Level?","expected_status":"needs_clarification","category":"multiple_movies","language":"en"}
+{"question_id":"tf038","question":"《Shutter Island》的导演和原始语言是什么？","expected_status":"needs_clarification","category":"multiple_properties","language":"zh"}
+{"question_id":"tf039","question":"Tell me about Shaolin.","expected_status":"needs_clarification","category":"vague_intent","language":"en"}
+{"question_id":"tf040","question":"《Boss Level》是不是喜剧片？","expected_status":"needs_clarification","category":"yes_no","language":"zh"}
+{"question_id":"tf041","question":"Who did not direct Shutter Island?","expected_status":"needs_clarification","acceptable_statuses":["needs_clarification","unanswerable"],"category":"unexecuted_constraint","language":"en"}
+{"question_id":"tf042","question":"《Shaolin》的原始语言有哪些，不包括普通话？","expected_status":"needs_clarification","acceptable_statuses":["needs_clarification","unanswerable"],"category":"unexecuted_constraint","language":"zh"}
+{"question_id":"tf043","question":"Which genres of Shutter Island were assigned before 2010?","expected_status":"needs_clarification","acceptable_statuses":["needs_clarification","unanswerable"],"category":"unexecuted_constraint","language":"en"}
+{"question_id":"tf044","question":"《Boss Level》和《Shaolin》的导演分别是谁？","expected_status":"needs_clarification","category":"multiple_movies","language":"zh"}
+{"question_id":"tf045","question":"Who was behind the camera on Shutter Island?","expected_status":"needs_clarification","acceptable_statuses":["needs_clarification","unanswerable"],"category":"ambiguous_semantics","language":"en"}
+{"question_id":"tf046","question":"《Shutter Island》里的人物说哪些语言？","expected_status":"needs_clarification","acceptable_statuses":["needs_clarification","unanswerable"],"category":"ambiguous_semantics","language":"zh"}
+{"question_id":"tf047","question":"What languages are spoken in Shaolin?","expected_status":"needs_clarification","acceptable_statuses":["needs_clarification","unanswerable"],"category":"ambiguous_semantics","language":"en"}
+{"question_id":"tf048","question":"《The Black Cat》的导演中，谁在1950年以前出生？","expected_status":"needs_clarification","acceptable_statuses":["needs_clarification","unanswerable"],"category":"unexecuted_constraint","language":"zh"}

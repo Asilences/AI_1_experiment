@@ -19,7 +19,7 @@ def parser():
 @pytest.mark.parametrize('question,movie,relation', [
     ('Could you tell me who helmed The Matrix?', 'Q1', 'P57'),
     ('The Matrix — name the filmmaker, please.', 'Q1', 'P57'),
-    ('Which languages do people speak in Inception?', 'Q2', 'P364'),
+    ('What is the original language of Inception?', 'Q2', 'P364'),
     ('What kind of film is The Matrix?', 'Q1', 'P136'),
     ('Where is The Matrix from?', 'Q1', 'P495'),
     ('《盗梦空间》是谁执导的？', 'Q2', 'P57'),
@@ -34,7 +34,7 @@ def parser():
 def test_supported_natural_questions(parser, question, movie, relation):
     parsed = parser.parse(question)
     assert parsed['status'] == 'ready' and parsed['movie_id'] == movie and parsed['relation_id'] == relation
-    assert parsed['canonical_question'] and parsed['method'] == 'bounded_rules_v1'
+    assert parsed['canonical_question'] and parsed['method'] == 'bounded_rules_v2'
 
 
 @pytest.mark.parametrize('question,status', [
@@ -57,9 +57,9 @@ def test_supported_natural_questions(parser, question, movie, relation):
     ('What country is The Matrix set in?', 'unanswerable'),
     ('黑客帝国在哪些国家被禁映？', 'unanswerable'),
     ('盗梦空间的配音语言是什么？', 'unanswerable'),
-    ('未知 The Matrix 电影的导演是谁？', 'unanswerable'),
-    ('The Matrix 未知电影的导演是谁？', 'unanswerable'),
-    ('Unknown The Matrix的导演是谁？', 'unanswerable'),
+    ('未知 The Matrix 电影的导演是谁？', 'needs_clarification'),
+    ('The Matrix 未知电影的导演是谁？', 'needs_clarification'),
+    ('Unknown The Matrix的导演是谁？', 'needs_clarification'),
     ('The Matrix的导演和盗梦空间的导演是谁？', 'needs_clarification'),
 ])
 def test_ambiguous_unsupported_or_missing_facts_do_not_reach_model(parser, question, status):

@@ -192,7 +192,9 @@ function renderResult(result) {
   card.classList.toggle('failed', !result.ok);
   $('.card-eyebrow', card).textContent = result.system === 'a0' ? 'PIPELINE / FACT QUERY' : 'NEURAL / ANSWER GENERATION';
   $('.system-name', card).textContent = result.name;
-  $('.result-badge', card).textContent = !result.ok ? '暂不可用' : result.refused ? '信息不足 · 拒答' : '回答完成';
+  $('.result-badge', card).textContent = !result.ok ? '暂不可用'
+    : result.guard?.action === 'clarify' ? '请确认问题'
+    : result.refused ? '信息不足 · 拒答' : result.fallback_used ? '工具回退' : '回答完成';
   $('.system-timing', card).textContent = result.ok ? `处理耗时 ${formatTime(result.elapsed_ms)}${result.cold_start ? ' · 含首次加载' : ''}` : '';
   const copy = $('.copy-button', card);
   if (!result.ok) {
@@ -217,7 +219,8 @@ function renderResult(result) {
   $('.link-method', card).textContent = `${linkNames[result.link_status] || result.link_status}${result.movie && result.link_status === 'fuzzy' ? ` · 相似度 ${result.link_score.toFixed(3)}` : ''}`;
   const relation = $('.relation-name', card);
   relation.textContent = result.relation ? `${relationNames[result.relation] || result.relation}${result.confidence != null ? ` · 置信度 ${(result.confidence * 100).toFixed(1)}%` : ''}` : '';
-  $('.evidence-label', card).textContent = result.system === 'a0' ? '回答命中的事实' : '输入给模型的候选事实';
+  $('.evidence-label', card).textContent = result.guard ? '最终回答所依据的事实'
+    : result.system === 'a0' ? '回答命中的事实' : '输入给模型的候选事实';
   $('.evidence-count', card).textContent = String(result.evidence.length);
   const evidence = $('.evidence-list', card);
   for (const fact of result.evidence) evidence.append(node('li', '', fact));
@@ -232,13 +235,20 @@ function renderResult(result) {
   };
   if (result.model_question) addDetail(result.language === 'zh' ? '中文问题 → 英文模型输入' : '英文模型输入', result.model_question, 'en');
   if (result.language_note) addDetail('语言处理说明', result.language_note);
+  if (result.guard) {
+    const actions = {accepted: '回答通过核验', rejected: '生成未通过核验', tool_fallback: '使用图谱查询与模板回退',
+      clarify: '需要用户确认', blocked: '范围或证据不足'};
+    addDetail('回答处理', `${actions[result.guard.action] || result.guard.action} · ${result.guard.reason}`);
+    addDetail('工具介入', result.fallback_used ? '最终答案由知识库查询与模板给出，模型原始输出保留如下。' : '未使用工具模板替换。');
+    if (result.model_evidence?.length) addDetail('实际提供给生成器的证据', result.model_evidence.join('\n'));
+  }
   if (typeof result.original_answer === 'string' && result.original_answer !== result.answer) {
     addDetail('中文呈现前的原答案', result.original_answer, 'en');
   }
   if (typeof result.raw_answer === 'string') {
-    addDetail('名称恢复前的神经原始生成', result.raw_answer, 'en');
+    addDetail(result.guard ? '核验与回退前的原始输出' : '名称恢复前的神经原始生成', result.raw_answer, 'en');
     const replacements = Array.isArray(result.replacements) ? result.replacements : [];
-    addDetail('名称恢复', `${replacements.length} 处${result.recovery_ms != null ? ` · ${formatTime(result.recovery_ms)}` : ''}`);
+    if (!result.guard) addDetail('名称恢复', `${replacements.length} 处${result.recovery_ms != null ? ` · ${formatTime(result.recovery_ms)}` : ''}`);
     if (replacements.length) {
       const list = node('ul', 'recovery-list');
       for (const item of replacements) list.append(node('li', '', `${item.before || '原名称'} → ${item.after || item.entity_id}${item.after && item.entity_id ? ` (${item.entity_id})` : ''}`));
@@ -281,7 +291,7 @@ $('#question-form').addEventListener('submit', async event => {
   $('#timing-note').hidden = true;
   setBusy(true);
   try {
-    const mode = appStatus?.freeform?.available && $('#freeform-mode').checked ? 'freeform' : 'standard';
+    const mode = appStatus?.guarded?.available && $('#freeform-mode').checked ? 'guarded' : 'standard';
     const data = await request('/api/answer', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({question, system, mode})});
     latestResult = {...data, saved_at: new Date().toISOString()};
     $('#answered-question').textContent = `已回答的问题：${data.question}`;
@@ -301,7 +311,14 @@ $('#question-form').addEventListener('submit', async event => {
       for (const candidate of parsed.candidates || []) {
         const button = node('button', 'example-chip', `${candidate.label} (${candidate.id})`);
         button.type = 'button';
-        button.addEventListener('click', () => setQuestion(`${candidate.id}: ${data.question}`));
+        button.addEventListener('click', () => {
+          if (candidate.question) setQuestion(candidate.question);
+          else {
+            $('#movie-search').value = candidate.id;
+            loadMovies();
+            toast('请在左侧选择电影，再选择问题类型；原问题的额外条件需要另行确认。');
+          }
+        });
         options.append(button);
       }
     }
