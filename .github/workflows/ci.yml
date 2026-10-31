@@ -64,6 +64,7 @@ jobs:
           python -m kgqa.freeform_experiment --help
           python -m kgqa.v2_data --help
           python -m kgqa.explorer --help
+          python -m kgqa.semantic_qa --help
           python -m kgqa.neural_preflight --help
           python -m kgqa.recovery_experiment --help
           python -m kgqa.expanded_evaluation --help
