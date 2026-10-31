@@ -224,12 +224,19 @@ def test_score_ids_must_match_every_key_row(completed_reviews, change, message):
 
 
 @pytest.mark.parametrize('repeat', [False, True])
-def test_two_distinct_review_files_are_required(completed_reviews, repeat):
+def test_at_least_one_distinct_review_file_is_required(completed_reviews, repeat):
     files, key, output = completed_reviews
-    selected = [files[0], files[0]] if repeat else [files[0]]
-    with pytest.raises(ValueError, match='two distinct independent score files'):
+    selected = [files[0], files[0]] if repeat else []
+    with pytest.raises(ValueError, match='At least one distinct score file'):
         human_eval.summarize_scores(selected, key, output)
     assert not output.exists()
+
+
+def test_single_real_evaluator_can_be_summarized_without_invented_agreement(completed_reviews):
+    files, key, output = completed_reviews
+    result = human_eval.summarize_scores([files[0]], key, output)
+    assert result['reviewer_count'] == 1 and result['rating_count'] == 4
+    assert result['pairwise_agreement'] == []
 
 
 def test_duplicate_key_rows_are_rejected(completed_reviews):

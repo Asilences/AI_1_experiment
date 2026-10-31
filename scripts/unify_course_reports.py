@@ -17,6 +17,8 @@ from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 from docx.shared import Mm, Pt, RGBColor
 
+from apply_pr12_report_corrections import ENV_NOTE, FREEFORM_NOTE, HUMAN_NOTE, MEMORY_NOTE, correct_report
+
 
 ROOT = Path(__file__).resolve().parents[1]
 FILES = ["个人实验报告.docx", "夏俊杰_实验报告.docx", "双人分工与复现实验计划.docx"]
@@ -215,7 +217,7 @@ def format_doc(doc, author):
 def add_latest(doc, person, summary):
     env = anchor(doc, "3 数据集")
     before(doc, env, "2026年10月31日的扩展推理另用H盘项目内.venv（Python 3.11.7）执行；本机GPU为RTX 3070 Ti Laptop 8GiB。自由问法微调与P0服务在Ubuntu 18.04服务器运行，使用项目独立Python 3.11.18、torch 2.6.0+cu118、驱动530.30.02及4张V100-SXM2-32GB中的GPU1。用户允许共享一张卡，分配器限制25%、CPU线程2；不停止其他用户任务。主实验3050训练、后续本机复核与V100推理的环境及计时分别记录。")
-    before(doc, env, "环境截图待补1张真实操作系统终端图，须显示解释器路径、Python及依赖版本、当前目录。现有浏览器运行图不能替代这项材料。")
+    before(doc, env, ENV_NOTE)
     methods = anchor(doc, "4 方法实现")
     data_end = next((p for p in doc.paragraphs if p.text.startswith("3.2 子图")), methods)
     before(doc, data_end, "3.1 后续数据版本与评价边界", "Heading 2")
@@ -228,7 +230,7 @@ def add_latest(doc, person, summary):
     before(doc, result, "仍不支持任意自然语言问题。剧情、主观推荐、开放域评论、任意过滤/计数和未实现的推理链需要新数据或新算子；已有12属性也取决于本地声明覆盖。接入Transformer指令模型扩大了表达入口，不等于已经正确解析所有表达。")
     h52 = anchor(doc, "5.2 基础实验结果")
     before(doc, h52, "P0补充运行记录", "Heading 3")
-    before(doc, h52, "2026年10月31日实际下载并启动Qwen/Qwen2.5-3B-Instruct，修订号aa8e72537993ba99e69dfaafa59ed015b17504d1，FP16冻结推理，服务只监听服务器127.0.0.1，通过SSH转发到本机7870端口。GPU1实测进程约2.1—2.5GiB；25%是PyTorch分配器上限，不代表整卡独占。真实问题“Who put together the screenplay for Inception?”执行P58并返回Christopher Nolan；“what else did the person who made it direct? Just three titles.”执行导演反查，记录limit=3及模板回退。这两例用于确认真实HTTP链路，完整开发结果另表列出。")
+    before(doc, h52, "2026年10月31日实际下载并启动Qwen/Qwen2.5-3B-Instruct，修订号aa8e72537993ba99e69dfaafa59ed015b17504d1，FP16冻结推理，服务只监听服务器127.0.0.1，通过SSH转发到本机7870端口。" + MEMORY_NOTE + "真实问题Who put together the screenplay for Inception?执行P58并返回Christopher Nolan；导演作品反查另记录limit=3与模板回退。这两例用于确认真实HTTP链路，完整开发结果另表列出。")
     before(doc, h52, "P0运行入口为python -m kgqa.semantic_qa；Web新增/api/semantic，并将P0与A0/B0及V2规则工具独立展示。服务、模型清单和逐题输出保存于verification/2026-10-31/semantic_p0/，原数据与旧训练目录保持冻结。")
     h53 = anchor(doc, "5.3 参数修改与重复实验")
     before(doc, h53, "P0开发验收结果", "Heading 3")
@@ -249,7 +251,7 @@ def add_latest(doc, person, summary):
     h55 = anchor(doc, "5.5 结果对比分析")
     before(doc, h55, "免训练增强与自由问法微调补充对照", "Heading 3")
     before(doc, h55, "48道中英文开发验收中，24道可答、12道不可答、12道需要澄清。原始A0在24道可答题实体F1为100%，但不可答拒答为50%、澄清为16.67%；加保护后分别为100%、83.33%，非可答题的自动非拒答比例由50%降至0。该比例依赖拒答标志及规范文本，不能代替人工事实核查。B0原始/保护/混合分支可答F1为94.79%/91.67%/100%，混合分支2/48题使用工具回退。工具修正不能归因于B0自身能力增长。")
-    before(doc, h55, "四关系自由问法v2微调已完成3轮（学习率3e-5、有效batch16、seed42），按验证F1选择第3轮。验证总体F1由89.65%到93.20%，可答F1由88.03%到99.53%，拒答却从95.47%降至70.53%。6904题未见family测试实体F1为69.41%、可答F1为72.48%、拒答58.33%；没有旧B0同测试集对照，不能与原模板测试直接作提升差值。总耗时15632.05秒，进程采样峰值5600MiB；未替换界面默认模型。")
+    before(doc, h55, FREEFORM_NOTE)
     before(doc, h55, "P0与D0的20题结果则显示：P0状态匹配为70%高于D0的60%，但计划43.75%低于75%，结构任务50%低于60%，平均延迟约5.95秒。这不是模型规模增大便必然提升的结果；提示约束、属性语义、多电影绑定与证据执行需要分别验收。")
     conclusion = anchor(doc, "6 实验总结")
     before(doc, conclusion, "免训练语义扩展的收益与限制", "Heading 3")
@@ -326,7 +328,7 @@ def unify_xia(doc):
     replace(doc, "夏俊杰负责B0—B3学习率对照", "B0—B3为独立学习率对照，C0为结构前缀消融；各组均从同一预训练模型独立训练。数据与模型模块负责配置、曲线和运行资产，问答与评价模块核对实体评分和输出，以下结果共同用于两份报告的不同分析重点。")
     replace(doc, "周新永负责答案实体解码", "答案实体解码与名称恢复的评价接口归入周新永的问答评价模块，模型训练归入我的数据与神经模块。名称恢复作为独立后处理，不重新训练；仅使用实际链接电影的保留事实名称，不读取标准关系或答案进行恢复。原始验证F1仍决定B模型选择，恢复结果不参与选模，也不替换原始成绩。结构消融始终比较原始B0与C0。")
     remove(anchor(doc, "本人的负责范围："))
-    replace(doc, "两张实际浏览器模型测试截图", "两张实际浏览器模型测试截图已移入5.1，图号为图5-1、图5-2。人工评价计划尚待两位评价者独立完成，空白评分表表示未评；还需补入1张真实操作系统终端环境截图，显示实际Python、依赖版本和项目运行目录。")
+    replace(doc, "两张实际浏览器模型测试截图", "图5-1、图5-2记录实际浏览器模型测试。" + HUMAN_NOTE)
     # 实际浏览器运行图从5.4移入5.1，保留图像、关系及分辨率。
     h52 = anchor(doc, "5.2 基础实验结果")
     for start in ["图5-7 5000部电影双系统", "图5-8 特殊字符"]:
@@ -416,8 +418,8 @@ def build_plan(old, summary):
         ["人工评价", "自设计划尚未评分，不虚构分数", "自设计划尚未评分，不虚构分数"],
     ], [38, 64, 64])
     para(doc, "6 待完成事项与改进顺序", "Heading 1")
-    para(doc, "提交前仍需补入真实终端环境截图；两份已有实际浏览器测试图保留上下文并放入运行记录。人工评分是本项目原定评价计划，尚未执行；教师所列BLEU、ROUGE及人工评估为示例，不虚构评分。")
-    para(doc, "人工计划采用相同100题、A0与验证选定B系统各一份答案，两名评价者独立填写准确性0—2、完整性0—2、流畅度1—5和无依据断言0/1，原始表每人200条。评分空白继续表示未评，原始分歧与讨论另存，不用自动重叠指标或LLM评分代填。")
+    para(doc, ENV_NOTE + HUMAN_NOTE)
+    para(doc, "人工计划采用相同100题、A0与验证选定B系统共200份答案，至少一名真实评价者完成；多人时独立评分并保留分歧，空白不作零分。")
     return doc
 
 
@@ -469,6 +471,7 @@ def main():
         (unify_zhou if name == '周新永' else unify_xia)(d)
         add_latest(d, name, summary)
         fill_identity(d, name)
+        correct_report(d)
         format_doc(d, name)
         if name == '周新永':
             anchor(d, '附录 实验记录索引').paragraph_format.page_break_before = True
@@ -481,6 +484,7 @@ def main():
         tmp.replace(p)
         records.append({'path': str(p), 'sha256': sha(p), 'original_media_preserved': True, 'native_math_count': math_count, 'paragraph_count': len(d.paragraphs), 'table_count': len(d.tables), 'inline_shapes': len(d.inline_shapes)})
     d = build_plan(paths[2], summary)
+    correct_report(d, plan=True)
     format_doc(d, '周新永 夏俊杰')
     d.save(paths[2])
     records.append({'path': str(paths[2]), 'sha256': sha(paths[2])})

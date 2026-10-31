@@ -4,3 +4,8 @@ data/processed/movies_5000_20261029/** -text linguist-generated=true
 models/pipeline_5000_20261029/** -text linguist-generated=true
 # Preserve the actual supplemental predictions and their recorded SHA-256 bytes.
 reports/补充阈值运行记录/** -text
+# 审计归档保留原始预测字节，跨平台检出后仍可验证来源SHA。
+verification/2026-10-31/pr12_audit_fixes/freeform/predictions_*.jsonl -text
+configs/submission-assets-20261031.json -text whitespace=cr-at-eol
+# 原样终端采集允许最后一个空行，避免把命令真实输出误作格式错误。
+verification/2026-10-31/pr12_audit_fixes/*_environment.txt whitespace=-blank-at-eof

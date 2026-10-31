@@ -1,0 +1,264 @@
+{
+  "system": "P0",
+  "method": "frozen_plan_v1",
+  "question": "Who put together the screenplay for Inception?",
+  "status": "answered",
+  "answer": "Inception has the screenwriters Christopher Nolan (Q25191).",
+  "plan": {
+    "schema": "kgqa-plan/1",
+    "language": "en",
+    "status": "ready",
+    "movie_ids": [
+      "Q25188"
+    ],
+    "properties": [
+      "P58"
+    ],
+    "operation": "facts",
+    "unhandled_constraints": [],
+    "clarification": null,
+    "limit": 30
+  },
+  "raw_plan": {
+    "schema": "kgqa-plan/1",
+    "language": "en",
+    "status": "ready",
+    "movie_ids": [
+      "Q25188"
+    ],
+    "properties": [
+      "P58"
+    ],
+    "operation": "facts",
+    "unhandled_constraints": [],
+    "clarification": null,
+    "limit": 30
+  },
+  "evidence": [
+    {
+      "statement_id": "q25188$37070ABE-3653-49B5-9128-E6474D8FFB14",
+      "movie_id": "Q25188",
+      "property": "P58",
+      "value": "Q25191",
+      "type": "entity",
+      "snaktype": "value",
+      "qualifiers": {},
+      "qualifier_text": "",
+      "references": [
+        {
+          "hash": "a0e42b3d0f5df95abafa187c1a3b92c2e7d15c18",
+          "snaks": {
+            "P854": [
+              {
+                "snaktype": "value",
+                "property": "P854",
+                "hash": "13dace63c666ec701a207ddc3493fd8c22c5e0ff",
+                "datavalue": {
+                  "value": "https://www.siamzone.com/movie/m/5815",
+                  "type": "string"
+                },
+                "datatype": "url"
+              }
+            ],
+            "P813": [
+              {
+                "snaktype": "value",
+                "property": "P813",
+                "hash": "e3ba4d21eb196d40df81a7466623db62b15e8770",
+                "datavalue": {
+                  "value": {
+                    "time": "+2016-04-11T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "snaks-order": [
+            "P854",
+            "P813"
+          ]
+        }
+      ],
+      "source_url": "https://www.wikidata.org/wiki/Q25188",
+      "revision": 2557100094,
+      "retrieved_at": "2026-10-29T07:47:15Z",
+      "rank": "normal",
+      "text": "Inception | screenwriter | Christopher Nolan (Q25191)"
+    }
+  ],
+  "items": [],
+  "missing": [],
+  "candidates": [],
+  "total": 1,
+  "offset": 0,
+  "limit": 30,
+  "next_offset": null,
+  "raw_answer": "Christopher Nolan (Q25191) is the screenwriter of Inception.",
+  "fallback_used": true,
+  "execution": {
+    "question": "Who put together the screenplay for Inception?",
+    "plan": {
+      "method": "validated_plan_tools_v1",
+      "question": "Who put together the screenplay for Inception?",
+      "language": "en",
+      "movie_ids": [
+        "Q25188"
+      ],
+      "properties": [
+        "P58"
+      ],
+      "operation": "facts",
+      "candidates": [],
+      "link_status": "confirmed",
+      "blocked": null
+    },
+    "status": "answered",
+    "answer": "Recorded in the current catalogue:\nInception | screenwriter | Christopher Nolan (Q25191)\n1 items; showing 1–1.",
+    "evidence": [
+      {
+        "statement_id": "q25188$37070ABE-3653-49B5-9128-E6474D8FFB14",
+        "movie_id": "Q25188",
+        "property": "P58",
+        "value": "Q25191",
+        "type": "entity",
+        "snaktype": "value",
+        "qualifiers": {},
+        "qualifier_text": "",
+        "references": [
+          {
+            "hash": "a0e42b3d0f5df95abafa187c1a3b92c2e7d15c18",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "13dace63c666ec701a207ddc3493fd8c22c5e0ff",
+                  "datavalue": {
+                    "value": "https://www.siamzone.com/movie/m/5815",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "e3ba4d21eb196d40df81a7466623db62b15e8770",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2016-04-11T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813"
+            ]
+          }
+        ],
+        "source_url": "https://www.wikidata.org/wiki/Q25188",
+        "revision": 2557100094,
+        "retrieved_at": "2026-10-29T07:47:15Z",
+        "rank": "normal",
+        "text": "Inception | screenwriter | Christopher Nolan (Q25191)"
+      }
+    ],
+    "items": [],
+    "missing": [],
+    "scope": "current frozen catalogue",
+    "total": 1,
+    "offset": 0,
+    "limit": 30,
+    "next_offset": null,
+    "elapsed_ms": 3.17,
+    "validated_plan": {
+      "schema": "kgqa-plan/1",
+      "language": "en",
+      "status": "ready",
+      "movie_ids": [
+        "Q25188"
+      ],
+      "properties": [
+        "P58"
+      ],
+      "operation": "facts",
+      "unhandled_constraints": [],
+      "clarification": null,
+      "limit": 30
+    }
+  },
+  "calls": [
+    {
+      "elapsed_ms": 899.82,
+      "input_chars": 653,
+      "max_tokens": 256,
+      "usage": {
+        "prompt_tokens": 173,
+        "completion_tokens": 11
+      }
+    },
+    {
+      "elapsed_ms": 4618.65,
+      "input_chars": 3069,
+      "max_tokens": 768,
+      "usage": {
+        "prompt_tokens": 756,
+        "completion_tokens": 53
+      }
+    },
+    {
+      "elapsed_ms": 5437.03,
+      "input_chars": 1598,
+      "max_tokens": 512,
+      "usage": {
+        "prompt_tokens": 641,
+        "completion_tokens": 68
+      }
+    }
+  ],
+  "model": {
+    "backend": "openai_compatible_http",
+    "base_url": "http://127.0.0.1:7870/v1",
+    "model": "Qwen2.5-3B-Instruct",
+    "frozen": true,
+    "revision": null,
+    "revision_verified": false,
+    "timeout_seconds": 120.0,
+    "temperature": 0,
+    "json_mode": true,
+    "max_response_bytes": 1048576,
+    "max_content_chars": 65536
+  },
+  "guard": {
+    "method": "controlled_evidence_text_v2",
+    "action": "tool_template",
+    "reason": "unverified_free_text_or_citations"
+  },
+  "linking": [
+    {
+      "mention": "Inception",
+      "movie_ids": [
+        "Q25188"
+      ],
+      "status": "exact"
+    }
+  ],
+  "elapsed_ms": 10994.17
+}

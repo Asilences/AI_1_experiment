@@ -1,0 +1,25 @@
+{
+  "checked_at": "2026-10-31T09:43:57.398584+00:00",
+  "method": "public URL download to separate cache, install into new root, full archive and per-file checks",
+  "cache": ".work/pr12-audit-20261031/public-download",
+  "restored_root": ".work/pr12-audit-20261031/restored",
+  "assets": [
+    {
+      "asset": "catalog_v2",
+      "public_download_url": "https://github.com/Asilences/AI_1_experiment/releases/download/submission-assets-20261031/catalog_v2-frozen-20261031.zip",
+      "archive_sha256": "5b355f0e5328d8187767419d6a529d27b28b1deb2279a8a4abcc17eac14c3963",
+      "file_count": 6,
+      "all_files_match": true
+    },
+    {
+      "asset": "freeform_v2",
+      "public_download_url": "https://github.com/Asilences/AI_1_experiment/releases/download/submission-assets-20261031/freeform_v2-frozen-20261031.zip",
+      "archive_sha256": "33a62f1e23ea202df95038dc35642e4960bd37dbae54ff47ff91cc356bda0ddd",
+      "file_count": 24,
+      "all_files_match": true
+    }
+  ],
+  "p0_real_query": "restored_p0_smoke.json",
+  "neural_real_cpu_generation": "restored_neural_smoke.json",
+  "scope": "Two operational witnesses, not a new benchmark."
+}

@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-31",
+  "total_pages": 35,
+  "reports": [
+    {
+      "path": "reports/个人实验报告.docx",
+      "sha256": "c46d1f5ed44a7a23c1b68b305f0e9862edd0ead96836eb9725b4413b4590401a",
+      "pages": 15,
+      "tables": 11,
+      "inline_shapes": 4,
+      "original_media_preserved": true,
+      "native_math_count": 0,
+      "renderer": "Word COM read-only copy exported to PDF; pypdfium2 page PNGs",
+      "all_pages_visually_inspected": true,
+      "clipping_overlap_missing_glyphs": false,
+      "pdf_sha256": "fe0eb423ac22e96d1b575731faa27a70e227dd7be241deaf906598b58aa4c5cf",
+      "page_images": {
+        "page-1.png": "257c49765a463078b8f15cbba3f47b8fc7d58c998559a6a17e16abf6c0b04d70",
+        "page-10.png": "46c30335e0802e63832db0067fc471dbf85973f067666638f08a8d7c0c812bea",
+        "page-11.png": "b24b76356f053ecfa45ae60cc755f2aaca301a298cf92d484ec9e4d567d599bd",
+        "page-12.png": "ef9da920def7c4d17cedd014bbd0205c2a7a20daf9e52300c08322c2f987889c",
+        "page-13.png": "a0a6c842949a1f73b63549d2c343f95bddbdf16d5b9b086959923aec569fb561",
+        "page-14.png": "3ce1a8efbb852c2e5d7370e007ed5b882bf2ba8011c4a44d460e2b6229f0acf2",
+        "page-15.png": "6a3e7dea35a15c556d6f6347b1f4bd2557ea27c9853be1eda37a5f6256335c84",
+        "page-2.png": "56a44251afbe8ce0601fbce41e078755ac038707cf26c072f804bfdd0bea8d75",
+        "page-3.png": "067a9d2c7663d9f9ef96866aa5ece9a0539f3891ede64de0e4a9679d6ba6b813",
+        "page-4.png": "d8f4dcc2e8ac762c7bf268fa43043cfad39407a91d4c42cb227b02ac51b249bd",
+        "page-5.png": "3e8cff5ec378e2a7d16a5935e85f234bd562158a7890fc2a873b10a11ff9c391",
+        "page-6.png": "714a691e6ccc2bce925f79efac67528316141f9b40c4bbe5e578d2eefeeed1fe",
+        "page-7.png": "3a0a9d2f382cbdf9691f7e5bcc60c3205532b3593303cf099611be90cc6a0c18",
+        "page-8.png": "26dc9905fb8795de85ea0b4d5220a896155670d14bb9633344abe9e87e62cdbb",
+        "page-9.png": "ca9b7044741d71afcd50f5dc026d6b610f51c69c455d1842b34684a68f27d963"
+      }
+    },
+    {
+      "path": "reports/夏俊杰_实验报告.docx",
+      "sha256": "f20fb9a844b6aecab6f15632906bd56c3a2185b886b5184436d6b45f2aa342ba",
+      "pages": 15,
+      "tables": 10,
+      "inline_shapes": 8,
+      "original_media_preserved": true,
+      "native_math_count": 4,
+      "renderer": "Word COM read-only copy exported to PDF; pypdfium2 page PNGs",
+      "all_pages_visually_inspected": true,
+      "clipping_overlap_missing_glyphs": false,
+      "pdf_sha256": "8f78b3ee49f96ab5d59b74278bf2150b88e959ba7df71b5e06185ddbdf8380f1",
+      "page_images": {
+        "page-1.png": "8966b209c8a74f0b02ee65953439e1d5fd89b4cfb95bf116aaf13a453da25569",
+        "page-10.png": "b8bcdbf6056101a287e9f6c0b994f8968d2debc81a097cd7aef521df58d1de4e",
+        "page-11.png": "bcfb58d405190a07fba7099ae6fbae725d970a001f306ed9b28d1520bb39a2e1",
+        "page-12.png": "257c05f3b88ffbbdec16dea7b8738316763a3de4032998939a519cf0781df1e9",
+        "page-13.png": "5a7090c9844b0009f8275d8a06bbff96437362440c14bb50bbd7841d1cdf0189",
+        "page-14.png": "72b9ff61109ec1fa3f533892f13788ce660c42d302bbc267bdf1077f52a12203",
+        "page-15.png": "cbfcf39a82e78b636bf0d098bbd3e2646818e4ff1e4524443bebf5cd188756c4",
+        "page-2.png": "c628832b684f263d50372e9fc1c95d27cdd7eb0d8938f9689d4830915c03263b",
+        "page-3.png": "00a53a8e345074553af9a80b374916287eec6997bace994dabf57195afa3a159",
+        "page-4.png": "efe05c9161fe425cd98138ba5896844581abc73d222dff374334718f005e8c70",
+        "page-5.png": "3e86c78a682e04b55d34ba528a7b8ab2ad01230193737f643a8aaa1983b271fc",
+        "page-6.png": "3909a10ec698122763286880d06028088732d2c4c17c316ca3a2c94e81898cde",
+        "page-7.png": "0c819e4f052635eaf2331e23baeecee4d2f336e1de9120d143f0c5fcd21cf7e6",
+        "page-8.png": "7be1a55b36dafed8fed3b6a86da9d05b4fd6923ff67fd2e679fd1cbde144f956",
+        "page-9.png": "0455f6dc18c222be909f69de8ddadec84eb6c696bda1cf169ba6c75687a62d5e"
+      }
+    },
+    {
+      "path": "reports/双人分工与复现实验计划.docx",
+      "sha256": "2ed96804680e2dbabb4d035208eb836b0a3fe1ea1cbc00da4269b5abee93be27",
+      "pages": 5,
+      "tables": 5,
+      "inline_shapes": 0,
+      "original_media_preserved": true,
+      "native_math_count": 0,
+      "renderer": "Word COM read-only copy exported to PDF; pypdfium2 page PNGs",
+      "all_pages_visually_inspected": true,
+      "clipping_overlap_missing_glyphs": false,
+      "pdf_sha256": "5bb8d4ca02b5a080389493238007904224c96b68041d5aced031c495566134e9",
+      "page_images": {
+        "page-1.png": "451003a6d232a7e9604d5904b5f7c7a8b20f94cbe0be85022dc8fdddc07a3c24",
+        "page-2.png": "4dcab6f03eb915b83e9d390a8a977f72d5a30ac9bf2995e46407a80a37b6e445",
+        "page-3.png": "ce2b2a2c4e66552afb45497208b34df1d1753882a762c2ea52cb726e1a90f597",
+        "page-4.png": "590698d53b0ed1e83b56866bc53aebbff1d5660ef0e6a6e8410817e580d1d106",
+        "page-5.png": "47aaab7dd2fbd5837ae8b0ad885194da72bbd6e8a959f10ca4b74fd91d07d9c4"
+      }
+    }
+  ],
+  "unmet_course_materials": [
+    "complete real human ratings",
+    "real OS terminal environment screenshots"
+  ],
+  "scope": "Layout and source consistency verification, not completion of missing human evidence."
+}

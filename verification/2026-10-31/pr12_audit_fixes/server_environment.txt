@@ -1,0 +1,17 @@
+2026-10-31 17:27:02 +08:00
+Local project: H:\AI1experiment
+Remote project: /home/junjiex/AI1experiment
+Python executable: /home/junjiex/AI1experiment/.venv/bin/python
+Python: 3.11.18
+Platform: Linux-4.15.0-213-generic-x86_64-with-glibc2.27
+torch: 2.6.0+cu118
+transformers: 4.48.3
+numpy: 1.26.4
+scikit-learn: 1.6.1
+PyTorch CUDA build: 11.8
+index, name, memory.total [MiB], driver_version
+0, Tesla V100-SXM2-32GB, 32768 MiB, 530.30.02
+1, Tesla V100-SXM2-32GB, 32768 MiB, 530.30.02
+2, Tesla V100-SXM2-32GB, 32768 MiB, 530.30.02
+3, Tesla V100-SXM2-32GB, 32768 MiB, 530.30.02
+

@@ -2,7 +2,7 @@ import pytest
 
 from kgqa.acceptance import build_fixture
 from kgqa.common import read_json, read_jsonl, sha256, write_jsonl
-from kgqa.freeform_data import RECIPES, build
+from kgqa.freeform_data import RECIPES, audit_template_overlap, build
 
 
 @pytest.fixture
@@ -87,3 +87,19 @@ def test_export_cannot_reuse_source_directory_or_repeat_augmentation(source, tmp
     build(source, first)
     with pytest.raises(ValueError, match='already augmented'):
         build(first, tmp_path / 'second')
+
+
+def test_overlap_audit_includes_original_train_even_when_family_names_are_distinct(source, tmp_path):
+    rows = read_jsonl(source / 'qa.jsonl')
+    train = next(r for r in rows if r['split'] == 'train' and r['relation_id'] == 'P495')
+    entities = read_json(source / 'entities.json')
+    movie = train['movie_id']
+    train['question'] = f"What is the country of origin of {entities[movie]['label']}?"
+    write_jsonl(source / 'qa.jsonl', rows)
+    output = tmp_path / 'v2'
+    build(source, output, 'v2')
+    audit = audit_template_overlap(read_jsonl(output / 'qa.jsonl'), entities)
+    assert audit['splits']['test']['seen_template_count'] > 0
+    assert 'what is the country of origin of {title}' in audit['splits']['test']['seen_templates']
+    third = build(source, tmp_path / 'v3', 'v3')
+    assert all(s['seen_template_count'] == 0 for s in third['template_overlap_audit']['splits'].values())

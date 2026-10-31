@@ -1,0 +1,38 @@
+{
+  "scope": "one real CPU generation; not new benchmark or model selection",
+  "fresh_asset_root": "H:\\AI1experiment\\.work\\pr12-audit-20261031\\restored",
+  "device": "cpu",
+  "inputs": [
+    {
+      "question_id": "freeform_Q1020603_P136_genre_membership",
+      "movie_id": "Q1020603",
+      "relation_id": "P136",
+      "answer_ids": [
+        "Q130232",
+        "Q157443"
+      ],
+      "question": "In terms of genre, where does Stage Door belong?",
+      "reference_answers": [
+        "Stage Door belongs to the following genres: drama film and comedy film.",
+        "The genres of Stage Door are drama film and comedy film."
+      ],
+      "template_family": "genre_membership",
+      "split": "test",
+      "is_answerable": true,
+      "question_source": "synthetic_paraphrase",
+      "source_question_id": "Q1020603_P136_0"
+    }
+  ],
+  "predictions": [
+    {
+      "question_id": "freeform_Q1020603_P136_genre_membership",
+      "question": "In terms of genre, where does Stage Door belong?",
+      "answer": "Stage Door belongs to the following genres: drama film and comedy film.",
+      "answer_ids": [
+        "Q130232",
+        "Q157443"
+      ],
+      "latency_ms": 444.91749998996966
+    }
+  ]
+}
