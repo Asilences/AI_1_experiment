@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-31",
+  "reports": [
+    {
+      "path": "reports/个人实验报告.docx",
+      "current_sha256": "c46d1f5ed44a7a23c1b68b305f0e9862edd0ead96836eb9725b4413b4590401a",
+      "regenerated_from_old_inputs_sha256": "a9f74e3094c0feec2ee293d8d723b08af467191d5d7a3f8ab71a1628a7e4495b",
+      "shared_corrections_present": true,
+      "media_matches": true,
+      "native_math_count": 0
+    },
+    {
+      "path": "reports/夏俊杰_实验报告.docx",
+      "current_sha256": "f20fb9a844b6aecab6f15632906bd56c3a2185b886b5184436d6b45f2aa342ba",
+      "regenerated_from_old_inputs_sha256": "a97cfdca451cbf803516d32e31a4f320e94db8e495ca7630a34fb3fe1894b20a",
+      "shared_corrections_present": true,
+      "media_matches": true,
+      "native_math_count": 4
+    },
+    {
+      "path": "reports/双人分工与复现实验计划.docx",
+      "current_sha256": "2ed96804680e2dbabb4d035208eb836b0a3fe1ea1cbc00da4269b5abee93be27",
+      "regenerated_from_old_inputs_sha256": "ca86725490753e5a36ce4f4f701fcfe0e4be653520ad9fec0aa172d1c13bb75f",
+      "shared_corrections_present": true,
+      "media_matches": true,
+      "native_math_count": 0
+    }
+  ],
+  "local_markdown_links_checked": 194,
+  "current_docx_matches_visual_qa_hashes": true,
+  "generator_verification": "unify_course_reports.py executed against copies of the previous original inputs; current final DOCX were not rewritten",
+  "rating_files_present": 0,
+  "unmet_course_materials": [
+    "complete real human ratings",
+    "real OS terminal environment screenshots"
+  ]
+}

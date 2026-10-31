@@ -1,0 +1,20 @@
+[
+  {
+    "file": "reports/个人实验报告.docx",
+    "sha256": "c46d1f5ed44a7a23c1b68b305f0e9862edd0ead96836eb9725b4413b4590401a",
+    "media_preserved": true,
+    "native_math_count": 0
+  },
+  {
+    "file": "reports/夏俊杰_实验报告.docx",
+    "sha256": "f20fb9a844b6aecab6f15632906bd56c3a2185b886b5184436d6b45f2aa342ba",
+    "media_preserved": true,
+    "native_math_count": 4
+  },
+  {
+    "file": "reports/双人分工与复现实验计划.docx",
+    "sha256": "2ed96804680e2dbabb4d035208eb836b0a3fe1ea1cbc00da4269b5abee93be27",
+    "media_preserved": true,
+    "native_math_count": 0
+  }
+]
