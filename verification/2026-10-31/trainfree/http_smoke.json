@@ -1,0 +1,566 @@
+{
+  "created_at": "2026-10-31T02:36:57Z",
+  "url": "http://127.0.0.1:7863",
+  "status": {
+    "movie_count": 5000,
+    "fact_count": 35485,
+    "dataset_name": "扩展电影库 · 5000 部",
+    "relation_count": 4,
+    "custom_data": false,
+    "examples": [
+      {
+        "relation": "P57",
+        "question": "Who directed Shutter Island?"
+      },
+      {
+        "relation": "P136",
+        "question": "What genre is Boss Level?"
+      },
+      {
+        "relation": "P495",
+        "question": "Which country did Dogma originate in?"
+      },
+      {
+        "relation": "P364",
+        "question": "What is the original language of 10 Things I Hate About You?"
+      }
+    ],
+    "examples_zh": [
+      {
+        "relation": "P57",
+        "question": "《盗梦空间》的导演是谁？"
+      },
+      {
+        "relation": "P136",
+        "question": "《盗梦空间》是什么类型的电影？"
+      },
+      {
+        "relation": "P495",
+        "question": "《盗梦空间》是哪个国家制作的？"
+      },
+      {
+        "relation": "P364",
+        "question": "《盗梦空间》的原始语言是什么？"
+      }
+    ],
+    "question_languages": [
+      "zh",
+      "en"
+    ],
+    "chinese_coverage": {
+      "movies": 5000,
+      "with_chinese_title": 4035
+    },
+    "a0": {
+      "available": true,
+      "name": "A0 管道问答",
+      "detail": "本地模型就绪。"
+    },
+    "neural": {
+      "available": true,
+      "name": "B0 神经生成",
+      "run_id": "B0",
+      "detail": "首次使用时加载本地模型。"
+    },
+    "explorer": {
+      "available": false,
+      "method": "deterministic_tools_v2",
+      "movie_count": 0,
+      "statement_count": 0,
+      "unresolved_entity_label_count": 0,
+      "detail": "独立扩展事实与只读工具，含来源、限定条件和候选确认。"
+    },
+    "freeform": {
+      "available": true,
+      "method": "bounded_rules_v2",
+      "detail": "四类单跳自然问法；歧义和未支持的条件需澄清。"
+    },
+    "guarded": {
+      "available": true,
+      "method": "evidence_guard_v1",
+      "detail": "问法规范化、关系证据核验、显式工具回退；保留原始生成。"
+    }
+  },
+  "requests": [
+    {
+      "question": "《盗梦空间》的导演是谁？",
+      "mode": "guarded",
+      "interpretation": {
+        "question": "《盗梦空间》的导演是谁？",
+        "method": "bounded_rules_v2",
+        "status": "ready",
+        "movie_id": "Q25188",
+        "relation_id": "P57",
+        "link_status": "exact",
+        "link_score": 1.0,
+        "canonical_question": "Who directed Inception?",
+        "message": "已将自然问法转换为标准问题；答案仍由当前知识库与所选系统给出。",
+        "suggestions": [],
+        "reason_code": "",
+        "candidates": []
+      },
+      "results": [
+        {
+          "system": "a0",
+          "name": "A0 管道问答 + 证据核验",
+          "ok": true,
+          "answer": "《盗梦空间》的导演是克里斯托弗·诺兰。",
+          "refused": false,
+          "movie": {
+            "id": "Q25188",
+            "label": "盗梦空间"
+          },
+          "link_status": "exact",
+          "link_score": 1.0,
+          "relation": "P57",
+          "confidence": null,
+          "evidence": [
+            "Inception | director | Christopher Nolan"
+          ],
+          "cold_start": false,
+          "generation_ms": 1.9467999954940751,
+          "language": "zh",
+          "model_question": "Who directed Inception?",
+          "original_answer": "Inception was directed by Christopher Nolan.",
+          "answer_ids": [
+            "Q25191"
+          ],
+          "guard": {
+            "method": "evidence_guard_v1",
+            "action": "accepted",
+            "reason": "verified",
+            "expected_ids": [
+              "Q25191"
+            ],
+            "observed_ids": [
+              "Q25191"
+            ],
+            "visible_ids": [
+              "Q25191"
+            ]
+          },
+          "fallback_used": false,
+          "model_evidence": [
+            "Inception (Q25188) --P57--> Christopher Nolan (Q25191)"
+          ],
+          "raw_answer": "Inception was directed by Christopher Nolan.",
+          "replacements": [],
+          "recovery_ms": 0,
+          "elapsed_ms": 8.0
+        },
+        {
+          "system": "best",
+          "name": "B0 神经生成 + 证据核验",
+          "ok": true,
+          "answer": "《盗梦空间》的导演是克里斯托弗·诺兰。",
+          "refused": false,
+          "movie": {
+            "id": "Q25188",
+            "label": "盗梦空间"
+          },
+          "link_status": "exact",
+          "link_score": 1.0,
+          "relation": "P57",
+          "confidence": null,
+          "evidence": [
+            "Inception | director | Christopher Nolan"
+          ],
+          "cold_start": false,
+          "generation_ms": 118.55650000507012,
+          "language": "zh",
+          "model_question": "Who directed Inception?",
+          "original_answer": "Inception was directed by Christopher Nolan.",
+          "answer_ids": [
+            "Q25191"
+          ],
+          "guard": {
+            "method": "evidence_guard_v1",
+            "action": "accepted",
+            "reason": "verified",
+            "expected_ids": [
+              "Q25191"
+            ],
+            "observed_ids": [
+              "Q25191"
+            ],
+            "visible_ids": [
+              "Q25191"
+            ]
+          },
+          "fallback_used": false,
+          "model_evidence": [
+            "Inception | director | Christopher Nolan"
+          ],
+          "raw_answer": "Inception was directed by Christopher Nolan.",
+          "replacements": [],
+          "recovery_ms": 0,
+          "elapsed_ms": 296.57
+        }
+      ],
+      "elapsed_ms": 312.27
+    },
+    {
+      "question": "《Shutter Island》属于什么类型的电影？",
+      "mode": "guarded",
+      "interpretation": {
+        "question": "《Shutter Island》属于什么类型的电影？",
+        "method": "bounded_rules_v2",
+        "status": "ready",
+        "movie_id": "Q210364",
+        "relation_id": "P136",
+        "link_status": "exact",
+        "link_score": 1.0,
+        "canonical_question": "What genre is Shutter Island?",
+        "message": "已将自然问法转换为标准问题；答案仍由当前知识库与所选系统给出。",
+        "suggestions": [],
+        "reason_code": "",
+        "candidates": []
+      },
+      "results": [
+        {
+          "system": "a0",
+          "name": "A0 管道问答 + 证据核验",
+          "ok": true,
+          "answer": "《禁闭岛》的类型是心理恐怖電影、psychological thriller film、suspense film、crime drama film、神秘片、剧情片、动作片、crime thriller film、恐怖电影、新黑色电影、惊悚电影、冒险电影、心理惊悚片、心理剧电影、犯罪片。",
+          "refused": false,
+          "movie": {
+            "id": "Q210364",
+            "label": "禁闭岛"
+          },
+          "link_status": "exact",
+          "link_score": 1.0,
+          "relation": "P136",
+          "confidence": null,
+          "evidence": [
+            "Shutter Island | genre | drama film",
+            "Shutter Island | genre | action film",
+            "Shutter Island | genre | horror film",
+            "Shutter Island | genre | adventure film",
+            "Shutter Island | genre | psychological thriller",
+            "Shutter Island | genre | crime film",
+            "Shutter Island | genre | mystery film",
+            "Shutter Island | genre | neo-noir",
+            "Shutter Island | genre | thriller film",
+            "Shutter Island | genre | suspense film",
+            "Shutter Island | genre | crime thriller film",
+            "Shutter Island | genre | psychological drama film",
+            "Shutter Island | genre | psychological horror film",
+            "Shutter Island | genre | psychological thriller film",
+            "Shutter Island | genre | crime drama film"
+          ],
+          "cold_start": false,
+          "generation_ms": 1.336999994236976,
+          "language": "zh",
+          "model_question": "What genre is Shutter Island?",
+          "original_answer": "Shutter Island belongs to the following genres: drama film, action film, horror film, adventure film, psychological thriller, crime film, mystery film, neo-noir, thriller film, suspense film, crime thriller film, psychological drama film, psychological horror film, psychological thriller film and crime drama film.",
+          "answer_ids": [
+            "Q109629396",
+            "Q109733304",
+            "Q11304653",
+            "Q113485322",
+            "Q1200678",
+            "Q130232",
+            "Q188473",
+            "Q19367312",
+            "Q200092",
+            "Q2421031",
+            "Q2484376",
+            "Q319221",
+            "Q590103",
+            "Q63214877",
+            "Q959790"
+          ],
+          "guard": {
+            "method": "evidence_guard_v1",
+            "action": "accepted",
+            "reason": "verified",
+            "expected_ids": [
+              "Q130232",
+              "Q188473",
+              "Q200092",
+              "Q319221",
+              "Q590103",
+              "Q959790",
+              "Q1200678",
+              "Q2421031",
+              "Q2484376",
+              "Q11304653",
+              "Q19367312",
+              "Q63214877",
+              "Q109629396",
+              "Q109733304",
+              "Q113485322"
+            ],
+            "observed_ids": [
+              "Q109629396",
+              "Q109733304",
+              "Q11304653",
+              "Q113485322",
+              "Q1200678",
+              "Q130232",
+              "Q188473",
+              "Q19367312",
+              "Q200092",
+              "Q2421031",
+              "Q2484376",
+              "Q319221",
+              "Q590103",
+              "Q63214877",
+              "Q959790"
+            ],
+            "visible_ids": [
+              "Q130232",
+              "Q188473",
+              "Q200092",
+              "Q319221",
+              "Q590103",
+              "Q959790",
+              "Q1200678",
+              "Q2421031",
+              "Q2484376",
+              "Q11304653",
+              "Q19367312",
+              "Q63214877",
+              "Q109629396",
+              "Q109733304",
+              "Q113485322"
+            ]
+          },
+          "fallback_used": false,
+          "model_evidence": [
+            "Shutter Island (Q210364) --P136--> drama film (Q130232)",
+            "Shutter Island (Q210364) --P136--> action film (Q188473)",
+            "Shutter Island (Q210364) --P136--> horror film (Q200092)",
+            "Shutter Island (Q210364) --P136--> adventure film (Q319221)",
+            "Shutter Island (Q210364) --P136--> psychological thriller (Q590103)",
+            "Shutter Island (Q210364) --P136--> crime film (Q959790)",
+            "Shutter Island (Q210364) --P136--> mystery film (Q1200678)",
+            "Shutter Island (Q210364) --P136--> neo-noir (Q2421031)",
+            "Shutter Island (Q210364) --P136--> thriller film (Q2484376)",
+            "Shutter Island (Q210364) --P136--> suspense film (Q11304653)",
+            "Shutter Island (Q210364) --P136--> crime thriller film (Q19367312)",
+            "Shutter Island (Q210364) --P136--> psychological drama film (Q63214877)",
+            "Shutter Island (Q210364) --P136--> psychological horror film (Q109629396)",
+            "Shutter Island (Q210364) --P136--> psychological thriller film (Q109733304)",
+            "Shutter Island (Q210364) --P136--> crime drama film (Q113485322)"
+          ],
+          "raw_answer": "Shutter Island belongs to the following genres: drama film, action film, horror film, adventure film, psychological thriller, crime film, mystery film, neo-noir, thriller film, suspense film, crime thriller film, psychological drama film, psychological horror film, psychological thriller film and crime drama film.",
+          "replacements": [],
+          "recovery_ms": 0,
+          "elapsed_ms": 8.17
+        },
+        {
+          "system": "best",
+          "name": "B0 神经生成 + 工具回退",
+          "ok": true,
+          "answer": "《禁闭岛》的类型是剧情片、动作片、恐怖电影、冒险电影、心理惊悚片、犯罪片、神秘片、新黑色电影、惊悚电影、suspense film、crime thriller film、心理剧电影、心理恐怖電影、psychological thriller film、crime drama film。",
+          "refused": false,
+          "movie": {
+            "id": "Q210364",
+            "label": "禁闭岛"
+          },
+          "link_status": "exact",
+          "link_score": 1.0,
+          "relation": "P136",
+          "confidence": null,
+          "evidence": [
+            "Shutter Island | genre | drama film",
+            "Shutter Island | genre | action film",
+            "Shutter Island | genre | horror film",
+            "Shutter Island | genre | adventure film",
+            "Shutter Island | genre | psychological thriller",
+            "Shutter Island | genre | crime film",
+            "Shutter Island | genre | mystery film",
+            "Shutter Island | genre | neo-noir",
+            "Shutter Island | genre | thriller film",
+            "Shutter Island | genre | suspense film",
+            "Shutter Island | genre | crime thriller film",
+            "Shutter Island | genre | psychological drama film",
+            "Shutter Island | genre | psychological horror film",
+            "Shutter Island | genre | psychological thriller film",
+            "Shutter Island | genre | crime drama film"
+          ],
+          "cold_start": false,
+          "generation_ms": 439.0916999982437,
+          "language": "zh",
+          "model_question": "What genre is Shutter Island?",
+          "original_answer": "Shutter Island belongs to the following genres: drama film, action film, horror film, adventure film, psychological thriller, crime film, mystery film, neo-noir, thriller film, suspense film, crime thriller film, psychological drama film, psychological horror film, psychological thriller film and crime drama film.",
+          "answer_ids": [
+            "Q130232",
+            "Q188473",
+            "Q200092",
+            "Q319221",
+            "Q590103",
+            "Q959790",
+            "Q1200678",
+            "Q2421031",
+            "Q2484376",
+            "Q11304653",
+            "Q19367312",
+            "Q63214877",
+            "Q109629396",
+            "Q109733304",
+            "Q113485322"
+          ],
+          "guard": {
+            "method": "evidence_guard_v1",
+            "action": "tool_fallback",
+            "reason": "missing_or_unrecognized_entities",
+            "expected_ids": [
+              "Q130232",
+              "Q188473",
+              "Q200092",
+              "Q319221",
+              "Q590103",
+              "Q959790",
+              "Q1200678",
+              "Q2421031",
+              "Q2484376",
+              "Q11304653",
+              "Q19367312",
+              "Q63214877",
+              "Q109629396",
+              "Q109733304",
+              "Q113485322"
+            ],
+            "observed_ids": [
+              "Q109733304",
+              "Q11304653",
+              "Q113485322",
+              "Q1200678",
+              "Q130232",
+              "Q188473",
+              "Q19367312",
+              "Q959790"
+            ],
+            "visible_ids": [
+              "Q130232",
+              "Q188473",
+              "Q200092",
+              "Q319221",
+              "Q590103",
+              "Q959790",
+              "Q1200678",
+              "Q2421031",
+              "Q2484376",
+              "Q11304653",
+              "Q19367312",
+              "Q63214877",
+              "Q109629396",
+              "Q109733304",
+              "Q113485322"
+            ]
+          },
+          "fallback_used": true,
+          "model_evidence": [
+            "Shutter Island | genre | drama film",
+            "Shutter Island | genre | action film",
+            "Shutter Island | genre | horror film",
+            "Shutter Island | genre | adventure film",
+            "Shutter Island | genre | psychological thriller",
+            "Shutter Island | genre | crime film",
+            "Shutter Island | genre | mystery film",
+            "Shutter Island | genre | neo-noir",
+            "Shutter Island | genre | thriller film",
+            "Shutter Island | genre | suspense film",
+            "Shutter Island | genre | crime thriller film",
+            "Shutter Island | genre | psychological drama film",
+            "Shutter Island | genre | psychological horror film",
+            "Shutter Island | genre | psychological thriller film",
+            "Shutter Island | genre | crime drama film"
+          ],
+          "raw_answer": "Shutter Island belongs to the following genres: drama film, action film, crime film, mystery film, suspense film, crime thriller film, psychological thriller film and crime drama film.",
+          "replacements": [],
+          "recovery_ms": 0,
+          "elapsed_ms": 619.11
+        }
+      ],
+      "elapsed_ms": 634.19
+    },
+    {
+      "question": "What was the budget of Shutter Island?",
+      "mode": "guarded",
+      "interpretation": {
+        "question": "What was the budget of Shutter Island?",
+        "method": "bounded_rules_v2",
+        "status": "unanswerable",
+        "movie_id": "Q210364",
+        "relation_id": null,
+        "link_status": "exact",
+        "link_score": 1.0,
+        "canonical_question": null,
+        "message": "四关系模式仅支持导演、类型、制作国家和原始语言；这个问题需要其他事实，可尝试扩展工具模式。",
+        "suggestions": [],
+        "reason_code": "unsupported_property",
+        "candidates": []
+      },
+      "results": [
+        {
+          "system": "a0",
+          "name": "A0 管道问答 + 证据核验",
+          "ok": true,
+          "answer": "The available knowledge graph does not contain enough information to answer this question.",
+          "refused": true,
+          "movie": {
+            "id": "Q210364",
+            "label": "Shutter Island"
+          },
+          "link_status": "exact",
+          "link_score": 1.0,
+          "relation": null,
+          "confidence": null,
+          "evidence": [],
+          "cold_start": false,
+          "generation_ms": 11.347299994667992,
+          "model_question": null,
+          "answer_ids": [],
+          "guard": {
+            "method": "evidence_guard_v1",
+            "action": "blocked",
+            "reason": "unsupported_property",
+            "expected_ids": [],
+            "observed_ids": []
+          },
+          "fallback_used": false,
+          "raw_answer": null,
+          "replacements": [],
+          "recovery_ms": 0,
+          "elapsed_ms": 11.36
+        },
+        {
+          "system": "best",
+          "name": "B0 神经生成 + 证据核验",
+          "ok": true,
+          "answer": "The available knowledge graph does not contain enough information to answer this question.",
+          "refused": true,
+          "movie": {
+            "id": "Q210364",
+            "label": "Shutter Island"
+          },
+          "link_status": "exact",
+          "link_score": 1.0,
+          "relation": null,
+          "confidence": null,
+          "evidence": [],
+          "cold_start": false,
+          "generation_ms": 12.38250000460539,
+          "model_question": null,
+          "answer_ids": [],
+          "guard": {
+            "method": "evidence_guard_v1",
+            "action": "blocked",
+            "reason": "unsupported_property",
+            "expected_ids": [],
+            "observed_ids": []
+          },
+          "fallback_used": false,
+          "raw_answer": null,
+          "replacements": [],
+          "recovery_ms": 0,
+          "elapsed_ms": 12.4
+        }
+      ],
+      "elapsed_ms": 30.39
+    }
+  ]
+}

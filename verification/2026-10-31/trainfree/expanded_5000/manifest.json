@@ -1,0 +1,44 @@
+{
+  "created_at": "2026-10-31T02:09:28Z",
+  "evaluation_type": "development_acceptance",
+  "scope": "Program-authored bilingual cases; four-property fixed-KB task, not human evaluation or held-out generalization.",
+  "training_performed": false,
+  "test_used_for_selection": false,
+  "model_weights_updated": false,
+  "movie_count": 5000,
+  "relations": [
+    "P57",
+    "P136",
+    "P495",
+    "P364"
+  ],
+  "systems": [
+    "a0"
+  ],
+  "neural_run": null,
+  "initialization_seconds": 1.0516582000127528,
+  "supported_question_movie_split_counts": {
+    "test": 8,
+    "train": 16
+  },
+  "latency_note": "Sequential wall time per query; model initialization excluded; cold first-query costs retained; no warmup.",
+  "bindings": {
+    "data\\processed\\movies_5000_20261029\\entities.json": "7c935d8fa1eecd9870df16e49d93460bdd75f90255661e4e4e397af9f667f3e8",
+    "data\\processed\\movies_5000_20261029\\splits.json": "dd24634f590e3e5dd38dc2e5ca7fd25b432ec3b562f74dc99a65b22d586113b7",
+    "data\\processed\\movies_5000_20261029\\manifest.json": "5f74de78743157698334c0682bcd2b0e990e54a71a3c920fa970b73e9e544d06",
+    "benchmarks\\trainfree_challenge_v1.jsonl": "a1a6251e447ec4a45b6ebd637d034a7155c95258a14a0e195206dc8e8aab5072",
+    "models\\pipeline_5000_20261029\\model.pkl": "a14f3ee60168e3f0a2eefcda403c58400e861c1708dceebe63c396e1e8faa8dd"
+  },
+  "source_sha256": {
+    "kgqa/trainfree_experiment.py": "710dede5841f4ede810337b8852bf1a41589555a9467c39f24ae08e0d6f38e6d",
+    "kgqa/guarded.py": "45ba33b8b35a49cfd9faf05cadfd7130b9e206cd0b0581e5281ef429d851688c",
+    "kgqa/freeform.py": "4b055b960f839fce5b04c2fec52e6d3b4cf3662c220c6335fe5e3bbd8d8aff95",
+    "kgqa/demo.py": "fed1eab23cf7dfe71dde15eaf3a6bb3cfcff05e2b484cd8cd4c30f3268a699c7",
+    "kgqa/metrics.py": "5f3f71568e3fb204a30ae845362d9814a60558c65687822b15b4692277afaf74",
+    "kgqa/chinese.py": "4e8312a0f4ff8d6fdb55bb1c109506e272d04b3adb7c286ea0522819c40db33f",
+    "kgqa/linker.py": "0a7e2bf48fbb7e523b4ba4f22a9ec293fe2be458e87a621a7601c61702fdb180"
+  },
+  "scoring_note": "All rates use declared case counts; raw systems cannot emit clarification state. Tool fallback is a hybrid system.",
+  "refusal_detection_note": "Final explicit refused flag or exact canonical refusal text; raw paraphrased refusals/clarifications require manual review. Unsafe-answer rate is an automatic non-refusal proxy, not human factual scoring.",
+  "relation_metric_note": "Movie+relation+entity exact requires an explicitly emitted relation; raw neural responses may not report one. Use movie+entity exact for that comparison."
+}
