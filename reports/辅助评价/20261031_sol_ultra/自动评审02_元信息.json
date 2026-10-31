@@ -1,0 +1,63 @@
+{
+  "reviewer_id": "reviewer_02",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "ultra",
+  "evaluation_type": "AI_auxiliary_review",
+  "not_human_evaluation": true,
+  "human_identity_used": false,
+  "completed_at_utc": "2026-10-31T12:36:37.665413+00:00",
+  "source_commit": "077a18ce165f10cd998dcd1c82f403796aef3559",
+  "inputs_read": [
+    "inputs/rubric.txt",
+    "inputs/source_identity.json",
+    "inputs/cases.jsonl"
+  ],
+  "input_sha256": {
+    "inputs/rubric.txt": "cc5595e73da8e1b8eb328df9e20ce0b50b0b67e74aeb7e6c4d4716b5a1199eca",
+    "inputs/source_identity.json": "698aeedb01ac8e9a03d8e1cac7672e4d6dcf6afd6102aa3c820fceae661de20c",
+    "inputs/cases.jsonl": "da09e1955919fdb0afe1867481549dfd219357445141884aa999eac8b599159a"
+  },
+  "blind_review": {
+    "peer_ratings_seen": false,
+    "system_mapping_seen": false,
+    "project_prior_scores_seen": false,
+    "github_scores_seen": false,
+    "external_movie_fact_lookup_used": false
+  },
+  "judgment_method": "按20题一批实际阅读100道题、两种参考表达及两条匿名答案；显式记录每条四项整数与中文理由。脚本仅序列化和核验覆盖，不依赖字符串相等、相似度或规则循环生成评分。",
+  "coverage": {
+    "questions_read": 100,
+    "answers_judged": 200,
+    "unique_question_answer_pairs": 200,
+    "missing_pairs": 0,
+    "duplicate_pairs": 0,
+    "out_of_range_scores": 0,
+    "blank_notes": 0,
+    "output_round_trip_verified": true
+  },
+  "score_distributions": {
+    "accuracy_0_2": {
+      "2": 200
+    },
+    "completeness_0_2": {
+      "2": 200
+    },
+    "fluency_1_5": {
+      "4": 109,
+      "5": 91
+    },
+    "unsupported_claim_0_1": {
+      "0": 200
+    }
+  },
+  "specific_observations": [
+    "按给定参考，200条均覆盖所问全部事实，未发现新增的无依据事实。",
+    "Milo Forman相较参考Miloš Forman漏末字母；判断导演仍可辨认，记为姓名拼写的轻微流畅度问题。",
+    "部分国家名称前漏the；单一语言或类型使用复数框架，记为轻微自然度问题。"
+  ],
+  "limits": [
+    "这是AI辅助评审，不是真人评分，也不证明原课程人工评价已经完成。",
+    "准确性与无依据断言仅相对提供的题目和参考评价；没有外部核实电影事实或参考本身的真实性与完整性。",
+    "对可辨姓名拼写及单复数自然度的判断有主观性，未与另一评审协商。"
+  ]
+}

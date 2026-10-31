@@ -1,0 +1,150 @@
+{
+  "date": "2026-10-31",
+  "source_commit": "077a18ce165f10cd998dcd1c82f403796aef3559",
+  "reports": [
+    {
+      "file": "周新永_实验报告.docx",
+      "sha256": "6b8d0d0b9758a91f3d09afa2981783d9831d7da765e50da30bde9081bd1faead",
+      "source_sha256": "03c31813fca431d9d6979b288f9a1a2ad9472c2b7a03dfe844574251d35a6896",
+      "bytes": 982754,
+      "tables": 13,
+      "images": 5,
+      "native_equations": 0,
+      "all_original_images_preserved": true,
+      "all_original_equations_preserved": true,
+      "all_original_table_values_preserved": true,
+      "evaluation_type": "AI_auxiliary_review",
+      "real_human_ratings_completed": false,
+      "path": "reports/周新永_实验报告.docx",
+      "pages": 17,
+      "all_pages_visually_checked": true,
+      "clipping_or_overlap": false
+    },
+    {
+      "file": "夏俊杰_实验报告.docx",
+      "sha256": "a2733409fad41c0616dab3f63446b07354266444f3960f9fed87a1d22483c2a1",
+      "source_sha256": "c6c6f26df829856f6f4fd97a9085e78251d9514fa9dc97da7c199e492969c460",
+      "bytes": 625005,
+      "tables": 13,
+      "images": 10,
+      "native_equations": 4,
+      "all_original_images_preserved": true,
+      "all_original_equations_preserved": true,
+      "all_original_table_values_preserved": true,
+      "evaluation_type": "AI_auxiliary_review",
+      "real_human_ratings_completed": false,
+      "path": "reports/夏俊杰_实验报告.docx",
+      "pages": 18,
+      "all_pages_visually_checked": true,
+      "clipping_or_overlap": false
+    }
+  ],
+  "total_pages": 35,
+  "same_evaluation_method_tables_and_analysis": true,
+  "same_template_preserved": true,
+  "table_numbers_contiguous": "1–13",
+  "renderer": "Microsoft Word read-only PDF export and bundled Poppler PNG rendering",
+  "all_original_images_equations_and_table_values_preserved": true,
+  "legacy_alias": {
+    "path": "reports/个人实验报告.docx",
+    "canonical": "reports/周新永_实验报告.docx",
+    "bytes_identical": true,
+    "sha256": "6b8d0d0b9758a91f3d09afa2981783d9831d7da765e50da30bde9081bd1faead"
+  },
+  "evaluation": {
+    "type": "AI_auxiliary_review",
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "ultra",
+    "independent_contexts": 2,
+    "questions": 100,
+    "answers": 200,
+    "judgments": 400,
+    "disagreement_answers": 1,
+    "all_four_exact_agreement": 0.995,
+    "raw_judgments_preserved": true,
+    "human_ratings_completed": false,
+    "human_score_templates_modified": false
+  },
+  "score_files": [
+    {
+      "path": "reports/辅助评价/20261031_sol_ultra/双独立自动辅助评价.xlsx",
+      "sha256": "edeb1d6df932b33344fb44fcee9a136764d3d97c5a828a00c8396befde0d2c95",
+      "bytes": 66875
+    },
+    {
+      "path": "reports/辅助评价/20261031_sol_ultra/自动辅助评分_评审01.csv",
+      "sha256": "195d9c0760b6cf15f831ec81c05b5c97d684cb3ff6f9f6c116197a8853591af9",
+      "bytes": 82247
+    },
+    {
+      "path": "reports/辅助评价/20261031_sol_ultra/自动辅助评分_评审02.csv",
+      "sha256": "935d175db095351b3dd7b3225f615221987a9698c22e38a673c5c9c2d9b270b2",
+      "bytes": 81490
+    },
+    {
+      "path": "reports/辅助评价/20261031_sol_ultra/自动评审01_原始.jsonl",
+      "sha256": "aaa4af85b65899f139ee2cc26a997a707289da76e27c92e3370ae1860f1cb6db",
+      "bytes": 50836
+    },
+    {
+      "path": "reports/辅助评价/20261031_sol_ultra/自动评审02_原始.jsonl",
+      "sha256": "f9175015eacc2587e2843fde99cb48e732d9424bda6e48e7b3126b4926d19b1c",
+      "bytes": 49879
+    },
+    {
+      "path": "reports/辅助评价/20261031_sol_ultra/自动评审01_元信息.json",
+      "sha256": "ca42f68687b02ecef379635378c9f98525c14d9db35ee1e247343b97d3b18bfb",
+      "bytes": 3658
+    },
+    {
+      "path": "reports/辅助评价/20261031_sol_ultra/自动评审02_元信息.json",
+      "sha256": "f5c7fde248058bf135fec208ee6519f55e2f742f17a3976c12dfb9cdbec7e1f6",
+      "bytes": 2439
+    },
+    {
+      "path": "reports/辅助评价/20261031_sol_ultra/辅助评价汇总.json",
+      "sha256": "d593ee954c44470e61a2d2d56eb84338a46a72395da992554727ed9bb41e00e5",
+      "bytes": 2279
+    },
+    {
+      "path": "reports/辅助评价/20261031_sol_ultra/分歧记录.json",
+      "sha256": "b7011aca8d5dd0812b188d75014761a300f570c3d365cf349c6ad3542c8ef8eb",
+      "bytes": 885
+    },
+    {
+      "path": "reports/辅助评价/20261031_sol_ultra/inputs/cases.jsonl",
+      "sha256": "da09e1955919fdb0afe1867481549dfd219357445141884aa999eac8b599159a",
+      "bytes": 46551
+    },
+    {
+      "path": "reports/辅助评价/20261031_sol_ultra/inputs/source_identity.json",
+      "sha256": "698aeedb01ac8e9a03d8e1cac7672e4d6dcf6afd6102aa3c820fceae661de20c",
+      "bytes": 454
+    },
+    {
+      "path": "reports/辅助评价/20261031_sol_ultra/inputs/rubric.txt",
+      "sha256": "cc5595e73da8e1b8eb328df9e20ce0b50b0b67e74aeb7e6c4d4716b5a1199eca",
+      "bytes": 2534
+    }
+  ],
+  "workbook_checks": {
+    "evaluation_type": "AI_auxiliary_review",
+    "not_human_evaluation": true,
+    "question_count": 100,
+    "judgments": 400,
+    "all_saved_scores_notes_and_source_fields_verified": true,
+    "saved_summary_formula_caches_verified": true,
+    "freeze_rows": 5,
+    "freeze_columns": 2,
+    "formula_error_matches": 0,
+    "visual_checks": [
+      "summary",
+      "source_question_reference_and_answer",
+      "score_columns_and_notes"
+    ],
+    "xlsx_sha256": "edeb1d6df932b33344fb44fcee9a136764d3d97c5a828a00c8396befde0d2c95",
+    "xlsx_bytes": 66875,
+    "real_human_evaluation_completed": false
+  },
+  "historical_records": "PR15两份16/17页共33页及PR13三份35页记录保留原文件语境，不代表本次文件。"
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "question_id": "Q1125282_P57_2",
+    "answer_position": 1,
+    "system": "B0",
+    "question": "Name the director or directors of Man on the Moon.",
+    "answer": "Man on the Moon was directed by Milo Forman.",
+    "different_metrics": "accuracy_0_2, completeness_0_2",
+    "reviewer_01": {
+      "accuracy_0_2": 1,
+      "completeness_0_2": 1,
+      "fluency_1_5": 4,
+      "unsupported_claim_0_1": 0
+    },
+    "reviewer_02": {
+      "accuracy_0_2": 2,
+      "completeness_0_2": 2,
+      "fluency_1_5": 4,
+      "unsupported_claim_0_1": 0
+    },
+    "notes_01": "导演姓氏 Forman 正确，但 Milo 比参考 Miloš 少末尾字母，人物身份写法不确定、姓名信息仅部分保留；句意清楚。",
+    "notes_02": "执导关系与Forman姓氏明确；Milo较参考Miloš漏末字母，视为可辨姓名的轻微拼写问题。"
+  }
+]

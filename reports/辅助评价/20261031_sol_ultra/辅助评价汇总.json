@@ -1,0 +1,80 @@
+{
+  "evaluation_type": "AI_auxiliary_review",
+  "not_human_evaluation": true,
+  "models": [
+    "gpt-6.1-sol",
+    "gpt-6.1-sol"
+  ],
+  "reasoning_effort": [
+    "ultra",
+    "ultra"
+  ],
+  "question_count": 100,
+  "answers_per_reviewer": 200,
+  "total_judgments": 400,
+  "summary": [
+    {
+      "reviewer_id": "自动评审01",
+      "system": "A0",
+      "answer_count": 100,
+      "accuracy_0_2": 2,
+      "completeness_0_2": 2,
+      "fluency_1_5": 4.46,
+      "unsupported_claim_0_1": 0,
+      "unsupported_count": 0
+    },
+    {
+      "reviewer_id": "自动评审01",
+      "system": "B0",
+      "answer_count": 100,
+      "accuracy_0_2": 1.99,
+      "completeness_0_2": 1.99,
+      "fluency_1_5": 4.45,
+      "unsupported_claim_0_1": 0,
+      "unsupported_count": 0
+    },
+    {
+      "reviewer_id": "自动评审02",
+      "system": "A0",
+      "answer_count": 100,
+      "accuracy_0_2": 2,
+      "completeness_0_2": 2,
+      "fluency_1_5": 4.46,
+      "unsupported_claim_0_1": 0,
+      "unsupported_count": 0
+    },
+    {
+      "reviewer_id": "自动评审02",
+      "system": "B0",
+      "answer_count": 100,
+      "accuracy_0_2": 2,
+      "completeness_0_2": 2,
+      "fluency_1_5": 4.45,
+      "unsupported_claim_0_1": 0,
+      "unsupported_count": 0
+    }
+  ],
+  "metric_exact_agreement": {
+    "accuracy_0_2": 0.995,
+    "completeness_0_2": 0.995,
+    "fluency_1_5": 1.0,
+    "unsupported_claim_0_1": 1.0
+  },
+  "all_four_exact_agreement": 0.995,
+  "disagreement_answer_count": 1,
+  "source": {
+    "repository": "Asilences/AI_1_experiment",
+    "source_commit": "077a18ce165f10cd998dcd1c82f403796aef3559",
+    "source_path": "reports/人工评价/5000部电影_20261030/human_evaluation.csv",
+    "question_count": 100,
+    "answer_count": 200,
+    "current_github_source_values_verified": true,
+    "reviewer_model": "gpt-6.1-sol",
+    "reviewer_reasoning_effort": "ultra",
+    "evaluation_type": "AI_auxiliary_review",
+    "not_human_evaluation": true
+  },
+  "sampling_scope": "冻结测试输出的覆盖性诊断样本，100部电影、四关系各25题，不是开放提问评价或统计代表性抽样。",
+  "human_evaluation_completed": false,
+  "scores_adjudicated": false
+}
