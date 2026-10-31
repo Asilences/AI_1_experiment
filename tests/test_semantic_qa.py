@@ -113,9 +113,9 @@ def test_confirmed_typo_and_structured_plan_bypass_legacy_regex(catalogue, monke
     client = FakeLLM({'mentions': ['Inceptoin']}, plan(),
                      {'answer': expected, 'citations': ['Q1$P57-Q4']})
     result = SemanticQA(catalogue, client).answer('Who put Inceptoin on screen?', confirmed=['Q1'])
-    assert result['status'] == 'answered' and result['answer'] == expected
-    assert result['raw_answer'] == expected and result['fallback_used'] is False
-    assert result['guard']['action'] == 'accepted'
+    assert result['status'] == 'answered' and result['answer'] == 'Inception was directed by Christopher Nolan (Q4).'
+    assert result['raw_answer'] == expected and result['fallback_used'] is True
+    assert result['guard']['action'] == 'tool_template'
     assert result['execution']['validated_plan']['movie_ids'] == ['Q1']
     assert len(result['calls']) == 3
 
@@ -165,7 +165,7 @@ def test_quoted_short_title_can_still_be_queried(catalogue):
                      {'answer': 'It was directed by Christopher Nolan.', 'citations': ['Q7$P57-Q4']})
     result = SemanticQA(catalogue, client).answer('Who directed "It"?')
     assert result['status'] == 'answered' and result['plan']['movie_ids'] == ['Q7']
-    assert result['fallback_used'] is False
+    assert result['fallback_used'] is True
 
 
 def test_ready_plan_cannot_silently_drop_an_explicit_unsupported_date_filter(catalogue, monkeypatch):
@@ -203,6 +203,38 @@ def test_missing_slots_wrong_citations_or_negation_preserve_raw_and_use_template
     assert result['raw_answer'] == generated['answer']
     assert 'Christopher Nolan' in result['answer']
     assert 'not directed' not in result['answer']
+
+
+@pytest.mark.parametrize('text', [
+    'Christopher Nolan starred in Inception.',
+    'Christopher Nolan was directed by Inception.',
+    'Inception was directed by Christopher Nolan. Inception won an Academy Award.',
+    'Inception was directed by Christopher Nolan (Q4). It won an Academy Award.',
+    '《盗梦空间》由克里斯托弗·诺兰主演。',
+    '克里斯托弗·诺兰由《盗梦空间》执导。',
+    '《盗梦空间》记录的导演为克里斯托弗·诺兰 (Q4)。该片获得奥斯卡奖。',
+])
+def test_correct_citation_does_not_authorize_wrong_predicate_direction_or_extra_claim(catalogue, text):
+    language = 'zh' if '《' in text else 'en'
+    title = '盗梦空间' if language == 'zh' else 'Inception'
+    client = FakeLLM({'mentions': [title]}, plan(language=language),
+                     {'answer': text, 'citations': ['Q1$P57-Q4']})
+    result = SemanticQA(catalogue, client).answer('《盗梦空间》的导演是谁？' if language == 'zh' else 'Who directed Inception?')
+    assert result['fallback_used'] is True
+    assert result['raw_answer'] == text
+    assert result['guard']['method'] == 'controlled_evidence_text_v2'
+    assert result['answer'] == ('《盗梦空间》记录的导演为克里斯托弗·诺兰 (Q4)。' if language == 'zh' else
+                                'Inception was directed by Christopher Nolan (Q4).')
+
+
+def test_only_controlled_evidence_sentence_is_accepted_and_names_are_not_rewritten(catalogue):
+    expected = 'Inception was directed by Christopher Nolan (Q4).'
+    client = FakeLLM({'mentions': ['Inception']}, plan(),
+                     {'answer': expected, 'citations': ['Q1$P57-Q4']})
+    result = SemanticQA(catalogue, client).answer('Who directed Inception?')
+    assert result['answer'] == expected and result['raw_answer'] == expected
+    assert result['fallback_used'] is False
+    assert result['guard']['reason'] == 'controlled_text_match'
 
 
 @pytest.mark.parametrize('prop,expected', [('P577', '2010-07-16'), ('P2142', '800.25')])

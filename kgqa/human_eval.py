@@ -159,8 +159,8 @@ def _answer_id(row, label):
 def summarize_scores(score_files, key_file, summary_output):
     """Aggregate complete independent human score sheets without changing them."""
     files = [Path(path) for path in score_files]
-    if len(files) < 2 or len({path.resolve() for path in files}) != len(files):
-        raise ValueError('At least two distinct independent score files are required')
+    if not files or len({path.resolve() for path in files}) != len(files):
+        raise ValueError('At least one distinct score file is required; repeated files are not independent')
     if Path(summary_output).resolve() in {path.resolve() for path in [*files, Path(key_file)]}:
         raise ValueError('Summary destination must differ from the score and key files')
     keys = {}

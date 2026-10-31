@@ -6,7 +6,9 @@ from collections import Counter
 from copy import deepcopy
 import json
 from pathlib import Path
+import re
 import shutil
+import unicodedata
 
 from .common import ROOT, read_json, read_jsonl, sha256, utc_now, write_json, write_jsonl
 
@@ -45,7 +47,38 @@ FAMILIES_V2['test']['P57'] = [
     ('directorial_credit', 'Which person has the directorial credit on {title}?'),
     ('director_name', 'Name the director responsible for directing {title}.')]
 FAMILIES_V2['test']['P495'][0] = ('country_origin_summary', 'What is the country of origin of {title}?')
-RECIPES = {'v1': FAMILIES, 'v2': FAMILIES_V2}
+FAMILIES_V3 = deepcopy(FAMILIES_V2)
+FAMILIES_V3['test']['P495'][0] = ('country_origin_detail', 'Specify the recorded production country of origin for {title}.')
+RECIPES = {'v1': FAMILIES, 'v2': FAMILIES_V2, 'v3': FAMILIES_V3}
+
+
+def question_template(row, entities):
+    """Normalize the actual question, including retained original train rows."""
+    entity = entities[row['movie_id']]
+    title = unicodedata.normalize('NFKC', entity.get('question_title', entity['label'])).casefold()
+    text = unicodedata.normalize('NFKC', row['question']).casefold()
+    if not title or title not in text:
+        raise ValueError(f"Question does not contain its declared movie title: {row['question_id']}")
+    return re.sub(r'[^\w{}]+', ' ', text.replace(title, '{title}')).strip()
+
+
+def audit_template_overlap(rows, entities):
+    """Compare held-out text to all actual original+augmented training text.
+
+    This detects surface-template overlap, not semantic independence. A family
+    name alone never certifies that a frame was absent from original training.
+    """
+    train = {question_template(r, entities) for r in rows if r['split'] == 'train'}
+    result = {'comparison': 'actual original and augmented train questions; NFKC/case/punctuation normalized',
+              'train_template_count': len(train), 'splits': {}}
+    for split in ('valid', 'test'):
+        selected = [r for r in rows if r['split'] == split]
+        overlap = [r for r in selected if question_template(r, entities) in train]
+        result['splits'][split] = {'total': len(selected), 'seen_template_count': len(overlap),
+                                   'remaining_count': len(selected) - len(overlap),
+                                   'seen_question_ids': [r['question_id'] for r in overlap],
+                                   'seen_templates': sorted({question_template(r, entities) for r in overlap})}
+    return result
 
 
 def build(source_dir, output_dir, recipe='v1'):
@@ -88,6 +121,9 @@ def build(source_dir, output_dir, recipe='v1'):
             rows.append({**row, 'question_id': f'freeform_{movie}_{relation}_{family}',
                          'question': template.format(title=title), 'template_family': family,
                          'question_source': 'synthetic_paraphrase', 'source_question_id': row['question_id']})
+    overlap = audit_template_overlap(rows, entities) if recipe == 'v3' else None
+    if overlap and any(item['seen_template_count'] for item in overlap['splits'].values()):
+        raise ValueError('v3 held-out templates overlap original or augmented training questions')
     output.mkdir(parents=True, exist_ok=True)
     for name in ('entities.json', 'splits.json', 'triples.tsv'):
         shutil.copyfile(source / name, output / name)
@@ -107,6 +143,9 @@ def build(source_dir, output_dir, recipe='v1'):
                 'families': {split: {relation: [{'id': family, 'template': template} for family, template in templates]
                                      for relation, templates in relations.items()} for split, relations in families.items()},
                 'scope_note': 'Authored synthetic paraphrases; family-held-out results are not independent human free-question evaluation.'}
+    if overlap is not None:
+        manifest['template_overlap_audit'] = overlap
+        manifest['recipe_revision_reason'] = 'Remove exact source-training country template overlap; keep v1/v2 frozen.'
     write_json(output / 'manifest.json', manifest)
     return manifest
 
@@ -115,7 +154,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--source-dir', type=Path, default=ROOT / 'data/processed/movies_5000_20261029')
     parser.add_argument('--output-dir', type=Path, required=True)
-    parser.add_argument('--recipe', choices=sorted(RECIPES), default='v1', help='Use v2 for the clarified property semantics; v1 is retained for reproduction.')
+    parser.add_argument('--recipe', choices=sorted(RECIPES), default='v1', help='Use v3 for new data with combined-training template audit; v1/v2 remain available for frozen reproduction.')
     args = parser.parse_args(argv)
     try:
         manifest = build(args.source_dir, args.output_dir, args.recipe)

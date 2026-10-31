@@ -141,6 +141,15 @@ def render_tool(explorer, result, plan):
     return '\n'.join(sentences) or result['answer']
 
 
+def controlled_generation_matches(generated, draft, evidence):
+    """Only authorize the exact complete evidence rendering (whitespace aside)."""
+    text, citations = generated.get('answer'), generated.get('citations')
+    return (isinstance(text, str) and 1 <= len(text) <= 6000 and isinstance(citations, list)
+            and all(isinstance(c, str) for c in citations)
+            and set(citations) == {e['statement_id'] for e in evidence}
+            and ' '.join(text.split()) == ' '.join(draft.split()))
+
+
 class SemanticQA:
     def __init__(self, explorer, client=None):
         self.explorer = explorer
@@ -159,7 +168,7 @@ class SemanticQA:
                   'answer': '', 'plan': None, 'raw_plan': None, 'evidence': [], 'items': [], 'missing': [],
                   'candidates': [], 'total': 0, 'offset': offset, 'limit': limit, 'next_offset': None,
                   'raw_answer': None, 'fallback_used': False, 'execution': None, 'calls': [],
-                  'model': self.client.metadata(), 'guard': {'method': 'slot_citation_checks_v1', 'action': 'not_generated'}}
+                  'model': self.client.metadata(), 'guard': {'method': 'controlled_evidence_text_v2', 'action': 'not_generated'}}
 
         def finish():
             result['elapsed_ms'] = round((time.perf_counter() - started) * 1000, 2)
@@ -276,20 +285,17 @@ class SemanticQA:
                               {'role': 'user', 'content': prompt}], 512)
             text, citations = generated.get('answer'), generated.get('citations')
             result['raw_answer'] = text if isinstance(text, str) else json.dumps(generated, ensure_ascii=False)
-            expected = {e['statement_id'] for e in evidence}
-            required = {self.explorer.name(e['movie_id'], language == 'zh') for e in evidence}
-            required.update(self.explorer.name(e['value'], language == 'zh') for e in evidence)
-            # Slot/citation checks are an engineering guard, not general NLI.
-            valid = (isinstance(text, str) and 1 <= len(text) <= 6000 and isinstance(citations, list)
-                     and all(isinstance(c, str) for c in citations) and set(citations) == expected
-                     and all(normalized(name) in normalized(text) for name in required)
-                     and not re.search(r'\b(?:not|never|best|worst|probably)\b|不是|并非|最好|最差|可能', text, re.I))
+            # Entity names and valid citations cannot prove a predicate or an
+            # additional claim. Only the evidence renderer's complete text is
+            # authorized for display; free model wording remains raw evidence.
+            # Collapse whitespace only: never discard words, punctuation,
+            # entity IDs, qualifiers, subject/object order or relation labels.
+            valid = controlled_generation_matches(generated, answer, evidence)
             if valid:
-                result['answer'] = text
-                result['guard'].update(action='accepted', reason='slots_and_citations_present', citations=citations)
+                result['guard'].update(action='accepted', reason='controlled_text_match', citations=citations)
             else:
                 result['fallback_used'] = True
-                result['guard'].update(action='tool_template', reason='missing_slots_or_citations')
+                result['guard'].update(action='tool_template', reason='unverified_free_text_or_citations')
         except LLMError as error:
             result['fallback_used'] = True
             result['guard'].update(action='tool_template', reason=error.code)
