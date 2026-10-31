@@ -4,7 +4,7 @@ import csv
 import pytest
 
 from kgqa.human_eval import VISIBLE_FIELDS
-from kgqa.human_review_web import ReviewStore
+from kgqa.human_review_web import ReviewStore, suggestion_for
 
 
 @pytest.fixture
@@ -27,6 +27,31 @@ def test_scores_persist_resume_and_preserve_blank_answers(store):
     rows = list(csv.DictReader(store.csv_text(state).splitlines()))
     assert rows[0]['accuracy_0_2'] == '0' and rows[1]['accuracy_0_2'] == ''
     assert 'system' not in rows[0]
+
+
+def test_exact_answer_gets_confirmable_machine_suggestion(store):
+    suggestion = suggestion_for(store.rows[0])
+    assert suggestion['label'].startswith('√')
+    assert suggestion['scores'] == {
+        'accuracy_0_2': 2, 'completeness_0_2': 2,
+        'fluency_1_5': 5, 'unsupported_claim_0_1': 0,
+    }
+    saved = store.save('fixture', {
+        'question_id': 'Q1_P57_1', 'answer_position': 1,
+        **suggestion['scores'], 'review_mode': 'confirm_suggestion',
+    })
+    assert saved['Q1_P57_1|1']['review_mode'] == 'confirm_suggestion'
+    assert 'AI建议已由评价者逐题确认' in saved['Q1_P57_1|1']['notes']
+
+
+def test_confirm_suggestion_cannot_write_different_scores(store):
+    with pytest.raises(ValueError, match='服务器建议'):
+        store.save('fixture', {
+            'question_id': 'Q1_P57_1', 'answer_position': 1,
+            'accuracy_0_2': 0, 'completeness_0_2': 0,
+            'fluency_1_5': 1, 'unsupported_claim_0_1': 1,
+            'review_mode': 'confirm_suggestion',
+        })
 
 
 @pytest.mark.parametrize('reviewer', ['../escape', '', 'x/y', 'a' * 41])

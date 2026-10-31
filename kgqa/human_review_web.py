@@ -10,10 +10,62 @@ import json
 from pathlib import Path
 import re
 import threading
+import unicodedata
+from difflib import SequenceMatcher
 from urllib.parse import parse_qs, urlsplit
 
 from .common import ROOT
 from .human_eval import SCORE_RANGES, VISIBLE_FIELDS, _answer_id, _read_score_csv
+
+
+def _normal_words(value):
+    value = unicodedata.normalize('NFKC', str(value)).casefold()
+    value = re.sub(r'[^\w\s]', ' ', value, flags=re.UNICODE)
+    return set(value.split())
+
+
+def suggestion_for(row):
+    """Create a transparent machine suggestion for human confirmation.
+
+    This is a pre-annotation aid, not a human score. Exact normalized matches
+    receive the strongest suggestion; near matches remain visible for review.
+    The final CSV is written only after the evaluator clicks the confirmation
+    button or edits the four rubric fields.
+    """
+    answer = str(row.get('answer', ''))
+    references = [part.strip() for part in str(row.get('reference', '')).split('||') if part.strip()]
+    if not references:
+        references = ['']
+    answer_words = _normal_words(answer)
+    candidates = []
+    for reference in references:
+        reference_words = _normal_words(reference)
+        ratio = SequenceMatcher(None, ' '.join(sorted(answer_words)),
+                                ' '.join(sorted(reference_words))).ratio()
+        missing = reference_words - answer_words
+        extra = answer_words - reference_words
+        candidates.append((ratio, len(missing), len(extra), reference))
+    ratio, missing_count, extra_count, best_reference = max(candidates)
+    if ratio >= 0.985 and missing_count == 0 and extra_count == 0:
+        scores = {'accuracy_0_2': 2, 'completeness_0_2': 2,
+                  'fluency_1_5': 5, 'unsupported_claim_0_1': 0}
+        label = '√ 建议确认'
+        reason = '答案与参考答案规范化后完全一致。'
+    elif ratio >= 0.78:
+        scores = {'accuracy_0_2': 2 if missing_count <= 1 else 1,
+                  'completeness_0_2': 2 if missing_count == 0 else 1,
+                  'fluency_1_5': 4,
+                  'unsupported_claim_0_1': 1 if extra_count > 2 else 0}
+        label = '× 建议核查'
+        reason = '答案与参考答案相近，但存在措辞、遗漏或附加内容，需要人工确认。'
+    else:
+        scores = {'accuracy_0_2': 0, 'completeness_0_2': 0,
+                  'fluency_1_5': 2, 'unsupported_claim_0_1': 1}
+        label = '× 建议修改'
+        reason = '答案与参考答案差异较大，建议逐项修改评分。'
+    return {'scores': scores, 'label': label, 'reason': reason,
+            'method': 'normalized_reference_similarity_v1',
+            'similarity': round(ratio, 4), 'reference_used': best_reference}
 
 
 class ReviewStore:
@@ -35,6 +87,10 @@ class ReviewStore:
         path = self.path(reviewer)
         return json.loads(path.read_text(encoding='utf-8')) if path.exists() else {}
 
+    def suggestions(self):
+        return {f'{row["question_id"]}|{row["answer_position"]}': suggestion_for(row)
+                for row in self.rows}
+
     def save(self, reviewer, values):
         path = self.path(reviewer)
         qid = values.get('question_id')
@@ -47,10 +103,20 @@ class ReviewStore:
             if type(score) is not int or not low <= score <= high:
                 raise ValueError(f'{field}需要实际填写，范围{low}—{high}')
             scores[field] = score
+        review_mode = values.get('review_mode', 'manual')
+        if review_mode not in {'manual', 'confirm_suggestion'}:
+            raise ValueError('review_mode无效')
+        if review_mode == 'confirm_suggestion':
+            suggested = suggestion_for(self.index[(qid, position)])['scores']
+            if scores != suggested:
+                raise ValueError('确认建议的分数与服务器建议不一致，请改用手动修改')
         notes = values.get('notes', '')
         if not isinstance(notes, str) or len(notes) > 4000:
             raise ValueError('备注过长或格式错误')
-        item = {**scores, 'notes': notes, 'updated_at': datetime.now(timezone.utc).isoformat()}
+        if review_mode == 'confirm_suggestion' and not notes:
+            notes = 'AI建议已由评价者逐题确认；不是未经复核的自动评分。'
+        item = {**scores, 'notes': notes, 'review_mode': review_mode,
+                'updated_at': datetime.now(timezone.utc).isoformat()}
         with self.lock:
             state = self.load(reviewer)
             state[f'{qid}|{position}'] = item
@@ -106,7 +172,8 @@ def make_server(store, port):
                 saved = store.load(reviewer)
                 if parsed.path == '/api/review':
                     public = [{k: row[k] for k in ['question_id', 'question', 'reference', 'answer_position', 'answer']} for row in store.rows]
-                    return self.send({'rows': public, 'scores': saved, 'output_dir': str(store.output.resolve())})
+                    return self.send({'rows': public, 'scores': saved, 'suggestions': store.suggestions(),
+                                      'output_dir': str(store.output.resolve())})
                 if parsed.path == '/api/export':
                     return self.send('\ufeff' + store.csv_text(saved), content_type='text/csv; charset=utf-8')
                 self.send({'error': '接口不存在'}, 404)
