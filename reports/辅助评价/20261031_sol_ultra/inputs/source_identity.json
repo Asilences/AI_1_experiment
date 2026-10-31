@@ -1,0 +1,12 @@
+{
+  "repository": "Asilences/AI_1_experiment",
+  "source_commit": "077a18ce165f10cd998dcd1c82f403796aef3559",
+  "source_path": "reports/人工评价/5000部电影_20261030/human_evaluation.csv",
+  "question_count": 100,
+  "answer_count": 200,
+  "current_github_source_values_verified": true,
+  "reviewer_model": "gpt-6.1-sol",
+  "reviewer_reasoning_effort": "ultra",
+  "evaluation_type": "AI_auxiliary_review",
+  "not_human_evaluation": true
+}

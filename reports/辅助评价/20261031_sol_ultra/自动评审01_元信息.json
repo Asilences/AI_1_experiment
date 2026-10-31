@@ -1,0 +1,103 @@
+{
+  "reviewer_id": "AI_auxiliary_reviewer_01",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "ultra",
+  "model_metadata_basis": "Model and effort assigned in the parent task; this reviewer has no separate backend attestation interface.",
+  "evaluation_type": "AI_auxiliary_review",
+  "not_human_evaluation": true,
+  "human_identity_used": false,
+  "independent_context": true,
+  "source_commit_from_supplied_identity": "077a18ce165f10cd998dcd1c82f403796aef3559",
+  "source_repository_or_commit_independently_verified": false,
+  "inputs_read": [
+    "inputs/rubric.txt",
+    "inputs/source_identity.json",
+    "inputs/cases.jsonl"
+  ],
+  "read_batches_case_numbers": [
+    [
+      1,
+      20
+    ],
+    [
+      21,
+      40
+    ],
+    [
+      41,
+      60
+    ],
+    [
+      61,
+      80
+    ],
+    [
+      81,
+      100
+    ]
+  ],
+  "self_generated_ratings_read_for_validation": true,
+  "peer_ratings_read": false,
+  "system_mapping_or_key_read": false,
+  "existing_project_scores_read": false,
+  "github_scores_read": false,
+  "internet_used": false,
+  "human_rating_sheets_written": false,
+  "evaluation_method": "逐题阅读100题的题目、两份参考表达和两个匿名原始答案，显式给出全部200条的四项整数及中文依据；脚本只序列化这些判断并核验覆盖和字段，未使用字符串相等或规则循环自动评分。",
+  "support_scope": "准确性、完整性和无依据断言均相对给定参考评价；两个参考表达视作同一事实集合。",
+  "limitations": [
+    "这是AI辅助评价，不是真人评分，也不证明课程人工评价完成。",
+    "未联网核验电影事实，参考本身的事实遗漏或错误不在本次核验能力范围内。",
+    "单项语言或类型仍用复数列表引导的自然度，以及缺少国名定冠词，属于本评审的轻微语言问题判断。",
+    "第34题位置1的 Milo Forman 比参考 Miloš Forman 缺一字母；本评审将其视作人物身份写法不确定与姓名信息部分保留，准确性和完整性均为1；此类姓名拼写边界存在评价判断空间。",
+    "无依据断言为0仅表示没有发现超出参考事实的额外属性或关系，不表示外部事实已经验证。"
+  ],
+  "technical_note": "最初控制台对重音字符按GBK显示异常，已使用UTF-8重读相关题目并修正本评审自己的备注；输入文件未修改。",
+  "completed_at_utc": "2026-10-31T12:37:56.285085+00:00",
+  "input_sha256": {
+    "inputs/rubric.txt": "cc5595e73da8e1b8eb328df9e20ce0b50b0b67e74aeb7e6c4d4716b5a1199eca",
+    "inputs/source_identity.json": "698aeedb01ac8e9a03d8e1cac7672e4d6dcf6afd6102aa3c820fceae661de20c",
+    "inputs/cases.jsonl": "da09e1955919fdb0afe1867481549dfd219357445141884aa999eac8b599159a"
+  },
+  "validation": {
+    "question_count": 100,
+    "answer_count": 200,
+    "unique_question_answer_keys": 200,
+    "all_expected_keys_covered": true,
+    "duplicate_count": 0,
+    "all_score_values_integer_and_in_range": true,
+    "all_notes_nonempty": true,
+    "all_records_have_required_fields_only": true
+  },
+  "score_distributions": {
+    "accuracy_0_2": {
+      "2": 199,
+      "1": 1
+    },
+    "completeness_0_2": {
+      "2": 199,
+      "1": 1
+    },
+    "fluency_1_5": {
+      "5": 91,
+      "4": 109
+    },
+    "unsupported_claim_0_1": {
+      "0": 200
+    }
+  },
+  "position_means": {
+    "1": {
+      "accuracy_0_2": 1.99,
+      "completeness_0_2": 1.99,
+      "fluency_1_5": 4.45,
+      "unsupported_claim_0_1": 0.0
+    },
+    "2": {
+      "accuracy_0_2": 2.0,
+      "completeness_0_2": 2.0,
+      "fluency_1_5": 4.46,
+      "unsupported_claim_0_1": 0.0
+    }
+  }
+}
