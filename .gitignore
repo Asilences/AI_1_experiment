@@ -1,6 +1,8 @@
 .venv/
 .work/
 .aris/
+/reviews/
+/extract_docs.py
 /data/raw/*
 !/data/raw/expansion_5000_20261029/
 /data/raw/expansion_5000_20261029/*
